@@ -1,0 +1,457 @@
+### mate-control-center 1.24.1
+
+  * Translations update
+  * mate-theme-info: Use of memory after it is freed
+  * build: silent build warnings for distcheck
+  * use default MATE_COMPILE_WARNINGS level
+  * Port libslab_handle_g_error to the built-in GLib logging framework
+  * mate-about-me: Fix memory leak
+  * appearance: Fix memory leak
+  * Do not collect the translation for Icon
+
+### mate-control-center 1.24.0
+
+  * Translations update
+  * mate-theme-info: fix memory leak
+  * mate-wp-info: fix memory leak
+  * glib-genmarshal: Using --header and --body at the same time is deprecated
+  * build: show compiler/flags info on configure summary
+  * build: do not override WARN_CFLAGS
+  * build: use warning flags
+  * time-admin: make portable backward file path
+  * appearance: backgrounds dir should be portable
+  * appearance: remove I/O error on window close
+  * autoconf: AC_PROG_CC was called before AX_CHECK_ENABLE_DEBUG
+  * Fix build using gcc 10 -fno-common flag
+
+### mate-control-center 1.23.3
+
+  * Translations update
+  * Update copyright to 2020
+  * about-me: Fix UI validation
+  * mouse: Fix UI validation
+  * time-admin: Add license info in time-admin.ui file
+  * time-admin: Fix UI validation
+  * at-properties: Fix UI validation
+  * Search system themes in system data dirs
+  * display: Fix UI validation
+  * display: Enable help button
+  * windows: Add window-properties.ui
+  * avoid redundant redeclarations
+  * keybindings: Fix schema creation in makefile
+  * appearance: Fix desktop file creation
+  * shell: Fix typo in keyword name
+  * migrate from intltool to gettext
+  * default-applications: Load icons as cairo surfaces
+  * icons: Force uniform size on icons (#505)
+  * remove warning: "__sun" is not defined, evaluates to 0
+  * fv: thumbnailer: add font/collection to the supported mimetypes
+  * font-viewer: Add font/ttf and font/otf mime types
+  * time-admin: fix memory leak
+  * time-admin: Don't share «void QuitApp(TimeAdmin *ta)» method
+  * default-applications: Remove messenger options from ui file
+  * time-admin: Remove unreachable code
+  * time-admin: Simplify date & time displaying
+  * time-admin: Save button cannot be enabled if NTP sync is active
+  * time-admin: Display current time in time-admin.ui on startup
+  * time-admin: Rename adjustament to adjustment in time-admin.ui
+  * time-admin: A11y time-admin.ui
+  * time-admin: Add time-admin.ui
+  * default-applications: Fix Word Processor top margin
+
+### mate-control-center 1.23.2
+
+  * Translations update
+  * travis: update mate-desktop and mate-settings-daemon required versions
+  * mouse: Add support for Acceleration Profiles
+  * appearance: fix memory leak
+  * appearance: add new font for user
+  * Stop propagate error
+  * at-properties: migrate from dbus-glib to gdbus
+
+### mate-control-center 1.23.1
+
+  * Translations update
+  * fix build error when not installed gla11y
+  * remove lightdm-settings support
+  * launch lightdm-settings if installed
+  * use current running DM preferences program
+  * support lightdm-gtk-greeter-settings as login preferences program
+  * replace Tab with space
+  * drop libXxf86 dependency
+  * Use python3 for gla11y
+  * Add scroll tabs with mouse wheel in severals capplets
+  * libslab: bookmark-agent.c avoid deprecated g_type_class_add_private
+  * font-viewer: avoid deprecated 'g_type_class_add_private'
+  * Remove compilation warnings
+  * time-admin: Don't set window title for message-box dialog
+  * time-admin: Don't set font size/color for regular controls
+  * use theme's icon preferences-system-time
+  * time-admin: Fix license notice in time-zone.h|c, time-map.h|c
+  * capplets: Remove the macro MATELOCALEDIR where it's not required
+  * capplets: Use capplet_init
+  * time-admin: shortcuts, images & shared code for buttons
+  * common: Remove capplet-stock-icons
+  * time-admin: Remove po-timezones
+  * Remove trailing whitespaces
+
+### mate-control-center 1.23.0
+
+  * Translations update
+  * bump require of m-s-d and m-d
+  * Add orca to Visual combo box if available
+  * Add support for checking .ui accessibility with gla11y
+  * Do not reload NTP and modify the button arrangement when starting the service
+  * Authentication to add modification time
+  * Use default color to set label and remove the maximum button
+  * use Makefile pkgdatadir
+  * g_date_time_unref datetime
+  * Display the correct time when selecting the time zone
+  * Memory leak: g_error_free(error);
+  * Modify mate-time-admin.desktop.in file format
+  * enable to build time-admin for mate-control-center
+  * add time-admin source code
+  * add timezone translation files for time-admin
+  * add image resources for time-admin applet
+  * Populate initial messenger list with irc scheme handler apps
+  * Set default icq/irc/ircs/sip/xmpp scheme handler
+  * Add instant messenger keybinding into mate-keybinding-properties
+  * Change the icon for instant messaging application
+  * default-applications: Add a widget for a default messenger application
+  * appearance.ui (cursor size scale)
+  * libslab: avoid deprecated g_type_class_add_private
+  * Create FUNDING.yml
+  * typing-break: avoid deprecated 'g_type_class_add_private'
+  * file-transfer-dialog.c: avoid deprecated 'g_type_class_add_private'
+  * Fix the icon sizes in Preferred Applications selector
+  * capplets: Use gresources for UI files
+  * [ci] Add cppcheck html report
+  * Fix grammar mistake
+  * Migrate from dbus-glib to GDBus
+  * Use system data dirs to locate key bindings
+  * control-center: Fix memory leak
+  * Use GtkSeparatorMenuItem in Apparence preview
+  * Remove dead store detected by clang
+  * default-applications: Improve UI accessibility
+  * Use keyboard device icon like in other hardware devices
+  * Use icons provided by themes and remove not used icons
+  * help: update copyright
+  * [ci] Enable Clang Static Analyzer
+  * add installation instructions
+
+### mate-control-center 1.22.0
+
+  * Translations update
+  * Initialize travis support
+  * eggcellrendererkeys: avoid deprecated 'gtk_widget_modify_bg/fg'
+  * Update MCC help
+  * default-applications: Use more common icon names for Office documents
+  * mate-display-properties: Migrate from dbus-glib to GDBus
+  * Fix the runtime warning about gtk_widget_destroy.
+  * Fixed number of cols error after reload menus.
+  * Fixed crash when install/remove application.
+  * capplets/mouse: .svg files instead .png in doubleclick artwork
+  * capplets/mouse: New doubleclick artwork with mate logo
+  * disable deprecation warnings for distcheck
+  * default-applications: Fix assertion failture on g_icon_to_string
+  * default-applications: Add a widget for a default calculator application
+  * default-applications: Use the selected word processor for RTF as well
+
+### mate-control-center 1.21.2
+
+  * Translations update
+  * require mate-settings-daemon-1.21.2
+  * keybindings: Add a key binding to toggle the microphone's mute status
+  * keybindings: Add some key bindings to control volume quietly
+  * Account for NULL error when we see G_IO_STATUS_EOF
+  * typing-break: replace deprecated gdk_error_trap functions
+  * tx: update translation sources
+  * update hint for mouse double-click
+  * keybindings: double click instead one click to edit keyboard shortcuts
+  * mate-keybinding-properties: avoid deprecated 'gtk_widget_ensure_style'
+  * added search option for mate-font-viewer
+  * Load avatar-default as default image
+  * for accounts service support
+  * keybindings: Add a key binding to launch settings
+  * Depend on mate-desktop 1.21.2 due to new gschema key
+  * Fix spelling and grammar mistakes
+  * update legal.xml
+  * Use make functions for HELP_LINGUAS
+  * tx: add m-c-c user-guide to transifex config
+  * Add UI to control org.mate.accessibility-keyboard.stickykeys-latch-to-lock
+  * use fixed size to show user icon
+  * Add new api for EImageChooser
+  * get/set user face icon use accounts service
+
+### mate-control-center 1.21.1
+
+  * Translations update
+  * require mate-desktop-1.21.1
+  * typing-break: Make images larger and load as surface
+  * Mouse: include a toggle to enable or disable middlemouse paste
+  * capplets/keybindings: avoid deprecated 'gdk_keymap_get_default'
+  * display-capplet.ui: replace deprecations
+  * libslab: code clean up
+  * wm-common: replace deprecated gdk_error_trap functions
+  * libslab: replace deprecated gtk_menu_popup
+  * msd-input-helper: replace deprecated gdk_error_trap functions
+  * mouse: replace deprecated gdk_error_trap functions
+
+### mate-control-center 1.21.0
+
+  * Translations update
+  * update mate-control-center.pot
+  * bump required version of mate-menus
+  * use new mate-menus api
+  * use new api
+  * use matemenu_tree_new
+  * appearance: fixed more indents
+  * appearance: fixed indentations
+  * appearance: add buttons-have-icons switch
+  * mouse: add middle button emulation switch
+  * display-capplet: add css name for scrollarea
+  * Change cursor-size to 24px
+  * Scale cursor size for HiDPI when changing themes
+  * Fix screen geometry to account for rotation when snapping.
+  * Add auto-detect toggle switch
+  * theme-util.c: fix segfault on attempt to delete custom theme
+  * theme-thumbnail.c: avoid deprecated GtkButton:use-stock
+  * avoid deprecated GtkStock
+  * Remove useless parameter in mate_theme_install_real
+  * theme-installer.c: add tips when reinstall a existed theme
+
+### mate-control-center 1.20.0
+
+  * Scale font DPI for HiDPI displays
+  * require GTK+ 3.22 and GLib 2.50
+  * Add support for HiDPI displays (#325)
+  * Translations update
+
+### mate-control-center 1.19.3
+
+  * Translations update
+  * theme-installer.c: missing g_object_unref in mate_theme_install_real
+  * theme-util.c: fix reinstalling the deleted theme can cause failure
+  * remove unneeded +x attribute after last commit
+  * Support the theme compression package for installing XZ format
+  * drop unused variables
+  * eggcellrendererkeys.c: Fix build warnings:
+  * remove some leftovers related to MacOS support O_o
+  * theme-thumbnail.c: Fix build warnings with ‘write’ and ‘pipe’:
+  * libslab: store search entry widget as GtkEntry
+  * libslab: fix search icon misaligned
+  * libslab: search-entry.c: Fix build warning:
+  * Remove useless duplication in mate_theme_install_real
+  * Fix Window Border theme cannot be deleted
+  * update windows tiling gsettings key, part-2
+  * update windows tiling gsettings key
+  * about-me: drop unused code
+  * shell: add Comment field to .desktop file
+
+### mate-control-center 1.19.2
+
+  * Translations update
+  * Enable default broswer setting support for text/html
+  * libslab: restore missing variable initialization
+  * libslab: drop useless checkpoint function
+  * libslab: remove more unused code
+  * libslab: remove a bunch of unused code
+  * WidthOfScreen and HeightOfScreen implementation
+  * fix support for external localizations in .desktop files
+  * Add the support for cursor sizes of 96 and 128.
+  * man: fix title of mate-window-properties page
+  * man: fix titles of mate-typing-monitor and mate-thumbnail-font pages
+  * Fixes font dpi with "org.mate.desktop.font-rendering.dpi" by default
+  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+
+### mate-control-center 1.19.1
+
+  * Translations update
+  * libslab: avoid deprecated gdk_screen_width/height
+  * appearance-font.c: avoid deprecated gdk_screen_get_width/height_mm
+  * avoid deprecated gdk_screen_get_width/height
+  * libslab: drop unneeded libslab_mate_desktop_item_open_help function
+  * libslab : drop uneeded support for gnome-main-menu
+  * typing-break: avoid deprecated GDK pointer and keyboard types
+  * libslab: don't use deprecated gtk_show_uri
+  * display scrollarea: avoid deprecated gtk_adjustment_changed
+  * keybindings eggcellrendererkey: avoid deprecated GDK pointer and keyboard types
+  * display scrollarea: fix a -Wuninitialized build warning
+  * display scrollarea: avoid deprecated gdk_window_get_pointer
+  * po: don't list non-existent files in POTFILES.skip
+  * avoid deprecated gdk_screen_make_display_name
+  * avoid deprecated gdk_display_get_screen and gdk_display_get_n_screens
+  * capplet-util: don't use deprecated gtk_show_uri
+  * typing-break: avoid deprecated GtkMisc
+  * typing-break: avoid deprecated gtk_alignment_new ()
+  * mouse: fix a build warning
+  * mouse: warn about enabling multi-finger emulation
+
+### mate-control-center 1.19.0
+
+  * Translations update
+  * libslab: make ThemedIcon use style_updated instead of style_set
+  * libslab: correct icon loading code
+  * libslab nameplate-tile: replace GtkAlignment with a GtkBox
+  * libslab tile.c: replace deprecated gtk_widget_set_state ()
+  * libslab shellwindow: replace GtkAlignment with a GtkBox
+  * libslab slab-section: avoid deprecated GtkAlignment
+  * libslab app-shell: avoid deprecated gtk_alignment_new ()
+  * app-resizer: fix a build warning
+  * Restore Polish translation credits from GNOME
+  * libslab searchbar: remove deprecated ussage of GtkAlignment
+  * libslab nameplate-tile: avoid deprecated gtk_button_set_focus_on_click ()
+  * libslab nameplate-tile: remove one deprecated ussage of GtkAlignment
+  * libslab: don't use deprecated gdk_app_launch_context_new ()
+  * about-me-password UI: set max_width_chars for description-label
+  * eel-alert-dialog: replace some GtkStock items
+  * keybindings: fix a couple of build warnings
+  * libslab: remove unused functions
+  * libslab bookmark-agent: fix some xdg paths
+  * use g_object_unref instead of deprecated rsvg_handle_free
+  * keybindings: Fix and add mnemonics in the custom command dialog
+  * keybindings: Allow to select an installed application through a dialog
+
+### mate-control-center 1.18.1
+
+  * Add support for switching themes on Metacity >= 3.20.
+  * appearance-ui: add primary-toolbar style class for toolbar in interface preview
+  * keyboard-properties-xkbot: avoid deprecated GtkAlignment
+  * theme-thumbnail: avoid deprecated GtkAlignment
+
+### mate-control-center 1.18.0
+
+  * NEWS: use consistent, project wide, markdown-like formatting to make
+    generating release announcements easier
+  * Build: require libmatekbd, libmate-desktop, marco, m-s-d >= 1.17
+  * Build: require XCursor and XInput unconditionally
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
+    build option
+  * Port from libunique to GtkApplication
+  * Rework font-viewer: add font browsing mode, support for TTC fonts,
+    and make it appear in the menus
+  * Add libinput support for mouse and touchpad
+  * Mouse: add separate touchpad motion settings on touchpad tab
+  * Mouse: change tab label from General to Mouse
+  * Mouse: change natural scroll mnemonic from 'a' to 'n'
+  * Fix lots of GTK+ deprecations
+  * Some more fixes and cleanups
+  * Translations update
+
+### mate-control-center 1.16.1
+
+  * Appearance: fix live updating of the various theme details
+  * Appearance: fix vertical expand of content on window resize in
+    GTK+3 build
+  * Keyboard: fix vertical expand of content on window resize in
+    GTK+3 build
+  * Shell: force icon size in libslab to avoid huge icons
+  * GTK+3: fix build with marco 1.17
+  * Fix a couple of memleaks
+
+### mate-control-center 1.16.0
+
+  * Build: drop dconf 0.10 compatibility
+  * Appearance: change default hinting style to slight and render
+    antialiasing samples using that style
+  * Appearance: render hinting samples using RGBA antialiasing
+  * Appearance: place theme name below theme preview in GTK+3 build to
+    match GTK+2 one
+  * Appearance: center theme name in GTK+3 build to match GTK+2 one
+  * Appearance: hide Colors tab in Customize Theme dialog in GTK+3 build
+    as changing theme colors won't work in GTK+3
+  * GTK+3: fix build with appindicator support enabled
+  * GTK+3: fix showing monitors in display properties with glib 2.49.6
+  * GTK+3: fix various deprecations
+  * Some code cleanups
+  * Translations update
+
+### mate-control-center 1.14.1
+
+  * About me: add some space between username and buttons
+  * About me: fix UI freeze when changing the password
+  * Translations update
+  * Make distcheck use currently selected GTK+ version
+
+### mate-control-center 1.14.0
+
+  * Drop MateConf migration script
+  * Drop "Ubuntu hacks" (--enable-ubuntu build option) as Ubuntu
+    dropped that stuff long ago
+  * Move mate-preferences-categories.menu to mate-menus
+  * Touchpad settings: support edge and two-finger scrolling
+    independently
+  * Window properties: make all three window focus modes selectable
+  * GTK+3: fix theme previews in mate-appearance-properties
+  * GTK+3: fix several deprecations
+  * Some more fixes and cleanups
+  * Translations update
+  * Fix Changelog generation
+
+### mate-control-center 1.12.1
+
+  * Display: fix crash due to regression
+  * Fix some bottom items being not accessible in some cases
+  * Some more fixes
+  * Translations update
+
+### mate-control-center 1.12.0
+
+  * Appearance: restored Interface tab
+  * Display: added support to set the primary monitor
+  * Display: show output names in addition to display names
+  * Keybindings: added keybinding for logout
+  * Touchpad settings: add option to enable/disable touchpad
+  * Touchpad settings: added support for natural scrolling, 2 finger
+    and 3 finger clicks
+  * Improved categorization
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
+  * Switch to org.gnome.SessionManager
+  * GTK+3: fix font rendering in Appearance and mate-font-viewer
+  * Some more fixes and cleanups
+
+### mate-control-center 1.10.2
+
+  * Appearance: fix possible segmentation fault on closing
+  * Appearance: allow to save notification theme optionally
+  * Display: made changing refresh rate actually work
+  * Fix build with prefix other than /usr
+  * Help fixes
+  * Translations update
+
+### mate-control-center 1.10.1
+
+  * Appearance: add theme changing support for metacity >= 3.16
+  * Help fixes
+  * GTK+3 fixes
+  * Translations update
+
+### mate-control-center 1.10.0
+
+  * windows: Add option to configure titlebar buttons layout
+  * appearance: Add support for metacity-theme-2.xml
+  * default-applications: Add support for office applications
+  * Adapt to MateDesktop MateRR* API changes (thanks monsta for testing)
+
+### mate-control-center 1.8.1
+
+  * default-applications: Add support for accessibility applications
+
+### mate-control-center 1.8.0
+
+  * Use yelp-tools instead of mate-doc-utils
+  * windows: Add option to enable side by side tiling
+  * windows: Add metacity support
+  * appearance: Add support for 'artist' tag in xml backgrounds files
+  * appearance: Change also titlebar font if Metacity is running
+
+### mate-control-center 1.6.0
+
+  * Migration to gsettings.
+  * Keybindings capplet: requires libdconf-dev to delete custom shortcuts.
+  * Appearance capplet: increased minimum dialog size.
+  * About me capplet: removed evolution stuff.
+  * Network capplet: use proxy settings from gsettings-desktop-schemas
+    package (http://download.gnome.org/sources/gsettings-desktop-schemas).
+    Removed save locations feature.
+  * Removed a lot of old stuff from libslab.
