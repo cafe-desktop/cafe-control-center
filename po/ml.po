@@ -2802,7 +2802,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -2851,32 +2851,32 @@ msgstr ""
 "ഈ പ്രവര്‍ത്തി ചെയ്യുന്നതിനായി ടൈറ്റില്‍ ബാറില്‍ _രണ്ടു തവണ ക്ലിക്ക് ചെയ്യുക:"
 
 #: capplets/windows/window-properties.ui:477
-#: libwindow-settings/marco-window-manager.c:394
+#: libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr "ചുരുട്ടുക"
 
 #: capplets/windows/window-properties.ui:478
-#: libwindow-settings/marco-window-manager.c:395
+#: libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr "വലുതാക്കുക"
 
 #: capplets/windows/window-properties.ui:479
-#: libwindow-settings/marco-window-manager.c:396
+#: libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr "കുറുകേ വലുതാക്കുക"
 
 #: capplets/windows/window-properties.ui:480
-#: libwindow-settings/marco-window-manager.c:397
+#: libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr "നേരെ വലുതാക്കുക"
 
 #: capplets/windows/window-properties.ui:481
-#: libwindow-settings/marco-window-manager.c:398
+#: libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr "ചെറുതാക്കുക"
 
 #: capplets/windows/window-properties.ui:482
-#: libwindow-settings/marco-window-manager.c:399
+#: libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "ഒന്നുമില്ല"
 

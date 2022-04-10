@@ -125,7 +125,7 @@ Havoc:
 > setting for this, it should be desktop-global and in this monitor
 > config dialog.
 
-> It should not be a marco or Compiz option, but in some way an X
+> It should not be a croma or Compiz option, but in some way an X
 > option in short. The implementation could be either an X server
 > feature or an EWMH hint or whatever, but it should be controlled by
 > the monitor config dialog and used by apps, GTK, etc. in addition to

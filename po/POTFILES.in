@@ -78,7 +78,7 @@ capplets/time-admin/src/time-zone.c
 capplets/time-admin/src/time-zones.h
 capplets/time-admin/data/cafe-time-admin.desktop.in
 libwindow-settings/cafe-wm-manager.c
-libwindow-settings/marco-window-manager.c
+libwindow-settings/croma-window-manager.c
 shell/control-center.c
 shell/cafecc.desktop.in
 shell/cafecc.directory.desktop.in

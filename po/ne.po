@@ -2744,7 +2744,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -2792,32 +2792,32 @@ msgid "_Double-click titlebar to perform this action:"
 msgstr "यो कार्य कार्यसम्पादन गर्न शिर्षकपट्टी डबल-क्लिक गर्नुहोस्:"
 
 #: capplets/windows/window-properties.ui:477
-#: libwindow-settings/marco-window-manager.c:394
+#: libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr "माथि जानुहोस्"
 
 #: capplets/windows/window-properties.ui:478
-#: libwindow-settings/marco-window-manager.c:395
+#: libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr "ठूलो पार्नुहोस्"
 
 #: capplets/windows/window-properties.ui:479
-#: libwindow-settings/marco-window-manager.c:396
+#: libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:480
-#: libwindow-settings/marco-window-manager.c:397
+#: libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:481
-#: libwindow-settings/marco-window-manager.c:398
+#: libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr "सानो पार्नुहोस्"
 
 #: capplets/windows/window-properties.ui:482
-#: libwindow-settings/marco-window-manager.c:399
+#: libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "कुनै पनि होइन"
 

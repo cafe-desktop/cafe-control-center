@@ -728,7 +728,7 @@ gtk_theme_thumbnail_cb (GdkPixbuf *pixbuf,
 }
 
 static void
-marco_theme_thumbnail_cb (GdkPixbuf *pixbuf,
+croma_theme_thumbnail_cb (GdkPixbuf *pixbuf,
                              gchar *theme_name,
                              AppearanceData *data)
 {
@@ -763,9 +763,9 @@ create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *d
   } else if (default_thumb == data->window_theme_icon) {
     CafeThemeInfo *info;
     info = cafe_theme_info_find (name);
-    if (info != NULL && info->has_marco) {
-      generate_marco_theme_thumbnail_async (info,
-          (ThemeThumbnailFunc) marco_theme_thumbnail_cb, data, NULL);
+    if (info != NULL && info->has_croma) {
+      generate_croma_theme_thumbnail_async (info,
+          (ThemeThumbnailFunc) croma_theme_thumbnail_cb, data, NULL);
     }
   }
 }
@@ -802,8 +802,8 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
         else if (change_type == CAFE_THEME_CHANGE_CHANGED)
           update_in_treeview ("window_themes_list", info->name, info->name, data);
 
-        generate_marco_theme_thumbnail_async (info,
-            (ThemeThumbnailFunc) marco_theme_thumbnail_cb, data, NULL);
+        generate_croma_theme_thumbnail_async (info,
+            (ThemeThumbnailFunc) croma_theme_thumbnail_cb, data, NULL);
       }
     }
 
@@ -865,10 +865,10 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
     case THEME_TYPE_WINDOW:
       themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
       thumbnail = data->window_theme_icon;
-      settings = data->marco_settings;
+      settings = data->croma_settings;
       key = MARCO_THEME_KEY;
-      generator = (ThumbnailGenFunc) generate_marco_theme_thumbnail_async;
-      thumb_cb = (ThemeThumbnailFunc) marco_theme_thumbnail_cb;
+      generator = (ThumbnailGenFunc) generate_croma_theme_thumbnail_async;
+      thumb_cb = (ThemeThumbnailFunc) croma_theme_thumbnail_cb;
       break;
 
     case THEME_TYPE_ICON:
@@ -1008,7 +1008,7 @@ style_init (AppearanceData *data)
   prepare_list (data, appearance_capplet_get_widget (data, "icon_themes_list"), THEME_TYPE_ICON, (GCallback) icon_theme_changed);
   prepare_list (data, appearance_capplet_get_widget (data, "cursor_themes_list"), THEME_TYPE_CURSOR, (GCallback) cursor_theme_changed);
 
-  window_theme_changed (data->marco_settings, MARCO_THEME_KEY, data);
+  window_theme_changed (data->croma_settings, MARCO_THEME_KEY, data);
   gtk_theme_changed (data->interface_settings, GTK_THEME_KEY, data);
   icon_theme_changed (data->interface_settings, ICON_THEME_KEY, data);
   cursor_theme_changed (data->mouse_settings, CURSOR_THEME_KEY, data);

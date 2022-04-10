@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 
-/* marco-window-manager.c
+/* croma-window-manager.c
  * Copyright (C) 2002 Seth Nickell
  * Copyright (C) 2002 Red Hat, Inc.
  *
@@ -30,7 +30,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include "marco-window-manager.h"
+#include "croma-window-manager.h"
 
 #define MARCO_SCHEMA "org.cafe.Marco.general"
 #define MARCO_THEME_KEY "theme"
@@ -45,7 +45,7 @@
 #define MARCO_COMPOSITING_FAST_ALT_TAB_KEY "compositing-fast-alt-tab"
 
 
-/* keep following enums in sync with marco */
+/* keep following enums in sync with croma */
 enum
 {
         ACTION_TITLEBAR_TOGGLE_SHADE,
@@ -96,7 +96,7 @@ window_manager_new (int expected_interface_version)
                 return NULL;
         }
 
-        wm = g_object_new (marco_window_manager_get_type (), NULL);
+        wm = g_object_new (croma_window_manager_get_type (), NULL);
 
         return wm;
 }
@@ -160,7 +160,7 @@ add_themes_from_dir (GList *current_list, const char *path)
 }
 
 static GList *
-marco_get_theme_list (CafeWindowManager *wm)
+croma_get_theme_list (CafeWindowManager *wm)
 {
         GList *themes = NULL;
         char *home_dir_themes;
@@ -177,13 +177,13 @@ marco_get_theme_list (CafeWindowManager *wm)
 }
 
 static char *
-marco_get_user_theme_folder (CafeWindowManager *wm)
+croma_get_user_theme_folder (CafeWindowManager *wm)
 {
         return g_build_filename (g_get_home_dir (), ".themes", NULL);
 }
 
 static void
-marco_change_settings (CafeWindowManager    *wm,
+croma_change_settings (CafeWindowManager    *wm,
                           const CafeWMSettings *settings)
 {
         MarcoWindowManager *meta_wm;
@@ -246,7 +246,7 @@ marco_change_settings (CafeWindowManager    *wm,
 }
 
 static void
-marco_get_settings (CafeWindowManager *wm,
+croma_get_settings (CafeWindowManager *wm,
                        CafeWMSettings    *settings)
 {
         int to_get;
@@ -270,12 +270,12 @@ marco_get_settings (CafeWindowManager *wm,
         }
 
         if (to_get & CAFE_WM_SETTING_MOUSE_FOCUS) {
-                gint marco_focus_value;
+                gint croma_focus_value;
 
-                marco_focus_value = g_settings_get_enum (meta_wm->p->settings,
+                croma_focus_value = g_settings_get_enum (meta_wm->p->settings,
                                                          MARCO_FOCUS_KEY);
                 settings->focus_follows_mouse = FALSE;
-                if (marco_focus_value == FOCUS_MODE_SLOPPY || marco_focus_value == FOCUS_MODE_MOUSE)
+                if (croma_focus_value == FOCUS_MODE_SLOPPY || croma_focus_value == FOCUS_MODE_MOUSE)
                         settings->focus_follows_mouse = TRUE;
 
                 settings->flags |= CAFE_WM_SETTING_MOUSE_FOCUS;
@@ -380,13 +380,13 @@ marco_get_settings (CafeWindowManager *wm,
 }
 
 static int
-marco_get_settings_mask (CafeWindowManager *wm)
+croma_get_settings_mask (CafeWindowManager *wm)
 {
         return CAFE_WM_SETTING_MASK;
 }
 
 static void
-marco_get_double_click_actions (CafeWindowManager              *wm,
+croma_get_double_click_actions (CafeWindowManager              *wm,
                                    const CafeWMDoubleClickAction **actions_p,
                                    int                             *n_actions_p)
 {
@@ -415,39 +415,39 @@ marco_get_double_click_actions (CafeWindowManager              *wm,
 }
 
 static void
-marco_window_manager_init (MarcoWindowManager *marco_window_manager,
+croma_window_manager_init (MarcoWindowManager *croma_window_manager,
                               MarcoWindowManagerClass *class)
 {
-        marco_window_manager->p = g_new0 (MarcoWindowManagerPrivate, 1);
-        marco_window_manager->p->settings = g_settings_new (MARCO_SCHEMA);
-        marco_window_manager->p->font = NULL;
-        marco_window_manager->p->theme = NULL;
-        marco_window_manager->p->mouse_modifier = NULL;
+        croma_window_manager->p = g_new0 (MarcoWindowManagerPrivate, 1);
+        croma_window_manager->p->settings = g_settings_new (MARCO_SCHEMA);
+        croma_window_manager->p->font = NULL;
+        croma_window_manager->p->theme = NULL;
+        croma_window_manager->p->mouse_modifier = NULL;
 
-        g_signal_connect (marco_window_manager->p->settings,
+        g_signal_connect (croma_window_manager->p->settings,
                           "changed",
-                          G_CALLBACK (value_changed), marco_window_manager);
+                          G_CALLBACK (value_changed), croma_window_manager);
 }
 
 static void
-marco_window_manager_finalize (GObject *object)
+croma_window_manager_finalize (GObject *object)
 {
-        MarcoWindowManager *marco_window_manager;
+        MarcoWindowManager *croma_window_manager;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (IS_MARCO_WINDOW_MANAGER (object));
 
-        marco_window_manager = MARCO_WINDOW_MANAGER (object);
+        croma_window_manager = MARCO_WINDOW_MANAGER (object);
 
-        g_object_unref (marco_window_manager->p->settings);
-        g_free (marco_window_manager->p);
+        g_object_unref (croma_window_manager->p->settings);
+        g_free (croma_window_manager->p);
 
         G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 
 static void
-marco_window_manager_class_init (MarcoWindowManagerClass *class)
+croma_window_manager_class_init (MarcoWindowManagerClass *class)
 {
         GObjectClass *object_class;
         CafeWindowManagerClass *wm_class;
@@ -455,44 +455,44 @@ marco_window_manager_class_init (MarcoWindowManagerClass *class)
         object_class = G_OBJECT_CLASS (class);
         wm_class = CAFE_WINDOW_MANAGER_CLASS (class);
 
-        object_class->finalize = marco_window_manager_finalize;
+        object_class->finalize = croma_window_manager_finalize;
 
-        wm_class->change_settings          = marco_change_settings;
-        wm_class->get_settings             = marco_get_settings;
-        wm_class->get_settings_mask        = marco_get_settings_mask;
-        wm_class->get_user_theme_folder    = marco_get_user_theme_folder;
-        wm_class->get_theme_list           = marco_get_theme_list;
-        wm_class->get_double_click_actions = marco_get_double_click_actions;
+        wm_class->change_settings          = croma_change_settings;
+        wm_class->get_settings             = croma_get_settings;
+        wm_class->get_settings_mask        = croma_get_settings_mask;
+        wm_class->get_user_theme_folder    = croma_get_user_theme_folder;
+        wm_class->get_theme_list           = croma_get_theme_list;
+        wm_class->get_double_click_actions = croma_get_double_click_actions;
 
         parent_class = g_type_class_peek_parent (class);
 }
 
 GType
-marco_window_manager_get_type (void)
+croma_window_manager_get_type (void)
 {
-        static GType marco_window_manager_type = 0;
+        static GType croma_window_manager_type = 0;
 
-        if (!marco_window_manager_type) {
-                static GTypeInfo marco_window_manager_info = {
+        if (!croma_window_manager_type) {
+                static GTypeInfo croma_window_manager_info = {
                         sizeof (MarcoWindowManagerClass),
                         NULL, /* GBaseInitFunc */
                         NULL, /* GBaseFinalizeFunc */
-                        (GClassInitFunc) marco_window_manager_class_init,
+                        (GClassInitFunc) croma_window_manager_class_init,
                         NULL, /* GClassFinalizeFunc */
                         NULL, /* user-supplied data */
                         sizeof (MarcoWindowManager),
                         0, /* n_preallocs */
-                        (GInstanceInitFunc) marco_window_manager_init,
+                        (GInstanceInitFunc) croma_window_manager_init,
                         NULL
                 };
 
-                marco_window_manager_type =
+                croma_window_manager_type =
                         g_type_register_static (cafe_window_manager_get_type (),
                                                 "MarcoWindowManager",
-                                                &marco_window_manager_info, 0);
+                                                &croma_window_manager_info, 0);
         }
 
-        return marco_window_manager_type;
+        return croma_window_manager_type;
 }
 
 

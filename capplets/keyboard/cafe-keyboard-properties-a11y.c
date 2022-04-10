@@ -102,9 +102,9 @@ bell_flash_gsettings_changed (GSettings *settings, gchar *key, GtkBuilder *dialo
 static void
 bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
 {
-	GSettings *marco_settings;
-	marco_settings = g_settings_new (MARCO_SCHEMA);
-	int old_bell_flash_type = g_settings_get_enum (marco_settings, "visual-bell-type");
+	GSettings *croma_settings;
+	croma_settings = g_settings_new (MARCO_SCHEMA);
+	int old_bell_flash_type = g_settings_get_enum (croma_settings, "visual-bell-type");
 	int new_bell_flash_type = VISUAL_BELL_TYPE_INVALID;
 
 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_fullscreen"))))
@@ -113,9 +113,9 @@ bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
 		new_bell_flash_type = VISUAL_BELL_TYPE_FRAME_FLASH;
 
 	if (old_bell_flash_type != new_bell_flash_type)
-		g_settings_set_enum (marco_settings, "visual-bell-type", new_bell_flash_type);
+		g_settings_set_enum (croma_settings, "visual-bell-type", new_bell_flash_type);
 
-	g_object_unref (marco_settings);
+	g_object_unref (croma_settings);
 }
 
 static void
@@ -164,21 +164,21 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 	w = NWID ("bouncekeys_beep_reject");
 	g_settings_bind (a11y_settings, "bouncekeys-beep-reject", w, "active", G_SETTINGS_BIND_DEFAULT);
 
-	GSettings *marco_settings = g_settings_new (MARCO_SCHEMA);
+	GSettings *croma_settings = g_settings_new (MARCO_SCHEMA);
 	w = NWID ("visual_bell_enable");
-	g_settings_bind (marco_settings, "visual-bell", w, "active", G_SETTINGS_BIND_DEFAULT);
+	g_settings_bind (croma_settings, "visual-bell", w, "active", G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (w, "toggled",
 			G_CALLBACK (visual_bell_enable_toggled_cb), dialog);
 	visual_bell_enable_toggled_cb (w, dialog);
 
-	bell_flash_gsettings_changed (marco_settings, "visual-bell-type", NULL);
+	bell_flash_gsettings_changed (croma_settings, "visual-bell-type", NULL);
 	g_signal_connect (NWID ("visual_bell_titlebar"), "clicked",
 					  G_CALLBACK(bell_flash_radio_changed),
 					  notifications_dialog);
 	g_signal_connect (NWID ("visual_bell_fullscreen"), "clicked",
 					  G_CALLBACK(bell_flash_radio_changed),
 					  notifications_dialog);
-	g_signal_connect (marco_settings,
+	g_signal_connect (croma_settings,
 					  "changed::visual-bell-type",
 					  G_CALLBACK (bell_flash_gsettings_changed),
 					  notifications_dialog);
@@ -191,7 +191,7 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 
 	gtk_dialog_run (GTK_DIALOG (w));
 
-	g_object_unref (marco_settings);
+	g_object_unref (croma_settings);
 	g_object_unref (notifications_dialog);
 	notifications_dialog = NULL;
 }

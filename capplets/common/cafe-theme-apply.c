@@ -49,14 +49,14 @@ void
 cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
 {
   GSettings *interface_settings;
-  GSettings *marco_settings;
+  GSettings *croma_settings;
   GSettings *mouse_settings;
   GSettings *notification_settings = NULL;
   gchar *old_key;
   gint old_key_int;
 
   interface_settings = g_settings_new (INTERFACE_SCHEMA);
-  marco_settings = g_settings_new (MARCO_SCHEMA);
+  croma_settings = g_settings_new (MARCO_SCHEMA);
   mouse_settings = g_settings_new (MOUSE_SCHEMA);
 
   if (cafe_gsettings_schema_exists (NOTIFICATION_SCHEMA))
@@ -97,7 +97,7 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
   g_free (old_key);
 
   /* Set the wm key */
-  g_settings_set_string (marco_settings, MARCO_THEME_KEY, meta_theme_info->marco_theme_name);
+  g_settings_set_string (croma_settings, MARCO_THEME_KEY, meta_theme_info->croma_theme_name);
 
   /* set the icon theme */
   old_key = g_settings_get_string (interface_settings, ICON_THEME_KEY);
@@ -136,7 +136,7 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
 
   g_free (old_key);
   g_object_unref (interface_settings);
-  g_object_unref (marco_settings);
+  g_object_unref (croma_settings);
   g_object_unref (mouse_settings);
   if (notification_settings != NULL)
     g_object_unref (notification_settings);

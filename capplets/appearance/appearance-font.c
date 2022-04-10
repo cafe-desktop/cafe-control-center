@@ -271,19 +271,19 @@ setup_font_pair (GtkWidget    *radio,
 }
 
 static void
-marco_titlebar_load_sensitivity (AppearanceData *data)
+croma_titlebar_load_sensitivity (AppearanceData *data)
 {
   gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "window_title_font"),
-			    !g_settings_get_boolean (data->marco_settings,
+			    !g_settings_get_boolean (data->croma_settings,
 						    WINDOW_TITLE_USES_SYSTEM_KEY));
 }
 
 static void
-marco_changed (GSettings *settings,
+croma_changed (GSettings *settings,
 	       gchar     *entry,
 	       gpointer   user_data)
 {
-  marco_titlebar_load_sensitivity (user_data);
+  croma_titlebar_load_sensitivity (user_data);
 }
 
 /*
@@ -761,7 +761,7 @@ void font_init(AppearanceData* data)
 		gtk_widget_set_sensitive (widget, FALSE);
 
 	widget = appearance_capplet_get_widget (data, "window_title_font");
-	g_settings_bind (data->marco_settings,
+	g_settings_bind (data->croma_settings,
 			 WINDOW_TITLE_FONT_KEY,
 			 G_OBJECT (widget),
 			 "font-name",
@@ -774,14 +774,14 @@ void font_init(AppearanceData* data)
 			 "font-name",
 			 G_SETTINGS_BIND_DEFAULT);
 
-	g_signal_connect (data->marco_settings,
+	g_signal_connect (data->croma_settings,
 			  "changed::" WINDOW_TITLE_USES_SYSTEM_KEY,
-			  G_CALLBACK (marco_changed),
+			  G_CALLBACK (croma_changed),
 			  data);
 
 	g_signal_connect (appearance_capplet_get_widget (data, "add_new_font"), "clicked", G_CALLBACK (cb_add_new_font), data);
 
-	marco_titlebar_load_sensitivity(data);
+	croma_titlebar_load_sensitivity(data);
 
 	setup_font_pair(appearance_capplet_get_widget(data, "monochrome_radio"), appearance_capplet_get_widget (data, "monochrome_sample"), ANTIALIAS_NONE, HINT_FULL);
 	setup_font_pair(appearance_capplet_get_widget(data, "best_shapes_radio"), appearance_capplet_get_widget (data, "best_shapes_sample"), ANTIALIAS_GRAYSCALE, HINT_MEDIUM);

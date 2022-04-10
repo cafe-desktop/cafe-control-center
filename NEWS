@@ -323,7 +323,7 @@
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
     generating release announcements easier
-  * Build: require libcafekbd, libcafe-desktop, marco, m-s-d >= 1.17
+  * Build: require libcafekbd, libcafe-desktop, croma, m-s-d >= 1.17
   * Build: require XCursor and XInput unconditionally
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
     build option
@@ -346,7 +346,7 @@
   * Keyboard: fix vertical expand of content on window resize in
     GTK+3 build
   * Shell: force icon size in libslab to avoid huge icons
-  * GTK+3: fix build with marco 1.17
+  * GTK+3: fix build with croma 1.17
   * Fix a couple of memleaks
 
 ### cafe-control-center 1.16.0

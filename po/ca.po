@@ -2840,9 +2840,9 @@ msgstr "preferences-system-windows"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
-"cafe-control-center;CAFE;finestres;gestor;propietats;marco;preferències;"
+"cafe-control-center;CAFE;finestres;gestor;propietats;croma;preferències;"
 
 #: capplets/windows/window-properties.ui:47
 msgid "Window Preferences"
@@ -2889,32 +2889,32 @@ msgid "_Double-click titlebar to perform this action:"
 msgstr "Feu _doble clic a la barra de títol per realitzar aquesta acció:"
 
 #: capplets/windows/window-properties.ui:477
-#: libwindow-settings/marco-window-manager.c:394
+#: libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr "Enrotlla"
 
 #: capplets/windows/window-properties.ui:478
-#: libwindow-settings/marco-window-manager.c:395
+#: libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr "Maximitza"
 
 #: capplets/windows/window-properties.ui:479
-#: libwindow-settings/marco-window-manager.c:396
+#: libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr "Maximitza horitzontalment"
 
 #: capplets/windows/window-properties.ui:480
-#: libwindow-settings/marco-window-manager.c:397
+#: libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr "Maximitza verticalment"
 
 #: capplets/windows/window-properties.ui:481
-#: libwindow-settings/marco-window-manager.c:398
+#: libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr "Minimitza"
 
 #: capplets/windows/window-properties.ui:482
-#: libwindow-settings/marco-window-manager.c:399
+#: libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "Cap"
 

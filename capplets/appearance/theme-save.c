@@ -206,7 +206,7 @@ write_theme_to_disk (CafeThemeMetaInfo  *theme_info,
   g_free (dir);
 
   /* start making the theme file */
-  str = g_strdup_printf(theme_header, theme_name, theme_description, theme_info->gtk_theme_name, theme_info->marco_theme_name, theme_info->icon_theme_name);
+  str = g_strdup_printf(theme_header, theme_name, theme_description, theme_info->gtk_theme_name, theme_info->croma_theme_name, theme_info->icon_theme_name);
 
   output = G_OUTPUT_STREAM (g_file_replace (tmp_file, NULL, FALSE, G_FILE_CREATE_NONE, NULL, NULL));
   g_output_stream_write (output, str, strlen (str), NULL, NULL);

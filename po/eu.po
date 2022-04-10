@@ -2816,7 +2816,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -2864,32 +2864,32 @@ msgid "_Double-click titlebar to perform this action:"
 msgstr "_Egin klik bikoitza titulu-barran ekintza hori burutzeko:"
 
 #: capplets/windows/window-properties.ui:477
-#: libwindow-settings/marco-window-manager.c:394
+#: libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr "Bildu"
 
 #: capplets/windows/window-properties.ui:478
-#: libwindow-settings/marco-window-manager.c:395
+#: libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr "Maximizatu"
 
 #: capplets/windows/window-properties.ui:479
-#: libwindow-settings/marco-window-manager.c:396
+#: libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr "Maximizatu horizontalki"
 
 #: capplets/windows/window-properties.ui:480
-#: libwindow-settings/marco-window-manager.c:397
+#: libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr "Maximizatu bertikalki"
 
 #: capplets/windows/window-properties.ui:481
-#: libwindow-settings/marco-window-manager.c:398
+#: libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr "Minimizatu"
 
 #: capplets/windows/window-properties.ui:482
-#: libwindow-settings/marco-window-manager.c:399
+#: libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "Bat ere ez"
 

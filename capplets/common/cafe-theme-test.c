@@ -50,11 +50,11 @@ main (int argc, char *argv[])
   themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
   if (themes == NULL)
     {
-      g_print ("No marco themes were found.\n");
+      g_print ("No croma themes were found.\n");
     }
   else
     {
-      g_print ("%d marco themes were found:\n", g_list_length (themes));
+      g_print ("%d croma themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
 	  CafeThemeInfo *theme_info;

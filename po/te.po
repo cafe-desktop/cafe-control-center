@@ -2780,7 +2780,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -2828,32 +2828,32 @@ msgid "_Double-click titlebar to perform this action:"
 msgstr "ఈ చర్యను జరుపుటకు శీర్షికపట్టీని రెండు-నొక్కులు నొక్కుము(_D):"
 
 #: capplets/windows/window-properties.ui:477
-#: libwindow-settings/marco-window-manager.c:394
+#: libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr "ఎగువకు మడువు"
 
 #: capplets/windows/window-properties.ui:478
-#: libwindow-settings/marco-window-manager.c:395
+#: libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr "పెద్దది చేయు"
 
 #: capplets/windows/window-properties.ui:479
-#: libwindow-settings/marco-window-manager.c:396
+#: libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr "హారిజాంటల్‌గా పెద్దదిచేయి"
 
 #: capplets/windows/window-properties.ui:480
-#: libwindow-settings/marco-window-manager.c:397
+#: libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr "నిలువుగా పెద్దదిచేయి"
 
 #: capplets/windows/window-properties.ui:481
-#: libwindow-settings/marco-window-manager.c:398
+#: libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr "క్రిందకుమూయి"
 
 #: capplets/windows/window-properties.ui:482
-#: libwindow-settings/marco-window-manager.c:399
+#: libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "Eదికాదు"
 
