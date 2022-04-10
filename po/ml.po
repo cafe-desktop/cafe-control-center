@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-control-center package.
+# This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -10,29 +10,29 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-control-center 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Project-Id-Version: cafe-control-center 1.23.2\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Martin Wimpress <code@flexion.org>, 2020\n"
-"Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
+"Language-Team: Malayalam (https://www.transifex.com/cafe/teams/13566/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: org.mate.control-center.gschema.xml.in:5
+#: org.cafe.control-center.gschema.xml.in:5
 msgid ""
-"[ 'Change Theme;mate-appearance-properties.desktop', 'Set Preferred "
-"Applications;mate-default-applications-properties.desktop' ]"
+"[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
+"Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:6
+#: org.cafe.control-center.gschema.xml.in:6
 msgid "Task names and associated .desktop files"
 msgstr "കൃത്യനാമങ്ങളും ബന്ധപ്പെട്ട .desktop ഫയലുകളും"
 
-#: org.mate.control-center.gschema.xml.in:7
+#: org.cafe.control-center.gschema.xml.in:7
 msgid ""
 "The task name to be displayed in the control-center followed by a \";\" "
 "separator then the filename of an associated .desktop file to launch for "
@@ -42,38 +42,38 @@ msgstr ""
 "വേര്‍തിരിക്കുന്ന ചിഹ്നമായ  \";\"  പിന്നെ ആ പ്രവര്‍ത്തിക്കു വേണ്ടി "
 "തുടങ്ങേണ്ടുന്ന  .desktop ഫയലിന്റെ പേരു്."
 
-#: org.mate.control-center.gschema.xml.in:11
+#: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
 msgstr "ഒരു കൃത്യം ആരംഭിച്ചാല്‍ നിയന്ത്രണകേന്ദ്രം അടക്കുക"
 
-#: org.mate.control-center.gschema.xml.in:12
+#: org.cafe.control-center.gschema.xml.in:12
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
 msgstr ""
 "ശരി എന്നാണെങ്കില്‍ ഒരു \"സാധാരണ പ്രവര്‍ത്തി\" സജീവമായാല്‍ നിയന്ത്രണകേന്ദ്രം "
 "അടയ്ക്കും."
 
-#: org.mate.control-center.gschema.xml.in:16
+#: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
 msgstr "ആരംഭകൃത്യം നടപ്പിലാക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കുക"
 
-#: org.mate.control-center.gschema.xml.in:17
+#: org.cafe.control-center.gschema.xml.in:17
 msgid "Indicates whether to close the shell when a start action is performed."
 msgstr "ആരംഭകൃത്യം നടക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കേണ്ടതുണ്ടോ എന്ന് കാണിക്കുന്നു."
 
-#: org.mate.control-center.gschema.xml.in:21
+#: org.cafe.control-center.gschema.xml.in:21
 msgid "Exit shell on help action performed"
 msgstr "സഹായകൃത്യം നടപ്പിലാക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കുക"
 
-#: org.mate.control-center.gschema.xml.in:22
+#: org.cafe.control-center.gschema.xml.in:22
 msgid "Indicates whether to close the shell when a help action is performed."
 msgstr "സഹായകൃത്യം നടക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കേണ്ടതുണ്ടോ എന്ന് കാണിക്കുന്നു."
 
-#: org.mate.control-center.gschema.xml.in:26
+#: org.cafe.control-center.gschema.xml.in:26
 msgid "Exit shell on add or remove action performed"
 msgstr "Exit shell on add or remove action performed"
 
-#: org.mate.control-center.gschema.xml.in:27
+#: org.cafe.control-center.gschema.xml.in:27
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed."
@@ -81,11 +81,11 @@ msgstr ""
 "ചേര്‍ക്കലോ നീക്കം ചെയ്യലോ നടക്കുമ്പോള്‍ ഷെല്‍ അടയ്ക്കേണ്ടതുണ്ടോ എന്ന് "
 "കാണിക്കുന്നു."
 
-#: org.mate.control-center.gschema.xml.in:31
+#: org.cafe.control-center.gschema.xml.in:31
 msgid "Exit shell on upgrade or uninstall action performed"
 msgstr "നീക്കംചെയ്യലോ പുതുക്കലോ നടത്തുമ്പോള്‍ ഷെല്‍ അടയ്ക്കുക"
 
-#: org.mate.control-center.gschema.xml.in:32
+#: org.cafe.control-center.gschema.xml.in:32
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
@@ -93,11 +93,11 @@ msgstr ""
 "പുതുക്കുമ്പോളോ നീക്കം ചെയ്യുമ്പോളോ ഷെല്‍ അടയ്ക്കേണ്ടതുണ്ടോ എന്ന് "
 "കാണിക്കുന്നു."
 
-#: org.mate.control-center.gschema.xml.in:38
+#: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
 msgstr "കൂടുതല്‍ പശ്ചാത്തല യുആര്‍എലുകള്‍"
 
-#: org.mate.control-center.gschema.xml.in:39
+#: org.cafe.control-center.gschema.xml.in:39
 msgid ""
 "URL for where to get more desktop backgrounds. If set to an empty string the"
 " link will not appear."
@@ -105,11 +105,11 @@ msgstr ""
 "കൂടതല്‍ പണിയിട പശ്ചാതലങ്ങള്‍ ലഭ്യമാകുന്ന യുആര്‍എല്‍. ശൂന്യമായ സ്ട്രിങായി "
 "സജ്ജമാക്കിയാല്‍ ലിങ്ക് കാണുവാന്‍ സാധ്യമല്ല."
 
-#: org.mate.control-center.gschema.xml.in:43
+#: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
 msgstr "കൂടുതല്‍ രംഗവിതാനങ്ങള്‍ക്കുള്ള യുആര്‍എല്‍"
 
-#: org.mate.control-center.gschema.xml.in:44
+#: org.cafe.control-center.gschema.xml.in:44
 msgid ""
 "URL for where to get more desktop themes. If set to an empty string the link"
 " will not appear."
@@ -117,134 +117,134 @@ msgstr ""
 "കൂടതല്‍ പണിയിട രംഗവിതാനങ്ങള്‍ ലഭ്യമാകുന്ന യുആര്‍എല്‍. ശൂന്യമായ സ്ട്രിങായി "
 "സജ്ജമാക്കിയാല്‍ ലിങ്ക് കാണുവാന്‍ സാധ്യമല്ല."
 
-#: org.mate.control-center.keybinding.gschema.xml.in:5
+#: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:6
+#: org.cafe.control-center.keybinding.gschema.xml.in:6
 msgid "Keybinding associated with a custom shortcut."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:10
+#: org.cafe.control-center.keybinding.gschema.xml.in:10
 msgid "Command"
 msgstr "ആജ്ഞ"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:11
+#: org.cafe.control-center.keybinding.gschema.xml.in:11
 msgid "Command associated with a custom keybinding."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:15
+#: org.cafe.control-center.keybinding.gschema.xml.in:15
 #: font-viewer/font-view.c:202
 msgid "Name"
 msgstr "പേര്"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:16
+#: org.cafe.control-center.keybinding.gschema.xml.in:16
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/mate-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:293
 msgid "Select Image"
 msgstr "ചിത്രം തെരഞ്ഞെടുക്കുക"
 
-#: capplets/about-me/mate-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:295
 msgid "No Image"
 msgstr "ചിത്രമില്ല"
 
-#: capplets/about-me/mate-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:323
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "ചിത്രങ്ങള്‍"
 
-#: capplets/about-me/mate-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:327
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "എല്ലാ ഫയലുകളും"
 
-#: capplets/about-me/mate-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:500
 #, c-format
 msgid "About %s"
 msgstr "%s-നെ പറ്റി"
 
-#: capplets/about-me/mate-about-me-dialog.ui:39
-#: capplets/about-me/mate-about-me.desktop.in:3
+#: capplets/about-me/cafe-about-me-dialog.ui:39
+#: capplets/about-me/cafe-about-me.desktop.in:3
 msgid "About Me"
 msgstr "എന്നെ പറ്റി"
 
-#: capplets/about-me/mate-about-me-dialog.ui:54
-#: capplets/about-me/mate-about-me-password.ui:54
+#: capplets/about-me/cafe-about-me-dialog.ui:54
+#: capplets/about-me/cafe-about-me-password.ui:54
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:119
 #: capplets/display/display-capplet.ui:106
-#: capplets/mouse/mate-mouse-properties.ui:140
+#: capplets/mouse/cafe-mouse-properties.ui:140
 #: capplets/windows/window-properties.ui:84
 #: capplets/time-admin/src/time-admin.ui:386
 #: capplets/time-admin/src/time-zone.c:472
 msgid "_Close"
 msgstr "_അടയ്ക്കു:"
 
-#: capplets/about-me/mate-about-me-dialog.ui:100
+#: capplets/about-me/cafe-about-me-dialog.ui:100
 msgid "Select your photo"
 msgstr "നിങ്ങളുടെ ചിത്രം തെരഞ്ഞെടുക്കുക"
 
-#: capplets/about-me/mate-about-me-dialog.ui:116
+#: capplets/about-me/cafe-about-me-dialog.ui:116
 msgid "Full Name"
 msgstr "മുഴുവന്‍ പേര്"
 
-#: capplets/about-me/mate-about-me-dialog.ui:147
+#: capplets/about-me/cafe-about-me-dialog.ui:147
 msgid "User name:"
 msgstr "ഉപയോക്താവിന്റെ പേര്:"
 
-#: capplets/about-me/mate-about-me-dialog.ui:176
+#: capplets/about-me/cafe-about-me-dialog.ui:176
 msgid "Change Passwo_rd..."
 msgstr "അടയാളവാക്ക് _മാറ്റുക..."
 
-#: capplets/about-me/mate-about-me-dialog.ui:190
+#: capplets/about-me/cafe-about-me-dialog.ui:190
 msgid "Enable _Fingerprint Login..."
 msgstr "ഫിംഗര്‍പിന്റ് ലോഗിന്‍ _സജ്ജമാക്കുക..."
 
-#: capplets/about-me/mate-about-me-dialog.ui:203
+#: capplets/about-me/cafe-about-me-dialog.ui:203
 msgid "Disable _Fingerprint Login..."
 msgstr "ഫിംഗര്‍പിന്റ് ലോഗിന്‍ _പ്രവര്‍ത്തന രഹിതമാക്കുക..."
 
-#: capplets/about-me/mate-about-me.desktop.in:4
+#: capplets/about-me/cafe-about-me.desktop.in:4
 msgid "Set your personal information"
 msgstr "നിങ്ങളുടെ സ്വകാര്യ വിവരങ്ങള്‍ ക്രമീകരിയ്ക്കൂ "
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/about-me/mate-about-me.desktop.in:7
+#: capplets/about-me/cafe-about-me.desktop.in:7
 msgid "user-info"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/about-me/mate-about-me.desktop.in:13
-msgid "mate-control-center;MATE;personal;information;"
+#: capplets/about-me/cafe-about-me.desktop.in:13
+msgid "cafe-control-center;MATE;personal;information;"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:100
+#: capplets/about-me/cafe-about-me-fingerprint.c:100
 msgid ""
 "You are not allowed to access the device. Contact your system administrator."
 msgstr ""
 "നിങ്ങള്‍ക്കു് ഡിവൈസിലേക്കു് പ്രവേശനമില്ല. ദയവായി സിസ്റ്റം "
 "അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:102
+#: capplets/about-me/cafe-about-me-fingerprint.c:102
 msgid "The device is already in use."
 msgstr "ഡിവൈസ് നിലവില്‍ ഉപയോഗത്തിലാണു്."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:104
+#: capplets/about-me/cafe-about-me-fingerprint.c:104
 msgid "An internal error occurred"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:221
+#: capplets/about-me/cafe-about-me-fingerprint.c:221
 msgid "Delete registered fingerprints?"
 msgstr "രജിസ്ടര്‍ ചെയ്ത ഫിംഗര്‍പ്രിന്റുകള്‍ വെട്ടിമാറ്റണമോ?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:224
+#: capplets/about-me/cafe-about-me-fingerprint.c:224
 msgid "_Delete Fingerprints"
 msgstr "ഫിംഗര്‍പ്രിന്റുകള്‍ _വെട്ടിമാറ്റണമോ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:231
+#: capplets/about-me/cafe-about-me-fingerprint.c:231
 msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
@@ -252,37 +252,37 @@ msgstr ""
 "രജിസ്ടര്‍ ചെയ്ത ഫിംഗര്‍പ്രിന്റുകള്‍ വെട്ടിമാറ്റി നിങ്ങള്‍ക്കു് "
 "ഫിംഗര്‍പ്രിന്റ് ലോഗിന്‍ പ്രവര്‍ത്തന രഹിതമാക്കണമോ?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:359
-#: capplets/about-me/mate-about-me-fingerprint.ui:344
+#: capplets/about-me/cafe-about-me-fingerprint.c:359
+#: capplets/about-me/cafe-about-me-fingerprint.ui:344
 msgid "Done!"
 msgstr "പൂര്‍ത്തിയായി!"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:405
-#: capplets/about-me/mate-about-me-fingerprint.c:427
+#: capplets/about-me/cafe-about-me-fingerprint.c:405
+#: capplets/about-me/cafe-about-me-fingerprint.c:427
 #, c-format
 msgid "Could not access '%s' device"
 msgstr "'%s' ഡിവൈസിലേക്കു് പ്രവേശിക്കുവാനായില്ല"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:476
+#: capplets/about-me/cafe-about-me-fingerprint.c:476
 #, c-format
 msgid "Could not start finger capture on '%s' device"
 msgstr "'%s' ഡിവൈസില്‍ വിരലടയാളങ്ങള്‍ ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:524
+#: capplets/about-me/cafe-about-me-fingerprint.c:524
 msgid "Could not access any fingerprint readers"
 msgstr "ഫിംഗര്‍പ്രിന്റ് റീഡറുകളിലേക്കുള്ള പ്രവേശനം സാധ്യമായില്ല"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:525
+#: capplets/about-me/cafe-about-me-fingerprint.c:525
 msgid "Please contact your system administrator for help."
 msgstr ""
 "ദയവായി സഹായത്തിനു് നിങ്ങളുടെ സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:559
-#: capplets/about-me/mate-about-me-fingerprint.ui:66
+#: capplets/about-me/cafe-about-me-fingerprint.c:559
+#: capplets/about-me/cafe-about-me-fingerprint.ui:66
 msgid "Enable Fingerprint Login"
 msgstr "ഫിംഗര്‍പ്രിന്റ് ലോഗിന്‍ സജ്ജമാക്കുക"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:589
+#: capplets/about-me/cafe-about-me-fingerprint.c:589
 #, c-format
 msgid ""
 "To enable fingerprint login, you need to save one of your fingerprints, "
@@ -291,63 +291,63 @@ msgstr ""
 "ഫിംഗര്‍പ്രിന്റ് ലോഗിന്‍ സജ്ജമാക്കുന്നതിനായി, നിങ്ങളുടെ വിരലടയാളം '%s' ഡിവൈസ്"
 " ഉപയോഗിച്ചു് സൂക്ഷിക്കേണ്ടതാണു്."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:598
+#: capplets/about-me/cafe-about-me-fingerprint.c:598
 msgid "Swipe finger on reader"
 msgstr "റീഡറില്‍ വിരല്‍ സ്വൈപ്പ് ചെയ്യുക"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:600
+#: capplets/about-me/cafe-about-me-fingerprint.c:600
 msgid "Place finger on reader"
 msgstr "റീഡറില്‍ വിരല്‍ വയ്ക്കുക"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:38
+#: capplets/about-me/cafe-about-me-fingerprint.ui:38
 msgid "Left thumb"
 msgstr "ഇടത്ത് തള്ളവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:41
+#: capplets/about-me/cafe-about-me-fingerprint.ui:41
 msgid "Left middle finger"
 msgstr "ഇടത്തു് നടുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:44
+#: capplets/about-me/cafe-about-me-fingerprint.ui:44
 msgid "Left ring finger"
 msgstr "ഇടത്തു് മോതിരവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:47
+#: capplets/about-me/cafe-about-me-fingerprint.ui:47
 msgid "Left little finger"
 msgstr "ഇടത്തു് ചെറുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:50
+#: capplets/about-me/cafe-about-me-fingerprint.ui:50
 msgid "Right thumb"
 msgstr "വലത്ത് തള്ളവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:53
+#: capplets/about-me/cafe-about-me-fingerprint.ui:53
 msgid "Right middle finger"
 msgstr "വലത്തു് നടുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:56
+#: capplets/about-me/cafe-about-me-fingerprint.ui:56
 msgid "Right ring finger"
 msgstr "വലത്തു് മോതിരവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:59
+#: capplets/about-me/cafe-about-me-fingerprint.ui:59
 msgid "Right little finger"
 msgstr "വലത്തു് ചെറുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:125
+#: capplets/about-me/cafe-about-me-fingerprint.ui:125
 msgid "Right index finger"
 msgstr "വലത്തു് ചൂണ്ടുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:142
+#: capplets/about-me/cafe-about-me-fingerprint.ui:142
 msgid "Left index finger"
 msgstr "ഇടത്തു് ചൂണ്ടുവിരല്‍"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:163
+#: capplets/about-me/cafe-about-me-fingerprint.ui:163
 msgid "Other finger: "
 msgstr "മറ്റ് വിരല്‍:"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:214
+#: capplets/about-me/cafe-about-me-fingerprint.ui:214
 msgid "Select finger"
 msgstr "ചിത്രം തെരഞ്ഞെടുക്കുക"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:339
+#: capplets/about-me/cafe-about-me-fingerprint.ui:339
 msgid ""
 "Your fingerprint was successfully saved. You should now be able to log in "
 "using your fingerprint reader."
@@ -355,26 +355,26 @@ msgstr ""
 "നിങ്ങളുടെ വിരലടയാളം വിജയകരമായി സൂക്ഷിച്ചിരിക്കുന്നു. നിങ്ങള്‍ക്കിനി "
 "ഫിംഗര്‍പ്രിന്റ് റീഡര്‍ ഉപയോഗിച്ചു് ലോഗിന്‍ ചെയ്യുവാന്‍ സാധിക്കുന്നതാണു്."
 
-#: capplets/about-me/mate-about-me-password.c:160
+#: capplets/about-me/cafe-about-me-password.c:160
 msgid "Child exited unexpectedly"
 msgstr "അപ്രതീക്ഷിതമായി ചൈല്‍ഡിന്റെ പ്രവര്‍ത്തനം നിന്നിരിക്കുന്നു"
 
-#: capplets/about-me/mate-about-me-password.c:296
+#: capplets/about-me/cafe-about-me-password.c:296
 #, c-format
 msgid "Could not shutdown backend_stdin IO channel: %s"
 msgstr "backend_stdin IO ചാനല്‍ നിര്‍ത്തുവാന്‍ സാധ്യമായില്ല: %s"
 
-#: capplets/about-me/mate-about-me-password.c:309
+#: capplets/about-me/cafe-about-me-password.c:309
 #, c-format
 msgid "Could not shutdown backend_stdout IO channel: %s"
 msgstr "backend_stdout IO ചാനല്‍ നിര്‍ത്തുവാന്‍ സാധ്യമായില്ല: %s"
 
-#: capplets/about-me/mate-about-me-password.c:408
+#: capplets/about-me/cafe-about-me-password.c:408
 msgid "Authenticated!"
 msgstr "ആധികാരികത ഉറപ്പുവരുത്തിയിരിക്കുന്നു!"
 
-#: capplets/about-me/mate-about-me-password.c:473
-#: capplets/about-me/mate-about-me-password.c:558
+#: capplets/about-me/cafe-about-me-password.c:473
+#: capplets/about-me/cafe-about-me-password.c:558
 msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
@@ -382,96 +382,96 @@ msgstr ""
 "നിങ്ങളുടെ ആധികാരികത ഉറപ്പുവരുത്തിയിരിക്കുന്നതിനു ശേഷം അടയാളവാക്ക് "
 "മാറിയിരിക്കുന്നു! ദയവായി വീണ്ടും ആധികാരികത ഉറപ്പുവരുത്തുക."
 
-#: capplets/about-me/mate-about-me-password.c:475
+#: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
 msgstr "ആ അടയാളവാക്ക് തെറ്റായിരുന്നു."
 
-#: capplets/about-me/mate-about-me-password.c:526
+#: capplets/about-me/cafe-about-me-password.c:526
 msgid "Your password has been changed."
 msgstr "നിങ്ങളുടെ അടയാളവാക്ക് മാറിയിരിക്കുന്നു."
 
-#: capplets/about-me/mate-about-me-password.c:536
+#: capplets/about-me/cafe-about-me-password.c:536
 #, c-format
 msgid "System error: %s."
 msgstr "സിസ്റ്റത്തില്‍ തെറ്റ്: %s."
 
-#: capplets/about-me/mate-about-me-password.c:539
+#: capplets/about-me/cafe-about-me-password.c:539
 msgid "The password is too short."
 msgstr "അടയാളവാക്ക്  വളരെ ചെറുതാണ്."
 
-#: capplets/about-me/mate-about-me-password.c:543
+#: capplets/about-me/cafe-about-me-password.c:543
 msgid "The password is too simple."
 msgstr "അടയാളവാക്ക്  വളരെ ലളിതമാണ്."
 
-#: capplets/about-me/mate-about-me-password.c:548
+#: capplets/about-me/cafe-about-me-password.c:548
 msgid "The old and new passwords are too similar."
 msgstr "പഴയതും പുതിയതും ആയ അടയാളവാക്കുകള്‍ തമ്മില്‍ വളരെ സാമ്യമുണ്ട്."
 
-#: capplets/about-me/mate-about-me-password.c:550
+#: capplets/about-me/cafe-about-me-password.c:550
 msgid "The new password must contain numeric or special character(s)."
 msgstr "പുതിയ അടയാളവാക്കില്‍ അക്കങ്ങളോ പ്രത്യേക അക്ഷരങ്ങളോ ഉണ്ടായിരിയ്ക്കണം."
 
-#: capplets/about-me/mate-about-me-password.c:553
+#: capplets/about-me/cafe-about-me-password.c:553
 msgid "The old and new passwords are the same."
 msgstr "പഴയതും പുതിയതും അടയാളവാക്കുകള്‍ ഒന്നു തന്നെയാണ്."
 
-#: capplets/about-me/mate-about-me-password.c:555
+#: capplets/about-me/cafe-about-me-password.c:555
 msgid "The new password has already been used recently."
 msgstr ""
 
-#: capplets/about-me/mate-about-me-password.c:826
+#: capplets/about-me/cafe-about-me-password.c:826
 #, c-format
 msgid "Unable to launch %s: %s"
 msgstr "%1$s: %2$s തുടങ്ങാന്‍ കഴിയുന്നില്ല"
 
-#: capplets/about-me/mate-about-me-password.c:830
+#: capplets/about-me/cafe-about-me-password.c:830
 msgid "Unable to launch backend"
 msgstr "ബാക്കെന്‍ഡ് തുടങ്ങുവാന്‍ സാധ്യമായില്ല"
 
-#: capplets/about-me/mate-about-me-password.c:831
+#: capplets/about-me/cafe-about-me-password.c:831
 msgid "A system error has occurred"
 msgstr "സിസ്റ്റത്തില്‍ ഒരു പിശക് പറ്റിയിരിക്കുന്നു"
 
-#: capplets/about-me/mate-about-me-password.c:851
+#: capplets/about-me/cafe-about-me-password.c:851
 msgid "Checking password..."
 msgstr "അടയാളവാക്ക് പരിശോധിക്കുന്നു..."
 
-#: capplets/about-me/mate-about-me-password.c:935
+#: capplets/about-me/cafe-about-me-password.c:935
 msgid "Click <b>Change password</b> to change your password."
 msgstr ""
 "അടയാളവാക്ക് മാറ്റുന്നതിനായി <b>അടയാളവാക്ക് മാറ്റുക</b> എന്നത് ക്ലിക്ക് "
 "ചെയ്യുക."
 
-#: capplets/about-me/mate-about-me-password.c:938
+#: capplets/about-me/cafe-about-me-password.c:938
 msgid "Please type your password in the <b>New password</b> field."
 msgstr ""
 "ദയവായി <b>പുതിയ അടയാളവാക്ക്</b> കളത്തില്‍ നിങ്ങളുടെ അടയാളവാക്ക് നല്‍കുക."
 
-#: capplets/about-me/mate-about-me-password.c:941
-#: capplets/about-me/mate-about-me-password.ui:348
+#: capplets/about-me/cafe-about-me-password.c:941
+#: capplets/about-me/cafe-about-me-password.ui:348
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr ""
 "ദയവായി <b>പുതിയ അടയാളവാക്ക് വീണ്ടും ടൈപ്പ് ചെയ്യുക</b> എന്ന കളത്തില്‍ "
 "നിങ്ങളുടെ അടയാളവാക്ക് വീണ്ടും നല്‍കുക."
 
-#: capplets/about-me/mate-about-me-password.c:944
+#: capplets/about-me/cafe-about-me-password.c:944
 msgid "The two passwords are not equal."
 msgstr "അടയാളവാക്കുകള്‍ രണ്ടും തുല്യമല്ല."
 
-#: capplets/about-me/mate-about-me-password.ui:38
+#: capplets/about-me/cafe-about-me-password.ui:38
 msgid "Change password"
 msgstr "അടയാളവാക്ക് മാറ്റുക"
 
-#: capplets/about-me/mate-about-me-password.ui:70
+#: capplets/about-me/cafe-about-me-password.ui:70
 msgid "Change pa_ssword"
 msgstr "അടയാളവാക്ക് _മാറ്റുക"
 
-#: capplets/about-me/mate-about-me-password.ui:124
+#: capplets/about-me/cafe-about-me-password.ui:124
 msgid "Change your password"
 msgstr "നിങ്ങളുടെ അടയാളവാക്ക് മാറ്റുക"
 
-#: capplets/about-me/mate-about-me-password.ui:142
+#: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
 "To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
 "After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
@@ -479,19 +479,19 @@ msgstr ""
 "നിങ്ങളുടെ അടയാളവാക്ക് മാറ്റുന്നതിനായി, താഴെയുളള കളത്തില്‍ നിലവിലുളള അടയാളവാക്ക് നല്‍കിയ ശേഷം, <b>ആധികാരികത ഉറപ്പ് വരുത്തല്‍</b> ക്ലിക്ക് ചെയ്യുക.\n"
 "നിങ്ങളുടെ ആധികാരികത ഉറപ്പു വരുത്തിയ ശേഷം, പുതിയ അടയാളവാക്ക് നല്‍കി, അത് വീണ്ടും ടൈപ്പ് ചെയ്ത് ഉറപ്പ് വരുത്തി <b>അടയാളവാക്ക് മാറ്റുക</b> ക്ലിക്ക് ചെയ്യുക."
 
-#: capplets/about-me/mate-about-me-password.ui:171
+#: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
 msgstr "നിലവിലുളള _അടയാളവാക്ക്:"
 
-#: capplets/about-me/mate-about-me-password.ui:187
+#: capplets/about-me/cafe-about-me-password.ui:187
 msgid "_New password:"
 msgstr "_പുതിയ അടയാളവാക്ക്:"
 
-#: capplets/about-me/mate-about-me-password.ui:203
+#: capplets/about-me/cafe-about-me-password.ui:203
 msgid "_Retype new password:"
 msgstr "പുതിയ _അടയാളവാക്ക് വീണ്ടും ടൈപ്പ് ചെയ്യുക:"
 
-#: capplets/about-me/mate-about-me-password.ui:276
+#: capplets/about-me/cafe-about-me-password.ui:276
 msgid "_Authenticate"
 msgstr "_ആധികാരികത ഉറപ്പാക്കുക"
 
@@ -501,7 +501,7 @@ msgstr "സഹായകമായ സാങ്കേതികവിദ്യയ�
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:86
 #: capplets/display/display-capplet.ui:58
-#: capplets/mouse/mate-mouse-properties.ui:124
+#: capplets/mouse/cafe-mouse-properties.ui:124
 #: capplets/windows/window-properties.ui:68
 msgid "_Help"
 msgstr "_സഹായം"
@@ -511,7 +511,7 @@ msgid "Close and _Log Out"
 msgstr "അടച്ചു _പുറത്തിറങ്ങുക"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:165
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:3
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:3
 msgid "Assistive Technologies"
 msgstr "സഹായകമായ സാങ്കേതികവിദ്യകള്‍"
 
@@ -564,21 +564,21 @@ msgstr "സമീപിയ്ക്കാവുന്ന _കയറല്‍"
 msgid "Jump to the Accessible Login dialog"
 msgstr "സമീപിയ്ക്കാവുന്ന കയറല്‍ ജാലകത്തിലേക്ക് മാറുക"
 
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:4
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:4
 msgid "Choose which accessibility features to enable when you log in"
 msgstr ""
 "ലോഗിന്‍ ചെയ്യമ്പോള്‍ ഏതു് ആക്സസിബിളിറ്റി വിശേഷതയാണു് തെരഞ്ഞെടുക്കേണ്ടതു്"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:7
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
 msgid "preferences-desktop-accessibility"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:13
-msgid "mate-control-center;MATE;accessibility;features;"
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
+msgid "cafe-control-center;MATE;accessibility;features;"
 msgstr ""
 
 #: capplets/appearance/appearance-desktop.c:615
@@ -628,8 +628,8 @@ msgstr ""
 "നിശ്ചയിക്കുക(രംഗവിതാനം|പശ്ചാത്തലം|അക്ഷരസഞ്ചയങ്ങള്‍|വിനിമയതലം)"
 
 #: capplets/appearance/appearance-main.c:162
-#: capplets/default-applications/mate-da-capplet.c:839
-#: capplets/mouse/mate-mouse-properties.c:443
+#: capplets/default-applications/cafe-da-capplet.c:839
+#: capplets/mouse/cafe-mouse-properties.c:443
 msgid "page"
 msgstr "പേജ്"
 
@@ -638,7 +638,7 @@ msgid "[WALLPAPER...]"
 msgstr "[പശ്ചാത്തലചിത്രം...]"
 
 #: capplets/appearance/appearance-style.c:171
-#: capplets/common/mate-theme-info.c:494
+#: capplets/common/cafe-theme-info.c:494
 msgid "Default Pointer"
 msgstr "സഹജമായ സൂചിക"
 
@@ -766,13 +766,13 @@ msgstr "_വലിപ്പം:"
 
 #. small threshold
 #: capplets/appearance/data/appearance.ui:709
-#: capplets/mouse/mate-mouse-properties.ui:679
+#: capplets/mouse/cafe-mouse-properties.ui:679
 msgid "Small"
 msgstr "ചെറുത്"
 
 #. large threshold
 #: capplets/appearance/data/appearance.ui:739
-#: capplets/mouse/mate-mouse-properties.ui:716
+#: capplets/mouse/cafe-mouse-properties.ui:716
 msgid "Large"
 msgstr "വലുത്"
 
@@ -874,7 +874,7 @@ msgid "Save _notification theme"
 msgstr ""
 
 #: capplets/appearance/data/appearance.ui:1758
-#: capplets/keybindings/mate-keybinding-properties.ui:80
+#: capplets/keybindings/cafe-keybinding-properties.ui:80
 msgid "_Name:"
 msgstr "പേര്: (_N)"
 
@@ -976,7 +976,7 @@ msgid "Get more backgrounds online"
 msgstr "കൂടുതല്‍ പശ്ചാത്തലങ്ങള്‍ ഓണ്‍ലൈനായി ലഭ്യമാക്കുക"
 
 #: capplets/appearance/data/appearance.ui:2359
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:674
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:674
 msgid "_Add..."
 msgstr "കൂട്ടിച്ചേര്‍ക്കുക..."
 
@@ -1072,11 +1072,11 @@ msgstr "ചിട്ടപ്പെടുത്തുക"
 msgid "Interface"
 msgstr "സമ്പർക്കമുഖം"
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:3
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:3
 msgid "Appearance"
 msgstr "ദൃശ്യരൂപം"
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:4
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:4
 msgid "Customize the look of the desktop"
 msgstr "പണിയിടത്തിനെ ഇഷ്ടപ്പെട്ട രീതിയിലാക്കുക"
 
@@ -1084,69 +1084,69 @@ msgstr "പണിയിടത്തിനെ ഇഷ്ടപ്പെട്ട �
 #. localize the semicolons! The list MUST also end with a semicolon!
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:7
-#: capplets/appearance/data/mate-theme-installer.desktop.in:7
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
 msgid "preferences-desktop-theme"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:13
-msgid "mate-control-center;MATE;appearance;properties;desktop;customize;look;"
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
+msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:3
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Theme Installer"
 msgstr "രംഗവിതാനത്തിന്റെ ഇന്‍സ്റ്റാളര്‍"
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:4
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:4
 msgid "Installs themes packages for various parts of the desktop"
 msgstr ""
 "പണിയിടത്തിന്റെ വിവിധ ഭാഗങ്ങള്‍ക്കുള്ള രംഗവിതാന പാക്കേജുകള്‍ തെരഞ്ഞെടുക്കുക"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-theme-installer.desktop.in:14
-msgid "mate-control-center;MATE;install;desktop;themes;"
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:14
+msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-package.xml.in:5
+#: capplets/appearance/data/cafe-theme-package.xml.in:5
 msgid "Mate Theme Package"
 msgstr "ഗ്നോമിലെ രംഗവിതാനത്തിനുള്ള പാക്കേജ്"
 
-#: capplets/appearance/mate-wp-info.c:51
+#: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
 msgstr "പണിയിട പശ്ചാത്തലം ലഭ്യമല്ല"
 
-#: capplets/appearance/mate-wp-item.c:288
+#: capplets/appearance/cafe-wp-item.c:288
 msgid "unknown"
 msgstr "അറിയപ്പെടാത്ത "
 
-#: capplets/appearance/mate-wp-item.c:295
+#: capplets/appearance/cafe-wp-item.c:295
 msgid "Slide Show"
 msgstr "സ്ലൈഡ് ഷോ"
 
-#: capplets/appearance/mate-wp-item.c:297
+#: capplets/appearance/cafe-wp-item.c:297
 msgid "Image"
 msgstr "ചിത്രം"
 
-#: capplets/appearance/mate-wp-item.c:303
+#: capplets/appearance/cafe-wp-item.c:303
 msgid "multiple sizes"
 msgstr "അനവധി വ്യാപ്തികള്‍"
 
-#: capplets/appearance/mate-wp-item.c:306
+#: capplets/appearance/cafe-wp-item.c:306
 #, c-format
 msgid "%d %s by %d %s"
 msgstr "%d %s / %d %s"
 
-#: capplets/appearance/mate-wp-item.c:308
-#: capplets/appearance/mate-wp-item.c:310
+#: capplets/appearance/cafe-wp-item.c:308
+#: capplets/appearance/cafe-wp-item.c:310
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: capplets/appearance/mate-wp-item.c:319
+#: capplets/appearance/cafe-wp-item.c:319
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1155,7 +1155,7 @@ msgid ""
 "Artist: %s"
 msgstr ""
 
-#: capplets/appearance/mate-wp-item.c:334
+#: capplets/appearance/cafe-wp-item.c:334
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1164,7 +1164,7 @@ msgid ""
 "Artist: %s"
 msgstr ""
 
-#: capplets/appearance/mate-wp-item.c:339
+#: capplets/appearance/cafe-wp-item.c:339
 msgid "Image missing"
 msgstr "ചിത്രങ്ങള്‍ ലഭ്യമല്ല"
 
@@ -1300,10 +1300,10 @@ msgstr "രംഗവിതാനത്തിന്റെ യന്ത്രത�
 
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
-"Unable to start the settings manager 'mate-settings-daemon'.\n"
+"Unable to start the settings manager 'cafe-settings-daemon'.\n"
 "Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
 msgstr ""
-"'mate-settings-daemon' ക്രമീകരണ മാനേജര്‍ തുടങ്ങാന്‍ കഴിഞ്ഞില്ല.\n"
+"'cafe-settings-daemon' ക്രമീകരണ മാനേജര്‍ തുടങ്ങാന്‍ കഴിഞ്ഞില്ല.\n"
 "ഗ്നോം ക്രമീകരണ മാനേജര്‍ പ്രവര്‍ത്തിക്കാതെ ചില മുന്‍ഗണനകള്‍ പ്രാവര്‍ത്തികമാക്കാനാവില്ല. ഇത്  DBus അല്ലെങ്കില്‍ ഗ്നോമല്ലാത്ത (ഉദാഃ കെഡിഇ)  ക്രമീകരണ മാനേജറോ ഇപ്പോള്‍ സജീവമാണെന്നോ ഗ്നോം ക്രമീകരണ മാനേജറുമായി ഇടഞ്ഞുനില്‍ക്കുകയാണെന്നോ കാണിക്കുന്നു."
 
 #: capplets/common/capplet-util.c:82
@@ -1389,7 +1389,7 @@ msgstr "_വേണ്ടെന്നുവയ്ക്കുക"
 msgid "Overwrite _All"
 msgstr "എല്ലാം _മാറ്റിയെഴുതുക"
 
-#: capplets/common/mate-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
 "This theme will not look as intended because the required GTK+ theme '%s' is"
@@ -1398,7 +1398,7 @@ msgstr ""
 "ആവശ്യമുല്ള GTK+ ഥീം'%s' ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ലാത്തതിനാല്‍, ഈ പ്രമേയം "
 "നിങ്ങള്‍ ആഗ്രഹിച്ച രീതിയില്‍ ലഭ്യമാകില്ല."
 
-#: capplets/common/mate-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1588
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1407,7 +1407,7 @@ msgstr ""
 "ആവശ്യമുല്ള വിന്‍ഡോ മാനേജര്‍ ഥീം'%s' ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ലാത്തതിനാല്‍, "
 "ഈ പ്രമേയം നിങ്ങള്‍ ആഗ്രഹിച്ച രീതിയില്‍ ലഭ്യമാകില്ല."
 
-#: capplets/common/mate-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1596
 #, c-format
 msgid ""
 "This theme will not look as intended because the required icon theme '%s' is"
@@ -1416,131 +1416,131 @@ msgstr ""
 "ആവശ്യമുല്ള ഐക്കണ്‍ ഥീം'%s' ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ലാത്തതിനാല്‍, ഈ പ്രമേയം"
 " നിങ്ങള്‍ ആഗ്രഹിച്ച രീതിയില്‍ ലഭ്യമാകില്ല."
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:3
-#: capplets/default-applications/mate-default-applications-properties.ui:13
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
+#: capplets/default-applications/cafe-default-applications-properties.ui:13
 msgid "Preferred Applications"
 msgstr "മുന്‍ഗണനാ പ്രയോഗങ്ങള്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:4
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:4
 msgid "Select your default applications"
 msgstr "നിങ്ങളുടെ സഹജമായ പ്രയോഗങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:7
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
 msgid "preferences-desktop-default-applications"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:13
-msgid "mate-control-center;MATE;default;preferred;applications;"
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
+msgid "cafe-control-center;MATE;default;preferred;applications;"
 msgstr ""
 
-#: capplets/default-applications/mate-da-capplet.c:639
+#: capplets/default-applications/cafe-da-capplet.c:639
 msgid "Could not load the main interface"
 msgstr "പ്രധാന വിനിമയതലം ചേര്‍ക്കുവാന്‍ സാധിച്ചില്ല"
 
-#: capplets/default-applications/mate-da-capplet.c:640
+#: capplets/default-applications/cafe-da-capplet.c:640
 msgid "Please make sure that the applet is properly installed"
 msgstr ""
 "ലഘുപ്രയോഗം ശരിയായി ഇന്‍സ്റ്റോള്‍ ചെയ്തിരിക്കുന്നു എന്ന് ഉറപ്പ് വരുത്തുക"
 
-#: capplets/default-applications/mate-da-capplet.c:838
+#: capplets/default-applications/cafe-da-capplet.c:838
 msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr ""
 "കാണിക്കേണ്ട പേജിന്റെ പേര് നിശ്ചയിക്കുക(internet|multimedia|system|a11y)"
 
-#: capplets/default-applications/mate-da-capplet.c:844
+#: capplets/default-applications/cafe-da-capplet.c:844
 msgid "- MATE Default Applications"
 msgstr "- ഗ്നോമില്‍ സഹജമായ പ്രയോഗങ്ങള്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:134
+#: capplets/default-applications/cafe-default-applications-properties.ui:134
 msgid "Web Browser"
 msgstr "വെബ് ബ്രൌസര്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:202
+#: capplets/default-applications/cafe-default-applications-properties.ui:202
 msgid "Mail Reader"
 msgstr "മെയില്‍ റീഡര്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:270
+#: capplets/default-applications/cafe-default-applications-properties.ui:270
 msgid "Instant Messenger"
 msgstr "ഇന്‍സ്റ്റന്റ് മെസഞ്ചര്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:289
+#: capplets/default-applications/cafe-default-applications-properties.ui:289
 msgid "Internet"
 msgstr "ഇന്റര്‍നെറ്റ്"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:357
+#: capplets/default-applications/cafe-default-applications-properties.ui:357
 msgid "Image Viewer"
 msgstr "ചിത്രദര്‍ശിനി"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:425
+#: capplets/default-applications/cafe-default-applications-properties.ui:425
 msgid "Multimedia Player"
 msgstr "മള്‍ട്ടിമീഡിയ പ്ലേയര്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:493
+#: capplets/default-applications/cafe-default-applications-properties.ui:493
 msgid "Video Player"
 msgstr "ചലച്ചിത്ര ദര്‍ശിനി"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:515
+#: capplets/default-applications/cafe-default-applications-properties.ui:515
 msgid "Multimedia"
 msgstr "മള്‍ട്ടീമീഡിയ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:584
+#: capplets/default-applications/cafe-default-applications-properties.ui:584
 msgid "Text Editor"
 msgstr "എഴുത്തിടം"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:652
+#: capplets/default-applications/cafe-default-applications-properties.ui:652
 msgid "Terminal Emulator"
 msgstr "ടെര്‍മിനല്‍ എമുലേറ്റര്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:720
+#: capplets/default-applications/cafe-default-applications-properties.ui:720
 msgid "File Manager"
 msgstr "ഫയല്‍ നടത്തിപ്പുകാരന്‍"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:788
+#: capplets/default-applications/cafe-default-applications-properties.ui:788
 msgid "Calculator"
 msgstr "ഗണനി"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:810
+#: capplets/default-applications/cafe-default-applications-properties.ui:810
 msgid "System"
 msgstr "സിസ്റ്റം"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:879
+#: capplets/default-applications/cafe-default-applications-properties.ui:879
 msgid "Document Viewer"
 msgstr "രേഖാദര്‍ശിനി"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:947
+#: capplets/default-applications/cafe-default-applications-properties.ui:947
 msgid "Word Processor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1015
+#: capplets/default-applications/cafe-default-applications-properties.ui:1015
 msgid "Spreadsheet Editor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1037
+#: capplets/default-applications/cafe-default-applications-properties.ui:1037
 msgid "Office"
 msgstr "ഓഫീസ്"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1094
+#: capplets/default-applications/cafe-default-applications-properties.ui:1094
 msgid "_Run at start"
 msgstr "_തുടക്കത്തില്‍ തന്നെ പ്രവര്‍ത്തിപ്പിയ്ക്കുക"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1122
+#: capplets/default-applications/cafe-default-applications-properties.ui:1122
 msgid "Visual"
 msgstr "ദൃശ്യം"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1178
+#: capplets/default-applications/cafe-default-applications-properties.ui:1178
 msgid "Run at st_art"
 msgstr "_തുടക്കത്തില്‍ പ്രാവര്‍ത്തിപ്പിയ്ക്കുക"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1206
+#: capplets/default-applications/cafe-default-applications-properties.ui:1206
 msgid "Mobility"
 msgstr "ചലനാത്മകത"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1228
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1527
+#: capplets/default-applications/cafe-default-applications-properties.ui:1228
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1527
 msgid "Accessibility"
 msgstr "സാമീപ്യത"
 
@@ -1636,35 +1636,35 @@ msgstr "_കറക്കം:"
 msgid "Monitor"
 msgstr "മോണിറ്റര്‍"
 
-#: capplets/display/mate-display-properties.desktop.in:3
+#: capplets/display/cafe-display-properties.desktop.in:3
 msgid "Displays"
 msgstr ""
 
-#: capplets/display/mate-display-properties.desktop.in:4
+#: capplets/display/cafe-display-properties.desktop.in:4
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/display/mate-display-properties.desktop.in:7
+#: capplets/display/cafe-display-properties.desktop.in:7
 msgid "preferences-desktop-display"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/display/mate-display-properties.desktop.in:13
+#: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"mate-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:44
+#: capplets/display/cafe-display-properties-install-systemwide.c:44
 #, c-format
 msgid ""
 "Usage: %s SOURCE_FILE DEST_NAME\n"
 "\n"
 "This program installs a RANDR profile for multi-monitor setups into\n"
 "a systemwide location.  The resulting profile will get used when\n"
-"the RANDR plug-in gets run in mate-settings-daemon.\n"
+"the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
 "SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
 "\n"
@@ -1674,75 +1674,75 @@ msgid ""
 msgstr ""
 
 #. Translators: only able to install RANDR profiles as root
-#: capplets/display/mate-display-properties-install-systemwide.c:151
+#: capplets/display/cafe-display-properties-install-systemwide.c:151
 msgid "This program can only be used by the root user"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:168
+#: capplets/display/cafe-display-properties-install-systemwide.c:168
 msgid "The source filename must be absolute"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:179
+#: capplets/display/cafe-display-properties-install-systemwide.c:179
 #, c-format
 msgid "Could not open %s: %s\n"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:188
+#: capplets/display/cafe-display-properties-install-systemwide.c:188
 #, c-format
 msgid "Could not get information for %s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:195
+#: capplets/display/cafe-display-properties-install-systemwide.c:195
 #, c-format
 msgid "%s must be a regular file\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:204
+#: capplets/display/cafe-display-properties-install-systemwide.c:204
 msgid "This program must only be run through pkexec(1)"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:209
+#: capplets/display/cafe-display-properties-install-systemwide.c:209
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr ""
 
 #. Translators: we are complaining that a file must be really owned by the
 #. user who called this program
-#: capplets/display/mate-display-properties-install-systemwide.c:215
+#: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr ""
 
 #. Translators: here we are saying that a plain filename must look like
 #. "filename", not like "some_dir/filename"
-#: capplets/display/mate-display-properties-install-systemwide.c:223
+#: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:231
+#: capplets/display/cafe-display-properties-install-systemwide.c:231
 #, c-format
 msgid "%s must be a directory\n"
 msgstr ""
 
 #. Translators: the first %s/%s is a directory/filename; the last %s is an
 #. error message
-#: capplets/display/mate-display-properties-install-systemwide.c:242
+#: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:262
+#: capplets/display/cafe-display-properties-install-systemwide.c:262
 #, c-format
 msgid "Could not rename %s to %s: %s\n"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:17
+#: capplets/display/org.cafe.randr.policy.in:17
 msgid "Install multi-monitor settings for the whole system"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:18
+#: capplets/display/org.cafe.randr.policy.in:18
 msgid ""
 "Authentication is required to install multi-monitor settings for all users"
 msgstr ""
@@ -1952,25 +1952,25 @@ msgid "The type of accelerator."
 msgstr "വേഗവ‌ര്‍ദ്ധിനി തരം"
 
 #: capplets/keybindings/eggcellrendererkeys.c:231
-#: capplets/keybindings/mate-keybinding-properties.c:133
-#: capplets/mouse/mate-mouse-properties.c:347 typing-break/drwright.c:528
+#: capplets/keybindings/cafe-keybinding-properties.c:133
+#: capplets/mouse/cafe-mouse-properties.c:347 typing-break/drwright.c:528
 msgid "Disabled"
 msgstr "പ്രവര്‍ത്തനരഹിതം"
 
-#: capplets/keybindings/mate-keybinding-properties.c:215
+#: capplets/keybindings/cafe-keybinding-properties.c:215
 msgid "<Unknown Action>"
 msgstr "<അറിയാത്ത പ്ര‌വൃത്തി‌>"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1018
-#: capplets/keybindings/mate-keybinding-properties.c:1626
+#: capplets/keybindings/cafe-keybinding-properties.c:1018
+#: capplets/keybindings/cafe-keybinding-properties.c:1626
 msgid "Custom Shortcuts"
 msgstr "നമ്മുടെ ഇഷ്ടത്തിനനുസരിച്ച് ഉണ്ടാക്കുന്ന എളുപ്പവഴികള്‍"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1206
+#: capplets/keybindings/cafe-keybinding-properties.c:1206
 msgid "Error saving the new shortcut"
 msgstr "പുതിയ എളുപ്പവഴി സംരക്ഷിക്കുന്നതില്‍ പിശക്"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1282
+#: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
 "The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
@@ -1979,7 +1979,7 @@ msgstr ""
 " \"%s\" എന്ന എളുപ്പവഴി ഉപയോഗിക്കാന്‍ പറ്റില്ല. കാരണം പിന്നീട് ഈ കീ ഉപയോഗിച്ചു് ടൈപ്പ് ചെയ്യാന്‍ സാധ്യമല്ലാതെയാകും.\n"
 "Control, Alt അല്ലെങ്കില്‍ Shift എന്നിവയില്‍ ഒന്നിനോടൊപ്പം ഉപയോഗിക്കുന്ന ഒരു കീ പരീക്ഷിക്കുക."
 
-#: capplets/keybindings/mate-keybinding-properties.c:1314
+#: capplets/keybindings/cafe-keybinding-properties.c:1314
 #, c-format
 msgid ""
 "The shortcut \"%s\" is already used for\n"
@@ -1988,367 +1988,367 @@ msgstr ""
 "\"%s\" എന്ന എളുപ്പവഴി ഇപ്പോള്‍ തന്നെ  \n"
 " \"%s\"നു വേണ്ടി ഉപയോഗിച്ചിട്ടുണ്ട്"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1321
+#: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
 msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 "എളുപ്പവഴി \"%s\"-നു് വീണ്ടും നല്‍കിയാല്‍, \"%s\" എളുപ്പവഴി പ്രവര്‍ത്തന "
 "രഹിതമാക്കുന്നു."
 
-#: capplets/keybindings/mate-keybinding-properties.c:1326
+#: capplets/keybindings/cafe-keybinding-properties.c:1326
 msgid "_Reassign"
 msgstr "_വീണ്ടും ലഭ്യമാക്കുക"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1581
+#: capplets/keybindings/cafe-keybinding-properties.c:1581
 msgid "Too many custom shortcuts"
 msgstr "ഇഷ്ടത്തിനനുസരിച്ചു് ഉണ്ടാക്കിയ അനേകം എളുപ്പവഴികള്‍"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1895
+#: capplets/keybindings/cafe-keybinding-properties.c:1895
 msgid "Action"
 msgstr "പ്രവര്‍ത്തനം"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1917
+#: capplets/keybindings/cafe-keybinding-properties.c:1917
 msgid "Shortcut"
 msgstr "എളുപ്പവഴി"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:13
+#: capplets/keybindings/cafe-keybinding-properties.ui:13
 msgid "Custom Shortcut"
 msgstr "എളുപ്പവഴികള്‍ ഇഷ്ടത്തിനനുസരിച്ച് ഉണ്ടാക്കുക"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:108
+#: capplets/keybindings/cafe-keybinding-properties.ui:108
 msgid "C_ommand:"
 msgstr "ആ_ജ്ഞ:"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:132
+#: capplets/keybindings/cafe-keybinding-properties.ui:132
 msgid "_Browse applications..."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding-properties.ui:194
-#: capplets/keybindings/mate-keybinding.desktop.in:3
+#: capplets/keybindings/cafe-keybinding-properties.ui:194
+#: capplets/keybindings/cafe-keybinding.desktop.in:3
 msgid "Keyboard Shortcuts"
 msgstr "കീബോര്‍ഡ് എളുപ്പവഴിികള്‍ "
 
-#: capplets/keybindings/mate-keybinding-properties.ui:339
+#: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
 "To edit a shortcut key, double-click on the corresponding row and type a new"
 " key combination, or press backspace to clear."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding.desktop.in:4
+#: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "ആജ്ഞകള്‍ക്ക്  എളുപ്പകീകള്‍ നല്‍കുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keybindings/mate-keybinding.desktop.in:7
+#: capplets/keybindings/cafe-keybinding.desktop.in:7
 msgid "preferences-desktop-keyboard-shortcuts"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keybindings/mate-keybinding.desktop.in:13
-msgid "mate-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
+#: capplets/keybindings/cafe-keybinding.desktop.in:13
+msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:207
-#: capplets/keyboard/mate-keyboard-properties.c:212
+#: capplets/keyboard/cafe-keyboard-properties.c:207
+#: capplets/keyboard/cafe-keyboard-properties.c:212
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 
-#: capplets/keyboard/mate-keyboard-properties.c:217
+#: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
 msgstr "ടൈപ്പിങ്ങ് വിശ്രമവേള ക്രമീകരണം കാണിച്ച് കൊണ്ട് പേജ് തുടങ്ങുക."
 
-#: capplets/keyboard/mate-keyboard-properties.c:222
+#: capplets/keyboard/cafe-keyboard-properties.c:222
 msgid "Start the page with the accessibility settings showing"
 msgstr "സാമീപ്യതാ ക്രമീകരണം കാണിച്ച് കൊണ്ട് പേജ് തുടങ്ങുക."
 
-#: capplets/keyboard/mate-keyboard-properties.c:228
+#: capplets/keyboard/cafe-keyboard-properties.c:228
 msgid "- MATE Keyboard Preferences"
 msgstr "ഗ്നോം കീബോര്‍ഡ് മുന്‍‌ഗണനകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
 msgstr "കീബോര്‍ഡ് ആക്സസിബിളിറ്റി ഓഡിയോ ഫീഡ്ബാക്ക്"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:90
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:616
-#: capplets/mouse/mate-mouse-properties.ui:277
-#: capplets/mouse/mate-mouse-properties.ui:1008
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:90
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:616
+#: capplets/mouse/cafe-mouse-properties.ui:277
+#: capplets/mouse/cafe-mouse-properties.ui:1008
 #: capplets/windows/window-properties.ui:260
 msgid "General"
 msgstr "സാധാരണ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:128
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:128
 msgid "Beep when _accessibility features are turned on or off"
 msgstr ""
 "കീ ബോര്‍ഡില്‍ സ_വിശേഷതകള്‍ ഓണ്‍ ചെയ്യുമ്പോഴോ ഓഫ് ചെയ്യുമ്പോഴോ "
 "ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:145
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:145
 msgid "Beep when a _toggle key is pressed"
 msgstr "_ടോഗിള്‍ കീ അമര്‍ത്തുമ്പോള്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:194
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1019
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:194
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1019
 msgid "Sticky Keys"
 msgstr "സ്റ്റിക്കി കീകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:232
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:232
 msgid "Beep when a _modifier key is pressed"
 msgstr "_മോഡിഫയര്‍ അമര്‍ത്തുമ്പോള്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:279
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:279
 msgid "Visual cues for sounds"
 msgstr "ശബ്ദമനുസരിച്ചുള്ള ദൃശ്യം"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:314
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:314
 msgid "Show _visual feedback for the alert sound"
 msgstr "ശബ്ദമുന്നറിയിപ്പു് നല്‍കുമ്പോള്‍ _വിഷ്വല്‍ അഭിപ്രായവും കാണിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:352
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:352
 msgid "Flash _window titlebar"
 msgstr "_ജാലകത്തിന്റെ തലക്കെട്ട് മിന്നിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:369
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:369
 msgid "Flash entire _screen"
 msgstr "_സ്ക്രീന്‍ മൊത്തം മിന്നിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:433
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1140
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:433
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1140
 msgid "Slow Keys"
 msgstr "സ്ലോ കീകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:471
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:471
 msgid "Beep when a key is pr_essed"
 msgstr "കീ അമര്‍ത്തുമ്പോള്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:488
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:488
 msgid "Beep when key is _accepted"
 msgstr "കീ _സ്വീകരിച്ചുവെങ്കില്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:505
 msgid "Beep when key is _rejected"
 msgstr "കീ _നിരസിച്ചുവെങ്കില്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:554
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1321
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:554
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1321
 msgid "Bounce Keys"
 msgstr "ബൌണ്‍സ് കീകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:592
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:592
 msgid "Beep when a key is reje_cted"
 msgstr "കീ _നിരസിച്ചുവെങ്കില്‍ ശബ്ദമുണ്ടാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:81
 msgid "Keyboard Preferences"
 msgstr "കീബോര്‍ഡിന്റെ മുന്‍ഗണനകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:166
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:166
 msgid "Repeat Keys"
 msgstr "കീ ആവര്‍ത്തിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:201
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:201
 msgid "Key presses _repeat when key is held down"
 msgstr "കീ അമര്‍ത്തിപ്പിടിച്ചാല്‍ കീകള്‍ _ആവര്‍ത്തിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:231
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1203
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1775
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:231
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1203
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1775
 msgid "_Delay:"
 msgstr "_താമസം:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:247
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1760
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:247
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1760
 msgid "_Speed:"
 msgstr "_വേഗത:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:278
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1226
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1407
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1697
-#: capplets/mouse/mate-mouse-properties.ui:826
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1226
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1407
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1697
+#: capplets/mouse/cafe-mouse-properties.ui:826
 msgid "Short"
 msgstr "എളുപ്പവഴി"
 
 #. slow acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:297
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:563
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1601
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1680
-#: capplets/mouse/mate-mouse-properties.ui:435
-#: capplets/mouse/mate-mouse-properties.ui:1396
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:297
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:563
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1601
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1680
+#: capplets/mouse/cafe-mouse-properties.ui:435
+#: capplets/mouse/cafe-mouse-properties.ui:1396
 msgid "Slow"
 msgstr "പതിയെ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:343
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:343
 msgid "Repeat keys speed"
 msgstr "കീയുടെ വേഗത ഇരട്ടിപ്പിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:371
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1261
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1442
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1728
-#: capplets/mouse/mate-mouse-properties.ui:861
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:371
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1261
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1442
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1728
+#: capplets/mouse/cafe-mouse-properties.ui:861
 msgid "Long"
 msgstr "നീളമുള്ള"
 
 #. fast acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:388
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:528
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1618
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1663
-#: capplets/mouse/mate-mouse-properties.ui:467
-#: capplets/mouse/mate-mouse-properties.ui:1428
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:388
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:528
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1618
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1663
+#: capplets/mouse/cafe-mouse-properties.ui:467
+#: capplets/mouse/cafe-mouse-properties.ui:1428
 msgid "Fast"
 msgstr "വേഗം"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:446
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:446
 msgid "Cursor Blinking"
 msgstr "സൂചികയുടെ മിന്നല്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:481
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:481
 msgid "Cursor _blinks in text fields"
 msgstr "ടെക്സ്റ്റ് ബോക്സുകളിലും ഫീല്‍ഡുകളിലും സൂചകം _മിന്നട്ടെ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:505
 msgid "S_peed:"
 msgstr "വേ_ഗത:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:548
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1246
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1427
-#: capplets/mouse/mate-mouse-properties.ui:702
-#: capplets/mouse/mate-mouse-properties.ui:847
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:548
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1246
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1427
+#: capplets/mouse/cafe-mouse-properties.ui:702
+#: capplets/mouse/cafe-mouse-properties.ui:847
 msgid "Cursor blinks speed"
 msgstr "സൂചകം മിന്നുന്നതിന്റെ വേഗത"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:645
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:645
 msgid "List of keyboard layouts selected for usage"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:678
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:678
 msgid "Select a keyboard layout to be added to the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:693
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:693
 msgid "Remove the selected keyboard layout from the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:718
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:718
 msgid "Move _Up"
 msgstr "_മുകളിലേക്ക് നീക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:722
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:722
 msgid "Move the selected keyboard layout up in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:733
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:733
 msgid "Move _Down"
 msgstr "_താഴേക്ക് നീക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:737
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:737
 msgid "Move the selected keyboard layout down in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:762
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:762
 msgid "_Show..."
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:766
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:766
 msgid "Print a diagram of the selected keyboard layout"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:802
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:802
 msgid "_Separate layout for each window"
 msgstr "ഓരോ ജാലകത്തിനും വെവ്വേറെ _വിന്യാസം"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:818
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:818
 msgid "New windows u_se active window's layout"
 msgstr "പുതിയ ജാലകങ്ങള്‍ സജീവമായ ജാലകത്തിന്റെ ശൈലി _ഉപയോഗിക്കുന്നു"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:849
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:849
 msgid "Keyboard _model:"
 msgstr "കീബോര്‍ഡിന്റെ _മാതൃക:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:887
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:887
 msgid "_Options..."
 msgstr "_ഐച്ഛികങ്ങള്‍..."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:892
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:892
 msgid "View and edit keyboard layout options"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:903
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:903
 msgid "Reset to De_faults"
 msgstr "_സഹജമായതിലേയ്ക്ക് വീണ്ടും സജ്ജീകരിയ്ക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:907
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:907
 msgid ""
 "Replace the current keyboard layout settings with the\n"
 "default settings"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:934
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:934
 msgid "Layouts"
 msgstr "വിന്യാസങ്ങള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:970
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:970
 msgid "_Accessibility features can be toggled with keyboard shortcuts"
 msgstr ""
 "കീബോര്‍ഡ് എളുപ്പവഴികള്‍ ഉപയോഗിച്ചു് _ആക്സസിബിളിറ്റി വിശേഷതകള്‍ ടൊഗിള്‍ "
 "ചെയ്യുവാന്‍ സാധിക്കുന്നു."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1057
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1057
 msgid "_Simulate simultaneous keypresses"
 msgstr "ഒരേപോലെ കീപ്രസ്സുകള്‍ _സിമുലേറ്റ് ചെയ്യുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1074
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1074
 msgid "Disa_ble sticky keys if two keys are pressed together"
 msgstr ""
 "രണ്ട് കീ ഒരുമിച്ച് അമര്‍ത്തിയാല്‍ സ്റ്റിക്കി കീകളെ പ്രവര്‍ത്തനരഹിതമാക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1091
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1091
 msgid "_Latch modifiers when pressed twice"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1178
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1178
 msgid "_Only accept long keypresses"
 msgstr "ഒരുപാടു നേരത്തേയ്ക്ക് അമര്‍ന്നിരുന്നാല്‍ _മാത്രം കീ സ്വീകരിക്കുക:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1359
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1359
 msgid "_Ignore fast duplicate keypresses"
 msgstr "ഈ സമയത്തിനിടയിലെ ഇരട്ട കീ അമര്‍ത്തലുകളെ _അവഗണിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1384
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1384
 msgid "D_elay:"
 msgstr "ഇ_ടവേള:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1497
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1497
 msgid "Audio _Feedback..."
 msgstr "ഓഡിയോ _അഭിപ്രായം..."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1550
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1550
 msgid "_Pointer can be controlled using the keypad"
 msgstr "കീപാഡ് ഉപയോഗിച്ചു് _പോയിന്റര്‍ നിയന്ത്രിക്കാം"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1745
-#: capplets/mouse/mate-mouse-properties.ui:413
-#: capplets/mouse/mate-mouse-properties.ui:1374
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1745
+#: capplets/mouse/cafe-mouse-properties.ui:413
+#: capplets/mouse/cafe-mouse-properties.ui:1374
 msgid "_Acceleration:"
 msgstr "_വേഗവര്‍ദ്ധനവ്:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1823
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1823
 msgid "Mouse Keys"
 msgstr "മൌസ് കീകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1851
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1851
 msgid "_Lock screen to enforce typing break"
 msgstr "<b>ടൈപ്പിങ്ങ് വിശ്രമവേള നിര്‍ബന്ധമാക്കാന്‍ സ്ക്രീന്‍ _പൂട്ടുക,</b>"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1855
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
 "Lock screen after a certain duration to help prevent repetitive keyboard use"
 " injuries"
@@ -2356,453 +2356,453 @@ msgstr ""
 "നിരന്തരമായ കീബോര്‍ഡ് ഉപയോഗം മൂലമുണ്ടാവുന്ന പരിക്കൊഴിവാക്കാന്‍ കുറച്ചു "
 "സമയത്തിനു ശേഷം സ്ക്രീന്‍ പൂട്ടുക "
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1904
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
 msgstr "_ജോലി സമയത്തിന്റെ സമയപരിധി:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1919
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1919
 msgid "_Break interval lasts:"
 msgstr "വിശ്രമവേളയുടെ സമയ_പരിധി:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1951
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1951
 msgid "Duration of work before forcing a break"
 msgstr "ഒരു വിശ്രമവേളയ്ക്ക് നിര്‍ബന്ധിക്കുന്നതിന് മുമ്പുള്ള ജോലിയുടെ സമയം"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1965
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1965
 msgid "Duration of the break when typing is disallowed"
 msgstr "ടൈപ്പിങ്ങ് അനുവദനീയമല്ലാത്ത വിശ്രമവേളയുടെ സമയം"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1993
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2006
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1993
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2006
 msgid "minutes"
 msgstr "മിനിട്ടുകള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2037
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2037
 msgid "All_ow postponing of breaks"
 msgstr "വിശ്രമവേളകളുടെ സമയം മാറ്റാന്‍ അനുവദിക്കുക (_o)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2041
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2041
 msgid "Check if breaks are allowed to be postponed"
 msgstr "വിശ്രമവേളകള്‍ നീട്ടിവക്കാന്‍ സാധിക്കുമോ എന്ന് പരിശോധിക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2089
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2089
 msgid "Typing Break"
 msgstr "ടൈപ്പിങ്ങ് വിശ്രമവേള"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2112
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2112
 msgid "_Type to test settings:"
 msgstr "ക്രമീകരണം പരിശോധിക്കാന്‍ _ടൈപ്പ് ചെയ്തു നോക്കുക:"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:15
 msgid "Choose a Layout"
 msgstr "ഒരു വിന്യാസം തെരഞ്ഞെടുക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:134
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:134
 msgid "_Country:"
 msgstr "_രാജ്യം:"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:148
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:225
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:148
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:225
 msgid "_Variants:"
 msgstr "_Variants:"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:165
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:165
 msgid "By _country"
 msgstr "_രാജ്യം അനുസരിച്ച്"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:211
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:211
 msgid "_Language:"
 msgstr "_ഭാഷ:"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:245
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:245
 msgid "By _language"
 msgstr "‌ഭാഷ അനുസരിച്ച്"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:278
 msgid "Preview:"
 msgstr "കണ്ടുനോക്കുക:"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:15
 msgid "Choose a Keyboard Model"
 msgstr "ഒരു കീ ബോര്‍ഡ് മോഡല്‍ തെരഞ്ഞെടുക്കുക"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:81
 msgid "_Vendors:"
 msgstr "_വില്പനക്കാര്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:118
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:118
 msgid "_Models:"
 msgstr "_മോഡലുകള്‍:"
 
-#: capplets/keyboard/mate-keyboard-properties-options-dialog.ui:14
+#: capplets/keyboard/cafe-keyboard-properties-options-dialog.ui:14
 msgid "Keyboard Layout Options"
 msgstr "കീബോര്‍ഡ് വിന്യാസ ഐച്ഛികങ്ങള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-xkb.c:83
+#: capplets/keyboard/cafe-keyboard-properties-xkb.c:83
 msgid "Unknown"
 msgstr "അപരിചിതമായ"
 
-#: capplets/keyboard/mate-keyboard-properties-xkblt.c:240
+#: capplets/keyboard/cafe-keyboard-properties-xkblt.c:240
 msgid "Layout"
 msgstr "വിന്യാസം"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:170
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:170
 msgid "Vendors"
 msgstr "വില്പനക്കാര്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:236
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:236
 msgid "Models"
 msgstr "തരങ്ങള്‍"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbot.c:237
-#: capplets/mouse/mate-mouse-properties.ui:586
+#: capplets/keyboard/cafe-keyboard-properties-xkbot.c:237
+#: capplets/mouse/cafe-mouse-properties.ui:586
 msgid "Default"
 msgstr "സ്വഥവേ"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:3
+#: capplets/keyboard/cafe-keyboard.desktop.in:3
 msgid "Keyboard"
 msgstr "കീബോര്‍ഡ്"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:4
+#: capplets/keyboard/cafe-keyboard.desktop.in:4
 msgid "Set your keyboard preferences"
 msgstr "കീബോര്‍ഡ് മുന്‍ണനകള്‍ സജ്ജീകരിയ്ക്കുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keyboard/mate-keyboard.desktop.in:7
+#: capplets/keyboard/cafe-keyboard.desktop.in:7
 msgid "input-keyboard"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keyboard/mate-keyboard.desktop.in:13
-msgid "mate-control-center;MATE;keyboard;preferences;"
+#: capplets/keyboard/cafe-keyboard.desktop.in:13
+msgid "cafe-control-center;MATE;keyboard;preferences;"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Left button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Middle button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Right button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:442
+#: capplets/mouse/cafe-mouse-properties.c:442
 msgid "Specify the name of the page to show (general)"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:447
+#: capplets/mouse/cafe-mouse-properties.c:447
 msgid "- MATE Mouse Preferences"
 msgstr "ഗ്നോമിലെ മൗസിന്റെ മുന്‍‌ഗണനകള്‍"
 
-#: capplets/mouse/mate-mouse-properties.ui:107
+#: capplets/mouse/cafe-mouse-properties.ui:107
 msgid "Mouse Preferences"
 msgstr "മൌസ് മുന്‍‌ഗണനകള്‍"
 
-#: capplets/mouse/mate-mouse-properties.ui:187
+#: capplets/mouse/cafe-mouse-properties.ui:187
 msgid "Mouse Orientation"
 msgstr "മൌസിന്റെ സ്ഥാനസൂചിക"
 
-#: capplets/mouse/mate-mouse-properties.ui:214
+#: capplets/mouse/cafe-mouse-properties.ui:214
 msgid "_Right-handed"
 msgstr "വലങ്കയ്യന്‍"
 
-#: capplets/mouse/mate-mouse-properties.ui:232
+#: capplets/mouse/cafe-mouse-properties.ui:232
 msgid "_Left-handed"
 msgstr "ഇടങ്കയ്യന്‍ മൌസ്"
 
-#: capplets/mouse/mate-mouse-properties.ui:297
+#: capplets/mouse/cafe-mouse-properties.ui:297
 msgid "Sh_ow position of pointer when the Control key is pressed"
 msgstr "Control കീ അമര്‍ത്തുമ്പോള്‍ പോയിന്ററിനുള്ള സ്ഥാനം _കാണിക്കുക."
 
-#: capplets/mouse/mate-mouse-properties.ui:322
+#: capplets/mouse/cafe-mouse-properties.ui:322
 msgid "Emulate middle button through simultaneous left and right click"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:348
+#: capplets/mouse/cafe-mouse-properties.ui:348
 msgid "Enable middlemouse paste"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:385
-#: capplets/mouse/mate-mouse-properties.ui:1346
+#: capplets/mouse/cafe-mouse-properties.ui:385
+#: capplets/mouse/cafe-mouse-properties.ui:1346
 msgid "Pointer Speed"
 msgstr "പോയിന്ററിന്റെ വേഗത"
 
 #. low sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:498
-#: capplets/mouse/mate-mouse-properties.ui:1459
+#: capplets/mouse/cafe-mouse-properties.ui:498
+#: capplets/mouse/cafe-mouse-properties.ui:1459
 msgid "Low"
 msgstr "കുറഞ്ഞ"
 
 #. high sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:530
-#: capplets/mouse/mate-mouse-properties.ui:1491
+#: capplets/mouse/cafe-mouse-properties.ui:530
+#: capplets/mouse/cafe-mouse-properties.ui:1491
 msgid "High"
 msgstr "കൂടിയ"
 
-#: capplets/mouse/mate-mouse-properties.ui:554
-#: capplets/mouse/mate-mouse-properties.ui:1515
+#: capplets/mouse/cafe-mouse-properties.ui:554
+#: capplets/mouse/cafe-mouse-properties.ui:1515
 msgid "_Sensitivity:"
 msgstr "_സംവേദനക്ഷമത:"
 
-#: capplets/mouse/mate-mouse-properties.ui:569
+#: capplets/mouse/cafe-mouse-properties.ui:569
 msgid "Acceleration _Profile:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:587
+#: capplets/mouse/cafe-mouse-properties.ui:587
 msgid "Adaptive"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:588
+#: capplets/mouse/cafe-mouse-properties.ui:588
 msgid "Flat"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:624
+#: capplets/mouse/cafe-mouse-properties.ui:624
 msgid "Drag and Drop"
 msgstr "വലിച്ചിടുക"
 
-#: capplets/mouse/mate-mouse-properties.ui:658
+#: capplets/mouse/cafe-mouse-properties.ui:658
 msgid "Thr_eshold:"
 msgstr "_ത്രെഷോള്‍ഡ്:"
 
-#: capplets/mouse/mate-mouse-properties.ui:771
+#: capplets/mouse/cafe-mouse-properties.ui:771
 msgid "Double-Click Timeout"
 msgstr "ഇരട്ട ക്ലിക്കുകള്‍ക്കിടയില്‍ അനുവദനീയമായ സമയം"
 
-#: capplets/mouse/mate-mouse-properties.ui:805
+#: capplets/mouse/cafe-mouse-properties.ui:805
 msgid "_Timeout:"
 msgstr "_സമയപരിധി:"
 
-#: capplets/mouse/mate-mouse-properties.ui:901
+#: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
 "To test your double-click settings, try to double-click on the triangle and "
-"you must see the mate desktop logo with both rings showing."
+"you must see the cafe desktop logo with both rings showing."
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:963
-#: capplets/mouse/mate-settings-mouse.desktop.in:3
+#: capplets/mouse/cafe-mouse-properties.ui:963
+#: capplets/mouse/cafe-settings-mouse.desktop.in:3
 msgid "Mouse"
 msgstr "മൌസ്"
 
-#: capplets/mouse/mate-mouse-properties.ui:980
+#: capplets/mouse/cafe-mouse-properties.ui:980
 msgid "Enable _touchpad"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1028
+#: capplets/mouse/cafe-mouse-properties.ui:1028
 msgid "Disable touchpad _while typing"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1055
+#: capplets/mouse/cafe-mouse-properties.ui:1055
 msgid "Enable _mouse clicks with touchpad"
 msgstr "ടച്ച്പാഡില്‍ മൌസ് _ക്ലിക്കുകള്‍ പ്രവര്‍ത്ത സജ്ജമാക്കുക"
 
-#: capplets/mouse/mate-mouse-properties.ui:1091
+#: capplets/mouse/cafe-mouse-properties.ui:1091
 msgid "Two-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1131
+#: capplets/mouse/cafe-mouse-properties.ui:1131
 msgid "Three-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1155
+#: capplets/mouse/cafe-mouse-properties.ui:1155
 msgid "Warning: multi-finger emulation may disable software buttons"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1186
+#: capplets/mouse/cafe-mouse-properties.ui:1186
 msgid "Scrolling"
 msgstr "സ്ക്രോളിങ്"
 
-#: capplets/mouse/mate-mouse-properties.ui:1206
+#: capplets/mouse/cafe-mouse-properties.ui:1206
 msgid "_Vertical edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1232
+#: capplets/mouse/cafe-mouse-properties.ui:1232
 msgid "H_orizontal edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1258
+#: capplets/mouse/cafe-mouse-properties.ui:1258
 msgid "V_ertical two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1284
+#: capplets/mouse/cafe-mouse-properties.ui:1284
 msgid "Hor_izontal two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1310
+#: capplets/mouse/cafe-mouse-properties.ui:1310
 msgid "Enable _natural scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1551
+#: capplets/mouse/cafe-mouse-properties.ui:1551
 msgid "Touchpad"
 msgstr "ടച്ച്പാഡ്"
 
-#: capplets/mouse/mate-settings-mouse.desktop.in:4
+#: capplets/mouse/cafe-settings-mouse.desktop.in:4
 msgid "Set your mouse preferences"
 msgstr "മൌസ് മുന്‍‌ഗണനകള്‍ രേഖപ്പെടുത്തുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/mouse/mate-settings-mouse.desktop.in:7
+#: capplets/mouse/cafe-settings-mouse.desktop.in:7
 msgid "input-mouse"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/mouse/mate-settings-mouse.desktop.in:13
-msgid "mate-control-center;MATE;mouse;preferences;"
+#: capplets/mouse/cafe-settings-mouse.desktop.in:13
+msgid "cafe-control-center;MATE;mouse;preferences;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.desktop.in:3
+#: capplets/network/cafe-network-properties.desktop.in:3
 msgid "Network Proxy"
 msgstr "ശൃംഖലയിലെ പ്രോക്സി"
 
-#: capplets/network/mate-network-properties.desktop.in:4
+#: capplets/network/cafe-network-properties.desktop.in:4
 msgid "Set your network proxy preferences"
 msgstr "നിങ്ങളുടെ ശൃംഖലയിലെ പ്രോക്സി മുന്‍ഗണനകള്‍ സജ്ജീകരിയ്ക്കുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/network/mate-network-properties.desktop.in:7
+#: capplets/network/cafe-network-properties.desktop.in:7
 msgid "network-server"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/network/mate-network-properties.desktop.in:13
-msgid "mate-control-center;MATE;network;http;socks;proxy;"
+#: capplets/network/cafe-network-properties.desktop.in:13
+msgid "cafe-control-center;MATE;network;http;socks;proxy;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:34
+#: capplets/network/cafe-network-properties.ui:34
 msgid "Network Proxy Preferences"
 msgstr "ശൃംഖലയിലെ പ്രോക്സിയുടെ മുന്‍ഗണനകള്‍"
 
-#: capplets/network/mate-network-properties.ui:113
+#: capplets/network/cafe-network-properties.ui:113
 msgid "<b>Di_rect internet connection</b>"
 msgstr "<b>നേരിട്ടുളള ഇന്റര്‍നെറ്റ് ബന്ധം</b> (_r)"
 
-#: capplets/network/mate-network-properties.ui:150
+#: capplets/network/cafe-network-properties.ui:150
 msgid "<b>_Manual proxy configuration</b>"
 msgstr "<b>ശൃംഖലയിലെ പ്രോക്സിയുടെ _തന്നത്താനുള്ള സജ്ജീകരണം</b> (_M)"
 
-#: capplets/network/mate-network-properties.ui:238
-#: capplets/network/mate-network-properties.ui:253
-#: capplets/network/mate-network-properties.ui:268
-#: capplets/network/mate-network-properties.ui:283
+#: capplets/network/cafe-network-properties.ui:238
+#: capplets/network/cafe-network-properties.ui:253
+#: capplets/network/cafe-network-properties.ui:268
+#: capplets/network/cafe-network-properties.ui:283
 msgid "Port:"
 msgstr "പോര്‍ട്ട്:"
 
-#: capplets/network/mate-network-properties.ui:363
+#: capplets/network/cafe-network-properties.ui:363
 msgid "_Details"
 msgstr "_വിശദാംശങ്ങള്‍"
 
-#: capplets/network/mate-network-properties.ui:379
+#: capplets/network/cafe-network-properties.ui:379
 msgid "H_TTP proxy:"
 msgstr "എച്ച്ടിടിപി പ്രോക്സി:"
 
-#: capplets/network/mate-network-properties.ui:393
+#: capplets/network/cafe-network-properties.ui:393
 msgid "_Secure HTTP proxy:"
 msgstr "സുരക്ഷിതമായ എച്ച്ടിടിപി പ്രോക്സി:"
 
-#: capplets/network/mate-network-properties.ui:407
+#: capplets/network/cafe-network-properties.ui:407
 msgid "_FTP proxy:"
 msgstr "എഫ്‌ടിപി പ്രോക്സി:"
 
-#: capplets/network/mate-network-properties.ui:421
+#: capplets/network/cafe-network-properties.ui:421
 msgid "S_ocks host:"
 msgstr "_സോക്ക്സ് ഹോസ്റ്റ്"
 
-#: capplets/network/mate-network-properties.ui:479
+#: capplets/network/cafe-network-properties.ui:479
 msgid "<b>_Automatic proxy configuration</b>"
 msgstr "<b>നെറ്റ്‌വര്‍ക്ക് പ്രോക്സിയുടെ _സ്വയംസജ്ജീകരണം</b>"
 
-#: capplets/network/mate-network-properties.ui:517
+#: capplets/network/cafe-network-properties.ui:517
 msgid "Autoconfiguration _URL:"
 msgstr "സ്വയം സജ്ജീകരണത്തിനുളള _യുആര്‍എല്‍:"
 
-#: capplets/network/mate-network-properties.ui:574
+#: capplets/network/cafe-network-properties.ui:574
 msgid "Proxy Configuration"
 msgstr "ശൃംഖലയിലെ പ്രോക്സിയുടെ സജ്ജീകരണം"
 
-#: capplets/network/mate-network-properties.ui:592
+#: capplets/network/cafe-network-properties.ui:592
 msgid "Ignore Host List"
 msgstr "ഹോസ്റ്റ് പട്ടിക അവഗണിക്കുക"
 
-#: capplets/network/mate-network-properties.ui:730
+#: capplets/network/cafe-network-properties.ui:730
 msgid "Ignored Hosts"
 msgstr "<b>അവഗണിക്കപ്പെട്ട ഹോസ്റ്റുകള്‍</b>"
 
-#: capplets/network/mate-network-properties.ui:758
+#: capplets/network/cafe-network-properties.ui:758
 msgid "HTTP Proxy Details"
 msgstr "എച്ച്ടിടിപി പ്രോക്സിയുടെ വിശദാംശങ്ങള്‍"
 
-#: capplets/network/mate-network-properties.ui:829
+#: capplets/network/cafe-network-properties.ui:829
 msgid "<b>_Use authentication</b>"
 msgstr "<b>ആധികാരികത _ഉറപ്പ് വരുത്തുക</b>"
 
-#: capplets/network/mate-network-properties.ui:869
+#: capplets/network/cafe-network-properties.ui:869
 msgid "U_sername:"
 msgstr "_ഉപയോക്താവിന്റെ പേര്:"
 
-#: capplets/network/mate-network-properties.ui:908
+#: capplets/network/cafe-network-properties.ui:908
 msgid "_Password:"
 msgstr "_പാസ്‌വേര്‍ഡ്:"
 
-#: capplets/windows/mate-metacity-support.c:40
+#: capplets/windows/cafe-metacity-support.c:40
 msgid "Metacity Preferences"
 msgstr ""
 
-#: capplets/windows/mate-metacity-support.c:51
+#: capplets/windows/cafe-metacity-support.c:51
 #: capplets/windows/window-properties.ui:175
 msgid "Compositing Manager"
 msgstr "കംപോസിറ്റിങ് മാനേജര്‍"
 
-#: capplets/windows/mate-metacity-support.c:58
+#: capplets/windows/cafe-metacity-support.c:58
 #: capplets/windows/window-properties.ui:138
 msgid "Enable software _compositing window manager"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:264
+#: capplets/windows/cafe-window-properties.c:264
 msgid "The current window manager is unsupported"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:581
+#: capplets/windows/cafe-window-properties.c:581
 msgid "_Alt"
 msgstr "_Alt"
 
-#: capplets/windows/mate-window-properties.c:587
+#: capplets/windows/cafe-window-properties.c:587
 msgid "H_yper"
 msgstr "H_yper"
 
-#: capplets/windows/mate-window-properties.c:594
+#: capplets/windows/cafe-window-properties.c:594
 msgid "S_uper (or \"Windows logo\")"
 msgstr "S_uper (or \"Windows logo\")"
 
-#: capplets/windows/mate-window-properties.c:601
+#: capplets/windows/cafe-window-properties.c:601
 msgid "_Meta"
 msgstr "_Meta"
 
-#: capplets/windows/mate-window-properties.desktop.in:3
+#: capplets/windows/cafe-window-properties.desktop.in:3
 msgid "Windows"
 msgstr "ജാലകങ്ങള്‍"
 
-#: capplets/windows/mate-window-properties.desktop.in:4
+#: capplets/windows/cafe-window-properties.desktop.in:4
 msgid "Set your window properties"
 msgstr "നിങ്ങളുടെ ജാലകത്തിന്റെ വിശേഷതകള്‍ സജ്ജീകരിയ്ക്കുക"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/windows/mate-window-properties.desktop.in:7
+#: capplets/windows/cafe-window-properties.desktop.in:7
 msgid "preferences-system-windows"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/windows/mate-window-properties.desktop.in:13
-msgid "mate-control-center;MATE;window;manager;properties;marco;preferences;"
+#: capplets/windows/cafe-window-properties.desktop.in:13
+msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -4735,27 +4735,27 @@ msgstr "പസിഫിക്ക്/വെയ്ക്ക്"
 msgid "Pacific/Wallis"
 msgstr "പസിഫിക്ക്/വാല്ലിസ്"
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:3
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:3
 msgid "Time And Date Manager"
 msgstr ""
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:4
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:4
 msgid "Setting the time and date of the local system"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:9
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
 msgid "preferences-system-time"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:13
-msgid "mate-control-center;MATE;clock;date;time;preferences;"
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:13
+msgid "cafe-control-center;MATE;clock;date;time;preferences;"
 msgstr ""
 
-#: libwindow-settings/mate-wm-manager.c:317
+#: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
 msgstr ""
@@ -4779,8 +4779,8 @@ msgstr "കൂട്ടങ്ങള്‍:"
 msgid "Common Tasks"
 msgstr "സാധാരണയായുള്ള പ്രവര്‍ത്തികള്‍ "
 
-#: shell/control-center.c:145 shell/matecc.desktop.in:3
-#: shell/matecc.directory.desktop.in:3
+#: shell/control-center.c:145 shell/cafecc.desktop.in:3
+#: shell/cafecc.directory.desktop.in:3
 msgid "Control Center"
 msgstr "നിയന്ത്രണകേന്ദ്രം"
 
@@ -4788,30 +4788,30 @@ msgstr "നിയന്ത്രണകേന്ദ്രം"
 msgid "Hide on start (useful to preload the shell)"
 msgstr "ആരംഭിക്കുമ്പോള്‍ അദൃശ്യമാകുക (ഷെല്‍ പ്രീലോഡ് ചെയ്യുന്നു)"
 
-#: shell/matecc.desktop.in:4
+#: shell/cafecc.desktop.in:4
 msgid "The MATE configuration tool"
 msgstr "ഗ്നോമിലെ ക്രമീകരണത്തിനുള്ള പണിയായുധം"
 
-#: shell/matecc.desktop.in:5
+#: shell/cafecc.desktop.in:5
 msgid "Configure MATE settings"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.desktop.in:7
+#: shell/cafecc.desktop.in:7
 msgid "preferences-desktop"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: shell/matecc.desktop.in:14
+#: shell/cafecc.desktop.in:14
 msgid "MATE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.directory.desktop.in:5
-msgid "mate-settings"
+#: shell/cafecc.directory.desktop.in:5
+msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4951,24 +4951,24 @@ msgstr ""
 msgid "Font Viewer"
 msgstr "അക്ഷരസഞ്ചയം കാണുന്നതിനുള്ള സംവിധാനം"
 
-#: font-viewer/font-view.c:784 font-viewer/mate-font-viewer.desktop.in:4
+#: font-viewer/font-view.c:784 font-viewer/cafe-font-viewer.desktop.in:4
 msgid "View fonts on your system"
 msgstr ""
 
-#: font-viewer/mate-font-viewer.desktop.in:3
+#: font-viewer/cafe-font-viewer.desktop.in:3
 msgid "MATE Font Viewer"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: font-viewer/mate-font-viewer.desktop.in:6
+#: font-viewer/cafe-font-viewer.desktop.in:6
 msgid "preferences-desktop-font"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: font-viewer/mate-font-viewer.desktop.in:14
-msgid "mate-control-center;MATE;font;viewer;preview;desktop;preferences;"
+#: font-viewer/cafe-font-viewer.desktop.in:14
+msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
 msgstr ""
 
 #: font-viewer/font-thumbnailer.c:191

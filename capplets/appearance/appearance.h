@@ -23,22 +23,22 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
-#include "mate-theme-info.h"
+#include "cafe-theme-info.h"
 
-#define APPEARANCE_SCHEMA            "org.mate.control-center.appearance"
+#define APPEARANCE_SCHEMA            "org.cafe.control-center.appearance"
 #define MORE_THEMES_URL_KEY          "more-themes-url"
 #define MORE_BACKGROUNDS_URL_KEY     "more-backgrounds-url"
 
-#define WP_SCHEMA                    "org.mate.background"
+#define WP_SCHEMA                    "org.cafe.background"
 #define WP_FILE_KEY                  "picture-filename"
 #define WP_OPTIONS_KEY               "picture-options"
 #define WP_SHADING_KEY               "color-shading-type"
 #define WP_PCOLOR_KEY                "primary-color"
 #define WP_SCOLOR_KEY                "secondary-color"
 
-#define INTERFACE_SCHEMA             "org.mate.interface"
+#define INTERFACE_SCHEMA             "org.cafe.interface"
 #define GTK_FONT_KEY                 "font-name"
 #define MONOSPACE_FONT_KEY           "monospace-font-name"
 #define DOCUMENT_FONT_KEY            "document-font-name"
@@ -51,25 +51,25 @@
 #define TOOLBAR_STYLE_KEY            "toolbar-style"
 #define GTK_FONT_DEFAULT_VALUE       "Sans 10"
 
-#define LOCKDOWN_SCHEMA              "org.mate.lockdown"
+#define LOCKDOWN_SCHEMA              "org.cafe.lockdown"
 #define DISABLE_THEMES_SETTINGS_KEY  "disable-theme-settings"
 
-#define CAJA_SCHEMA                  "org.mate.caja.desktop"
+#define CAJA_SCHEMA                  "org.cafe.caja.desktop"
 #define DESKTOP_FONT_KEY             "font"
 
-#define MARCO_SCHEMA                 "org.mate.Marco.general"
+#define MARCO_SCHEMA                 "org.cafe.Marco.general"
 #define MARCO_THEME_KEY              "theme"
 #define WINDOW_TITLE_FONT_KEY        "titlebar-font"
 #define WINDOW_TITLE_USES_SYSTEM_KEY "titlebar-uses-system-font"
 
-#define NOTIFICATION_SCHEMA          "org.mate.NotificationDaemon"
+#define NOTIFICATION_SCHEMA          "org.cafe.NotificationDaemon"
 #define NOTIFICATION_THEME_KEY       "theme"
 
-#define MOUSE_SCHEMA                 "org.mate.peripherals-mouse"
+#define MOUSE_SCHEMA                 "org.cafe.peripherals-mouse"
 #define CURSOR_THEME_KEY             "cursor-theme"
 #define CURSOR_SIZE_KEY              "cursor-size"
 
-#define FONT_RENDER_SCHEMA           "org.mate.font-rendering"
+#define FONT_RENDER_SCHEMA           "org.cafe.font-rendering"
 #define FONT_ANTIALIASING_KEY        "antialiasing"
 #define FONT_HINTING_KEY             "hinting"
 #define FONT_RGBA_ORDER_KEY          "rgba-order"

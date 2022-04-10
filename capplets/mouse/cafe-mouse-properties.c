@@ -55,11 +55,11 @@ typedef enum {
 	ACCEL_PROFILE_FLAT
 } AccelProfile;
 
-#define MOUSE_SCHEMA "org.mate.peripherals-mouse"
-#define INTERFACE_SCHEMA "org.mate.interface"
+#define MOUSE_SCHEMA "org.cafe.peripherals-mouse"
+#define INTERFACE_SCHEMA "org.cafe.interface"
 #define DOUBLE_CLICK_KEY "double-click"
 
-#define TOUCHPAD_SCHEMA "org.mate.peripherals-touchpad"
+#define TOUCHPAD_SCHEMA "org.cafe.peripherals-touchpad"
 
 /* State in testing the double-click speed. Global for a great deal of
  * convenience
@@ -85,7 +85,7 @@ test_maybe_timeout (struct test_data_t *data)
 {
 	double_click_state = DOUBLE_CLICK_TEST_OFF;
 
-	gtk_image_set_from_resource (GTK_IMAGE (data->image), "/org/mate/mcc/mouse/double-click-off.svg");
+	gtk_image_set_from_resource (GTK_IMAGE (data->image), "/org/cafe/mcc/mouse/double-click-off.svg");
 
 	*data->timeout_id = 0;
 
@@ -146,13 +146,13 @@ event_box_button_press_event (GtkWidget   *widget,
 
 	switch (double_click_state) {
 	case DOUBLE_CLICK_TEST_ON:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/mate/mcc/mouse/double-click-on.svg");
+		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-on.svg");
 		break;
 	case DOUBLE_CLICK_TEST_MAYBE:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/mate/mcc/mouse/double-click-maybe.svg");
+		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-maybe.svg");
 		break;
 	case DOUBLE_CLICK_TEST_OFF:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/mate/mcc/mouse/double-click-off.svg");
+		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-off.svg");
 		break;
 	}
 
@@ -293,7 +293,7 @@ setup_dialog (GtkBuilder *dialog)
 		gtk_range_get_adjustment (GTK_RANGE (WID ("delay_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 
-	gtk_image_set_from_resource (GTK_IMAGE (WID ("double_click_image")), "/org/mate/mcc/mouse/double-click-off.svg");
+	gtk_image_set_from_resource (GTK_IMAGE (WID ("double_click_image")), "/org/cafe/mcc/mouse/double-click-off.svg");
 	g_object_set_data (G_OBJECT (WID ("double_click_eventbox")), "image", WID ("double_click_image"));
 	g_signal_connect (WID ("double_click_eventbox"), "button_press_event",
 			  G_CALLBACK (event_box_button_press_event), NULL);
@@ -386,7 +386,7 @@ create_dialog (void)
 	GError       *error = NULL;
 
 	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/mate/mcc/mouse/mate-mouse-properties.ui", &error) == 0) {
+	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/mouse/cafe-mouse-properties.ui", &error) == 0) {
 		g_warning ("Error loading UI file: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);

@@ -21,7 +21,7 @@
 #ifndef __DR_WRIGHT_H__
 #define __DR_WRIGHT_H__
 
-#define TYPING_BREAK_SCHEMA "org.mate.typing-break"
+#define TYPING_BREAK_SCHEMA "org.cafe.typing-break"
 
 typedef struct _DrWright DrWright;
 

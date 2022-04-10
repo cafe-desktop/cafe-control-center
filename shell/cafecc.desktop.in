@@ -4,7 +4,7 @@ GenericName=The MATE configuration tool
 Comment=Configure MATE settings
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=preferences-desktop
-Exec=mate-control-center
+Exec=cafe-control-center
 Terminal=false
 Type=Application
 StartupNotify=false

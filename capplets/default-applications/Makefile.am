@@ -1,32 +1,32 @@
 SUBDIRS = icons
 
 # This is used in MATECC_CAPPLETS_CFLAGS
-cappletname = mate-default-applications-properties
+cappletname = cafe-default-applications-properties
 
-ui_files = mate-default-applications-properties.ui
+ui_files = cafe-default-applications-properties.ui
 
-bin_PROGRAMS = mate-default-applications-properties
+bin_PROGRAMS = cafe-default-applications-properties
 
 BUILT_SOURCES = \
-	mate-default-applications-properties-resources.h \
-	mate-default-applications-properties-resources.c
+	cafe-default-applications-properties-resources.h \
+	cafe-default-applications-properties-resources.c
 
-mate_default_applications_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
-nodist_mate_default_applications_properties_SOURCES = \
+cafe_default_applications_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+nodist_cafe_default_applications_properties_SOURCES = \
 	$(BUILT_SOURCES)
-mate_default_applications_properties_SOURCES = \
-	mate-da-capplet.c mate-da-capplet.h
+cafe_default_applications_properties_SOURCES = \
+	cafe-da-capplet.c cafe-da-capplet.h
 
 include $(top_srcdir)/gla11y.mk
 
 desktopdir = $(datadir)/applications
-Desktop_in_files = mate-default-applications-properties.desktop.in
+Desktop_in_files = cafe-default-applications-properties.desktop.in
 desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 $(desktop_DATA): $(Desktop_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = mate-default-applications.pc
+pkgconfig_DATA = cafe-default-applications.pc
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
@@ -34,14 +34,14 @@ AM_CPPFLAGS = \
 	$(DEFAULT_APPLICATIONS_CAPPLET_CFLAGS) \
 	-DAPPLICATIONSDIR=\""$(datadir)/applications"\"
 
-mate-default-applications-properties-resources.h mate-default-applications-properties-resources.c: org.mate.mcc.da.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.da.gresource.xml)
+cafe-default-applications-properties-resources.h cafe-default-applications-properties-resources.c: org.cafe.mcc.da.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.da.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name default_applications $<
 
 CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(autostart_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
-	mate-default-applications.pc.in \
-	mate-default-applications-properties.ui \
+	cafe-default-applications.pc.in \
+	cafe-default-applications-properties.ui \
 	$(Desktop_in_files) \
-	org.mate.mcc.da.gresource.xml
+	org.cafe.mcc.da.gresource.xml
 
 -include $(top_srcdir)/git.mk

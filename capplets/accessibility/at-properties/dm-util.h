@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4 wrap ai: */
 /*
- * dm-util.h: This file is part of mate-control-center.
+ * dm-util.h: This file is part of cafe-control-center.
  *
  * Copyright (C) 2019 Wu Xiaotian <yetist@gmail.com>
  *

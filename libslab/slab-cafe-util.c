@@ -18,7 +18,7 @@
  * Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include "slab-mate-util.h"
+#include "slab-cafe-util.h"
 #include "libslab-utils.h"
 
 #include <gio/gio.h>
@@ -33,7 +33,7 @@ load_desktop_item_from_unknown (const gchar *id)
 	GError *error = NULL;
 
 
-	item = mate_desktop_item_new_from_uri (id, 0, &error);
+	item = cafe_desktop_item_new_from_uri (id, 0, &error);
 
 	if (! error)
 		return item;
@@ -42,7 +42,7 @@ load_desktop_item_from_unknown (const gchar *id)
 		error = NULL;
 	}
 
-	item = mate_desktop_item_new_from_file (id, 0, &error);
+	item = cafe_desktop_item_new_from_file (id, 0, &error);
 
 	if (! error)
 		return item;
@@ -51,7 +51,7 @@ load_desktop_item_from_unknown (const gchar *id)
 		error = NULL;
 	}
 
-	item = mate_desktop_item_new_from_basename (id, 0, &error);
+	item = cafe_desktop_item_new_from_basename (id, 0, &error);
 
 	if (! error)
 		return item;
@@ -65,7 +65,7 @@ load_desktop_item_from_unknown (const gchar *id)
 	if (basename) {
 		basename++;
 
-		item = mate_desktop_item_new_from_basename (basename, 0, &error);
+		item = cafe_desktop_item_new_from_basename (basename, 0, &error);
 
 		if (! error)
 			return item;
@@ -86,12 +86,12 @@ open_desktop_item_exec (MateDesktopItem * desktop_item)
 	if (!desktop_item)
 		return FALSE;
 
-	mate_desktop_item_launch (desktop_item, NULL, MATE_DESKTOP_ITEM_LAUNCH_ONLY_ONE | MATE_DESKTOP_ITEM_LAUNCH_DO_NOT_REAP_CHILD, &error);
+	cafe_desktop_item_launch (desktop_item, NULL, MATE_DESKTOP_ITEM_LAUNCH_ONLY_ONE | MATE_DESKTOP_ITEM_LAUNCH_DO_NOT_REAP_CHILD, &error);
 
 	if (error)
 	{
 		g_warning ("error launching %s [%s]\n",
-			mate_desktop_item_get_location (desktop_item), error->message);
+			cafe_desktop_item_get_location (desktop_item), error->message);
 
 		g_error_free (error);
 		return FALSE;
@@ -111,7 +111,7 @@ open_desktop_item_help (MateDesktopItem * desktop_item)
 	if (!desktop_item)
 		return FALSE;
 
-	doc_path = mate_desktop_item_get_string (desktop_item, "DocPath");
+	doc_path = cafe_desktop_item_get_string (desktop_item, "DocPath");
 
 	if (doc_path)
 	{

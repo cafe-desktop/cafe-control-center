@@ -1,20 +1,20 @@
-bin_PROGRAMS = mate-at-properties
+bin_PROGRAMS = cafe-at-properties
 
 ui_files = at-enable-dialog.ui
 
 BUILT_SOURCES = \
-	mate-at-properties-resources.c \
-	mate-at-properties-resources.h
-nodist_mate_at_properties_SOURCES= $(BUILT_SOURCES)
-mate_at_properties_LDADD = $(AT_CAPPLET_LIBS) $(MATECC_CAPPLETS_LIBS) $(top_builddir)/capplets/common/libcommon.la
-mate_at_properties_SOURCES = \
+	cafe-at-properties-resources.c \
+	cafe-at-properties-resources.h
+nodist_cafe_at_properties_SOURCES= $(BUILT_SOURCES)
+cafe_at_properties_LDADD = $(AT_CAPPLET_LIBS) $(MATECC_CAPPLETS_LIBS) $(top_builddir)/capplets/common/libcommon.la
+cafe_at_properties_SOURCES = \
 	dm-util.h	\
 	dm-util.c	\
 	main.c
-mate_at_properties_LDFLAGS = -export-dynamic
+cafe_at_properties_LDFLAGS = -export-dynamic
 
 desktopdir = $(datadir)/applications
-Desktop_in_files = mate-at-properties.desktop.in
+Desktop_in_files = cafe-at-properties.desktop.in
 desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 
 $(desktop_DATA): $(Desktop_in_files)
@@ -38,11 +38,11 @@ EXTRA_DIST = \
 	$(ui_files) \
 	$(pixmap_DATA) \
 	$(Desktop_in_files) \
-	org.mate.mcc.accessibility.at.gresource.xml \
+	org.cafe.mcc.accessibility.at.gresource.xml \
 	ui-a11y.suppr
 
 # Generate resources
-mate-at-properties-resources.h mate-at-properties-resources.c: org.mate.mcc.accessibility.at.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.accessibility.at.gresource.xml)
+cafe-at-properties-resources.h cafe-at-properties-resources.c: org.cafe.mcc.accessibility.at.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.accessibility.at.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name accessibility $<
 
 -include $(top_srcdir)/git.mk

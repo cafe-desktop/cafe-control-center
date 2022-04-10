@@ -33,7 +33,7 @@
 	  <listitem>
 	    <para>
 	      <application>fortunes</application> is a small program
-	      that displays random quotes.  The mate startup hints
+	      that displays random quotes.  The cafe startup hints
 	      application can display
 	      <application>fortunes</application> quotes instead of
 	      tips.
@@ -46,7 +46,7 @@
 	    <para>
 	      Often times administrators will create a "message of the
 	      day" ("MOTD") to notify users of important events.  The
-	      mate startup hints application can display these
+	      cafe startup hints application can display these
 	      instead of tips.
 	    </para>
 	    <para>

@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkbot.c
+/* cafe-keyboard-properties-xkbot.c
  * Copyright (C) 2003-2007 Sergey V. Udaltsov
  *
  * Written by: Sergey V. Udaltsov <svu@gnome.org>
@@ -32,7 +32,7 @@
 
 #include "capplet-util.h"
 
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-xkb.h"
 
 static GtkBuilder *chooser_dialog = NULL;
 static const char *current1st_level_id = NULL;
@@ -219,7 +219,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 	gchar *utf_option_name = xci_desc_to_utf8 (config_item);
 	/* Copy this out because we'll load it into the widget with set_data */
 	gchar *full_option_name =
-	    g_strdup (matekbd_keyboard_config_merge_items
+	    g_strdup (cafekbd_keyboard_config_merge_items
 		      (current1st_level_id, config_item->name));
 	gboolean initial_state;
 
@@ -449,7 +449,7 @@ xkb_options_popup_dialog (GtkBuilder * dialog)
 
 	chooser_dialog = gtk_builder_new ();
 	gtk_builder_add_from_resource (chooser_dialog,
-	                               "/org/mate/mcc/keyboard/mate-keyboard-properties-options-dialog.ui",
+	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-options-dialog.ui",
 	                               NULL);
 
 	chooser = CWID ("xkb_options_dialog");
@@ -470,7 +470,7 @@ xkb_options_update_option_counters (XklConfigRegistry * config_registry,
 				    XklConfigItem * config_item)
 {
 	gchar *full_option_name =
-	    g_strdup (matekbd_keyboard_config_merge_items
+	    g_strdup (cafekbd_keyboard_config_merge_items
 		      (current1st_level_id, config_item->name));
 	gboolean current_state =
 	    xkb_options_is_selected (full_option_name);

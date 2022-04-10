@@ -1,4 +1,4 @@
-mapdir = $(datadir)/mate-time-admin/map
+mapdir = $(datadir)/cafe-time-admin/map
 dist_map_DATA = \
 map/backward                map/timezone_12.png        map/timezone_4.5_dim.png   map/timezone_6.png  \
 map/bg_dim.png              map/timezone_13_dim.png    map/timezone_-4.5.png      map/timezone_-7_dim.png \
@@ -24,7 +24,7 @@ map/timezone_12.75.png      map/timezone_3.png         map/timezone_6_dim.png   
 map/timezone_12_dim.png     map/timezone_-4.5_dim.png  map/timezone_-6.png
 
 desktopdir = $(datadir)/applications
-desktop_in_files = mate-time-admin.desktop.in
+desktop_in_files = cafe-time-admin.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 $(desktop_DATA): $(desktop_in_files)

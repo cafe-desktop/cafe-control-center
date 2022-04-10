@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 
-/* mate-wm-manager.c
+/* cafe-wm-manager.c
  * Copyright (C) 2002 Seth Nickell
  * Copyright (C) 1998, 2002 Red Hat, Inc.
  *
@@ -26,7 +26,7 @@
  */
 
 #include <config.h>
-#include "mate-wm-manager.h"
+#include "cafe-wm-manager.h"
 
 #include <glib.h>
 #include <glib/gi18n.h>
@@ -49,7 +49,7 @@ typedef struct {
         guint is_user : 1;
         guint is_present : 1;
         guint is_config_present : 1;
-        MateWindowManager *mate_wm;
+        MateWindowManager *cafe_wm;
 } AvailableWindowManager;
 
 static gboolean done_scan = FALSE;
@@ -107,8 +107,8 @@ wm_compare (gconstpointer a, gconstpointer b)
 
         /* mmm, sloooow */
 
-        return g_utf8_collate (mate_desktop_item_get_string (wm_a->ditem, MATE_DESKTOP_ITEM_NAME),
-                               mate_desktop_item_get_string (wm_b->ditem, MATE_DESKTOP_ITEM_NAME));
+        return g_utf8_collate (cafe_desktop_item_get_string (wm_a->ditem, MATE_DESKTOP_ITEM_NAME),
+                               cafe_desktop_item_get_string (wm_b->ditem, MATE_DESKTOP_ITEM_NAME));
 }
 
 static AvailableWindowManager*
@@ -120,40 +120,40 @@ wm_load (const char *desktop_file,
 
         wm = g_new0 (AvailableWindowManager, 1);
 
-        wm->ditem = mate_desktop_item_new_from_file (desktop_file, 0, NULL);
+        wm->ditem = cafe_desktop_item_new_from_file (desktop_file, 0, NULL);
 
         if (wm->ditem == NULL) {
                 g_free (wm);
                 return NULL;
         }
 
-        mate_desktop_item_set_entry_type (wm->ditem, MATE_DESKTOP_ITEM_TYPE_APPLICATION);
+        cafe_desktop_item_set_entry_type (wm->ditem, MATE_DESKTOP_ITEM_TYPE_APPLICATION);
 
-        wm->exec = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->exec = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                             MATE_DESKTOP_ITEM_EXEC));
 
-        wm->name = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->name = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                             MATE_DESKTOP_ITEM_NAME));
 
-        wm->config_exec = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->config_exec = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                                    "ConfigExec"));
-        wm->config_tryexec = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->config_tryexec = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                                       "ConfigTryExec"));
-        wm->session_managed = mate_desktop_item_get_boolean (wm->ditem,
+        wm->session_managed = cafe_desktop_item_get_boolean (wm->ditem,
                                                               "SessionManaged");
 
-        wm->module = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->module = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                               "X-MATE-WMSettingsModule"));
 
-        wm->identify_name = g_strdup (mate_desktop_item_get_string (wm->ditem,
+        wm->identify_name = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                                      "X-MATE-WMName"));
 
         wm->is_user = is_user;
 
-        if (mate_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_EXEC)) {
+        if (cafe_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_EXEC)) {
                 const char *tryexec;
 
-                tryexec = mate_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_TRY_EXEC);
+                tryexec = cafe_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_TRY_EXEC);
 
                 if (tryexec) {
                         path = g_find_program_in_path (tryexec);
@@ -213,7 +213,7 @@ scan_wm_directory (gchar *directory, gboolean is_user)
         g_list_free (files);
 }
 
-void mate_wm_manager_init(void)
+void cafe_wm_manager_init(void)
 {
 	char* tempdir;
 
@@ -228,7 +228,7 @@ void mate_wm_manager_init(void)
 	scan_wm_directory(tempdir, FALSE);
 	g_free(tempdir);
 
-		tempdir = g_build_filename(g_get_user_config_dir(), "mate", "wm-properties", NULL);
+		tempdir = g_build_filename(g_get_user_config_dir(), "cafe", "wm-properties", NULL);
 
 	scan_wm_directory(tempdir, TRUE);
 	g_free(tempdir);
@@ -282,7 +282,7 @@ get_current_wm (GdkScreen *screen)
 }
 
 MateWindowManager*
-mate_wm_manager_get_current (GdkScreen *screen)
+cafe_wm_manager_get_current (GdkScreen *screen)
 {
         AvailableWindowManager *wm;
 
@@ -290,13 +290,13 @@ mate_wm_manager_get_current (GdkScreen *screen)
 
         if (wm != NULL && wm->module != NULL)
                 /* may still return NULL here */
-                return (MateWindowManager*) mate_window_manager_new (wm->ditem);
+                return (MateWindowManager*) cafe_window_manager_new (wm->ditem);
         else
                 return NULL;
 }
 
 gboolean
-mate_wm_manager_spawn_config_tool_for_current (GdkScreen  *screen,
+cafe_wm_manager_spawn_config_tool_for_current (GdkScreen  *screen,
                                                 GError    **error)
 {
         AvailableWindowManager *wm;

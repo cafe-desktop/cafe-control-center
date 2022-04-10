@@ -20,7 +20,7 @@
 
 #include "themed-icon.h"
 
-#include "mate-utils.h"
+#include "cafe-utils.h"
 
 static void themed_icon_finalize (GObject *);
 static void themed_icon_get_property (GObject *, guint, GValue *, GParamSpec *);

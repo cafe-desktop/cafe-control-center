@@ -22,9 +22,9 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include "mate-wp-info.h"
+#include "cafe-wp-info.h"
 
-MateWPInfo* mate_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs)
+MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs)
 {
 	MateWPInfo* wp;
 
@@ -72,7 +72,7 @@ MateWPInfo* mate_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumb
 		wp->size = g_file_info_get_size(info);
 		wp->mtime = g_file_info_get_attribute_uint64(info, G_FILE_ATTRIBUTE_TIME_MODIFIED);
 
-		wp->thumburi = mate_desktop_thumbnail_factory_lookup(thumbs, uri, wp->mtime);
+		wp->thumburi = cafe_desktop_thumbnail_factory_lookup(thumbs, uri, wp->mtime);
 	}
 
 	if (info != NULL)
@@ -83,7 +83,7 @@ MateWPInfo* mate_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumb
 	return wp;
 }
 
-void mate_wp_info_free(MateWPInfo* info)
+void cafe_wp_info_free(MateWPInfo* info)
 {
 	if (info == NULL)
 	{

@@ -21,7 +21,7 @@ enum {
 #include "activate-settings-daemon.h"
 
 #define ACCESSIBILITY_KEY       "accessibility"
-#define ACCESSIBILITY_SCHEMA    "org.mate.interface"
+#define ACCESSIBILITY_SCHEMA    "org.cafe.interface"
 
 static gboolean initial_state;
 
@@ -47,7 +47,7 @@ create_builder (void)
 
     builder = gtk_builder_new ();
 
-    if (gtk_builder_add_from_resource (builder, "/org/mate/mcc/accessibility/at/at-enable-dialog.ui", &error)) {
+    if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/accessibility/at/at-enable-dialog.ui", &error)) {
         GObject *object;
         GDesktopAppInfo *app_info = NULL;
 
@@ -80,19 +80,19 @@ create_builder (void)
 static void
 cb_at_preferences (GtkDialog *dialog, gint response_id)
 {
-	g_spawn_command_line_async ("mate-default-applications-properties --show-page=a11y", NULL);
+	g_spawn_command_line_async ("cafe-default-applications-properties --show-page=a11y", NULL);
 }
 
 static void
 cb_keyboard_preferences (GtkDialog *dialog, gint response_id)
 {
-	g_spawn_command_line_async ("mate-keyboard-properties --a11y", NULL);
+	g_spawn_command_line_async ("cafe-keyboard-properties --a11y", NULL);
 }
 
 static void
 cb_mouse_preferences (GtkDialog *dialog, gint response_id)
 {
-	g_spawn_command_line_async ("mate-mouse-properties --show-page=accessibility", NULL);
+	g_spawn_command_line_async ("cafe-mouse-properties --show-page=accessibility", NULL);
 }
 
 static void

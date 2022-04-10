@@ -16,7 +16,7 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/keybindings">
-    <file compressed="true">mate-keybinding-properties.ui</file>
+  <gresource prefix="/org/cafe/mcc/keybindings">
+    <file compressed="true">cafe-keybinding-properties.ui</file>
   </gresource>
 </gresources>

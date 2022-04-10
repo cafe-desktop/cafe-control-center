@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkb.h
+/* cafe-keyboard-properties-xkb.h
  * Copyright (C) 2003-2007 Sergey V Udaltsov
  *
  * Written by Sergey V. Udaltsov <svu@gnome.org>
@@ -26,7 +26,7 @@
 
 #include <gio/gio.h>
 
-#include "libmatekbd/matekbd-keyboard-config.h"
+#include "libcafekbd/cafekbd-keyboard-config.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.0
 
-mate-about-me-fingerprint - about me fingerprint dialog window
+cafe-about-me-fingerprint - about me fingerprint dialog window
 Copyright (C) MATE Developers
 
 This program is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@ Author: Wolfgang Ulbrich
 <interface>
   <requires lib="gtk+" version="3.22"/>
   <!-- interface-license-type gplv2 -->
-  <!-- interface-name mate-about-me-fingerprint -->
+  <!-- interface-name cafe-about-me-fingerprint -->
   <!-- interface-description about me fingerprint dialog window -->
   <!-- interface-copyright MATE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->

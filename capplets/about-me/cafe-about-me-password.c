@@ -1,4 +1,4 @@
-/* mate-about-me.c
+/* cafe-about-me.c
  * Copyright (C) 2002 Diego Gonzalez
  * Copyright (C) 2006 Johannes H. Jensen
  *
@@ -88,14 +88,14 @@ typedef struct {
 /*
  * Error handling {{
  */
-#define PASSDLG_ERROR (mate_about_me_password_error_quark())
+#define PASSDLG_ERROR (cafe_about_me_password_error_quark())
 
-GQuark mate_about_me_password_error_quark(void)
+GQuark cafe_about_me_password_error_quark(void)
 {
 	static GQuark q = 0;
 
 	if (q == 0) {
-		q = g_quark_from_static_string("mate_about_me_password_error");
+		q = g_quark_from_static_string("cafe_about_me_password_error");
 	}
 
 	return q;
@@ -1018,7 +1018,7 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 
 	/* Initialize dialog */
 	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/mate/mcc/am/mate-about-me-password.ui", &error) == 0)
+	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-password.ui", &error) == 0)
 	{
 		g_warning ("Could not parse UI definition: %s", error->message);
 		g_error_free (error);
@@ -1104,7 +1104,7 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 
 /* Main */
 void
-mate_about_me_password (GtkWindow *parent)
+cafe_about_me_password (GtkWindow *parent)
 {
 	PasswordDialog	*pdialog;
 	GtkBuilder		*dialog;

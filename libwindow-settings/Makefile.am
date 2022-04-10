@@ -4,39 +4,39 @@ AM_CPPFLAGS = 								\
 	-DMATELOCALEDIR="\"$(datadir)/locale\""				\
 	-DMATE_ICONDIR=\""$(datadir)/pixmaps"\"				\
 	-DG_LOG_DOMAIN=\"capplet-common\"				\
-	-DMATE_WM_PROPERTY_PATH=\"$(datadir)/mate/wm-properties\"	\
+	-DMATE_WM_PROPERTY_PATH=\"$(datadir)/cafe/wm-properties\"	\
 	-DMATE_WINDOW_MANAGER_MODULE_PATH=\""$(WM_MODULE_DIR)"\"	\
 	-I$(top_srcdir)/						\
 	$(WARN_CFLAGS)							\
 	@CAPPLET_CFLAGS@						\
 	-DMARCO_THEME_DIR=\""$(datadir)/themes"\"
 
-lib_LTLIBRARIES = libmate-window-settings.la
+lib_LTLIBRARIES = libcafe-window-settings.la
 
-libmate_window_settings_la_LDFLAGS = 	\
+libcafe_window_settings_la_LDFLAGS = 	\
 	-export_dynamic			\
 	-no-undefined			\
         -version-info 1:0:0
 
-libmate_window_settings_la_LIBADD = $(MATECC_LIBS)
+libcafe_window_settings_la_LIBADD = $(MATECC_LIBS)
 
-libmate_window_settings_la_SOURCES = \
-	mate-window-manager.c	\
-	mate-window-manager.h	\
-	mate-wm-manager.c	\
-	mate-wm-manager.h
+libcafe_window_settings_la_SOURCES = \
+	cafe-window-manager.c	\
+	cafe-window-manager.h	\
+	cafe-wm-manager.c	\
+	cafe-wm-manager.h
 
-libmate_window_settingsincludedir = $(includedir)/mate-window-settings-2.0
+libcafe_window_settingsincludedir = $(includedir)/cafe-window-settings-2.0
 
-libmate_window_settingsinclude_HEADERS =	\
-	mate-window-manager.h			\
-	mate-wm-manager.h
+libcafe_window_settingsinclude_HEADERS =	\
+	cafe-window-manager.h			\
+	cafe-wm-manager.h
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = mate-window-settings-2.0.pc
+pkgconfig_DATA = cafe-window-settings-2.0.pc
 
 EXTRA_DIST = 					\
-	mate-window-settings-2.0.pc.in
+	cafe-window-settings-2.0.pc.in
 
 wms_flags = -export_dynamic -avoid-version -module
 wmsdir = $(WM_MODULE_DIR)
@@ -51,6 +51,6 @@ libmarco_la_SOURCES = 		\
 libmarco_la_LDFLAGS = $(wms_flags)
 libmarco_la_LIBADD = 		\
 	$(MATECC_LIBS)			\
-	libmate-window-settings.la
+	libcafe-window-settings.la
 
 -include $(top_srcdir)/git.mk

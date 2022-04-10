@@ -19,14 +19,14 @@ dist_pixmap_DATA = \
 
 desktopdir = $(datadir)/applications
 desktop_in_files = \
-	mate-appearance-properties.desktop.in \
-	mate-theme-installer.desktop.in
+	cafe-appearance-properties.desktop.in \
+	cafe-theme-installer.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop: %.desktop.in
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
 xml_in_files = \
-	mate-theme-package.xml.in
+	cafe-theme-package.xml.in
 
 mimedir = $(datadir)/mime/packages
 mime_DATA = $(xml_in_files:.xml.in=.xml)

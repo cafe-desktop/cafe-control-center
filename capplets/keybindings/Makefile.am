@@ -1,16 +1,16 @@
 # This is used in MATECC_CAPPLETS_CFLAGS
 cappletname = keybinding
 
-ui_files = mate-keybinding-properties.ui
+ui_files = cafe-keybinding-properties.ui
 
-bin_PROGRAMS = mate-keybinding-properties
+bin_PROGRAMS = cafe-keybinding-properties
 
-mate_keybinding_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
-BUILT_SOURCES = mate-keybinding-properties-resources.h mate-keybinding-properties-resources.c
-nodist_mate_keybinding_properties_SOURCES = \
+cafe_keybinding_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+BUILT_SOURCES = cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c
+nodist_cafe_keybinding_properties_SOURCES = \
 	$(BUILT_SOURCES)
-mate_keybinding_properties_SOURCES = \
-	mate-keybinding-properties.c \
+cafe_keybinding_properties_SOURCES = \
+	cafe-keybinding-properties.c \
 	eggcellrendererkeys.c \
 	eggcellrendererkeys.h \
 	eggaccelerators.c \
@@ -19,7 +19,7 @@ mate_keybinding_properties_SOURCES = \
 include $(top_srcdir)/gla11y.mk
 
 desktopdir = $(datadir)/applications
-Desktop_in_files = mate-keybinding.desktop.in
+Desktop_in_files = cafe-keybinding.desktop.in
 desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 
 $(desktop_DATA): $(Desktop_in_files)
@@ -32,9 +32,9 @@ xml_DATA = $(xml_in_files:.xml.in=.xml)
 %.xml: %.xml.in
 	$(AM_V_GEN) GETTEXTDATADIR=$(top_srcdir) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = mate-keybindings.pc
+pkgconfig_DATA = cafe-keybindings.pc
 
-mate-keybinding-properties-resources.h mate-keybinding-properties-resources.c: org.mate.mcc.keybindings.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.keybindings.gresource.xml)
+cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c: org.cafe.mcc.keybindings.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.keybindings.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name keybindings $<
 
 AM_CPPFLAGS = \
@@ -48,10 +48,10 @@ CLEANFILES = \
 	$(xml_DATA)
 
 EXTRA_DIST = $(xml_in_files) \
-	mate-keybindings.pc.in \
+	cafe-keybindings.pc.in \
 	$(ui_files) \
 	$(Desktop_in_files) \
-	org.mate.mcc.keybindings.gresource.xml \
+	org.cafe.mcc.keybindings.gresource.xml \
 	ui-a11y.suppr
 
 -include $(top_srcdir)/git.mk

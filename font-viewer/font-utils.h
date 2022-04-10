@@ -1,5 +1,5 @@
 /* -*- mode: C; c-basic-offset: 4 -*-
- * mate-font-viewer:
+ * cafe-font-viewer:
  *
  * Copyright (C) 2012 Cosimo Cecchi <cosimoc@gnome.org>
  *

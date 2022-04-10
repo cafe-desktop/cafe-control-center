@@ -933,7 +933,7 @@ font_view_application_new (void)
         g_critical ("Can't initialize fontconfig library");
 
     return g_object_new (FONT_VIEW_TYPE_APPLICATION,
-                         "application-id", "org.mate.font-viewer",
+                         "application-id", "org.cafe.font-viewer",
                          "flags", G_APPLICATION_HANDLES_OPEN,
                          NULL);
 }

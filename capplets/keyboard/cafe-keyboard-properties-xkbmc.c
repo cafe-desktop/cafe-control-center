@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkbmc.c
+/* cafe-keyboard-properties-xkbmc.c
  * Copyright (C) 2003-2007 Sergey V. Udaltsov
  *
  * Written by: Sergey V. Udaltsov <svu@gnome.org>
@@ -33,7 +33,7 @@
 
 #include "capplet-util.h"
 
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-xkb.h"
 
 static gchar *current_model_name = NULL;
 static gchar *current_vendor_name = NULL;
@@ -316,7 +316,7 @@ choose_model (GtkBuilder * dialog)
 
 	chooser_dialog = gtk_builder_new ();
 	gtk_builder_add_from_resource (chooser_dialog,
-	                               "/org/mate/mcc/keyboard/mate-keyboard-properties-model-chooser.ui",
+	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-model-chooser.ui",
 	                               NULL);
 	chooser = CWID ("xkb_model_chooser");
 	gtk_window_set_transient_for (GTK_WINDOW (chooser),

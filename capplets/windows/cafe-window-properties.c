@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 
-/* mate-window-properties.c
+/* cafe-window-properties.c
  * Copyright (C) 2002 Seth Nickell
  * Copyright (C) 2002 Red Hat, Inc.
  *
@@ -35,11 +35,11 @@
 
 #include <gdk/gdkx.h>
 
-#include "mate-metacity-support.h"
+#include "cafe-metacity-support.h"
 #include "wm-common.h"
 #include "capplet-util.h"
 
-#define MARCO_SCHEMA "org.mate.Marco.general"
+#define MARCO_SCHEMA "org.cafe.Marco.general"
 #define MARCO_THEME_KEY "theme"
 #define MARCO_FONT_KEY  "titlebar-font"
 #define MARCO_FOCUS_KEY "focus-mode"
@@ -325,7 +325,7 @@ main (int argc, char **argv)
     current_wm = gdk_x11_screen_get_window_manager_name (screen);
 
     if (g_strcmp0 (current_wm, WM_COMMON_METACITY) == 0) {
-        mate_metacity_config_tool ();
+        cafe_metacity_config_tool ();
         return 0;
     }
 
@@ -337,7 +337,7 @@ main (int argc, char **argv)
     marco_settings = g_settings_new (MARCO_SCHEMA);
 
     builder = gtk_builder_new ();
-    if (gtk_builder_add_from_resource (builder, "/org/mate/mcc/windows/window-properties.ui", &error) == 0) {
+    if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/windows/window-properties.ui", &error) == 0) {
         g_warning ("Could not load UI: %s", error->message);
         g_error_free (error);
         g_object_unref (marco_settings);

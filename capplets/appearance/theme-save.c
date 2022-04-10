@@ -35,7 +35,7 @@ enum {
   INVALID_THEME_NAME
 };
 
-/* taken from mate-desktop-item.c */
+/* taken from cafe-desktop-item.c */
 static gchar *
 escape_string_and_dup (const gchar *s)
 {
@@ -366,7 +366,7 @@ theme_save_dialog_run (MateThemeMetaInfo *theme_info,
     g_signal_connect (data->theme_save_dialog, "delete-event", (GCallback) gtk_true, NULL);
     g_signal_connect (entry, "changed", (GCallback) entry_text_changed, data);
 
-    error_quark = g_quark_from_string ("mate-theme-save");
+    error_quark = g_quark_from_string ("cafe-theme-save");
     gtk_widget_set_size_request (text_view, 300, 100);
   }
 

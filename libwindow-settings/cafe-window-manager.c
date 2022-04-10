@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 
-/* mate-window-manager.h
+/* cafe-window-manager.h
  * Copyright (C) 2002 Seth Nickell
  * Copyright (C) 2002 Red Hat, Inc.
  *
@@ -23,7 +23,7 @@
  * 02110-1301, USA.
  */
 
-#include "mate-window-manager.h"
+#include "cafe-window-manager.h"
 
 #include <gmodule.h>
 
@@ -35,7 +35,7 @@ struct _MateWindowManagerPrivate {
 };
 
 GObject *
-mate_window_manager_new (MateDesktopItem *it)
+cafe_window_manager_new (MateDesktopItem *it)
 {
         const char *settings_lib;
         char *module_name;
@@ -44,7 +44,7 @@ mate_window_manager_new (MateDesktopItem *it)
         GModule *module;
         gboolean success;
 
-        settings_lib = mate_desktop_item_get_string (it, "X-MATE-WMSettingsModule");
+        settings_lib = cafe_desktop_item_get_string (it, "X-MATE-WMSettingsModule");
 
         module_name = g_module_build_path (MATE_WINDOW_MANAGER_MODULE_PATH,
                                            settings_lib);
@@ -72,26 +72,26 @@ mate_window_manager_new (MateDesktopItem *it)
         if (wm == NULL)
                 return NULL;
 
-        (MATE_WINDOW_MANAGER (wm))->p->window_manager_name = g_strdup (mate_desktop_item_get_string (it, MATE_DESKTOP_ITEM_NAME));
-        (MATE_WINDOW_MANAGER (wm))->p->ditem = mate_desktop_item_ref (it);
+        (MATE_WINDOW_MANAGER (wm))->p->window_manager_name = g_strdup (cafe_desktop_item_get_string (it, MATE_DESKTOP_ITEM_NAME));
+        (MATE_WINDOW_MANAGER (wm))->p->ditem = cafe_desktop_item_ref (it);
 
         return wm;
 }
 
 const char *
-mate_window_manager_get_name (MateWindowManager *wm)
+cafe_window_manager_get_name (MateWindowManager *wm)
 {
         return wm->p->window_manager_name;
 }
 
 MateDesktopItem *
-mate_window_manager_get_ditem (MateWindowManager *wm)
+cafe_window_manager_get_ditem (MateWindowManager *wm)
 {
-        return mate_desktop_item_ref (wm->p->ditem);
+        return cafe_desktop_item_ref (wm->p->ditem);
 }
 
 GList *
-mate_window_manager_get_theme_list (MateWindowManager *wm)
+cafe_window_manager_get_theme_list (MateWindowManager *wm)
 {
         MateWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
         if (klass->get_theme_list)
@@ -101,7 +101,7 @@ mate_window_manager_get_theme_list (MateWindowManager *wm)
 }
 
 char *
-mate_window_manager_get_user_theme_folder (MateWindowManager *wm)
+cafe_window_manager_get_user_theme_folder (MateWindowManager *wm)
 {
         MateWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
         if (klass->get_user_theme_folder)
@@ -111,7 +111,7 @@ mate_window_manager_get_user_theme_folder (MateWindowManager *wm)
 }
 
 void
-mate_window_manager_get_double_click_actions (MateWindowManager              *wm,
+cafe_window_manager_get_double_click_actions (MateWindowManager              *wm,
                                                const MateWMDoubleClickAction **actions,
                                                int                             *n_actions)
 {
@@ -125,7 +125,7 @@ mate_window_manager_get_double_click_actions (MateWindowManager              *wm
 }
 
 void
-mate_window_manager_change_settings  (MateWindowManager    *wm,
+cafe_window_manager_change_settings  (MateWindowManager    *wm,
                                        const MateWMSettings *settings)
 {
         MateWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
@@ -134,7 +134,7 @@ mate_window_manager_change_settings  (MateWindowManager    *wm,
 }
 
 void
-mate_window_manager_get_settings (MateWindowManager *wm,
+cafe_window_manager_get_settings (MateWindowManager *wm,
                                    MateWMSettings    *settings)
 {
         MateWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
@@ -150,22 +150,22 @@ mate_window_manager_get_settings (MateWindowManager *wm,
 }
 
 static void
-mate_window_manager_init (MateWindowManager *mate_window_manager, MateWindowManagerClass *class)
+cafe_window_manager_init (MateWindowManager *cafe_window_manager, MateWindowManagerClass *class)
 {
-	mate_window_manager->p = g_new0 (MateWindowManagerPrivate, 1);
+	cafe_window_manager->p = g_new0 (MateWindowManagerPrivate, 1);
 }
 
 static void
-mate_window_manager_finalize (GObject *object)
+cafe_window_manager_finalize (GObject *object)
 {
-	MateWindowManager *mate_window_manager;
+	MateWindowManager *cafe_window_manager;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (IS_MATE_WINDOW_MANAGER (object));
 
-	mate_window_manager = MATE_WINDOW_MANAGER (object);
+	cafe_window_manager = MATE_WINDOW_MANAGER (object);
 
-	g_free (mate_window_manager->p);
+	g_free (cafe_window_manager->p);
 
 	parent_class->finalize (object);
 }
@@ -178,13 +178,13 @@ enum {
 static guint signals[LAST_SIGNAL] = { 0 };
 
 static void
-mate_window_manager_class_init (MateWindowManagerClass *class)
+cafe_window_manager_class_init (MateWindowManagerClass *class)
 {
 	GObjectClass *object_class;
 
 	object_class = G_OBJECT_CLASS (class);
 
-	object_class->finalize = mate_window_manager_finalize;
+	object_class->finalize = cafe_window_manager_finalize;
 
 	parent_class = g_type_class_peek_parent (class);
 
@@ -201,43 +201,43 @@ mate_window_manager_class_init (MateWindowManagerClass *class)
 
 
 GType
-mate_window_manager_get_type (void)
+cafe_window_manager_get_type (void)
 {
-	static GType mate_window_manager_type = 0;
+	static GType cafe_window_manager_type = 0;
 
-	if (!mate_window_manager_type) {
-		static GTypeInfo mate_window_manager_info = {
+	if (!cafe_window_manager_type) {
+		static GTypeInfo cafe_window_manager_info = {
 			sizeof (MateWindowManagerClass),
 			NULL, /* GBaseInitFunc */
 			NULL, /* GBaseFinalizeFunc */
-			(GClassInitFunc) mate_window_manager_class_init,
+			(GClassInitFunc) cafe_window_manager_class_init,
 			NULL, /* GClassFinalizeFunc */
 			NULL, /* user-supplied data */
 			sizeof (MateWindowManager),
 			0, /* n_preallocs */
-			(GInstanceInitFunc) mate_window_manager_init,
+			(GInstanceInitFunc) cafe_window_manager_init,
 			NULL
 		};
 
-		mate_window_manager_type =
+		cafe_window_manager_type =
 			g_type_register_static (G_TYPE_OBJECT,
 						"MateWindowManager",
-						&mate_window_manager_info, 0);
+						&cafe_window_manager_info, 0);
 	}
 
-	return mate_window_manager_type;
+	return cafe_window_manager_type;
 }
 
 
 void
-mate_window_manager_settings_changed (MateWindowManager *wm)
+cafe_window_manager_settings_changed (MateWindowManager *wm)
 {
         g_signal_emit (wm, signals[SETTINGS_CHANGED], 0);
 }
 
 /* Helper functions for MateWMSettings */
 MateWMSettings *
-mate_wm_settings_copy (MateWMSettings *settings)
+cafe_wm_settings_copy (MateWMSettings *settings)
 {
         MateWMSettings *retval;
 
@@ -257,7 +257,7 @@ mate_wm_settings_copy (MateWMSettings *settings)
 }
 
 void
-mate_wm_settings_free (MateWMSettings *settings)
+cafe_wm_settings_free (MateWMSettings *settings)
 {
         g_return_if_fail (settings != NULL);
 

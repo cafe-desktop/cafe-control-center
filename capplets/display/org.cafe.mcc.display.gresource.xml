@@ -16,7 +16,7 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/display">
+  <gresource prefix="/org/cafe/mcc/display">
     <file compressed="true">display-capplet.ui</file>
   </gresource>
 </gresources>

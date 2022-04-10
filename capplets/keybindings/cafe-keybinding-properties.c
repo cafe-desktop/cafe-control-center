@@ -19,8 +19,8 @@
 #include "activate-settings-daemon.h"
 #include "dconf-util.h"
 
-#define GSETTINGS_KEYBINDINGS_DIR "/org/mate/desktop/keybindings/"
-#define CUSTOM_KEYBINDING_SCHEMA "org.mate.control-center.keybinding"
+#define GSETTINGS_KEYBINDINGS_DIR "/org/cafe/desktop/keybindings/"
+#define CUSTOM_KEYBINDING_SCHEMA "org.cafe.control-center.keybinding"
 
 #define MAX_ELEMENTS_BEFORE_SCROLLING 10
 #define MAX_CUSTOM_SHORTCUTS 1000
@@ -105,7 +105,7 @@ create_builder (void)
   GtkBuilder *builder = gtk_builder_new();
   GError *error = NULL;
 
-  if (gtk_builder_add_from_resource (builder, "/org/mate/mcc/keybindings/mate-keybinding-properties.ui", &error) == 0) {
+  if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
     g_warning ("Could not load UI: %s", error->message);
     g_error_free (error);
     g_object_unref (builder);
@@ -1049,7 +1049,7 @@ reload_key_entries (GtkBuilder *builder)
       GDir *dir;
       const gchar *name;
 
-      dir_path = g_build_filename (data_dirs[i], "mate-control-center", "keybindings", NULL);
+      dir_path = g_build_filename (data_dirs[i], "cafe-control-center", "keybindings", NULL);
       g_debug ("Keybinding dir: %s", dir_path);
 
       dir = g_dir_open (dir_path, 0, NULL);
@@ -1929,13 +1929,13 @@ setup_dialog (GtkBuilder *builder, GSettings *marco_settings)
   /* set up the dialog */
   reload_key_entries (builder);
 
-  widget = _gtk_builder_get_widget (builder, "mate-keybinding-dialog");
+  widget = _gtk_builder_get_widget (builder, "cafe-keybinding-dialog");
   gtk_window_set_default_size (GTK_WINDOW (widget), 400, 500);
   widget = _gtk_builder_get_widget (builder, "label-suggest");
   gtk_label_set_line_wrap (GTK_LABEL (widget), TRUE);
   gtk_label_set_max_width_chars (GTK_LABEL (widget), 60);
 
-  widget = _gtk_builder_get_widget (builder, "mate-keybinding-dialog");
+  widget = _gtk_builder_get_widget (builder, "cafe-keybinding-dialog");
   capplet_set_icon (widget, "preferences-desktop-keyboard-shortcuts");
   gtk_widget_show (widget);
 
@@ -1989,7 +1989,7 @@ main (int argc, char *argv[])
 
   wm_common_register_window_manager_change ((GFunc) on_window_manager_change, builder);
 
-  marco_settings = g_settings_new ("org.mate.Marco.general");
+  marco_settings = g_settings_new ("org.cafe.Marco.general");
 
   setup_dialog (builder, marco_settings);
 

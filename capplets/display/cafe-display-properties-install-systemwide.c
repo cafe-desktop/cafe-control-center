@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
  *
- * mate-display-properties-install-systemwide - Install a RANDR profile for the whole system
+ * cafe-display-properties-install-systemwide - Install a RANDR profile for the whole system
  *
  * Copyright (C) 2010 Novell, Inc.
  *
@@ -36,7 +36,7 @@
 #include <glib/gi18n.h>
 #include <glib.h>
 
-#define SYSTEM_RANDR_PATH "/etc/mate-settings-daemon/xrandr"
+#define SYSTEM_RANDR_PATH "/etc/cafe-settings-daemon/xrandr"
 
 static void
 usage (const char *program_name)
@@ -45,7 +45,7 @@ usage (const char *program_name)
 		   "\n"
 		   "This program installs a RANDR profile for multi-monitor setups into\n"
 		   "a systemwide location.  The resulting profile will get used when\n"
-		   "the RANDR plug-in gets run in mate-settings-daemon.\n"
+		   "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 		   "\n"
 		   "SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
 		   "\n"

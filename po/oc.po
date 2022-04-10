@@ -1,10 +1,10 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-control-center package.
+# This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Tot en òc <totenoc@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Cédric Valmary <cvalmary@yahoo.fr>, 2020
@@ -14,85 +14,85 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-control-center 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Project-Id-Version: cafe-control-center 1.23.2\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Quentin PAGÈS, 2020\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
+"Language-Team: Occitan (post 1500) (https://www.transifex.com/cafe/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: oc\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: org.mate.control-center.gschema.xml.in:5
+#: org.cafe.control-center.gschema.xml.in:5
 msgid ""
-"[ 'Change Theme;mate-appearance-properties.desktop', 'Set Preferred "
-"Applications;mate-default-applications-properties.desktop' ]"
+"[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
+"Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:6
+#: org.cafe.control-center.gschema.xml.in:6
 msgid "Task names and associated .desktop files"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:7
+#: org.cafe.control-center.gschema.xml.in:7
 msgid ""
 "The task name to be displayed in the control-center followed by a \";\" "
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:11
+#: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:12
+#: org.cafe.control-center.gschema.xml.in:12
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:16
+#: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:17
+#: org.cafe.control-center.gschema.xml.in:17
 msgid "Indicates whether to close the shell when a start action is performed."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:21
+#: org.cafe.control-center.gschema.xml.in:21
 msgid "Exit shell on help action performed"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:22
+#: org.cafe.control-center.gschema.xml.in:22
 msgid "Indicates whether to close the shell when a help action is performed."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:26
+#: org.cafe.control-center.gschema.xml.in:26
 msgid "Exit shell on add or remove action performed"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:27
+#: org.cafe.control-center.gschema.xml.in:27
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:31
+#: org.cafe.control-center.gschema.xml.in:31
 msgid "Exit shell on upgrade or uninstall action performed"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:32
+#: org.cafe.control-center.gschema.xml.in:32
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:38
+#: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
 msgstr "URL per mai d'imatges de rèire plan"
 
-#: org.mate.control-center.gschema.xml.in:39
+#: org.cafe.control-center.gschema.xml.in:39
 msgid ""
 "URL for where to get more desktop backgrounds. If set to an empty string the"
 " link will not appear."
@@ -100,11 +100,11 @@ msgstr ""
 "URL ont es possible de recuperar mai d'imatges de rèire plan pel burèu. Se "
 "la cadena es voida, lo ligam apareis pas."
 
-#: org.mate.control-center.gschema.xml.in:43
+#: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
 msgstr "URL per mai de tèmas"
 
-#: org.mate.control-center.gschema.xml.in:44
+#: org.cafe.control-center.gschema.xml.in:44
 msgid ""
 "URL for where to get more desktop themes. If set to an empty string the link"
 " will not appear."
@@ -112,133 +112,133 @@ msgstr ""
 "URL ont es possible de recuperar mai de tèmas de burèu. Se la cadena es "
 "voida, lo ligam apareis pas."
 
-#: org.mate.control-center.keybinding.gschema.xml.in:5
+#: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:6
+#: org.cafe.control-center.keybinding.gschema.xml.in:6
 msgid "Keybinding associated with a custom shortcut."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:10
+#: org.cafe.control-center.keybinding.gschema.xml.in:10
 msgid "Command"
 msgstr "Comanda"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:11
+#: org.cafe.control-center.keybinding.gschema.xml.in:11
 msgid "Command associated with a custom keybinding."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:15
+#: org.cafe.control-center.keybinding.gschema.xml.in:15
 #: font-viewer/font-view.c:202
 msgid "Name"
 msgstr "Nom"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:16
+#: org.cafe.control-center.keybinding.gschema.xml.in:16
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/mate-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:293
 msgid "Select Image"
 msgstr "Causissètz un imatge"
 
-#: capplets/about-me/mate-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:295
 msgid "No Image"
 msgstr "Pas cap d'imatge"
 
-#: capplets/about-me/mate-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:323
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Imatges"
 
-#: capplets/about-me/mate-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:327
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Totes los fichièrs"
 
-#: capplets/about-me/mate-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:500
 #, c-format
 msgid "About %s"
 msgstr "A prepaus de %s"
 
-#: capplets/about-me/mate-about-me-dialog.ui:39
-#: capplets/about-me/mate-about-me.desktop.in:3
+#: capplets/about-me/cafe-about-me-dialog.ui:39
+#: capplets/about-me/cafe-about-me.desktop.in:3
 msgid "About Me"
 msgstr "A prepaus de ieu"
 
-#: capplets/about-me/mate-about-me-dialog.ui:54
-#: capplets/about-me/mate-about-me-password.ui:54
+#: capplets/about-me/cafe-about-me-dialog.ui:54
+#: capplets/about-me/cafe-about-me-password.ui:54
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:119
 #: capplets/display/display-capplet.ui:106
-#: capplets/mouse/mate-mouse-properties.ui:140
+#: capplets/mouse/cafe-mouse-properties.ui:140
 #: capplets/windows/window-properties.ui:84
 #: capplets/time-admin/src/time-admin.ui:386
 #: capplets/time-admin/src/time-zone.c:472
 msgid "_Close"
 msgstr "_Tampar"
 
-#: capplets/about-me/mate-about-me-dialog.ui:100
+#: capplets/about-me/cafe-about-me-dialog.ui:100
 msgid "Select your photo"
 msgstr "Causir vòstre fòto"
 
-#: capplets/about-me/mate-about-me-dialog.ui:116
+#: capplets/about-me/cafe-about-me-dialog.ui:116
 msgid "Full Name"
 msgstr "Nom complet"
 
-#: capplets/about-me/mate-about-me-dialog.ui:147
+#: capplets/about-me/cafe-about-me-dialog.ui:147
 msgid "User name:"
 msgstr "Nom d'utilizaire :"
 
-#: capplets/about-me/mate-about-me-dialog.ui:176
+#: capplets/about-me/cafe-about-me-dialog.ui:176
 msgid "Change Passwo_rd..."
 msgstr "Cambiar lo _senhal..."
 
-#: capplets/about-me/mate-about-me-dialog.ui:190
+#: capplets/about-me/cafe-about-me-dialog.ui:190
 msgid "Enable _Fingerprint Login..."
 msgstr "Activar l'identificacion per _emprencha digitala..."
 
-#: capplets/about-me/mate-about-me-dialog.ui:203
+#: capplets/about-me/cafe-about-me-dialog.ui:203
 msgid "Disable _Fingerprint Login..."
 msgstr "Desactivar l'identificacion per _emprencha digitala..."
 
-#: capplets/about-me/mate-about-me.desktop.in:4
+#: capplets/about-me/cafe-about-me.desktop.in:4
 msgid "Set your personal information"
 msgstr "Definir vòstras entresenhas personalas"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/about-me/mate-about-me.desktop.in:7
+#: capplets/about-me/cafe-about-me.desktop.in:7
 msgid "user-info"
 msgstr "user-info"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/about-me/mate-about-me.desktop.in:13
-msgid "mate-control-center;MATE;personal;information;"
+#: capplets/about-me/cafe-about-me.desktop.in:13
+msgid "cafe-control-center;MATE;personal;information;"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:100
+#: capplets/about-me/cafe-about-me-fingerprint.c:100
 msgid ""
 "You are not allowed to access the device. Contact your system administrator."
 msgstr ""
 "Avètz pas accès al periferic. Contactatz vòstre administrator del sistèma."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:102
+#: capplets/about-me/cafe-about-me-fingerprint.c:102
 msgid "The device is already in use."
 msgstr "Lo periferic es ja utilizat."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:104
+#: capplets/about-me/cafe-about-me-fingerprint.c:104
 msgid "An internal error occurred"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:221
+#: capplets/about-me/cafe-about-me-fingerprint.c:221
 msgid "Delete registered fingerprints?"
 msgstr "Suprimir las emprenchas enregistradas ?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:224
+#: capplets/about-me/cafe-about-me-fingerprint.c:224
 msgid "_Delete Fingerprints"
 msgstr "_Suprimir las emprenchas"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:231
+#: capplets/about-me/cafe-about-me-fingerprint.c:231
 msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
@@ -246,36 +246,36 @@ msgstr ""
 "Volètz suprimir las emprenchas digitalas enregistradas e desactivar atal "
 "l'identificacion per emprenchas digitalas ?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:359
-#: capplets/about-me/mate-about-me-fingerprint.ui:344
+#: capplets/about-me/cafe-about-me-fingerprint.c:359
+#: capplets/about-me/cafe-about-me-fingerprint.ui:344
 msgid "Done!"
 msgstr "Acabat !"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:405
-#: capplets/about-me/mate-about-me-fingerprint.c:427
+#: capplets/about-me/cafe-about-me-fingerprint.c:405
+#: capplets/about-me/cafe-about-me-fingerprint.c:427
 #, c-format
 msgid "Could not access '%s' device"
 msgstr "Impossible d'accedir al periferic « %s »"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:476
+#: capplets/about-me/cafe-about-me-fingerprint.c:476
 #, c-format
 msgid "Could not start finger capture on '%s' device"
 msgstr "Impossible d'aviar la captura d'emprenchas amb lo periferic « %s »"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:524
+#: capplets/about-me/cafe-about-me-fingerprint.c:524
 msgid "Could not access any fingerprint readers"
 msgstr "Impossible d'accedir a cap de lector d'emprencha digitala"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:525
+#: capplets/about-me/cafe-about-me-fingerprint.c:525
 msgid "Please contact your system administrator for help."
 msgstr "Contactatz vòstre administrator del sistèma per assisténcia."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:559
-#: capplets/about-me/mate-about-me-fingerprint.ui:66
+#: capplets/about-me/cafe-about-me-fingerprint.c:559
+#: capplets/about-me/cafe-about-me-fingerprint.ui:66
 msgid "Enable Fingerprint Login"
 msgstr "Activar l'identificacion per emprencha digitala"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:589
+#: capplets/about-me/cafe-about-me-fingerprint.c:589
 #, c-format
 msgid ""
 "To enable fingerprint login, you need to save one of your fingerprints, "
@@ -284,63 +284,63 @@ msgstr ""
 "Per activar l'autentificacion per emprenchas digitalas, vos cal enregistrar "
 "una de vòstras emprenchas amb l'ajuda del periferic « %s »."
 
-#: capplets/about-me/mate-about-me-fingerprint.c:598
+#: capplets/about-me/cafe-about-me-fingerprint.c:598
 msgid "Swipe finger on reader"
 msgstr "Lisar un det sul lector"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:600
+#: capplets/about-me/cafe-about-me-fingerprint.c:600
 msgid "Place finger on reader"
 msgstr "Plaçar un det sul lector"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:38
+#: capplets/about-me/cafe-about-me-fingerprint.ui:38
 msgid "Left thumb"
 msgstr "Poce esquèrre"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:41
+#: capplets/about-me/cafe-about-me-fingerprint.ui:41
 msgid "Left middle finger"
 msgstr "Major esquèrre"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:44
+#: capplets/about-me/cafe-about-me-fingerprint.ui:44
 msgid "Left ring finger"
 msgstr "Anular esquèrre"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:47
+#: capplets/about-me/cafe-about-me-fingerprint.ui:47
 msgid "Left little finger"
 msgstr "Anular esquèrre"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:50
+#: capplets/about-me/cafe-about-me-fingerprint.ui:50
 msgid "Right thumb"
 msgstr "Poce drech"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:53
+#: capplets/about-me/cafe-about-me-fingerprint.ui:53
 msgid "Right middle finger"
 msgstr "Major drech"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:56
+#: capplets/about-me/cafe-about-me-fingerprint.ui:56
 msgid "Right ring finger"
 msgstr "Anular drech"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:59
+#: capplets/about-me/cafe-about-me-fingerprint.ui:59
 msgid "Right little finger"
 msgstr "Auricular drech"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:125
+#: capplets/about-me/cafe-about-me-fingerprint.ui:125
 msgid "Right index finger"
 msgstr "Indèx drech"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:142
+#: capplets/about-me/cafe-about-me-fingerprint.ui:142
 msgid "Left index finger"
 msgstr "Indèx esquèrre"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:163
+#: capplets/about-me/cafe-about-me-fingerprint.ui:163
 msgid "Other finger: "
 msgstr "Autre det : "
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:214
+#: capplets/about-me/cafe-about-me-fingerprint.ui:214
 msgid "Select finger"
 msgstr "Causir un det"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:339
+#: capplets/about-me/cafe-about-me-fingerprint.ui:339
 msgid ""
 "Your fingerprint was successfully saved. You should now be able to log in "
 "using your fingerprint reader."
@@ -348,26 +348,26 @@ msgstr ""
 "L'enregistrament de vòstra emprencha digitala a capitat. Ara, vos caldriá "
 "poder vos identificar amb l'ajuda del lector d'emprenchas digitalas."
 
-#: capplets/about-me/mate-about-me-password.c:160
+#: capplets/about-me/cafe-about-me-password.c:160
 msgid "Child exited unexpectedly"
 msgstr "Lo filh a quitat inopinèament"
 
-#: capplets/about-me/mate-about-me-password.c:296
+#: capplets/about-me/cafe-about-me-password.c:296
 #, c-format
 msgid "Could not shutdown backend_stdin IO channel: %s"
 msgstr "Impossible d'atudar lo canal d'ES backend_stdin : %s"
 
-#: capplets/about-me/mate-about-me-password.c:309
+#: capplets/about-me/cafe-about-me-password.c:309
 #, c-format
 msgid "Could not shutdown backend_stdout IO channel: %s"
 msgstr "Impossible d'atudar lo canal d'ES backend_stdout : %s"
 
-#: capplets/about-me/mate-about-me-password.c:408
+#: capplets/about-me/cafe-about-me-password.c:408
 msgid "Authenticated!"
 msgstr "Autentificat !"
 
-#: capplets/about-me/mate-about-me-password.c:473
-#: capplets/about-me/mate-about-me-password.c:558
+#: capplets/about-me/cafe-about-me-password.c:473
+#: capplets/about-me/cafe-about-me-password.c:558
 msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
@@ -375,92 +375,92 @@ msgstr ""
 "Vòstre mot de pas es estat modificat dempuèi vòstra connexion ! Tornatz-vos "
 "indentificar."
 
-#: capplets/about-me/mate-about-me-password.c:475
+#: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
 msgstr "Lo mot de pas es incorrècte."
 
-#: capplets/about-me/mate-about-me-password.c:526
+#: capplets/about-me/cafe-about-me-password.c:526
 msgid "Your password has been changed."
 msgstr "Vòstre mot de pas es estat modificat."
 
-#: capplets/about-me/mate-about-me-password.c:536
+#: capplets/about-me/cafe-about-me-password.c:536
 #, c-format
 msgid "System error: %s."
 msgstr "Error de sistèma : %s."
 
-#: capplets/about-me/mate-about-me-password.c:539
+#: capplets/about-me/cafe-about-me-password.c:539
 msgid "The password is too short."
 msgstr "Lo senhal es tròp cort."
 
-#: capplets/about-me/mate-about-me-password.c:543
+#: capplets/about-me/cafe-about-me-password.c:543
 msgid "The password is too simple."
 msgstr "Lo senhal es tròp simple."
 
-#: capplets/about-me/mate-about-me-password.c:548
+#: capplets/about-me/cafe-about-me-password.c:548
 msgid "The old and new passwords are too similar."
 msgstr "L'ancian e lo novèl senhal son tròp similars."
 
-#: capplets/about-me/mate-about-me-password.c:550
+#: capplets/about-me/cafe-about-me-password.c:550
 msgid "The new password must contain numeric or special character(s)."
 msgstr "Lo senhal deu conténer un o mantun caractèr especial o numeric."
 
-#: capplets/about-me/mate-about-me-password.c:553
+#: capplets/about-me/cafe-about-me-password.c:553
 msgid "The old and new passwords are the same."
 msgstr "L'ancian e lo novèl senhal son identics."
 
-#: capplets/about-me/mate-about-me-password.c:555
+#: capplets/about-me/cafe-about-me-password.c:555
 msgid "The new password has already been used recently."
 msgstr ""
 
-#: capplets/about-me/mate-about-me-password.c:826
+#: capplets/about-me/cafe-about-me-password.c:826
 #, c-format
 msgid "Unable to launch %s: %s"
 msgstr "Impossible d'aviar %s : %s"
 
-#: capplets/about-me/mate-about-me-password.c:830
+#: capplets/about-me/cafe-about-me-password.c:830
 msgid "Unable to launch backend"
 msgstr "Impossible d'aviar lo motor"
 
-#: capplets/about-me/mate-about-me-password.c:831
+#: capplets/about-me/cafe-about-me-password.c:831
 msgid "A system error has occurred"
 msgstr "I a agut una error sistèma"
 
-#: capplets/about-me/mate-about-me-password.c:851
+#: capplets/about-me/cafe-about-me-password.c:851
 msgid "Checking password..."
 msgstr "Verificacion del senhal..."
 
-#: capplets/about-me/mate-about-me-password.c:935
+#: capplets/about-me/cafe-about-me-password.c:935
 msgid "Click <b>Change password</b> to change your password."
 msgstr "Clicatz sus <b>Modificar lo senhal</b> per cambiar lo senhal."
 
-#: capplets/about-me/mate-about-me-password.c:938
+#: capplets/about-me/cafe-about-me-password.c:938
 msgid "Please type your password in the <b>New password</b> field."
 msgstr "Picatz vòstre senhal dins la zòna <b>Senhal novèl</b>."
 
-#: capplets/about-me/mate-about-me-password.c:941
-#: capplets/about-me/mate-about-me-password.ui:348
+#: capplets/about-me/cafe-about-me-password.c:941
+#: capplets/about-me/cafe-about-me-password.ui:348
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr ""
 "Tornatz picar vòstre senhal dins la zòna <b>Tornatz picar vòstre senhal</b>."
 
-#: capplets/about-me/mate-about-me-password.c:944
+#: capplets/about-me/cafe-about-me-password.c:944
 msgid "The two passwords are not equal."
 msgstr "Los dos senhals son pas identics."
 
-#: capplets/about-me/mate-about-me-password.ui:38
+#: capplets/about-me/cafe-about-me-password.ui:38
 msgid "Change password"
 msgstr "Modificar lo senhal"
 
-#: capplets/about-me/mate-about-me-password.ui:70
+#: capplets/about-me/cafe-about-me-password.ui:70
 msgid "Change pa_ssword"
 msgstr "Cambiar lo _senhal"
 
-#: capplets/about-me/mate-about-me-password.ui:124
+#: capplets/about-me/cafe-about-me-password.ui:124
 msgid "Change your password"
 msgstr "Modificar lo senhal"
 
-#: capplets/about-me/mate-about-me-password.ui:142
+#: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
 "To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
 "After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
@@ -468,19 +468,19 @@ msgstr ""
 "Per modificar vòstre senhal, picatz vòstre senhal actiu dins lo camp çaijós e clicatz sus <b>Autentificar</b>.\n"
 "Un còp identificat, tornatz picar vòstre senhal, puèi tornatz-lo picar per lo verificar e clicatz sus <b>Modificar lo senhal</b>."
 
-#: capplets/about-me/mate-about-me-password.ui:171
+#: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
 msgstr "Sen_hal actual :"
 
-#: capplets/about-me/mate-about-me-password.ui:187
+#: capplets/about-me/cafe-about-me-password.ui:187
 msgid "_New password:"
 msgstr "Senhal _novèl :"
 
-#: capplets/about-me/mate-about-me-password.ui:203
+#: capplets/about-me/cafe-about-me-password.ui:203
 msgid "_Retype new password:"
 msgstr "_Tornar picar lo senhal novèl :"
 
-#: capplets/about-me/mate-about-me-password.ui:276
+#: capplets/about-me/cafe-about-me-password.ui:276
 msgid "_Authenticate"
 msgstr "S'_autentificar"
 
@@ -490,7 +490,7 @@ msgstr "Preferéncias de las aisinas d'accessibilitat"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:86
 #: capplets/display/display-capplet.ui:58
-#: capplets/mouse/mate-mouse-properties.ui:124
+#: capplets/mouse/cafe-mouse-properties.ui:124
 #: capplets/windows/window-properties.ui:68
 msgid "_Help"
 msgstr "Aju_da"
@@ -500,7 +500,7 @@ msgid "Close and _Log Out"
 msgstr "Tampar e se _desconnectar"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:165
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:3
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:3
 msgid "Assistive Technologies"
 msgstr "Aisinas d'accessibilitat"
 
@@ -553,7 +553,7 @@ msgstr "Accessibilitat de l'i_dentificacion"
 msgid "Jump to the Accessible Login dialog"
 msgstr "Dobrir la bóstia de dialòg d'accessibilitat de l'identificacion"
 
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:4
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:4
 msgid "Choose which accessibility features to enable when you log in"
 msgstr ""
 "Causida de las foncionalitats d'accessibilitat d'activar al moment de la "
@@ -561,14 +561,14 @@ msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:7
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
 msgid "preferences-desktop-accessibility"
 msgstr "preferences-desktop-accessibility"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:13
-msgid "mate-control-center;MATE;accessibility;features;"
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
+msgid "cafe-control-center;MATE;accessibility;features;"
 msgstr ""
 
 #: capplets/appearance/appearance-desktop.c:615
@@ -617,8 +617,8 @@ msgstr ""
 "Indica lo nom de la pagina d'afichar (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
-#: capplets/default-applications/mate-da-capplet.c:839
-#: capplets/mouse/mate-mouse-properties.c:443
+#: capplets/default-applications/cafe-da-capplet.c:839
+#: capplets/mouse/cafe-mouse-properties.c:443
 msgid "page"
 msgstr "pagina"
 
@@ -627,7 +627,7 @@ msgid "[WALLPAPER...]"
 msgstr "[PAPIÈR PINTRAT...]"
 
 #: capplets/appearance/appearance-style.c:171
-#: capplets/common/mate-theme-info.c:494
+#: capplets/common/cafe-theme-info.c:494
 msgid "Default Pointer"
 msgstr "Puntador per defaut"
 
@@ -753,13 +753,13 @@ msgstr "_Talha :"
 
 #. small threshold
 #: capplets/appearance/data/appearance.ui:709
-#: capplets/mouse/mate-mouse-properties.ui:679
+#: capplets/mouse/cafe-mouse-properties.ui:679
 msgid "Small"
 msgstr "Pichona"
 
 #. large threshold
 #: capplets/appearance/data/appearance.ui:739
-#: capplets/mouse/mate-mouse-properties.ui:716
+#: capplets/mouse/cafe-mouse-properties.ui:716
 msgid "Large"
 msgstr "Granda"
 
@@ -861,7 +861,7 @@ msgid "Save _notification theme"
 msgstr ""
 
 #: capplets/appearance/data/appearance.ui:1758
-#: capplets/keybindings/mate-keybinding-properties.ui:80
+#: capplets/keybindings/cafe-keybinding-properties.ui:80
 msgid "_Name:"
 msgstr "_Nom :"
 
@@ -963,7 +963,7 @@ msgid "Get more backgrounds online"
 msgstr "Obténer d'autres imatges de rèireplan en linha"
 
 #: capplets/appearance/data/appearance.ui:2359
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:674
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:674
 msgid "_Add..."
 msgstr "_Apondre..."
 
@@ -1059,11 +1059,11 @@ msgstr "Edicion"
 msgid "Interface"
 msgstr "Interfaç"
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:3
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:3
 msgid "Appearance"
 msgstr "Aparéncia"
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:4
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:4
 msgid "Customize the look of the desktop"
 msgstr "Personalizar l'aparéncia del burèu"
 
@@ -1071,68 +1071,68 @@ msgstr "Personalizar l'aparéncia del burèu"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:7
-#: capplets/appearance/data/mate-theme-installer.desktop.in:7
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
 msgid "preferences-desktop-theme"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:13
-msgid "mate-control-center;MATE;appearance;properties;desktop;customize;look;"
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
+msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:3
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Theme Installer"
 msgstr "Installador de tèma"
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:4
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:4
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Installar los paquets de tèmas per las divèrsas partidas del burèu"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-theme-installer.desktop.in:14
-msgid "mate-control-center;MATE;install;desktop;themes;"
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:14
+msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-package.xml.in:5
+#: capplets/appearance/data/cafe-theme-package.xml.in:5
 msgid "Mate Theme Package"
 msgstr "Paquet de tèma de MATE"
 
-#: capplets/appearance/mate-wp-info.c:51
+#: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
 msgstr "Cap d’imatge de rèire-plan"
 
-#: capplets/appearance/mate-wp-item.c:288
+#: capplets/appearance/cafe-wp-item.c:288
 msgid "unknown"
 msgstr "desconegut"
 
-#: capplets/appearance/mate-wp-item.c:295
+#: capplets/appearance/cafe-wp-item.c:295
 msgid "Slide Show"
 msgstr "Diaporama"
 
-#: capplets/appearance/mate-wp-item.c:297
+#: capplets/appearance/cafe-wp-item.c:297
 msgid "Image"
 msgstr "Imatge"
 
-#: capplets/appearance/mate-wp-item.c:303
+#: capplets/appearance/cafe-wp-item.c:303
 msgid "multiple sizes"
 msgstr "mantuna talha"
 
-#: capplets/appearance/mate-wp-item.c:306
+#: capplets/appearance/cafe-wp-item.c:306
 #, c-format
 msgid "%d %s by %d %s"
 msgstr "%d %s sus %d %s"
 
-#: capplets/appearance/mate-wp-item.c:308
-#: capplets/appearance/mate-wp-item.c:310
+#: capplets/appearance/cafe-wp-item.c:308
+#: capplets/appearance/cafe-wp-item.c:310
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: capplets/appearance/mate-wp-item.c:319
+#: capplets/appearance/cafe-wp-item.c:319
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1145,7 +1145,7 @@ msgstr ""
 "Dorsièr : %s\n"
 "Artista : %s"
 
-#: capplets/appearance/mate-wp-item.c:334
+#: capplets/appearance/cafe-wp-item.c:334
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1158,7 +1158,7 @@ msgstr ""
 "Dorsièr : %s\n"
 "Artista : %s"
 
-#: capplets/appearance/mate-wp-item.c:339
+#: capplets/appearance/cafe-wp-item.c:339
 msgid "Image missing"
 msgstr "Imatge absent"
 
@@ -1292,10 +1292,10 @@ msgstr "Impossible d'installar lo motor de tèma"
 
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
-"Unable to start the settings manager 'mate-settings-daemon'.\n"
+"Unable to start the settings manager 'cafe-settings-daemon'.\n"
 "Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
 msgstr ""
-"Impossible d'aviar lo gestionari de paramètres « mate-settings-daemon ».\n"
+"Impossible d'aviar lo gestionari de paramètres « cafe-settings-daemon ».\n"
 "Sens lo gestionari de paramètres de MATE activat, d'unas preferéncias pòdon prene pas efièch. Aquò pòt èsser degut a un problèma amb DBus, o qu'un gestionari de paramètres non-MATE (per ex. KDE) es ja actiu e dintra en conflicte amb lo gestionari de paramètres MATE."
 
 #: capplets/common/capplet-util.c:82
@@ -1379,7 +1379,7 @@ msgstr "_Ignorar"
 msgid "Overwrite _All"
 msgstr "_Remplaçar tot"
 
-#: capplets/common/mate-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
 "This theme will not look as intended because the required GTK+ theme '%s' is"
@@ -1388,7 +1388,7 @@ msgstr ""
 "Aqueste tèma aurà pas l'aspècte desirat perque lo tèma GTK+ requerit « %s » "
 "es pas installat."
 
-#: capplets/common/mate-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1588
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1397,7 +1397,7 @@ msgstr ""
 "Aqueste tèma aurà pas l'aspècte desirat perque lo tèma requerit del "
 "gestionari de fenèstra « %s » es pas installat."
 
-#: capplets/common/mate-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1596
 #, c-format
 msgid ""
 "This theme will not look as intended because the required icon theme '%s' is"
@@ -1406,130 +1406,130 @@ msgstr ""
 "Aqueste tèma aurà pas l'aspècte desirat perque l'icòna requerida del tèma « "
 "%s » es pas installada."
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:3
-#: capplets/default-applications/mate-default-applications-properties.ui:13
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
+#: capplets/default-applications/cafe-default-applications-properties.ui:13
 msgid "Preferred Applications"
 msgstr "Aplicacions preferidas"
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:4
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:4
 msgid "Select your default applications"
 msgstr "Seleccionatz vòstras aplicacions per defaut"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:7
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
 msgid "preferences-desktop-default-applications"
 msgstr "preferences-desktop-default-applications"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:13
-msgid "mate-control-center;MATE;default;preferred;applications;"
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
+msgid "cafe-control-center;MATE;default;preferred;applications;"
 msgstr ""
 
-#: capplets/default-applications/mate-da-capplet.c:639
+#: capplets/default-applications/cafe-da-capplet.c:639
 msgid "Could not load the main interface"
 msgstr "Impossible de cargar l'interfàcia principala"
 
-#: capplets/default-applications/mate-da-capplet.c:640
+#: capplets/default-applications/cafe-da-capplet.c:640
 msgid "Please make sure that the applet is properly installed"
 msgstr "Verificatz que l'applet es installada corrèctament"
 
-#: capplets/default-applications/mate-da-capplet.c:838
+#: capplets/default-applications/cafe-da-capplet.c:838
 msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr ""
 "Indica lo nom de la pagina d'afichar (internet|multimedia|system|a11y)"
 
-#: capplets/default-applications/mate-da-capplet.c:844
+#: capplets/default-applications/cafe-da-capplet.c:844
 msgid "- MATE Default Applications"
 msgstr "- Aplicacions per defaut de MATE"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:134
+#: capplets/default-applications/cafe-default-applications-properties.ui:134
 msgid "Web Browser"
 msgstr "Navigador internet"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:202
+#: capplets/default-applications/cafe-default-applications-properties.ui:202
 msgid "Mail Reader"
 msgstr "Legidor de corrièrs electronics"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:270
+#: capplets/default-applications/cafe-default-applications-properties.ui:270
 msgid "Instant Messenger"
 msgstr "Messatjariá instantanèa"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:289
+#: capplets/default-applications/cafe-default-applications-properties.ui:289
 msgid "Internet"
 msgstr "Internet"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:357
+#: capplets/default-applications/cafe-default-applications-properties.ui:357
 msgid "Image Viewer"
 msgstr "Afichador d'imatges"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:425
+#: capplets/default-applications/cafe-default-applications-properties.ui:425
 msgid "Multimedia Player"
 msgstr "Lector multimèdia"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:493
+#: capplets/default-applications/cafe-default-applications-properties.ui:493
 msgid "Video Player"
 msgstr "Lector Vidèo"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:515
+#: capplets/default-applications/cafe-default-applications-properties.ui:515
 msgid "Multimedia"
 msgstr "Multimèdia"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:584
+#: capplets/default-applications/cafe-default-applications-properties.ui:584
 msgid "Text Editor"
 msgstr "Editor de tèxte"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:652
+#: capplets/default-applications/cafe-default-applications-properties.ui:652
 msgid "Terminal Emulator"
 msgstr "Emulator de terminal"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:720
+#: capplets/default-applications/cafe-default-applications-properties.ui:720
 msgid "File Manager"
 msgstr "Gestionari de fichièrs"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:788
+#: capplets/default-applications/cafe-default-applications-properties.ui:788
 msgid "Calculator"
 msgstr "Calculadoira"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:810
+#: capplets/default-applications/cafe-default-applications-properties.ui:810
 msgid "System"
 msgstr "Sistèma"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:879
+#: capplets/default-applications/cafe-default-applications-properties.ui:879
 msgid "Document Viewer"
 msgstr "Afichador de documents"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:947
+#: capplets/default-applications/cafe-default-applications-properties.ui:947
 msgid "Word Processor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1015
+#: capplets/default-applications/cafe-default-applications-properties.ui:1015
 msgid "Spreadsheet Editor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1037
+#: capplets/default-applications/cafe-default-applications-properties.ui:1037
 msgid "Office"
 msgstr "Burèu"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1094
+#: capplets/default-applications/cafe-default-applications-properties.ui:1094
 msgid "_Run at start"
 msgstr "Executar a la d_obertura de sesilha"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1122
+#: capplets/default-applications/cafe-default-applications-properties.ui:1122
 msgid "Visual"
 msgstr "Visual"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1178
+#: capplets/default-applications/cafe-default-applications-properties.ui:1178
 msgid "Run at st_art"
 msgstr "Executar a la d_obertura de sesilha"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1206
+#: capplets/default-applications/cafe-default-applications-properties.ui:1206
 msgid "Mobility"
 msgstr "Mobilitat"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1228
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1527
+#: capplets/default-applications/cafe-default-applications-properties.ui:1228
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1527
 msgid "Accessibility"
 msgstr "Accessibilitat"
 
@@ -1625,35 +1625,35 @@ msgstr "R_otacion :"
 msgid "Monitor"
 msgstr "Ecran"
 
-#: capplets/display/mate-display-properties.desktop.in:3
+#: capplets/display/cafe-display-properties.desktop.in:3
 msgid "Displays"
 msgstr ""
 
-#: capplets/display/mate-display-properties.desktop.in:4
+#: capplets/display/cafe-display-properties.desktop.in:4
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/display/mate-display-properties.desktop.in:7
+#: capplets/display/cafe-display-properties.desktop.in:7
 msgid "preferences-desktop-display"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/display/mate-display-properties.desktop.in:13
+#: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"mate-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:44
+#: capplets/display/cafe-display-properties-install-systemwide.c:44
 #, c-format
 msgid ""
 "Usage: %s SOURCE_FILE DEST_NAME\n"
 "\n"
 "This program installs a RANDR profile for multi-monitor setups into\n"
 "a systemwide location.  The resulting profile will get used when\n"
-"the RANDR plug-in gets run in mate-settings-daemon.\n"
+"the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
 "SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
 "\n"
@@ -1663,75 +1663,75 @@ msgid ""
 msgstr ""
 
 #. Translators: only able to install RANDR profiles as root
-#: capplets/display/mate-display-properties-install-systemwide.c:151
+#: capplets/display/cafe-display-properties-install-systemwide.c:151
 msgid "This program can only be used by the root user"
 msgstr "Sonque l’utilizaire root pòt utilizar aqueste programa"
 
-#: capplets/display/mate-display-properties-install-systemwide.c:168
+#: capplets/display/cafe-display-properties-install-systemwide.c:168
 msgid "The source filename must be absolute"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:179
+#: capplets/display/cafe-display-properties-install-systemwide.c:179
 #, c-format
 msgid "Could not open %s: %s\n"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:188
+#: capplets/display/cafe-display-properties-install-systemwide.c:188
 #, c-format
 msgid "Could not get information for %s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:195
+#: capplets/display/cafe-display-properties-install-systemwide.c:195
 #, c-format
 msgid "%s must be a regular file\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:204
+#: capplets/display/cafe-display-properties-install-systemwide.c:204
 msgid "This program must only be run through pkexec(1)"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:209
+#: capplets/display/cafe-display-properties-install-systemwide.c:209
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr ""
 
 #. Translators: we are complaining that a file must be really owned by the
 #. user who called this program
-#: capplets/display/mate-display-properties-install-systemwide.c:215
+#: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr ""
 
 #. Translators: here we are saying that a plain filename must look like
 #. "filename", not like "some_dir/filename"
-#: capplets/display/mate-display-properties-install-systemwide.c:223
+#: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:231
+#: capplets/display/cafe-display-properties-install-systemwide.c:231
 #, c-format
 msgid "%s must be a directory\n"
 msgstr ""
 
 #. Translators: the first %s/%s is a directory/filename; the last %s is an
 #. error message
-#: capplets/display/mate-display-properties-install-systemwide.c:242
+#: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:262
+#: capplets/display/cafe-display-properties-install-systemwide.c:262
 #, c-format
 msgid "Could not rename %s to %s: %s\n"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:17
+#: capplets/display/org.cafe.randr.policy.in:17
 msgid "Install multi-monitor settings for the whole system"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:18
+#: capplets/display/org.cafe.randr.policy.in:18
 msgid ""
 "Authentication is required to install multi-monitor settings for all users"
 msgstr ""
@@ -1941,25 +1941,25 @@ msgid "The type of accelerator."
 msgstr "Lo tipe de l'acorchi de clavièr."
 
 #: capplets/keybindings/eggcellrendererkeys.c:231
-#: capplets/keybindings/mate-keybinding-properties.c:133
-#: capplets/mouse/mate-mouse-properties.c:347 typing-break/drwright.c:528
+#: capplets/keybindings/cafe-keybinding-properties.c:133
+#: capplets/mouse/cafe-mouse-properties.c:347 typing-break/drwright.c:528
 msgid "Disabled"
 msgstr "Desactivat"
 
-#: capplets/keybindings/mate-keybinding-properties.c:215
+#: capplets/keybindings/cafe-keybinding-properties.c:215
 msgid "<Unknown Action>"
 msgstr "<Accion desconeguda>"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1018
-#: capplets/keybindings/mate-keybinding-properties.c:1626
+#: capplets/keybindings/cafe-keybinding-properties.c:1018
+#: capplets/keybindings/cafe-keybinding-properties.c:1626
 msgid "Custom Shortcuts"
 msgstr "Acorchis personalizats"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1206
+#: capplets/keybindings/cafe-keybinding-properties.c:1206
 msgid "Error saving the new shortcut"
 msgstr "Error al moment de l'enregistrament de l'acorchi novèl"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1282
+#: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
 "The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
@@ -1968,7 +1968,7 @@ msgstr ""
 "L'acorchi « %s » pòt pas èsser utilizat perque serà impossible de picar en utilizant aquesta tòca.\n"
 "Ensajatz amb una tòca coma Ctrl, Alt o Maj al meteis temps."
 
-#: capplets/keybindings/mate-keybinding-properties.c:1314
+#: capplets/keybindings/cafe-keybinding-properties.c:1314
 #, c-format
 msgid ""
 "The shortcut \"%s\" is already used for\n"
@@ -1977,811 +1977,811 @@ msgstr ""
 "L'acorchi de clavièr « %s » es ja utilizat per \n"
 "« %s »"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1321
+#: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
 msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding-properties.c:1326
+#: capplets/keybindings/cafe-keybinding-properties.c:1326
 msgid "_Reassign"
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding-properties.c:1581
+#: capplets/keybindings/cafe-keybinding-properties.c:1581
 msgid "Too many custom shortcuts"
 msgstr "Tròp d’acorchis personalizats"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1895
+#: capplets/keybindings/cafe-keybinding-properties.c:1895
 msgid "Action"
 msgstr "Accion"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1917
+#: capplets/keybindings/cafe-keybinding-properties.c:1917
 msgid "Shortcut"
 msgstr "Acorchi"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:13
+#: capplets/keybindings/cafe-keybinding-properties.ui:13
 msgid "Custom Shortcut"
 msgstr "Acorchi personalizat"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:108
+#: capplets/keybindings/cafe-keybinding-properties.ui:108
 msgid "C_ommand:"
 msgstr "Co_manda :"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:132
+#: capplets/keybindings/cafe-keybinding-properties.ui:132
 msgid "_Browse applications..."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding-properties.ui:194
-#: capplets/keybindings/mate-keybinding.desktop.in:3
+#: capplets/keybindings/cafe-keybinding-properties.ui:194
+#: capplets/keybindings/cafe-keybinding.desktop.in:3
 msgid "Keyboard Shortcuts"
 msgstr "Acorchis de clavièr"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:339
+#: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
 "To edit a shortcut key, double-click on the corresponding row and type a new"
 " key combination, or press backspace to clear."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding.desktop.in:4
+#: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keybindings/mate-keybinding.desktop.in:7
+#: capplets/keybindings/cafe-keybinding.desktop.in:7
 msgid "preferences-desktop-keyboard-shortcuts"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keybindings/mate-keybinding.desktop.in:13
-msgid "mate-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
+#: capplets/keybindings/cafe-keybinding.desktop.in:13
+msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:207
-#: capplets/keyboard/mate-keyboard-properties.c:212
+#: capplets/keyboard/cafe-keyboard-properties.c:207
+#: capplets/keyboard/cafe-keyboard-properties.c:212
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:217
+#: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:222
+#: capplets/keyboard/cafe-keyboard-properties.c:222
 msgid "Start the page with the accessibility settings showing"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:228
+#: capplets/keyboard/cafe-keyboard-properties.c:228
 msgid "- MATE Keyboard Preferences"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:90
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:616
-#: capplets/mouse/mate-mouse-properties.ui:277
-#: capplets/mouse/mate-mouse-properties.ui:1008
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:90
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:616
+#: capplets/mouse/cafe-mouse-properties.ui:277
+#: capplets/mouse/cafe-mouse-properties.ui:1008
 #: capplets/windows/window-properties.ui:260
 msgid "General"
 msgstr "General"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:128
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:128
 msgid "Beep when _accessibility features are turned on or off"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:145
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:145
 msgid "Beep when a _toggle key is pressed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:194
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1019
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:194
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1019
 msgid "Sticky Keys"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:232
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:232
 msgid "Beep when a _modifier key is pressed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:279
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:279
 msgid "Visual cues for sounds"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:314
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:314
 msgid "Show _visual feedback for the alert sound"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:352
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:352
 msgid "Flash _window titlebar"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:369
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:369
 msgid "Flash entire _screen"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:433
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1140
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:433
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1140
 msgid "Slow Keys"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:471
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:471
 msgid "Beep when a key is pr_essed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:488
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:488
 msgid "Beep when key is _accepted"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:505
 msgid "Beep when key is _rejected"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:554
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1321
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:554
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1321
 msgid "Bounce Keys"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:592
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:592
 msgid "Beep when a key is reje_cted"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:81
 msgid "Keyboard Preferences"
 msgstr "Preferéncias del clavièr"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:166
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:166
 msgid "Repeat Keys"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:201
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:201
 msgid "Key presses _repeat when key is held down"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:231
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1203
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1775
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:231
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1203
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1775
 msgid "_Delay:"
 msgstr "_Delai :"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:247
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1760
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:247
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1760
 msgid "_Speed:"
 msgstr "_Velocitat :"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:278
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1226
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1407
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1697
-#: capplets/mouse/mate-mouse-properties.ui:826
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1226
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1407
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1697
+#: capplets/mouse/cafe-mouse-properties.ui:826
 msgid "Short"
 msgstr "Cort"
 
 #. slow acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:297
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:563
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1601
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1680
-#: capplets/mouse/mate-mouse-properties.ui:435
-#: capplets/mouse/mate-mouse-properties.ui:1396
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:297
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:563
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1601
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1680
+#: capplets/mouse/cafe-mouse-properties.ui:435
+#: capplets/mouse/cafe-mouse-properties.ui:1396
 msgid "Slow"
 msgstr "Lent"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:343
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:343
 msgid "Repeat keys speed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:371
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1261
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1442
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1728
-#: capplets/mouse/mate-mouse-properties.ui:861
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:371
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1261
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1442
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1728
+#: capplets/mouse/cafe-mouse-properties.ui:861
 msgid "Long"
 msgstr "Long"
 
 #. fast acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:388
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:528
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1618
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1663
-#: capplets/mouse/mate-mouse-properties.ui:467
-#: capplets/mouse/mate-mouse-properties.ui:1428
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:388
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:528
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1618
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1663
+#: capplets/mouse/cafe-mouse-properties.ui:467
+#: capplets/mouse/cafe-mouse-properties.ui:1428
 msgid "Fast"
 msgstr "Rapid"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:446
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:446
 msgid "Cursor Blinking"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:481
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:481
 msgid "Cursor _blinks in text fields"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:505
 msgid "S_peed:"
 msgstr "_Velocitat :"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:548
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1246
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1427
-#: capplets/mouse/mate-mouse-properties.ui:702
-#: capplets/mouse/mate-mouse-properties.ui:847
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:548
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1246
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1427
+#: capplets/mouse/cafe-mouse-properties.ui:702
+#: capplets/mouse/cafe-mouse-properties.ui:847
 msgid "Cursor blinks speed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:645
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:645
 msgid "List of keyboard layouts selected for usage"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:678
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:678
 msgid "Select a keyboard layout to be added to the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:693
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:693
 msgid "Remove the selected keyboard layout from the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:718
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:718
 msgid "Move _Up"
 msgstr "Desplaçar cap en_naut"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:722
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:722
 msgid "Move the selected keyboard layout up in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:733
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:733
 msgid "Move _Down"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:737
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:737
 msgid "Move the selected keyboard layout down in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:762
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:762
 msgid "_Show..."
 msgstr "_Mostrar…"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:766
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:766
 msgid "Print a diagram of the selected keyboard layout"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:802
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:802
 msgid "_Separate layout for each window"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:818
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:818
 msgid "New windows u_se active window's layout"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:849
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:849
 msgid "Keyboard _model:"
 msgstr "_Modèl de clavièr :"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:887
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:887
 msgid "_Options..."
 msgstr "_Opcions..."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:892
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:892
 msgid "View and edit keyboard layout options"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:903
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:903
 msgid "Reset to De_faults"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:907
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:907
 msgid ""
 "Replace the current keyboard layout settings with the\n"
 "default settings"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:934
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:934
 msgid "Layouts"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:970
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:970
 msgid "_Accessibility features can be toggled with keyboard shortcuts"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1057
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1057
 msgid "_Simulate simultaneous keypresses"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1074
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1074
 msgid "Disa_ble sticky keys if two keys are pressed together"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1091
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1091
 msgid "_Latch modifiers when pressed twice"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1178
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1178
 msgid "_Only accept long keypresses"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1359
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1359
 msgid "_Ignore fast duplicate keypresses"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1384
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1384
 msgid "D_elay:"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1497
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1497
 msgid "Audio _Feedback..."
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1550
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1550
 msgid "_Pointer can be controlled using the keypad"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1745
-#: capplets/mouse/mate-mouse-properties.ui:413
-#: capplets/mouse/mate-mouse-properties.ui:1374
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1745
+#: capplets/mouse/cafe-mouse-properties.ui:413
+#: capplets/mouse/cafe-mouse-properties.ui:1374
 msgid "_Acceleration:"
 msgstr "_Acceleracion :"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1823
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1823
 msgid "Mouse Keys"
 msgstr "Claus de la mirga"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1851
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1851
 msgid "_Lock screen to enforce typing break"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1855
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
 "Lock screen after a certain duration to help prevent repetitive keyboard use"
 " injuries"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1904
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1919
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1919
 msgid "_Break interval lasts:"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1951
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1951
 msgid "Duration of work before forcing a break"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1965
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1965
 msgid "Duration of the break when typing is disallowed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1993
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2006
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1993
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2006
 msgid "minutes"
 msgstr "minutas"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2037
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2037
 msgid "All_ow postponing of breaks"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2041
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2041
 msgid "Check if breaks are allowed to be postponed"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2089
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2089
 msgid "Typing Break"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2112
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2112
 msgid "_Type to test settings:"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:15
 msgid "Choose a Layout"
 msgstr "Causissètz una disposicion"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:134
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:134
 msgid "_Country:"
 msgstr "_País :"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:148
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:225
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:148
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:225
 msgid "_Variants:"
 msgstr "_Variantas :"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:165
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:165
 msgid "By _country"
 msgstr "Per _país"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:211
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:211
 msgid "_Language:"
 msgstr "_Lenga :"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:245
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:245
 msgid "By _language"
 msgstr "Per _lenga"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:278
 msgid "Preview:"
 msgstr "Previsualizacion :"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:15
 msgid "Choose a Keyboard Model"
 msgstr "Causissètz un modèl de clavièr"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:81
 msgid "_Vendors:"
 msgstr "_Fabricants :"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:118
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:118
 msgid "_Models:"
 msgstr "_Modèls :"
 
-#: capplets/keyboard/mate-keyboard-properties-options-dialog.ui:14
+#: capplets/keyboard/cafe-keyboard-properties-options-dialog.ui:14
 msgid "Keyboard Layout Options"
 msgstr "Error al mment de l'enregistrament de la configuracion : %s"
 
-#: capplets/keyboard/mate-keyboard-properties-xkb.c:83
+#: capplets/keyboard/cafe-keyboard-properties-xkb.c:83
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: capplets/keyboard/mate-keyboard-properties-xkblt.c:240
+#: capplets/keyboard/cafe-keyboard-properties-xkblt.c:240
 msgid "Layout"
 msgstr "Presentacion"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:170
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:170
 msgid "Vendors"
 msgstr "Fabricants"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:236
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:236
 msgid "Models"
 msgstr "Modèls"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbot.c:237
-#: capplets/mouse/mate-mouse-properties.ui:586
+#: capplets/keyboard/cafe-keyboard-properties-xkbot.c:237
+#: capplets/mouse/cafe-mouse-properties.ui:586
 msgid "Default"
 msgstr "Per defaut"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:3
+#: capplets/keyboard/cafe-keyboard.desktop.in:3
 msgid "Keyboard"
 msgstr "Clavièr"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:4
+#: capplets/keyboard/cafe-keyboard.desktop.in:4
 msgid "Set your keyboard preferences"
 msgstr "Definir los paramètres de vòstre clavièr"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keyboard/mate-keyboard.desktop.in:7
+#: capplets/keyboard/cafe-keyboard.desktop.in:7
 msgid "input-keyboard"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keyboard/mate-keyboard.desktop.in:13
-msgid "mate-control-center;MATE;keyboard;preferences;"
+#: capplets/keyboard/cafe-keyboard.desktop.in:13
+msgid "cafe-control-center;MATE;keyboard;preferences;"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Left button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Middle button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Right button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:442
+#: capplets/mouse/cafe-mouse-properties.c:442
 msgid "Specify the name of the page to show (general)"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:447
+#: capplets/mouse/cafe-mouse-properties.c:447
 msgid "- MATE Mouse Preferences"
 msgstr "- Preferéncias de MATE per la mirga"
 
-#: capplets/mouse/mate-mouse-properties.ui:107
+#: capplets/mouse/cafe-mouse-properties.ui:107
 msgid "Mouse Preferences"
 msgstr "Preferéncias de la mirga"
 
-#: capplets/mouse/mate-mouse-properties.ui:187
+#: capplets/mouse/cafe-mouse-properties.ui:187
 msgid "Mouse Orientation"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:214
+#: capplets/mouse/cafe-mouse-properties.ui:214
 msgid "_Right-handed"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:232
+#: capplets/mouse/cafe-mouse-properties.ui:232
 msgid "_Left-handed"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:297
+#: capplets/mouse/cafe-mouse-properties.ui:297
 msgid "Sh_ow position of pointer when the Control key is pressed"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:322
+#: capplets/mouse/cafe-mouse-properties.ui:322
 msgid "Emulate middle button through simultaneous left and right click"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:348
+#: capplets/mouse/cafe-mouse-properties.ui:348
 msgid "Enable middlemouse paste"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:385
-#: capplets/mouse/mate-mouse-properties.ui:1346
+#: capplets/mouse/cafe-mouse-properties.ui:385
+#: capplets/mouse/cafe-mouse-properties.ui:1346
 msgid "Pointer Speed"
 msgstr "Velocitat del puntador"
 
 #. low sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:498
-#: capplets/mouse/mate-mouse-properties.ui:1459
+#: capplets/mouse/cafe-mouse-properties.ui:498
+#: capplets/mouse/cafe-mouse-properties.ui:1459
 msgid "Low"
 msgstr "Bassa"
 
 #. high sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:530
-#: capplets/mouse/mate-mouse-properties.ui:1491
+#: capplets/mouse/cafe-mouse-properties.ui:530
+#: capplets/mouse/cafe-mouse-properties.ui:1491
 msgid "High"
 msgstr "Elevada"
 
-#: capplets/mouse/mate-mouse-properties.ui:554
-#: capplets/mouse/mate-mouse-properties.ui:1515
+#: capplets/mouse/cafe-mouse-properties.ui:554
+#: capplets/mouse/cafe-mouse-properties.ui:1515
 msgid "_Sensitivity:"
 msgstr "_Sensibilitat :"
 
-#: capplets/mouse/mate-mouse-properties.ui:569
+#: capplets/mouse/cafe-mouse-properties.ui:569
 msgid "Acceleration _Profile:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:587
+#: capplets/mouse/cafe-mouse-properties.ui:587
 msgid "Adaptive"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:588
+#: capplets/mouse/cafe-mouse-properties.ui:588
 msgid "Flat"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:624
+#: capplets/mouse/cafe-mouse-properties.ui:624
 msgid "Drag and Drop"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:658
+#: capplets/mouse/cafe-mouse-properties.ui:658
 msgid "Thr_eshold:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:771
+#: capplets/mouse/cafe-mouse-properties.ui:771
 msgid "Double-Click Timeout"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:805
+#: capplets/mouse/cafe-mouse-properties.ui:805
 msgid "_Timeout:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:901
+#: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
 "To test your double-click settings, try to double-click on the triangle and "
-"you must see the mate desktop logo with both rings showing."
+"you must see the cafe desktop logo with both rings showing."
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:963
-#: capplets/mouse/mate-settings-mouse.desktop.in:3
+#: capplets/mouse/cafe-mouse-properties.ui:963
+#: capplets/mouse/cafe-settings-mouse.desktop.in:3
 msgid "Mouse"
 msgstr "Mirga"
 
-#: capplets/mouse/mate-mouse-properties.ui:980
+#: capplets/mouse/cafe-mouse-properties.ui:980
 msgid "Enable _touchpad"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1028
+#: capplets/mouse/cafe-mouse-properties.ui:1028
 msgid "Disable touchpad _while typing"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1055
+#: capplets/mouse/cafe-mouse-properties.ui:1055
 msgid "Enable _mouse clicks with touchpad"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1091
+#: capplets/mouse/cafe-mouse-properties.ui:1091
 msgid "Two-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1131
+#: capplets/mouse/cafe-mouse-properties.ui:1131
 msgid "Three-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1155
+#: capplets/mouse/cafe-mouse-properties.ui:1155
 msgid "Warning: multi-finger emulation may disable software buttons"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1186
+#: capplets/mouse/cafe-mouse-properties.ui:1186
 msgid "Scrolling"
 msgstr "Desfilament"
 
-#: capplets/mouse/mate-mouse-properties.ui:1206
+#: capplets/mouse/cafe-mouse-properties.ui:1206
 msgid "_Vertical edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1232
+#: capplets/mouse/cafe-mouse-properties.ui:1232
 msgid "H_orizontal edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1258
+#: capplets/mouse/cafe-mouse-properties.ui:1258
 msgid "V_ertical two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1284
+#: capplets/mouse/cafe-mouse-properties.ui:1284
 msgid "Hor_izontal two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1310
+#: capplets/mouse/cafe-mouse-properties.ui:1310
 msgid "Enable _natural scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1551
+#: capplets/mouse/cafe-mouse-properties.ui:1551
 msgid "Touchpad"
 msgstr ""
 
-#: capplets/mouse/mate-settings-mouse.desktop.in:4
+#: capplets/mouse/cafe-settings-mouse.desktop.in:4
 msgid "Set your mouse preferences"
 msgstr "Configurar la mirga"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/mouse/mate-settings-mouse.desktop.in:7
+#: capplets/mouse/cafe-settings-mouse.desktop.in:7
 msgid "input-mouse"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/mouse/mate-settings-mouse.desktop.in:13
-msgid "mate-control-center;MATE;mouse;preferences;"
+#: capplets/mouse/cafe-settings-mouse.desktop.in:13
+msgid "cafe-control-center;MATE;mouse;preferences;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.desktop.in:3
+#: capplets/network/cafe-network-properties.desktop.in:3
 msgid "Network Proxy"
 msgstr "Servidor mandatari"
 
-#: capplets/network/mate-network-properties.desktop.in:4
+#: capplets/network/cafe-network-properties.desktop.in:4
 msgid "Set your network proxy preferences"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/network/mate-network-properties.desktop.in:7
+#: capplets/network/cafe-network-properties.desktop.in:7
 msgid "network-server"
 msgstr "network-server"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/network/mate-network-properties.desktop.in:13
-msgid "mate-control-center;MATE;network;http;socks;proxy;"
+#: capplets/network/cafe-network-properties.desktop.in:13
+msgid "cafe-control-center;MATE;network;http;socks;proxy;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:34
+#: capplets/network/cafe-network-properties.ui:34
 msgid "Network Proxy Preferences"
 msgstr "Preferéncias del proxy de la ret"
 
-#: capplets/network/mate-network-properties.ui:113
+#: capplets/network/cafe-network-properties.ui:113
 msgid "<b>Di_rect internet connection</b>"
 msgstr "<b>Connexion _dirècta a internet</b>"
 
-#: capplets/network/mate-network-properties.ui:150
+#: capplets/network/cafe-network-properties.ui:150
 msgid "<b>_Manual proxy configuration</b>"
 msgstr "<b>Configuracion _manuala del proxy</b>"
 
-#: capplets/network/mate-network-properties.ui:238
-#: capplets/network/mate-network-properties.ui:253
-#: capplets/network/mate-network-properties.ui:268
-#: capplets/network/mate-network-properties.ui:283
+#: capplets/network/cafe-network-properties.ui:238
+#: capplets/network/cafe-network-properties.ui:253
+#: capplets/network/cafe-network-properties.ui:268
+#: capplets/network/cafe-network-properties.ui:283
 msgid "Port:"
 msgstr "Pòrt :"
 
-#: capplets/network/mate-network-properties.ui:363
+#: capplets/network/cafe-network-properties.ui:363
 msgid "_Details"
 msgstr "_Detalhs"
 
-#: capplets/network/mate-network-properties.ui:379
+#: capplets/network/cafe-network-properties.ui:379
 msgid "H_TTP proxy:"
 msgstr "Proxy H_TTP :"
 
-#: capplets/network/mate-network-properties.ui:393
+#: capplets/network/cafe-network-properties.ui:393
 msgid "_Secure HTTP proxy:"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:407
+#: capplets/network/cafe-network-properties.ui:407
 msgid "_FTP proxy:"
 msgstr "Proxy _FTP :"
 
-#: capplets/network/mate-network-properties.ui:421
+#: capplets/network/cafe-network-properties.ui:421
 msgid "S_ocks host:"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:479
+#: capplets/network/cafe-network-properties.ui:479
 msgid "<b>_Automatic proxy configuration</b>"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:517
+#: capplets/network/cafe-network-properties.ui:517
 msgid "Autoconfiguration _URL:"
 msgstr "_URL de configuracion automatica :"
 
-#: capplets/network/mate-network-properties.ui:574
+#: capplets/network/cafe-network-properties.ui:574
 msgid "Proxy Configuration"
 msgstr "Configuracion del proxy"
 
-#: capplets/network/mate-network-properties.ui:592
+#: capplets/network/cafe-network-properties.ui:592
 msgid "Ignore Host List"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:730
+#: capplets/network/cafe-network-properties.ui:730
 msgid "Ignored Hosts"
 msgstr "Òstes d'ignorar"
 
-#: capplets/network/mate-network-properties.ui:758
+#: capplets/network/cafe-network-properties.ui:758
 msgid "HTTP Proxy Details"
 msgstr "Detalhs del proxy HTTP"
 
-#: capplets/network/mate-network-properties.ui:829
+#: capplets/network/cafe-network-properties.ui:829
 msgid "<b>_Use authentication</b>"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:869
+#: capplets/network/cafe-network-properties.ui:869
 msgid "U_sername:"
 msgstr "Nom d'u_tilizaire :"
 
-#: capplets/network/mate-network-properties.ui:908
+#: capplets/network/cafe-network-properties.ui:908
 msgid "_Password:"
 msgstr "Sen_hal :"
 
-#: capplets/windows/mate-metacity-support.c:40
+#: capplets/windows/cafe-metacity-support.c:40
 msgid "Metacity Preferences"
 msgstr ""
 
-#: capplets/windows/mate-metacity-support.c:51
+#: capplets/windows/cafe-metacity-support.c:51
 #: capplets/windows/window-properties.ui:175
 msgid "Compositing Manager"
 msgstr "Gestionari de composicion"
 
-#: capplets/windows/mate-metacity-support.c:58
+#: capplets/windows/cafe-metacity-support.c:58
 #: capplets/windows/window-properties.ui:138
 msgid "Enable software _compositing window manager"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:264
+#: capplets/windows/cafe-window-properties.c:264
 msgid "The current window manager is unsupported"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:581
+#: capplets/windows/cafe-window-properties.c:581
 msgid "_Alt"
 msgstr "_Alt"
 
-#: capplets/windows/mate-window-properties.c:587
+#: capplets/windows/cafe-window-properties.c:587
 msgid "H_yper"
 msgstr "_Iper"
 
-#: capplets/windows/mate-window-properties.c:594
+#: capplets/windows/cafe-window-properties.c:594
 msgid "S_uper (or \"Windows logo\")"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:601
+#: capplets/windows/cafe-window-properties.c:601
 msgid "_Meta"
 msgstr "_Mèta"
 
-#: capplets/windows/mate-window-properties.desktop.in:3
+#: capplets/windows/cafe-window-properties.desktop.in:3
 msgid "Windows"
 msgstr "Fenèstras"
 
-#: capplets/windows/mate-window-properties.desktop.in:4
+#: capplets/windows/cafe-window-properties.desktop.in:4
 msgid "Set your window properties"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/windows/mate-window-properties.desktop.in:7
+#: capplets/windows/cafe-window-properties.desktop.in:7
 msgid "preferences-system-windows"
 msgstr "preferences-system-windows"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/windows/mate-window-properties.desktop.in:13
-msgid "mate-control-center;MATE;window;manager;properties;marco;preferences;"
+#: capplets/windows/cafe-window-properties.desktop.in:13
+msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -4713,27 +4713,27 @@ msgstr ""
 msgid "Pacific/Wallis"
 msgstr ""
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:3
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:3
 msgid "Time And Date Manager"
 msgstr "Gestionari d’ora e data"
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:4
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:4
 msgid "Setting the time and date of the local system"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:9
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
 msgid "preferences-system-time"
 msgstr "preferences-system-time"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:13
-msgid "mate-control-center;MATE;clock;date;time;preferences;"
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:13
+msgid "cafe-control-center;MATE;clock;date;time;preferences;"
 msgstr ""
 
-#: libwindow-settings/mate-wm-manager.c:317
+#: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
 msgstr ""
@@ -4755,8 +4755,8 @@ msgstr "Grops"
 msgid "Common Tasks"
 msgstr ""
 
-#: shell/control-center.c:145 shell/matecc.desktop.in:3
-#: shell/matecc.directory.desktop.in:3
+#: shell/control-center.c:145 shell/cafecc.desktop.in:3
+#: shell/cafecc.directory.desktop.in:3
 msgid "Control Center"
 msgstr "Centre de contraròtle"
 
@@ -4764,31 +4764,31 @@ msgstr "Centre de contraròtle"
 msgid "Hide on start (useful to preload the shell)"
 msgstr ""
 
-#: shell/matecc.desktop.in:4
+#: shell/cafecc.desktop.in:4
 msgid "The MATE configuration tool"
 msgstr "L'aisina de configuracion de MATE"
 
-#: shell/matecc.desktop.in:5
+#: shell/cafecc.desktop.in:5
 msgid "Configure MATE settings"
 msgstr "Configurar las paramètres de MATE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.desktop.in:7
+#: shell/cafecc.desktop.in:7
 msgid "preferences-desktop"
 msgstr "preferences-desktop"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: shell/matecc.desktop.in:14
+#: shell/cafecc.desktop.in:14
 msgid "MATE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.directory.desktop.in:5
-msgid "mate-settings"
-msgstr "mate-settings"
+#: shell/cafecc.directory.desktop.in:5
+msgid "cafe-settings"
+msgstr "cafe-settings"
 
 #: typing-break/drw-break-window.c:179
 msgid "_Postpone Break"
@@ -4923,26 +4923,26 @@ msgstr "Totas las poliças"
 msgid "Font Viewer"
 msgstr "Visualizaira de poliças"
 
-#: font-viewer/font-view.c:784 font-viewer/mate-font-viewer.desktop.in:4
+#: font-viewer/font-view.c:784 font-viewer/cafe-font-viewer.desktop.in:4
 msgid "View fonts on your system"
 msgstr "Visualizar las poliças de vòstre sistèma"
 
-#: font-viewer/mate-font-viewer.desktop.in:3
+#: font-viewer/cafe-font-viewer.desktop.in:3
 msgid "MATE Font Viewer"
 msgstr "Visualizaira de poliças MATE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: font-viewer/mate-font-viewer.desktop.in:6
+#: font-viewer/cafe-font-viewer.desktop.in:6
 msgid "preferences-desktop-font"
 msgstr "preferences-desktop-font"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: font-viewer/mate-font-viewer.desktop.in:14
-msgid "mate-control-center;MATE;font;viewer;preview;desktop;preferences;"
+#: font-viewer/cafe-font-viewer.desktop.in:14
+msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
 msgstr ""
-"mate-control-"
+"cafe-control-"
 "center;MATE;font;viewer;preview;desktop;preferences;poliça;preferéncia;perso;"
 
 #: font-viewer/font-thumbnailer.c:191

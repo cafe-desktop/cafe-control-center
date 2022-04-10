@@ -22,7 +22,7 @@
 #define _MATE_WP_INFO_H_
 
 #include <glib.h>
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 typedef struct _MateWPInfo {
 	char* uri;
@@ -35,8 +35,8 @@ typedef struct _MateWPInfo {
 	time_t mtime;
 } MateWPInfo;
 
-MateWPInfo* mate_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs);
-void mate_wp_info_free(MateWPInfo* info);
+MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs);
+void cafe_wp_info_free(MateWPInfo* info);
 
 #endif
 

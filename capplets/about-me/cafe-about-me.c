@@ -1,4 +1,4 @@
-/* mate-about-me.c
+/* cafe-about-me.c
  * Copyright (C) 2002 Diego Gonzalez
  *
  * Written by: Diego Gonzalez <diego@pemas.net>
@@ -33,11 +33,11 @@
 #endif
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 #include "e-image-chooser.h"
-#include "mate-about-me-password.h"
-#include "mate-about-me-fingerprint.h"
+#include "cafe-about-me-password.h"
+#include "cafe-about-me-fingerprint.h"
 #include "marshal.h"
 
 #include "capplet-util.h"
@@ -237,7 +237,7 @@ about_me_update_preview (GtkFileChooser *chooser,
 		GFileInfo *file_info;
 
 		if (!me->thumbs)
-			me->thumbs = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+			me->thumbs = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 		file = g_file_new_for_uri (uri);
 		file_info = g_file_query_info (file,
@@ -255,7 +255,7 @@ about_me_update_preview (GtkFileChooser *chooser,
 
 				mime_type = g_content_type_get_mime_type (content_type);
 
-				pixbuf = mate_desktop_thumbnail_factory_generate_thumbnail (me->thumbs,
+				pixbuf = cafe_desktop_thumbnail_factory_generate_thumbnail (me->thumbs,
 										     uri,
 										     mime_type);
 				g_free (mime_type);
@@ -399,7 +399,7 @@ about_me_passwd_clicked_cb (GtkWidget *button, MateAboutMe *me)
 	GtkBuilder *dialog;
 
 	dialog = me->dialog;
-	mate_about_me_password (GTK_WINDOW (WID ("about-me-dialog")));
+	cafe_about_me_password (GTK_WINDOW (WID ("about-me-dialog")));
 }
 
 static void
@@ -439,7 +439,7 @@ about_me_setup_dialog (void)
 	me->image = NULL;
 
 	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/mate/mcc/am/mate-about-me-dialog.ui", &error) == 0)
+	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-dialog.ui", &error) == 0)
         {
                 g_warning ("Could not parse UI definition: %s", error->message);
                 g_error_free (error);

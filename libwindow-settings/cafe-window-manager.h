@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
 
-/* mate-window-manager.h
+/* cafe-window-manager.h
  * Copyright (C) 2002 Seth Nickell
  * Copyright (C) 2002 Red Hat, Inc.
  *
@@ -28,7 +28,7 @@
 
 #include <glib-object.h>
 
-#include <libmate-desktop/mate-desktop-item.h>
+#include <libcafe-desktop/cafe-desktop-item.h>
 
 /* Increment if backward-incompatible changes are made, so we get a clean
  * error. In principle the libtool versioning handles this, but
@@ -91,10 +91,10 @@ typedef struct
 extern "C" {
 #endif
 
-#define MATE_WINDOW_MANAGER(obj)          G_TYPE_CHECK_INSTANCE_CAST (obj, mate_window_manager_get_type (), MateWindowManager)
-#define MATE_WINDOW_MANAGER_CLASS(klass)  G_TYPE_CHECK_CLASS_CAST (klass, mate_window_manager_get_type (), MateWindowManagerClass)
-#define IS_MATE_WINDOW_MANAGER(obj)       G_TYPE_CHECK_INSTANCE_TYPE (obj, mate_window_manager_get_type ())
-#define MATE_WINDOW_MANAGER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), mate_window_manager_get_type, MateWindowManagerClass))
+#define MATE_WINDOW_MANAGER(obj)          G_TYPE_CHECK_INSTANCE_CAST (obj, cafe_window_manager_get_type (), MateWindowManager)
+#define MATE_WINDOW_MANAGER_CLASS(klass)  G_TYPE_CHECK_CLASS_CAST (klass, cafe_window_manager_get_type (), MateWindowManagerClass)
+#define IS_MATE_WINDOW_MANAGER(obj)       G_TYPE_CHECK_INSTANCE_TYPE (obj, cafe_window_manager_get_type ())
+#define MATE_WINDOW_MANAGER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), cafe_window_manager_get_type, MateWindowManagerClass))
 
 typedef struct _MateWindowManager MateWindowManager;
 typedef struct _MateWindowManagerClass MateWindowManagerClass;
@@ -140,33 +140,33 @@ struct _MateWindowManagerClass
         void         (* padding_func_10)        (MateWindowManager *wm);
 };
 
-GObject *         mate_window_manager_new                     (MateDesktopItem   *item);
-GType             mate_window_manager_get_type                (void);
-const char *      mate_window_manager_get_name                (MateWindowManager *wm);
-MateDesktopItem *mate_window_manager_get_ditem               (MateWindowManager *wm);
+GObject *         cafe_window_manager_new                     (MateDesktopItem   *item);
+GType             cafe_window_manager_get_type                (void);
+const char *      cafe_window_manager_get_name                (MateWindowManager *wm);
+MateDesktopItem *cafe_window_manager_get_ditem               (MateWindowManager *wm);
 
 /* GList of char *'s */
-GList *           mate_window_manager_get_theme_list          (MateWindowManager *wm);
-char *            mate_window_manager_get_user_theme_folder   (MateWindowManager *wm);
+GList *           cafe_window_manager_get_theme_list          (MateWindowManager *wm);
+char *            cafe_window_manager_get_user_theme_folder   (MateWindowManager *wm);
 
 /* only uses fields with their flags set */
-void              mate_window_manager_change_settings  (MateWindowManager    *wm,
+void              cafe_window_manager_change_settings  (MateWindowManager    *wm,
                                                          const MateWMSettings *settings);
 /* only gets fields with their flags set (and if it fails to get a field,
  * it unsets that flag, so flags should be checked on return)
  */
-void              mate_window_manager_get_settings     (MateWindowManager *wm,
+void              cafe_window_manager_get_settings     (MateWindowManager *wm,
                                                          MateWMSettings    *settings);
 
-void              mate_window_manager_settings_changed (MateWindowManager *wm);
+void              cafe_window_manager_settings_changed (MateWindowManager *wm);
 
-void mate_window_manager_get_double_click_actions (MateWindowManager              *wm,
+void cafe_window_manager_get_double_click_actions (MateWindowManager              *wm,
                                                     const MateWMDoubleClickAction **actions,
                                                     int                             *n_actions);
 
 /* Helper functions for MateWMSettings */
-MateWMSettings *mate_wm_settings_copy (MateWMSettings *settings);
-void             mate_wm_settings_free (MateWMSettings *settings);
+MateWMSettings *cafe_wm_settings_copy (MateWMSettings *settings);
+void             cafe_wm_settings_free (MateWMSettings *settings);
 
 #ifdef __cplusplus
 }

@@ -3,13 +3,13 @@
 
 <Menu>
   <Name>Control Center</Name>
-  <Directory>matecc.directory</Directory>
+  <Directory>cafecc.directory</Directory>
 
   <!-- Read standard .directory and .desktop file locations -->
   <DefaultAppDirs/>
   <DefaultDirectoryDirs/>
 
-  <!-- Read in overrides and child menus from matecc-merged/ -->
+  <!-- Read in overrides and child menus from cafecc-merged/ -->
   <DefaultMergeDirs/>
 
    <!-- Sort the control center categories -->
@@ -41,18 +41,18 @@
     </And>
   </Include>
   <Exclude>
-    <Filename>matecc.desktop</Filename>
+    <Filename>cafecc.desktop</Filename>
   </Exclude>
 
   <!-- Avoid the shell having a launcher for itself -->
   <Exclude>
-    <Filename>matecc.desktop</Filename>
+    <Filename>cafecc.desktop</Filename>
   </Exclude>
 
   <!-- Administration category -->
   <Menu>
     <Name>Administration</Name>
-    <Directory>mate-settings-system.directory</Directory>
+    <Directory>cafe-settings-system.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -69,7 +69,7 @@
   <!-- Hardware category -->
   <Menu>
     <Name>Hardware</Name>
-    <Directory>mate-hardware.directory</Directory>
+    <Directory>cafe-hardware.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -82,7 +82,7 @@
   <!-- Internet and Network category -->
   <Menu>
     <Name>Internet and Network</Name>
-    <Directory>mate-internet-and-network.directory</Directory>
+    <Directory>cafe-internet-and-network.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -105,7 +105,7 @@
   <!-- Look and Feel category -->
   <Menu>
     <Name>Look and Feel</Name>
-    <Directory>mate-look-and-feel.directory</Directory>
+    <Directory>cafe-look-and-feel.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>
@@ -126,7 +126,7 @@
   <!-- Personal category -->
   <Menu>
     <Name>Personal</Name>
-    <Directory>mate-personal.directory</Directory>
+    <Directory>cafe-personal.directory</Directory>
     <Include>
       <And>
         <Category>Settings</Category>

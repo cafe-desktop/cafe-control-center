@@ -19,7 +19,7 @@
  */
 
 #include <glib/gi18n.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 #include "appearance.h"
 #include "appearance-desktop.h"
 #include "appearance-font.h"
@@ -45,7 +45,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
 
   /* set up the data */
   ui = gtk_builder_new ();
-  gtk_builder_add_from_resource (ui, "/org/mate/mcc/appearance/data/appearance.ui", &err);
+  gtk_builder_add_from_resource (ui, "/org/cafe/mcc/appearance/data/appearance.ui", &err);
 
   if (err)
     {
@@ -59,7 +59,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
       data->settings = g_settings_new (APPEARANCE_SCHEMA);
       data->wp_settings = g_settings_new (WP_SCHEMA);
 
-      if (mate_gsettings_schema_exists (CAJA_SCHEMA))
+      if (cafe_gsettings_schema_exists (CAJA_SCHEMA))
         data->caja_settings = g_settings_new (CAJA_SCHEMA);
       else
         data->caja_settings = NULL;
@@ -69,7 +69,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
       data->mouse_settings = g_settings_new (MOUSE_SCHEMA);
       data->font_settings = g_settings_new (FONT_RENDER_SCHEMA);
       data->ui = ui;
-      data->thumb_factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+      data->thumb_factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
     }
 
   return data;
@@ -230,7 +230,7 @@ main (int argc, char **argv)
   if (install_filename != NULL) {
     GFile *inst = g_file_new_for_commandline_arg (install_filename);
     g_free (install_filename);
-    mate_theme_install (inst, GTK_WINDOW (w));
+    cafe_theme_install (inst, GTK_WINDOW (w));
     g_object_unref (inst);
   }
 

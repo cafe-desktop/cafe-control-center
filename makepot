@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PACKAGE=mate-control-center;
+PACKAGE=cafe-control-center;
 
 # normal translations
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .

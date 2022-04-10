@@ -10,7 +10,7 @@
   </para>
   <para>
     <application>Mate</application> uses either the
-    <application>xscreensaver</application> or the <application>mate-screensaver</application>
+    <application>xscreensaver</application> or the <application>cafe-screensaver</application>
     programs to display
     screensavers.  By default, <application>Mate</application> comes
     with dozens of screensavers.  These can all be configured in the

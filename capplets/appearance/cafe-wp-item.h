@@ -22,10 +22,10 @@
 #include <gio/gio.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gtk/gtk.h>
-#include <libmate-desktop/mate-desktop-thumbnail.h>
-#include <libmate-desktop/mate-bg.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-bg.h>
 
-#include "mate-wp-info.h"
+#include "cafe-wp-info.h"
 
 #ifndef _MATE_WP_ITEM_H_
 #define _MATE_WP_ITEM_H_
@@ -61,23 +61,23 @@ struct _MateWPItem {
   gint height;
 };
 
-MateWPItem * mate_wp_item_new (const gchar *filename,
+MateWPItem * cafe_wp_item_new (const gchar *filename,
 				 GHashTable *wallpapers,
 				 MateDesktopThumbnailFactory *thumbnails);
 
-void mate_wp_item_free (MateWPItem *item);
-GdkPixbuf * mate_wp_item_get_thumbnail (MateWPItem *item,
+void cafe_wp_item_free (MateWPItem *item);
+GdkPixbuf * cafe_wp_item_get_thumbnail (MateWPItem *item,
 					 MateDesktopThumbnailFactory *thumbs,
                                          gint width,
                                          gint height);
-GdkPixbuf * mate_wp_item_get_frame_thumbnail (MateWPItem *item,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (MateWPItem *item,
                                                MateDesktopThumbnailFactory *thumbs,
                                                gint width,
                                                gint height,
                                                gint frame);
-void mate_wp_item_update (MateWPItem *item);
-void mate_wp_item_update_description (MateWPItem *item);
-void mate_wp_item_ensure_mate_bg (MateWPItem *item);
+void cafe_wp_item_update (MateWPItem *item);
+void cafe_wp_item_update_description (MateWPItem *item);
+void cafe_wp_item_ensure_cafe_bg (MateWPItem *item);
 
 const gchar *wp_item_option_to_string (MateBGPlacement type);
 const gchar *wp_item_shading_to_string (MateBGColorType type);

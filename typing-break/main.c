@@ -86,7 +86,7 @@ main (int argc, char *argv[])
         }
 
 	g_set_application_name (_("Typing Monitor"));
-	gtk_window_set_default_icon_name ("mate-typing-monitor");
+	gtk_window_set_default_icon_name ("cafe-typing-monitor");
 
 	selection = drw_selection_start ();
 	if (!drw_selection_is_master (selection)) {

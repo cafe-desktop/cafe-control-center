@@ -1,5 +1,5 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-    <schema id="org.mate.control-center.keybinding">
+    <schema id="org.cafe.control-center.keybinding">
         <key name="binding" type="s">
             <default>''</default>
             <summary>Keybinding</summary>

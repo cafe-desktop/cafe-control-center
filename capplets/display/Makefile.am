@@ -4,44 +4,44 @@ cappletname = display
 BUILT_SOURCES = \
 	foo-marshal.h \
 	foo-marshal.c \
-	mate-display-properties-resources.h \
-	mate-display-properties-resources.c
+	cafe-display-properties-resources.h \
+	cafe-display-properties-resources.c
 
 ui_files = display-capplet.ui
 
 include $(top_srcdir)/gla11y.mk
 
-bin_PROGRAMS = mate-display-properties
+bin_PROGRAMS = cafe-display-properties
 
-sbin_PROGRAMS = mate-display-properties-install-systemwide
+sbin_PROGRAMS = cafe-display-properties-install-systemwide
 
-nodist_mate_display_properties_SOURCES = \
+nodist_cafe_display_properties_SOURCES = \
 	$(BUILT_SOURCES)
-mate_display_properties_SOURCES =	\
+cafe_display_properties_SOURCES =	\
 	xrandr-capplet.c		\
 	scrollarea.c			\
 	scrollarea.h
 
-mate_display_properties_LDFLAGS = -export-dynamic
-mate_display_properties_LDADD = \
+cafe_display_properties_LDFLAGS = -export-dynamic
+cafe_display_properties_LDADD = \
 	$(top_builddir)/capplets/common/libcommon.la \
 	$(DISPLAY_CAPPLET_LIBS)
 
-mate_display_properties_install_systemwide_SOURCES =	\
-	mate-display-properties-install-systemwide.c
+cafe_display_properties_install_systemwide_SOURCES =	\
+	cafe-display-properties-install-systemwide.c
 
-mate_display_properties_install_systemwide_LDADD =	\
+cafe_display_properties_install_systemwide_LDADD =	\
 	$(GLIB_LIBS)
 
 polkit_policydir = $(datadir)/polkit-1/actions
 dist_polkit_policy_DATA =					\
-	org.mate.randr.policy
+	org.cafe.randr.policy
 
 %.policy: %.policy.in
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 desktopdir = $(datadir)/applications
-Desktop_in_files = mate-display-properties.desktop.in
+Desktop_in_files = cafe-display-properties.desktop.in
 desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 
 $(desktop_DATA): $(Desktop_in_files)
@@ -59,12 +59,12 @@ foo-marshal.c: foo-marshal.list
 	@GLIB_GENMARSHAL@ --prefix=foo_marshal $< --header > $@
 foo-marshal.h: foo-marshal.list
 	@GLIB_GENMARSHAL@ --prefix=foo_marshal $< --body --prototypes > $@
-mate-display-properties-resources.h mate-display-properties-resources.c: org.mate.mcc.display.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.display.gresource.xml)
+cafe-display-properties-resources.h cafe-display-properties-resources.c: org.cafe.mcc.display.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.display.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name display $<
 
 CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 
-EXTRA_DIST = $(ui_files) foo-marshal.list $(Desktop_in_files) org.mate.mcc.display.gresource.xml org.mate.randr.policy.in ui-a11y.suppr
-DISTCLEANFILES = org.mate.randr.policy
+EXTRA_DIST = $(ui_files) foo-marshal.list $(Desktop_in_files) org.cafe.mcc.display.gresource.xml org.cafe.randr.policy.in ui-a11y.suppr
+DISTCLEANFILES = org.cafe.randr.policy
 
 -include $(top_srcdir)/git.mk

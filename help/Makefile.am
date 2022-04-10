@@ -1,6 +1,6 @@
 @YELP_HELP_RULES@
 
-HELP_ID = mate-control-center
+HELP_ID = cafe-control-center
 HELP_FILES = \
 	index.docbook \
 	config-accessibility-keyboard.xml \

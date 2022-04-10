@@ -1,4 +1,4 @@
-AC_INIT([mate-control-center], [1.24.1], [http://www.mate-desktop.org/])
+AC_INIT([cafe-control-center], [1.24.1], [http://www.cafe-desktop.org/])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([shell])
@@ -26,7 +26,7 @@ YELP_HELP_INIT
 AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
-GETTEXT_PACKAGE=mate-control-center
+GETTEXT_PACKAGE=cafe-control-center
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package])
 
@@ -130,18 +130,18 @@ COMMON_MODULES="gtk+-3.0 >= $GTK_REQUIRED dnl
  gio-2.0 dnl
  gio-unix-2.0 dnl
  libxml-2.0 dnl
- mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED"
+ cafe-desktop-2.0 >= $MATE_DESKTOP_REQUIRED"
 PKG_CHECK_MODULES(CAPPLET, $COMMON_MODULES)
-PKG_CHECK_MODULES(MATECC, $COMMON_MODULES libmate-menu >= 1.21.0)
-PKG_CHECK_MODULES(MATECC_SHELL, $COMMON_MODULES libmate-menu)
+PKG_CHECK_MODULES(MATECC, $COMMON_MODULES libcafe-menu >= 1.21.0)
+PKG_CHECK_MODULES(MATECC_SHELL, $COMMON_MODULES libcafe-menu)
 
 PKG_CHECK_MODULES(DBUS, dbus-1 dbus-glib-1)
 PKG_CHECK_MODULES(POLKIT, polkit-gobject-1)
-PKG_CHECK_MODULES(MATE_DESKTOP, mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED)
+PKG_CHECK_MODULES(MATE_DESKTOP, cafe-desktop-2.0 >= $MATE_DESKTOP_REQUIRED)
 PKG_CHECK_MODULES(DEFAULT_APPLICATIONS_CAPPLET, libxml-2.0)
 PKG_CHECK_MODULES(MARCO, libmarco-private >= $MARCO_REQUIRED)
 PKG_CHECK_MODULES(TYPING, $GMODULE_ADD glib-2.0 >= $GLIB_REQUIRED gio-2.0 gtk+-3.0 >= $GTK_REQUIRED)
-PKG_CHECK_MODULES(GSD_DBUS, mate-settings-daemon >= $MSD_REQUIRED)
+PKG_CHECK_MODULES(GSD_DBUS, cafe-settings-daemon >= $MSD_REQUIRED)
 PKG_CHECK_MODULES(GIO, gio-2.0)
 
 PKG_CHECK_MODULES([DCONF], [dconf >= 0.13.4])
@@ -156,19 +156,19 @@ AC_SUBST(GTK_ENGINE_DIR)
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED $GMODULE_ADD)
 
 dnl
-dnl Check dependencies of libmate-slab
+dnl Check dependencies of libcafe-slab
 dnl
 PKG_CHECK_MODULES(LIBSLAB, [
-			   gio-2.0 mate-desktop-2.0 librsvg-2.0 libmate-menu pango
+			   gio-2.0 cafe-desktop-2.0 librsvg-2.0 libcafe-menu pango
 			   ],
-			   have_libmateslab=yes,
-			   have_libmateslab=no)
+			   have_libcafeslab=yes,
+			   have_libcafeslab=no)
 
 AC_SUBST(LIBMATESLAB_CFLAGS)
 AC_SUBST(LIBMATESLAB_LIBS)
 AC_SUBST(WARN_CFLAGS)
 
-AM_CONDITIONAL(HAVE_LIBMATESLAB, [test $have_libmateslab = yes])
+AM_CONDITIONAL(HAVE_LIBMATESLAB, [test $have_libcafeslab = yes])
 
 dnl
 dnl Check dependencies of accountsservice
@@ -189,7 +189,7 @@ AM_CONDITIONAL([HAVE_ACCOUNTSSERVICE], [test "x$have_accountsservice" = xyes])
 
 
 PKG_CHECK_MODULES(FONT_CAPPLET, $COMMON_MODULES pango)
-PKG_CHECK_MODULES(FONT_VIEWER, $COMMON_MODULES fontconfig freetype2 mate-desktop-2.0)
+PKG_CHECK_MODULES(FONT_VIEWER, $COMMON_MODULES fontconfig freetype2 cafe-desktop-2.0)
 
 PKG_CHECK_MODULES(AT_CAPPLET, $COMMON_MODULES)
 
@@ -213,11 +213,11 @@ PKG_CHECK_MODULES(XINPUT, xi >= 1.5)
 
 CAPPLET_LIBS="$CAPPLET_LIBS $XINPUT_LIBS"
 
-PKG_CHECK_MODULES(LIBMATEKBD, [libmatekbd >= $MATEKBD_REQUIRED libxklavier >= 5.2])
+PKG_CHECK_MODULES(LIBMATEKBD, [libcafekbd >= $MATEKBD_REQUIRED libxklavier >= 5.2])
 AC_SUBST(LIBMATEKBD_CFLAGS)
 AC_SUBST(LIBMATEKBD_LIBS)
 
-PKG_CHECK_MODULES(LIBMATEKBDUI, [libmatekbdui >= $MATEKBD_REQUIRED])
+PKG_CHECK_MODULES(LIBMATEKBDUI, [libcafekbdui >= $MATEKBD_REQUIRED])
 AC_SUBST(LIBMATEKBDUI_CFLAGS)
 AC_SUBST(LIBMATEKBDUI_LIBS)
 
@@ -272,8 +272,8 @@ AM_CONDITIONAL(ENABLE_UPDATE_MIMEDB, test x$enable_update_mimedb = xyes)
 
 AC_CONFIG_FILES([
 Makefile
-org.mate.control-center.gschema.xml
-org.mate.control-center.keybinding.gschema.xml
+org.cafe.control-center.gschema.xml
+org.cafe.control-center.keybinding.gschema.xml
 capplets/Makefile
 capplets/about-me/Makefile
 capplets/accessibility/Makefile
@@ -282,11 +282,11 @@ capplets/appearance/Makefile
 capplets/appearance/data/Makefile
 capplets/common/Makefile
 capplets/default-applications/Makefile
-capplets/default-applications/mate-default-applications.pc
+capplets/default-applications/cafe-default-applications.pc
 capplets/default-applications/icons/Makefile
 capplets/display/Makefile
 capplets/keybindings/Makefile
-capplets/keybindings/mate-keybindings.pc
+capplets/keybindings/cafe-keybindings.pc
 capplets/keyboard/Makefile
 capplets/mouse/Makefile
 capplets/network/Makefile
@@ -297,10 +297,10 @@ capplets/windows/Makefile
 font-viewer/Makefile
 help/Makefile
 libwindow-settings/Makefile
-libwindow-settings/mate-window-settings-2.0.pc
+libwindow-settings/cafe-window-settings-2.0.pc
 man/Makefile
 po/Makefile.in
-libslab/mate-slab.pc
+libslab/cafe-slab.pc
 libslab/Makefile
 shell/Makefile
 typing-break/Makefile
@@ -314,7 +314,7 @@ dnl - Show summary
 dnl ---------------------------------------------------------------------------
 
 echo "
-              mate-control-center
+              cafe-control-center
 
         Compiler:              ${CC}
         Compiler flags:        ${CFLAGS}
@@ -322,6 +322,6 @@ echo "
         Linker flags:          ${LDFLAGS}
 
         Appindicator:          ${enable_appindicator}
-        Libmate-slab:          ${have_libmateslab}
+        Libcafe-slab:          ${have_libcafeslab}
         Accountsservice:       ${have_accountsservice}
 "

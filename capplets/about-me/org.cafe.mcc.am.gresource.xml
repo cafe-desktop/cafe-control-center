@@ -16,9 +16,9 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/am">
-    <file compressed="true">mate-about-me-dialog.ui</file>
-    <file compressed="true">mate-about-me-fingerprint.ui</file>
-    <file compressed="true">mate-about-me-password.ui</file>
+  <gresource prefix="/org/cafe/mcc/am">
+    <file compressed="true">cafe-about-me-dialog.ui</file>
+    <file compressed="true">cafe-about-me-fingerprint.ui</file>
+    <file compressed="true">cafe-about-me-password.ui</file>
   </gresource>
 </gresources>

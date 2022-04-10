@@ -2,7 +2,7 @@
 #define MARCO_WINDOW_MANAGER_H
 
 #include <glib-object.h>
-#include "mate-window-manager.h"
+#include "cafe-window-manager.h"
 
 #define MARCO_WINDOW_MANAGER(obj)          G_TYPE_CHECK_INSTANCE_CAST (obj, marco_window_manager_get_type (), MarcoWindowManager)
 #define MARCO_WINDOW_MANAGER_CLASS(klass)  G_TYPE_CHECK_CLASS_CAST (klass, marco_window_manager_get_type (), MarcoWindowManagerClass)

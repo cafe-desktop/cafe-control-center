@@ -1,4 +1,4 @@
-/* mate-theme-info.h - MATE Theme information
+/* cafe-theme-info.h - MATE Theme information
 
    Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
    All rights reserved.
@@ -26,8 +26,8 @@
 #ifndef THEME_APPLY_H
 #define THEME_APPLY_H
 
-#include "mate-theme-info.h"
+#include "cafe-theme-info.h"
 
-void mate_meta_theme_set (MateThemeMetaInfo *meta_theme_info);
+void cafe_meta_theme_set (MateThemeMetaInfo *meta_theme_info);
 
 #endif /* THEME_APPLY_H */

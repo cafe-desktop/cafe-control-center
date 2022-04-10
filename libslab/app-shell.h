@@ -25,8 +25,8 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 #define MATEMENU_I_KNOW_THIS_IS_UNSTABLE
-#include <matemenu-tree.h>
-#include <libmate-desktop/mate-desktop-item.h>
+#include <cafemenu-tree.h>
+#include <libcafe-desktop/cafe-desktop-item.h>
 
 #include "slab-section.h"
 #include "tile.h"

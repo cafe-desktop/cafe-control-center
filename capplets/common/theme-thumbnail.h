@@ -3,7 +3,7 @@
 
 
 #include <gtk/gtk.h>
-#include "mate-theme-info.h"
+#include "cafe-theme-info.h"
 
 typedef void (* ThemeThumbnailFunc)          (GdkPixbuf          *pixbuf,
                                               gchar              *theme_name,

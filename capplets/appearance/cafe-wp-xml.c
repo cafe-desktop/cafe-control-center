@@ -19,13 +19,13 @@
  */
 
 #include "appearance.h"
-#include "mate-wp-item.h"
+#include "cafe-wp-item.h"
 #include <gio/gio.h>
 #include <string.h>
 #include <libxml/parser.h>
 #include <errno.h>
 
-static gboolean mate_wp_xml_get_bool(const xmlNode* parent, const char* prop_name)
+static gboolean cafe_wp_xml_get_bool(const xmlNode* parent, const char* prop_name)
 {
 	gboolean ret_val = FALSE;
 
@@ -51,7 +51,7 @@ static gboolean mate_wp_xml_get_bool(const xmlNode* parent, const char* prop_nam
 	return ret_val;
 }
 
-static void mate_wp_xml_set_bool(const xmlNode* parent, const xmlChar* prop_name, gboolean value)
+static void cafe_wp_xml_set_bool(const xmlNode* parent, const xmlChar* prop_name, gboolean value)
 {
 	if (parent != NULL && prop_name != NULL)
 	{
@@ -66,7 +66,7 @@ static void mate_wp_xml_set_bool(const xmlNode* parent, const xmlChar* prop_name
 	}
 }
 
-static void mate_wp_load_legacy(AppearanceData* data)
+static void cafe_wp_load_legacy(AppearanceData* data)
 {
 	/* Legacy of GNOME2
 	 * ~/.gnome2/wallpapers.list */
@@ -101,11 +101,11 @@ static void mate_wp_load_legacy(AppearanceData* data)
 					continue;
 				}
 
-				item = mate_wp_item_new(foo, data->wp_hash, data->thumb_factory);
+				item = cafe_wp_item_new(foo, data->wp_hash, data->thumb_factory);
 
 				if (item != NULL && item->fileinfo == NULL)
 				{
-					mate_wp_item_free(item);
+					cafe_wp_item_free(item);
 				}
 			}
 
@@ -117,7 +117,7 @@ static void mate_wp_load_legacy(AppearanceData* data)
 	g_free(filename);
 }
 
-static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
+static void cafe_wp_xml_load_xml(AppearanceData* data, const char* filename)
 {
 	xmlDoc* wplist;
 	xmlNode* root;
@@ -150,7 +150,7 @@ static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
 
 			wp = g_new0(MateWPItem, 1);
 
-			wp->deleted = mate_wp_xml_get_bool(list, "deleted");
+			wp->deleted = cafe_wp_xml_get_bool(list, "deleted");
 
 			for (wpa = list->children; wpa != NULL; wpa = wpa->next)
 			{
@@ -265,7 +265,7 @@ static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
 			if (wp->filename == NULL || g_hash_table_lookup (data->wp_hash, wp->filename) != NULL)
 			{
 
-				mate_wp_item_free (wp);
+				cafe_wp_item_free (wp);
 				g_free (pcolor);
 				g_free (scolor);
 				continue;
@@ -307,7 +307,7 @@ static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
 
 			if ((wp->filename != NULL && g_file_test (wp->filename, G_FILE_TEST_EXISTS)) || !strcmp (wp->filename, "(none)"))
 			{
-				wp->fileinfo = mate_wp_info_new(wp->filename, data->thumb_factory);
+				wp->fileinfo = cafe_wp_info_new(wp->filename, data->thumb_factory);
 
 				if (wp->name == NULL || !strcmp(wp->filename, "(none)"))
 				{
@@ -315,13 +315,13 @@ static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
 					wp->name = g_strdup (wp->fileinfo->name);
 				}
 
-				mate_wp_item_ensure_mate_bg (wp);
-				mate_wp_item_update_description (wp);
+				cafe_wp_item_ensure_cafe_bg (wp);
+				cafe_wp_item_update_description (wp);
 				g_hash_table_insert (data->wp_hash, wp->filename, wp);
 			}
 			else
 			{
-				mate_wp_item_free(wp);
+				cafe_wp_item_free(wp);
 				wp = NULL;
 			}
 		}
@@ -330,7 +330,7 @@ static void mate_wp_xml_load_xml(AppearanceData* data, const char* filename)
 	xmlFreeDoc(wplist);
 }
 
-static void mate_wp_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type, AppearanceData* data)
+static void cafe_wp_file_changed(GFileMonitor* monitor, GFile* file, GFile* other_file, GFileMonitorEvent event_type, AppearanceData* data)
 {
 	char* filename;
 
@@ -339,7 +339,7 @@ static void mate_wp_file_changed(GFileMonitor* monitor, GFile* file, GFile* othe
 		case G_FILE_MONITOR_EVENT_CHANGED:
 		case G_FILE_MONITOR_EVENT_CREATED:
 			filename = g_file_get_path(file);
-			mate_wp_xml_load_xml(data, filename);
+			cafe_wp_xml_load_xml(data, filename);
 			g_free(filename);
 			break;
 		default:
@@ -347,7 +347,7 @@ static void mate_wp_file_changed(GFileMonitor* monitor, GFile* file, GFile* othe
 	}
 }
 
-static void mate_wp_xml_add_monitor(GFile* directory, AppearanceData* data)
+static void cafe_wp_xml_add_monitor(GFile* directory, AppearanceData* data)
 {
 	GError* error = NULL;
 
@@ -362,10 +362,10 @@ static void mate_wp_xml_add_monitor(GFile* directory, AppearanceData* data)
 		return;
 	}
 
-	g_signal_connect(monitor, "changed", G_CALLBACK(mate_wp_file_changed), data);
+	g_signal_connect(monitor, "changed", G_CALLBACK(cafe_wp_file_changed), data);
 }
 
-static void mate_wp_xml_load_from_dir(const char* path, AppearanceData* data)
+static void cafe_wp_xml_load_from_dir(const char* path, AppearanceData* data)
 {
 	GFile* directory;
 	GFileEnumerator* enumerator;
@@ -400,63 +400,63 @@ static void mate_wp_xml_load_from_dir(const char* path, AppearanceData* data)
 
 		g_object_unref(info);
 
-		mate_wp_xml_load_xml(data, fullpath);
+		cafe_wp_xml_load_xml(data, fullpath);
 		g_free(fullpath);
 	}
 
 	g_file_enumerator_close(enumerator, NULL, NULL);
 
-	mate_wp_xml_add_monitor(directory, data);
+	cafe_wp_xml_add_monitor(directory, data);
 
 	g_object_unref(directory);
 }
 
-void mate_wp_xml_load_list(AppearanceData* data)
+void cafe_wp_xml_load_list(AppearanceData* data)
 {
 	const char* const* system_data_dirs;
 	char* datadir;
 	char* wpdbfile;
 	gint i;
 
-		wpdbfile = g_build_filename(g_get_user_config_dir(), "mate", "backgrounds.xml", NULL);
+		wpdbfile = g_build_filename(g_get_user_config_dir(), "cafe", "backgrounds.xml", NULL);
 
 	if (g_file_test(wpdbfile, G_FILE_TEST_EXISTS))
 	{
-		mate_wp_xml_load_xml(data, wpdbfile);
+		cafe_wp_xml_load_xml(data, wpdbfile);
 	}
 	else
 	{
 		g_free (wpdbfile);
 
-			wpdbfile = g_build_filename(g_get_user_config_dir(), "mate", "wp-list.xml", NULL);
+			wpdbfile = g_build_filename(g_get_user_config_dir(), "cafe", "wp-list.xml", NULL);
 
 		if (g_file_test(wpdbfile, G_FILE_TEST_EXISTS))
 		{
-			mate_wp_xml_load_xml(data, wpdbfile);
+			cafe_wp_xml_load_xml(data, wpdbfile);
 		}
 	}
 
 	g_free (wpdbfile);
 
-	datadir = g_build_filename(g_get_user_data_dir(), "mate-background-properties", NULL);
-	mate_wp_xml_load_from_dir(datadir, data);
+	datadir = g_build_filename(g_get_user_data_dir(), "cafe-background-properties", NULL);
+	cafe_wp_xml_load_from_dir(datadir, data);
 	g_free(datadir);
 
 	system_data_dirs = g_get_system_data_dirs();
 
 	for (i = 0; system_data_dirs[i]; i++)
 	{
-		datadir = g_build_filename(system_data_dirs[i], "mate-background-properties", NULL);
-		mate_wp_xml_load_from_dir(datadir, data);
+		datadir = g_build_filename(system_data_dirs[i], "cafe-background-properties", NULL);
+		cafe_wp_xml_load_from_dir(datadir, data);
 		g_free (datadir);
 	}
 
-	mate_wp_xml_load_from_dir(WALLPAPER_DATADIR, data);
+	cafe_wp_xml_load_from_dir(WALLPAPER_DATADIR, data);
 
-	mate_wp_load_legacy(data);
+	cafe_wp_load_legacy(data);
 }
 
-static void mate_wp_list_flatten(const char* key, MateWPItem* item, GSList** list)
+static void cafe_wp_list_flatten(const char* key, MateWPItem* item, GSList** list)
 {
 	if (key != NULL && item != NULL)
 	{
@@ -464,7 +464,7 @@ static void mate_wp_list_flatten(const char* key, MateWPItem* item, GSList** lis
 	}
 }
 
-void mate_wp_xml_save_list(AppearanceData* data)
+void cafe_wp_xml_save_list(AppearanceData* data)
 {
 	xmlDoc* wplist;
 	xmlNode* root;
@@ -472,14 +472,14 @@ void mate_wp_xml_save_list(AppearanceData* data)
 	//xmlNode* item;
 	GSList* list = NULL;
 
-	g_hash_table_foreach(data->wp_hash, (GHFunc) mate_wp_list_flatten, &list);
+	g_hash_table_foreach(data->wp_hash, (GHFunc) cafe_wp_list_flatten, &list);
 	g_hash_table_destroy(data->wp_hash);
 	list = g_slist_reverse(list);
 
 	xmlKeepBlanksDefault(0);
 
 	wplist = xmlNewDoc((xmlChar*) "1.0");
-	xmlCreateIntSubset(wplist, (xmlChar*) "wallpapers", NULL, (xmlChar*) "mate-wp-list.dtd");
+	xmlCreateIntSubset(wplist, (xmlChar*) "wallpapers", NULL, (xmlChar*) "cafe-wp-list.dtd");
 	root = xmlNewNode(NULL, (xmlChar*) "wallpapers");
 	xmlDocSetRootElement(wplist, root);
 
@@ -509,7 +509,7 @@ void mate_wp_xml_save_list(AppearanceData* data)
 		shade = wp_item_shading_to_string(wpitem->shade_type);
 
 		wallpaper = xmlNewChild(root, NULL, (xmlChar*) "wallpaper", NULL);
-		mate_wp_xml_set_bool(wallpaper, (xmlChar*) "deleted", wpitem->deleted);
+		cafe_wp_xml_set_bool(wallpaper, (xmlChar*) "deleted", wpitem->deleted);
 
 		xmlNewTextChild(wallpaper, NULL, (xmlChar*) "name", (xmlChar*) wpitem->name);
 		xmlNewTextChild(wallpaper, NULL, (xmlChar*) "filename", (xmlChar*) filename);
@@ -524,7 +524,7 @@ void mate_wp_xml_save_list(AppearanceData* data)
 		g_free(filename);
 
 		list = g_slist_delete_link(list, list);
-		mate_wp_item_free(wpitem);
+		cafe_wp_item_free(wpitem);
 	}
 
 	/* save the xml document, only if there are nodes in <wallpapers> */
@@ -533,7 +533,7 @@ void mate_wp_xml_save_list(AppearanceData* data)
 		g_autofree gchar *wpdir = NULL;
 		g_autofree gchar *wpfile = NULL;
 
-		wpdir = g_build_filename (g_get_user_config_dir(), "mate", NULL);
+		wpdir = g_build_filename (g_get_user_config_dir(), "cafe", NULL);
 		if (g_mkdir_with_parents (wpdir, 0700) == -1)
 		{
 			int errsv = errno;

@@ -261,7 +261,7 @@ update_color_buttons_from_string (const gchar *color_scheme, AppearanceData *dat
   GtkWidget *widget;
   gint i;
 
-  if (!mate_theme_color_scheme_parse (color_scheme, colors))
+  if (!cafe_theme_color_scheme_parse (color_scheme, colors))
     return;
 
   /* now set all the buttons to the correct settings */
@@ -358,7 +358,7 @@ color_button_clicked_cb (GtkWidget *colorbutton, AppearanceData *data)
   /* verify that the scheme really has changed */
   g_object_get (gtk_settings_get_default (), "gtk-color-scheme", &old_scheme, NULL);
 
-  if (!mate_theme_color_scheme_equal (old_scheme, scheme->str)) {
+  if (!cafe_theme_color_scheme_equal (old_scheme, scheme->str)) {
     g_settings_set_string (data->interface_settings, COLOR_SCHEME_KEY, scheme->str);
 
     gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), TRUE);
@@ -395,7 +395,7 @@ gtk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
   if (name) {
     gchar *current;
 
-    theme = mate_theme_info_find (name);
+    theme = cafe_theme_info_find (name);
 
     /* Manually update GtkSettings to new gtk+ theme.
      * This will eventually happen anyway, but we need the
@@ -427,7 +427,7 @@ window_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
   name = g_settings_get_string (settings, key);
   if (name)
   {
-    theme = mate_theme_info_find (name);
+    theme = cafe_theme_info_find (name);
     g_free (name);
   }
 
@@ -443,7 +443,7 @@ icon_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 
   name = g_settings_get_string (settings, key);
   if (name) {
-    theme = mate_theme_icon_info_find (name);
+    theme = cafe_theme_icon_info_find (name);
     g_free (name);
 }
 
@@ -467,7 +467,7 @@ cursor_size_scale_value_changed_cb (GtkRange *range, AppearanceData *data)
   if (name == NULL)
     return;
 
-  theme = mate_theme_cursor_info_find (name);
+  theme = cafe_theme_cursor_info_find (name);
   g_free (name);
 
   if (theme) {
@@ -559,7 +559,7 @@ cursor_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 
   name = g_settings_get_string (settings, key);
   if (name) {
-    theme = mate_theme_cursor_info_find (name);
+    theme = cafe_theme_cursor_info_find (name);
     g_free (name);
   }
 
@@ -748,21 +748,21 @@ create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *d
 {
   if (default_thumb == data->icon_theme_icon) {
     MateThemeIconInfo *info;
-    info = mate_theme_icon_info_find (name);
+    info = cafe_theme_icon_info_find (name);
     if (info != NULL) {
       generate_icon_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) icon_theme_thumbnail_cb, data, NULL);
     }
   } else if (default_thumb == data->gtk_theme_icon) {
     MateThemeInfo *info;
-    info = mate_theme_info_find (name);
+    info = cafe_theme_info_find (name);
     if (info != NULL && info->has_gtk) {
       generate_gtk_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
     }
   } else if (default_thumb == data->window_theme_icon) {
     MateThemeInfo *info;
-    info = mate_theme_info_find (name);
+    info = cafe_theme_info_find (name);
     if (info != NULL && info->has_marco) {
       generate_marco_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) marco_theme_thumbnail_cb, data, NULL);
@@ -854,7 +854,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   switch (type)
   {
     case THEME_TYPE_GTK:
-      themes = mate_theme_info_find_by_type (MATE_THEME_GTK_2);
+      themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2);
       thumbnail = data->gtk_theme_icon;
       settings = data->interface_settings;
       key = GTK_THEME_KEY;
@@ -863,7 +863,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       break;
 
     case THEME_TYPE_WINDOW:
-      themes = mate_theme_info_find_by_type (MATE_THEME_MARCO);
+      themes = cafe_theme_info_find_by_type (MATE_THEME_MARCO);
       thumbnail = data->window_theme_icon;
       settings = data->marco_settings;
       key = MARCO_THEME_KEY;
@@ -872,7 +872,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       break;
 
     case THEME_TYPE_ICON:
-      themes = mate_theme_icon_info_find_all ();
+      themes = cafe_theme_icon_info_find_all ();
       thumbnail = data->icon_theme_icon;
       settings = data->interface_settings;
       key = ICON_THEME_KEY;
@@ -881,7 +881,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       break;
 
     case THEME_TYPE_CURSOR:
-      themes = mate_theme_cursor_info_find_all ();
+      themes = cafe_theme_cursor_info_find_all ();
       thumbnail = NULL;
       settings = data->mouse_settings;
       key = CURSOR_THEME_KEY;
@@ -1054,7 +1054,7 @@ style_init (AppearanceData *data)
   g_signal_connect (appearance_capplet_get_widget (data, "cursor_themes_delete"), "clicked", (GCallback) cursor_theme_delete_cb, data);
 
   update_message_area (data);
-  mate_theme_info_register_theme_change ((ThemeChangedCallback) changed_on_disk_cb, data);
+  cafe_theme_info_register_theme_change ((ThemeChangedCallback) changed_on_disk_cb, data);
 }
 
 void
