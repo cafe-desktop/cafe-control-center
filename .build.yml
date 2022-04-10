@@ -15,6 +15,7 @@ requires:
     - git
     - gla11y
     - gobject-introspection
+    - gtk-doc-tools
     - intltool
     - libcanberra-gtk3-dev
     - libdbus-1-dev
