@@ -33,7 +33,7 @@
 #define ICON_THEME_KEY          "icon-theme"
 #define FONT_KEY                "font-name"
 
-#define MARCO_SCHEMA            "org.cafe.Marco.general"
+#define MARCO_SCHEMA            "org.cafe.Croma.general"
 #define MARCO_THEME_KEY         "theme"
 
 #define MOUSE_SCHEMA            "org.cafe.peripherals-mouse"

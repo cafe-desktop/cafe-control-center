@@ -1989,7 +1989,7 @@ main (int argc, char *argv[])
 
   wm_common_register_window_manager_change ((GFunc) on_window_manager_change, builder);
 
-  croma_settings = g_settings_new ("org.cafe.Marco.general");
+  croma_settings = g_settings_new ("org.cafe.Croma.general");
 
   setup_dialog (builder, croma_settings);
 

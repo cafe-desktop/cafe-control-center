@@ -32,7 +32,7 @@
 
 #include "croma-window-manager.h"
 
-#define MARCO_SCHEMA "org.cafe.Marco.general"
+#define MARCO_SCHEMA "org.cafe.Croma.general"
 #define MARCO_THEME_KEY "theme"
 #define MARCO_FONT_KEY  "titlebar-font"
 #define MARCO_FOCUS_KEY "focus-mode"
@@ -66,7 +66,7 @@ enum
 
 static CafeWindowManagerClass *parent_class;
 
-struct _MarcoWindowManagerPrivate {
+struct _CromaWindowManagerPrivate {
         GSettings *settings;
         char *font;
         char *theme;
@@ -78,7 +78,7 @@ value_changed (GSettings *settings,
                gchar     *key,
                void      *data)
 {
-        MarcoWindowManager *meta_wm;
+        CromaWindowManager *meta_wm;
 
         meta_wm = MARCO_WINDOW_MANAGER (data);
 
@@ -92,7 +92,7 @@ window_manager_new (int expected_interface_version)
         GObject *wm;
 
         if (expected_interface_version != CAFE_WINDOW_MANAGER_INTERFACE_VERSION) {
-                g_warning ("Marco window manager module wasn't compiled with the current version of cafe-control-center");
+                g_warning ("Croma window manager module wasn't compiled with the current version of cafe-control-center");
                 return NULL;
         }
 
@@ -186,7 +186,7 @@ static void
 croma_change_settings (CafeWindowManager    *wm,
                           const CafeWMSettings *settings)
 {
-        MarcoWindowManager *meta_wm;
+        CromaWindowManager *meta_wm;
 
         meta_wm = MARCO_WINDOW_MANAGER (wm);
 
@@ -250,7 +250,7 @@ croma_get_settings (CafeWindowManager *wm,
                        CafeWMSettings    *settings)
 {
         int to_get;
-        MarcoWindowManager *meta_wm;
+        CromaWindowManager *meta_wm;
 
         meta_wm = MARCO_WINDOW_MANAGER (wm);
 
@@ -415,10 +415,10 @@ croma_get_double_click_actions (CafeWindowManager              *wm,
 }
 
 static void
-croma_window_manager_init (MarcoWindowManager *croma_window_manager,
-                              MarcoWindowManagerClass *class)
+croma_window_manager_init (CromaWindowManager *croma_window_manager,
+                              CromaWindowManagerClass *class)
 {
-        croma_window_manager->p = g_new0 (MarcoWindowManagerPrivate, 1);
+        croma_window_manager->p = g_new0 (CromaWindowManagerPrivate, 1);
         croma_window_manager->p->settings = g_settings_new (MARCO_SCHEMA);
         croma_window_manager->p->font = NULL;
         croma_window_manager->p->theme = NULL;
@@ -432,7 +432,7 @@ croma_window_manager_init (MarcoWindowManager *croma_window_manager,
 static void
 croma_window_manager_finalize (GObject *object)
 {
-        MarcoWindowManager *croma_window_manager;
+        CromaWindowManager *croma_window_manager;
 
         g_return_if_fail (object != NULL);
         g_return_if_fail (IS_MARCO_WINDOW_MANAGER (object));
@@ -447,7 +447,7 @@ croma_window_manager_finalize (GObject *object)
 
 
 static void
-croma_window_manager_class_init (MarcoWindowManagerClass *class)
+croma_window_manager_class_init (CromaWindowManagerClass *class)
 {
         GObjectClass *object_class;
         CafeWindowManagerClass *wm_class;
@@ -474,13 +474,13 @@ croma_window_manager_get_type (void)
 
         if (!croma_window_manager_type) {
                 static GTypeInfo croma_window_manager_info = {
-                        sizeof (MarcoWindowManagerClass),
+                        sizeof (CromaWindowManagerClass),
                         NULL, /* GBaseInitFunc */
                         NULL, /* GBaseFinalizeFunc */
                         (GClassInitFunc) croma_window_manager_class_init,
                         NULL, /* GClassFinalizeFunc */
                         NULL, /* user-supplied data */
-                        sizeof (MarcoWindowManager),
+                        sizeof (CromaWindowManager),
                         0, /* n_preallocs */
                         (GInstanceInitFunc) croma_window_manager_init,
                         NULL
@@ -488,7 +488,7 @@ croma_window_manager_get_type (void)
 
                 croma_window_manager_type =
                         g_type_register_static (cafe_window_manager_get_type (),
-                                                "MarcoWindowManager",
+                                                "CromaWindowManager",
                                                 &croma_window_manager_info, 0);
         }
 

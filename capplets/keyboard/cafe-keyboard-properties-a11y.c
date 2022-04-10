@@ -31,7 +31,7 @@
 #define NWID(s) GTK_WIDGET (gtk_builder_get_object (notifications_dialog, s))
 
 #define A11Y_SCHEMA "org.cafe.accessibility-keyboard"
-#define MARCO_SCHEMA "org.cafe.Marco.general"
+#define MARCO_SCHEMA "org.cafe.Croma.general"
 
 static GtkBuilder *notifications_dialog = NULL;
 static GSettings *a11y_settings = NULL;

@@ -69,8 +69,8 @@ Here is the OS X Display menu:
 	- Would probably be worthwhile to drop libcafe/libcafeui from
 	  the craplets.
 
-- Marco work:
-	- Marco is already Xinerama aware, but it needs to update itself
+- Croma work:
+	- Croma is already Xinerama aware, but it needs to update itself
 	  when monitors come and go.
 
 - CAFE panel work:
@@ -92,7 +92,7 @@ Here is the OS X Display menu:
   is at best a nice-to-have, and low priority in my opinion.
 
 
-*******************  Marco
+*******************  Croma
 
 Havoc:
 

@@ -39,7 +39,7 @@
 #include "wm-common.h"
 #include "capplet-util.h"
 
-#define MARCO_SCHEMA "org.cafe.Marco.general"
+#define MARCO_SCHEMA "org.cafe.Croma.general"
 #define MARCO_THEME_KEY "theme"
 #define MARCO_FONT_KEY  "titlebar-font"
 #define MARCO_FOCUS_KEY "focus-mode"
