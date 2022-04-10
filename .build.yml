@@ -104,4 +104,4 @@ build_scripts:
   - fi
 
 after_scripts:
-  - make distcheck
+  - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/cafe-icon-theme/raw/master/cafe/16x16/categories/preferences-desktop.png; fi
