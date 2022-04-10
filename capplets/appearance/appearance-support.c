@@ -99,7 +99,7 @@ metacity_theme_apply(const gchar *theme, const gchar *font)
 }
 
 static void
-marco_theme_changed(GSettings *settings, gchar *key, AppearanceData* data)
+croma_theme_changed(GSettings *settings, gchar *key, AppearanceData* data)
 {
     gchar *theme = NULL;
     gchar *font = NULL;
@@ -119,13 +119,13 @@ support_init(AppearanceData* data)
     /* needed for wm_common_get_current_window_manager() */
     wm_common_update_window ();
     /* GSettings signals */
-    g_signal_connect (data->marco_settings, "changed::" MARCO_THEME_KEY,
-                      G_CALLBACK (marco_theme_changed), data);
-    g_signal_connect (data->marco_settings, "changed::" WINDOW_TITLE_FONT_KEY,
-                      G_CALLBACK (marco_theme_changed), data);
+    g_signal_connect (data->croma_settings, "changed::" MARCO_THEME_KEY,
+                      G_CALLBACK (croma_theme_changed), data);
+    g_signal_connect (data->croma_settings, "changed::" WINDOW_TITLE_FONT_KEY,
+                      G_CALLBACK (croma_theme_changed), data);
     /* apply theme at start */
     if (metacity_is_running ())
-        marco_theme_changed (data->marco_settings, NULL, data);
+        croma_theme_changed (data->croma_settings, NULL, data);
 }
 
 void

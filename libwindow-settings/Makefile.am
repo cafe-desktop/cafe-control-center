@@ -42,14 +42,14 @@ wms_flags = -export_dynamic -avoid-version -module
 wmsdir = $(WM_MODULE_DIR)
 
 wms_LTLIBRARIES =			\
-	libmarco.la
+	libcroma.la
 
-libmarco_la_SOURCES = 		\
-	marco-window-manager.c	\
-	marco-window-manager.h
+libcroma_la_SOURCES = 		\
+	croma-window-manager.c	\
+	croma-window-manager.h
 
-libmarco_la_LDFLAGS = $(wms_flags)
-libmarco_la_LIBADD = 		\
+libcroma_la_LDFLAGS = $(wms_flags)
+libcroma_la_LIBADD = 		\
 	$(CAFECC_LIBS)			\
 	libcafe-window-settings.la
 

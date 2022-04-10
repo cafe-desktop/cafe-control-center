@@ -2519,32 +2519,32 @@ msgid "To move a window, press-and-hold this key then grab the window:"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:510
-#: ../libwindow-settings/marco-window-manager.c:394
+#: ../libwindow-settings/croma-window-manager.c:394
 msgid "Roll up"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:511
-#: ../libwindow-settings/marco-window-manager.c:395
+#: ../libwindow-settings/croma-window-manager.c:395
 msgid "Maximize"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:512
-#: ../libwindow-settings/marco-window-manager.c:396
+#: ../libwindow-settings/croma-window-manager.c:396
 msgid "Maximize Horizontally"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:513
-#: ../libwindow-settings/marco-window-manager.c:397
+#: ../libwindow-settings/croma-window-manager.c:397
 msgid "Maximize Vertically"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:514
-#: ../libwindow-settings/marco-window-manager.c:398
+#: ../libwindow-settings/croma-window-manager.c:398
 msgid "Minimize"
 msgstr ""
 
 #: ../capplets/windows/cafe-window-properties.c:515
-#: ../libwindow-settings/marco-window-manager.c:399
+#: ../libwindow-settings/croma-window-manager.c:399
 msgid "None"
 msgstr "कय्ह न"
 

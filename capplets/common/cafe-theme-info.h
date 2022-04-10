@@ -72,7 +72,7 @@ struct _CafeThemeInfo
 
 	guint has_gtk : 1;
 	guint has_keybinding : 1;
-	guint has_marco : 1;
+	guint has_croma : 1;
 };
 
 typedef struct _CafeThemeCursorInfo CafeThemeCursorInfo;
@@ -102,7 +102,7 @@ struct _CafeThemeMetaInfo {
 
 	gchar* gtk_theme_name;
 	gchar* gtk_color_scheme;
-	gchar* marco_theme_name;
+	gchar* croma_theme_name;
 	gchar* icon_theme_name;
 	gchar* notification_theme_name;
 	gchar* sound_theme_name;

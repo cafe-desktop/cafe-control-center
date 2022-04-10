@@ -1,15 +1,15 @@
 #include <config.h>
 #include <unistd.h>
 #include <string.h>
-#include <marco-private/util.h>
-#include <marco-private/theme.h>
-#include <marco-private/theme-parser.h>
-#include <marco-private/preview-widget.h>
+#include <croma-private/util.h>
+#include <croma-private/theme.h>
+#include <croma-private/theme-parser.h>
+#include <croma-private/preview-widget.h>
 #include <signal.h>
 #include <errno.h>
 #include <math.h>
 
-/* We have to #undef this as marco #defines these. */
+/* We have to #undef this as croma #defines these. */
 #undef _
 #undef N_
 
@@ -81,7 +81,7 @@ static int pipe_from_factory_fd[2];
 
 #define THUMBNAIL_TYPE_META     "meta"
 #define THUMBNAIL_TYPE_GTK      "gtk"
-#define THUMBNAIL_TYPE_MARCO    "marco"
+#define THUMBNAIL_TYPE_MARCO    "croma"
 #define THUMBNAIL_TYPE_ICON     "icon"
 
 #define META_THUMBNAIL_SIZE       128
@@ -351,7 +351,7 @@ create_gtk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 }
 
 static GdkPixbuf *
-create_marco_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
+create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   GtkWidget *window, *preview, *dummy;
   MetaFrameFlags flags;
@@ -582,7 +582,7 @@ message_from_capplet (GIOChannel   *source,
         else if (!strcmp (type, THUMBNAIL_TYPE_GTK))
           pixbuf = create_gtk_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_MARCO))
-          pixbuf = create_marco_theme_pixbuf (theme_thumbnail_data);
+          pixbuf = create_croma_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_ICON))
           pixbuf = create_icon_theme_pixbuf (theme_thumbnail_data);
         else
@@ -660,7 +660,7 @@ generate_next_in_queue (void)
                                         item->user_data,
                                         item->destroy);
   else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_MARCO))
-    generate_marco_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
+    generate_croma_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
                                              item->func,
                                              item->user_data,
                                              item->destroy);
@@ -768,7 +768,7 @@ static void
 send_thumbnail_request (gchar *thumbnail_type,
                         gchar *gtk_theme_name,
                         gchar *gtk_color_scheme,
-                        gchar *marco_theme_name,
+                        gchar *croma_theme_name,
                         gchar *icon_theme_name,
                         gchar *application_font)
 {
@@ -797,9 +797,9 @@ send_thumbnail_request (gchar *thumbnail_type,
       perror ("write error");
   }
 
-  if (marco_theme_name)
+  if (croma_theme_name)
   {
-    if (write (pipe_to_factory_fd[1], marco_theme_name, strlen (marco_theme_name) + 1) == -1)
+    if (write (pipe_to_factory_fd[1], croma_theme_name, strlen (croma_theme_name) + 1) == -1)
       perror ("write error");
   }
   else
@@ -890,7 +890,7 @@ static GdkPixbuf *
 generate_theme_thumbnail (gchar *thumbnail_type,
                           gchar *gtk_theme_name,
                           gchar *gtk_color_scheme,
-                          gchar *marco_theme_name,
+                          gchar *croma_theme_name,
                           gchar *icon_theme_name,
                           gchar *application_font)
 {
@@ -900,7 +900,7 @@ generate_theme_thumbnail (gchar *thumbnail_type,
   send_thumbnail_request (thumbnail_type,
                           gtk_theme_name,
                           gtk_color_scheme,
-                          marco_theme_name,
+                          croma_theme_name,
                           icon_theme_name,
                           application_font);
 
@@ -913,7 +913,7 @@ generate_meta_theme_thumbnail (CafeThemeMetaInfo *theme_info)
   return generate_theme_thumbnail (THUMBNAIL_TYPE_META,
                                    theme_info->gtk_theme_name,
                                    theme_info->gtk_color_scheme,
-                                   theme_info->marco_theme_name,
+                                   theme_info->croma_theme_name,
                                    theme_info->icon_theme_name,
                                    theme_info->application_font);
 }
@@ -935,7 +935,7 @@ generate_gtk_theme_thumbnail (CafeThemeInfo *theme_info)
 }
 
 GdkPixbuf *
-generate_marco_theme_thumbnail (CafeThemeInfo *theme_info)
+generate_croma_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_MARCO,
                                    NULL,
@@ -956,7 +956,7 @@ generate_icon_theme_thumbnail (CafeThemeIconInfo *theme_info)
                                    NULL);
 }
 
-static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_name, gchar* thumbnail_type, gchar* gtk_theme_name, gchar* gtk_color_scheme, gchar* marco_theme_name, gchar* icon_theme_name, gchar* application_font, ThemeThumbnailFunc func, gpointer user_data, GDestroyNotify destroy)
+static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_name, gchar* thumbnail_type, gchar* gtk_theme_name, gchar* gtk_color_scheme, gchar* croma_theme_name, gchar* icon_theme_name, gchar* application_font, ThemeThumbnailFunc func, gpointer user_data, GDestroyNotify destroy)
 {
 	if (async_data.set)
 	{
@@ -1003,7 +1003,7 @@ static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_nam
 	async_data.user_data = user_data;
 	async_data.destroy = destroy;
 
-	send_thumbnail_request(thumbnail_type, gtk_theme_name, gtk_color_scheme, marco_theme_name, icon_theme_name, application_font);
+	send_thumbnail_request(thumbnail_type, gtk_theme_name, gtk_color_scheme, croma_theme_name, icon_theme_name, application_font);
 }
 
 void
@@ -1017,7 +1017,7 @@ generate_meta_theme_thumbnail_async (CafeThemeMetaInfo *theme_info,
                                          THUMBNAIL_TYPE_META,
                                          theme_info->gtk_theme_name,
                                          theme_info->gtk_color_scheme,
-                                         theme_info->marco_theme_name,
+                                         theme_info->croma_theme_name,
                                          theme_info->icon_theme_name,
                                          theme_info->application_font,
                                          func, user_data, destroy);
@@ -1033,7 +1033,7 @@ void generate_gtk_theme_thumbnail_async (CafeThemeInfo* theme_info, ThemeThumbna
 }
 
 void
-generate_marco_theme_thumbnail_async (CafeThemeInfo *theme_info,
+generate_croma_theme_thumbnail_async (CafeThemeInfo *theme_info,
                                          ThemeThumbnailFunc  func,
                                          gpointer            user_data,
                                          GDestroyNotify      destroy)

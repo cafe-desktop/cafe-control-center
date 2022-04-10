@@ -80,7 +80,7 @@ typedef struct {
 	GSettings* wp_settings;
 	GSettings* caja_settings;
 	GSettings* interface_settings;
-	GSettings* marco_settings;
+	GSettings* croma_settings;
 	GSettings* mouse_settings;
 	GSettings* font_settings;
 	GtkBuilder* ui;

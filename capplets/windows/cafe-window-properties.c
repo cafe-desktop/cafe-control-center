@@ -57,7 +57,7 @@
 #define MARCO_BUTTON_LAYOUT_RIGHT "menu:minimize,maximize,close"
 #define MARCO_BUTTON_LAYOUT_LEFT "close,minimize,maximize:"
 
-/* keep following enums in sync with marco */
+/* keep following enums in sync with croma */
 enum
 {
     ACTION_TITLEBAR_TOGGLE_SHADE,
@@ -98,7 +98,7 @@ static GtkWidget *double_click_titlebar_optionmenu;
 static GtkWidget *titlebar_layout_optionmenu;
 static GtkWidget *alt_click_vbox;
 
-static GSettings *marco_settings;
+static GSettings *croma_settings;
 
 static MouseClickModifier *mouse_modifiers = NULL;
 static int n_mouse_modifiers = 0;
@@ -111,16 +111,16 @@ update_sensitivity ()
     gchar *str;
 
     gtk_widget_set_sensitive (GTK_WIDGET (compositing_fast_alt_tab_checkbutton),
-                              g_settings_get_boolean (marco_settings, MARCO_COMPOSITING_MANAGER_KEY));
+                              g_settings_get_boolean (croma_settings, MARCO_COMPOSITING_MANAGER_KEY));
     gtk_widget_set_sensitive (GTK_WIDGET (focus_mode_mouse_checkbutton),
-                              g_settings_get_enum (marco_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK);
+                              g_settings_get_enum (croma_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK);
     gtk_widget_set_sensitive (GTK_WIDGET (autoraise_checkbutton),
-                              g_settings_get_enum (marco_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK);
+                              g_settings_get_enum (croma_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK);
     gtk_widget_set_sensitive (GTK_WIDGET (autoraise_delay_hbox),
-                              g_settings_get_enum (marco_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK &&
-                              g_settings_get_boolean (marco_settings, MARCO_AUTORAISE_KEY));
+                              g_settings_get_enum (croma_settings, MARCO_FOCUS_KEY) != FOCUS_MODE_CLICK &&
+                              g_settings_get_boolean (croma_settings, MARCO_AUTORAISE_KEY));
 
-    str = g_settings_get_string (marco_settings, MARCO_BUTTON_LAYOUT_KEY);
+    str = g_settings_get_string (croma_settings, MARCO_BUTTON_LAYOUT_KEY);
     gtk_widget_set_sensitive (GTK_WIDGET (titlebar_layout_optionmenu),
                               g_strcmp0 (str, MARCO_BUTTON_LAYOUT_LEFT) == 0 ||
                               g_strcmp0 (str, MARCO_BUTTON_LAYOUT_RIGHT) == 0);
@@ -128,7 +128,7 @@ update_sensitivity ()
 }
 
 static void
-marco_settings_changed_callback (GSettings *settings,
+croma_settings_changed_callback (GSettings *settings,
                                  const gchar *key,
                                  gpointer user_data)
 {
@@ -140,13 +140,13 @@ mouse_focus_toggled_callback (GtkWidget *button,
                               void      *data)
 {
     if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton))) {
-        g_settings_set_enum (marco_settings,
+        g_settings_set_enum (croma_settings,
                              MARCO_FOCUS_KEY,
                              gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton)) ?
                              FOCUS_MODE_MOUSE : FOCUS_MODE_SLOPPY);
     }
     else {
-        g_settings_set_enum (marco_settings, MARCO_FOCUS_KEY, FOCUS_MODE_CLICK);
+        g_settings_set_enum (croma_settings, MARCO_FOCUS_KEY, FOCUS_MODE_CLICK);
     }
 }
 
@@ -173,7 +173,7 @@ static void
 autoraise_delay_value_changed_callback (GtkWidget *slider,
                                         void      *data)
 {
-    g_settings_set_int (marco_settings,
+    g_settings_set_int (croma_settings,
                         MARCO_AUTORAISE_DELAY_KEY,
                         gtk_range_get_value (GTK_RANGE (slider)) * 1000);
 }
@@ -182,7 +182,7 @@ static void
 double_click_titlebar_changed_callback (GtkWidget *optionmenu,
                                         void      *data)
 {
-    g_settings_set_enum (marco_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY,
+    g_settings_set_enum (croma_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY,
                          gtk_combo_box_get_active (GTK_COMBO_BOX (optionmenu)));
 }
 
@@ -193,10 +193,10 @@ titlebar_layout_changed_callback (GtkWidget *optionmenu,
     gint value = gtk_combo_box_get_active (GTK_COMBO_BOX (optionmenu));
 
     if (value == 0) {
-        g_settings_set_string (marco_settings, MARCO_BUTTON_LAYOUT_KEY, MARCO_BUTTON_LAYOUT_RIGHT);
+        g_settings_set_string (croma_settings, MARCO_BUTTON_LAYOUT_KEY, MARCO_BUTTON_LAYOUT_RIGHT);
     }
     else if (value == 1) {
-        g_settings_set_string (marco_settings, MARCO_BUTTON_LAYOUT_KEY, MARCO_BUTTON_LAYOUT_LEFT);
+        g_settings_set_string (croma_settings, MARCO_BUTTON_LAYOUT_KEY, MARCO_BUTTON_LAYOUT_LEFT);
     }
 }
 
@@ -212,7 +212,7 @@ alt_click_radio_toggled_callback (GtkWidget *radio,
 
     if (active) {
         value = g_strdup_printf ("<%s>", modifier->value);
-        g_settings_set_string (marco_settings, MARCO_MOUSE_MODIFIER_KEY, value);
+        g_settings_set_string (croma_settings, MARCO_MOUSE_MODIFIER_KEY, value);
         g_free (value);
     }
 }
@@ -225,7 +225,7 @@ set_alt_click_value ()
     gchar *value;
     int i;
 
-    mouse_move_modifier = g_settings_get_string (marco_settings, MARCO_MOUSE_MODIFIER_KEY);
+    mouse_move_modifier = g_settings_get_string (croma_settings, MARCO_MOUSE_MODIFIER_KEY);
 
     /* We look for a matching modifier and set it. */
     if (mouse_move_modifier != NULL) {
@@ -334,13 +334,13 @@ main (int argc, char **argv)
         return 1;
     }
 
-    marco_settings = g_settings_new (MARCO_SCHEMA);
+    croma_settings = g_settings_new (MARCO_SCHEMA);
 
     builder = gtk_builder_new ();
     if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/windows/window-properties.ui", &error) == 0) {
         g_warning ("Could not load UI: %s", error->message);
         g_error_free (error);
-        g_object_unref (marco_settings);
+        g_object_unref (croma_settings);
         g_object_unref (builder);
         return -1;
     }
@@ -391,48 +391,48 @@ main (int argc, char **argv)
 
     reload_mouse_modifiers ();
 
-    str = g_settings_get_string (marco_settings, MARCO_BUTTON_LAYOUT_KEY);
+    str = g_settings_get_string (croma_settings, MARCO_BUTTON_LAYOUT_KEY);
     gtk_combo_box_set_active (GTK_COMBO_BOX (titlebar_layout_optionmenu),
                               g_strcmp0 (str, MARCO_BUTTON_LAYOUT_RIGHT) == 0 ? 0 : 1);
     g_free (str);
 
     gtk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
-                              g_settings_get_enum (marco_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY));
+                              g_settings_get_enum (croma_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY));
 
     set_alt_click_value ();
     gtk_range_set_value (GTK_RANGE (autoraise_delay_slider),
-                         g_settings_get_int (marco_settings, MARCO_AUTORAISE_DELAY_KEY) / 1000.0);
+                         g_settings_get_int (croma_settings, MARCO_AUTORAISE_DELAY_KEY) / 1000.0);
     gtk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
-                              g_settings_get_enum (marco_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY));
+                              g_settings_get_enum (croma_settings, MARCO_DOUBLE_CLICK_TITLEBAR_KEY));
 
-    g_settings_bind (marco_settings,
+    g_settings_bind (croma_settings,
                      MARCO_COMPOSITING_MANAGER_KEY,
                      compositing_checkbutton,
                      "active",
                      G_SETTINGS_BIND_DEFAULT);
 
-    g_settings_bind (marco_settings,
+    g_settings_bind (croma_settings,
                      MARCO_COMPOSITING_FAST_ALT_TAB_KEY,
                      compositing_fast_alt_tab_checkbutton,
                      "active",
                      G_SETTINGS_BIND_DEFAULT);
 
-    g_settings_bind (marco_settings,
+    g_settings_bind (croma_settings,
                      MARCO_ALLOW_TILING_KEY,
                      allow_tiling_checkbutton,
                      "active",
                      G_SETTINGS_BIND_DEFAULT);
 
-    g_settings_bind (marco_settings,
+    g_settings_bind (croma_settings,
                      MARCO_CENTER_NEW_WINDOWS_KEY,
                      center_new_windows_checkbutton,
                      "active",
                      G_SETTINGS_BIND_DEFAULT);
 
     /* Initialize the checkbox state appropriately */
-    mouse_focus_changed_callback(marco_settings, MARCO_FOCUS_KEY, NULL);
+    mouse_focus_changed_callback(croma_settings, MARCO_FOCUS_KEY, NULL);
 
-    g_settings_bind (marco_settings,
+    g_settings_bind (croma_settings,
                      MARCO_AUTORAISE_KEY,
                      autoraise_checkbutton,
                      "active",
@@ -442,10 +442,10 @@ main (int argc, char **argv)
     g_signal_connect (G_OBJECT (dialog_win), "destroy",
                       G_CALLBACK (gtk_main_quit), NULL);
 
-    g_signal_connect (marco_settings, "changed",
-                      G_CALLBACK (marco_settings_changed_callback), NULL);
+    g_signal_connect (croma_settings, "changed",
+                      G_CALLBACK (croma_settings_changed_callback), NULL);
 
-    g_signal_connect (marco_settings, "changed::" MARCO_FOCUS_KEY,
+    g_signal_connect (croma_settings, "changed::" MARCO_FOCUS_KEY,
                       G_CALLBACK (mouse_focus_changed_callback), NULL);
 
     g_signal_connect (G_OBJECT (screen), "window_manager_changed",
@@ -466,7 +466,7 @@ main (int argc, char **argv)
 
     gtk_main ();
 
-    g_object_unref (marco_settings);
+    g_object_unref (croma_settings);
 
     return 0;
 }

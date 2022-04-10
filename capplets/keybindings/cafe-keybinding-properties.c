@@ -1869,7 +1869,7 @@ cb_app_dialog_response (GtkWidget *dialog, gint response_id, gpointer data)
 }
 
 static void
-setup_dialog (GtkBuilder *builder, GSettings *marco_settings)
+setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
 {
   GtkCellRenderer *renderer;
   GtkTreeViewColumn *column;
@@ -1921,7 +1921,7 @@ setup_dialog (GtkBuilder *builder, GSettings *marco_settings)
   gtk_tree_view_append_column (treeview, column);
   gtk_tree_view_column_set_sort_column_id (column, KEYENTRY_COLUMN);
 
-  g_signal_connect (marco_settings,
+  g_signal_connect (croma_settings,
                     "changed::num-workspaces",
                     G_CALLBACK (key_entry_controlling_key_changed),
                     builder);
@@ -1976,7 +1976,7 @@ int
 main (int argc, char *argv[])
 {
   GtkBuilder *builder;
-  GSettings *marco_settings;
+  GSettings *croma_settings;
 
   capplet_init (NULL, &argc, &argv);
 
@@ -1989,13 +1989,13 @@ main (int argc, char *argv[])
 
   wm_common_register_window_manager_change ((GFunc) on_window_manager_change, builder);
 
-  marco_settings = g_settings_new ("org.cafe.Marco.general");
+  croma_settings = g_settings_new ("org.cafe.Marco.general");
 
-  setup_dialog (builder, marco_settings);
+  setup_dialog (builder, croma_settings);
 
   gtk_main ();
 
-  g_object_unref (marco_settings);
+  g_object_unref (croma_settings);
   g_object_unref (builder);
   return 0;
 }
