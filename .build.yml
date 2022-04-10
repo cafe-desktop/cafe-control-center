@@ -47,6 +47,7 @@ requires:
     - yelp-tools
 
 before_scripts:
+  - ./html-cppcheck
   - cd ${START_DIR}
   - '[ -f cafe-common-1.24.1.tar.xz ] || curl -Ls -o cafe-common-1.24.1.tar.xz https://github.com/cafe-desktop/cafe-common/releases/download/v1.24.1/cafe-common-1.24.1.tar.xz'
   - tar xf cafe-common-1.24.1.tar.xz
@@ -99,9 +100,6 @@ build_scripts:
   - NOCONFIGURE=1 ./autogen.sh
   - scan-build $CHECKERS ./configure
   - scan-build $CHECKERS --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 ))
-  - if [ ${DISTRO_NAME} == "debian" ];then
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'cafe-desktop-1.23.2' -i'cafe-settings-daemon-1.23.1' .
-  - fi
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/cafe-icon-theme/raw/master/cafe/16x16/categories/preferences-desktop.png; fi
