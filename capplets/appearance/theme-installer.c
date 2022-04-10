@@ -40,7 +40,7 @@ enum {
 	THEME_CAFE,
 	THEME_GTK,
 	THEME_ENGINE,
-	THEME_MARCO,
+	THEME_CROMA,
 	THEME_CURSOR,
 	THEME_ICON_CURSOR
 };
@@ -134,14 +134,14 @@ file_theme_type (const gchar *dir)
 	g_free (filename);
 
 	if (exists)
-		return THEME_MARCO;
+		return THEME_CROMA;
 
 	filename = g_build_filename (dir, "metacity-1", "metacity-theme-1.xml", NULL);
 	exists = g_file_test (filename, G_FILE_TEST_IS_REGULAR);
 	g_free (filename);
 
 	if (exists)
-		return THEME_MARCO;
+		return THEME_CROMA;
 
 	/* cursor themes don't necessarily have an index.theme */
 	filename = g_build_filename (dir, "cursors", NULL);
@@ -312,7 +312,7 @@ cafe_theme_install_real (GtkWindow *parent,
 					   theme_name, NULL);
 		break;
 	case THEME_CAFE:
-	case THEME_MARCO:
+	case THEME_CROMA:
 	case THEME_GTK:
 		target_dir = g_build_path (G_DIR_SEPARATOR_S,
 					   g_get_home_dir (), ".themes",
@@ -456,7 +456,7 @@ cafe_theme_install_real (GtkWindow *parent,
 		if (ask_user) {
 			/* Ask to apply theme (if we can) */
 			if (theme_type == THEME_GTK
-			    || theme_type == THEME_MARCO
+			    || theme_type == THEME_CROMA
 			    || theme_type == THEME_ICON
 			    || theme_type == THEME_CURSOR
 			    || theme_type == THEME_ICON_CURSOR) {
@@ -499,9 +499,9 @@ cafe_theme_install_real (GtkWindow *parent,
 						g_settings_set_string (settings, GTK_THEME_KEY, theme_name);
 						g_object_unref (settings);
 						break;
-					case THEME_MARCO:
-						settings = g_settings_new (MARCO_SCHEMA);
-						g_settings_set_string (settings, MARCO_THEME_KEY, theme_name);
+					case THEME_CROMA:
+						settings = g_settings_new (CROMA_SCHEMA);
+						g_settings_set_string (settings, CROMA_THEME_KEY, theme_name);
 						g_object_unref (settings);
 						break;
 					case THEME_ICON:

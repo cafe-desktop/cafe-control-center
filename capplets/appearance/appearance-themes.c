@@ -216,7 +216,7 @@ theme_load_from_gsettings (AppearanceData *data)
   }
   theme->gtk_color_scheme = scheme;
 
-  theme->croma_theme_name = g_settings_get_string (data->croma_settings, MARCO_THEME_KEY);
+  theme->croma_theme_name = g_settings_get_string (data->croma_settings, CROMA_THEME_KEY);
   if (theme->croma_theme_name == NULL)
     theme->croma_theme_name = g_strdup ("Menta");
 
@@ -1109,7 +1109,7 @@ void themes_init(AppearanceData* data)
   g_free (url);
 
   /* listen to gsettings changes, too */
-  g_signal_connect (data->croma_settings, "changed::" MARCO_THEME_KEY, G_CALLBACK (theme_gsettings_changed), data);
+  g_signal_connect (data->croma_settings, "changed::" CROMA_THEME_KEY, G_CALLBACK (theme_gsettings_changed), data);
   g_signal_connect (data->mouse_settings, "changed::" CURSOR_THEME_KEY, G_CALLBACK (theme_gsettings_changed), data);
   g_signal_connect (data->mouse_settings, "changed::" CURSOR_SIZE_KEY, G_CALLBACK (theme_gsettings_changed), data);
   g_signal_connect (data->wp_settings, "changed::" WP_FILE_KEY, G_CALLBACK (background_or_font_changed), data);

@@ -44,7 +44,7 @@ cafe_appearance_properties_LDADD = \
 	$(top_builddir)/capplets/common/libcommon.la \
 	$(CAFECC_CAPPLETS_LIBS) \
 	$(FONT_CAPPLET_LIBS) \
-	$(MARCO_LIBS)
+	$(CROMA_LIBS)
 cafe_appearance_properties_LDFLAGS = -export-dynamic
 
 pixmapdir = $(pkgdatadir)/pixmaps
@@ -53,7 +53,7 @@ backgrounddir = $(datadir)/backgrounds
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MARCO_CFLAGS) \
+	$(CROMA_CFLAGS) \
 	$(CAFECC_CAPPLETS_CFLAGS) \
 	$(FONT_CAPPLET_CFLAGS) \
 	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\"" \

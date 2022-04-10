@@ -13,7 +13,7 @@ AM_CPPFLAGS = \
 	$(CAPPLET_CFLAGS)						\
 	$(DBUS_CFLAGS)							\
 	$(CAFE_DESKTOP_CFLAGS)						\
-	$(MARCO_CFLAGS)							\
+	$(CROMA_CFLAGS)							\
 	$(GSD_DBUS_CFLAGS)						\
 	$(GIO_CFLAGS)							\
 	$(DCONF_CFLAGS)
@@ -43,7 +43,7 @@ libcommon_la_SOURCES = \
 
 libcommon_la_LIBADD =							\
 	$(top_builddir)/libwindow-settings/libcafe-window-settings.la  \
-	$(MARCO_LIBS)						\
+	$(CROMA_LIBS)						\
 	$(DBUS_LIBS)							\
 	$(CAFE_DESKTOP_LIBS)						\
 	$(GIO_LIBS)									\

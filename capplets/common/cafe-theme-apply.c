@@ -33,8 +33,8 @@
 #define ICON_THEME_KEY          "icon-theme"
 #define FONT_KEY                "font-name"
 
-#define MARCO_SCHEMA            "org.cafe.Croma.general"
-#define MARCO_THEME_KEY         "theme"
+#define CROMA_SCHEMA            "org.cafe.Croma.general"
+#define CROMA_THEME_KEY         "theme"
 
 #define MOUSE_SCHEMA            "org.cafe.peripherals-mouse"
 #define CURSOR_THEME_KEY        "cursor-theme"
@@ -56,7 +56,7 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
   gint old_key_int;
 
   interface_settings = g_settings_new (INTERFACE_SCHEMA);
-  croma_settings = g_settings_new (MARCO_SCHEMA);
+  croma_settings = g_settings_new (CROMA_SCHEMA);
   mouse_settings = g_settings_new (MOUSE_SCHEMA);
 
   if (cafe_gsettings_schema_exists (NOTIFICATION_SCHEMA))
@@ -97,7 +97,7 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
   g_free (old_key);
 
   /* Set the wm key */
-  g_settings_set_string (croma_settings, MARCO_THEME_KEY, meta_theme_info->croma_theme_name);
+  g_settings_set_string (croma_settings, CROMA_THEME_KEY, meta_theme_info->croma_theme_name);
 
   /* set the icon theme */
   old_key = g_settings_get_string (interface_settings, ICON_THEME_KEY);

@@ -47,7 +47,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
+  themes = cafe_theme_info_find_by_type (CAFE_THEME_CROMA);
   if (themes == NULL)
     {
       g_print ("No croma themes were found.\n");

@@ -81,13 +81,13 @@ static int pipe_from_factory_fd[2];
 
 #define THUMBNAIL_TYPE_META     "meta"
 #define THUMBNAIL_TYPE_GTK      "gtk"
-#define THUMBNAIL_TYPE_MARCO    "croma"
+#define THUMBNAIL_TYPE_CROMA    "croma"
 #define THUMBNAIL_TYPE_ICON     "icon"
 
 #define META_THUMBNAIL_SIZE       128
 #define GTK_THUMBNAIL_SIZE         96
-#define MARCO_THUMBNAIL_WIDTH  120
-#define MARCO_THUMBNAIL_HEIGHT  60
+#define CROMA_THUMBNAIL_WIDTH  120
+#define CROMA_THUMBNAIL_HEIGHT  60
 
 
 static void pixbuf_apply_mask_region(GdkPixbuf* pixbuf, cairo_region_t* region)
@@ -376,7 +376,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
           META_FRAME_ALLOWS_MOVE;
 
   window = gtk_offscreen_window_new ();
-  gtk_window_set_default_size (GTK_WINDOW (window), (int) MARCO_THUMBNAIL_WIDTH * 1.2, (int) MARCO_THUMBNAIL_HEIGHT * 1.2);
+  gtk_window_set_default_size (GTK_WINDOW (window), (int) CROMA_THUMBNAIL_WIDTH * 1.2, (int) CROMA_THUMBNAIL_HEIGHT * 1.2);
 
   preview = meta_preview_new ();
   meta_preview_set_frame_flags (META_PREVIEW (preview), flags);
@@ -392,8 +392,8 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   gtk_widget_get_preferred_size (window, &requisition, NULL);
   allocation.x = 0;
   allocation.y = 0;
-  allocation.width = (int) MARCO_THUMBNAIL_WIDTH * 1.2;
-  allocation.height = (int) MARCO_THUMBNAIL_HEIGHT * 1.2;
+  allocation.width = (int) CROMA_THUMBNAIL_WIDTH * 1.2;
+  allocation.height = (int) CROMA_THUMBNAIL_HEIGHT * 1.2;
   gtk_widget_size_allocate (window, &allocation);
   gtk_widget_get_preferred_size (window, &requisition, NULL);
 
@@ -404,14 +404,14 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   pixbuf = gtk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
 
   region = meta_preview_get_clip_region (META_PREVIEW (preview),
-      MARCO_THUMBNAIL_WIDTH * 1.2, MARCO_THUMBNAIL_HEIGHT * 1.2);
+      CROMA_THUMBNAIL_WIDTH * 1.2, CROMA_THUMBNAIL_HEIGHT * 1.2);
   pixbuf_apply_mask_region (pixbuf, region);
   cairo_region_destroy (region);
 
 
   retval = gdk_pixbuf_scale_simple (pixbuf,
-                                    MARCO_THUMBNAIL_WIDTH,
-                                    MARCO_THUMBNAIL_HEIGHT,
+                                    CROMA_THUMBNAIL_WIDTH,
+                                    CROMA_THUMBNAIL_HEIGHT,
                                     GDK_INTERP_BILINEAR);
   g_object_unref (pixbuf);
 
@@ -581,7 +581,7 @@ message_from_capplet (GIOChannel   *source,
           pixbuf = create_meta_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_GTK))
           pixbuf = create_gtk_theme_pixbuf (theme_thumbnail_data);
-        else if (!strcmp (type, THUMBNAIL_TYPE_MARCO))
+        else if (!strcmp (type, THUMBNAIL_TYPE_CROMA))
           pixbuf = create_croma_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_ICON))
           pixbuf = create_icon_theme_pixbuf (theme_thumbnail_data);
@@ -659,7 +659,7 @@ generate_next_in_queue (void)
                                         item->func,
                                         item->user_data,
                                         item->destroy);
-  else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_MARCO))
+  else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_CROMA))
     generate_croma_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
                                              item->func,
                                              item->user_data,
@@ -937,7 +937,7 @@ generate_gtk_theme_thumbnail (CafeThemeInfo *theme_info)
 GdkPixbuf *
 generate_croma_theme_thumbnail (CafeThemeInfo *theme_info)
 {
-  return generate_theme_thumbnail (THUMBNAIL_TYPE_MARCO,
+  return generate_theme_thumbnail (THUMBNAIL_TYPE_CROMA,
                                    NULL,
                                    NULL,
                                    theme_info->name,
@@ -1040,7 +1040,7 @@ generate_croma_theme_thumbnail_async (CafeThemeInfo *theme_info,
 {
   generate_theme_thumbnail_async (theme_info,
                                          theme_info->name,
-                                         THUMBNAIL_TYPE_MARCO,
+                                         THUMBNAIL_TYPE_CROMA,
                                          NULL,
                                          NULL,
                                          theme_info->name,

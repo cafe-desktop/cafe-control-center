@@ -65,7 +65,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
         data->caja_settings = NULL;
 
       data->interface_settings = g_settings_new (INTERFACE_SCHEMA);
-      data->croma_settings = g_settings_new (MARCO_SCHEMA);
+      data->croma_settings = g_settings_new (CROMA_SCHEMA);
       data->mouse_settings = g_settings_new (MOUSE_SCHEMA);
       data->font_settings = g_settings_new (FONT_RENDER_SCHEMA);
       data->ui = ui;
