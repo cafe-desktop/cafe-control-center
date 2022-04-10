@@ -54,9 +54,9 @@ before_scripts:
   - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master
 
 build_scripts:
-  - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure
-  - scan-build $CHECKERS --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 ))
+  - ./before-build
+  - ./make-scanbuild '--enable-compile-warnings=maximum'
+  - ./after-build
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/cafe-icon-theme/raw/master/cafe/16x16/categories/preferences-desktop.png; fi
