@@ -105,16 +105,3 @@ build_scripts:
 
 after_scripts:
   - make distcheck
-
-releases:
-  draft: false
-  prerelease: false
-  checksum: true
-  file_glob: true
-  files: cafe-control-center-*.tar.xz
-  github_release:
-    tags: true
-    overwrite: true
-    base_version: 1.20.0
-    notify_servers:
-      - https://release.cafe-desktop.org/release
