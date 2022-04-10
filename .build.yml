@@ -50,6 +50,7 @@ before_scripts:
   - ./html-cppcheck
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
   - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
+  - ./install-from-git https://github.com/cafe-desktop/libcafekbd master
   - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master
 
 build_scripts:
