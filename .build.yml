@@ -48,51 +48,9 @@ requires:
 
 before_scripts:
   - ./html-cppcheck
-  - cd ${START_DIR}
-  - '[ -f cafe-common-1.24.1.tar.xz ] || curl -Ls -o cafe-common-1.24.1.tar.xz https://github.com/cafe-desktop/cafe-common/releases/download/v1.24.1/cafe-common-1.24.1.tar.xz'
-  - tar xf cafe-common-1.24.1.tar.xz
-  - cd cafe-common-1.24.1
-  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
-  -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
-  - else
-  -     ./configure --prefix=/usr
-  - fi
-  - make
-  - make install
-
-  - cd ${START_DIR}
-  - if [ ! -f cafe-desktop-1.23.2.tar.xz ];then
-  -     curl -Ls -o cafe-desktop-1.23.2.tar.xz https://github.com/cafe-desktop/cafe-desktop/releases/download/v1.23.2/cafe-desktop-1.23.2.tar.xz
-  - fi
-  - tar xf cafe-desktop-1.23.2.tar.xz
-  - cd cafe-desktop-1.23.2
-  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
-  -     ./autogen.sh --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
-  - else
-  -     ./autogen.sh --prefix=/usr
-  - fi
-  - if [ ${TRAVIS} == "false" ]; then
-  -     make clean
-  - fi
-  - make
-  - make install
-
-  - cd ${START_DIR}
-  - if [ ! -f cafe-settings-daemon-1.23.1.tar.xz ]; then
-  -     curl -Ls -o cafe-settings-daemon-1.23.1.tar.xz https://github.com/cafe-desktop/cafe-settings-daemon/releases/download/v1.23.1/cafe-settings-daemon-1.23.1.tar.xz
-  - fi
-  - tar xf cafe-settings-daemon-1.23.1.tar.xz
-  - cd cafe-settings-daemon-1.23.1
-  - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
-  -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
-  - else
-  -     ./configure --prefix=/usr
-  - fi
-  - if [ ${TRAVIS} == "false" ]; then
-  -     make clean
-  - fi
-  - make
-  - make install
+  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
+  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
+  - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master
   - curl -Ls -o /usr/bin/gla11y https://github.com/hypra/gla11y/raw/v0.3/gla11y
   - chmod +x /usr/bin/gla11y
 
