@@ -841,7 +841,7 @@ main(int argc, char** argv)
 		{NULL}
 	};
 
-	GOptionContext* context = g_option_context_new(_("- MATE Default Applications"));
+	GOptionContext* context = g_option_context_new(_("- CAFE Default Applications"));
 	g_option_context_add_main_entries(context, option_entries, GETTEXT_PACKAGE);
 
 	capplet_init(context, &argc, &argv);

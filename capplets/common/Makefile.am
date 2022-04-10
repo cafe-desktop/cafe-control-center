@@ -1,8 +1,8 @@
 EXTRA_DIST =
 
 AM_CPPFLAGS = \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""				\
-	-DMATELOCALEDIR="\"$(datadir)/locale\""				\
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""				\
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""				\
 	-DGTK_ENGINE_DIR="\"$(GTK_ENGINE_DIR)\"" 			\
 	-DG_LOG_DOMAIN=\"capplet-common\"				\
 	-DINSTALL_PREFIX=\"$(prefix)\"					\
@@ -12,7 +12,7 @@ AM_CPPFLAGS = \
 	$(WARN_CFLAGS)							\
 	$(CAPPLET_CFLAGS)						\
 	$(DBUS_CFLAGS)							\
-	$(MATE_DESKTOP_CFLAGS)						\
+	$(CAFE_DESKTOP_CFLAGS)						\
 	$(MARCO_CFLAGS)							\
 	$(GSD_DBUS_CFLAGS)						\
 	$(GIO_CFLAGS)							\
@@ -45,7 +45,7 @@ libcommon_la_LIBADD =							\
 	$(top_builddir)/libwindow-settings/libcafe-window-settings.la  \
 	$(MARCO_LIBS)						\
 	$(DBUS_LIBS)							\
-	$(MATE_DESKTOP_LIBS)						\
+	$(CAFE_DESKTOP_LIBS)						\
 	$(GIO_LIBS)									\
 	$(DCONF_LIBS)
 
@@ -54,8 +54,8 @@ cafe_theme_test_SOURCES = \
 
 cafe_theme_test_LDADD = 						\
 	libcommon.la							\
-	$(MATECC_CAPPLETS_LIBS)						\
-	$(MATECC_LIBS)
+	$(CAFECC_CAPPLETS_LIBS)						\
+	$(CAFECC_LIBS)
 
 noinst_PROGRAMS = \
 	cafe-theme-test

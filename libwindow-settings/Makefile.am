@@ -1,11 +1,11 @@
 WM_MODULE_DIR=$(libdir)/window-manager-settings
 
 AM_CPPFLAGS = 								\
-	-DMATELOCALEDIR="\"$(datadir)/locale\""				\
-	-DMATE_ICONDIR=\""$(datadir)/pixmaps"\"				\
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""				\
+	-DCAFE_ICONDIR=\""$(datadir)/pixmaps"\"				\
 	-DG_LOG_DOMAIN=\"capplet-common\"				\
-	-DMATE_WM_PROPERTY_PATH=\"$(datadir)/cafe/wm-properties\"	\
-	-DMATE_WINDOW_MANAGER_MODULE_PATH=\""$(WM_MODULE_DIR)"\"	\
+	-DCAFE_WM_PROPERTY_PATH=\"$(datadir)/cafe/wm-properties\"	\
+	-DCAFE_WINDOW_MANAGER_MODULE_PATH=\""$(WM_MODULE_DIR)"\"	\
 	-I$(top_srcdir)/						\
 	$(WARN_CFLAGS)							\
 	@CAPPLET_CFLAGS@						\
@@ -18,7 +18,7 @@ libcafe_window_settings_la_LDFLAGS = 	\
 	-no-undefined			\
         -version-info 1:0:0
 
-libcafe_window_settings_la_LIBADD = $(MATECC_LIBS)
+libcafe_window_settings_la_LIBADD = $(CAFECC_LIBS)
 
 libcafe_window_settings_la_SOURCES = \
 	cafe-window-manager.c	\
@@ -50,7 +50,7 @@ libmarco_la_SOURCES = 		\
 
 libmarco_la_LDFLAGS = $(wms_flags)
 libmarco_la_LIBADD = 		\
-	$(MATECC_LIBS)			\
+	$(CAFECC_LIBS)			\
 	libcafe-window-settings.la
 
 -include $(top_srcdir)/git.mk

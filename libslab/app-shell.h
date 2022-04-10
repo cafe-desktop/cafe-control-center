@@ -24,7 +24,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
-#define MATEMENU_I_KNOW_THIS_IS_UNSTABLE
+#define CAFEMENU_I_KNOW_THIS_IS_UNSTABLE
 #include <cafemenu-tree.h>
 #include <libcafe-desktop/cafe-desktop-item.h>
 

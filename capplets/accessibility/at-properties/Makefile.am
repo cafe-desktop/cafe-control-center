@@ -6,7 +6,7 @@ BUILT_SOURCES = \
 	cafe-at-properties-resources.c \
 	cafe-at-properties-resources.h
 nodist_cafe_at_properties_SOURCES= $(BUILT_SOURCES)
-cafe_at_properties_LDADD = $(AT_CAPPLET_LIBS) $(MATECC_CAPPLETS_LIBS) $(top_builddir)/capplets/common/libcommon.la
+cafe_at_properties_LDADD = $(AT_CAPPLET_LIBS) $(CAFECC_CAPPLETS_LIBS) $(top_builddir)/capplets/common/libcommon.la
 cafe_at_properties_SOURCES = \
 	dm-util.h	\
 	dm-util.c	\
@@ -30,10 +30,10 @@ include $(top_srcdir)/gla11y.mk
 AM_CPPFLAGS =					\
 	$(WARN_CFLAGS)				\
 	$(AT_CAPPLET_CFLAGS)			\
-	$(MATECC_CAPPLETS_CFLAGS)		\
+	$(CAFECC_CAPPLETS_CFLAGS)		\
 	-DPIXMAPDIR=\""$(pixmapdir)"\"		\
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
 	$(ui_files) \
 	$(pixmap_DATA) \

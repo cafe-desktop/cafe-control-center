@@ -888,7 +888,7 @@ generate_categories (AppShellData * app_data)
 	{
 		GError *error = NULL;
 
-		app_data->tree = cafemenu_tree_new (app_data->menu_name, MATEMENU_TREE_FLAGS_NONE);
+		app_data->tree = cafemenu_tree_new (app_data->menu_name, CAFEMENU_TREE_FLAGS_NONE);
 		g_signal_connect (app_data->tree, "changed", G_CALLBACK (cafemenu_tree_changed_callback), app_data);
 		if (! cafemenu_tree_load_sync (app_data->tree, &error)) {
 			g_warning("Menu tree loading got error:%s\n", error->message);
@@ -909,21 +909,21 @@ generate_categories (AppShellData * app_data)
 				app_data->menu_name);
 		gtk_dialog_run (GTK_DIALOG (dialog));
 		gtk_widget_destroy (dialog);
-		exit (1);	/* Fixme - is there a MATE/GTK way to do this. */
+		exit (1);	/* Fixme - is there a CAFE/GTK way to do this. */
 	}
 
 	iter = cafemenu_tree_directory_iter (root_dir);
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		const char *category;
 		switch (type) {
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory (iter);
 				category = cafemenu_tree_directory_get_name (item);
 				generate_category(category, item, app_data, TRUE);
 				cafemenu_tree_item_unref (item);
 				break;
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				need_misc = TRUE;
 				break;
 			default:
@@ -1001,7 +1001,7 @@ check_specific_apps_hack (CafeDesktopItem * item)
 	}
 
 	/* This seems like an ugly hack but it's the way it's currently done in the old control center */
-	exec = cafe_desktop_item_get_string (item, MATE_DESKTOP_ITEM_EXEC);
+	exec = cafe_desktop_item_get_string (item, CAFE_DESKTOP_ITEM_EXEC);
 
 	/* discard xscreensaver if cafe-screensaver is installed */
 	if ((exec && !strcmp (exec, "xscreensaver-demo"))
@@ -1023,7 +1023,7 @@ check_specific_apps_hack (CafeDesktopItem * item)
 	if (command_line_lockdown)
 	{
 		const gchar *categories =
-			cafe_desktop_item_get_string (item, MATE_DESKTOP_ITEM_CATEGORIES);
+			cafe_desktop_item_get_string (item, CAFE_DESKTOP_ITEM_CATEGORIES);
 		if (g_strrstr (categories, COMMAND_LINE_LOCKDOWN_DESKTOP_CATEGORY))
 		{
 			return TRUE;
@@ -1042,17 +1042,17 @@ generate_launchers (CafeMenuTreeDirectory * root_dir, AppShellData * app_data, C
 	CafeMenuTreeItemType type;
 
 	iter = cafemenu_tree_directory_iter (root_dir);
-	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	while ((type = cafemenu_tree_iter_next (iter)) != CAFEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
-			case MATEMENU_TREE_ITEM_DIRECTORY:
+			case CAFEMENU_TREE_ITEM_DIRECTORY:
 				item = cafemenu_tree_iter_get_directory(iter);
 				/* g_message ("Found sub-category %s", cafemenu_tree_directory_get_name (item)); */
 				if (recursive)
 					generate_launchers (item, app_data, cat_data, TRUE);
 				cafemenu_tree_item_unref (item);
 				break;
-			case MATEMENU_TREE_ITEM_ENTRY:
+			case CAFEMENU_TREE_ITEM_ENTRY:
 				item = cafemenu_tree_iter_get_entry(iter);
 				/* g_message ("Found item name is:%s", cafemenu_tree_entry_get_desktop_file_id(item)); */
 				desktop_file = cafemenu_tree_entry_get_desktop_file_path (item);
@@ -1279,7 +1279,7 @@ insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * deskto
 	gtk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
 
 	filepath =
-		g_strdup (cafe_desktop_item_get_string (desktop_item, MATE_DESKTOP_ITEM_EXEC));
+		g_strdup (cafe_desktop_item_get_string (desktop_item, CAFE_DESKTOP_ITEM_EXEC));
 	g_strdelimit (filepath, " ", '\0');	/* just want the file name - no args or replacements */
 	filename = g_strrstr (filepath, "/");
 	if (filename)

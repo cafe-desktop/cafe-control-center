@@ -1,4 +1,4 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = keyboard
 
 ui_files = cafe-keyboard-properties-a11y-notifications.ui \
@@ -25,7 +25,7 @@ cafe_keyboard_properties_SOURCES = \
 	cafe-keyboard-properties-xkbpv.c \
 	cafe-keyboard-properties-xkb.h
 
-cafe_keyboard_properties_LDADD = $(MATECC_CAPPLETS_LIBS) $(LIBMATEKBDUI_LIBS)
+cafe_keyboard_properties_LDADD = $(CAFECC_CAPPLETS_LIBS) $(LIBCAFEKBDUI_LIBS)
 
 include $(top_srcdir)/gla11y.mk
 
@@ -41,10 +41,10 @@ cafe-keyboard-properties-resources.h cafe-keyboard-properties-resources.c: org.c
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS) \
-	$(LIBMATEKBDUI_CFLAGS) \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+	$(CAFECC_CAPPLETS_CFLAGS) \
+	$(LIBCAFEKBDUI_CFLAGS) \
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
 	$(ui_files) \
 	$(Desktop_in_files) \

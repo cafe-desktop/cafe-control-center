@@ -32,7 +32,7 @@
 #include <act/act.h>
 #endif
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 #include "e-image-chooser.h"
@@ -237,7 +237,7 @@ about_me_update_preview (GtkFileChooser *chooser,
 		GFileInfo *file_info;
 
 		if (!me->thumbs)
-			me->thumbs = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+			me->thumbs = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
 
 		file = g_file_new_for_uri (uri);
 		file_info = g_file_query_info (file,

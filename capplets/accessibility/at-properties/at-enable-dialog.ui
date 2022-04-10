@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.22.0 
 
 at-enable-dialog - enable at dialog window
-Copyright (C) MATE Developers
+Copyright (C) CAFE Developers
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ Author: Wolfgang Ulbrich
   <!-- interface-license-type gplv2 -->
   <!-- interface-name at-enable-dialog -->
   <!-- interface-description enable at dialog window -->
-  <!-- interface-copyright MATE Developers -->
+  <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkImage" id="close_logout_button_img">
     <property name="visible">True</property>

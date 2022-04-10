@@ -37,7 +37,7 @@
 enum {
 	THEME_INVALID,
 	THEME_ICON,
-	THEME_MATE,
+	THEME_CAFE,
 	THEME_GTK,
 	THEME_ENGINE,
 	THEME_MARCO,
@@ -117,7 +117,7 @@ file_theme_type (const gchar *dir)
 		g_free (file_contents);
 
 		if (match)
-			return THEME_MATE;
+			return THEME_CAFE;
 	} else {
 		g_free (filename);
 	}
@@ -311,7 +311,7 @@ cafe_theme_install_real (GtkWindow *parent,
 					   g_get_home_dir (), ".icons",
 					   theme_name, NULL);
 		break;
-	case THEME_MATE:
+	case THEME_CAFE:
 	case THEME_MARCO:
 	case THEME_GTK:
 		target_dir = g_build_path (G_DIR_SEPARATOR_S,
@@ -327,7 +327,7 @@ cafe_theme_install_real (GtkWindow *parent,
 	}
 
 	/* see if there is an icon theme lurking in this package */
-	if (theme_type == THEME_MATE) {
+	if (theme_type == THEME_CAFE) {
 		gchar *path;
 
 		path = g_build_path (G_DIR_SEPARATOR_S,
@@ -531,7 +531,7 @@ cafe_theme_install_real (GtkWindow *parent,
 								 GTK_DIALOG_MODAL,
 								 GTK_MESSAGE_INFO,
 								 GTK_BUTTONS_OK,
-								 _("MATE Theme %s correctly installed"),
+								 _("CAFE Theme %s correctly installed"),
 								 theme_name);
 				gtk_dialog_run (GTK_DIALOG (dialog));
 			}

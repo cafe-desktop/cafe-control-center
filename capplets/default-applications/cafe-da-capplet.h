@@ -19,8 +19,8 @@
  *
  */
 
-#ifndef _MATE_DA_CAPPLET_H_
-#define _MATE_DA_CAPPLET_H_
+#ifndef _CAFE_DA_CAPPLET_H_
+#define _CAFE_DA_CAPPLET_H_
 
 #include <gtk/gtk.h>
 

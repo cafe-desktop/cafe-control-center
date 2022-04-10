@@ -46,23 +46,23 @@ msgstr ""
 #. (itstool) path: abstract/para
 #: C/index.docbook:20
 msgid ""
-"The MATE Control Center provides a central place for the user to setup their"
-" MATE experience. It can let you configure anything from the behavior of "
+"The CAFE Control Center provides a central place for the user to setup their"
+" CAFE experience. It can let you configure anything from the behavior of "
 "your window borders to the default font type."
-msgstr "MATE 控制中心集成用于设置桌面体验的各项设置模块。在这里，您可以自定诸如窗口边框样式和默认字体等设置。"
+msgstr "CAFE 控制中心集成用于设置桌面体验的各项设置模块。在这里，您可以自定诸如窗口边框样式和默认字体等设置。"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:24
-msgid "MATE Control Center Manual"
+msgid "CAFE Control Center Manual"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:26
 msgid ""
-"<firstname>MATE Documentation Project</firstname> <surname/> <affiliation> "
-"<orgname>MATE Desktop</orgname> </affiliation>"
+"<firstname>CAFE Documentation Project</firstname> <surname/> <affiliation> "
+"<orgname>CAFE Desktop</orgname> </affiliation>"
 msgstr ""
-"<firstname>MATE 文档项目</firstname> <surname/> <affiliation> <orgname>MATE "
+"<firstname>CAFE 文档项目</firstname> <surname/> <affiliation> <orgname>CAFE "
 "桌面</orgname> </affiliation>"
 
 #. (itstool) path: authorgroup/author
@@ -72,8 +72,8 @@ msgstr "<firstname>Kevin</firstname><surname>Breit</surname>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:37
-msgid "<year>2015-2020</year> <holder>MATE Documentation Project</holder>"
-msgstr "<year>2015-2020</year> <holder>MATE 文档项目</holder>"
+msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
+msgstr "<year>2015-2020</year> <holder>CAFE 文档项目</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:41
@@ -82,8 +82,8 @@ msgstr "<year>2001, 2002</year> <holder>Ximian, Inc.</holder>"
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:47
-msgid "MATE Documentation Project"
-msgstr "MATE 文档项目"
+msgid "CAFE Documentation Project"
+msgstr "CAFE 文档项目"
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:50
@@ -93,10 +93,10 @@ msgstr "GNOME 文档项目"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:54
 msgid ""
-"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>MATE "
+"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>CAFE "
 "Documentation Project</firstname> <surname/>"
 msgstr ""
-"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>MATE "
+"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>CAFE "
 "文档项目</firstname> <surname/>"
 
 #. (itstool) path: revhistory/revision
@@ -121,24 +121,24 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:12 C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"本手册是在 GFDL 许可之下分发的 MATE 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6"
+"本手册是在 GFDL 许可之下分发的 CAFE 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6"
 " 部分所述。"
 
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 MATE 文档以及 MATE "
+"各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 CAFE 文档以及 CAFE "
 "文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而表明它们是商标。"
 
 #. (itstool) path: listitem/para
@@ -184,8 +184,8 @@ msgstr "本文档和文档是根据 GNU 免费文档许可协议的条款提供�
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:70
-msgid "This manual describes version 1.10.1 of the MATE Control Center."
-msgstr "该手册针对描述 MATE 控制中心 1.10.1 版本。"
+msgid "This manual describes version 1.10.1 of the CAFE Control Center."
+msgstr "该手册针对描述 CAFE 控制中心 1.10.1 版本。"
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:75
@@ -195,13 +195,13 @@ msgstr "反馈"
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:76
 msgid ""
-"To report a bug or make a suggestion regarding the <application>MATE Control"
+"To report a bug or make a suggestion regarding the <application>CAFE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE Feedback"
 " Page</ulink>."
 msgstr ""
-"要报告 <application>MATE 控制中心</application> 应用程序和用户手册中的问题或建议，请参阅 <ulink "
-"url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE 反馈页</ulink> 中的详细指引。"
+"要报告 <application>CAFE 控制中心</application> 应用程序和用户手册中的问题或建议，请参阅 <ulink "
+"url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE 反馈页</ulink> 中的详细指引。"
 
 #. (itstool) path: sect1/title
 #. (itstool) path: sect2/title
@@ -213,9 +213,9 @@ msgstr "介绍"
 #. (itstool) path: sect1/para
 #: C/index.docbook:85
 msgid ""
-"The <application>MATE Control Center</application> provides a single window "
+"The <application>CAFE Control Center</application> provides a single window "
 "from which to launch all preference tools."
-msgstr "<application>MATE 控制中心</application> 集各项设置为一体。"
+msgstr "<application>CAFE 控制中心</application> 集各项设置为一体。"
 
 #. (itstool) path: note/para
 #: C/index.docbook:88
@@ -228,13 +228,13 @@ msgstr ""
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:94
-msgid "To Start MATE Control Center"
+msgid "To Start CAFE Control Center"
 msgstr ""
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:95
 msgid ""
-"You can start <application>MATE Control Center</application> in the "
+"You can start <application>CAFE Control Center</application> in the "
 "following ways:"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr "用法"
 #. (itstool) path: sect1/para
 #: C/index.docbook:119
 msgid ""
-"The <application>MATE Control Center</application> window lists all "
+"The <application>CAFE Control Center</application> window lists all "
 "preference tools installed on your system in groups."
 msgstr ""
 
@@ -799,7 +799,7 @@ msgid ""
 "pulldown menu. You select the <_:guibutton-1/> radio button and enter the "
 "text editor name. If you wish, you can have the editor open in a terminal "
 "window by selecting the <_:guibutton-2/> button. Clicking <_:guibutton-3/> "
-"lets MATE pass a line number to the editor so that you can \"warp\" to a "
+"lets CAFE pass a line number to the editor so that you can \"warp\" to a "
 "part of a file."
 msgstr ""
 
@@ -1571,7 +1571,7 @@ msgstr "鼠标"
 
 #. (itstool) path: para/application
 #: C/config-mouse.xml:7
-msgid "MATE Control Center"
+msgid "CAFE Control Center"
 msgstr ""
 
 #. (itstool) path: sect2/para

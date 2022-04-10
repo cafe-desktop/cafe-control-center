@@ -1,6 +1,6 @@
 
-AM_CPPFLAGS = $(WARN_CFLAGS) $(FONT_VIEWER_CFLAGS) $(MATECC_CAPPLETS_CFLAGS) -DDIRECTORY_DIR=\"$(directorydir)\" \
-  -DMATELOCALEDIR=\"$(datadir)/locale\"
+AM_CPPFLAGS = $(WARN_CFLAGS) $(FONT_VIEWER_CFLAGS) $(CAFECC_CAPPLETS_CFLAGS) -DDIRECTORY_DIR=\"$(directorydir)\" \
+  -DCAFELOCALEDIR=\"$(datadir)/locale\"
 
 bin_PROGRAMS = cafe-thumbnail-font cafe-font-viewer
 
@@ -8,14 +8,14 @@ font_loader_SOURCES = \
 	sushi-font-loader.h \
 	sushi-font-loader.c
 
-cafe_thumbnail_font_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
+cafe_thumbnail_font_LDADD = $(CAFECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
 cafe_thumbnail_font_SOURCES = \
 	$(font_loader_SOURCES) \
 	font-thumbnailer.c \
 	totem-resources.c \
 	totem-resources.h
 
-cafe_font_viewer_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
+cafe_font_viewer_LDADD = $(CAFECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
 cafe_font_viewer_SOURCES = \
 	$(font_loader_SOURCES) \
 	font-model.h \

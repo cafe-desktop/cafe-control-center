@@ -47,7 +47,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = cafe_theme_info_find_by_type (MATE_THEME_MARCO);
+  themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
   if (themes == NULL)
     {
       g_print ("No marco themes were found.\n");
@@ -65,7 +65,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2);
+  themes = cafe_theme_info_find_by_type (CAFE_THEME_GTK_2);
   if (themes == NULL)
     {
       gchar *str;
@@ -91,7 +91,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2_KEYBINDING);
+  themes = cafe_theme_info_find_by_type (CAFE_THEME_GTK_2_KEYBINDING);
   if (themes == NULL)
     {
       g_print ("No keybinding themes were found.\n");

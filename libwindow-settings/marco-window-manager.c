@@ -82,7 +82,7 @@ value_changed (GSettings *settings,
 
         meta_wm = MARCO_WINDOW_MANAGER (data);
 
-        cafe_window_manager_settings_changed (MATE_WINDOW_MANAGER (meta_wm));
+        cafe_window_manager_settings_changed (CAFE_WINDOW_MANAGER (meta_wm));
 }
 
 /* this function is called when the shared lib is loaded */
@@ -91,7 +91,7 @@ window_manager_new (int expected_interface_version)
 {
         GObject *wm;
 
-        if (expected_interface_version != MATE_WINDOW_MANAGER_INTERFACE_VERSION) {
+        if (expected_interface_version != CAFE_WINDOW_MANAGER_INTERFACE_VERSION) {
                 g_warning ("Marco window manager module wasn't compiled with the current version of cafe-control-center");
                 return NULL;
         }
@@ -190,39 +190,39 @@ marco_change_settings (CafeWindowManager    *wm,
 
         meta_wm = MARCO_WINDOW_MANAGER (wm);
 
-        if (settings->flags & MATE_WM_SETTING_COMPOSITING_MANAGER)
+        if (settings->flags & CAFE_WM_SETTING_COMPOSITING_MANAGER)
                 g_settings_set_boolean (meta_wm->p->settings,
                                         MARCO_COMPOSITING_MANAGER_KEY,
                                         settings->compositing_manager);
 
-        if (settings->flags & MATE_WM_SETTING_COMPOSITING_ALTTAB)
+        if (settings->flags & CAFE_WM_SETTING_COMPOSITING_ALTTAB)
                 g_settings_set_boolean (meta_wm->p->settings,
                                         MARCO_COMPOSITING_FAST_ALT_TAB_KEY,
                                         settings->compositing_fast_alt_tab);
 
-        if (settings->flags & MATE_WM_SETTING_MOUSE_FOCUS)
+        if (settings->flags & CAFE_WM_SETTING_MOUSE_FOCUS)
                 g_settings_set_enum (meta_wm->p->settings,
                                      MARCO_FOCUS_KEY,
                                      settings->focus_follows_mouse ?
                                      FOCUS_MODE_SLOPPY : FOCUS_MODE_CLICK);
 
-        if (settings->flags & MATE_WM_SETTING_AUTORAISE)
+        if (settings->flags & CAFE_WM_SETTING_AUTORAISE)
                 g_settings_set_boolean (meta_wm->p->settings,
                                         MARCO_AUTORAISE_KEY,
                                         settings->autoraise);
 
-        if (settings->flags & MATE_WM_SETTING_AUTORAISE_DELAY)
+        if (settings->flags & CAFE_WM_SETTING_AUTORAISE_DELAY)
                 g_settings_set_int (meta_wm->p->settings,
                                     MARCO_AUTORAISE_DELAY_KEY,
                                     settings->autoraise_delay);
 
-        if (settings->flags & MATE_WM_SETTING_FONT) {
+        if (settings->flags & CAFE_WM_SETTING_FONT) {
                 g_settings_set_string (meta_wm->p->settings,
                                        MARCO_FONT_KEY,
                                        settings->font);
         }
 
-        if (settings->flags & MATE_WM_SETTING_MOUSE_MOVE_MODIFIER) {
+        if (settings->flags & CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER) {
                 char *value;
 
                 value = g_strdup_printf ("<%s>", settings->mouse_move_modifier);
@@ -232,13 +232,13 @@ marco_change_settings (CafeWindowManager    *wm,
                 g_free (value);
         }
 
-        if (settings->flags & MATE_WM_SETTING_THEME) {
+        if (settings->flags & CAFE_WM_SETTING_THEME) {
                 g_settings_set_string (meta_wm->p->settings,
                                        MARCO_THEME_KEY,
                                        settings->theme);
         }
 
-        if (settings->flags & MATE_WM_SETTING_DOUBLE_CLICK_ACTION) {
+        if (settings->flags & CAFE_WM_SETTING_DOUBLE_CLICK_ACTION) {
                 g_settings_set_enum (meta_wm->p->settings,
                                      MARCO_DOUBLE_CLICK_TITLEBAR_KEY,
                                      settings->double_click_action);
@@ -257,19 +257,19 @@ marco_get_settings (CafeWindowManager *wm,
         to_get = settings->flags;
         settings->flags = 0;
 
-        if (to_get & MATE_WM_SETTING_COMPOSITING_MANAGER) {
+        if (to_get & CAFE_WM_SETTING_COMPOSITING_MANAGER) {
                 settings->compositing_manager = g_settings_get_boolean (meta_wm->p->settings,
                                                                         MARCO_COMPOSITING_MANAGER_KEY);
-                settings->flags |= MATE_WM_SETTING_COMPOSITING_MANAGER;
+                settings->flags |= CAFE_WM_SETTING_COMPOSITING_MANAGER;
         }
 
-        if (to_get & MATE_WM_SETTING_COMPOSITING_ALTTAB) {
+        if (to_get & CAFE_WM_SETTING_COMPOSITING_ALTTAB) {
                 settings->compositing_fast_alt_tab = g_settings_get_boolean (meta_wm->p->settings,
                                                                              MARCO_COMPOSITING_FAST_ALT_TAB_KEY);
-                settings->flags |= MATE_WM_SETTING_COMPOSITING_ALTTAB;
+                settings->flags |= CAFE_WM_SETTING_COMPOSITING_ALTTAB;
         }
 
-        if (to_get & MATE_WM_SETTING_MOUSE_FOCUS) {
+        if (to_get & CAFE_WM_SETTING_MOUSE_FOCUS) {
                 gint marco_focus_value;
 
                 marco_focus_value = g_settings_get_enum (meta_wm->p->settings,
@@ -278,23 +278,23 @@ marco_get_settings (CafeWindowManager *wm,
                 if (marco_focus_value == FOCUS_MODE_SLOPPY || marco_focus_value == FOCUS_MODE_MOUSE)
                         settings->focus_follows_mouse = TRUE;
 
-                settings->flags |= MATE_WM_SETTING_MOUSE_FOCUS;
+                settings->flags |= CAFE_WM_SETTING_MOUSE_FOCUS;
         }
 
-        if (to_get & MATE_WM_SETTING_AUTORAISE) {
+        if (to_get & CAFE_WM_SETTING_AUTORAISE) {
                 settings->autoraise = g_settings_get_boolean (meta_wm->p->settings,
                                                               MARCO_AUTORAISE_KEY);
-                settings->flags |= MATE_WM_SETTING_AUTORAISE;
+                settings->flags |= CAFE_WM_SETTING_AUTORAISE;
         }
 
-        if (to_get & MATE_WM_SETTING_AUTORAISE_DELAY) {
+        if (to_get & CAFE_WM_SETTING_AUTORAISE_DELAY) {
                 settings->autoraise_delay =
                         g_settings_get_int (meta_wm->p->settings,
                                             MARCO_AUTORAISE_DELAY_KEY);
-                settings->flags |= MATE_WM_SETTING_AUTORAISE_DELAY;
+                settings->flags |= CAFE_WM_SETTING_AUTORAISE_DELAY;
         }
 
-        if (to_get & MATE_WM_SETTING_FONT) {
+        if (to_get & CAFE_WM_SETTING_FONT) {
                 char *str;
 
                 str = g_settings_get_string (meta_wm->p->settings,
@@ -313,10 +313,10 @@ marco_get_settings (CafeWindowManager *wm,
 
                 settings->font = meta_wm->p->font;
 
-                settings->flags |= MATE_WM_SETTING_FONT;
+                settings->flags |= CAFE_WM_SETTING_FONT;
         }
 
-        if (to_get & MATE_WM_SETTING_MOUSE_MOVE_MODIFIER) {
+        if (to_get & CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER) {
                 char *str;
                 const char *new;
 
@@ -351,10 +351,10 @@ marco_get_settings (CafeWindowManager *wm,
 
                 settings->mouse_move_modifier = meta_wm->p->mouse_modifier;
 
-                settings->flags |= MATE_WM_SETTING_MOUSE_MOVE_MODIFIER;
+                settings->flags |= CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER;
         }
 
-        if (to_get & MATE_WM_SETTING_THEME) {
+        if (to_get & CAFE_WM_SETTING_THEME) {
                 char *str;
 
                 str = g_settings_get_string (meta_wm->p->settings,
@@ -367,22 +367,22 @@ marco_get_settings (CafeWindowManager *wm,
                 meta_wm->p->theme = str;
                 settings->theme = meta_wm->p->theme;
 
-                settings->flags |= MATE_WM_SETTING_THEME;
+                settings->flags |= CAFE_WM_SETTING_THEME;
         }
 
-        if (to_get & MATE_WM_SETTING_DOUBLE_CLICK_ACTION) {
+        if (to_get & CAFE_WM_SETTING_DOUBLE_CLICK_ACTION) {
                 settings->double_click_action =
                         g_settings_get_enum (meta_wm->p->settings,
                                              MARCO_DOUBLE_CLICK_TITLEBAR_KEY);
 
-                settings->flags |= MATE_WM_SETTING_DOUBLE_CLICK_ACTION;
+                settings->flags |= CAFE_WM_SETTING_DOUBLE_CLICK_ACTION;
         }
 }
 
 static int
 marco_get_settings_mask (CafeWindowManager *wm)
 {
-        return MATE_WM_SETTING_MASK;
+        return CAFE_WM_SETTING_MASK;
 }
 
 static void
@@ -453,7 +453,7 @@ marco_window_manager_class_init (MarcoWindowManagerClass *class)
         CafeWindowManagerClass *wm_class;
 
         object_class = G_OBJECT_CLASS (class);
-        wm_class = MATE_WINDOW_MANAGER_CLASS (class);
+        wm_class = CAFE_WINDOW_MANAGER_CLASS (class);
 
         object_class->finalize = marco_window_manager_finalize;
 

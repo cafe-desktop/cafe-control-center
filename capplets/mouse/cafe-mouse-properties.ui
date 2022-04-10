@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.22.0 
 
 cafe-mouse-properties - mouse properties dialog window
-Copyright (C) MATE Developers
+Copyright (C) CAFE Developers
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ Author: Wolfgang Ulbrich
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-mouse-properties -->
   <!-- interface-description mouse properties dialog window -->
-  <!-- interface-copyright MATE Developers -->
+  <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="lower">1</property>

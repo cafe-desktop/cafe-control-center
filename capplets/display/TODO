@@ -73,7 +73,7 @@ Here is the OS X Display menu:
 	- Marco is already Xinerama aware, but it needs to update itself
 	  when monitors come and go.
 
-- MATE panel work:
+- CAFE panel work:
 	- Is already Xinerama aware, but needs to listen and update itself
 	  when monitors change.
 

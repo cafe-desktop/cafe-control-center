@@ -1,4 +1,4 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = about-me
 
 ui_files = cafe-about-me-dialog.ui cafe-about-me-password.ui cafe-about-me-fingerprint.ui
@@ -26,7 +26,7 @@ cafe-about-me-resources.h cafe-about-me-resources.c: org.cafe.mcc.am.gresource.x
 
 bin_PROGRAMS = cafe-about-me
 
-cafe_about_me_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_about_me_LDADD = $(CAFECC_CAPPLETS_LIBS)
 if HAVE_ACCOUNTSSERVICE
 cafe_about_me_LDADD += $(ACCOUNTSSERVICE_LIBS)
 endif
@@ -41,19 +41,19 @@ include $(top_srcdir)/gla11y.mk
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS) \
+	$(CAFECC_CAPPLETS_CFLAGS) \
 	$(LIBEBOOK_CFLAGS) \
 	-DDATADIR="\"$(datadir)\"" \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\"" \
-	-DMATECC_PIXMAP_DIR="\"$(pkgdatadir)/pixmaps\"" \
-	-DMATELOCALEDIR="\"$(datadir)/locale\""
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\"" \
+	-DCAFECC_PIXMAP_DIR="\"$(pkgdatadir)/pixmaps\"" \
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""
 
 if HAVE_ACCOUNTSSERVICE
 AM_CPPFLAGS += \
 	$(ACCOUNTSSERVICE_CFLAGS)
 endif
 
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
 	$(ui_files) \
 	fprintd-marshal.list \

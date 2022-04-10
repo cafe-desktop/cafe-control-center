@@ -34,9 +34,9 @@
       <Not><Category>Security</Category></Not>
       <Not><Category>Archiving</Category></Not>
       <Not><Category>Qt</Category></Not>
-      <Not><Category>X-MATE-NetworkSettings</Category></Not>
+      <Not><Category>X-CAFE-NetworkSettings</Category></Not>
       <Not><Category>X-GNOME-NetworkSettings</Category></Not>
-      <Not><Category>X-MATE-PersonalSettings</Category></Not>
+      <Not><Category>X-CAFE-PersonalSettings</Category></Not>
       <Not><Category>X-GNOME-PersonalSettings</Category></Not>
     </And>
   </Include>
@@ -86,7 +86,7 @@
     <Include>
       <And>
         <Category>Settings</Category>
-        <Category>X-MATE-NetworkSettings</Category>
+        <Category>X-CAFE-NetworkSettings</Category>
         <Not><Category>System</Category></Not>
       </And>
       <And>
@@ -130,7 +130,7 @@
     <Include>
       <And>
         <Category>Settings</Category>
-        <Category>X-MATE-PersonalSettings</Category>
+        <Category>X-CAFE-PersonalSettings</Category>
         <Not><Category>System</Category></Not>
       </And>
       <And>

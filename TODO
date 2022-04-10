@@ -8,7 +8,7 @@ ACCESSIBILITY:
 
 BACKGROUND:
  * Seth love
- * Get actual MATE backgrounds
+ * Get actual CAFE backgrounds
 
 DEFAULT APPLICATIONS PROPERTIES:
  * Merge in Window Manager selection
@@ -20,7 +20,7 @@ FILE TYPES:
 FONT AND THEME:
  * merge them
 
-MATE SETTINGS DAEMON:
+CAFE SETTINGS DAEMON:
  * disk monitor
 
 KEYBOARD SHORTCUTS:

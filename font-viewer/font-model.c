@@ -5,7 +5,7 @@
  *
  * based on code from
  *
- * fontilus - a collection of font utilities for MATE
+ * fontilus - a collection of font utilities for CAFE
  * Copyright (C) 2002-2003  James Henstridge <james@daa.com.au>
  *
  *
@@ -35,7 +35,7 @@
 #include FT_FREETYPE_H
 #include <fontconfig/fontconfig.h>
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 #include "font-model.h"
@@ -190,7 +190,7 @@ create_thumbnail (ThumbInfoData *thumb_info)
 
     mtime = g_file_info_get_attribute_uint64 (info, G_FILE_ATTRIBUTE_TIME_MODIFIED);
 
-    factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+    factory = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
     pixbuf = cafe_desktop_thumbnail_factory_generate_thumbnail
         (factory,
          thumb_info->uri, g_file_info_get_content_type (info));

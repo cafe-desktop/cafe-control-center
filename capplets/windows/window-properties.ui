@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.0
 
-window-properties.ui - MATE window properties dialog
-Copyright (C) MATE Developers
+window-properties.ui - CAFE window properties dialog
+Copyright (C) CAFE Developers
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -25,8 +25,8 @@ Author: Robert Buj
   <requires lib="gtk+" version="3.22"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name window-properties.ui -->
-  <!-- interface-description MATE window properties dialog -->
-  <!-- interface-copyright MATE Developers -->
+  <!-- interface-description CAFE window properties dialog -->
+  <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Robert Buj -->
   <object class="GtkAdjustment" id="autoraise_delay_slider_adj">
     <property name="upper">10</property>

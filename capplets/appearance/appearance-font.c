@@ -701,13 +701,13 @@ cb_show_details (GtkWidget *button,
     data->font_groups = g_slist_prepend (data->font_groups, group);
 
     gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_rgb_image")),
-                             MATECC_PIXMAP_DIR "/subpixel-rgb.png");
+                             CAFECC_PIXMAP_DIR "/subpixel-rgb.png");
     gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_bgr_image")),
-                             MATECC_PIXMAP_DIR "/subpixel-bgr.png");
+                             CAFECC_PIXMAP_DIR "/subpixel-bgr.png");
     gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vrgb_image")),
-                             MATECC_PIXMAP_DIR "/subpixel-vrgb.png");
+                             CAFECC_PIXMAP_DIR "/subpixel-vrgb.png");
     gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vbgr_image")),
-                             MATECC_PIXMAP_DIR "/subpixel-vbgr.png");
+                             CAFECC_PIXMAP_DIR "/subpixel-vbgr.png");
 
     group = enum_group_create (data->font_settings, FONT_RGBA_ORDER_KEY,
                                appearance_capplet_get_widget (data, "subpixel_rgb_radio"),  RGBA_RGB,

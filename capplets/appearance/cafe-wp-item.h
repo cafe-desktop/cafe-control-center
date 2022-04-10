@@ -27,8 +27,8 @@
 
 #include "cafe-wp-info.h"
 
-#ifndef _MATE_WP_ITEM_H_
-#define _MATE_WP_ITEM_H_
+#ifndef _CAFE_WP_ITEM_H_
+#define _CAFE_WP_ITEM_H_
 
 typedef struct _CafeWPItem CafeWPItem;
 

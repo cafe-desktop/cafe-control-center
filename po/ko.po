@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -215,7 +215,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
-msgid "cafe-control-center;MATE;personal;information;"
+msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:100
@@ -556,7 +556,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
-msgid "cafe-control-center;MATE;accessibility;features;"
+msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
 
 #: capplets/appearance/appearance-desktop.c:615
@@ -1060,7 +1060,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
-msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
+msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:3
@@ -1074,7 +1074,7 @@ msgstr "바탕 화면의 여러 곳에 쓰일 테마를 설치합니다"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
-msgid "cafe-control-center;MATE;install;desktop;themes;"
+msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
@@ -1214,7 +1214,7 @@ msgstr "새 테마 적용"
 
 #: capplets/appearance/theme-installer.c:534
 #, c-format
-msgid "MATE Theme %s correctly installed"
+msgid "CAFE Theme %s correctly installed"
 msgstr "%s 마테 테마를 올바르게 설치했습니다"
 
 #: capplets/appearance/theme-installer.c:600
@@ -1270,7 +1270,7 @@ msgstr "테마 엔진을 설치할 수 없습니다"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
+"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
 msgstr ""
 "설정 관리자 'cafe-settings-daemon'을 실행할 수 없습니다.\n"
 "마테 설정 관리자를 실행하지 않고는, 몇몇 기본 설정 사항이 적용되지 않습니다. 이는 DBus의 문제이거나, 마테 데스크톱용이 아닌(예를 들어, KDE) 설정 관리자가 이미 실행중이어서 마테 설정 관리자와 충돌하기 때문일지도 모릅니다."
@@ -1395,7 +1395,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
-msgid "cafe-control-center;MATE;default;preferred;applications;"
+msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
 
 #: capplets/default-applications/cafe-da-capplet.c:639
@@ -1411,7 +1411,7 @@ msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr "보여줄 페이지 이름을 지정합니다(internet|multimedia|system|a11y)"
 
 #: capplets/default-applications/cafe-da-capplet.c:844
-msgid "- MATE Default Applications"
+msgid "- CAFE Default Applications"
 msgstr "- 마테 기본 프로그램"
 
 #: capplets/default-applications/cafe-default-applications-properties.ui:134
@@ -1534,7 +1534,7 @@ msgstr "시스템 전체에 적용하기"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other MATE users on the computer. Note"
+"Applies the current configuration for other CAFE users on the computer. Note"
 " that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "컴퓨터에서 마테를 이용하는 다른 사용자들을 위해서 현재 설정을 적용합니다. 이 설정은 로그인 창이나 데스크톱 환경에는 영향을 주지 "
@@ -1615,7 +1615,7 @@ msgstr ""
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
 msgstr ""
 
 #: capplets/display/cafe-display-properties-install-systemwide.c:44
@@ -2015,7 +2015,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
-msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
+msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
 
 #: capplets/keyboard/cafe-keyboard-properties.c:207
@@ -2033,7 +2033,7 @@ msgid "Start the page with the accessibility settings showing"
 msgstr "접근성 설정을 보여주는 페이지로 시작합니다"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:228
-msgid "- MATE Keyboard Preferences"
+msgid "- CAFE Keyboard Preferences"
 msgstr "- 마테 키보드 설정"
 
 #: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
@@ -2436,7 +2436,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
-msgid "cafe-control-center;MATE;keyboard;preferences;"
+msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.c:347
@@ -2456,7 +2456,7 @@ msgid "Specify the name of the page to show (general)"
 msgstr "보여줄 페이지 이름을 지정하십시오(일반)"
 
 #: capplets/mouse/cafe-mouse-properties.c:447
-msgid "- MATE Mouse Preferences"
+msgid "- CAFE Mouse Preferences"
 msgstr "- 마테 마우스 설정"
 
 #: capplets/mouse/cafe-mouse-properties.ui:107
@@ -2613,7 +2613,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
-msgid "cafe-control-center;MATE;mouse;preferences;"
+msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
 
 #: capplets/network/cafe-network-properties.desktop.in:3
@@ -2633,7 +2633,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
-msgid "cafe-control-center;MATE;network;http;socks;proxy;"
+msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
 
 #: capplets/network/cafe-network-properties.ui:34
@@ -2762,7 +2762,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -4711,7 +4711,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
-msgid "cafe-control-center;MATE;clock;date;time;preferences;"
+msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
 
 #: libwindow-settings/cafe-wm-manager.c:317
@@ -4746,11 +4746,11 @@ msgid "Hide on start (useful to preload the shell)"
 msgstr "시작할 때 감추기(셸을 미리 읽어들이는데 유용함)"
 
 #: shell/cafecc.desktop.in:4
-msgid "The MATE configuration tool"
+msgid "The CAFE configuration tool"
 msgstr "마테 설정 도구"
 
 #: shell/cafecc.desktop.in:5
-msgid "Configure MATE settings"
+msgid "Configure CAFE settings"
 msgstr "마테 설정 구성"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4762,7 +4762,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
-msgid "MATE;control;center;configuration;tool;desktop;preferences;"
+msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4837,7 +4837,7 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"MATE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
 
 #: typing-break/main.c:62
 msgid "Enable debugging code"
@@ -4914,7 +4914,7 @@ msgid "View fonts on your system"
 msgstr "시스템에서 글꼴 보기"
 
 #: font-viewer/cafe-font-viewer.desktop.in:3
-msgid "MATE Font Viewer"
+msgid "CAFE Font Viewer"
 msgstr "마테 글꼴 보기"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4926,7 +4926,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
-msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
+msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
 
 #: font-viewer/font-thumbnailer.c:191

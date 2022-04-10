@@ -1,4 +1,4 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = network
 
 ui_files = cafe-network-properties.ui
@@ -9,7 +9,7 @@ BUILT_SOURCES = cafe-network-properties-resources.h cafe-network-properties-reso
 nodist_cafe_network_properties_SOURCES = \
 	$(BUILT_SOURCES)
 cafe_network_properties_SOURCES = cafe-network-properties.c
-cafe_network_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_network_properties_LDADD = $(CAFECC_CAPPLETS_LIBS)
 
 include $(top_srcdir)/gla11y.mk
 
@@ -25,9 +25,9 @@ cafe-network-properties-resources.h cafe-network-properties-resources.c: org.caf
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS)
+	$(CAFECC_CAPPLETS_CFLAGS)
 
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = $(ui_files) $(desktop_in_files) org.cafe.mcc.network.gresource.xml ui-a11y.suppr
 
 -include $(top_srcdir)/git.mk

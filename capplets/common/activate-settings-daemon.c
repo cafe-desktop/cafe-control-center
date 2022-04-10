@@ -14,9 +14,9 @@ static void popup_error_message (void)
 
   dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_WARNING,
 				   GTK_BUTTONS_OK, _("Unable to start the settings manager 'cafe-settings-daemon'.\n"
-				   "Without the MATE settings manager running, some preferences may not take effect. This could "
-				   "indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already "
-				   "be active and conflicting with the MATE settings manager."));
+				   "Without the CAFE settings manager running, some preferences may not take effect. This could "
+				   "indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already "
+				   "be active and conflicting with the CAFE settings manager."));
 
   gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_destroy (dialog);

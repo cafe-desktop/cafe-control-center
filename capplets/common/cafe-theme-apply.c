@@ -1,5 +1,5 @@
 /* -*- mode: C; c-basic-offset: 4 -*-
- * themus - utilities for MATE themes
+ * themus - utilities for CAFE themes
  * Copyright (C) 2002 Jonathan Blandford <aes@gnome.org>
  *
  * This library is free software; you can redistribute it and/or

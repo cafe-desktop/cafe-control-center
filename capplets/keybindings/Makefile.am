@@ -1,11 +1,11 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = keybinding
 
 ui_files = cafe-keybinding-properties.ui
 
 bin_PROGRAMS = cafe-keybinding-properties
 
-cafe_keybinding_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_keybinding_properties_LDADD = $(CAFECC_CAPPLETS_LIBS)
 BUILT_SOURCES = cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c
 nodist_cafe_keybinding_properties_SOURCES = \
 	$(BUILT_SOURCES)
@@ -39,11 +39,11 @@ cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c: o
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS) \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""
+	$(CAFECC_CAPPLETS_CFLAGS) \
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""
 CLEANFILES = \
 	$(BUILT_SOURCES) \
-	$(MATECC_CAPPLETS_CLEANFILES) \
+	$(CAFECC_CAPPLETS_CLEANFILES) \
 	$(desktop_DATA) \
 	$(xml_DATA)
 

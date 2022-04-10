@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef _MATE_WP_INFO_H_
-#define _MATE_WP_INFO_H_
+#ifndef _CAFE_WP_INFO_H_
+#define _CAFE_WP_INFO_H_
 
 #include <glib.h>
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>

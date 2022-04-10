@@ -34,7 +34,7 @@
 #include <libappindicator/app-indicator.h>
 #endif /* HAVE_APP_INDICATOR */
 
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 
 #include "drwright.h"

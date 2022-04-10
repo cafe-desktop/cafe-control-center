@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef _MATE_WP_XML_H_
-#define _MATE_WP_XML_H_
+#ifndef _CAFE_WP_XML_H_
+#define _CAFE_WP_XML_H_
 
 void cafe_wp_xml_load_list(AppearanceData* data);
 void cafe_wp_xml_save_list(AppearanceData* data);

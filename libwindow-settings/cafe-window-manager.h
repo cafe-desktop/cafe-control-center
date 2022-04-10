@@ -23,8 +23,8 @@
  * 02110-1301, USA.
  */
 
-#ifndef MATE_WINDOW_MANAGER_H
-#define MATE_WINDOW_MANAGER_H
+#ifndef CAFE_WINDOW_MANAGER_H
+#define CAFE_WINDOW_MANAGER_H
 
 #include <glib-object.h>
 
@@ -34,31 +34,31 @@
  * error. In principle the libtool versioning handles this, but
  * in combination with dlopen I don't quite trust that.
  */
-#define MATE_WINDOW_MANAGER_INTERFACE_VERSION 1
+#define CAFE_WINDOW_MANAGER_INTERFACE_VERSION 1
 
 typedef GObject * (* CafeWindowManagerNewFunc) (int expected_interface_version);
 
 typedef enum
 {
-        MATE_WM_SETTING_FONT                = 1 << 0,
-        MATE_WM_SETTING_MOUSE_FOCUS         = 1 << 1,
-        MATE_WM_SETTING_AUTORAISE           = 1 << 2,
-        MATE_WM_SETTING_AUTORAISE_DELAY     = 1 << 3,
-        MATE_WM_SETTING_MOUSE_MOVE_MODIFIER = 1 << 4,
-        MATE_WM_SETTING_THEME               = 1 << 5,
-        MATE_WM_SETTING_DOUBLE_CLICK_ACTION = 1 << 6,
-        MATE_WM_SETTING_COMPOSITING_MANAGER = 1 << 7,
-        MATE_WM_SETTING_COMPOSITING_ALTTAB  = 1 << 8,
-        MATE_WM_SETTING_MASK                =
-        MATE_WM_SETTING_FONT                |
-        MATE_WM_SETTING_MOUSE_FOCUS         |
-        MATE_WM_SETTING_AUTORAISE           |
-        MATE_WM_SETTING_AUTORAISE_DELAY     |
-        MATE_WM_SETTING_MOUSE_MOVE_MODIFIER |
-        MATE_WM_SETTING_THEME               |
-        MATE_WM_SETTING_DOUBLE_CLICK_ACTION |
-        MATE_WM_SETTING_COMPOSITING_MANAGER |
-        MATE_WM_SETTING_COMPOSITING_ALTTAB
+        CAFE_WM_SETTING_FONT                = 1 << 0,
+        CAFE_WM_SETTING_MOUSE_FOCUS         = 1 << 1,
+        CAFE_WM_SETTING_AUTORAISE           = 1 << 2,
+        CAFE_WM_SETTING_AUTORAISE_DELAY     = 1 << 3,
+        CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER = 1 << 4,
+        CAFE_WM_SETTING_THEME               = 1 << 5,
+        CAFE_WM_SETTING_DOUBLE_CLICK_ACTION = 1 << 6,
+        CAFE_WM_SETTING_COMPOSITING_MANAGER = 1 << 7,
+        CAFE_WM_SETTING_COMPOSITING_ALTTAB  = 1 << 8,
+        CAFE_WM_SETTING_MASK                =
+        CAFE_WM_SETTING_FONT                |
+        CAFE_WM_SETTING_MOUSE_FOCUS         |
+        CAFE_WM_SETTING_AUTORAISE           |
+        CAFE_WM_SETTING_AUTORAISE_DELAY     |
+        CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER |
+        CAFE_WM_SETTING_THEME               |
+        CAFE_WM_SETTING_DOUBLE_CLICK_ACTION |
+        CAFE_WM_SETTING_COMPOSITING_MANAGER |
+        CAFE_WM_SETTING_COMPOSITING_ALTTAB
 } CafeWMSettingsFlags;
 
 typedef struct
@@ -91,10 +91,10 @@ typedef struct
 extern "C" {
 #endif
 
-#define MATE_WINDOW_MANAGER(obj)          G_TYPE_CHECK_INSTANCE_CAST (obj, cafe_window_manager_get_type (), CafeWindowManager)
-#define MATE_WINDOW_MANAGER_CLASS(klass)  G_TYPE_CHECK_CLASS_CAST (klass, cafe_window_manager_get_type (), CafeWindowManagerClass)
-#define IS_MATE_WINDOW_MANAGER(obj)       G_TYPE_CHECK_INSTANCE_TYPE (obj, cafe_window_manager_get_type ())
-#define MATE_WINDOW_MANAGER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), cafe_window_manager_get_type, CafeWindowManagerClass))
+#define CAFE_WINDOW_MANAGER(obj)          G_TYPE_CHECK_INSTANCE_CAST (obj, cafe_window_manager_get_type (), CafeWindowManager)
+#define CAFE_WINDOW_MANAGER_CLASS(klass)  G_TYPE_CHECK_CLASS_CAST (klass, cafe_window_manager_get_type (), CafeWindowManagerClass)
+#define IS_CAFE_WINDOW_MANAGER(obj)       G_TYPE_CHECK_INSTANCE_TYPE (obj, cafe_window_manager_get_type ())
+#define CAFE_WINDOW_MANAGER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), cafe_window_manager_get_type, CafeWindowManagerClass))
 
 typedef struct _CafeWindowManager CafeWindowManager;
 typedef struct _CafeWindowManagerClass CafeWindowManagerClass;
@@ -172,4 +172,4 @@ void             cafe_wm_settings_free (CafeWMSettings *settings);
 }
 #endif
 
-#endif /* MATE_WINDOW_MANAGER_H */
+#endif /* CAFE_WINDOW_MANAGER_H */

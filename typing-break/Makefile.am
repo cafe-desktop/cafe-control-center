@@ -16,16 +16,16 @@ cafe_typing_monitor_SOURCES =			\
 	drw-timer.h
 
 cafe_typing_monitor_CPPFLAGS = \
-	-DMATELOCALEDIR="\"$(datadir)/locale\""	\
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""	\
 	-DIMAGEDIR=\"$(pkgdatadir)/pixmaps\"		\
 	$(AM_CPPFLAGS)
 cafe_typing_monitor_CFLAGS = \
 	@TYPING_CFLAGS@	\
-	@MATE_DESKTOP_CFLAGS@ \
+	@CAFE_DESKTOP_CFLAGS@ \
 	$(WARN_CFLAGS) \
 	$(AM_CFLAGS)
 
-cafe_typing_monitor_LDADD = @TYPING_LIBS@ @MATE_DESKTOP_LIBS@ @SCREENSAVER_LIBS@
+cafe_typing_monitor_LDADD = @TYPING_LIBS@ @CAFE_DESKTOP_LIBS@ @SCREENSAVER_LIBS@
 
 if HAVE_LIBCANBERRA_GTK
   cafe_typing_monitor_CFLAGS += -DHAVE_CANBERRA_GTK @LIBCANBERRA_GTK_CFLAGS@ 

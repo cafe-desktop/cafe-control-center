@@ -350,7 +350,7 @@ enroll_result (GObject *object, const char *result, gboolean done, EnrollData *d
 
 		data->num_stages_done++;
 		name = g_strdup_printf ("image%d", data->num_stages_done);
-		path = g_build_filename (MATECC_PIXMAP_DIR, "print_ok.png", NULL);
+		path = g_build_filename (CAFECC_PIXMAP_DIR, "print_ok.png", NULL);
 		gtk_image_set_from_file (GTK_IMAGE (WID (name)), path);
 		g_free (name);
 		g_free (path);
@@ -452,7 +452,7 @@ assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
 			char *filename;
 
 			filename = g_strdup_printf ("%s.png", data->finger);
-			path = g_build_filename (MATECC_PIXMAP_DIR, filename, NULL);
+			path = g_build_filename (CAFECC_PIXMAP_DIR, filename, NULL);
 			g_free (filename);
 		}
 		for (i = 1; i <= data->num_enroll_stages; i++) {
@@ -617,7 +617,7 @@ fingerprint_button_clicked (GtkBuilder *dialog,
 			    GtkWidget *enable,
 			    GtkWidget *disable)
 {
-	bindtextdomain ("fprintd", MATELOCALEDIR);
+	bindtextdomain ("fprintd", CAFELOCALEDIR);
 	bind_textdomain_codeset ("fprintd", "UTF-8");
 
 	if (is_disable != FALSE) {

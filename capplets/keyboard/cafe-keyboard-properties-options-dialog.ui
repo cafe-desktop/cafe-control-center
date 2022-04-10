@@ -5,7 +5,7 @@
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keyboard-properties-options-dialog -->
   <!-- interface-description keyboard options dialog window -->
-  <!-- interface-copyright MATE Developers -->
+  <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkDialog" id="xkb_options_dialog">
     <property name="can_focus">False</property>

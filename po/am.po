@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -210,7 +210,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
-msgid "cafe-control-center;MATE;personal;information;"
+msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:100
@@ -553,7 +553,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
-msgid "cafe-control-center;MATE;accessibility;features;"
+msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
 
 #: capplets/appearance/appearance-desktop.c:615
@@ -1060,7 +1060,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
-msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
+msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:3
@@ -1074,7 +1074,7 @@ msgstr "ለ ዴስክቶፕ አካሎች የ ተለያዩ ገጽታዎች መግ
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
-msgid "cafe-control-center;MATE;install;desktop;themes;"
+msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
@@ -1215,7 +1215,7 @@ msgstr "አዲሱን ገጽታ መፈጸሚያ "
 
 #: capplets/appearance/theme-installer.c:534
 #, c-format
-msgid "MATE Theme %s correctly installed"
+msgid "CAFE Theme %s correctly installed"
 msgstr "የሜት ገጽታ %s በትክክል ተገጥሟል "
 
 #: capplets/appearance/theme-installer.c:600
@@ -1271,7 +1271,7 @@ msgstr "የ ገጽታ ሞተር መግጠም አልተቻለም"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
+"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
 msgstr ""
 "የ ሜት ማሰናጃ አስተዳዳሪ ማስጀመር አልተቻለም ለ 'ሜት-ማሰናጃ-እረዳት'.\n"
 "ያለ ሜት ማሰናጃ አስተዳዳሪ ማስኬድ: አንዳንድ ምርጫዎች በ ትክክል ላይሰሩ ይችላሉ: ይህ ችግር የሚያመለክተው የ DBus, ወይንም የ ምንም-ሜት ያልሆነ ነው (ለምሳሌ: KDE) ማሰናጃ አስተዳዳሪ ምናልባት ንቁ ይሆናል እና ይጋጫል ከ ሜት ማሰናጃ አስተዳዳሪ ጋር:"
@@ -1396,7 +1396,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
-msgid "cafe-control-center;MATE;default;preferred;applications;"
+msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
 
 #: capplets/default-applications/cafe-da-capplet.c:639
@@ -1412,7 +1412,7 @@ msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr "የ ገጽ ስም ይወስኑ ለማሳየት የ (internet|multimedia|system|a11y)"
 
 #: capplets/default-applications/cafe-da-capplet.c:844
-msgid "- MATE Default Applications"
+msgid "- CAFE Default Applications"
 msgstr "የ -ሜት ነባር መተገበሪያዎች"
 
 #: capplets/default-applications/cafe-default-applications-properties.ui:134
@@ -1535,7 +1535,7 @@ msgstr "በ ስርአቱ-ሙሉ መፈጸሚያ"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other MATE users on the computer. Note"
+"Applies the current configuration for other CAFE users on the computer. Note"
 " that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "የ አሁኑን ማሰናጃ ለ ሌሎች ሜት ተጠቃሚዎች መፈጸሚያ በ ኮምፒዩተሩ ላይ: ማስታወሻ ይህ በ መግቢያ መመልከቻ እና በ "
@@ -1616,7 +1616,7 @@ msgstr ""
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
 msgstr ""
 
 #: capplets/display/cafe-display-properties-install-systemwide.c:44
@@ -2017,7 +2017,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
-msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
+msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
 
 #: capplets/keyboard/cafe-keyboard-properties.c:207
@@ -2035,7 +2035,7 @@ msgid "Start the page with the accessibility settings showing"
 msgstr "ገጽ ማስጀመሪያ ከ መጻፊያ መጨረሻ ጋር በሚያሳይ "
 
 #: capplets/keyboard/cafe-keyboard-properties.c:228
-msgid "- MATE Keyboard Preferences"
+msgid "- CAFE Keyboard Preferences"
 msgstr "የ -ሜት የ ፊደል ገበታ ምርጫዎች"
 
 #: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
@@ -2440,7 +2440,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
-msgid "cafe-control-center;MATE;keyboard;preferences;"
+msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.c:347
@@ -2460,7 +2460,7 @@ msgid "Specify the name of the page to show (general)"
 msgstr "የሚታየውን የ ገጽ ስም ማሰናጃ (ባጠቃላይ)"
 
 #: capplets/mouse/cafe-mouse-properties.c:447
-msgid "- MATE Mouse Preferences"
+msgid "- CAFE Mouse Preferences"
 msgstr "- የ ሜት የ አይጥ ቁልፍ ምርጫ"
 
 #: capplets/mouse/cafe-mouse-properties.ui:107
@@ -2617,7 +2617,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
-msgid "cafe-control-center;MATE;mouse;preferences;"
+msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
 
 #: capplets/network/cafe-network-properties.desktop.in:3
@@ -2637,7 +2637,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
-msgid "cafe-control-center;MATE;network;http;socks;proxy;"
+msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
 
 #: capplets/network/cafe-network-properties.ui:34
@@ -2766,7 +2766,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
+msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -4715,7 +4715,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
-msgid "cafe-control-center;MATE;clock;date;time;preferences;"
+msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
 
 #: libwindow-settings/cafe-wm-manager.c:317
@@ -4752,11 +4752,11 @@ msgid "Hide on start (useful to preload the shell)"
 msgstr "መደበቂያ በሚጀምር ጊዜ (ጠቃሚ shell እንደገና ለ መጫን)"
 
 #: shell/cafecc.desktop.in:4
-msgid "The MATE configuration tool"
+msgid "The CAFE configuration tool"
 msgstr "የ ሜት ማሰናጃ መሳሪያ"
 
 #: shell/cafecc.desktop.in:5
-msgid "Configure MATE settings"
+msgid "Configure CAFE settings"
 msgstr "የ ሜት ማሰናጃዎች ማሰናጃ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4768,7 +4768,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
-msgid "MATE;control;center;configuration;tool;desktop;preferences;"
+msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4916,7 +4916,7 @@ msgid "View fonts on your system"
 msgstr "በ እርስዎ ስርአት ላይ ፊደሎች መመልከቻ"
 
 #: font-viewer/cafe-font-viewer.desktop.in:3
-msgid "MATE Font Viewer"
+msgid "CAFE Font Viewer"
 msgstr "የ ሜት ፊደል መመልከቻ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
@@ -4928,7 +4928,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
-msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
+msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
 
 #: font-viewer/font-thumbnailer.c:191

@@ -86,7 +86,7 @@ open_desktop_item_exec (CafeDesktopItem * desktop_item)
 	if (!desktop_item)
 		return FALSE;
 
-	cafe_desktop_item_launch (desktop_item, NULL, MATE_DESKTOP_ITEM_LAUNCH_ONLY_ONE | MATE_DESKTOP_ITEM_LAUNCH_DO_NOT_REAP_CHILD, &error);
+	cafe_desktop_item_launch (desktop_item, NULL, CAFE_DESKTOP_ITEM_LAUNCH_ONLY_ONE | CAFE_DESKTOP_ITEM_LAUNCH_DO_NOT_REAP_CHILD, &error);
 
 	if (error)
 	{

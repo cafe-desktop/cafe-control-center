@@ -243,7 +243,7 @@ wp_option_menu_set (AppearanceData *data,
     gtk_combo_box_set_active (GTK_COMBO_BOX (data->wp_color_menu),
                               value);
 
-    if (value == MATE_BG_COLOR_SOLID)
+    if (value == CAFE_BG_COLOR_SOLID)
       gtk_widget_hide (data->wp_scpicker);
     else
       gtk_widget_show (data->wp_scpicker);
@@ -1003,7 +1003,7 @@ wp_load_stuffs (void *user_data)
     if (!strcmp (style, "none"))
     {
       select_item (data, item, FALSE);
-      wp_option_menu_set (data, MATE_BG_PLACEMENT_SCALED, FALSE);
+      wp_option_menu_set (data, CAFE_BG_PLACEMENT_SCALED, FALSE);
     }
   }
   g_free (imagepath);

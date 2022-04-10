@@ -161,16 +161,16 @@ static void theme_thumbnail_generate(CafeThemeMetaInfo* info, AppearanceData* da
 
 static void theme_changed_on_disk_cb(CafeThemeCommonInfo* theme, CafeThemeChangeType change_type, CafeThemeElement element_type, AppearanceData* data)
 {
-	if (theme->type == MATE_THEME_TYPE_METATHEME)
+	if (theme->type == CAFE_THEME_TYPE_METATHEME)
 	{
 		CafeThemeMetaInfo* meta = (CafeThemeMetaInfo*) theme;
 
-		if (change_type == MATE_THEME_CHANGE_CREATED)
+		if (change_type == CAFE_THEME_CHANGE_CREATED)
 		{
 			gtk_list_store_insert_with_values (data->theme_store, NULL, 0, COL_LABEL, meta->readable_name, COL_NAME, meta->name, COL_THUMBNAIL, data->theme_icon, -1);
 			theme_thumbnail_generate(meta, data);
 		}
-		else if (change_type == MATE_THEME_CHANGE_DELETED)
+		else if (change_type == CAFE_THEME_CHANGE_DELETED)
 		{
 			GtkTreeIter iter;
 
@@ -179,7 +179,7 @@ static void theme_changed_on_disk_cb(CafeThemeCommonInfo* theme, CafeThemeChange
 				gtk_list_store_remove(data->theme_store, &iter);
 			}
 		}
-		else if (change_type == MATE_THEME_CHANGE_CHANGED)
+		else if (change_type == CAFE_THEME_CHANGE_CHANGED)
 		{
 			theme_thumbnail_generate(meta, data);
 		}
@@ -716,7 +716,7 @@ theme_message_area_update (AppearanceData *data)
     gtk_widget_hide (data->revert_font_button);
 
   if (show_error
-      && g_error_matches (error, MATE_THEME_ERROR, MATE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE)
+      && g_error_matches (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE)
       && packagekit_available ())
     gtk_widget_show (data->install_button);
   else
@@ -1001,7 +1001,7 @@ void themes_init(AppearanceData* data)
   data->theme_message_area = NULL;
   data->theme_info_icon = NULL;
   data->theme_error_icon = NULL;
-  data->theme_icon = gdk_pixbuf_new_from_file (MATECC_PIXMAP_DIR "/theme-thumbnailing.png", NULL);
+  data->theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/theme-thumbnailing.png", NULL);
   data->theme_store = theme_store =
       gtk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 

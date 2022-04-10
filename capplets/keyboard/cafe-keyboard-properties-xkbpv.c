@@ -59,7 +59,7 @@ xkb_layout_preview_create_widget (GtkBuilder * chooserDialog)
 {
 	GtkWidget *kbdraw = cafekbd_keyboard_drawing_new ();
 
-	cafekbd_keyboard_drawing_set_groups_levels (MATEKBD_KEYBOARD_DRAWING
+	cafekbd_keyboard_drawing_set_groups_levels (CAFEKBD_KEYBOARD_DRAWING
 						 (kbdraw), pGroupsLevels);
 	return kbdraw;
 }
@@ -119,7 +119,7 @@ xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
 				if (xkl_xkb_config_native_prepare
 				    (engine, data, &component_names)) {
 					cafekbd_keyboard_drawing_set_keyboard
-					    (MATEKBD_KEYBOARD_DRAWING
+					    (CAFEKBD_KEYBOARD_DRAWING
 					     (kbdraw), &component_names);
 
 					xkl_xkb_config_native_cleanup
@@ -129,7 +129,7 @@ xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
 			g_object_unref (G_OBJECT (data));
 		} else
 			cafekbd_keyboard_drawing_set_keyboard
-			    (MATEKBD_KEYBOARD_DRAWING (kbdraw), NULL);
+			    (CAFEKBD_KEYBOARD_DRAWING (kbdraw), NULL);
 
 	}
 #endif

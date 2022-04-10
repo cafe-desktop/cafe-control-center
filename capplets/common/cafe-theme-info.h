@@ -1,4 +1,4 @@
-/* cafe-theme-info.h - MATE Theme information
+/* cafe-theme-info.h - CAFE Theme information
 
    Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
    All rights reserved.
@@ -20,8 +20,8 @@
    write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
    Boston, MA 02110-1301, USA.  */
 
-#ifndef MATE_THEME_INFO_H
-#define MATE_THEME_INFO_H
+#ifndef CAFE_THEME_INFO_H
+#define CAFE_THEME_INFO_H
 
 #include <glib.h>
 #include <gio/gio.h>
@@ -30,22 +30,22 @@
 #include <gdk/gdk.h>
 
 typedef enum {
-	MATE_THEME_TYPE_METATHEME,
-	MATE_THEME_TYPE_ICON,
-	MATE_THEME_TYPE_CURSOR,
-	MATE_THEME_TYPE_REGULAR
+	CAFE_THEME_TYPE_METATHEME,
+	CAFE_THEME_TYPE_ICON,
+	CAFE_THEME_TYPE_CURSOR,
+	CAFE_THEME_TYPE_REGULAR
 } CafeThemeType;
 
 typedef enum {
-	MATE_THEME_CHANGE_CREATED,
-	MATE_THEME_CHANGE_DELETED,
-	MATE_THEME_CHANGE_CHANGED
+	CAFE_THEME_CHANGE_CREATED,
+	CAFE_THEME_CHANGE_DELETED,
+	CAFE_THEME_CHANGE_CHANGED
 } CafeThemeChangeType;
 
 typedef enum {
-	MATE_THEME_MARCO = 1 << 0,
-	MATE_THEME_GTK_2 = 1 << 1,
-	MATE_THEME_GTK_2_KEYBINDING = 1 << 2
+	CAFE_THEME_MARCO = 1 << 0,
+	CAFE_THEME_GTK_2 = 1 << 1,
+	CAFE_THEME_GTK_2_KEYBINDING = 1 << 2
 } CafeThemeElement;
 
 typedef struct _CafeThemeCommonInfo CafeThemeCommonInfo;
@@ -131,14 +131,14 @@ enum {
 
 typedef void (*ThemeChangedCallback) (CafeThemeCommonInfo* theme, CafeThemeChangeType change_type, CafeThemeElement element_type, gpointer user_data);
 
-#define MATE_THEME_ERROR cafe_theme_info_error_quark()
+#define CAFE_THEME_ERROR cafe_theme_info_error_quark()
 
 enum {
-	MATE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE = 1,
-	MATE_THEME_ERROR_WM_THEME_NOT_AVAILABLE,
-	MATE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
-	MATE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE,
-	MATE_THEME_ERROR_UNKNOWN
+	CAFE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE = 1,
+	CAFE_THEME_ERROR_WM_THEME_NOT_AVAILABLE,
+	CAFE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
+	CAFE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE,
+	CAFE_THEME_ERROR_UNKNOWN
 };
 
 
@@ -188,4 +188,4 @@ gboolean            cafe_theme_color_scheme_parse         (const gchar         *
 gboolean            cafe_theme_color_scheme_equal         (const gchar         *s1,
 							    const gchar         *s2);
 
-#endif /* MATE_THEME_INFO_H */
+#endif /* CAFE_THEME_INFO_H */

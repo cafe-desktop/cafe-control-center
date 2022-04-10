@@ -76,7 +76,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="tooltip_text" translatable="yes">Applies the current configuration for other MATE users on the computer. Note that this doesn't affect login screens or other desktop environments.</property>
+                <property name="tooltip_text" translatable="yes">Applies the current configuration for other CAFE users on the computer. Note that this doesn't affect login screens or other desktop environments.</property>
                 <property name="use_underline">True</property>
               </object>
               <packing>

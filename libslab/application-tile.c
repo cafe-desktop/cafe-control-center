@@ -135,7 +135,7 @@ application_tile_new_full (const gchar *desktop_item_id,
 
 	if (
 		desktop_item &&
-		cafe_desktop_item_get_entry_type (desktop_item) == MATE_DESKTOP_ITEM_TYPE_APPLICATION
+		cafe_desktop_item_get_entry_type (desktop_item) == CAFE_DESKTOP_ITEM_TYPE_APPLICATION
 	)
 		uri = cafe_desktop_item_get_location (desktop_item);
 

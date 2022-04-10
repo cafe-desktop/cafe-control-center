@@ -7,7 +7,7 @@ Icon=preferences-desktop-default-applications
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Settings;X-MATE-PersonalSettings;
+Categories=GTK;Settings;X-CAFE-PersonalSettings;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-Keywords=cafe-control-center;MATE;default;preferred;applications;
-OnlyShowIn=MATE;
+Keywords=cafe-control-center;CAFE;default;preferred;applications;
+OnlyShowIn=CAFE;

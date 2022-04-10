@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Control Center
-GenericName=The MATE configuration tool
-Comment=Configure MATE settings
+GenericName=The CAFE configuration tool
+Comment=Configure CAFE settings
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=preferences-desktop
 Exec=cafe-control-center
@@ -10,5 +10,5 @@ Type=Application
 StartupNotify=false
 Categories=GTK;Settings;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-Keywords=MATE;control;center;configuration;tool;desktop;preferences;
-OnlyShowIn=MATE;
+Keywords=CAFE;control;center;configuration;tool;desktop;preferences;
+OnlyShowIn=CAFE;
