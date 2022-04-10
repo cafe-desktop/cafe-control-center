@@ -52,6 +52,7 @@ before_scripts:
   - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
   - ./install-from-git https://github.com/cafe-desktop/libcafekbd master
   - ./install-from-git https://github.com/cafe-desktop/libcafemixer master
+  - ./install-from-git https://github.com/cafe-desktop/cafe-menus master
   - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master
 
 build_scripts:
