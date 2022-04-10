@@ -12,6 +12,7 @@ requires:
     - curl
     - desktop-file-utils
     - git
+    - gla11y
     - gobject-introspection
     - intltool
     - libcanberra-gtk3-dev
@@ -51,8 +52,6 @@ before_scripts:
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
   - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
   - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master
-  - curl -Ls -o /usr/bin/gla11y https://github.com/hypra/gla11y/raw/v0.3/gla11y
-  - chmod +x /usr/bin/gla11y
 
 build_scripts:
   - NOCONFIGURE=1 ./autogen.sh
