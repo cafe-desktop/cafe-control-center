@@ -33,7 +33,7 @@
 
 #include "capplet-util.h"
 
-/* With GSettings migration, MATE is going to share proxy settings with
+/* With GSettings migration, CAFE is going to share proxy settings with
  * GNOME3 (in gsettings-desktop-schemas package).
  * GSettings schemas is http://git.gnome.org/browse/gsettings-desktop-schemas/tree/
  * schemas/org.gnome.system.proxy.gschema.xml.in.in

@@ -30,7 +30,7 @@ msgstr ""
 "Görkem Çetin <gorkem@gelecek.com.tr>, 2002/2003.\n"
 "Barış Çicek <baris@teamforce.name.tr>, 2004, 2008, 2009.\n"
 "Muhammet Kara <muhammet.k@gmail.com>, 2011.\n"
-"MATE projesine katkıda bulunanlar:\n"
+"CAFE projesine katkıda bulunanlar:\n"
 "hsngrms <dead-bodies-everywhere@hotmail.com>, 2012\n"
 "mauron, 2012, 2013, 2014, 2015, 2016, 2017, 2018\n"
 "Atilla Öntaş <tarakbumba@gmail.com>, 2014\n"
@@ -39,24 +39,24 @@ msgstr ""
 #. (itstool) path: abstract/para
 #: C/index.docbook:20
 msgid ""
-"The MATE Control Center provides a central place for the user to setup their"
-" MATE experience. It can let you configure anything from the behavior of "
+"The CAFE Control Center provides a central place for the user to setup their"
+" CAFE experience. It can let you configure anything from the behavior of "
 "your window borders to the default font type."
 msgstr ""
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:24
-msgid "MATE Control Center Manual"
+msgid "CAFE Control Center Manual"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:26
 msgid ""
-"<firstname>MATE Documentation Project</firstname> <surname/> <affiliation> "
-"<orgname>MATE Desktop</orgname> </affiliation>"
+"<firstname>CAFE Documentation Project</firstname> <surname/> <affiliation> "
+"<orgname>CAFE Desktop</orgname> </affiliation>"
 msgstr ""
-"<firstname>MATE Belgelendirme Projesi</firstname> <surname/> <affiliation> "
-"<orgname>MATE Masaüstü</orgname> </affiliation>"
+"<firstname>CAFE Belgelendirme Projesi</firstname> <surname/> <affiliation> "
+"<orgname>CAFE Masaüstü</orgname> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:33
@@ -65,8 +65,8 @@ msgstr ""
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:37
-msgid "<year>2015-2020</year> <holder>MATE Documentation Project</holder>"
-msgstr "<year>2015-2020</year> <holder>MATE tBelgelendirme Projesi</holder>"
+msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
+msgstr "<year>2015-2020</year> <holder>CAFE tBelgelendirme Projesi</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:41
@@ -75,8 +75,8 @@ msgstr ""
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:47
-msgid "MATE Documentation Project"
-msgstr "MATE Belgelendirme Projesi"
+msgid "CAFE Documentation Project"
+msgstr "CAFE Belgelendirme Projesi"
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:50
@@ -86,7 +86,7 @@ msgstr "GNOME Belgelendirme Projesi"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:54
 msgid ""
-"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>MATE "
+"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>CAFE "
 "Documentation Project</firstname> <surname/>"
 msgstr ""
 
@@ -116,13 +116,13 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:12 C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
 "Bu kılavuz, GFDL (GNU Özgür Belgelendirme Lisansı) kapsamında yayınlanan "
-"MATE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
+"CAFE kılavuzları koleksiyonunun bir parçasıdır. Bu kılavuzu koleksiyondan "
 "ayrı bir biçimde dağıtmak istiyorsanız, lisansın 6. bölümünde açıklandığı "
 "gibi kılavuza lisansın bir kopyasını ilave ederek yapabilirsiniz."
 
@@ -130,14 +130,14 @@ msgstr ""
 #: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Firmalar tarafından ürün ve hizmetlerinin ayırt edilmeleri için "
 "kullandıkları isimlerin birçoğu tescilli marka olarak ayrılmıştır. Bu "
-"isimlerin MATE belgelendirilmesinde yer alması ve MATE Belgelendirme Projesi"
+"isimlerin CAFE belgelendirilmesinde yer alması ve CAFE Belgelendirme Projesi"
 " mensupları bu tescilli markalardan haberdar edildikleri durumda, isimlerin "
 "ilk harfi ya da tamamı büyük harflerle yazılır."
 
@@ -205,7 +205,7 @@ msgstr ""
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:70
-msgid "This manual describes version 1.10.1 of the MATE Control Center."
+msgid "This manual describes version 1.10.1 of the CAFE Control Center."
 msgstr ""
 
 #. (itstool) path: legalnotice/title
@@ -216,9 +216,9 @@ msgstr "Geri bildirim"
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:76
 msgid ""
-"To report a bug or make a suggestion regarding the <application>MATE Control"
+"To report a bug or make a suggestion regarding the <application>CAFE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE Feedback"
 " Page</ulink>."
 msgstr ""
 
@@ -232,7 +232,7 @@ msgstr "Başlangıç"
 #. (itstool) path: sect1/para
 #: C/index.docbook:85
 msgid ""
-"The <application>MATE Control Center</application> provides a single window "
+"The <application>CAFE Control Center</application> provides a single window "
 "from which to launch all preference tools."
 msgstr ""
 
@@ -245,13 +245,13 @@ msgstr ""
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:94
-msgid "To Start MATE Control Center"
+msgid "To Start CAFE Control Center"
 msgstr ""
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:95
 msgid ""
-"You can start <application>MATE Control Center</application> in the "
+"You can start <application>CAFE Control Center</application> in the "
 "following ways:"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgstr "Kullanım"
 #. (itstool) path: sect1/para
 #: C/index.docbook:119
 msgid ""
-"The <application>MATE Control Center</application> window lists all "
+"The <application>CAFE Control Center</application> window lists all "
 "preference tools installed on your system in groups."
 msgstr ""
 
@@ -816,7 +816,7 @@ msgid ""
 "pulldown menu. You select the <_:guibutton-1/> radio button and enter the "
 "text editor name. If you wish, you can have the editor open in a terminal "
 "window by selecting the <_:guibutton-2/> button. Clicking <_:guibutton-3/> "
-"lets MATE pass a line number to the editor so that you can \"warp\" to a "
+"lets CAFE pass a line number to the editor so that you can \"warp\" to a "
 "part of a file."
 msgstr ""
 
@@ -1588,7 +1588,7 @@ msgstr "Fare"
 
 #. (itstool) path: para/application
 #: C/config-mouse.xml:7
-msgid "MATE Control Center"
+msgid "CAFE Control Center"
 msgstr ""
 
 #. (itstool) path: sect2/para

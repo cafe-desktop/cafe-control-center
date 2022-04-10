@@ -26,7 +26,7 @@
 
 #include <gtk/gtk.h>
 #include "scrollarea.h"
-#define MATE_DESKTOP_USE_UNSTABLE_API
+#define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
 #include <libcafe-desktop/cafe-rr.h>
 #include <libcafe-desktop/cafe-rr-config.h>
@@ -303,10 +303,10 @@ rebuild_rotation_combo (App *app)
 	const char *	name;
     } RotationInfo;
     static const RotationInfo rotations[] = {
-	{ MATE_RR_ROTATION_0, N_("Normal") },
-	{ MATE_RR_ROTATION_90, N_("Left") },
-	{ MATE_RR_ROTATION_270, N_("Right") },
-	{ MATE_RR_ROTATION_180, N_("Upside Down") },
+	{ CAFE_RR_ROTATION_0, N_("Normal") },
+	{ CAFE_RR_ROTATION_90, N_("Left") },
+	{ CAFE_RR_ROTATION_270, N_("Right") },
+	{ CAFE_RR_ROTATION_180, N_("Upside Down") },
     };
     const char *selection;
     CafeRRRotation current;
@@ -1038,7 +1038,7 @@ get_geometry (CafeRROutputInfo *output, int *w, int *h)
 	*w = cafe_rr_output_info_get_preferred_width (output);
     }
    rotation = cafe_rr_output_info_get_rotation (output);
-   if ((rotation & MATE_RR_ROTATION_90) || (rotation & MATE_RR_ROTATION_270))
+   if ((rotation & CAFE_RR_ROTATION_90) || (rotation & CAFE_RR_ROTATION_270))
    {
         int tmp;
         tmp = *h;
@@ -1738,10 +1738,10 @@ paint_output (App *app, cairo_t *cr, int i)
     /* rotation is already applied in get_geometry */
 
     rotation = cafe_rr_output_info_get_rotation (output);
-    if (rotation & MATE_RR_REFLECT_X)
+    if (rotation & CAFE_RR_REFLECT_X)
 	cairo_scale (cr, -1, 1);
 
-    if (rotation & MATE_RR_REFLECT_Y)
+    if (rotation & CAFE_RR_REFLECT_Y)
 	cairo_scale (cr, 1, -1);
 
     cairo_translate (cr,

@@ -1,11 +1,11 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = mouse
 
 ui_files = cafe-mouse-properties.ui
 
 bin_PROGRAMS = cafe-mouse-properties
 
-cafe_mouse_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_mouse_properties_LDADD = $(CAFECC_CAPPLETS_LIBS)
 BUILT_SOURCES = cafe-mouse-properties-resources.h cafe-mouse-properties-resources.c
 nodist_cafe_mouse_properties_SOURCES = \
 	$(BUILT_SOURCES)
@@ -28,9 +28,9 @@ cafe-mouse-properties-resources.h cafe-mouse-properties-resources.c: org.cafe.mc
 
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS) \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+	$(CAFECC_CAPPLETS_CFLAGS) \
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
 	$(ui_files) \
 	double-click-on.svg \

@@ -1,9 +1,9 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = window
 
 bin_PROGRAMS = cafe-window-properties
 
-cafe_window_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_window_properties_LDADD = $(CAFECC_CAPPLETS_LIBS)
 
 BUILT_SOURCES = cafe-window-properties-resources.h cafe-window-properties-resources.c
 nodist_cafe_window_properties_SOURCES = $(BUILT_SOURCES)
@@ -24,11 +24,11 @@ $(desktop_DATA): $(Desktop_in_files)
 
 AM_CPPFLAGS =				\
 	$(WARN_CFLAGS)			\
-	$(MATECC_CAPPLETS_CFLAGS)	\
+	$(CAFECC_CAPPLETS_CFLAGS)	\
 	-DUIDIR=\""$(uidir)"\"		\
 	-DPIXMAPDIR=\""$(pixmapdir)"\"
 
-CLEANFILES = $(BUILT_SOURCES) $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA)
+CLEANFILES = $(BUILT_SOURCES) $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA)
 EXTRA_DIST = $(Desktop_in_files) org.cafe.mcc.windows.gresource.xml window-properties.ui
 
 -include $(top_srcdir)/git.mk

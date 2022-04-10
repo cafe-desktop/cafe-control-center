@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 MATE Developers
+ * Copyright (C) 2019 CAFE Developers
  * Copyright (C) 2018, 2019 zhuyaliang https://github.com/zhuyaliang/
  * Copyright (C) 2010-2018 The GNOME Project
  * Copyright (C) 2010 Intel, Inc
@@ -31,7 +31,7 @@
 #include "time-map.h"
 #include "time-tool.h"
 #include  <math.h>
-#define  MATE_DESKTOP_USE_UNSTABLE_API
+#define  CAFE_DESKTOP_USE_UNSTABLE_API
 
 #include <string.h>
 #include <stdio.h>

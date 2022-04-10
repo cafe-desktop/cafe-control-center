@@ -5,7 +5,7 @@
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keyboard-properties-a11y-notifications.ui -->
   <!-- interface-description a11y keyboard notifications dialog window -->
-  <!-- interface-copyright MATE Developer -->
+  <!-- interface-copyright CAFE Developer -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkDialog" id="a11y_notifications_dialog">
     <property name="name">a11y-notifications-dialog</property>

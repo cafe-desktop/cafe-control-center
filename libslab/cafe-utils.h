@@ -18,8 +18,8 @@
  * Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#ifndef __MATE_UTILS_H__
-#define __MATE_UTILS_H__
+#ifndef __CAFE_UTILS_H__
+#define __CAFE_UTILS_H__
 
 #include <gtk/gtk.h>
 
@@ -33,4 +33,4 @@ gboolean load_image_by_id (GtkImage * image, GtkIconSize size,
 #ifdef __cplusplus
 }
 #endif
-#endif /* __MATE_UTILS_H__ */
+#endif /* __CAFE_UTILS_H__ */

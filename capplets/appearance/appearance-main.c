@@ -69,7 +69,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
       data->mouse_settings = g_settings_new (MOUSE_SCHEMA);
       data->font_settings = g_settings_new (FONT_RENDER_SCHEMA);
       data->ui = ui;
-      data->thumb_factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+      data->thumb_factory = cafe_desktop_thumbnail_factory_new (CAFE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
     }
 
   return data;

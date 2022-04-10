@@ -25,27 +25,27 @@ msgstr "Abuyop"
 #. (itstool) path: abstract/para
 #: C/index.docbook:20
 msgid ""
-"The MATE Control Center provides a central place for the user to setup their"
-" MATE experience. It can let you configure anything from the behavior of "
+"The CAFE Control Center provides a central place for the user to setup their"
+" CAFE experience. It can let you configure anything from the behavior of "
 "your window borders to the default font type."
 msgstr ""
-"Pusat Kawalan MATE menyediakan satu tumpuan utama pengguna menetapkan "
-"pengalaman MATE mereka. Ia membolehkan anda konfigurkan apa jua perkara dari"
+"Pusat Kawalan CAFE menyediakan satu tumpuan utama pengguna menetapkan "
+"pengalaman CAFE mereka. Ia membolehkan anda konfigurkan apa jua perkara dari"
 " kelakuan sempadan tetingkap anda sehinggalah kepada jenis fon lalai."
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:24
-msgid "MATE Control Center Manual"
-msgstr "Panduan Pusat Kawalan MATE"
+msgid "CAFE Control Center Manual"
+msgstr "Panduan Pusat Kawalan CAFE"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:26
 msgid ""
-"<firstname>MATE Documentation Project</firstname> <surname/> <affiliation> "
-"<orgname>MATE Desktop</orgname> </affiliation>"
+"<firstname>CAFE Documentation Project</firstname> <surname/> <affiliation> "
+"<orgname>CAFE Desktop</orgname> </affiliation>"
 msgstr ""
-"<firstname>Projek Dokumentasi MATE</firstname><surname/><affiliation> "
-"<orgname>Desktop MATE </orgname> </affiliation>"
+"<firstname>Projek Dokumentasi CAFE</firstname><surname/><affiliation> "
+"<orgname>Desktop CAFE </orgname> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:33
@@ -54,8 +54,8 @@ msgstr "<firstname>Kevin</firstname><surname>Breit</surname>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:37
-msgid "<year>2015-2020</year> <holder>MATE Documentation Project</holder>"
-msgstr "<year>2015-2020</year> <holder>Pojek Dokumentasi MATE</holder>"
+msgid "<year>2015-2020</year> <holder>CAFE Documentation Project</holder>"
+msgstr "<year>2015-2020</year> <holder>Pojek Dokumentasi CAFE</holder>"
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:41
@@ -64,8 +64,8 @@ msgstr "<year>2001, 2002</year> <holder>Ximian, Inc.</holder>"
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:47
-msgid "MATE Documentation Project"
-msgstr "Projek Dokumentasi MATE"
+msgid "CAFE Documentation Project"
+msgstr "Projek Dokumentasi CAFE"
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:50
@@ -75,11 +75,11 @@ msgstr "Projek Dokumentasi GNOME"
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:54
 msgid ""
-"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>MATE "
+"<revnumber>2.15</revnumber> <date>July 2015</date> <firstname>CAFE "
 "Documentation Project</firstname> <surname/>"
 msgstr ""
 "<revnumber>2.15</revnumber> <date>Julai 2015</date> <firstname>Projek "
-"Dokumentasi MATE</firstname> <surname/>"
+"Dokumentasi CAFE</firstname> <surname/>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:60
@@ -107,12 +107,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:12 C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Panduan ini adalah sebahagian dari koleksi panduan MATE yang diedar bawah "
+"Panduan ini adalah sebahagian dari koleksi panduan CAFE yang diedar bawah "
 "GFDL. Jika anda mahu edar panduan ini secara berasingan dari koleksi "
 "asalnya, anda boleh membuat sedemikian dengan menambah satu salinan lesen ke"
 " dalam panduan sepertimana yang dijelaskan dalam seksyen 6 lesen tersebut."
@@ -121,14 +121,14 @@ msgstr ""
 #: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Kebanyakan nama digunakan oleh syarikat untuk membezakan produk dan "
 "perkhidmatan mereka dituntut sebagai tanda dagangan. Jika nama tersebut ada "
-"di dalam dokumentasi MATE, dan ahli-ahli Projek Dokumentasi MATE sedar akan "
+"di dalam dokumentasi CAFE, dan ahli-ahli Projek Dokumentasi CAFE sedar akan "
 "tanda dagangan tersebut, kerana nama-nama tersebut telah di huruf besarkan "
 "atau huruf awalnya telah dihuruf besarkan."
 
@@ -198,8 +198,8 @@ msgstr ""
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:70
-msgid "This manual describes version 1.10.1 of the MATE Control Center."
-msgstr "Panduan ini menerangkan versi 1.10.1 bagi Pusat Kawalan MATE."
+msgid "This manual describes version 1.10.1 of the CAFE Control Center."
+msgstr "Panduan ini menerangkan versi 1.10.1 bagi Pusat Kawalan CAFE."
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:75
@@ -209,15 +209,15 @@ msgstr "Maklumbalas"
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:76
 msgid ""
-"To report a bug or make a suggestion regarding the <application>MATE Control"
+"To report a bug or make a suggestion regarding the <application>CAFE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE Feedback"
 " Page</ulink>."
 msgstr ""
 "Untuk melaporkan pepijat atau membuat cadangan berkenaan aplikasi "
-"<application>Pusat Kawalan MATE</application> atau panduan ini, ikuti arahan"
+"<application>Pusat Kawalan CAFE</application> atau panduan ini, ikuti arahan"
 " di dalam <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">Halaman"
-" Maklumbalas MATE</ulink>."
+" Maklumbalas CAFE</ulink>."
 
 #. (itstool) path: sect1/title
 #. (itstool) path: sect2/title
@@ -229,10 +229,10 @@ msgstr "Pengenalan"
 #. (itstool) path: sect1/para
 #: C/index.docbook:85
 msgid ""
-"The <application>MATE Control Center</application> provides a single window "
+"The <application>CAFE Control Center</application> provides a single window "
 "from which to launch all preference tools."
 msgstr ""
-"<application>Pusat Kawalan MATE</application> menyediakan satu tetingkap "
+"<application>Pusat Kawalan CAFE</application> menyediakan satu tetingkap "
 "tunggal yang dapat melancarkan semua alatan keutamaan."
 
 #. (itstool) path: note/para
@@ -246,16 +246,16 @@ msgstr ""
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:94
-msgid "To Start MATE Control Center"
-msgstr "Memulakan Pusat Kawalan MATE"
+msgid "To Start CAFE Control Center"
+msgstr "Memulakan Pusat Kawalan CAFE"
 
 #. (itstool) path: sect2/para
 #: C/index.docbook:95
 msgid ""
-"You can start <application>MATE Control Center</application> in the "
+"You can start <application>CAFE Control Center</application> in the "
 "following ways:"
 msgstr ""
-"Anda boleh memulakan <application>Pusat Kawalan MATE</application> dengan "
+"Anda boleh memulakan <application>Pusat Kawalan CAFE</application> dengan "
 "cara berikut:"
 
 #. (itstool) path: varlistentry/term
@@ -288,10 +288,10 @@ msgstr "Penggunaan"
 #. (itstool) path: sect1/para
 #: C/index.docbook:119
 msgid ""
-"The <application>MATE Control Center</application> window lists all "
+"The <application>CAFE Control Center</application> window lists all "
 "preference tools installed on your system in groups."
 msgstr ""
-"Tetingkap <application>Pusat Kawalan MATE</application> menyenaraikan semua "
+"Tetingkap <application>Pusat Kawalan CAFE</application> menyenaraikan semua "
 "alatan keutamaan yang terpasang di dalam sistem anda dalam bentuk kumpulan."
 
 #. (itstool) path: tip/para
@@ -918,14 +918,14 @@ msgid ""
 "pulldown menu. You select the <_:guibutton-1/> radio button and enter the "
 "text editor name. If you wish, you can have the editor open in a terminal "
 "window by selecting the <_:guibutton-2/> button. Clicking <_:guibutton-3/> "
-"lets MATE pass a line number to the editor so that you can \"warp\" to a "
+"lets CAFE pass a line number to the editor so that you can \"warp\" to a "
 "part of a file."
 msgstr ""
 "Anda juga boleh menetapkan penyunting suai jika penyunting yang dikehendaki "
 "tiada dalam menu tarik-turun. Pilih butang radio <_:guibutton-1/> dan "
 "masukkan nama penyunting teks. Jika mahu, anda boleh membuka penyunting di "
 "dalam tetingkap terminal dengan memilih butang <_:guibutton-2/>. Dengan "
-"mengklik <_:guibutton-3/>, MATE dapat melepasi nombor baris ke dalam "
+"mengklik <_:guibutton-3/>, CAFE dapat melepasi nombor baris ke dalam "
 "penyunting supaya anda dapat \"melilit\" menjadi bahagian fail."
 
 #. (itstool) path: sect2/title
@@ -1845,8 +1845,8 @@ msgstr "Tetikus"
 
 #. (itstool) path: para/application
 #: C/config-mouse.xml:7
-msgid "MATE Control Center"
-msgstr "Pusat Kawalan MATE"
+msgid "CAFE Control Center"
+msgstr "Pusat Kawalan CAFE"
 
 #. (itstool) path: sect2/para
 #: C/config-mouse.xml:7

@@ -44,9 +44,9 @@ cafe_window_manager_new (CafeDesktopItem *it)
         GModule *module;
         gboolean success;
 
-        settings_lib = cafe_desktop_item_get_string (it, "X-MATE-WMSettingsModule");
+        settings_lib = cafe_desktop_item_get_string (it, "X-CAFE-WMSettingsModule");
 
-        module_name = g_module_build_path (MATE_WINDOW_MANAGER_MODULE_PATH,
+        module_name = g_module_build_path (CAFE_WINDOW_MANAGER_MODULE_PATH,
                                            settings_lib);
 
         module = g_module_open (module_name, G_MODULE_BIND_LAZY);
@@ -67,13 +67,13 @@ cafe_window_manager_new (CafeDesktopItem *it)
 
 	g_free (module_name);
 
-        wm = (* wm_new_func) (MATE_WINDOW_MANAGER_INTERFACE_VERSION);
+        wm = (* wm_new_func) (CAFE_WINDOW_MANAGER_INTERFACE_VERSION);
 
         if (wm == NULL)
                 return NULL;
 
-        (MATE_WINDOW_MANAGER (wm))->p->window_manager_name = g_strdup (cafe_desktop_item_get_string (it, MATE_DESKTOP_ITEM_NAME));
-        (MATE_WINDOW_MANAGER (wm))->p->ditem = cafe_desktop_item_ref (it);
+        (CAFE_WINDOW_MANAGER (wm))->p->window_manager_name = g_strdup (cafe_desktop_item_get_string (it, CAFE_DESKTOP_ITEM_NAME));
+        (CAFE_WINDOW_MANAGER (wm))->p->ditem = cafe_desktop_item_ref (it);
 
         return wm;
 }
@@ -93,7 +93,7 @@ cafe_window_manager_get_ditem (CafeWindowManager *wm)
 GList *
 cafe_window_manager_get_theme_list (CafeWindowManager *wm)
 {
-        CafeWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
+        CafeWindowManagerClass *klass = CAFE_WINDOW_MANAGER_GET_CLASS (wm);
         if (klass->get_theme_list)
                 return klass->get_theme_list (wm);
         else
@@ -103,7 +103,7 @@ cafe_window_manager_get_theme_list (CafeWindowManager *wm)
 char *
 cafe_window_manager_get_user_theme_folder (CafeWindowManager *wm)
 {
-        CafeWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
+        CafeWindowManagerClass *klass = CAFE_WINDOW_MANAGER_GET_CLASS (wm);
         if (klass->get_user_theme_folder)
                 return klass->get_user_theme_folder (wm);
         else
@@ -115,7 +115,7 @@ cafe_window_manager_get_double_click_actions (CafeWindowManager              *wm
                                                const CafeWMDoubleClickAction **actions,
                                                int                             *n_actions)
 {
-        CafeWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
+        CafeWindowManagerClass *klass = CAFE_WINDOW_MANAGER_GET_CLASS (wm);
 
         *actions = NULL;
         *n_actions = 0;
@@ -128,7 +128,7 @@ void
 cafe_window_manager_change_settings  (CafeWindowManager    *wm,
                                        const CafeWMSettings *settings)
 {
-        CafeWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
+        CafeWindowManagerClass *klass = CAFE_WINDOW_MANAGER_GET_CLASS (wm);
 
         (* klass->change_settings) (wm, settings);
 }
@@ -137,7 +137,7 @@ void
 cafe_window_manager_get_settings (CafeWindowManager *wm,
                                    CafeWMSettings    *settings)
 {
-        CafeWindowManagerClass *klass = MATE_WINDOW_MANAGER_GET_CLASS (wm);
+        CafeWindowManagerClass *klass = CAFE_WINDOW_MANAGER_GET_CLASS (wm);
         int mask;
 
         mask = (* klass->get_settings_mask) (wm);
@@ -161,9 +161,9 @@ cafe_window_manager_finalize (GObject *object)
 	CafeWindowManager *cafe_window_manager;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (IS_MATE_WINDOW_MANAGER (object));
+	g_return_if_fail (IS_CAFE_WINDOW_MANAGER (object));
 
-	cafe_window_manager = MATE_WINDOW_MANAGER (object);
+	cafe_window_manager = CAFE_WINDOW_MANAGER (object);
 
 	g_free (cafe_window_manager->p);
 
@@ -246,11 +246,11 @@ cafe_wm_settings_copy (CafeWMSettings *settings)
         retval = g_new (CafeWMSettings, 1);
         *retval = *settings;
 
-        if (retval->flags & MATE_WM_SETTING_FONT)
+        if (retval->flags & CAFE_WM_SETTING_FONT)
                 retval->font = g_strdup (retval->font);
-        if (retval->flags & MATE_WM_SETTING_MOUSE_MOVE_MODIFIER)
+        if (retval->flags & CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER)
                 retval->mouse_move_modifier = g_strdup (retval->mouse_move_modifier);
-        if (retval->flags & MATE_WM_SETTING_THEME)
+        if (retval->flags & CAFE_WM_SETTING_THEME)
                 retval->theme = g_strdup (retval->theme);
 
         return retval;
@@ -261,11 +261,11 @@ cafe_wm_settings_free (CafeWMSettings *settings)
 {
         g_return_if_fail (settings != NULL);
 
-        if (settings->flags & MATE_WM_SETTING_FONT)
+        if (settings->flags & CAFE_WM_SETTING_FONT)
                 g_free ((void *) settings->font);
-        if (settings->flags & MATE_WM_SETTING_MOUSE_MOVE_MODIFIER)
+        if (settings->flags & CAFE_WM_SETTING_MOUSE_MOVE_MODIFIER)
                 g_free ((void *) settings->mouse_move_modifier);
-        if (settings->flags & MATE_WM_SETTING_THEME)
+        if (settings->flags & CAFE_WM_SETTING_THEME)
                 g_free ((void *)settings->theme);
 
         g_free (settings);

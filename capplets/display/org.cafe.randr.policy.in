@@ -5,11 +5,11 @@
 <policyconfig>
 
   <!--
-    Policy definitions for MATE's system-wide configuration of RANDR options
+    Policy definitions for CAFE's system-wide configuration of RANDR options
     Copyright (c) 2010 Novell, Inc.
   -->
 
-  <vendor>MATE Monitor Preferences</vendor>
+  <vendor>CAFE Monitor Preferences</vendor>
   <vendor_url>http://www.cafe-desktop.org</vendor_url>
   <icon_name>cafe-display-properties</icon_name>
 

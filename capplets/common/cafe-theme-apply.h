@@ -1,4 +1,4 @@
-/* cafe-theme-info.h - MATE Theme information
+/* cafe-theme-info.h - CAFE Theme information
 
    Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
    All rights reserved.

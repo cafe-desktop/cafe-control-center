@@ -776,30 +776,30 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
                     CafeThemeElement     element_type,
 		    AppearanceData       *data)
 {
-  if (theme->type == MATE_THEME_TYPE_REGULAR) {
+  if (theme->type == CAFE_THEME_TYPE_REGULAR) {
     CafeThemeInfo *info = (CafeThemeInfo *) theme;
 
-    if (change_type == MATE_THEME_CHANGE_DELETED) {
-      if (element_type & MATE_THEME_GTK_2)
+    if (change_type == CAFE_THEME_CHANGE_DELETED) {
+      if (element_type & CAFE_THEME_GTK_2)
         remove_from_treeview ("gtk_themes_list", info->name, data);
-      if (element_type & MATE_THEME_MARCO)
+      if (element_type & CAFE_THEME_MARCO)
         remove_from_treeview ("window_themes_list", info->name, data);
 
     } else {
-      if (element_type & MATE_THEME_GTK_2) {
-        if (change_type == MATE_THEME_CHANGE_CREATED)
+      if (element_type & CAFE_THEME_GTK_2) {
+        if (change_type == CAFE_THEME_CHANGE_CREATED)
           add_to_treeview ("gtk_themes_list", info->name, info->name, data->gtk_theme_icon, data);
-        else if (change_type == MATE_THEME_CHANGE_CHANGED)
+        else if (change_type == CAFE_THEME_CHANGE_CHANGED)
           update_in_treeview ("gtk_themes_list", info->name, info->name, data);
 
         generate_gtk_theme_thumbnail_async (info,
             (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
       }
 
-      if (element_type & MATE_THEME_MARCO) {
-        if (change_type == MATE_THEME_CHANGE_CREATED)
+      if (element_type & CAFE_THEME_MARCO) {
+        if (change_type == CAFE_THEME_CHANGE_CREATED)
           add_to_treeview ("window_themes_list", info->name, info->name, data->window_theme_icon, data);
-        else if (change_type == MATE_THEME_CHANGE_CHANGED)
+        else if (change_type == CAFE_THEME_CHANGE_CHANGED)
           update_in_treeview ("window_themes_list", info->name, info->name, data);
 
         generate_marco_theme_thumbnail_async (info,
@@ -807,30 +807,30 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
       }
     }
 
-  } else if (theme->type == MATE_THEME_TYPE_ICON) {
+  } else if (theme->type == CAFE_THEME_TYPE_ICON) {
     CafeThemeIconInfo *info = (CafeThemeIconInfo *) theme;
 
-    if (change_type == MATE_THEME_CHANGE_DELETED) {
+    if (change_type == CAFE_THEME_CHANGE_DELETED) {
       remove_from_treeview ("icon_themes_list", info->name, data);
     } else {
-      if (change_type == MATE_THEME_CHANGE_CREATED)
+      if (change_type == CAFE_THEME_CHANGE_CREATED)
         add_to_treeview ("icon_themes_list", info->name, info->readable_name, data->icon_theme_icon, data);
-      else if (change_type == MATE_THEME_CHANGE_CHANGED)
+      else if (change_type == CAFE_THEME_CHANGE_CHANGED)
         update_in_treeview ("icon_themes_list", info->name, info->readable_name, data);
 
       generate_icon_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) icon_theme_thumbnail_cb, data, NULL);
     }
 
-  } else if (theme->type == MATE_THEME_TYPE_CURSOR) {
+  } else if (theme->type == CAFE_THEME_TYPE_CURSOR) {
     CafeThemeCursorInfo *info = (CafeThemeCursorInfo *) theme;
 
-    if (change_type == MATE_THEME_CHANGE_DELETED) {
+    if (change_type == CAFE_THEME_CHANGE_DELETED) {
       remove_from_treeview ("cursor_themes_list", info->name, data);
     } else {
-      if (change_type == MATE_THEME_CHANGE_CREATED)
+      if (change_type == CAFE_THEME_CHANGE_CREATED)
         add_to_treeview ("cursor_themes_list", info->name, info->readable_name, info->thumbnail, data);
-      else if (change_type == MATE_THEME_CHANGE_CHANGED)
+      else if (change_type == CAFE_THEME_CHANGE_CHANGED)
         update_in_treeview ("cursor_themes_list", info->name, info->readable_name, data);
     }
   }
@@ -854,7 +854,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   switch (type)
   {
     case THEME_TYPE_GTK:
-      themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2);
+      themes = cafe_theme_info_find_by_type (CAFE_THEME_GTK_2);
       thumbnail = data->gtk_theme_icon;
       settings = data->interface_settings;
       key = GTK_THEME_KEY;
@@ -863,7 +863,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       break;
 
     case THEME_TYPE_WINDOW:
-      themes = cafe_theme_info_find_by_type (MATE_THEME_MARCO);
+      themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
       thumbnail = data->window_theme_icon;
       settings = data->marco_settings;
       key = MARCO_THEME_KEY;
@@ -992,9 +992,9 @@ style_init (AppearanceData *data)
   gchar *label;
   gint i;
 
-  data->gtk_theme_icon = gdk_pixbuf_new_from_file (MATECC_PIXMAP_DIR "/gtk-theme-thumbnailing.png", NULL);
-  data->window_theme_icon = gdk_pixbuf_new_from_file (MATECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
-  data->icon_theme_icon = gdk_pixbuf_new_from_file (MATECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
+  data->gtk_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/gtk-theme-thumbnailing.png", NULL);
+  data->window_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
+  data->icon_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
   data->style_message_area = NULL;
   data->style_message_label = NULL;
   data->style_install_button = NULL;

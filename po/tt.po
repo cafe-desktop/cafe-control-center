@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: CAFE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 18:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -1136,7 +1136,7 @@ msgstr ""
 
 #: ../capplets/appearance/theme-installer.c:534
 #, c-format
-msgid "MATE Theme %s correctly installed"
+msgid "CAFE Theme %s correctly installed"
 msgstr ""
 
 #: ../capplets/appearance/theme-installer.c:600
@@ -1191,7 +1191,7 @@ msgstr ""
 #: ../capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
+"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
 msgstr ""
 
 #: ../capplets/common/capplet-stock-icons.c:66
@@ -1329,7 +1329,7 @@ msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr ""
 
 #: ../capplets/default-applications/cafe-da-capplet.c:699
-msgid "- MATE Default Applications"
+msgid "- CAFE Default Applications"
 msgstr ""
 
 #: ../capplets/default-applications/cafe-default-applications-properties.ui.h:2
@@ -1440,7 +1440,7 @@ msgstr ""
 
 #: ../capplets/display/display-capplet.ui.h:3
 msgid ""
-"Applies the current configuration for other MATE users on the computer. Note"
+"Applies the current configuration for other CAFE users on the computer. Note"
 " that this doesn't affect login screens or other desktop environments."
 msgstr ""
 
@@ -1805,7 +1805,7 @@ msgid "Start the page with the accessibility settings showing"
 msgstr ""
 
 #: ../capplets/keyboard/cafe-keyboard-properties.c:230
-msgid "- MATE Keyboard Preferences"
+msgid "- CAFE Keyboard Preferences"
 msgstr ""
 
 #: ../capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui.h:1
@@ -2188,7 +2188,7 @@ msgid "Specify the name of the page to show (general)"
 msgstr ""
 
 #: ../capplets/mouse/cafe-mouse-properties.c:424
-msgid "- MATE Mouse Preferences"
+msgid "- CAFE Mouse Preferences"
 msgstr ""
 
 #: ../capplets/mouse/cafe-mouse-properties.ui.h:1
@@ -2587,11 +2587,11 @@ msgid "Hide on start (useful to preload the shell)"
 msgstr ""
 
 #: ../shell/cafecc.desktop.in.in.h:2
-msgid "The MATE configuration tool"
+msgid "The CAFE configuration tool"
 msgstr ""
 
 #: ../shell/cafecc.desktop.in.in.h:3
-msgid "Configure MATE settings"
+msgid "Configure CAFE settings"
 msgstr ""
 
 #: ../typing-break/drw-break-window.c:183
@@ -2732,7 +2732,7 @@ msgid "View fonts on your system"
 msgstr ""
 
 #: ../font-viewer/cafe-font-viewer.desktop.in.in.h:1
-msgid "MATE Font Viewer"
+msgid "CAFE Font Viewer"
 msgstr ""
 
 #: ../font-viewer/font-thumbnailer.c:191

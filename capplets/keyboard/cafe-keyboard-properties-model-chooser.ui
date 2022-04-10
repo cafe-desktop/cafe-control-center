@@ -5,7 +5,7 @@
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keyboard-properties-model-chooser -->
   <!-- interface-description keyboard model chooser dialog window -->
-  <!-- interface-copyright MATE Developer -->
+  <!-- interface-copyright CAFE Developer -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkDialog" id="xkb_model_chooser">
     <property name="name">xkb-model-chooser</property>

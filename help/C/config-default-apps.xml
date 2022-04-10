@@ -29,7 +29,7 @@
       If you wish, you can have the editor open in a terminal window
       by selecting the <guibutton>Start in Terminal</guibutton>
       button.  Clicking <guibutton>Accepts Line Number</guibutton>
-      lets MATE pass a line number to the editor so that you can
+      lets CAFE pass a line number to the editor so that you can
       "warp" to a part of a file.
     </para>
   </sect2>

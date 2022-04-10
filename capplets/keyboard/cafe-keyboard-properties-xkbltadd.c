@@ -422,7 +422,7 @@ xkb_layout_chooser_print (GtkBuilder * chooser_dialog)
 	const char *id =
 	    xkb_layout_chooser_get_selected_id (chooser_dialog);
 	char *descr = xkb_layout_description_utf8 (id);
-	cafekbd_keyboard_drawing_print (MATEKBD_KEYBOARD_DRAWING
+	cafekbd_keyboard_drawing_print (CAFEKBD_KEYBOARD_DRAWING
 				     (kbdraw),
 				     GTK_WINDOW (CWID
 						 ("xkb_layout_chooser")),

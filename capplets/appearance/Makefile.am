@@ -2,7 +2,7 @@ SUBDIRS = data
 
 BUILT_SOURCES = cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c
 
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = appearance
 
 bin_PROGRAMS = cafe-appearance-properties
@@ -37,12 +37,12 @@ cafe_appearance_properties_SOURCES = \
 	theme-util.c \
 	theme-util.h
 
-AM_CFLAGS = -DMATE_DESKTOP_USE_UNSTABLE_API
+AM_CFLAGS = -DCAFE_DESKTOP_USE_UNSTABLE_API
 
 cafe_appearance_properties_LDADD = \
 	$(top_builddir)/libwindow-settings/libcafe-window-settings.la \
 	$(top_builddir)/capplets/common/libcommon.la \
-	$(MATECC_CAPPLETS_LIBS) \
+	$(CAFECC_CAPPLETS_LIBS) \
 	$(FONT_CAPPLET_LIBS) \
 	$(MARCO_LIBS)
 cafe_appearance_properties_LDFLAGS = -export-dynamic
@@ -54,17 +54,17 @@ backgrounddir = $(datadir)/backgrounds
 AM_CPPFLAGS = \
 	$(WARN_CFLAGS) \
 	$(MARCO_CFLAGS) \
-	$(MATECC_CAPPLETS_CFLAGS) \
+	$(CAFECC_CAPPLETS_CFLAGS) \
 	$(FONT_CAPPLET_CFLAGS) \
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\"" \
-	-DMATECC_PIXMAP_DIR="\"$(pixmapdir)\"" \
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\"" \
+	-DCAFECC_PIXMAP_DIR="\"$(pixmapdir)\"" \
 	-DWALLPAPER_DATADIR="\"$(wallpaperdir)\"" \
 	-DBACKGROUND_DATADIR="\"$(backgrounddir)\""
 
 cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c: org.cafe.mcc.appearance.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.appearance.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name appearance $<
 
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(BUILT_SOURCES)
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(BUILT_SOURCES)
 EXTRA_DIST = org.cafe.mcc.appearance.gresource.xml
 
 -include $(top_srcdir)/git.mk

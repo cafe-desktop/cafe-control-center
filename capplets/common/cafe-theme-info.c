@@ -1,4 +1,4 @@
-/* cafe-theme-info.c - MATE Theme information
+/* cafe-theme-info.c - CAFE Theme information
  *
  * Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
  * Copyright (C) 2011 Perberos
@@ -236,15 +236,15 @@ theme_compare (CafeThemeCommonInfo *a,
   g_return_val_if_fail (a->type == b->type, a->type - b->type);
 
   switch (a->type) {
-  case MATE_THEME_TYPE_METATHEME:
+  case CAFE_THEME_TYPE_METATHEME:
     cmp = cafe_theme_meta_info_compare (
                     (CafeThemeMetaInfo *) a, (CafeThemeMetaInfo *) b);
     break;
-  case MATE_THEME_TYPE_ICON:
+  case CAFE_THEME_TYPE_ICON:
     cmp = cafe_theme_icon_info_compare (
                     (CafeThemeIconInfo *) a, (CafeThemeIconInfo *) b);
     break;
-  case MATE_THEME_TYPE_CURSOR:
+  case CAFE_THEME_TYPE_CURSOR:
     cmp = cafe_theme_cursor_info_compare (
                     (CafeThemeCursorInfo *) a, (CafeThemeCursorInfo *) b);
     break;
@@ -260,16 +260,16 @@ static void
 theme_free (CafeThemeCommonInfo *info)
 {
   switch (info->type) {
-  case MATE_THEME_TYPE_METATHEME:
+  case CAFE_THEME_TYPE_METATHEME:
     cafe_theme_meta_info_free ((CafeThemeMetaInfo *) info);
     break;
-  case MATE_THEME_TYPE_ICON:
+  case CAFE_THEME_TYPE_ICON:
     cafe_theme_icon_info_free ((CafeThemeIconInfo *) info);
     break;
-  case MATE_THEME_TYPE_REGULAR:
+  case CAFE_THEME_TYPE_REGULAR:
     cafe_theme_info_free ((CafeThemeInfo *) info);
     break;
-  case MATE_THEME_TYPE_CURSOR:
+  case CAFE_THEME_TYPE_CURSOR:
     cafe_theme_cursor_info_free ((CafeThemeCursorInfo *) info);
     break;
   default:
@@ -308,7 +308,7 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 
 	if (!str)
 	{
-		str = cafe_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_NAME);
+		str = cafe_desktop_item_get_localestring(meta_theme_ditem, CAFE_DESKTOP_ITEM_NAME);
 		if (!str)
 		{ /* shouldn't reach */
 			cafe_theme_meta_info_free(meta_theme_info);
@@ -321,12 +321,12 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 	str = cafe_desktop_item_get_localestring(meta_theme_ditem, THEME_COMMENT);
 
 	if (str == NULL)
-		str = cafe_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_COMMENT);
+		str = cafe_desktop_item_get_localestring(meta_theme_ditem, CAFE_DESKTOP_ITEM_COMMENT);
 
 	if (str != NULL)
 		meta_theme_info->comment = g_strdup(str);
 
-	str = cafe_desktop_item_get_string(meta_theme_ditem, MATE_DESKTOP_ITEM_ICON);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, CAFE_DESKTOP_ITEM_ICON);
 
 	if (str != NULL)
 		meta_theme_info->icon_file = g_strdup(str);
@@ -456,7 +456,7 @@ read_icon_theme (GFile *icon_theme_uri)
 
   name = cafe_desktop_item_get_localestring (icon_theme_ditem, "Icon Theme/Name");
   if (!name) {
-    name = cafe_desktop_item_get_localestring (icon_theme_ditem, MATE_DESKTOP_ITEM_NAME);
+    name = cafe_desktop_item_get_localestring (icon_theme_ditem, CAFE_DESKTOP_ITEM_NAME);
     if (!name) {
       cafe_desktop_item_unref (icon_theme_ditem);
       return NULL;
@@ -647,29 +647,29 @@ handle_change_signal (gpointer             data,
   }
 
 #ifdef DEBUG
-  if (theme->type == MATE_THEME_TYPE_METATHEME)
+  if (theme->type == CAFE_THEME_TYPE_METATHEME)
     type_str = "meta";
-  else if (theme->type == MATE_THEME_TYPE_ICON)
+  else if (theme->type == CAFE_THEME_TYPE_ICON)
     type_str = "icon";
-  else if (theme->type == MATE_THEME_TYPE_CURSOR)
+  else if (theme->type == CAFE_THEME_TYPE_CURSOR)
     type_str = "cursor";
-  else if (theme->type == MATE_THEME_TYPE_REGULAR) {
-    if (element_type & MATE_THEME_GTK_2)
+  else if (theme->type == CAFE_THEME_TYPE_REGULAR) {
+    if (element_type & CAFE_THEME_GTK_2)
       element_str = "gtk-2";
-    else if (element_type & MATE_THEME_GTK_2_KEYBINDING)
+    else if (element_type & CAFE_THEME_GTK_2_KEYBINDING)
       element_str = "keybinding";
-    else if (element_type & MATE_THEME_MARCO)
+    else if (element_type & CAFE_THEME_MARCO)
       element_str = "marco";
   }
 
-  if (change_type == MATE_THEME_CHANGE_CREATED)
+  if (change_type == CAFE_THEME_CHANGE_CREATED)
     change_str = "created";
-  else if (change_type == MATE_THEME_CHANGE_CHANGED)
+  else if (change_type == CAFE_THEME_CHANGE_CHANGED)
     change_str = "changed";
-  else if (change_type == MATE_THEME_CHANGE_DELETED)
+  else if (change_type == CAFE_THEME_CHANGE_DELETED)
     change_str = "deleted";
 
-  if (type == MATE_THEME_TYPE_REGULAR) {
+  if (type == CAFE_THEME_TYPE_REGULAR) {
     g_print ("theme \"%s\" has a theme of type %s (priority %d) has been %s\n",
              theme->name,
              element_str,
@@ -714,27 +714,27 @@ update_theme_index (GFile            *index_uri,
       theme_info->name = g_file_get_basename (common_theme_dir_uri);
       theme_info->readable_name = g_strdup (theme_info->name);
       theme_info->priority = priority;
-      if (key_element & MATE_THEME_GTK_2)
+      if (key_element & CAFE_THEME_GTK_2)
         theme_info->has_gtk = TRUE;
-      else if (key_element & MATE_THEME_GTK_2_KEYBINDING)
+      else if (key_element & CAFE_THEME_GTK_2_KEYBINDING)
         theme_info->has_keybinding = TRUE;
-      else if (key_element & MATE_THEME_MARCO)
+      else if (key_element & CAFE_THEME_MARCO)
         theme_info->has_marco = TRUE;
 
       g_hash_table_insert (theme_hash_by_uri, g_strdup (common_theme_dir), theme_info);
       add_theme_to_hash_by_name (theme_hash_by_name, theme_info);
-      handle_change_signal (theme_info, MATE_THEME_CHANGE_CREATED, key_element);
+      handle_change_signal (theme_info, CAFE_THEME_CHANGE_CREATED, key_element);
     }
   } else {
     gboolean theme_used_to_exist = FALSE;
 
-    if (key_element & MATE_THEME_GTK_2) {
+    if (key_element & CAFE_THEME_GTK_2) {
       theme_used_to_exist = theme_info->has_gtk;
       theme_info->has_gtk = theme_exists;
-    } else if (key_element & MATE_THEME_GTK_2_KEYBINDING) {
+    } else if (key_element & CAFE_THEME_GTK_2_KEYBINDING) {
       theme_used_to_exist = theme_info->has_keybinding;
       theme_info->has_keybinding = theme_exists;
-    } else if (key_element & MATE_THEME_MARCO) {
+    } else if (key_element & CAFE_THEME_MARCO) {
       theme_used_to_exist = theme_info->has_marco;
       theme_info->has_marco = theme_exists;
     }
@@ -745,11 +745,11 @@ update_theme_index (GFile            *index_uri,
     }
 
     if (theme_exists && theme_used_to_exist) {
-      handle_change_signal (theme_info, MATE_THEME_CHANGE_CHANGED, key_element);
+      handle_change_signal (theme_info, CAFE_THEME_CHANGE_CHANGED, key_element);
     } else if (theme_exists && !theme_used_to_exist) {
-      handle_change_signal (theme_info, MATE_THEME_CHANGE_CREATED, key_element);
+      handle_change_signal (theme_info, CAFE_THEME_CHANGE_CREATED, key_element);
     } else if (!theme_exists && theme_used_to_exist) {
-      handle_change_signal (theme_info, MATE_THEME_CHANGE_DELETED, key_element);
+      handle_change_signal (theme_info, CAFE_THEME_CHANGE_DELETED, key_element);
     }
 
     if (!theme_info->has_marco && !theme_info->has_keybinding && !theme_info->has_gtk) {
@@ -766,21 +766,21 @@ static void
 update_gtk2_index (GFile *gtk2_index_uri,
                    gint   priority)
 {
-  update_theme_index (gtk2_index_uri, MATE_THEME_GTK_2, priority);
+  update_theme_index (gtk2_index_uri, CAFE_THEME_GTK_2, priority);
 }
 
 static void
 update_keybinding_index (GFile *keybinding_index_uri,
                          gint   priority)
 {
-  update_theme_index (keybinding_index_uri, MATE_THEME_GTK_2_KEYBINDING, priority);
+  update_theme_index (keybinding_index_uri, CAFE_THEME_GTK_2_KEYBINDING, priority);
 }
 
 static void
 update_marco_index (GFile *marco_index_uri,
                        gint   priority)
 {
-  update_theme_index (marco_index_uri, MATE_THEME_MARCO, priority);
+  update_theme_index (marco_index_uri, CAFE_THEME_MARCO, priority);
 }
 
 static void
@@ -796,10 +796,10 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
   GHashTable *hash_by_uri;
   GHashTable *hash_by_name;
 
-  if (type == MATE_THEME_TYPE_ICON) {
+  if (type == CAFE_THEME_TYPE_ICON) {
     hash_by_uri = icon_theme_hash_by_uri;
     hash_by_name = icon_theme_hash_by_name;
-  } else if (type == MATE_THEME_TYPE_CURSOR) {
+  } else if (type == CAFE_THEME_TYPE_CURSOR) {
     hash_by_uri = cursor_theme_hash_by_uri;
     hash_by_name = cursor_theme_hash_by_name;
   } else {
@@ -807,11 +807,11 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
     hash_by_name = meta_theme_hash_by_name;
   }
 
-  if (type != MATE_THEME_TYPE_CURSOR) {
+  if (type != CAFE_THEME_TYPE_CURSOR) {
     /* First, we determine the new state of the file. */
     if (get_file_type (theme_index_uri) == G_FILE_TYPE_REGULAR) {
       /* It's an interesting file. Let's try to load it. */
-      if (type == MATE_THEME_TYPE_ICON)
+      if (type == CAFE_THEME_TYPE_ICON)
         theme_info = (CafeThemeCommonInfo *) read_icon_theme (theme_index_uri);
       else
         theme_info = (CafeThemeCommonInfo *) cafe_theme_read_meta_theme (theme_index_uri);
@@ -843,7 +843,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
     if (theme_exists) {
       g_hash_table_insert (hash_by_uri, g_strdup (common_theme_dir), theme_info);
       add_theme_to_hash_by_name (hash_by_name, theme_info);
-      handle_change_signal (theme_info, MATE_THEME_CHANGE_CREATED, 0);
+      handle_change_signal (theme_info, CAFE_THEME_CHANGE_CREATED, 0);
     }
   } else {
     if (theme_exists) {
@@ -853,7 +853,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
         remove_theme_from_hash_by_name (hash_by_name, old_theme_info);
         g_hash_table_insert (hash_by_uri, g_strdup (common_theme_dir), theme_info);
         add_theme_to_hash_by_name (hash_by_name, theme_info);
-        handle_change_signal (theme_info, MATE_THEME_CHANGE_CHANGED, 0);
+        handle_change_signal (theme_info, CAFE_THEME_CHANGE_CHANGED, 0);
         theme_free (old_theme_info);
       } else {
         theme_free (theme_info);
@@ -862,7 +862,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
       g_hash_table_remove (hash_by_uri, common_theme_dir);
       remove_theme_from_hash_by_name (hash_by_name, old_theme_info);
 
-      handle_change_signal (old_theme_info, MATE_THEME_CHANGE_DELETED, 0);
+      handle_change_signal (old_theme_info, CAFE_THEME_CHANGE_DELETED, 0);
       theme_free (old_theme_info);
     }
   }
@@ -874,21 +874,21 @@ static void
 update_meta_theme_index (GFile *meta_theme_index_uri,
                          gint   priority)
 {
-  update_common_theme_dir_index (meta_theme_index_uri, MATE_THEME_TYPE_METATHEME, priority);
+  update_common_theme_dir_index (meta_theme_index_uri, CAFE_THEME_TYPE_METATHEME, priority);
 }
 
 static void
 update_icon_theme_index (GFile *icon_theme_index_uri,
                          gint   priority)
 {
-  update_common_theme_dir_index (icon_theme_index_uri, MATE_THEME_TYPE_ICON, priority);
+  update_common_theme_dir_index (icon_theme_index_uri, CAFE_THEME_TYPE_ICON, priority);
 }
 
 static void
 update_cursor_theme_index (GFile *cursor_theme_index_uri,
                            gint   priority)
 {
-  update_common_theme_dir_index (cursor_theme_index_uri, MATE_THEME_TYPE_CURSOR, priority);
+  update_common_theme_dir_index (cursor_theme_index_uri, CAFE_THEME_TYPE_CURSOR, priority);
 }
 
 static void
@@ -1295,7 +1295,7 @@ cafe_theme_info_new (void)
   CafeThemeInfo *theme_info;
 
   theme_info = g_new0 (CafeThemeInfo, 1);
-  theme_info->type = MATE_THEME_TYPE_REGULAR;
+  theme_info->type = CAFE_THEME_TYPE_REGULAR;
 
   return theme_info;
 }
@@ -1332,9 +1332,9 @@ cafe_theme_info_find_by_type_helper (gpointer key,
   do {
     CafeThemeInfo *theme_info = list->data;
 
-    if ((elements & MATE_THEME_MARCO && theme_info->has_marco) ||
-        (elements & MATE_THEME_GTK_2 && theme_info->has_gtk) ||
-        (elements & MATE_THEME_GTK_2_KEYBINDING && theme_info->has_keybinding)) {
+    if ((elements & CAFE_THEME_MARCO && theme_info->has_marco) ||
+        (elements & CAFE_THEME_GTK_2 && theme_info->has_gtk) ||
+        (elements & CAFE_THEME_GTK_2_KEYBINDING && theme_info->has_keybinding)) {
       hash_data->list = g_list_prepend (hash_data->list, theme_info);
       return;
     }
@@ -1429,7 +1429,7 @@ cafe_theme_icon_info_new (void)
   CafeThemeIconInfo *icon_theme_info;
 
   icon_theme_info = g_new0 (CafeThemeIconInfo, 1);
-  icon_theme_info->type = MATE_THEME_TYPE_ICON;
+  icon_theme_info->type = CAFE_THEME_TYPE_ICON;
 
   return icon_theme_info;
 }
@@ -1483,7 +1483,7 @@ cafe_theme_cursor_info_new (void)
   CafeThemeCursorInfo *theme_info;
 
   theme_info = g_new0 (CafeThemeCursorInfo, 1);
-  theme_info->type = MATE_THEME_TYPE_CURSOR;
+  theme_info->type = CAFE_THEME_TYPE_CURSOR;
 
   return theme_info;
 }
@@ -1539,7 +1539,7 @@ CafeThemeMetaInfo* cafe_theme_meta_info_new(void)
 	CafeThemeMetaInfo* theme_info;
 
 	theme_info = g_new0(CafeThemeMetaInfo, 1);
-	theme_info->type = MATE_THEME_TYPE_METATHEME;
+	theme_info->type = CAFE_THEME_TYPE_METATHEME;
 
 	return theme_info;
 }
@@ -1576,7 +1576,7 @@ gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** e
 
 	if (!theme || !theme->has_gtk)
 	{
-		g_set_error (error, MATE_THEME_ERROR, MATE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE,
+		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE,
 			_("This theme will not look as intended because the required GTK+ theme '%s' is not installed."),
 			info->gtk_theme_name);
 		return FALSE;
@@ -1586,7 +1586,7 @@ gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** e
 
 	if (!theme || !theme->has_marco)
 	{
-		g_set_error (error, MATE_THEME_ERROR, MATE_THEME_ERROR_WM_THEME_NOT_AVAILABLE,
+		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_WM_THEME_NOT_AVAILABLE,
 			_("This theme will not look as intended because the required window manager theme '%s' is not installed."),
 			info->marco_theme_name);
 		return FALSE;
@@ -1594,7 +1594,7 @@ gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** e
 
 	if (!cafe_theme_icon_info_find (info->icon_theme_name))
 	{
-		g_set_error (error, MATE_THEME_ERROR, MATE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
+		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
 			_("This theme will not look as intended because the required icon theme '%s' is not installed."),
 			info->icon_theme_name);
 		return FALSE;

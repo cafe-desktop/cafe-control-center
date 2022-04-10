@@ -1,5 +1,5 @@
-#ifndef MATE_WINDOW_MANAGER_LIST_H
-#define MATE_WINDOW_MANAGER_LIST_H
+#ifndef CAFE_WINDOW_MANAGER_LIST_H
+#define CAFE_WINDOW_MANAGER_LIST_H
 
 #include <gtk/gtk.h>
 

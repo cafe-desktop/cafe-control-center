@@ -5,7 +5,7 @@
  *
  * based on font-method.c code from
  *
- * fontilus - a collection of font utilities for MATE
+ * fontilus - a collection of font utilities for CAFE
  * Copyright (C) 2002-2003  James Henstridge <james@daa.com.au>
  *
  * This library is free software; you can redistribute it and/or

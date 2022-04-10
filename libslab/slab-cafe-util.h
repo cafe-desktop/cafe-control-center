@@ -18,8 +18,8 @@
  * Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#ifndef __SLAB_MATE_UTIL_H__
-#define __SLAB_MATE_UTIL_H__
+#ifndef __SLAB_CAFE_UTIL_H__
+#define __SLAB_CAFE_UTIL_H__
 
 #include <glib.h>
 #include <gtk/gtk.h>
@@ -39,4 +39,4 @@ void copy_file (const gchar * src_uri, const gchar * dst_uri);
 #ifdef __cplusplus
 }
 #endif
-#endif /* __SLAB_MATE_UTIL_H__ */
+#endif /* __SLAB_CAFE_UTIL_H__ */

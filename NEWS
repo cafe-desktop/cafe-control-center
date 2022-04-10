@@ -3,7 +3,7 @@
   * Translations update
   * cafe-theme-info: Use of memory after it is freed
   * build: silent build warnings for distcheck
-  * use default MATE_COMPILE_WARNINGS level
+  * use default CAFE_COMPILE_WARNINGS level
   * Port libslab_handle_g_error to the built-in GLib logging framework
   * cafe-about-me: Fix memory leak
   * appearance: Fix memory leak
@@ -88,7 +88,7 @@
   * time-admin: Don't set font size/color for regular controls
   * use theme's icon preferences-system-time
   * time-admin: Fix license notice in time-zone.h|c, time-map.h|c
-  * capplets: Remove the macro MATELOCALEDIR where it's not required
+  * capplets: Remove the macro CAFELOCALEDIR where it's not required
   * capplets: Use capplet_init
   * time-admin: shortcuts, images & shared code for buttons
   * common: Remove capplet-stock-icons

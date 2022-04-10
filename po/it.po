@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -235,8 +235,8 @@ msgstr "user-info"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
-msgid "cafe-control-center;MATE;personal;information;"
-msgstr "cafe-control-center;MATE;personale;informazioni;"
+msgid "cafe-control-center;CAFE;personal;information;"
+msgstr "cafe-control-center;CAFE;personale;informazioni;"
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:100
 msgid ""
@@ -590,8 +590,8 @@ msgstr "preferences-desktop-accessibility"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
-msgid "cafe-control-center;MATE;accessibility;features;"
-msgstr "cafe-control-center;MATE;accessibilita;funzioni;"
+msgid "cafe-control-center;CAFE;accessibility;features;"
+msgstr "cafe-control-center;CAFE;accessibilita;funzioni;"
 
 #: capplets/appearance/appearance-desktop.c:615
 msgid "Add Wallpaper"
@@ -1105,8 +1105,8 @@ msgstr "preferences-desktop-theme"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
-msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
-msgstr "cafe-control-center;MATE;aspetto;proprieta;desktop;personalizza;tema;"
+msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
+msgstr "cafe-control-center;CAFE;aspetto;proprieta;desktop;personalizza;tema;"
 
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Theme Installer"
@@ -1119,8 +1119,8 @@ msgstr "Installa i pacchetti di temi per varie parti dell'ambiente grafico"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
-msgid "cafe-control-center;MATE;install;desktop;themes;"
-msgstr "cafe-control-center;MATE;installa;desktop;temi;"
+msgid "cafe-control-center;CAFE;install;desktop;themes;"
+msgstr "cafe-control-center;CAFE;installa;desktop;temi;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
 msgid "Cafe Theme Package"
@@ -1262,8 +1262,8 @@ msgstr "Applica nuovo tema"
 
 #: capplets/appearance/theme-installer.c:534
 #, c-format
-msgid "MATE Theme %s correctly installed"
-msgstr "Il tema «%s» per MATE è stato installato correttamente"
+msgid "CAFE Theme %s correctly installed"
+msgstr "Il tema «%s» per CAFE è stato installato correttamente"
 
 #: capplets/appearance/theme-installer.c:600
 msgid "Failed to create temporary directory"
@@ -1318,10 +1318,10 @@ msgstr "Impossibile installare il motore di tema"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
+"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
 msgstr ""
 "Impossibile avviare il gestore delle impostazioni «cafe-settings-daemon».\n"
-"Senza il gestore delle impostazioni di MATE in esecuzione alcune preferenze possono non avere effetto. Questa situazione indica un possibile problema con DBus, oppure che un gestore di impostazioni non di MATE (p.e. quello di KDE) è già in esecuzione creando conflitto con il gestore di impostazioni di MATE."
+"Senza il gestore delle impostazioni di CAFE in esecuzione alcune preferenze possono non avere effetto. Questa situazione indica un possibile problema con DBus, oppure che un gestore di impostazioni non di CAFE (p.e. quello di KDE) è già in esecuzione creando conflitto con il gestore di impostazioni di CAFE."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1449,8 +1449,8 @@ msgstr "preferences-desktop-default-applications"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
-msgid "cafe-control-center;MATE;default;preferred;applications;"
-msgstr "cafe-control-center;MATE;default;predefinite;applicazioni;"
+msgid "cafe-control-center;CAFE;default;preferred;applications;"
+msgstr "cafe-control-center;CAFE;default;predefinite;applicazioni;"
 
 #: capplets/default-applications/cafe-da-capplet.c:639
 msgid "Could not load the main interface"
@@ -1466,8 +1466,8 @@ msgstr ""
 "Specifica il nome della pagina da mostrare (internet|multimedia|system|a11y)"
 
 #: capplets/default-applications/cafe-da-capplet.c:844
-msgid "- MATE Default Applications"
-msgstr "- Applicazione predefinita di MATE"
+msgid "- CAFE Default Applications"
+msgstr "- Applicazione predefinita di CAFE"
 
 #: capplets/default-applications/cafe-default-applications-properties.ui:134
 msgid "Web Browser"
@@ -1589,10 +1589,10 @@ msgstr "Applica a tutto il sistema"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other MATE users on the computer. Note"
+"Applies the current configuration for other CAFE users on the computer. Note"
 " that this doesn't affect login screens or other desktop environments."
 msgstr ""
-"Applica la configurazione corrente per gli altri utenti MATE nel computer. "
+"Applica la configurazione corrente per gli altri utenti CAFE nel computer. "
 "Ricorda che questo non condiziona la schermata di login o gli altri ambienti"
 " desktop."
 
@@ -1671,9 +1671,9 @@ msgstr "preferences-desktop-display"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
 msgstr ""
-"cafe-control-center;MATE;risoluzione;posizione;schermo;monitor;proprieta;"
+"cafe-control-center;CAFE;risoluzione;posizione;schermo;monitor;proprieta;"
 
 #: capplets/display/cafe-display-properties-install-systemwide.c:44
 #, c-format
@@ -2086,8 +2086,8 @@ msgstr "preferences-desktop-keyboard-shortcuts"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
-msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
-msgstr "cafe-control-center;MATE;assegna;tastiera;scorciatoie;scorciatoia;"
+msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
+msgstr "cafe-control-center;CAFE;assegna;tastiera;scorciatoie;scorciatoia;"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:207
 #: capplets/keyboard/cafe-keyboard-properties.c:212
@@ -2109,8 +2109,8 @@ msgstr ""
 "accessibilità"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:228
-msgid "- MATE Keyboard Preferences"
-msgstr "- Preferenze tastiera di MATE"
+msgid "- CAFE Keyboard Preferences"
+msgstr "- Preferenze tastiera di CAFE"
 
 #: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
@@ -2519,8 +2519,8 @@ msgstr "input-keyboard"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
-msgid "cafe-control-center;MATE;keyboard;preferences;"
-msgstr "cafe-control-center;MATE;tastiera;preferenze;"
+msgid "cafe-control-center;CAFE;keyboard;preferences;"
+msgstr "cafe-control-center;CAFE;tastiera;preferenze;"
 
 #: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Left button"
@@ -2539,8 +2539,8 @@ msgid "Specify the name of the page to show (general)"
 msgstr "Specifica il nome della pagina da mostrare (general)"
 
 #: capplets/mouse/cafe-mouse-properties.c:447
-msgid "- MATE Mouse Preferences"
-msgstr "- Preferenze mouse di MATE"
+msgid "- CAFE Mouse Preferences"
+msgstr "- Preferenze mouse di CAFE"
 
 #: capplets/mouse/cafe-mouse-properties.ui:107
 msgid "Mouse Preferences"
@@ -2701,8 +2701,8 @@ msgstr "input-mouse"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
-msgid "cafe-control-center;MATE;mouse;preferences;"
-msgstr "cafe-control-center;MATE;mouse;preferenze;"
+msgid "cafe-control-center;CAFE;mouse;preferences;"
+msgstr "cafe-control-center;CAFE;mouse;preferenze;"
 
 #: capplets/network/cafe-network-properties.desktop.in:3
 msgid "Network Proxy"
@@ -2721,8 +2721,8 @@ msgstr "network-server"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
-msgid "cafe-control-center;MATE;network;http;socks;proxy;"
-msgstr "cafe-control-center;MATE;rete;http;socks;proxy;"
+msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
+msgstr "cafe-control-center;CAFE;rete;http;socks;proxy;"
 
 #: capplets/network/cafe-network-properties.ui:34
 msgid "Network Proxy Preferences"
@@ -2850,8 +2850,8 @@ msgstr "preferences-system-windows"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
-msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
-msgstr "cafe-control-center;MATE;finestre;gestore;proprieta;marco;preferenze;"
+msgid "cafe-control-center;CAFE;window;manager;properties;marco;preferences;"
+msgstr "cafe-control-center;CAFE;finestre;gestore;proprieta;marco;preferenze;"
 
 #: capplets/windows/window-properties.ui:47
 msgid "Window Preferences"
@@ -4801,8 +4801,8 @@ msgstr "preferences-system-time"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
-msgid "cafe-control-center;MATE;clock;date;time;preferences;"
-msgstr "cafe-control-center;MATE;clock;date;time;preferences;"
+msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
+msgstr "cafe-control-center;CAFE;clock;date;time;preferences;"
 
 #: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
@@ -4837,12 +4837,12 @@ msgid "Hide on start (useful to preload the shell)"
 msgstr "Nasconde all'avvio (utile per precaricare la shell)"
 
 #: shell/cafecc.desktop.in:4
-msgid "The MATE configuration tool"
-msgstr "Strumento di configurazione per MATE"
+msgid "The CAFE configuration tool"
+msgstr "Strumento di configurazione per CAFE"
 
 #: shell/cafecc.desktop.in:5
-msgid "Configure MATE settings"
-msgstr "Configura impostazioni di MATE"
+msgid "Configure CAFE settings"
+msgstr "Configura impostazioni di CAFE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -4853,8 +4853,8 @@ msgstr "preferences-desktop"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
-msgid "MATE;control;center;configuration;tool;desktop;preferences;"
-msgstr "MATE;control;center;configuration;tool;desktop;preferences;"
+msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
+msgstr "CAFE;control;center;configuration;tool;desktop;preferences;"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -5005,8 +5005,8 @@ msgid "View fonts on your system"
 msgstr "Visualizza caratteri nel tuo sistema"
 
 #: font-viewer/cafe-font-viewer.desktop.in:3
-msgid "MATE Font Viewer"
-msgstr "Visualizzatore di caratteri MATE"
+msgid "CAFE Font Viewer"
+msgstr "Visualizzatore di caratteri CAFE"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -5017,8 +5017,8 @@ msgstr "preferences-desktop-font"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
-msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
-msgstr "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
+msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
+msgstr "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 
 #: font-viewer/font-thumbnailer.c:191
 msgid "Text to thumbnail (default: Aa)"

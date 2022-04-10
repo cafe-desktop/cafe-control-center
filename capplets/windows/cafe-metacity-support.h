@@ -19,9 +19,9 @@
  * 02110-1301, USA.
  */
 
-#ifndef MATE_METACITY_SUPPORT_H
-#define MATE_METACITY_SUPPORT_H
+#ifndef CAFE_METACITY_SUPPORT_H
+#define CAFE_METACITY_SUPPORT_H
 
 void cafe_metacity_config_tool (void);
 
-#endif /* MATE_METACITY_SUPPORT_H */
+#endif /* CAFE_METACITY_SUPPORT_H */

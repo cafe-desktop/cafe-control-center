@@ -21,8 +21,8 @@
  * 02110-1301, USA.
  */
 
-#ifndef __MATE_KEYBOARD_PROPERTY_XKB_H
-#define __MATE_KEYBOARD_PROPERTY_XKB_H
+#ifndef __CAFE_KEYBOARD_PROPERTY_XKB_H
+#define __CAFE_KEYBOARD_PROPERTY_XKB_H
 
 #include <gio/gio.h>
 
@@ -94,4 +94,4 @@ extern gint xkb_get_default_group (void);
 #ifdef __cplusplus
 }
 #endif
-#endif				/* __MATE_KEYBOARD_PROPERTY_XKB_H */
+#endif				/* __CAFE_KEYBOARD_PROPERTY_XKB_H */

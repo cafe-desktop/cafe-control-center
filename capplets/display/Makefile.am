@@ -1,4 +1,4 @@
-# This is used in MATECC_CAPPLETS_CFLAGS
+# This is used in CAFECC_CAPPLETS_CFLAGS
 cappletname = display
 
 BUILT_SOURCES = \
@@ -50,10 +50,10 @@ $(desktop_DATA): $(Desktop_in_files)
 AM_CPPFLAGS =					\
 	$(WARN_CFLAGS)				\
 	$(DISPLAY_CAPPLET_CFLAGS)		\
-	$(MATECC_CAPPLETS_CFLAGS)		\
+	$(CAFECC_CAPPLETS_CFLAGS)		\
 	-DSBINDIR="\"$(sbindir)\""		\
-	-DMATELOCALEDIR="\"$(datadir)/locale\""	\
-	-DMATECC_DATA_DIR="\"$(pkgdatadir)\""
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""	\
+	-DCAFECC_DATA_DIR="\"$(pkgdatadir)\""
 
 foo-marshal.c: foo-marshal.list
 	@GLIB_GENMARSHAL@ --prefix=foo_marshal $< --header > $@
@@ -62,7 +62,7 @@ foo-marshal.h: foo-marshal.list
 cafe-display-properties-resources.h cafe-display-properties-resources.c: org.cafe.mcc.display.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.display.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name display $<
 
-CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
+CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 
 EXTRA_DIST = $(ui_files) foo-marshal.list $(Desktop_in_files) org.cafe.mcc.display.gresource.xml org.cafe.randr.policy.in ui-a11y.suppr
 DISTCLEANFILES = org.cafe.randr.policy

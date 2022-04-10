@@ -1,7 +1,7 @@
 /* -*- mode: C; c-basic-offset: 4 -*- */
 
 /*
- * font-view: a font viewer for MATE
+ * font-view: a font viewer for CAFE
  *
  * Copyright (C) 2002-2003  James Henstridge <james@daa.com.au>
  * Copyright (C) 2010 Cosimo Cecchi <cosimoc@gnome.org>
@@ -945,7 +945,7 @@ main (int argc,
     GApplication *app;
     gint retval;
 
-    bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+    bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
     textdomain (GETTEXT_PACKAGE);
 

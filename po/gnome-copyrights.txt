@@ -11,7 +11,7 @@
 ========== am.po ==========
 # Translations into the Amharic Language.
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# This file is distributed under the same license as the MATE Control Center package.
+# This file is distributed under the same license as the CAFE Control Center package.
 # Ge'ez Frontier Foundation <locales@geez.org>, 2002.
 #
 #
@@ -322,7 +322,7 @@
 
 
 ========== el.po ==========
-# Greek translation of MATE Control Center
+# Greek translation of CAFE Control Center
 # Copyright (C) 2000 ~ 2010, Free Software Foundation, Inc.
 #
 # For screensaver, picked: profilaji o8onis -simos.
@@ -414,8 +414,8 @@
 
 
 ========== et.po ==========
-# MATE juhtimiskeskuse eesti keele tõlge.
-# Estonian translation of MATE Control Center.
+# CAFE juhtimiskeskuse eesti keele tõlge.
+# Estonian translation of CAFE Control Center.
 #
 # Copyright (C) 1999, 2002, 2003, 2005, 2006 Free Software Foundation, Inc.
 # Copyright (C) 2007-2010 The Cafe Project.
@@ -520,7 +520,7 @@
 
 ========== gl.po ==========
 # translation of cafe-control-center-master-po-gl-72290.merged.po to Galician
-# Galician translation of MATE Control Center
+# Galician translation of CAFE Control Center
 # (C) 2002 Free Software Foundation, Inc.
 #
 # Rubén López Gómez <ryo@mundivia.es>, 1999,, 2000.
@@ -779,7 +779,7 @@
 
 ========== mg.po ==========
 # Malagasy translation of cafe-control-center.
-# Copyright (C) 2006-2009 THE MATE-CONTROL-CENTER'S COPYRIGHT HOLDER
+# Copyright (C) 2006-2009 THE CAFE-CONTROL-CENTER'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the cafe-control-center package.
 # Fanomezana Rajaonarisoa <rajfanhar@yahoo.fr>, 2006.
 # Thierry Randrianiriana <randrianiriana@gmail.com>, 2006-2009.
@@ -998,8 +998,8 @@
 
 
 ========== pt_BR.po ==========
-# Brazilian Portuguese translation of MATE Control Center.
-# Copyright (C) 1999-2008 The MATE Control Center authors.
+# Brazilian Portuguese translation of CAFE Control Center.
+# Copyright (C) 1999-2008 The CAFE Control Center authors.
 # This file is distributed under the same license as the cafe-control-center package.
 # Ivan Passos <ivan@cyclades.com>, 1999.
 # Sandro Nunes Henrique <sandro@conectiva.com.br>, 1999.
@@ -1087,7 +1087,7 @@
 
 
 ========== sk.po ==========
-# MATE control-center Slovak translation
+# CAFE control-center Slovak translation
 # Copyright (C) 2000-2009 Free Software Foundation, Inc.
 # Stanislav Višňovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2000,2001,2002,2003, 2004.
 # Stanislav Višňovský <visnovsky@kde.org>, 2003.
@@ -1268,7 +1268,7 @@
 
 
 ========== vi.po ==========
-# Vietnamese Translation for MATE Control Center.
+# Vietnamese Translation for CAFE Control Center.
 # Copyright © 2009 Free Software Foundation, Inc.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2004,2007.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
@@ -1325,10 +1325,10 @@
 ========== zh_HK.po ==========
 # Chinese (Hong Kong) translation of cafe-control-center.
 # Copyright (C) 1999, 2001-07 Free Software Foundation, Inc.
-# MATE 1.x:
+# CAFE 1.x:
 # S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999.
 # Abel Cheung <abel@oaka.org>, 2001-2002.
-# MATE 2.x:
+# CAFE 2.x:
 # Abel Cheung <abel@oaka.org>, 2001-2003, 2005.
 # Woodman Tuen <wmtuen@gmail.com>, 2004-07.
 #
@@ -1340,10 +1340,10 @@
 ========== zh_TW.po ==========
 # Chinese (Taiwan) translation of cafe-control-center.
 # Copyright (C) 1999, 2001-07 Free Software Foundation, Inc.
-# MATE 1.x:
+# CAFE 1.x:
 # S.J. Luo <crystal@mickey.ee.nctu.edu.tw>, 1999.
 # Abel Cheung <abel@oaka.org>, 2001-2002.
-# MATE 2.x:
+# CAFE 2.x:
 # Abel Cheung <abel@oaka.org>, 2001-2003, 2005.
 # Woodman Tuen <wmtuen@gmail.com>, 2004-07.
 #

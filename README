@@ -1,9 +1,9 @@
-MATE Control Center
+CAFE Control Center
 ====================
 
 About -
 
-The control center is MATE's main interface for configuration of various
+The control center is CAFE's main interface for configuration of various
 aspects of your desktop.
 
 Installation -
@@ -14,7 +14,7 @@ make install
 
 How to report bugs -
 
-Bugs should be reported to the MATE bug tracking system under github:
+Bugs should be reported to the CAFE bug tracking system under github:
 	https://github.com/cafe-desktop/cafe-control-center/issues
 
 In the report please include the following information -

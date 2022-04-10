@@ -5,7 +5,7 @@
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keybinding-dialog.ui -->
   <!-- interface-description dialo window for changing keybindings -->
-  <!-- interface-copyright MATE Developer -->
+  <!-- interface-copyright CAFE Developer -->
   <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkDialog" id="custom-shortcut-dialog">
     <property name="name">custom-shortcut-dialog</property>

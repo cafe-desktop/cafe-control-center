@@ -30,22 +30,22 @@ const gchar *wp_item_option_to_string (CafeBGPlacement type)
 {
   switch (type)
   {
-    case MATE_BG_PLACEMENT_CENTERED:
+    case CAFE_BG_PLACEMENT_CENTERED:
       return "centered";
       break;
-    case MATE_BG_PLACEMENT_FILL_SCREEN:
+    case CAFE_BG_PLACEMENT_FILL_SCREEN:
       return "stretched";
       break;
-    case MATE_BG_PLACEMENT_SCALED:
+    case CAFE_BG_PLACEMENT_SCALED:
       return "scaled";
       break;
-    case MATE_BG_PLACEMENT_ZOOMED:
+    case CAFE_BG_PLACEMENT_ZOOMED:
       return "zoom";
       break;
-    case MATE_BG_PLACEMENT_TILED:
+    case CAFE_BG_PLACEMENT_TILED:
       return "wallpaper";
       break;
-    case MATE_BG_PLACEMENT_SPANNED:
+    case CAFE_BG_PLACEMENT_SPANNED:
       return "spanned";
       break;
   }
@@ -55,13 +55,13 @@ const gchar *wp_item_option_to_string (CafeBGPlacement type)
 const gchar *wp_item_shading_to_string (CafeBGColorType type)
 {
   switch (type) {
-    case MATE_BG_COLOR_SOLID:
+    case CAFE_BG_COLOR_SOLID:
       return "solid";
       break;
-    case MATE_BG_COLOR_H_GRADIENT:
+    case CAFE_BG_COLOR_H_GRADIENT:
       return "horizontal-gradient";
       break;
-    case MATE_BG_COLOR_V_GRADIENT:
+    case CAFE_BG_COLOR_V_GRADIENT:
       return "vertical-gradient";
       break;
   }
@@ -71,31 +71,31 @@ const gchar *wp_item_shading_to_string (CafeBGColorType type)
 CafeBGPlacement wp_item_string_to_option (const gchar *option)
 {
   if (!g_strcmp0(option, "centered"))
-    return MATE_BG_PLACEMENT_CENTERED;
+    return CAFE_BG_PLACEMENT_CENTERED;
   else if (!g_strcmp0(option, "stretched"))
-    return MATE_BG_PLACEMENT_FILL_SCREEN;
+    return CAFE_BG_PLACEMENT_FILL_SCREEN;
   else if (!g_strcmp0(option, "scaled"))
-    return MATE_BG_PLACEMENT_SCALED;
+    return CAFE_BG_PLACEMENT_SCALED;
   else if (!g_strcmp0(option, "zoom"))
-    return MATE_BG_PLACEMENT_ZOOMED;
+    return CAFE_BG_PLACEMENT_ZOOMED;
   else if (!g_strcmp0(option, "wallpaper"))
-    return MATE_BG_PLACEMENT_TILED;
+    return CAFE_BG_PLACEMENT_TILED;
   else if (!g_strcmp0(option, "spanned"))
-    return MATE_BG_PLACEMENT_SPANNED;
+    return CAFE_BG_PLACEMENT_SPANNED;
   else
-    return MATE_BG_PLACEMENT_SCALED;
+    return CAFE_BG_PLACEMENT_SCALED;
 }
 
 CafeBGColorType wp_item_string_to_shading (const gchar *shade_type)
 {
   if (!g_strcmp0(shade_type, "solid"))
-    return MATE_BG_COLOR_SOLID;
+    return CAFE_BG_COLOR_SOLID;
   else if (!g_strcmp0(shade_type, "horizontal-gradient"))
-    return MATE_BG_COLOR_H_GRADIENT;
+    return CAFE_BG_COLOR_H_GRADIENT;
   else if (!g_strcmp0(shade_type, "vertical-gradient"))
-    return MATE_BG_COLOR_V_GRADIENT;
+    return CAFE_BG_COLOR_V_GRADIENT;
   else
-    return MATE_BG_COLOR_SOLID;
+    return CAFE_BG_COLOR_SOLID;
 }
 
 static void set_bg_properties (CafeWPItem *item)

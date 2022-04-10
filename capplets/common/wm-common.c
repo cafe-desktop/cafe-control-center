@@ -77,7 +77,7 @@ wm_common_get_current_window_manager (void)
 char**
 wm_common_get_current_keybindings (void)
 {
-  Atom keybindings_atom = gdk_x11_get_xatom_by_name ("_MATE_WM_KEYBINDINGS");
+  Atom keybindings_atom = gdk_x11_get_xatom_by_name ("_CAFE_WM_KEYBINDINGS");
   char *keybindings = wm_common_get_window_manager_property (keybindings_atom);
   char **results;
 

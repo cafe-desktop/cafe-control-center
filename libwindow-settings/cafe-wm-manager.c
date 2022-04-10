@@ -107,8 +107,8 @@ wm_compare (gconstpointer a, gconstpointer b)
 
         /* mmm, sloooow */
 
-        return g_utf8_collate (cafe_desktop_item_get_string (wm_a->ditem, MATE_DESKTOP_ITEM_NAME),
-                               cafe_desktop_item_get_string (wm_b->ditem, MATE_DESKTOP_ITEM_NAME));
+        return g_utf8_collate (cafe_desktop_item_get_string (wm_a->ditem, CAFE_DESKTOP_ITEM_NAME),
+                               cafe_desktop_item_get_string (wm_b->ditem, CAFE_DESKTOP_ITEM_NAME));
 }
 
 static AvailableWindowManager*
@@ -127,13 +127,13 @@ wm_load (const char *desktop_file,
                 return NULL;
         }
 
-        cafe_desktop_item_set_entry_type (wm->ditem, MATE_DESKTOP_ITEM_TYPE_APPLICATION);
+        cafe_desktop_item_set_entry_type (wm->ditem, CAFE_DESKTOP_ITEM_TYPE_APPLICATION);
 
         wm->exec = g_strdup (cafe_desktop_item_get_string (wm->ditem,
-                                                            MATE_DESKTOP_ITEM_EXEC));
+                                                            CAFE_DESKTOP_ITEM_EXEC));
 
         wm->name = g_strdup (cafe_desktop_item_get_string (wm->ditem,
-                                                            MATE_DESKTOP_ITEM_NAME));
+                                                            CAFE_DESKTOP_ITEM_NAME));
 
         wm->config_exec = g_strdup (cafe_desktop_item_get_string (wm->ditem,
                                                                    "ConfigExec"));
@@ -143,17 +143,17 @@ wm_load (const char *desktop_file,
                                                               "SessionManaged");
 
         wm->module = g_strdup (cafe_desktop_item_get_string (wm->ditem,
-                                                              "X-MATE-WMSettingsModule"));
+                                                              "X-CAFE-WMSettingsModule"));
 
         wm->identify_name = g_strdup (cafe_desktop_item_get_string (wm->ditem,
-                                                                     "X-MATE-WMName"));
+                                                                     "X-CAFE-WMName"));
 
         wm->is_user = is_user;
 
-        if (cafe_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_EXEC)) {
+        if (cafe_desktop_item_get_string (wm->ditem, CAFE_DESKTOP_ITEM_EXEC)) {
                 const char *tryexec;
 
-                tryexec = cafe_desktop_item_get_string (wm->ditem, MATE_DESKTOP_ITEM_TRY_EXEC);
+                tryexec = cafe_desktop_item_get_string (wm->ditem, CAFE_DESKTOP_ITEM_TRY_EXEC);
 
                 if (tryexec) {
                         path = g_find_program_in_path (tryexec);
@@ -224,7 +224,7 @@ void cafe_wm_manager_init(void)
 
 	done_scan = TRUE;
 
-	tempdir = g_build_filename(MATE_WM_PROPERTY_PATH, NULL);
+	tempdir = g_build_filename(CAFE_WM_PROPERTY_PATH, NULL);
 	scan_wm_directory(tempdir, FALSE);
 	g_free(tempdir);
 

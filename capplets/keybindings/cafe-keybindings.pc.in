@@ -5,6 +5,6 @@ pkgdatadir=${datadir}/@PACKAGE@
 keysdir=${pkgdatadir}/keybindings
 
 Name: cafe-keybindings
-Description: Keybindings configuration for MATE applications
+Description: Keybindings configuration for CAFE applications
 Version: @VERSION@
 

@@ -5,8 +5,8 @@ AM_CPPFLAGS =					\
 	-I$(top_srcdir)				\
 	$(WARN_CFLAGS)				\
 	$(REAL_LIBSLAB_CFLAGS)			\
-	$(MATECC_SHELL_CFLAGS)			\
-	-DMATELOCALEDIR="\"$(datadir)/locale\""
+	$(CAFECC_SHELL_CFLAGS)			\
+	-DCAFELOCALEDIR="\"$(datadir)/locale\""
 
 bin_PROGRAMS = cafe-control-center
 
@@ -14,7 +14,7 @@ cafe_control_center_SOURCES =		\
 	control-center.c
 
 cafe_control_center_LDADD =						\
-	$(MATECC_SHELL_LIBS)						\
+	$(CAFECC_SHELL_LIBS)						\
 	$(REAL_LIBSLAB_LIBS)
 
 sysdir = $(datadir)/applications
