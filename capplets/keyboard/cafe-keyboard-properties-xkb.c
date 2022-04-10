@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkb.c
+/* cafe-keyboard-properties-xkb.c
  * Copyright (C) 2003-2007 Sergey V. Udaltsov
  *
  * Written by: Sergey V. Udaltsov <svu@gnome.org>
@@ -32,12 +32,12 @@
 
 #include "capplet-util.h"
 
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-xkb.h"
 
-#include <libmatekbd/matekbd-desktop-config.h>
+#include <libcafekbd/cafekbd-desktop-config.h>
 
-#define XKB_GENERAL_SCHEMA "org.mate.peripherals-keyboard-xkb.general"
-#define XKB_KBD_SCHEMA "org.mate.peripherals-keyboard-xkb.kbd"
+#define XKB_GENERAL_SCHEMA "org.cafe.peripherals-keyboard-xkb.general"
+#define XKB_KBD_SCHEMA "org.cafe.peripherals-keyboard-xkb.kbd"
 
 XklEngine *engine;
 XklConfigRegistry *config_registry;
@@ -114,8 +114,8 @@ setup_model_entry (GtkBuilder * dialog)
 static void
 cleanup_xkb_tabs (GtkBuilder * dialog)
 {
-	matekbd_desktop_config_term (&desktop_config);
-	matekbd_keyboard_config_term (&initial_config);
+	cafekbd_desktop_config_term (&desktop_config);
+	cafekbd_keyboard_config_term (&initial_config);
 	g_object_unref (G_OBJECT (config_registry));
 	config_registry = NULL;
 	g_object_unref (G_OBJECT (engine));
@@ -131,9 +131,9 @@ reset_to_defaults (GtkWidget * button, GtkBuilder * dialog)
 {
 	MatekbdKeyboardConfig empty_kbd_config;
 
-	matekbd_keyboard_config_init (&empty_kbd_config, engine);
-	matekbd_keyboard_config_save_to_gsettings (&empty_kbd_config);
-	matekbd_keyboard_config_term (&empty_kbd_config);
+	cafekbd_keyboard_config_init (&empty_kbd_config, engine);
+	cafekbd_keyboard_config_save_to_gsettings (&empty_kbd_config);
+	cafekbd_keyboard_config_term (&empty_kbd_config);
 
 	g_settings_reset (xkb_general_settings, "default-group");
 
@@ -172,13 +172,13 @@ setup_xkb_tabs (GtkBuilder * dialog)
 	engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
 	config_registry = xkl_config_registry_get_instance (engine);
 
-	matekbd_desktop_config_init (&desktop_config, engine);
-	matekbd_desktop_config_load_from_gsettings (&desktop_config);
+	cafekbd_desktop_config_init (&desktop_config, engine);
+	cafekbd_desktop_config_load_from_gsettings (&desktop_config);
 
 	xkl_config_registry_load (config_registry, desktop_config.load_extra_items);
 
-	matekbd_keyboard_config_init (&initial_config, engine);
-	matekbd_keyboard_config_load_from_x_initial (&initial_config, NULL);
+	cafekbd_keyboard_config_init (&initial_config, engine);
+	cafekbd_keyboard_config_load_from_x_initial (&initial_config, NULL);
 
 	setup_model_entry (dialog);
 
@@ -244,12 +244,12 @@ enable_disable_restoring (GtkBuilder * dialog)
 	MatekbdKeyboardConfig gswic;
 	gboolean enable;
 
-	matekbd_keyboard_config_init (&gswic, engine);
-	matekbd_keyboard_config_load_from_gsettings (&gswic, NULL);
+	cafekbd_keyboard_config_init (&gswic, engine);
+	cafekbd_keyboard_config_load_from_gsettings (&gswic, NULL);
 
-	enable = !matekbd_keyboard_config_equals (&gswic, &initial_config);
+	enable = !cafekbd_keyboard_config_equals (&gswic, &initial_config);
 
-	matekbd_keyboard_config_term (&gswic);
+	cafekbd_keyboard_config_term (&gswic);
 	gtk_widget_set_sensitive (WID ("xkb_reset_to_defaults"), enable);
 }
 

@@ -10,7 +10,7 @@
 # Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2020
 # 65f2af3cfa184c075942a0418b98d2de_d688669, 2020
 # Martin Wimpress <code@flexion.org>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Roger Araújo <roger.rf@gmail.com>, 2020
 # 710a500dd1d5560bb05c8b24814b8c26, 2020
 # Rangel <carlosrangelsantos@gmail.com>, 2020
@@ -23,7 +23,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:21+0000\n"
 "Last-Translator: George Silva <algoritmo.linux@gmail.com>, 2020\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/cafe/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -245,7 +245,7 @@ msgstr "Retorno"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>MATE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
 " Page</ulink>."
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 #: C/index.docbook:88
 msgid ""
 "For help on using preference tools, see the <ulink type=\"help\" url=\"help"
-":mate-user-guide/prefs\">User Guide</ulink>."
+":cafe-user-guide/prefs\">User Guide</ulink>."
 msgstr ""
 
 #. (itstool) path: sect2/title
@@ -300,7 +300,7 @@ msgstr "Linha de comando"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:108
-msgid "Execute the following command: <command>mate-control-center</command>"
+msgid "Execute the following command: <command>cafe-control-center</command>"
 msgstr ""
 
 #. (itstool) path: sect1/title
@@ -1075,7 +1075,7 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-hints.xml:34
 msgid ""
-"<_:application-1/> is a small program that displays random quotes. The mate "
+"<_:application-1/> is a small program that displays random quotes. The cafe "
 "startup hints application can display <_:application-2/> quotes instead of "
 "tips."
 msgstr ""
@@ -1089,7 +1089,7 @@ msgstr ""
 #: C/config-hints.xml:46
 msgid ""
 "Often times administrators will create a \"message of the day\" (\"MOTD\") "
-"to notify users of important events. The mate startup hints application can "
+"to notify users of important events. The cafe startup hints application can "
 "display these instead of tips."
 msgstr ""
 
@@ -1281,14 +1281,14 @@ msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:145
-msgid "Show animated images"
+msgid "Show anicafed images"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:147
 msgid ""
-"Some images can be animated. You can have the image show up as a static "
-"image instead of as an animated image by unchecking the box."
+"Some images can be anicafed. You can have the image show up as a static "
+"image instead of as an anicafed image by unchecking the box."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -2078,7 +2078,7 @@ msgstr ""
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:13
-msgid "mate-screensaver"
+msgid "cafe-screensaver"
 msgstr ""
 
 #. (itstool) path: para/application

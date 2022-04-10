@@ -23,7 +23,7 @@
 #ifdef HAVE_CONFIG_H
 #	include <config.h>
 #else
-#	define PACKAGE "mate-main-menu"
+#	define PACKAGE "cafe-main-menu"
 #endif
 
 #include <gtk/gtk.h>
@@ -1050,11 +1050,11 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 	MateDesktopItem *ditem;
 	gchar *uri_new = NULL;
 
-	ditem = libslab_mate_desktop_item_new_from_unknown_id (uri);
+	ditem = libslab_cafe_desktop_item_new_from_unknown_id (uri);
 
 	if (ditem) {
-		uri_new = g_strdup (mate_desktop_item_get_location (ditem));
-		mate_desktop_item_unref (ditem);
+		uri_new = g_strdup (cafe_desktop_item_get_location (ditem));
+		cafe_desktop_item_unref (ditem);
 	}
 
 	if (! uri_new)

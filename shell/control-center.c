@@ -28,7 +28,7 @@
 void handle_static_action_clicked(Tile* tile, TileEvent* event, gpointer data);
 static GSList* get_actions_list();
 
-#define CONTROL_CENTER_SCHEMA "org.mate.control-center"
+#define CONTROL_CENTER_SCHEMA "org.cafe.control-center"
 #define CONTROL_CENTER_ACTIONS_LIST_KEY "cc-actions-list"
 #define CONTROL_CENTER_ACTIONS_SEPARATOR ";"
 #define EXIT_SHELL_ON_STATIC_ACTION "cc-exit-shell-on-static-action"
@@ -129,7 +129,7 @@ activate (GtkApplication *app)
 
 	list = gtk_application_get_windows (app);
 
-	AppShellData* app_data = appshelldata_new("matecc.menu", GTK_ICON_SIZE_DND, FALSE, TRUE, 0);
+	AppShellData* app_data = appshelldata_new("cafecc.menu", GTK_ICON_SIZE_DND, FALSE, TRUE, 0);
 
 	generate_categories(app_data);
 
@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
 	gboolean hidden = FALSE;
 	GtkApplication *app;
 	gint retval;
-	app = gtk_application_new ("org.mate.mate-control-center.shell", 0);
+	app = gtk_application_new ("org.cafe.cafe-control-center.shell", 0);
 	GError* error;
 	GOptionEntry options[] = {
 		{"hide", 0, 0, G_OPTION_ARG_NONE, &hidden, N_("Hide on start (useful to preload the shell)"), NULL},

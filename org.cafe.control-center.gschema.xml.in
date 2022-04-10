@@ -1,8 +1,8 @@
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-    <schema id="org.mate.control-center" path="/org/mate/control-center/">
-        <child name="appearance" schema="org.mate.control-center.appearance" />
+    <schema id="org.cafe.control-center" path="/org/cafe/control-center/">
+        <child name="appearance" schema="org.cafe.control-center.appearance" />
         <key name="cc-actions-list" type="as">
-            <default l10n="messages">[ 'Change Theme;mate-appearance-properties.desktop', 'Set Preferred Applications;mate-default-applications-properties.desktop' ]</default>
+            <default l10n="messages">[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred Applications;cafe-default-applications-properties.desktop' ]</default>
             <summary>Task names and associated .desktop files</summary>
             <description>The task name to be displayed in the control-center followed by a ";" separator then the filename of an associated .desktop file to launch for that task.</description>
         </key>
@@ -32,14 +32,14 @@
             <description>Indicates whether to close the shell when an upgrade or uninstall action is performed.</description>
         </key>
     </schema>
-    <schema id="org.mate.control-center.appearance" path="/org/mate/control-center/appearance/">
+    <schema id="org.cafe.control-center.appearance" path="/org/cafe/control-center/appearance/">
         <key name="more-backgrounds-url" type="s">
-            <default>'http://mate-desktop.org/backgrounds/'</default>
+            <default>'http://cafe-desktop.org/backgrounds/'</default>
             <summary>More backgrounds URL</summary>
             <description>URL for where to get more desktop backgrounds.  If set to an empty string the link will not appear.</description>
         </key>
         <key name="more-themes-url" type="s">
-            <default>'http://mate-desktop.org/themes/'</default>
+            <default>'http://cafe-desktop.org/themes/'</default>
             <summary>More themes URL</summary>
             <description>URL for where to get more desktop themes.  If set to an empty string the link will not appear.</description>
         </key>

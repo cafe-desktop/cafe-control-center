@@ -141,7 +141,7 @@ create_folder_icon (char *icon_theme_name)
   if (example_icon_name != NULL)
     icon_names[i++] = example_icon_name;
   icon_names[i++] = "x-directory-normal";
-  icon_names[i++] = "mate-fs-directory";
+  icon_names[i++] = "cafe-fs-directory";
   icon_names[i++] = "folder";
   icon_names[i++] = NULL;
 

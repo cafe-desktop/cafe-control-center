@@ -142,11 +142,11 @@
       following preferences:
       <variablelist>
 	<varlistentry>
-	  <term>Show animated images</term>
+	  <term>Show anicafed images</term>
 	  <listitem>
 	    <para>
-	      Some images can be animated.  You can have the image
-	      show up as a static image instead of as an animated
+	      Some images can be anicafed.  You can have the image
+	      show up as a static image instead of as an anicafed
 	      image by unchecking the box.
 	    </para>
 	  </listitem>

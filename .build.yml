@@ -3,7 +3,7 @@
 ##########################################################
 requires:
   archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-control-center
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/cafe-control-center
     - autoconf-archive
     - clang
     - file
@@ -15,15 +15,15 @@ requires:
     - libxss
     - make
     - marco
-    - mate-common
-    - mate-menus
-    - mate-settings-daemon
+    - cafe-common
+    - cafe-menus
+    - cafe-settings-daemon
     - which
     - yelp-tools
 
   debian:
-    # Useful URL: https://github.com/mate-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-control-center
+    # Useful URL: https://github.com/cafe-desktop/debian-packages
+    # Useful URL: https://salsa.debian.org/debian-cafe-team/cafe-control-center
     - autopoint
     - clang
     - clang-tools
@@ -41,9 +41,9 @@ requires:
     - libgtk-3-dev
     - libgtop2-dev
     - libmarco-dev
-    - libmate-desktop-dev
-    - libmate-menu-dev
-    - libmatekbd-dev
+    - libcafe-desktop-dev
+    - libcafe-menu-dev
+    - libcafekbd-dev
     - libpango1.0-dev
     - librsvg2-bin
     - librsvg2-dev
@@ -58,15 +58,15 @@ requires:
     - libxt-dev
     - libpolkit-gobject-1-dev
     - make
-    - mate-common
-    - mate-settings-daemon-dev
+    - cafe-common
+    - cafe-settings-daemon-dev
     - python3-lxml
     - shared-mime-info
     - xsltproc
     - yelp-tools
 
   fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-control-center.git
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/cafe-control-center.git
     - autoconf-archive
     - accountsservice-devel
     - cairo-gobject-devel
@@ -83,16 +83,16 @@ requires:
     - libSM-devel
     - libXScrnSaver-devel
     - libcanberra-devel
-    - libmatekbd-devel
+    - libcafekbd-devel
     - librsvg2-devel
     - librsvg2-tools
     - make
     - marco-devel
-    - mate-menus-devel
+    - cafe-menus-devel
     - polkit-devel
     - python3-lxml
-    - mate-common
-    - mate-settings-daemon-devel
+    - cafe-common
+    - cafe-settings-daemon-devel
     - redhat-rpm-config
     - startup-notification-devel
     - which
@@ -114,9 +114,9 @@ requires:
     - libgtk-3-dev
     - libgtop2-dev
     - libmarco-dev
-    - libmate-desktop-dev
-    - libmate-menu-dev
-    - libmatekbd-dev
+    - libcafe-desktop-dev
+    - libcafe-menu-dev
+    - libcafekbd-dev
     - libpango1.0-dev
     - librsvg2-bin
     - librsvg2-dev
@@ -131,8 +131,8 @@ requires:
     - libxt-dev
     - libpolkit-gobject-1-dev
     - make
-    - mate-common
-    - mate-settings-daemon-dev
+    - cafe-common
+    - cafe-settings-daemon-dev
     - python3-lxml
     - shared-mime-info
     - xsltproc
@@ -158,9 +158,9 @@ variables:
 
 before_scripts:
   - cd ${START_DIR}
-  - '[ -f mate-common-1.24.1.tar.xz ] || curl -Ls -o mate-common-1.24.1.tar.xz https://github.com/mate-desktop/mate-common/releases/download/v1.24.1/mate-common-1.24.1.tar.xz'
-  - tar xf mate-common-1.24.1.tar.xz
-  - cd mate-common-1.24.1
+  - '[ -f cafe-common-1.24.1.tar.xz ] || curl -Ls -o cafe-common-1.24.1.tar.xz https://github.com/cafe-desktop/cafe-common/releases/download/v1.24.1/cafe-common-1.24.1.tar.xz'
+  - tar xf cafe-common-1.24.1.tar.xz
+  - cd cafe-common-1.24.1
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
@@ -170,11 +170,11 @@ before_scripts:
   - make install
 
   - cd ${START_DIR}
-  - if [ ! -f mate-desktop-1.23.2.tar.xz ];then
-  -     curl -Ls -o mate-desktop-1.23.2.tar.xz https://github.com/mate-desktop/mate-desktop/releases/download/v1.23.2/mate-desktop-1.23.2.tar.xz
+  - if [ ! -f cafe-desktop-1.23.2.tar.xz ];then
+  -     curl -Ls -o cafe-desktop-1.23.2.tar.xz https://github.com/cafe-desktop/cafe-desktop/releases/download/v1.23.2/cafe-desktop-1.23.2.tar.xz
   - fi
-  - tar xf mate-desktop-1.23.2.tar.xz
-  - cd mate-desktop-1.23.2
+  - tar xf cafe-desktop-1.23.2.tar.xz
+  - cd cafe-desktop-1.23.2
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./autogen.sh --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
@@ -187,11 +187,11 @@ before_scripts:
   - make install
 
   - cd ${START_DIR}
-  - if [ ! -f mate-settings-daemon-1.23.1.tar.xz ]; then
-  -     curl -Ls -o mate-settings-daemon-1.23.1.tar.xz https://github.com/mate-desktop/mate-settings-daemon/releases/download/v1.23.1/mate-settings-daemon-1.23.1.tar.xz
+  - if [ ! -f cafe-settings-daemon-1.23.1.tar.xz ]; then
+  -     curl -Ls -o cafe-settings-daemon-1.23.1.tar.xz https://github.com/cafe-desktop/cafe-settings-daemon/releases/download/v1.23.1/cafe-settings-daemon-1.23.1.tar.xz
   - fi
-  - tar xf mate-settings-daemon-1.23.1.tar.xz
-  - cd mate-settings-daemon-1.23.1
+  - tar xf cafe-settings-daemon-1.23.1.tar.xz
+  - cd cafe-settings-daemon-1.23.1
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
@@ -210,7 +210,7 @@ build_scripts:
   - scan-build $CHECKERS ./configure
   - scan-build $CHECKERS --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 ))
   - if [ ${DISTRO_NAME} == "debian" ];then
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'mate-desktop-1.23.2' -i'mate-settings-daemon-1.23.1' .
+  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude -i'cafe-desktop-1.23.2' -i'cafe-settings-daemon-1.23.1' .
   - fi
 
 after_scripts:
@@ -221,10 +221,10 @@ releases:
   prerelease: false
   checksum: true
   file_glob: true
-  files: mate-control-center-*.tar.xz
+  files: cafe-control-center-*.tar.xz
   github_release:
     tags: true
     overwrite: true
     base_version: 1.20.0
     notify_servers:
-      - https://release.mate-desktop.org/release
+      - https://release.cafe-desktop.org/release

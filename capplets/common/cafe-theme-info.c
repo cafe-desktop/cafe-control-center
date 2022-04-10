@@ -1,4 +1,4 @@
-/* mate-theme-info.c - MATE Theme information
+/* cafe-theme-info.c - MATE Theme information
  *
  * Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
  * Copyright (C) 2011 Perberos
@@ -35,8 +35,8 @@
 #include <gdk/gdkx.h>
 #include <gio/gio.h>
 #include <string.h>
-#include <libmate-desktop/mate-desktop-item.h>
-#include "mate-theme-info.h"
+#include <libcafe-desktop/cafe-desktop-item.h>
+#include "cafe-theme-info.h"
 #include "gtkrc-utils.h"
 
 #include <X11/Xcursor/Xcursor.h>
@@ -237,15 +237,15 @@ theme_compare (MateThemeCommonInfo *a,
 
   switch (a->type) {
   case MATE_THEME_TYPE_METATHEME:
-    cmp = mate_theme_meta_info_compare (
+    cmp = cafe_theme_meta_info_compare (
                     (MateThemeMetaInfo *) a, (MateThemeMetaInfo *) b);
     break;
   case MATE_THEME_TYPE_ICON:
-    cmp = mate_theme_icon_info_compare (
+    cmp = cafe_theme_icon_info_compare (
                     (MateThemeIconInfo *) a, (MateThemeIconInfo *) b);
     break;
   case MATE_THEME_TYPE_CURSOR:
-    cmp = mate_theme_cursor_info_compare (
+    cmp = cafe_theme_cursor_info_compare (
                     (MateThemeCursorInfo *) a, (MateThemeCursorInfo *) b);
     break;
   default:
@@ -261,28 +261,28 @@ theme_free (MateThemeCommonInfo *info)
 {
   switch (info->type) {
   case MATE_THEME_TYPE_METATHEME:
-    mate_theme_meta_info_free ((MateThemeMetaInfo *) info);
+    cafe_theme_meta_info_free ((MateThemeMetaInfo *) info);
     break;
   case MATE_THEME_TYPE_ICON:
-    mate_theme_icon_info_free ((MateThemeIconInfo *) info);
+    cafe_theme_icon_info_free ((MateThemeIconInfo *) info);
     break;
   case MATE_THEME_TYPE_REGULAR:
-    mate_theme_info_free ((MateThemeInfo *) info);
+    cafe_theme_info_free ((MateThemeInfo *) info);
     break;
   case MATE_THEME_TYPE_CURSOR:
-    mate_theme_cursor_info_free ((MateThemeCursorInfo *) info);
+    cafe_theme_cursor_info_free ((MateThemeCursorInfo *) info);
     break;
   default:
     g_assert_not_reached ();
   }
 }
 
-GQuark mate_theme_info_error_quark(void)
+GQuark cafe_theme_info_error_quark(void)
 {
-	return g_quark_from_static_string("mate-theme-info-error-quark");
+	return g_quark_from_static_string("cafe-theme-info-error-quark");
 }
 
-MateThemeMetaInfo* mate_theme_read_meta_theme(GFile* meta_theme_uri)
+MateThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 {
 	MateThemeMetaInfo* meta_theme_info;
 	GFile* common_theme_dir_uri;
@@ -292,55 +292,55 @@ MateThemeMetaInfo* mate_theme_read_meta_theme(GFile* meta_theme_uri)
 	gchar* scheme;
 
 	meta_theme_file = g_file_get_uri(meta_theme_uri);
-	meta_theme_ditem = mate_desktop_item_new_from_uri(meta_theme_file, 0, NULL);
+	meta_theme_ditem = cafe_desktop_item_new_from_uri(meta_theme_file, 0, NULL);
 	g_free(meta_theme_file);
 
 	if (meta_theme_ditem == NULL)
 		return NULL;
 
 	common_theme_dir_uri = g_file_get_parent(meta_theme_uri);
-	meta_theme_info = mate_theme_meta_info_new();
+	meta_theme_info = cafe_theme_meta_info_new();
 	meta_theme_info->path = g_file_get_path(meta_theme_uri);
 	meta_theme_info->name = g_file_get_basename(common_theme_dir_uri);
 	g_object_unref(common_theme_dir_uri);
 
-	str = mate_desktop_item_get_localestring(meta_theme_ditem, THEME_NAME);
+	str = cafe_desktop_item_get_localestring(meta_theme_ditem, THEME_NAME);
 
 	if (!str)
 	{
-		str = mate_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_NAME);
+		str = cafe_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_NAME);
 		if (!str)
 		{ /* shouldn't reach */
-			mate_theme_meta_info_free(meta_theme_info);
+			cafe_theme_meta_info_free(meta_theme_info);
 			return NULL;
 		}
 	}
 
 	meta_theme_info->readable_name = g_strdup(str);
 
-	str = mate_desktop_item_get_localestring(meta_theme_ditem, THEME_COMMENT);
+	str = cafe_desktop_item_get_localestring(meta_theme_ditem, THEME_COMMENT);
 
 	if (str == NULL)
-		str = mate_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_COMMENT);
+		str = cafe_desktop_item_get_localestring(meta_theme_ditem, MATE_DESKTOP_ITEM_COMMENT);
 
 	if (str != NULL)
 		meta_theme_info->comment = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, MATE_DESKTOP_ITEM_ICON);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, MATE_DESKTOP_ITEM_ICON);
 
 	if (str != NULL)
 		meta_theme_info->icon_file = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, GTK_THEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, GTK_THEME_KEY);
 
 	if (str == NULL)
 	{
-		mate_theme_meta_info_free(meta_theme_info);
+		cafe_theme_meta_info_free(meta_theme_info);
 		return NULL;
 	}
 	meta_theme_info->gtk_theme_name = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, GTK_COLOR_SCHEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, GTK_COLOR_SCHEME_KEY);
 
 	if (str == NULL || str[0] == '\0')
 		scheme = gtkrc_get_color_scheme_for_theme(meta_theme_info->gtk_theme_name);
@@ -356,38 +356,38 @@ MateThemeMetaInfo* mate_theme_read_meta_theme(GFile* meta_theme_uri)
 				*scheme = '\n';
 	}
 
-	str = mate_desktop_item_get_string (meta_theme_ditem, MARCO_THEME_KEY);
+	str = cafe_desktop_item_get_string (meta_theme_ditem, MARCO_THEME_KEY);
 
 	if (str == NULL)
 	{
-		mate_theme_meta_info_free (meta_theme_info);
+		cafe_theme_meta_info_free (meta_theme_info);
 		return NULL;
 	}
 
 	meta_theme_info->marco_theme_name = g_strdup (str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, ICON_THEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, ICON_THEME_KEY);
 
 	if (str == NULL)
 	{
-		mate_theme_meta_info_free(meta_theme_info);
+		cafe_theme_meta_info_free(meta_theme_info);
 		return NULL;
 	}
 
 	meta_theme_info->icon_theme_name = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, NOTIFICATION_THEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, NOTIFICATION_THEME_KEY);
 
 	if (str != NULL)
 		meta_theme_info->notification_theme_name = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, CURSOR_THEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, CURSOR_THEME_KEY);
 
 	if (str != NULL)
 	{
 		meta_theme_info->cursor_theme_name = g_strdup(str);
 
-		str = mate_desktop_item_get_string(meta_theme_ditem, CURSOR_SIZE_KEY);
+		str = cafe_desktop_item_get_string(meta_theme_ditem, CURSOR_SIZE_KEY);
 
 		if (str)
 			meta_theme_info->cursor_size = (int) g_ascii_strtoll(str, NULL, 10);
@@ -400,39 +400,39 @@ MateThemeMetaInfo* mate_theme_read_meta_theme(GFile* meta_theme_uri)
 		meta_theme_info->cursor_size = 24;
 	}
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, APPLICATION_FONT_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, APPLICATION_FONT_KEY);
 
 	if (str != NULL)
 		meta_theme_info->application_font = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, DOCUMENTS_FONT_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, DOCUMENTS_FONT_KEY);
 
 	if (str != NULL)
 		meta_theme_info->documents_font = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, DESKTOP_FONT_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, DESKTOP_FONT_KEY);
 
 	if (str != NULL)
 		meta_theme_info->desktop_font = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, WINDOWTITLE_FONT_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, WINDOWTITLE_FONT_KEY);
 
 	if (str != NULL)
 		meta_theme_info->windowtitle_font = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, MONOSPACE_FONT_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, MONOSPACE_FONT_KEY);
 
 	if (str != NULL)
 		meta_theme_info->monospace_font = g_strdup(str);
 
-	str = mate_desktop_item_get_string(meta_theme_ditem, BACKGROUND_IMAGE_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, BACKGROUND_IMAGE_KEY);
 
 	if (str != NULL)
 		meta_theme_info->background_image = g_strdup(str);
 
-	meta_theme_info->hidden = mate_desktop_item_get_boolean(meta_theme_ditem, HIDDEN_KEY);
+	meta_theme_info->hidden = cafe_desktop_item_get_boolean(meta_theme_ditem, HIDDEN_KEY);
 
-	mate_desktop_item_unref(meta_theme_ditem);
+	cafe_desktop_item_unref(meta_theme_ditem);
 
 	return meta_theme_info;
 }
@@ -448,37 +448,37 @@ read_icon_theme (GFile *icon_theme_uri)
   const gchar *directories;
 
   icon_theme_file = g_file_get_uri (icon_theme_uri);
-  icon_theme_ditem = mate_desktop_item_new_from_uri (icon_theme_file, 0, NULL);
+  icon_theme_ditem = cafe_desktop_item_new_from_uri (icon_theme_file, 0, NULL);
   g_free (icon_theme_file);
 
   if (icon_theme_ditem == NULL)
     return NULL;
 
-  name = mate_desktop_item_get_localestring (icon_theme_ditem, "Icon Theme/Name");
+  name = cafe_desktop_item_get_localestring (icon_theme_ditem, "Icon Theme/Name");
   if (!name) {
-    name = mate_desktop_item_get_localestring (icon_theme_ditem, MATE_DESKTOP_ITEM_NAME);
+    name = cafe_desktop_item_get_localestring (icon_theme_ditem, MATE_DESKTOP_ITEM_NAME);
     if (!name) {
-      mate_desktop_item_unref (icon_theme_ditem);
+      cafe_desktop_item_unref (icon_theme_ditem);
       return NULL;
     }
   }
 
   /* If index.theme has no Directories entry, it is only a cursor theme */
-  directories = mate_desktop_item_get_string (icon_theme_ditem, "Icon Theme/Directories");
+  directories = cafe_desktop_item_get_string (icon_theme_ditem, "Icon Theme/Directories");
   if (directories == NULL) {
-    mate_desktop_item_unref (icon_theme_ditem);
+    cafe_desktop_item_unref (icon_theme_ditem);
     return NULL;
   }
 
-  icon_theme_info = mate_theme_icon_info_new ();
+  icon_theme_info = cafe_theme_icon_info_new ();
   icon_theme_info->readable_name = g_strdup (name);
   icon_theme_info->path = g_file_get_path (icon_theme_uri);
-  icon_theme_info->hidden = mate_desktop_item_get_boolean (icon_theme_ditem, "Icon Theme/Hidden");
+  icon_theme_info->hidden = cafe_desktop_item_get_boolean (icon_theme_ditem, "Icon Theme/Hidden");
   dir_name = g_path_get_dirname (icon_theme_info->path);
   icon_theme_info->name = g_path_get_basename (dir_name);
   g_free (dir_name);
 
-  mate_desktop_item_unref (icon_theme_ditem);
+  cafe_desktop_item_unref (icon_theme_ditem);
 
   return icon_theme_info;
 }
@@ -488,7 +488,7 @@ add_default_cursor_theme ()
 {
   MateThemeCursorInfo *theme_info;
 
-  theme_info = mate_theme_cursor_info_new ();
+  theme_info = cafe_theme_cursor_info_new ();
   theme_info->path = g_strdup ("builtin");
   theme_info->name = g_strdup ("default");
   theme_info->readable_name = g_strdup (_("Default Pointer"));
@@ -589,30 +589,30 @@ read_cursor_theme (GFile *cursor_theme_uri)
         }
       }
 
-      cursor_theme_info = mate_theme_cursor_info_new ();
+      cursor_theme_info = cafe_theme_cursor_info_new ();
       cursor_theme_info->path = g_file_get_path (parent_uri);
       cursor_theme_info->name = name;
       cursor_theme_info->sizes = sizes;
       cursor_theme_info->thumbnail = thumbnail;
 
       cursor_theme_file = g_file_get_path (cursor_theme_uri);
-      cursor_theme_ditem = mate_desktop_item_new_from_file (cursor_theme_file, 0, NULL);
+      cursor_theme_ditem = cafe_desktop_item_new_from_file (cursor_theme_file, 0, NULL);
       g_free (cursor_theme_file);
 
       if (cursor_theme_ditem != NULL) {
         const gchar *readable_name;
 
-        readable_name = mate_desktop_item_get_string (cursor_theme_ditem,
+        readable_name = cafe_desktop_item_get_string (cursor_theme_ditem,
                                                        "Icon Theme/Name");
         if (readable_name)
           cursor_theme_info->readable_name = g_strdup (readable_name);
         else
           cursor_theme_info->readable_name = g_strdup (name);
 
-        cursor_theme_info->hidden = mate_desktop_item_get_boolean (cursor_theme_ditem,
+        cursor_theme_info->hidden = cafe_desktop_item_get_boolean (cursor_theme_ditem,
                                                                     "Icon Theme/Hidden");
 
-        mate_desktop_item_unref (cursor_theme_ditem);
+        cafe_desktop_item_unref (cursor_theme_ditem);
       } else {
         cursor_theme_info->readable_name = g_strdup (name);
       }
@@ -709,7 +709,7 @@ update_theme_index (GFile            *index_uri,
   theme_info = g_hash_table_lookup (theme_hash_by_uri, common_theme_dir);
   if (theme_info == NULL) {
     if (theme_exists) {
-      theme_info = mate_theme_info_new ();
+      theme_info = cafe_theme_info_new ();
       theme_info->path = g_strdup (common_theme_dir);
       theme_info->name = g_file_get_basename (common_theme_dir_uri);
       theme_info->readable_name = g_strdup (theme_info->name);
@@ -753,7 +753,7 @@ update_theme_index (GFile            *index_uri,
     }
 
     if (!theme_info->has_marco && !theme_info->has_keybinding && !theme_info->has_gtk) {
-      mate_theme_info_free (theme_info);
+      cafe_theme_info_free (theme_info);
     }
   }
 
@@ -814,7 +814,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
       if (type == MATE_THEME_TYPE_ICON)
         theme_info = (MateThemeCommonInfo *) read_icon_theme (theme_index_uri);
       else
-        theme_info = (MateThemeCommonInfo *) mate_theme_read_meta_theme (theme_index_uri);
+        theme_info = (MateThemeCommonInfo *) cafe_theme_read_meta_theme (theme_index_uri);
     } else {
       theme_info = NULL;
     }
@@ -1290,7 +1290,7 @@ add_top_icon_theme_dir_monitor (GFile   *uri,
 
 /* GTK/Marco/keybinding Themes */
 MateThemeInfo *
-mate_theme_info_new (void)
+cafe_theme_info_new (void)
 {
   MateThemeInfo *theme_info;
 
@@ -1301,7 +1301,7 @@ mate_theme_info_new (void)
 }
 
 void
-mate_theme_info_free (MateThemeInfo *theme_info)
+cafe_theme_info_free (MateThemeInfo *theme_info)
 {
   g_free (theme_info->path);
   g_free (theme_info->name);
@@ -1310,7 +1310,7 @@ mate_theme_info_free (MateThemeInfo *theme_info)
 }
 
 MateThemeInfo *
-mate_theme_info_find (const gchar *theme_name)
+cafe_theme_info_find (const gchar *theme_name)
 {
   return (MateThemeInfo *)
          get_theme_from_hash_by_name (theme_hash_by_name, theme_name, -1);
@@ -1323,7 +1323,7 @@ struct MateThemeInfoHashData
 };
 
 static void
-mate_theme_info_find_by_type_helper (gpointer key,
+cafe_theme_info_find_by_type_helper (gpointer key,
                                       GList *list,
                                       struct MateThemeInfoHashData *hash_data)
 {
@@ -1344,20 +1344,20 @@ mate_theme_info_find_by_type_helper (gpointer key,
 }
 
 GList *
-mate_theme_info_find_by_type (guint elements)
+cafe_theme_info_find_by_type (guint elements)
 {
   struct MateThemeInfoHashData data;
   data.user_data = GINT_TO_POINTER (elements);
   data.list = NULL;
 
   g_hash_table_foreach (theme_hash_by_name,
-                        (GHFunc) mate_theme_info_find_by_type_helper,
+                        (GHFunc) cafe_theme_info_find_by_type_helper,
                         &data);
 
   return data.list;
 }
 
-static void mate_theme_info_find_all_helper(const gchar* key, GList* list, GList** themes)
+static void cafe_theme_info_find_all_helper(const gchar* key, GList* list, GList** themes)
 {
 	/* only return visible themes */
 	if (!((MateThemeCommonInfo*) list->data)->hidden)
@@ -1424,7 +1424,7 @@ gchar* gtk_theme_info_missing_engine(const gchar* gtk_theme, gboolean name_only)
 
 /* Icon themes */
 MateThemeIconInfo *
-mate_theme_icon_info_new (void)
+cafe_theme_icon_info_new (void)
 {
   MateThemeIconInfo *icon_theme_info;
 
@@ -1435,7 +1435,7 @@ mate_theme_icon_info_new (void)
 }
 
 void
-mate_theme_icon_info_free (MateThemeIconInfo *icon_theme_info)
+cafe_theme_icon_info_free (MateThemeIconInfo *icon_theme_info)
 {
   g_free (icon_theme_info->name);
   g_free (icon_theme_info->readable_name);
@@ -1444,7 +1444,7 @@ mate_theme_icon_info_free (MateThemeIconInfo *icon_theme_info)
 }
 
 MateThemeIconInfo *
-mate_theme_icon_info_find (const gchar *icon_theme_name)
+cafe_theme_icon_info_find (const gchar *icon_theme_name)
 {
   g_return_val_if_fail (icon_theme_name != NULL, NULL);
 
@@ -1453,19 +1453,19 @@ mate_theme_icon_info_find (const gchar *icon_theme_name)
 }
 
 GList *
-mate_theme_icon_info_find_all (void)
+cafe_theme_icon_info_find_all (void)
 {
   GList *list = NULL;
 
   g_hash_table_foreach (icon_theme_hash_by_name,
-                        (GHFunc) mate_theme_info_find_all_helper,
+                        (GHFunc) cafe_theme_info_find_all_helper,
                         &list);
 
   return list;
 }
 
 gint
-mate_theme_icon_info_compare (MateThemeIconInfo *a,
+cafe_theme_icon_info_compare (MateThemeIconInfo *a,
                                MateThemeIconInfo *b)
 {
   gint cmp;
@@ -1478,7 +1478,7 @@ mate_theme_icon_info_compare (MateThemeIconInfo *a,
 
 /* Cursor themes */
 MateThemeCursorInfo *
-mate_theme_cursor_info_new (void)
+cafe_theme_cursor_info_new (void)
 {
   MateThemeCursorInfo *theme_info;
 
@@ -1489,7 +1489,7 @@ mate_theme_cursor_info_new (void)
 }
 
 void
-mate_theme_cursor_info_free (MateThemeCursorInfo *cursor_theme_info)
+cafe_theme_cursor_info_free (MateThemeCursorInfo *cursor_theme_info)
 {
   g_free (cursor_theme_info->name);
   g_free (cursor_theme_info->readable_name);
@@ -1501,7 +1501,7 @@ mate_theme_cursor_info_free (MateThemeCursorInfo *cursor_theme_info)
 }
 
 MateThemeCursorInfo *
-mate_theme_cursor_info_find (const gchar *cursor_theme_name)
+cafe_theme_cursor_info_find (const gchar *cursor_theme_name)
 {
   g_return_val_if_fail (cursor_theme_name != NULL, NULL);
 
@@ -1510,19 +1510,19 @@ mate_theme_cursor_info_find (const gchar *cursor_theme_name)
 }
 
 GList *
-mate_theme_cursor_info_find_all (void)
+cafe_theme_cursor_info_find_all (void)
 {
   GList *list = NULL;
 
   g_hash_table_foreach (cursor_theme_hash_by_name,
-                        (GHFunc) mate_theme_info_find_all_helper,
+                        (GHFunc) cafe_theme_info_find_all_helper,
                         &list);
 
   return list;
 }
 
 gint
-mate_theme_cursor_info_compare (MateThemeCursorInfo *a,
+cafe_theme_cursor_info_compare (MateThemeCursorInfo *a,
                                  MateThemeCursorInfo *b)
 {
   gint cmp;
@@ -1534,7 +1534,7 @@ mate_theme_cursor_info_compare (MateThemeCursorInfo *a,
 }
 
 /* Meta themes */
-MateThemeMetaInfo* mate_theme_meta_info_new(void)
+MateThemeMetaInfo* cafe_theme_meta_info_new(void)
 {
 	MateThemeMetaInfo* theme_info;
 
@@ -1544,7 +1544,7 @@ MateThemeMetaInfo* mate_theme_meta_info_new(void)
 	return theme_info;
 }
 
-void mate_theme_meta_info_free(MateThemeMetaInfo* meta_theme_info)
+void cafe_theme_meta_info_free(MateThemeMetaInfo* meta_theme_info)
 {
 	g_free (meta_theme_info->application_font);
 	g_free (meta_theme_info->background_image);
@@ -1566,13 +1566,13 @@ void mate_theme_meta_info_free(MateThemeMetaInfo* meta_theme_info)
 	g_free (meta_theme_info);
 }
 
-gboolean mate_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** error)
+gboolean cafe_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** error)
 {
 	MateThemeInfo* theme;
 
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-	theme = mate_theme_info_find (info->gtk_theme_name);
+	theme = cafe_theme_info_find (info->gtk_theme_name);
 
 	if (!theme || !theme->has_gtk)
 	{
@@ -1582,7 +1582,7 @@ gboolean mate_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** e
 		return FALSE;
 	}
 
-	theme = mate_theme_info_find (info->marco_theme_name);
+	theme = cafe_theme_info_find (info->marco_theme_name);
 
 	if (!theme || !theme->has_marco)
 	{
@@ -1592,7 +1592,7 @@ gboolean mate_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** e
 		return FALSE;
 	}
 
-	if (!mate_theme_icon_info_find (info->icon_theme_name))
+	if (!cafe_theme_icon_info_find (info->icon_theme_name))
 	{
 		g_set_error (error, MATE_THEME_ERROR, MATE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
 			_("This theme will not look as intended because the required icon theme '%s' is not installed."),
@@ -1603,24 +1603,24 @@ gboolean mate_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** e
 	return TRUE;
 }
 
-MateThemeMetaInfo* mate_theme_meta_info_find(const char* meta_theme_name)
+MateThemeMetaInfo* cafe_theme_meta_info_find(const char* meta_theme_name)
 {
 	g_return_val_if_fail(meta_theme_name != NULL, NULL);
 
 	return (MateThemeMetaInfo*) get_theme_from_hash_by_name (meta_theme_hash_by_name, meta_theme_name, -1);
 }
 
-GList* mate_theme_meta_info_find_all(void)
+GList* cafe_theme_meta_info_find_all(void)
 {
   GList* list = NULL;
 
-  g_hash_table_foreach (meta_theme_hash_by_name, (GHFunc) mate_theme_info_find_all_helper, &list);
+  g_hash_table_foreach (meta_theme_hash_by_name, (GHFunc) cafe_theme_info_find_all_helper, &list);
 
   return list;
 }
 
 gint
-mate_theme_meta_info_compare (MateThemeMetaInfo *a,
+cafe_theme_meta_info_compare (MateThemeMetaInfo *a,
                                MateThemeMetaInfo *b)
 {
   gint cmp;
@@ -1677,7 +1677,7 @@ mate_theme_meta_info_compare (MateThemeMetaInfo *a,
 }
 
 void
-mate_theme_info_register_theme_change (ThemeChangedCallback func,
+cafe_theme_info_register_theme_change (ThemeChangedCallback func,
                                         gpointer data)
 {
   ThemeCallbackData *callback_data;
@@ -1692,7 +1692,7 @@ mate_theme_info_register_theme_change (ThemeChangedCallback func,
 }
 
 gboolean
-mate_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
+cafe_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
 {
   gchar **color_scheme_strings, **color_scheme_pair, *current_string;
   gint i;
@@ -1745,13 +1745,13 @@ mate_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
 }
 
 gboolean
-mate_theme_color_scheme_equal (const gchar *s1, const gchar *s2)
+cafe_theme_color_scheme_equal (const gchar *s1, const gchar *s2)
 {
   GdkRGBA c1[NUM_SYMBOLIC_COLORS], c2[NUM_SYMBOLIC_COLORS];
   int i;
 
-  if (!mate_theme_color_scheme_parse (s1, c1) ||
-      !mate_theme_color_scheme_parse (s2, c2))
+  if (!cafe_theme_color_scheme_parse (s1, c1) ||
+      !cafe_theme_color_scheme_parse (s2, c2))
     return FALSE;
 
   for (i = 0; i < NUM_SYMBOLIC_COLORS; ++i) {
@@ -1763,7 +1763,7 @@ mate_theme_color_scheme_equal (const gchar *s1, const gchar *s2)
 }
 
 void
-mate_theme_init ()
+cafe_theme_init ()
 {
   const gchar * const * dirs;
   GFile *top_theme_dir;
@@ -1831,7 +1831,7 @@ mate_theme_init ()
   }
 
   /* make sure we have the default theme */
-  if (!mate_theme_cursor_info_find ("default"))
+  if (!cafe_theme_cursor_info_find ("default"))
     add_default_cursor_theme ();
 
   /* done */

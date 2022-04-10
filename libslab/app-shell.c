@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <libmate-desktop/mate-desktop-item.h>
+#include <libcafe-desktop/cafe-desktop-item.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
@@ -38,7 +38,7 @@
 #include "shell-window.h"
 #include "app-resizer.h"
 #include "slab-section.h"
-#include "slab-mate-util.h"
+#include "slab-cafe-util.h"
 #include "search-bar.h"
 
 #include "application-tile.h"
@@ -46,7 +46,7 @@
 
 #define TILE_EXEC_NAME "Tile_desktop_exec_name"
 #define SECONDS_IN_DAY 86400
-#define CC_SCHEMA "org.mate.control-center"
+#define CC_SCHEMA "org.cafe.control-center"
 #define EXIT_SHELL_ON_ACTION_START "cc-exit-shell-on-action-start"
 #define EXIT_SHELL_ON_ACTION_HELP "cc-exit-shell-on-action-help"
 #define EXIT_SHELL_ON_ACTION_ADD_REMOVE "cc-exit-shell-on-action-add-remove"
@@ -90,7 +90,7 @@ static void handle_launcher_single_clicked (Tile * launcher, gpointer data);
 static void handle_menu_action_performed (Tile * launcher, TileEvent * event, TileAction * action,
 	gpointer data);
 static gint application_launcher_compare (gconstpointer a, gconstpointer b);
-static void matemenu_tree_changed_callback (MateMenuTree * tree, gpointer user_data);
+static void cafemenu_tree_changed_callback (MateMenuTree * tree, gpointer user_data);
 gboolean regenerate_categories (AppShellData * app_data);
 
 void
@@ -836,10 +836,10 @@ regenerate_categories (AppShellData * app_data)
 }
 
 static void
-matemenu_tree_changed_callback (MateMenuTree * old_tree, gpointer user_data)
+cafemenu_tree_changed_callback (MateMenuTree * old_tree, gpointer user_data)
 {
 	/*
-	This method only gets called on the first change (matemenu appears to ignore subsequent) until
+	This method only gets called on the first change (cafemenu appears to ignore subsequent) until
 	we reget the root dir which we can't do in this method because if we do for some reason this
 	method then gets called multiple times for one actual change. This actually is okay because
 	it's probably a good idea to wait a couple seconds to regenerate the categories in case there
@@ -847,7 +847,7 @@ matemenu_tree_changed_callback (MateMenuTree * old_tree, gpointer user_data)
 	*/
 	GError *error = NULL;
 	AppShellData * app_data = user_data;
-	if (!matemenu_tree_load_sync (app_data->tree, &error)) {
+	if (!cafemenu_tree_load_sync (app_data->tree, &error)) {
 		g_warning ("Menu tree loading got error:%s\n", error->message);
 		g_object_unref (app_data->tree);
 		app_data->tree = NULL;
@@ -888,9 +888,9 @@ generate_categories (AppShellData * app_data)
 	{
 		GError *error = NULL;
 
-		app_data->tree = matemenu_tree_new (app_data->menu_name, MATEMENU_TREE_FLAGS_NONE);
-		g_signal_connect (app_data->tree, "changed", G_CALLBACK (matemenu_tree_changed_callback), app_data);
-		if (! matemenu_tree_load_sync (app_data->tree, &error)) {
+		app_data->tree = cafemenu_tree_new (app_data->menu_name, MATEMENU_TREE_FLAGS_NONE);
+		g_signal_connect (app_data->tree, "changed", G_CALLBACK (cafemenu_tree_changed_callback), app_data);
+		if (! cafemenu_tree_load_sync (app_data->tree, &error)) {
 			g_warning("Menu tree loading got error:%s\n", error->message);
 			g_error_free(error);
 			g_object_unref(app_data->tree);
@@ -899,7 +899,7 @@ generate_categories (AppShellData * app_data)
 	}
 
 	if (app_data->tree != NULL)
-		root_dir = matemenu_tree_get_root_directory (app_data->tree);
+		root_dir = cafemenu_tree_get_root_directory (app_data->tree);
 	else
 		root_dir = NULL;
 
@@ -912,16 +912,16 @@ generate_categories (AppShellData * app_data)
 		exit (1);	/* Fixme - is there a MATE/GTK way to do this. */
 	}
 
-	iter = matemenu_tree_directory_iter (root_dir);
-	while ((type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	iter = cafemenu_tree_directory_iter (root_dir);
+	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		const char *category;
 		switch (type) {
 			case MATEMENU_TREE_ITEM_DIRECTORY:
-				item = matemenu_tree_iter_get_directory (iter);
-				category = matemenu_tree_directory_get_name (item);
+				item = cafemenu_tree_iter_get_directory (iter);
+				category = cafemenu_tree_directory_get_name (item);
 				generate_category(category, item, app_data, TRUE);
-				matemenu_tree_item_unref (item);
+				cafemenu_tree_item_unref (item);
 				break;
 			case MATEMENU_TREE_ITEM_ENTRY:
 				need_misc = TRUE;
@@ -930,7 +930,7 @@ generate_categories (AppShellData * app_data)
 				break;
 		}
 	}
-	matemenu_tree_iter_unref(iter);
+	cafemenu_tree_iter_unref(iter);
 
 	if (need_misc)
 		generate_category (_("Other"), root_dir, app_data, FALSE);
@@ -941,7 +941,7 @@ generate_categories (AppShellData * app_data)
 		app_data->hash = NULL;
 	}
 
-	matemenu_tree_item_unref (root_dir);
+	cafemenu_tree_item_unref (root_dir);
 
 	if (app_data->new_apps && (app_data->new_apps->max_items > 0))
 		generate_new_apps (app_data);
@@ -962,7 +962,7 @@ generate_category (const char * category, MateMenuTreeDirectory * root_dir, AppS
 		data = g_new0 (CategoryData, 1);
 		data->category = g_strdup (category);
 		app_data->categories_list =
-			/* use the matemenu order instead of alphabetical */
+			/* use the cafemenu order instead of alphabetical */
 			g_list_append (app_data->categories_list, data);
 			/* g_list_insert_sorted (app_data->categories_list, data, category_data_compare); */
 	/*
@@ -982,7 +982,7 @@ generate_category (const char * category, MateMenuTreeDirectory * root_dir, AppS
 static gboolean
 check_specific_apps_hack (MateDesktopItem * item)
 {
-	static const gchar *COMMAND_LINE_LOCKDOWN_SCHEMA = "org.mate.lockdown";
+	static const gchar *COMMAND_LINE_LOCKDOWN_SCHEMA = "org.cafe.lockdown";
 	static const gchar *COMMAND_LINE_LOCKDOWN_KEY = "disable-command-line";
 	static const gchar *COMMAND_LINE_LOCKDOWN_DESKTOP_CATEGORY = "TerminalEmulator";
 	static gboolean got_lockdown_value = FALSE;
@@ -1001,11 +1001,11 @@ check_specific_apps_hack (MateDesktopItem * item)
 	}
 
 	/* This seems like an ugly hack but it's the way it's currently done in the old control center */
-	exec = mate_desktop_item_get_string (item, MATE_DESKTOP_ITEM_EXEC);
+	exec = cafe_desktop_item_get_string (item, MATE_DESKTOP_ITEM_EXEC);
 
-	/* discard xscreensaver if mate-screensaver is installed */
+	/* discard xscreensaver if cafe-screensaver is installed */
 	if ((exec && !strcmp (exec, "xscreensaver-demo"))
-		&& (path = g_find_program_in_path ("mate-screensaver-preferences")))
+		&& (path = g_find_program_in_path ("cafe-screensaver-preferences")))
 	{
 		g_free (path);
 		return TRUE;
@@ -1023,7 +1023,7 @@ check_specific_apps_hack (MateDesktopItem * item)
 	if (command_line_lockdown)
 	{
 		const gchar *categories =
-			mate_desktop_item_get_string (item, MATE_DESKTOP_ITEM_CATEGORIES);
+			cafe_desktop_item_get_string (item, MATE_DESKTOP_ITEM_CATEGORIES);
 		if (g_strrstr (categories, COMMAND_LINE_LOCKDOWN_DESKTOP_CATEGORY))
 		{
 			return TRUE;
@@ -1041,21 +1041,21 @@ generate_launchers (MateMenuTreeDirectory * root_dir, AppShellData * app_data, C
 	MateMenuTreeIter *iter;
 	MateMenuTreeItemType type;
 
-	iter = matemenu_tree_directory_iter (root_dir);
-	while ((type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+	iter = cafemenu_tree_directory_iter (root_dir);
+	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
 		gpointer item;
 		switch (type) {
 			case MATEMENU_TREE_ITEM_DIRECTORY:
-				item = matemenu_tree_iter_get_directory(iter);
-				/* g_message ("Found sub-category %s", matemenu_tree_directory_get_name (item)); */
+				item = cafemenu_tree_iter_get_directory(iter);
+				/* g_message ("Found sub-category %s", cafemenu_tree_directory_get_name (item)); */
 				if (recursive)
 					generate_launchers (item, app_data, cat_data, TRUE);
-				matemenu_tree_item_unref (item);
+				cafemenu_tree_item_unref (item);
 				break;
 			case MATEMENU_TREE_ITEM_ENTRY:
-				item = matemenu_tree_iter_get_entry(iter);
-				/* g_message ("Found item name is:%s", matemenu_tree_entry_get_desktop_file_id(item)); */
-				desktop_file = matemenu_tree_entry_get_desktop_file_path (item);
+				item = cafemenu_tree_iter_get_entry(iter);
+				/* g_message ("Found item name is:%s", cafemenu_tree_entry_get_desktop_file_id(item)); */
+				desktop_file = cafemenu_tree_entry_get_desktop_file_path (item);
 				if (desktop_file)
 				{
 					if (g_hash_table_lookup (app_data->hash, desktop_file))
@@ -1069,23 +1069,23 @@ generate_launchers (MateMenuTreeDirectory * root_dir, AppShellData * app_data, C
 					g_hash_table_insert (app_data->hash, (gpointer) desktop_file,
 							(gpointer) desktop_file);
 				}
-				desktop_item = mate_desktop_item_new_from_file (desktop_file, 0, NULL);
+				desktop_item = cafe_desktop_item_new_from_file (desktop_file, 0, NULL);
 				if (!desktop_item)
 				{
-					g_critical ("Failure - mate_desktop_item_new_from_file(%s)",
+					g_critical ("Failure - cafe_desktop_item_new_from_file(%s)",
 							desktop_file);
 					break;
 				}
 				if (!check_specific_apps_hack (desktop_item))
 					insert_launcher_into_category (cat_data, desktop_item, app_data);
-				mate_desktop_item_unref (desktop_item);
-				matemenu_tree_item_unref (item);
+				cafe_desktop_item_unref (desktop_item);
+				cafemenu_tree_item_unref (item);
 				break;
 			default:
 				break;
 		}
 	}
-	matemenu_tree_iter_unref(iter);
+	cafemenu_tree_iter_unref(iter);
 }
 
 static void
@@ -1104,7 +1104,7 @@ generate_new_apps (AppShellData * app_data)
 	GList *categories, *launchers;
 	GHashTable *new_apps_dups;
 
-	all_apps_file_name = g_build_filename (g_get_user_config_dir (), "mate", "ab-newapps.txt", NULL);
+	all_apps_file_name = g_build_filename (g_get_user_config_dir (), "cafe", "ab-newapps.txt", NULL);
 
 	if (!g_file_get_contents (all_apps_file_name, &all_apps, NULL, &error))
 	{
@@ -1127,7 +1127,7 @@ generate_new_apps (AppShellData * app_data)
 				Tile *tile = TILE (launchers->data);
 				MateDesktopItem *item =
 					application_tile_get_desktop_item (APPLICATION_TILE (tile));
-				const gchar *uri = mate_desktop_item_get_location (item);
+				const gchar *uri = cafe_desktop_item_get_location (item);
 				g_string_append (gstr, uri);
 				g_string_append (gstr, separator);
 			}
@@ -1162,7 +1162,7 @@ generate_new_apps (AppShellData * app_data)
 			Tile *tile = TILE (launchers->data);
 			MateDesktopItem *item =
 				application_tile_get_desktop_item (APPLICATION_TILE (tile));
-			const gchar *uri = mate_desktop_item_get_location (item);
+			const gchar *uri = cafe_desktop_item_get_location (item);
 			if (!g_hash_table_lookup (all_apps_cache, uri))
 			{
 				GFile *file;
@@ -1274,12 +1274,12 @@ insert_launcher_into_category (CategoryData * cat_data, MateDesktopItem * deskto
 		icon_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
 	launcher =
-		application_tile_new_full (mate_desktop_item_get_location (desktop_item),
+		application_tile_new_full (cafe_desktop_item_get_location (desktop_item),
 		app_data->icon_size, app_data->show_tile_generic_name);
 	gtk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
 
 	filepath =
-		g_strdup (mate_desktop_item_get_string (desktop_item, MATE_DESKTOP_ITEM_EXEC));
+		g_strdup (cafe_desktop_item_get_string (desktop_item, MATE_DESKTOP_ITEM_EXEC));
 	g_strdelimit (filepath, " ", '\0');	/* just want the file name - no args or replacements */
 	filename = g_strrstr (filepath, "/");
 	if (filename)
@@ -1304,7 +1304,7 @@ insert_launcher_into_category (CategoryData * cat_data, MateDesktopItem * deskto
 	/* destroyed when they are removed */
 	g_object_ref (launcher);
 
-	/* use alphabetical order instead of the matemenu order. We group all sub items in each top level
+	/* use alphabetical order instead of the cafemenu order. We group all sub items in each top level
 	category together, ignoring sub menus, so we also ignore sub menu layout hints */
 	cat_data->launcher_list =
 		/* g_list_insert (cat_data->launcher_list, launcher, -1); */

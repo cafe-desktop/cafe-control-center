@@ -14,7 +14,7 @@
 #include <gtk/gtk.h>
 
 MateDesktopItem *
-libslab_mate_desktop_item_new_from_unknown_id (const gchar *id)
+libslab_cafe_desktop_item_new_from_unknown_id (const gchar *id)
 {
 	MateDesktopItem *item;
 	gchar            *basename;
@@ -25,7 +25,7 @@ libslab_mate_desktop_item_new_from_unknown_id (const gchar *id)
 	if (! id)
 		return NULL;
 
-	item = mate_desktop_item_new_from_uri (id, 0, & error);
+	item = cafe_desktop_item_new_from_uri (id, 0, & error);
 
 	if (! error)
 		return item;
@@ -34,7 +34,7 @@ libslab_mate_desktop_item_new_from_unknown_id (const gchar *id)
 		error = NULL;
 	}
 
-	item = mate_desktop_item_new_from_file (id, 0, & error);
+	item = cafe_desktop_item_new_from_file (id, 0, & error);
 
 	if (! error)
 		return item;
@@ -43,7 +43,7 @@ libslab_mate_desktop_item_new_from_unknown_id (const gchar *id)
 		error = NULL;
 	}
 
-	item = mate_desktop_item_new_from_basename (id, 0, & error);
+	item = cafe_desktop_item_new_from_basename (id, 0, & error);
 
 	if (! error)
 		return item;
@@ -57,7 +57,7 @@ libslab_mate_desktop_item_new_from_unknown_id (const gchar *id)
 	if (basename) {
 		basename++;
 
-		item = mate_desktop_item_new_from_basename (basename, 0, &error);
+		item = cafe_desktop_item_new_from_basename (basename, 0, &error);
 
 		if (! error)
 			return item;

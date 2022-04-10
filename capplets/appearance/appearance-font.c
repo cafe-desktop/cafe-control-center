@@ -39,7 +39,7 @@
  * DPI_HIGH_REASONABLE_VALUE], then we assume that it is lying and we use
  * DPI_FALLBACK instead.
  *
- * See get_dpi_from_mate_conf_or_server() below, and also
+ * See get_dpi_from_cafe_conf_or_server() below, and also
  * https://bugzilla.novell.com/show_bug.cgi?id=217790
  */
 #define DPI_FALLBACK 96

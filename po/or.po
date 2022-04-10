@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-control-center package.
+# This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -9,29 +9,29 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-control-center 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Project-Id-Version: cafe-control-center 1.23.2\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Oriya (https://www.transifex.com/mate/teams/13566/or/)\n"
+"Language-Team: Oriya (https://www.transifex.com/cafe/teams/13566/or/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: or\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: org.mate.control-center.gschema.xml.in:5
+#: org.cafe.control-center.gschema.xml.in:5
 msgid ""
-"[ 'Change Theme;mate-appearance-properties.desktop', 'Set Preferred "
-"Applications;mate-default-applications-properties.desktop' ]"
+"[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
+"Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
 
-#: org.mate.control-center.gschema.xml.in:6
+#: org.cafe.control-center.gschema.xml.in:6
 msgid "Task names and associated .desktop files"
 msgstr "କାର୍ଯ୍ୟ ନାମ ଏବଂ ସଂଶ୍ଳିଷ୍ଟ .desktop ଫାଇଲଗୁଡ଼ିକ"
 
-#: org.mate.control-center.gschema.xml.in:7
+#: org.cafe.control-center.gschema.xml.in:7
 msgid ""
 "The task name to be displayed in the control-center followed by a \";\" "
 "separator then the filename of an associated .desktop file to launch for "
@@ -41,43 +41,43 @@ msgstr ""
 "\";\" ଏବଂ ତାପରେ କାର୍ଯ୍ୟ ପାଇଁ ଆରମ୍ଭ କରିବାକୁ ଥିବା ଗୋଟିଏ .desktop ସଂଶ୍ଳିଷ୍ଟ "
 "ଫାଇଲ ନାମ।"
 
-#: org.mate.control-center.gschema.xml.in:11
+#: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
 msgstr "କାର୍ଯ୍ୟ ସକ୍ରିୟ ହେବା ସମୟରେ ନିୟନ୍ତ୍ରଣ-କେନ୍ଦ୍ରକୁ ବନ୍ଦ କରନ୍ତୁ"
 
-#: org.mate.control-center.gschema.xml.in:12
+#: org.cafe.control-center.gschema.xml.in:12
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
 msgstr ""
 "ଯଦି true, ତେବେ \"Common Task\" ସକ୍ରିୟ ହେବା ମାତ୍ରେ ନିୟନ୍ତ୍ରଣ-କେନ୍ଦ୍ର ବନ୍ଦ "
 "ହୋଇଯିବ।"
 
-#: org.mate.control-center.gschema.xml.in:16
+#: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
 msgstr "ଆରମ୍ଭ କାର୍ଯ୍ୟ କାର୍ଯ୍ୟକାରୀ ହେବା ସମୟରେ କୋଷରୁ ପ୍ରସ୍ଥାନ କରନ୍ତୁ"
 
-#: org.mate.control-center.gschema.xml.in:17
+#: org.cafe.control-center.gschema.xml.in:17
 msgid "Indicates whether to close the shell when a start action is performed."
 msgstr ""
 "ଆରମ୍ଭ କାର୍ଯ୍ୟକୁ କାର୍ଯ୍ୟକାରୀ କରିବା ସମୟରେ କୋଷକୁ ବନ୍ଦ କରବା ଉଚିତ କି ନୁହଁ "
 "ଜଣାନ୍ତୁ।"
 
-#: org.mate.control-center.gschema.xml.in:21
+#: org.cafe.control-center.gschema.xml.in:21
 msgid "Exit shell on help action performed"
 msgstr "ସହାୟତା କାର୍ଯ୍ୟ କାର୍ଯ୍ୟକାରୀ ହେବା ସମୟରେ କୋଷରୁ ପ୍ରସ୍ଥାନ କରନ୍ତୁ"
 
-#: org.mate.control-center.gschema.xml.in:22
+#: org.cafe.control-center.gschema.xml.in:22
 msgid "Indicates whether to close the shell when a help action is performed."
 msgstr ""
 "ସହାୟତା କାର୍ଯ୍ୟକୁ କାର୍ଯ୍ୟକାରୀ କରିବା ସମୟରେ କୋଷକୁ ବନ୍ଦ କରବା ଉଚିତ କି ନୁହଁ "
 "ଜଣାନ୍ତୁ।"
 
-#: org.mate.control-center.gschema.xml.in:26
+#: org.cafe.control-center.gschema.xml.in:26
 msgid "Exit shell on add or remove action performed"
 msgstr ""
 "ଯୋଗକରନ୍ତୁ କିମ୍ବା କାଢ଼ନ୍ତୁ କାର୍ଯ୍ୟକୁ କାର୍ଯ୍ୟକାରୀ କରିବା ସମୟରେ କୋଷ ତ୍ୟାଗ କରନ୍ତୁ"
 
-#: org.mate.control-center.gschema.xml.in:27
+#: org.cafe.control-center.gschema.xml.in:27
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed."
@@ -85,11 +85,11 @@ msgstr ""
 "ଯୋଗକରନ୍ତୁ କିମ୍ବା କାଢନ୍ତୁ କାର୍ଯ୍ୟକୁ କାର୍ଯ୍ୟକାରୀ କରିବା ସମୟରେ କୋଷକୁ ବନ୍ଦ କରବା "
 "ଉଚିତ କି ନୁହଁ ଜଣାନ୍ତୁ।"
 
-#: org.mate.control-center.gschema.xml.in:31
+#: org.cafe.control-center.gschema.xml.in:31
 msgid "Exit shell on upgrade or uninstall action performed"
 msgstr "ଉନ୍ନୟନ କିମ୍ବା ବିସ୍ଥାପନ କାର୍ଯ୍ୟକାରୀ ହେବା ସମୟରେ କୋଷରୁ ପ୍ରସ୍ଥାନ କରନ୍ତୁ"
 
-#: org.mate.control-center.gschema.xml.in:32
+#: org.cafe.control-center.gschema.xml.in:32
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
@@ -97,11 +97,11 @@ msgstr ""
 "ଉନ୍ନୟନ କିମ୍ବା ବିସ୍ଥାପନ କାର୍ଯ୍ୟକୁ କାର୍ଯ୍ୟକାରୀ କରିବା ସମୟରେ କୋଷକୁ ବନ୍ଦ କରବା "
 "ଉଚିତ କି ନୁହଁ ଜଣାନ୍ତୁ।"
 
-#: org.mate.control-center.gschema.xml.in:38
+#: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
 msgstr "ଅଧିକ ପୃଷ୍ଠଭୂମି URL"
 
-#: org.mate.control-center.gschema.xml.in:39
+#: org.cafe.control-center.gschema.xml.in:39
 msgid ""
 "URL for where to get more desktop backgrounds. If set to an empty string the"
 " link will not appear."
@@ -109,11 +109,11 @@ msgstr ""
 "କେଉଁଠି ଅଧିକ ଡେସ୍କଟପ ପୃଷ୍ଠଭୂମି ମିଳିବ ତାହାର URL. ଯଦି କୌଣସି ଖାଲି ବାକ୍ୟଖଣ୍ଡରେ "
 "ସେଟ କରାଯାଏ ତେବେ ସଂଯୋଗଟି ଦୃଶ୍ୟମାନ ହେବ ନାହିଁ।"
 
-#: org.mate.control-center.gschema.xml.in:43
+#: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
 msgstr "ଅଧିକ ପ୍ରସଙ୍ଗ URL"
 
-#: org.mate.control-center.gschema.xml.in:44
+#: org.cafe.control-center.gschema.xml.in:44
 msgid ""
 "URL for where to get more desktop themes. If set to an empty string the link"
 " will not appear."
@@ -121,134 +121,134 @@ msgstr ""
 "କେଉଁଠି ଅଧିକ ଡେସ୍କଟପ ପ୍ରସଙ୍ଗ ମିଳିବ ତାହାର URL. ଯଦି କୌଣସି ଖାଲି ବାକ୍ୟଖଣ୍ଡରେ ସେଟ "
 "କରାଯାଏ ତେବେ ସଂଯୋଗଟି ଦୃଶ୍ୟମାନ ହେବ ନାହିଁ।"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:5
+#: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:6
+#: org.cafe.control-center.keybinding.gschema.xml.in:6
 msgid "Keybinding associated with a custom shortcut."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:10
+#: org.cafe.control-center.keybinding.gschema.xml.in:10
 msgid "Command"
 msgstr "ନିର୍ଦ୍ଦେଶ"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:11
+#: org.cafe.control-center.keybinding.gschema.xml.in:11
 msgid "Command associated with a custom keybinding."
 msgstr ""
 
-#: org.mate.control-center.keybinding.gschema.xml.in:15
+#: org.cafe.control-center.keybinding.gschema.xml.in:15
 #: font-viewer/font-view.c:202
 msgid "Name"
 msgstr "ନାମ"
 
-#: org.mate.control-center.keybinding.gschema.xml.in:16
+#: org.cafe.control-center.keybinding.gschema.xml.in:16
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/mate-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:293
 msgid "Select Image"
 msgstr "ପ୍ରତିଛବି ଚୟନ କରନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:295
 msgid "No Image"
 msgstr "କୌଣସି ପ୍ରତିଛବି ନାହିଁ"
 
-#: capplets/about-me/mate-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:323
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "ପ୍ରତିଛବି"
 
-#: capplets/about-me/mate-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:327
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "ସମସ୍ତ ଫାଇଲ"
 
-#: capplets/about-me/mate-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:500
 #, c-format
 msgid "About %s"
 msgstr "%s ବିଷୟରେ"
 
-#: capplets/about-me/mate-about-me-dialog.ui:39
-#: capplets/about-me/mate-about-me.desktop.in:3
+#: capplets/about-me/cafe-about-me-dialog.ui:39
+#: capplets/about-me/cafe-about-me.desktop.in:3
 msgid "About Me"
 msgstr "ମୋ ବିଷୟରେ"
 
-#: capplets/about-me/mate-about-me-dialog.ui:54
-#: capplets/about-me/mate-about-me-password.ui:54
+#: capplets/about-me/cafe-about-me-dialog.ui:54
+#: capplets/about-me/cafe-about-me-password.ui:54
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:119
 #: capplets/display/display-capplet.ui:106
-#: capplets/mouse/mate-mouse-properties.ui:140
+#: capplets/mouse/cafe-mouse-properties.ui:140
 #: capplets/windows/window-properties.ui:84
 #: capplets/time-admin/src/time-admin.ui:386
 #: capplets/time-admin/src/time-zone.c:472
 msgid "_Close"
 msgstr "ବନ୍ଦ କରନ୍ତୁ (_C)"
 
-#: capplets/about-me/mate-about-me-dialog.ui:100
+#: capplets/about-me/cafe-about-me-dialog.ui:100
 msgid "Select your photo"
 msgstr "ଆପଣଙ୍କର ଫୋଟୋ ବାଛନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-dialog.ui:116
+#: capplets/about-me/cafe-about-me-dialog.ui:116
 msgid "Full Name"
 msgstr "ପୂରା ନାମ"
 
-#: capplets/about-me/mate-about-me-dialog.ui:147
+#: capplets/about-me/cafe-about-me-dialog.ui:147
 msgid "User name:"
 msgstr "ଚାଳକ ନାମ:"
 
-#: capplets/about-me/mate-about-me-dialog.ui:176
+#: capplets/about-me/cafe-about-me-dialog.ui:176
 msgid "Change Passwo_rd..."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାନ୍ତୁ... (_r)"
 
-#: capplets/about-me/mate-about-me-dialog.ui:190
+#: capplets/about-me/cafe-about-me-dialog.ui:190
 msgid "Enable _Fingerprint Login..."
 msgstr "ଅଙ୍ଗୁଳି ଚିହ୍ନ ଲଗଇନକୁ ସକ୍ରିୟ କରନ୍ତୁ (_F)..."
 
-#: capplets/about-me/mate-about-me-dialog.ui:203
+#: capplets/about-me/cafe-about-me-dialog.ui:203
 msgid "Disable _Fingerprint Login..."
 msgstr "ଅଙ୍ଗୁଳି ଚିହ୍ନ ଲଗଇନକୁ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ (_F)..."
 
-#: capplets/about-me/mate-about-me.desktop.in:4
+#: capplets/about-me/cafe-about-me.desktop.in:4
 msgid "Set your personal information"
 msgstr "ଆପଣଙ୍କ ବ୍ଯକ୍ତିଗତ ସୂଚନାକୁ ବିନ୍ଯାସ କରନ୍ତୁ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/about-me/mate-about-me.desktop.in:7
+#: capplets/about-me/cafe-about-me.desktop.in:7
 msgid "user-info"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/about-me/mate-about-me.desktop.in:13
-msgid "mate-control-center;MATE;personal;information;"
+#: capplets/about-me/cafe-about-me.desktop.in:13
+msgid "cafe-control-center;MATE;personal;information;"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:100
+#: capplets/about-me/cafe-about-me-fingerprint.c:100
 msgid ""
 "You are not allowed to access the device. Contact your system administrator."
 msgstr ""
 "ଆପଣ ଏହି ଉପକରଣକୁ ଅଭିଗମ୍ୟ କରିବା ପାଇଁ ଅନୁମୋଦିତ ନୁହଁ। ଆପଣଙ୍କର ତନ୍ତ୍ର ପ୍ରଶାସକଙ୍କ "
 "ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:102
+#: capplets/about-me/cafe-about-me-fingerprint.c:102
 msgid "The device is already in use."
 msgstr "ଉପକରଣଟି ପୂର୍ବରୁ ବ୍ୟବହାରରେ ଅଛି।"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:104
+#: capplets/about-me/cafe-about-me-fingerprint.c:104
 msgid "An internal error occurred"
 msgstr ""
 
-#: capplets/about-me/mate-about-me-fingerprint.c:221
+#: capplets/about-me/cafe-about-me-fingerprint.c:221
 msgid "Delete registered fingerprints?"
 msgstr "ପଞ୍ଜିକୃତ ଅଙ୍ଗୁଳି ଚିହ୍ନଗୁଡ଼ିକୁ ଅପସାରଣ କରିବେ କି?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:224
+#: capplets/about-me/cafe-about-me-fingerprint.c:224
 msgid "_Delete Fingerprints"
 msgstr "ଅଙ୍ଗୁଳି ଚିହ୍ନଗୁଡ଼ିକୁ ଅପସାରଣ କରନ୍ତୁ (_D)"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:231
+#: capplets/about-me/cafe-about-me-fingerprint.c:231
 msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
@@ -256,36 +256,36 @@ msgstr ""
 "ଆପଣଙ୍କର ପଞ୍ଜିକୃତ ଅଙ୍ଗୁଳି ଚିହ୍ନଗୁଡ଼ିକୁ ଅପସାରଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି ଯାହାଫଳରେ "
 "ଅଙ୍ଗୁଳି ଚିହ୍ନ ଲଗଇନ ନିଷ୍କ୍ରିୟ ହୋଇଥାଏ?"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:359
-#: capplets/about-me/mate-about-me-fingerprint.ui:344
+#: capplets/about-me/cafe-about-me-fingerprint.c:359
+#: capplets/about-me/cafe-about-me-fingerprint.ui:344
 msgid "Done!"
 msgstr "ସମାପ୍ତ!"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:405
-#: capplets/about-me/mate-about-me-fingerprint.c:427
+#: capplets/about-me/cafe-about-me-fingerprint.c:405
+#: capplets/about-me/cafe-about-me-fingerprint.c:427
 #, c-format
 msgid "Could not access '%s' device"
 msgstr "'%s' ଉପକରଣକୁ ଅଭିଗମ୍ୟ କରିପାରିଲା ନାହିଁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:476
+#: capplets/about-me/cafe-about-me-fingerprint.c:476
 #, c-format
 msgid "Could not start finger capture on '%s' device"
 msgstr "'%s' ଉପକରଣରେ ଅଙ୍ଗୁଳି ଧାରଣକୁ ଆରମ୍ଭ କରିପାରିଲା ନାହିଁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:524
+#: capplets/about-me/cafe-about-me-fingerprint.c:524
 msgid "Could not access any fingerprint readers"
 msgstr "କୌଣସି ଅଙ୍ଗୁଳି ଚିହ୍ନ ପାଠକଙ୍କୁ ଅଭିଗମ୍ୟ କରିପାରିଲା ନାହିଁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:525
+#: capplets/about-me/cafe-about-me-fingerprint.c:525
 msgid "Please contact your system administrator for help."
 msgstr "ସହାୟତା ପାଇଁ ଆପଣଙ୍କ ତନ୍ତ୍ର ପ୍ରଶାସକଙ୍କ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:559
-#: capplets/about-me/mate-about-me-fingerprint.ui:66
+#: capplets/about-me/cafe-about-me-fingerprint.c:559
+#: capplets/about-me/cafe-about-me-fingerprint.ui:66
 msgid "Enable Fingerprint Login"
 msgstr "ଅଙ୍ଗୁଳି ଚିହ୍ନ ଲଗଇନକୁ ସକ୍ରିୟ କରନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:589
+#: capplets/about-me/cafe-about-me-fingerprint.c:589
 #, c-format
 msgid ""
 "To enable fingerprint login, you need to save one of your fingerprints, "
@@ -294,63 +294,63 @@ msgstr ""
 "ଅଙ୍ଗୁଳି ଚିହ୍ନ ଲଗଇନକୁ ସକ୍ରିୟ କରିବା ପାଇଁ, ଆପଣଙ୍କୁ '%s' ଉପକରଣ ବ୍ୟବହାର କରି "
 "ଆପଣଙ୍କର ଗୋଟିଏ ଅଙ୍ଗୁଳି ଚିହ୍ନକୁ ସଂରକ୍ଷଣ କରିବା ଆବଶ୍ୟକ।"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:598
+#: capplets/about-me/cafe-about-me-fingerprint.c:598
 msgid "Swipe finger on reader"
 msgstr "ପାଠକ ଉପରେ ଅଙ୍ଗୁଳି ବୁଲାନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.c:600
+#: capplets/about-me/cafe-about-me-fingerprint.c:600
 msgid "Place finger on reader"
 msgstr "ପାଠକ ଉପରେ ଅଙ୍ଗୁଳି ରଖନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:38
+#: capplets/about-me/cafe-about-me-fingerprint.ui:38
 msgid "Left thumb"
 msgstr "ବାମ ଆଙ୍ଗୁଠି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:41
+#: capplets/about-me/cafe-about-me-fingerprint.ui:41
 msgid "Left middle finger"
 msgstr "ବାମ ତର୍ଜନି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:44
+#: capplets/about-me/cafe-about-me-fingerprint.ui:44
 msgid "Left ring finger"
 msgstr "ବାମ ଅନାମିକା ଅଙ୍ଗୁଳି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:47
+#: capplets/about-me/cafe-about-me-fingerprint.ui:47
 msgid "Left little finger"
 msgstr "ବାମ ତର୍ଜନି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:50
+#: capplets/about-me/cafe-about-me-fingerprint.ui:50
 msgid "Right thumb"
 msgstr "ଡାହାଣ ଆଙ୍ଗୁଠି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:53
+#: capplets/about-me/cafe-about-me-fingerprint.ui:53
 msgid "Right middle finger"
 msgstr "ଡାହାଣ ମଝି ଅଙ୍ଗୁଳି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:56
+#: capplets/about-me/cafe-about-me-fingerprint.ui:56
 msgid "Right ring finger"
 msgstr "ଡାହାଣ ଅନାମିକା ଅଙ୍ଗୁଳି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:59
+#: capplets/about-me/cafe-about-me-fingerprint.ui:59
 msgid "Right little finger"
 msgstr "ଡାହାଣ କାନି ଅଙ୍ଗୁଳି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:125
+#: capplets/about-me/cafe-about-me-fingerprint.ui:125
 msgid "Right index finger"
 msgstr "ଡାହାଣ ତର୍ଜନି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:142
+#: capplets/about-me/cafe-about-me-fingerprint.ui:142
 msgid "Left index finger"
 msgstr "ବାମ ତର୍ଜନି"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:163
+#: capplets/about-me/cafe-about-me-fingerprint.ui:163
 msgid "Other finger: "
 msgstr "ଅନ୍ୟାନ୍ୟ ଅଙ୍ଗୁଳି:"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:214
+#: capplets/about-me/cafe-about-me-fingerprint.ui:214
 msgid "Select finger"
 msgstr "ଅଙ୍ଗୁଳି ଚୟନ କରନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-fingerprint.ui:339
+#: capplets/about-me/cafe-about-me-fingerprint.ui:339
 msgid ""
 "Your fingerprint was successfully saved. You should now be able to log in "
 "using your fingerprint reader."
@@ -358,26 +358,26 @@ msgstr ""
 "ଆପଣଙ୍କର ଅଙ୍ଗୁଳି ଚିହ୍ନଟି ସଫଳତାର ସହିତ ସଂରକ୍ଷଣ ହୋଇଛି। ଆପଣଙ୍କୁ ବର୍ତ୍ତମାନ ଆପଣଙ୍କର"
 " ଅଙ୍ଗୁଳି ଚିହ୍ନ ପାଠକ ବ୍ୟବହାର କରି ଲଗଇନ କରିବାକୁ ହେବ।"
 
-#: capplets/about-me/mate-about-me-password.c:160
+#: capplets/about-me/cafe-about-me-password.c:160
 msgid "Child exited unexpectedly"
 msgstr "ନିର୍ଭରକଟି ଅପ୍ରତ୍ଯାଶିତ ଭାବରେ ପ୍ରସ୍ଥାନ କଲା"
 
-#: capplets/about-me/mate-about-me-password.c:296
+#: capplets/about-me/cafe-about-me-password.c:296
 #, c-format
 msgid "Could not shutdown backend_stdin IO channel: %s"
 msgstr "backend_stdin IO ଉପପଥକୁ ବନ୍ଦ କରିପାରିଲା ନାହିଁ: %s"
 
-#: capplets/about-me/mate-about-me-password.c:309
+#: capplets/about-me/cafe-about-me-password.c:309
 #, c-format
 msgid "Could not shutdown backend_stdout IO channel: %s"
 msgstr "backend_stdin IO ଉପପଥକୁ ବନ୍ଦ କରିପାରିଲା ନାହିଁ: %s"
 
-#: capplets/about-me/mate-about-me-password.c:408
+#: capplets/about-me/cafe-about-me-password.c:408
 msgid "Authenticated!"
 msgstr "ବୈଧିକୃତ!"
 
-#: capplets/about-me/mate-about-me-password.c:473
-#: capplets/about-me/mate-about-me-password.c:558
+#: capplets/about-me/cafe-about-me-password.c:473
+#: capplets/about-me/cafe-about-me-password.c:558
 msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
@@ -385,98 +385,98 @@ msgstr ""
 "ଆପଣ ପ୍ରାରମ୍ଭରେ ପ୍ରମାଣ କରିଥିବା ଗୁପ୍ତଶବ୍ଦ ପରିବର୍ତ୍ତିତ ହୋଇଛି! ଦଯାକରି ପୁନର୍ବାର "
 "ପ୍ରମାଣିତ କରନ୍ତୁ ।"
 
-#: capplets/about-me/mate-about-me-password.c:475
+#: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତଟି ଭୂଲ ଥିଲା।"
 
-#: capplets/about-me/mate-about-me-password.c:526
+#: capplets/about-me/cafe-about-me-password.c:526
 msgid "Your password has been changed."
 msgstr "ଆପଣଙ୍କ ପ୍ରବେଶ ସଙ୍କେତକୁ ବଦଳାଗଲା।"
 
-#: capplets/about-me/mate-about-me-password.c:536
+#: capplets/about-me/cafe-about-me-password.c:536
 #, c-format
 msgid "System error: %s."
 msgstr "ତନ୍ତ୍ର ତୃଟି: %s।"
 
-#: capplets/about-me/mate-about-me-password.c:539
+#: capplets/about-me/cafe-about-me-password.c:539
 msgid "The password is too short."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତଟି ଅତି କ୍ଷୁଦ୍ର ଅଟେ।"
 
-#: capplets/about-me/mate-about-me-password.c:543
+#: capplets/about-me/cafe-about-me-password.c:543
 msgid "The password is too simple."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତଟି ଅତି କ୍ଷୁଦ୍ର ଅଟେ।"
 
-#: capplets/about-me/mate-about-me-password.c:548
+#: capplets/about-me/cafe-about-me-password.c:548
 msgid "The old and new passwords are too similar."
 msgstr "ପୁରାତନ ଏବଂ ନୂତନ ପ୍ରବେଶ ସଙ୍କେତ ମଧ୍ଯରେ ବହୁତ ସାମଞ୍ଜସ୍ଯ ଅଛି।"
 
-#: capplets/about-me/mate-about-me-password.c:550
+#: capplets/about-me/cafe-about-me-password.c:550
 msgid "The new password must contain numeric or special character(s)."
 msgstr ""
 "ନୂତନ ପ୍ରବେଶ ସଙ୍କେତଟି ସଂକ୍ଯାତ୍ମକ କିମ୍ବା ବିଶେଷ ଅକ୍ଷର ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ।"
 
-#: capplets/about-me/mate-about-me-password.c:553
+#: capplets/about-me/cafe-about-me-password.c:553
 msgid "The old and new passwords are the same."
 msgstr "ପୁରାତନ ଏବଂ ନୂତନ ପ୍ରବେଶ ସଙ୍କେତ ଏକାପ୍ରକାରର ଅଟନ୍ତି।"
 
-#: capplets/about-me/mate-about-me-password.c:555
+#: capplets/about-me/cafe-about-me-password.c:555
 msgid "The new password has already been used recently."
 msgstr ""
 
-#: capplets/about-me/mate-about-me-password.c:826
+#: capplets/about-me/cafe-about-me-password.c:826
 #, c-format
 msgid "Unable to launch %s: %s"
 msgstr "%s କୁ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ: %s"
 
-#: capplets/about-me/mate-about-me-password.c:830
+#: capplets/about-me/cafe-about-me-password.c:830
 msgid "Unable to launch backend"
 msgstr "ପୃଷ୍ଠଭାଗକୁ ଚଳାଇବାରେ ଅସମର୍ଥ"
 
-#: capplets/about-me/mate-about-me-password.c:831
+#: capplets/about-me/cafe-about-me-password.c:831
 msgid "A system error has occurred"
 msgstr "ଗୋଟିଏ ତନ୍ତ୍ର ତୃଟି ପରିଲିଖିତ ହେଲା"
 
-#: capplets/about-me/mate-about-me-password.c:851
+#: capplets/about-me/cafe-about-me-password.c:851
 msgid "Checking password..."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତକୁ ଯାଞ୍ଚ କରୁଅଛି..."
 
-#: capplets/about-me/mate-about-me-password.c:935
+#: capplets/about-me/cafe-about-me-password.c:935
 msgid "Click <b>Change password</b> to change your password."
 msgstr ""
 "ଆପଣଙ୍କର ପ୍ରବେଶ ସଙ୍କେତକୁ ବଦଳାଇବା ପାଇଁ <b>ପ୍ରବେଶ ସଙ୍କେତ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</b> "
 "କୁ ଦବାନ୍ତୁ।"
 
-#: capplets/about-me/mate-about-me-password.c:938
+#: capplets/about-me/cafe-about-me-password.c:938
 msgid "Please type your password in the <b>New password</b> field."
 msgstr ""
 "ଦୟାକରି ଆପଣଙ୍କ ପ୍ରବେଶ ସଙ୍କେତକୁ <b>ନୂତନ ପ୍ରବେଶ ସଙ୍କେତ</b> କ୍ଷେତ୍ରରେ ଟାଇପ "
 "କରନ୍ତୁ।"
 
-#: capplets/about-me/mate-about-me-password.c:941
-#: capplets/about-me/mate-about-me-password.ui:348
+#: capplets/about-me/cafe-about-me-password.c:941
+#: capplets/about-me/cafe-about-me-password.ui:348
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr ""
 "ଦୟାକରି ଆପଣଙ୍କ ପ୍ରବେଶ ସଙ୍କେତକୁ ପୁନର୍ବାର <b>ନୂତନ ପ୍ରବେଶ ସଙ୍କେତ ପୁନଃ ଟାଇପ "
 "କରନ୍ତୁ</b> କ୍ଷେତ୍ରରେ ଟାଇପ କରନ୍ତୁ।"
 
-#: capplets/about-me/mate-about-me-password.c:944
+#: capplets/about-me/cafe-about-me-password.c:944
 msgid "The two passwords are not equal."
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ଦ୍ବୟ ଏକପ୍ରକାରର ନୁହଁନ୍ତି।"
 
-#: capplets/about-me/mate-about-me-password.ui:38
+#: capplets/about-me/cafe-about-me-password.ui:38
 msgid "Change password"
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-password.ui:70
+#: capplets/about-me/cafe-about-me-password.ui:70
 msgid "Change pa_ssword"
 msgstr "ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାନ୍ତୁ (_s)"
 
-#: capplets/about-me/mate-about-me-password.ui:124
+#: capplets/about-me/cafe-about-me-password.ui:124
 msgid "Change your password"
 msgstr "ଆପଣଙ୍କର ପ୍ରବେଶ ସଙ୍କେତ ବଦଳାନ୍ତୁ"
 
-#: capplets/about-me/mate-about-me-password.ui:142
+#: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
 "To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
 "After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
@@ -484,19 +484,19 @@ msgstr ""
 "ଆପଣଙ୍କର ଗୁପ୍ତଶବ୍ଦକୁ ପରିବର୍ତ୍ତନ କରିବା ପାଇଁ, ତଳ କ୍ଷେତ୍ରରେ ଆପଣଙ୍କର ଚଳିତ ଗୁପ୍ତଶବ୍ଦକୁ ପ୍ରବିଷ୍ଟ କରନ୍ତୁ ଏବଂ  <b>ପ୍ରମାଣିତକର</b>ରେ କ୍ଲିକ କରନ୍ତୁ\n"
 "ଆପଣ ପ୍ରମାଣିତ କରିବା ପରେ, ଆପଣଙ୍କର ନୂଆ ଗୁପ୍ତଶବ୍ଦକୁ ପ୍ରବିଷ୍ଟ କରନ୍ତୁ, ପରୀକ୍ଷା କରିବା ପାଇଁ ଏହାକୁ ପୁନଃଟାଇପ କରନ୍ତୁ ଏବଂ<b>ଗୁପ୍ତଶବ୍ଦ ପରିବର୍ତ୍ତନ</b>ରେ କ୍ଲିକ କରନ୍ତୁ ।"
 
-#: capplets/about-me/mate-about-me-password.ui:171
+#: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
 msgstr "ସାମ୍ପ୍ରତିକ ପ୍ରବେଶ ସଙ୍କେତ (_p):"
 
-#: capplets/about-me/mate-about-me-password.ui:187
+#: capplets/about-me/cafe-about-me-password.ui:187
 msgid "_New password:"
 msgstr "ନୂତନ ପ୍ରବେଶ ସଙ୍କେତ (_N):"
 
-#: capplets/about-me/mate-about-me-password.ui:203
+#: capplets/about-me/cafe-about-me-password.ui:203
 msgid "_Retype new password:"
 msgstr "ନୂତନ ପ୍ରବେଶ ସଙ୍କେତକୁ ପୁନର୍ବାର ଟାଇପ କିନ୍ତୁ (_R):"
 
-#: capplets/about-me/mate-about-me-password.ui:276
+#: capplets/about-me/cafe-about-me-password.ui:276
 msgid "_Authenticate"
 msgstr "ବୈଧିକ୍ରୁତ କରନ୍ତୁ (_A)"
 
@@ -506,7 +506,7 @@ msgstr "ସହକାରୀ ପ୍ରଯୁକ୍ତିବିଜ୍ଞାନ ପ�
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:86
 #: capplets/display/display-capplet.ui:58
-#: capplets/mouse/mate-mouse-properties.ui:124
+#: capplets/mouse/cafe-mouse-properties.ui:124
 #: capplets/windows/window-properties.ui:68
 msgid "_Help"
 msgstr "ସହାୟତା (_H)"
@@ -516,7 +516,7 @@ msgid "Close and _Log Out"
 msgstr "ବନ୍ଦ ଏବଂ ଲଗଆଉଟ କରନ୍ତୁ (_L)"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:165
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:3
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:3
 msgid "Assistive Technologies"
 msgstr "ସହକାରୀ ପ୍ରଯୁକ୍ତିବିଜ୍ଞାନ"
 
@@ -569,20 +569,20 @@ msgstr "ଅଭିଗମ୍ୟ ଲଗଇନ (_g)"
 msgid "Jump to the Accessible Login dialog"
 msgstr "ଅଭିଗମ୍ୟ ଲଗଇନ ସଂଳାପକୁ ଯାଆନ୍ତୁ"
 
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:4
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:4
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "ଆପଣ ଲଗଇନ ହେବା ସମୟରେ କେଉଁ ଅଭିଗମ୍ୟ ବିଶେଷଗୁଣକୁ ସକ୍ରିୟ କରିବେ ବାଛନ୍ତୁ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:7
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
 msgid "preferences-desktop-accessibility"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/accessibility/at-properties/mate-at-properties.desktop.in:13
-msgid "mate-control-center;MATE;accessibility;features;"
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
+msgid "cafe-control-center;MATE;accessibility;features;"
 msgstr ""
 
 #: capplets/appearance/appearance-desktop.c:615
@@ -631,8 +631,8 @@ msgstr ""
 "ଦର୍ଶାଇବାକୁ ଥିବା ପୃଷ୍ଠାର ନାମ ଉଲ୍ଲେଖ କରନ୍ତୁ (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
-#: capplets/default-applications/mate-da-capplet.c:839
-#: capplets/mouse/mate-mouse-properties.c:443
+#: capplets/default-applications/cafe-da-capplet.c:839
+#: capplets/mouse/cafe-mouse-properties.c:443
 msgid "page"
 msgstr "ପୃଷ୍ଠା"
 
@@ -641,7 +641,7 @@ msgid "[WALLPAPER...]"
 msgstr "[WALLPAPER...]"
 
 #: capplets/appearance/appearance-style.c:171
-#: capplets/common/mate-theme-info.c:494
+#: capplets/common/cafe-theme-info.c:494
 msgid "Default Pointer"
 msgstr "ଡିଫଲ୍ଟ ପଏଣ୍ଟର"
 
@@ -768,13 +768,13 @@ msgstr "ଆକାର (_S):"
 
 #. small threshold
 #: capplets/appearance/data/appearance.ui:709
-#: capplets/mouse/mate-mouse-properties.ui:679
+#: capplets/mouse/cafe-mouse-properties.ui:679
 msgid "Small"
 msgstr "ଛୋଟ"
 
 #. large threshold
 #: capplets/appearance/data/appearance.ui:739
-#: capplets/mouse/mate-mouse-properties.ui:716
+#: capplets/mouse/cafe-mouse-properties.ui:716
 msgid "Large"
 msgstr "ବଡ"
 
@@ -876,7 +876,7 @@ msgid "Save _notification theme"
 msgstr ""
 
 #: capplets/appearance/data/appearance.ui:1758
-#: capplets/keybindings/mate-keybinding-properties.ui:80
+#: capplets/keybindings/cafe-keybinding-properties.ui:80
 msgid "_Name:"
 msgstr "ନାମ: (_N)"
 
@@ -978,7 +978,7 @@ msgid "Get more backgrounds online"
 msgstr "ଅନଲାଇନରେ ଅଧିକ ପୃଷ୍ଠଭୂମି ଗ୍ରହଣ କରନ୍ତୁ"
 
 #: capplets/appearance/data/appearance.ui:2359
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:674
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:674
 msgid "_Add..."
 msgstr "ଯୋଗ କରନ୍ତୁ (_A)..."
 
@@ -1074,11 +1074,11 @@ msgstr "ସମ୍ପାଦନ କରନ୍ତୁ"
 msgid "Interface"
 msgstr ""
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:3
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:3
 msgid "Appearance"
 msgstr "ସାଦ୍ରୁଶ୍ଯ"
 
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:4
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:4
 msgid "Customize the look of the desktop"
 msgstr "ଡେସ୍କଟପର ଦୃଶ୍ୟକୁ ଇଚ୍ଛାମୁତାବକ କରନ୍ତୁ"
 
@@ -1086,68 +1086,68 @@ msgstr "ଡେସ୍କଟପର ଦୃଶ୍ୟକୁ ଇଚ୍ଛାମୁତ�
 #. localize the semicolons! The list MUST also end with a semicolon!
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:7
-#: capplets/appearance/data/mate-theme-installer.desktop.in:7
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
 msgid "preferences-desktop-theme"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-appearance-properties.desktop.in:13
-msgid "mate-control-center;MATE;appearance;properties;desktop;customize;look;"
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
+msgid "cafe-control-center;MATE;appearance;properties;desktop;customize;look;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:3
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Theme Installer"
 msgstr "ପ୍ରସଙ୍ଗ ସ୍ଥାପକ"
 
-#: capplets/appearance/data/mate-theme-installer.desktop.in:4
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:4
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "ଡେସ୍କଟପର ବିଭିନ୍ନ ଅଂଶ ପାଇଁ ପ୍ରସଙ୍ଗର ପ୍ୟାକେଜଗୁଡ଼ିକୁ ସ୍ଥାପନ କରନ୍ତୁ"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/mate-theme-installer.desktop.in:14
-msgid "mate-control-center;MATE;install;desktop;themes;"
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:14
+msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
-#: capplets/appearance/data/mate-theme-package.xml.in:5
+#: capplets/appearance/data/cafe-theme-package.xml.in:5
 msgid "Mate Theme Package"
 msgstr "Mate ପ୍ରସଙ୍ଗ ପ୍ୟାକେଜ"
 
-#: capplets/appearance/mate-wp-info.c:51
+#: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
 msgstr "କୌଣସି ଡେସ୍କଟପ ପୃଷ୍ଠଭୂମି ନାହିଁ"
 
-#: capplets/appearance/mate-wp-item.c:288
+#: capplets/appearance/cafe-wp-item.c:288
 msgid "unknown"
 msgstr "ଅଜଣା"
 
-#: capplets/appearance/mate-wp-item.c:295
+#: capplets/appearance/cafe-wp-item.c:295
 msgid "Slide Show"
 msgstr "ସ୍ଲାଇଡ୍ ଦେଖାଅ"
 
-#: capplets/appearance/mate-wp-item.c:297
+#: capplets/appearance/cafe-wp-item.c:297
 msgid "Image"
 msgstr "ପ୍ରତିଛବି"
 
-#: capplets/appearance/mate-wp-item.c:303
+#: capplets/appearance/cafe-wp-item.c:303
 msgid "multiple sizes"
 msgstr "ଏକାଧିକ ଆକାର"
 
-#: capplets/appearance/mate-wp-item.c:306
+#: capplets/appearance/cafe-wp-item.c:306
 #, c-format
 msgid "%d %s by %d %s"
 msgstr "%d %s by %d %s"
 
-#: capplets/appearance/mate-wp-item.c:308
-#: capplets/appearance/mate-wp-item.c:310
+#: capplets/appearance/cafe-wp-item.c:308
+#: capplets/appearance/cafe-wp-item.c:310
 msgid "pixel"
 msgid_plural "pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: capplets/appearance/mate-wp-item.c:319
+#: capplets/appearance/cafe-wp-item.c:319
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1156,7 +1156,7 @@ msgid ""
 "Artist: %s"
 msgstr ""
 
-#: capplets/appearance/mate-wp-item.c:334
+#: capplets/appearance/cafe-wp-item.c:334
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1165,7 +1165,7 @@ msgid ""
 "Artist: %s"
 msgstr ""
 
-#: capplets/appearance/mate-wp-item.c:339
+#: capplets/appearance/cafe-wp-item.c:339
 msgid "Image missing"
 msgstr "ପ୍ରତିଛବି ଅନୁପସ୍ଥିତ ଅଛି"
 
@@ -1301,10 +1301,10 @@ msgstr "ପ୍ରସଙ୍ଗ ଯନ୍ତ୍ରକୁ ସ୍ଥାପନ କର
 
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
-"Unable to start the settings manager 'mate-settings-daemon'.\n"
+"Unable to start the settings manager 'cafe-settings-daemon'.\n"
 "Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
 msgstr ""
-"'mate-settings-daemon' ସଂରଚନା ପରିଚାଳକଙ୍କୁ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ।\n"
+"'cafe-settings-daemon' ସଂରଚନା ପରିଚାଳକଙ୍କୁ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ।\n"
 "MATE ସଂରଚନା ପରିଚାଳକ ଚାଲୁ ନଥିବା ବିନା, କେତେକ ପସନ୍ଦ ପ୍ରଭାବଶାଳୀ ହୋଇ ପାରିବ ନାହିଁ। DBus ଏହା ହୁଏତ ଏକ ସମସ୍ଯା ସୃଷ୍ଟି କରିପାରେ, ଅଥବା ଗୋଟିଏ ଅଣ-MATE (ଯେପରି KDE) ସଂରଚନା ପରିଚାଳକ ପୂର୍ବରୁ ସକ୍ରିୟ ଥାଇପାରେ ଏବଂ MATE ସେଟିଙ୍ଗ ପ୍ରବନ୍ଧକ ସହିତ ଦ୍ବନ୍ଦ୍ବ କରୁଥାଇପାରେ।"
 
 #: capplets/common/capplet-util.c:82
@@ -1389,7 +1389,7 @@ msgstr "ଏଡାଇ ଦିଅନ୍ତୁ (_S)"
 msgid "Overwrite _All"
 msgstr "ସମସ୍ତଙ୍କୁ ନବଲିଖନ କରନ୍ତୁ (_A)"
 
-#: capplets/common/mate-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
 "This theme will not look as intended because the required GTK+ theme '%s' is"
@@ -1398,7 +1398,7 @@ msgstr ""
 "ଏହି ପ୍ରସଙ୍ଗଟି ଆଶାକରାଯାଉଥିବା ପରି ଲାଗୁନାହିଁ କାରଣ ଆବଶ୍ୟକୀୟ GTK+ ପ୍ରସଙ୍ଗ '%s' ଟି"
 " ସ୍ଥାପିତ ହୋଇନାହିଁ।"
 
-#: capplets/common/mate-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1588
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1407,7 +1407,7 @@ msgstr ""
 "ଏହି ପ୍ରସଙ୍ଗଟି ଆଶାକରାଯାଉଥିବା ପରି ଲାଗୁନାହିଁ କାରଣ ଆବଶ୍ୟକୀୟ ୱିଣ୍ଡୋ ପରିଚାଳକ "
 "ପ୍ରସଙ୍ଗ '%s' ଟି ସ୍ଥାପିତ ହୋଇନାହିଁ।"
 
-#: capplets/common/mate-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1596
 #, c-format
 msgid ""
 "This theme will not look as intended because the required icon theme '%s' is"
@@ -1416,130 +1416,130 @@ msgstr ""
 "ଏହି ପ୍ରସଙ୍ଗଟି ଆଶାକରାଯାଉଥିବା ପରି ଲାଗୁନାହିଁ କାରଣ ଆବଶ୍ୟକୀୟ ଚିତ୍ରସଂକେତ ପ୍ରସଙ୍ଗ "
 "'%s' ଟି ସ୍ଥାପିତ ହୋଇନାହିଁ।"
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:3
-#: capplets/default-applications/mate-default-applications-properties.ui:13
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
+#: capplets/default-applications/cafe-default-applications-properties.ui:13
 msgid "Preferred Applications"
 msgstr "ପସନ୍ଦ ପ୍ରଯୋଗଗୁଡିକ"
 
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:4
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:4
 msgid "Select your default applications"
 msgstr "ଆପଣଙ୍କର ଡିଫଲ୍ଟ ପ୍ରଯୋଗଗୁଡିକୁ ମନୋନୀତ କରନ୍ତୁ "
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:7
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
 msgid "preferences-desktop-default-applications"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/default-applications/mate-default-applications-properties.desktop.in:13
-msgid "mate-control-center;MATE;default;preferred;applications;"
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
+msgid "cafe-control-center;MATE;default;preferred;applications;"
 msgstr ""
 
-#: capplets/default-applications/mate-da-capplet.c:639
+#: capplets/default-applications/cafe-da-capplet.c:639
 msgid "Could not load the main interface"
 msgstr "ମୁଖ୍ୟ ଅନ୍ତରାପୃଷ୍ଠ ଧାରଣ କରିବାରେ ଅସମର୍ଥ"
 
-#: capplets/default-applications/mate-da-capplet.c:640
+#: capplets/default-applications/cafe-da-capplet.c:640
 msgid "Please make sure that the applet is properly installed"
 msgstr "ଆପଲେଟ ସଠିକ ଭାବରେ ପ୍ରତିଷ୍ଠାପିତ ହୋଇଛି କି ନାହିଁ ନିଶ୍ଚିତ କରନ୍ତୁ "
 
-#: capplets/default-applications/mate-da-capplet.c:838
+#: capplets/default-applications/cafe-da-capplet.c:838
 msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr ""
 "ଦର୍ଶାଇବା ପାଇଁ ପୃଷ୍ଠାର ନାମ ଉଲ୍ଲେଖ କରନ୍ତୁ (internet|multimedia|system|a11y)"
 
-#: capplets/default-applications/mate-da-capplet.c:844
+#: capplets/default-applications/cafe-da-capplet.c:844
 msgid "- MATE Default Applications"
 msgstr "- MATE ପୂର୍ବନିର୍ଦ୍ଧାରିତ ପ୍ରୟୋଗଗୁଡ଼ିକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:134
+#: capplets/default-applications/cafe-default-applications-properties.ui:134
 msgid "Web Browser"
 msgstr "ୱେବ ବ୍ରାଉଜର"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:202
+#: capplets/default-applications/cafe-default-applications-properties.ui:202
 msgid "Mail Reader"
 msgstr "ମେଲ ପାଠକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:270
+#: capplets/default-applications/cafe-default-applications-properties.ui:270
 msgid "Instant Messenger"
 msgstr "ଜରୂରି ଦୂତ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:289
+#: capplets/default-applications/cafe-default-applications-properties.ui:289
 msgid "Internet"
 msgstr "ଇଣ୍ଟରନେଟ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:357
+#: capplets/default-applications/cafe-default-applications-properties.ui:357
 msgid "Image Viewer"
 msgstr "ଚିତ୍ର ଦର୍ଶକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:425
+#: capplets/default-applications/cafe-default-applications-properties.ui:425
 msgid "Multimedia Player"
 msgstr "ବହୁମାଧ୍ଯମ ଚାଳକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:493
+#: capplets/default-applications/cafe-default-applications-properties.ui:493
 msgid "Video Player"
 msgstr "ଭିଡ଼ଓ ଚାଳକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:515
+#: capplets/default-applications/cafe-default-applications-properties.ui:515
 msgid "Multimedia"
 msgstr "ବହୁମାଧ୍ଯମ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:584
+#: capplets/default-applications/cafe-default-applications-properties.ui:584
 msgid "Text Editor"
 msgstr "ପାଠ୍ଯ ସମ୍ପାଦକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:652
+#: capplets/default-applications/cafe-default-applications-properties.ui:652
 msgid "Terminal Emulator"
 msgstr "ଟର୍ମିନାଲ ଯାନ୍ତ୍ରାନୁକାରୀ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:720
+#: capplets/default-applications/cafe-default-applications-properties.ui:720
 msgid "File Manager"
 msgstr "ଫାଇଲ ପରିଚାଳକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:788
+#: capplets/default-applications/cafe-default-applications-properties.ui:788
 msgid "Calculator"
 msgstr "କାଲକୁଲେଟର"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:810
+#: capplets/default-applications/cafe-default-applications-properties.ui:810
 msgid "System"
 msgstr "ତନ୍ତ୍ର"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:879
+#: capplets/default-applications/cafe-default-applications-properties.ui:879
 msgid "Document Viewer"
 msgstr "ଦଲିଲ ପ୍ରଦର୍ଶକ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:947
+#: capplets/default-applications/cafe-default-applications-properties.ui:947
 msgid "Word Processor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1015
+#: capplets/default-applications/cafe-default-applications-properties.ui:1015
 msgid "Spreadsheet Editor"
 msgstr ""
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1037
+#: capplets/default-applications/cafe-default-applications-properties.ui:1037
 msgid "Office"
 msgstr "କାର୍ଯ୍ଯାଳୟ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1094
+#: capplets/default-applications/cafe-default-applications-properties.ui:1094
 msgid "_Run at start"
 msgstr "ଆରମ୍ଭରେ ଚଲାନ୍ତୁ (_R)"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1122
+#: capplets/default-applications/cafe-default-applications-properties.ui:1122
 msgid "Visual"
 msgstr "ଚାକ୍ଷୁଷ"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1178
+#: capplets/default-applications/cafe-default-applications-properties.ui:1178
 msgid "Run at st_art"
 msgstr "ଆରମ୍ଭରେ ଚଲାନ୍ତୁ (_a)"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1206
+#: capplets/default-applications/cafe-default-applications-properties.ui:1206
 msgid "Mobility"
 msgstr "ଗତିଶୀଳତା"
 
-#: capplets/default-applications/mate-default-applications-properties.ui:1228
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1527
+#: capplets/default-applications/cafe-default-applications-properties.ui:1228
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1527
 msgid "Accessibility"
 msgstr "ଅଭିଗମ୍ଯତା"
 
@@ -1635,35 +1635,35 @@ msgstr "ଘୂର୍ଣ୍ଣନ_:"
 msgid "Monitor"
 msgstr "ମନିଟର"
 
-#: capplets/display/mate-display-properties.desktop.in:3
+#: capplets/display/cafe-display-properties.desktop.in:3
 msgid "Displays"
 msgstr ""
 
-#: capplets/display/mate-display-properties.desktop.in:4
+#: capplets/display/cafe-display-properties.desktop.in:4
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/display/mate-display-properties.desktop.in:7
+#: capplets/display/cafe-display-properties.desktop.in:7
 msgid "preferences-desktop-display"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/display/mate-display-properties.desktop.in:13
+#: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
-"mate-control-center;MATE;resolution;position;monitors;display;properties;"
+"cafe-control-center;MATE;resolution;position;monitors;display;properties;"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:44
+#: capplets/display/cafe-display-properties-install-systemwide.c:44
 #, c-format
 msgid ""
 "Usage: %s SOURCE_FILE DEST_NAME\n"
 "\n"
 "This program installs a RANDR profile for multi-monitor setups into\n"
 "a systemwide location.  The resulting profile will get used when\n"
-"the RANDR plug-in gets run in mate-settings-daemon.\n"
+"the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
 "SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
 "\n"
@@ -1673,75 +1673,75 @@ msgid ""
 msgstr ""
 
 #. Translators: only able to install RANDR profiles as root
-#: capplets/display/mate-display-properties-install-systemwide.c:151
+#: capplets/display/cafe-display-properties-install-systemwide.c:151
 msgid "This program can only be used by the root user"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:168
+#: capplets/display/cafe-display-properties-install-systemwide.c:168
 msgid "The source filename must be absolute"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:179
+#: capplets/display/cafe-display-properties-install-systemwide.c:179
 #, c-format
 msgid "Could not open %s: %s\n"
 msgstr ""
 
 #. Translators: first %s is a filename; second %s is an error message
-#: capplets/display/mate-display-properties-install-systemwide.c:188
+#: capplets/display/cafe-display-properties-install-systemwide.c:188
 #, c-format
 msgid "Could not get information for %s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:195
+#: capplets/display/cafe-display-properties-install-systemwide.c:195
 #, c-format
 msgid "%s must be a regular file\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:204
+#: capplets/display/cafe-display-properties-install-systemwide.c:204
 msgid "This program must only be run through pkexec(1)"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:209
+#: capplets/display/cafe-display-properties-install-systemwide.c:209
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr ""
 
 #. Translators: we are complaining that a file must be really owned by the
 #. user who called this program
-#: capplets/display/mate-display-properties-install-systemwide.c:215
+#: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr ""
 
 #. Translators: here we are saying that a plain filename must look like
 #. "filename", not like "some_dir/filename"
-#: capplets/display/mate-display-properties-install-systemwide.c:223
+#: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:231
+#: capplets/display/cafe-display-properties-install-systemwide.c:231
 #, c-format
 msgid "%s must be a directory\n"
 msgstr ""
 
 #. Translators: the first %s/%s is a directory/filename; the last %s is an
 #. error message
-#: capplets/display/mate-display-properties-install-systemwide.c:242
+#: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
 msgstr ""
 
-#: capplets/display/mate-display-properties-install-systemwide.c:262
+#: capplets/display/cafe-display-properties-install-systemwide.c:262
 #, c-format
 msgid "Could not rename %s to %s: %s\n"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:17
+#: capplets/display/org.cafe.randr.policy.in:17
 msgid "Install multi-monitor settings for the whole system"
 msgstr ""
 
-#: capplets/display/org.mate.randr.policy.in:18
+#: capplets/display/org.cafe.randr.policy.in:18
 msgid ""
 "Authentication is required to install multi-monitor settings for all users"
 msgstr ""
@@ -1949,25 +1949,25 @@ msgid "The type of accelerator."
 msgstr "ବେଗବର୍ଦ୍ଧକର ପ୍ରକାର"
 
 #: capplets/keybindings/eggcellrendererkeys.c:231
-#: capplets/keybindings/mate-keybinding-properties.c:133
-#: capplets/mouse/mate-mouse-properties.c:347 typing-break/drwright.c:528
+#: capplets/keybindings/cafe-keybinding-properties.c:133
+#: capplets/mouse/cafe-mouse-properties.c:347 typing-break/drwright.c:528
 msgid "Disabled"
 msgstr "ନିଷ୍କ୍ରିୟ ହୋଇଗଲା"
 
-#: capplets/keybindings/mate-keybinding-properties.c:215
+#: capplets/keybindings/cafe-keybinding-properties.c:215
 msgid "<Unknown Action>"
 msgstr "<ଅଜ୍ଞାତ କାର୍ୟ୍ଯ>"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1018
-#: capplets/keybindings/mate-keybinding-properties.c:1626
+#: capplets/keybindings/cafe-keybinding-properties.c:1018
+#: capplets/keybindings/cafe-keybinding-properties.c:1626
 msgid "Custom Shortcuts"
 msgstr "ସଂକ୍ଷିପ୍ତ ପଥକୁ ଇଚ୍ଛାରୂପଣ କରନ୍ତୁ"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1206
+#: capplets/keybindings/cafe-keybinding-properties.c:1206
 msgid "Error saving the new shortcut"
 msgstr "ନୂତନ ସଂକ୍ଷିପ୍ତ ପଥକୁ ସଂରକ୍ଷଣ କରିବାରେ ତ୍ରୁଟି"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1282
+#: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
 "The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
@@ -1976,7 +1976,7 @@ msgstr ""
 "ସକ୍ଷିପ୍ତ ପଥ \"%s\" କୁ ବ୍ୟବହାର କରାଯାଇପାରିବ ନାହିଁ କାରଣ ଏହାକୁ ଏହି କି ବ୍ୟବହାର କରି ଟାଇପ କରିବା ଅସମ୍ଭବ।\n"
 "ଦୟାକରି ଏକା ସମୟରେ Control, Alt କିମ୍ବା Shift କି ସାହାଯ୍ୟରେ ଚେଷ୍ଟାକରନ୍ତୁ।"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1314
+#: capplets/keybindings/cafe-keybinding-properties.c:1314
 #, c-format
 msgid ""
 "The shortcut \"%s\" is already used for\n"
@@ -1985,364 +1985,364 @@ msgstr ""
 "ସଂକ୍ଷିପ୍ତ ପଥ \"%s\" ଟି ପୂର୍ବରୁ \n"
 "\"%s\" ପାଇଁ ବ୍ୟବହୃତ ହୋଇଛି"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1321
+#: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
 msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 "ଯଦି ଆପଣ \"%s\"ରେ ସଂକ୍ଷିପ୍ତ ପଥକୁ ପୁଣିଥରେ ନିର୍ଦ୍ଦିଷ୍ଟ କରନ୍ତି, ତେବେ \"%s\" "
 "ସଂକ୍ଷିପ୍ତ ପଥଟି ନିଷ୍କ୍ରିୟ ହୋଇଯିବ।"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1326
+#: capplets/keybindings/cafe-keybinding-properties.c:1326
 msgid "_Reassign"
 msgstr "ପୁଣିଥରେ ନିର୍ଦ୍ଦିଷ୍ଟ କରିବା (_R)"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1581
+#: capplets/keybindings/cafe-keybinding-properties.c:1581
 msgid "Too many custom shortcuts"
 msgstr "ଅତ୍ୟଧିକ ଇଚ୍ଛାମୁତାବକ ସଂକ୍ଷିପ୍ତ ପଥ"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1895
+#: capplets/keybindings/cafe-keybinding-properties.c:1895
 msgid "Action"
 msgstr "କାର୍ଯ୍ଯ"
 
-#: capplets/keybindings/mate-keybinding-properties.c:1917
+#: capplets/keybindings/cafe-keybinding-properties.c:1917
 msgid "Shortcut"
 msgstr "ସଂକ୍ଷିପ୍ତ ପଥ"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:13
+#: capplets/keybindings/cafe-keybinding-properties.ui:13
 msgid "Custom Shortcut"
 msgstr "ସଂକ୍ଷିପ୍ତ ପଥକୁ ଇଚ୍ଛାରୂପଣ କରନ୍ତୁ"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:108
+#: capplets/keybindings/cafe-keybinding-properties.ui:108
 msgid "C_ommand:"
 msgstr "ନିର୍ଦ୍ଦେଶ (_o):"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:132
+#: capplets/keybindings/cafe-keybinding-properties.ui:132
 msgid "_Browse applications..."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding-properties.ui:194
-#: capplets/keybindings/mate-keybinding.desktop.in:3
+#: capplets/keybindings/cafe-keybinding-properties.ui:194
+#: capplets/keybindings/cafe-keybinding.desktop.in:3
 msgid "Keyboard Shortcuts"
 msgstr "କିବୋର୍ଡ ସର୍ଟକଟଗୁଡିକ"
 
-#: capplets/keybindings/mate-keybinding-properties.ui:339
+#: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
 "To edit a shortcut key, double-click on the corresponding row and type a new"
 " key combination, or press backspace to clear."
 msgstr ""
 
-#: capplets/keybindings/mate-keybinding.desktop.in:4
+#: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "ଆଦେଶଗୁଡିକୁ ସର୍ଟକଟ କିଗୁଡିକ ପ୍ରଦାନ କର"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keybindings/mate-keybinding.desktop.in:7
+#: capplets/keybindings/cafe-keybinding.desktop.in:7
 msgid "preferences-desktop-keyboard-shortcuts"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keybindings/mate-keybinding.desktop.in:13
-msgid "mate-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
+#: capplets/keybindings/cafe-keybinding.desktop.in:13
+msgid "cafe-control-center;MATE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties.c:207
-#: capplets/keyboard/mate-keyboard-properties.c:212
+#: capplets/keyboard/cafe-keyboard-properties.c:207
+#: capplets/keyboard/cafe-keyboard-properties.c:212
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
 "କେବଳ ସେଟିଙ୍ଗଗୁଡିକୁ ପ୍ରଯୋଗ କରନ୍ତୁ ଏବଂ ପ୍ରସ୍ଥାନ କରନ୍ତୁ (କେବଳ ଅନୁରୂପୟୋଗ୍ଯତା; "
 "ବର୍ତ୍ତମାନ ଡିମୋନ ଦ୍ବାରା ପରିଚାଳିତ)"
 
-#: capplets/keyboard/mate-keyboard-properties.c:217
+#: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
 msgstr "ଟାଇପିଙ୍ଗ ଭଙ୍ଗ ସେଟିଙ୍ଗ ଦର୍ଶାଇବା ସହିତ ପୃଷ୍ଠା ଆରମ୍ଭ କର"
 
-#: capplets/keyboard/mate-keyboard-properties.c:222
+#: capplets/keyboard/cafe-keyboard-properties.c:222
 msgid "Start the page with the accessibility settings showing"
 msgstr "ଦର୍ଶାଯାଇଥିବା ଅଭିଗମ୍ୟ ବିନ୍ୟାସ ପରି ପୃଷ୍ଠାକୁ ଆରମ୍ଭ କରନ୍ତୁ"
 
-#: capplets/keyboard/mate-keyboard-properties.c:228
+#: capplets/keyboard/cafe-keyboard-properties.c:228
 msgid "- MATE Keyboard Preferences"
 msgstr "- MATE କି-ବୋର୍ଡ ପସନ୍ଦ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
 msgstr "କି-ବୋର୍ଡ ଅଭିଗମ୍ଯତା ଧ୍ୱନି ପ୍ରତିକ୍ରିୟା"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:90
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:616
-#: capplets/mouse/mate-mouse-properties.ui:277
-#: capplets/mouse/mate-mouse-properties.ui:1008
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:90
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:616
+#: capplets/mouse/cafe-mouse-properties.ui:277
+#: capplets/mouse/cafe-mouse-properties.ui:1008
 #: capplets/windows/window-properties.ui:260
 msgid "General"
 msgstr "ସାଧାରଣ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:128
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:128
 msgid "Beep when _accessibility features are turned on or off"
 msgstr "ଅଭିଗମ୍ୟତା ବିଶେଷ ଗୁଣଗୁଡ଼ିକୁ ଅନ କିମ୍ବା ଅଫ କରିବା ସମୟରେ ଦପ ଦପ କରନ୍ତୁ (_a)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:145
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:145
 msgid "Beep when a _toggle key is pressed"
 msgstr "ଆଗପଛ କି ଦବାଇବା ସମୟରେ ଦପଦପ କରନ୍ତୁ (_t)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:194
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1019
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:194
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1019
 msgid "Sticky Keys"
 msgstr "ସାମୟିକ କିଗୁଡ଼ିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:232
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:232
 msgid "Beep when a _modifier key is pressed"
 msgstr "ଯଦି ପରିବର୍ତ୍ତକ କି କୁ ଦବାଯାଇଛି ତାହାହେଲେ ମିଟିମିଟି କରିବ (_m)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:279
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:279
 msgid "Visual cues for sounds"
 msgstr "ଧ୍ୱନି ପାଇଁ ଦୃଷ୍ଟିସଂକ୍ରାନ୍ତୀୟ ଧାଡ଼ି"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:314
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:314
 msgid "Show _visual feedback for the alert sound"
 msgstr "ସତର୍କ ଧ୍ୱନି ପାଇଁ ଦୃଶ୍ୟମାନ ପ୍ରତି ସୂଚନା ଦର୍ଶାନ୍ତୁ (_v)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:352
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:352
 msgid "Flash _window titlebar"
 msgstr "ଉଇଣ୍ଡୋ ଶୀର୍ଷକ ବାରକୁ _ଆଲୋକିତ କର"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:369
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:369
 msgid "Flash entire _screen"
 msgstr "ସମଗ୍ର ପରଦାକୁ ଫ୍ଲାଶ କରନ୍ତୁ (_s)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:433
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1140
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:433
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1140
 msgid "Slow Keys"
 msgstr "ମନ୍ଥର କିଗୁଡ଼ିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:471
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:471
 msgid "Beep when a key is pr_essed"
 msgstr "ଯଦି କି କୁ ଦବାଇଲେ ମିଟିମିଟି କରେ (_e)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:488
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:488
 msgid "Beep when key is _accepted"
 msgstr "କି କୁ ଗ୍ରହଣ କରାଗଲେ ମିଟିମିଟି କରିବ (_a)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:505
 msgid "Beep when key is _rejected"
 msgstr "କି କୁ ପ୍ରତ୍ୟାଖାନ କରାଗଲେ ମିଟିମିଟି କରିବ (_r)"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:554
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1321
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:554
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1321
 msgid "Bounce Keys"
 msgstr "ଡେଉଁଥିବା କିଗୁଡ଼ିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-a11y-notifications.ui:592
+#: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:592
 msgid "Beep when a key is reje_cted"
 msgstr "ଯଦି କି କୁ ପ୍ରତ୍ଯାଖାନ କରାଗଲେ ମିଟିମିଟି କରିବ (_c)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:81
 msgid "Keyboard Preferences"
 msgstr "କିବୋର୍ଡ ପସନ୍ଦଗୁଡିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:166
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:166
 msgid "Repeat Keys"
 msgstr "କିଗୁଡ଼ିକୁ ପୁନରାବୃତି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:201
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:201
 msgid "Key presses _repeat when key is held down"
 msgstr "କି ଦବାଇବା ପୁନରାବୃତ୍ତି ହୁଏ _ୟେବେ କିକୁ ଦବାଇ ଧରି ରଖାୟାଏ ।"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:231
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1203
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1775
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:231
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1203
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1775
 msgid "_Delay:"
 msgstr "_ବିଳମ୍ବ:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:247
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1760
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:247
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1760
 msgid "_Speed:"
 msgstr "_ଗତି:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:278
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1226
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1407
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1697
-#: capplets/mouse/mate-mouse-properties.ui:826
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1226
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1407
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1697
+#: capplets/mouse/cafe-mouse-properties.ui:826
 msgid "Short"
 msgstr "ସଂକ୍ଷିପ୍ତ ପଥ"
 
 #. slow acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:297
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:563
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1601
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1680
-#: capplets/mouse/mate-mouse-properties.ui:435
-#: capplets/mouse/mate-mouse-properties.ui:1396
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:297
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:563
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1601
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1680
+#: capplets/mouse/cafe-mouse-properties.ui:435
+#: capplets/mouse/cafe-mouse-properties.ui:1396
 msgid "Slow"
 msgstr "ମନ୍ଥର"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:343
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:343
 msgid "Repeat keys speed"
 msgstr "ପୁନରାବୃତ୍ତି କିଗୁଡିକର ଗତି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:371
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1261
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1442
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1728
-#: capplets/mouse/mate-mouse-properties.ui:861
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:371
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1261
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1442
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1728
+#: capplets/mouse/cafe-mouse-properties.ui:861
 msgid "Long"
 msgstr "ଲମ୍ବା"
 
 #. fast acceleration
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:388
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:528
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1618
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1663
-#: capplets/mouse/mate-mouse-properties.ui:467
-#: capplets/mouse/mate-mouse-properties.ui:1428
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:388
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:528
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1618
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1663
+#: capplets/mouse/cafe-mouse-properties.ui:467
+#: capplets/mouse/cafe-mouse-properties.ui:1428
 msgid "Fast"
 msgstr "ଦ୍ରୁତ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:446
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:446
 msgid "Cursor Blinking"
 msgstr "ଦର୍ଶିକାଟି ମିଟିମିଟି କରୁଅଛି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:481
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:481
 msgid "Cursor _blinks in text fields"
 msgstr "ପାଠ୍ୟ କ୍ଷେତ୍ରରେ ସୂଚକ ଦପଦପ ହୋଇଥାଏ (_b)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:505
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:505
 msgid "S_peed:"
 msgstr "ଗତି (_p):"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:548
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1246
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1427
-#: capplets/mouse/mate-mouse-properties.ui:702
-#: capplets/mouse/mate-mouse-properties.ui:847
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:548
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1246
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1427
+#: capplets/mouse/cafe-mouse-properties.ui:702
+#: capplets/mouse/cafe-mouse-properties.ui:847
 msgid "Cursor blinks speed"
 msgstr "କର୍ସରର ମିଟମିଟର ଗତି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:645
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:645
 msgid "List of keyboard layouts selected for usage"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:678
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:678
 msgid "Select a keyboard layout to be added to the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:693
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:693
 msgid "Remove the selected keyboard layout from the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:718
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:718
 msgid "Move _Up"
 msgstr "ଉପରକୁ ଯାଆନ୍ତୁ (_U)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:722
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:722
 msgid "Move the selected keyboard layout up in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:733
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:733
 msgid "Move _Down"
 msgstr "ତଳକୁ ଯାଆନ୍ତୁ (_D)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:737
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:737
 msgid "Move the selected keyboard layout down in the list"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:762
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:762
 msgid "_Show..."
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:766
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:766
 msgid "Print a diagram of the selected keyboard layout"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:802
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:802
 msgid "_Separate layout for each window"
 msgstr "ପ୍ରତ୍ୟେକ ୱିଣ୍ଡୋ ପାଇଁ ବିନ୍ୟାସକୁ ପୃଥକ କରନ୍ତୁ (_S)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:818
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:818
 msgid "New windows u_se active window's layout"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:849
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:849
 msgid "Keyboard _model:"
 msgstr "କିବୋର୍ଡ ମୋଡେଲ (_m):"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:887
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:887
 msgid "_Options..."
 msgstr "ବିକଳ୍ପଗୁଡ଼ିକ (_O)..."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:892
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:892
 msgid "View and edit keyboard layout options"
 msgstr "କିବୋର୍ଡ ବିନ୍ୟାସ ବିକଳ୍ପଗୁଡ଼ିକୁ ଦେଖନ୍ତୁ ଏବଂ ସମ୍ପାଦନ କରନ୍ତୁ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:903
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:903
 msgid "Reset to De_faults"
 msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଭାବରେ ପୁନଃସ୍ଥାପନ କରନ୍ତୁ (_f)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:907
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:907
 msgid ""
 "Replace the current keyboard layout settings with the\n"
 "default settings"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:934
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:934
 msgid "Layouts"
 msgstr "ଲେପନଗୁଡିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:970
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:970
 msgid "_Accessibility features can be toggled with keyboard shortcuts"
 msgstr ""
 "କିବୋର୍ଡ ସଂକ୍ଷିପ୍ତ ପଥଗୁଡ଼ିକ ଦ୍ୱାରା ଅଭିଗମ୍ୟ ବିଶେଷଗୁଣଗୁଡ଼ିକୁ ଆଗପଛ କରନ୍ତୁ (_A)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1057
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1057
 msgid "_Simulate simultaneous keypresses"
 msgstr "ସମତାଳ କି ଦବାଇବାକୁ ଜାଗ୍ରତ କରନ୍ତୁ (_S)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1074
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1074
 msgid "Disa_ble sticky keys if two keys are pressed together"
 msgstr "ଷ୍ଟିକି କିଗୁଡ଼ିକୁ ଦୁଇଟି କି ଦବାଇବାଲେ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ (_b)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1091
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1091
 msgid "_Latch modifiers when pressed twice"
 msgstr ""
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1178
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1178
 msgid "_Only accept long keypresses"
 msgstr "କେବଳ ଲମ୍ବା କି ଚାପକୁ ଗ୍ରହଣ କରନ୍ତୁ (_O)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1359
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1359
 msgid "_Ignore fast duplicate keypresses"
 msgstr "ଦ୍ରୁତ ନକଲ କି ଦବାଇବାକୁ ଅଗ୍ରାହ୍ୟ କରନ୍ତୁ (_I)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1384
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1384
 msgid "D_elay:"
 msgstr "ବିଳମ୍ବ (_e):"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1497
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1497
 msgid "Audio _Feedback..."
 msgstr "ଧ୍ୱନି ପ୍ରତି ସୂଚନା (_F)..."
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1550
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1550
 msgid "_Pointer can be controlled using the keypad"
 msgstr "କି ପ୍ୟାଡ ବ୍ୟବହାର କରି ସୂଚକକୁ ନିୟନ୍ତ୍ରଣ କରାଯାଇପାରିବ (_P)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1745
-#: capplets/mouse/mate-mouse-properties.ui:413
-#: capplets/mouse/mate-mouse-properties.ui:1374
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1745
+#: capplets/mouse/cafe-mouse-properties.ui:413
+#: capplets/mouse/cafe-mouse-properties.ui:1374
 msgid "_Acceleration:"
 msgstr "_ବେଗବର୍ଦ୍ଧନ:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1823
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1823
 msgid "Mouse Keys"
 msgstr "ମାଉସ ଚାବି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1851
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1851
 msgid "_Lock screen to enforce typing break"
 msgstr "ଟାଇପିଙ୍ଗ ଭଙ୍ଗକୁ ବାଧ୍ଯ କରିବା ପାଇଁ ପରଦାକୁ ଅପରିବର୍ତ୍ତନୀୟ କରନ୍ତୁ (_L)"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1855
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
 "Lock screen after a certain duration to help prevent repetitive keyboard use"
 " injuries"
@@ -2350,453 +2350,453 @@ msgstr ""
 "ଏକ ନିର୍ଦ୍ଦିଷ୍ଟ ଅବଧି ପରେ ସ୍କ୍ରିନକୁ ତାଲାବନ୍ଦ କରିଦିଅ ୟଦ୍ବାରା କିବୋର୍ଡକୁ ପୁନର୍ବାର"
 " ଉପୟୋଗରୁ ହେଉଥିବା କ୍ଷତିକୁ ବାଧାଦେବାରେ ସହାଯକ ହେବ ।"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1904
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
 msgstr "_କାର୍ୟ୍ଯ ଅନ୍ତରାଳ ଶେଷ ରହେ:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1919
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1919
 msgid "_Break interval lasts:"
 msgstr "_ଭଙ୍ଗ ଅନ୍ତରାଳ ରହିଥାଏ:"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1951
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1951
 msgid "Duration of work before forcing a break"
 msgstr "ଗୋଟିଏ ଭଙ୍ଗ ବାଧ୍ଯ କରିବା ପୂର୍ବରୁ କାର୍ୟ୍ଯର ଅବଧି"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1965
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1965
 msgid "Duration of the break when typing is disallowed"
 msgstr "ଟାଇପ କରିବା ବେଳେ ଭଙ୍ଗର ଅବଧି ଅସ୍ବୀକୃତ ଅଟେ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:1993
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2006
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1993
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2006
 msgid "minutes"
 msgstr "ମିନିଟ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2037
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2037
 msgid "All_ow postponing of breaks"
 msgstr "ଭଙ୍ଗ ଗୁଡିକର_ସ୍ଥଗିତ କରଣକୁ ସ୍ବୀକୃତି ଦିଅ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2041
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2041
 msgid "Check if breaks are allowed to be postponed"
 msgstr "ଭଙ୍ଗଗୁଡିକୁ ସ୍ଥଗିତ କରିବା ସ୍ବୀକୃତ କି ନାହିଁ ୟାଞ୍ଚ କର  "
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2089
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2089
 msgid "Typing Break"
 msgstr "ଟାଇପ କରିବା ଭଙ୍ଗ"
 
-#: capplets/keyboard/mate-keyboard-properties-dialog.ui:2112
+#: capplets/keyboard/cafe-keyboard-properties-dialog.ui:2112
 msgid "_Type to test settings:"
 msgstr "ପରୀକ୍ଷଣ ବିନ୍ଯାସରେ ଟାଇପ କରନ୍ତୁ (_T):"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:15
 msgid "Choose a Layout"
 msgstr "ଗୋଟିଏ ବିରଚନା ବାଛ"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:134
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:134
 msgid "_Country:"
 msgstr "ଦେଶ (_C):"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:148
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:225
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:148
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:225
 msgid "_Variants:"
 msgstr "ଭିନ୍ନତା (_V):"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:165
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:165
 msgid "By _country"
 msgstr "ଦେଶ ଦ୍ୱାରା (_c)"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:211
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:211
 msgid "_Language:"
 msgstr "ଭାଷା (_L):"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:245
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:245
 msgid "By _language"
 msgstr "ଭାଷା ମାଧ୍ଯମରେ (_l)"
 
-#: capplets/keyboard/mate-keyboard-properties-layout-chooser.ui:278
+#: capplets/keyboard/cafe-keyboard-properties-layout-chooser.ui:278
 msgid "Preview:"
 msgstr "ପୂର୍ବାବଲୋକନ:"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:15
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:15
 msgid "Choose a Keyboard Model"
 msgstr "ଗୋଟିଏ କିବୋର୍ଡ ମୋଡେଲ ବାଛ"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:81
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:81
 msgid "_Vendors:"
 msgstr "ବିକ୍ରେତା (_V):"
 
-#: capplets/keyboard/mate-keyboard-properties-model-chooser.ui:118
+#: capplets/keyboard/cafe-keyboard-properties-model-chooser.ui:118
 msgid "_Models:"
 msgstr "_ମୋଡେଲଗୁଡିକ:"
 
-#: capplets/keyboard/mate-keyboard-properties-options-dialog.ui:14
+#: capplets/keyboard/cafe-keyboard-properties-options-dialog.ui:14
 msgid "Keyboard Layout Options"
 msgstr "କିବୋର୍ଡ ବିନ୍ୟାସ ବିକଳ୍ପଗୁଡ଼ିକ"
 
-#: capplets/keyboard/mate-keyboard-properties-xkb.c:83
+#: capplets/keyboard/cafe-keyboard-properties-xkb.c:83
 msgid "Unknown"
 msgstr "ଅଜଣା"
 
-#: capplets/keyboard/mate-keyboard-properties-xkblt.c:240
+#: capplets/keyboard/cafe-keyboard-properties-xkblt.c:240
 msgid "Layout"
 msgstr "ବିନ୍ଯାସ"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:170
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:170
 msgid "Vendors"
 msgstr "ବିକ୍ରେତାମାନେ"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbmc.c:236
+#: capplets/keyboard/cafe-keyboard-properties-xkbmc.c:236
 msgid "Models"
 msgstr "ମୋଡେଲ"
 
-#: capplets/keyboard/mate-keyboard-properties-xkbot.c:237
-#: capplets/mouse/mate-mouse-properties.ui:586
+#: capplets/keyboard/cafe-keyboard-properties-xkbot.c:237
+#: capplets/mouse/cafe-mouse-properties.ui:586
 msgid "Default"
 msgstr "ପୂର୍ବ ନିର୍ଦ୍ଧାରିତ"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:3
+#: capplets/keyboard/cafe-keyboard.desktop.in:3
 msgid "Keyboard"
 msgstr "କି-ବୋର୍ଡ"
 
-#: capplets/keyboard/mate-keyboard.desktop.in:4
+#: capplets/keyboard/cafe-keyboard.desktop.in:4
 msgid "Set your keyboard preferences"
 msgstr "ଆପଣଙ୍କର କିବୋର୍ଡ ପସନ୍ଦ ସ୍ଥିର କରନ୍ତୁ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/keyboard/mate-keyboard.desktop.in:7
+#: capplets/keyboard/cafe-keyboard.desktop.in:7
 msgid "input-keyboard"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keyboard/mate-keyboard.desktop.in:13
-msgid "mate-control-center;MATE;keyboard;preferences;"
+#: capplets/keyboard/cafe-keyboard.desktop.in:13
+msgid "cafe-control-center;MATE;keyboard;preferences;"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Left button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Middle button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:347
+#: capplets/mouse/cafe-mouse-properties.c:347
 msgid "Right button"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:442
+#: capplets/mouse/cafe-mouse-properties.c:442
 msgid "Specify the name of the page to show (general)"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.c:447
+#: capplets/mouse/cafe-mouse-properties.c:447
 msgid "- MATE Mouse Preferences"
 msgstr "- MATE ମାଉସ ପସନ୍ଦ"
 
-#: capplets/mouse/mate-mouse-properties.ui:107
+#: capplets/mouse/cafe-mouse-properties.ui:107
 msgid "Mouse Preferences"
 msgstr "ମାଉସ ପସନ୍ଦ"
 
-#: capplets/mouse/mate-mouse-properties.ui:187
+#: capplets/mouse/cafe-mouse-properties.ui:187
 msgid "Mouse Orientation"
 msgstr "ମାଉସ ଅନୁସ୍ଥାପନ"
 
-#: capplets/mouse/mate-mouse-properties.ui:214
+#: capplets/mouse/cafe-mouse-properties.ui:214
 msgid "_Right-handed"
 msgstr "ଡାହାଣ ହାତ (_R)"
 
-#: capplets/mouse/mate-mouse-properties.ui:232
+#: capplets/mouse/cafe-mouse-properties.ui:232
 msgid "_Left-handed"
 msgstr "ବାମ-ହାତି  (_L)"
 
-#: capplets/mouse/mate-mouse-properties.ui:297
+#: capplets/mouse/cafe-mouse-properties.ui:297
 msgid "Sh_ow position of pointer when the Control key is pressed"
 msgstr "ନିୟନ୍ତ୍ରଣ କି କୁ ଦବାଇବା ସମୟରେ ସୂଚକର ଅବସ୍ଥିତି ଦର୍ଶାନ୍ତୁ (_o)"
 
-#: capplets/mouse/mate-mouse-properties.ui:322
+#: capplets/mouse/cafe-mouse-properties.ui:322
 msgid "Emulate middle button through simultaneous left and right click"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:348
+#: capplets/mouse/cafe-mouse-properties.ui:348
 msgid "Enable middlemouse paste"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:385
-#: capplets/mouse/mate-mouse-properties.ui:1346
+#: capplets/mouse/cafe-mouse-properties.ui:385
+#: capplets/mouse/cafe-mouse-properties.ui:1346
 msgid "Pointer Speed"
 msgstr "ସୂଚକ ଗତି"
 
 #. low sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:498
-#: capplets/mouse/mate-mouse-properties.ui:1459
+#: capplets/mouse/cafe-mouse-properties.ui:498
+#: capplets/mouse/cafe-mouse-properties.ui:1459
 msgid "Low"
 msgstr "ଧୀର"
 
 #. high sensitivity
-#: capplets/mouse/mate-mouse-properties.ui:530
-#: capplets/mouse/mate-mouse-properties.ui:1491
+#: capplets/mouse/cafe-mouse-properties.ui:530
+#: capplets/mouse/cafe-mouse-properties.ui:1491
 msgid "High"
 msgstr "ବ୍ରୁହତ"
 
-#: capplets/mouse/mate-mouse-properties.ui:554
-#: capplets/mouse/mate-mouse-properties.ui:1515
+#: capplets/mouse/cafe-mouse-properties.ui:554
+#: capplets/mouse/cafe-mouse-properties.ui:1515
 msgid "_Sensitivity:"
 msgstr "_ସଂବେଦନଶୀଳତା:"
 
-#: capplets/mouse/mate-mouse-properties.ui:569
+#: capplets/mouse/cafe-mouse-properties.ui:569
 msgid "Acceleration _Profile:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:587
+#: capplets/mouse/cafe-mouse-properties.ui:587
 msgid "Adaptive"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:588
+#: capplets/mouse/cafe-mouse-properties.ui:588
 msgid "Flat"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:624
+#: capplets/mouse/cafe-mouse-properties.ui:624
 msgid "Drag and Drop"
 msgstr "କାଢନ୍ତୁ ଏବଂ ପକାନ୍ତୁ"
 
-#: capplets/mouse/mate-mouse-properties.ui:658
+#: capplets/mouse/cafe-mouse-properties.ui:658
 msgid "Thr_eshold:"
 msgstr "ଦ୍ୱାର (_e):"
 
-#: capplets/mouse/mate-mouse-properties.ui:771
+#: capplets/mouse/cafe-mouse-properties.ui:771
 msgid "Double-Click Timeout"
 msgstr "ଦୁଇଥର ଦବାଇବାର ସମୟ ସମାପ୍ତି"
 
-#: capplets/mouse/mate-mouse-properties.ui:805
+#: capplets/mouse/cafe-mouse-properties.ui:805
 msgid "_Timeout:"
 msgstr "ସମୟ ସମାପ୍ତି (_T):"
 
-#: capplets/mouse/mate-mouse-properties.ui:901
+#: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
 "To test your double-click settings, try to double-click on the triangle and "
-"you must see the mate desktop logo with both rings showing."
+"you must see the cafe desktop logo with both rings showing."
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:963
-#: capplets/mouse/mate-settings-mouse.desktop.in:3
+#: capplets/mouse/cafe-mouse-properties.ui:963
+#: capplets/mouse/cafe-settings-mouse.desktop.in:3
 msgid "Mouse"
 msgstr "ମାଉସ"
 
-#: capplets/mouse/mate-mouse-properties.ui:980
+#: capplets/mouse/cafe-mouse-properties.ui:980
 msgid "Enable _touchpad"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1028
+#: capplets/mouse/cafe-mouse-properties.ui:1028
 msgid "Disable touchpad _while typing"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1055
+#: capplets/mouse/cafe-mouse-properties.ui:1055
 msgid "Enable _mouse clicks with touchpad"
 msgstr "ମାଉସ କ୍ଲିକଗୁଡ଼ିକୁ ଟଚପ୍ୟାଡ ସହିତ ସକ୍ରିୟ କରନ୍ତୁ (_m)"
 
-#: capplets/mouse/mate-mouse-properties.ui:1091
+#: capplets/mouse/cafe-mouse-properties.ui:1091
 msgid "Two-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1131
+#: capplets/mouse/cafe-mouse-properties.ui:1131
 msgid "Three-finger click emulation:"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1155
+#: capplets/mouse/cafe-mouse-properties.ui:1155
 msgid "Warning: multi-finger emulation may disable software buttons"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1186
+#: capplets/mouse/cafe-mouse-properties.ui:1186
 msgid "Scrolling"
 msgstr "ସ୍କ୍ରୋଲ କରୁଛି"
 
-#: capplets/mouse/mate-mouse-properties.ui:1206
+#: capplets/mouse/cafe-mouse-properties.ui:1206
 msgid "_Vertical edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1232
+#: capplets/mouse/cafe-mouse-properties.ui:1232
 msgid "H_orizontal edge scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1258
+#: capplets/mouse/cafe-mouse-properties.ui:1258
 msgid "V_ertical two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1284
+#: capplets/mouse/cafe-mouse-properties.ui:1284
 msgid "Hor_izontal two-finger scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1310
+#: capplets/mouse/cafe-mouse-properties.ui:1310
 msgid "Enable _natural scrolling"
 msgstr ""
 
-#: capplets/mouse/mate-mouse-properties.ui:1551
+#: capplets/mouse/cafe-mouse-properties.ui:1551
 msgid "Touchpad"
 msgstr "ଟଚପ୍ୟାଡ"
 
-#: capplets/mouse/mate-settings-mouse.desktop.in:4
+#: capplets/mouse/cafe-settings-mouse.desktop.in:4
 msgid "Set your mouse preferences"
 msgstr "ଆପଣଙ୍କର ମାଉସ ପସନ୍ଦ ଗୁଡିକୁ ସ୍ଥିର କରନ୍ତୁ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/mouse/mate-settings-mouse.desktop.in:7
+#: capplets/mouse/cafe-settings-mouse.desktop.in:7
 msgid "input-mouse"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/mouse/mate-settings-mouse.desktop.in:13
-msgid "mate-control-center;MATE;mouse;preferences;"
+#: capplets/mouse/cafe-settings-mouse.desktop.in:13
+msgid "cafe-control-center;MATE;mouse;preferences;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.desktop.in:3
+#: capplets/network/cafe-network-properties.desktop.in:3
 msgid "Network Proxy"
 msgstr "ନେଟୱର୍କ ପ୍ରକ୍ସି"
 
-#: capplets/network/mate-network-properties.desktop.in:4
+#: capplets/network/cafe-network-properties.desktop.in:4
 msgid "Set your network proxy preferences"
 msgstr "ଆପଣଙ୍କର ନେଟୱର୍କ ପ୍ରକ୍ସି ପସନ୍ଦକୁ ସେଟକରନ୍ତୁ"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/network/mate-network-properties.desktop.in:7
+#: capplets/network/cafe-network-properties.desktop.in:7
 msgid "network-server"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/network/mate-network-properties.desktop.in:13
-msgid "mate-control-center;MATE;network;http;socks;proxy;"
+#: capplets/network/cafe-network-properties.desktop.in:13
+msgid "cafe-control-center;MATE;network;http;socks;proxy;"
 msgstr ""
 
-#: capplets/network/mate-network-properties.ui:34
+#: capplets/network/cafe-network-properties.ui:34
 msgid "Network Proxy Preferences"
 msgstr "ନେଟୱର୍କ ପ୍ରକ୍ସି ପସନ୍ଦଗୁଡ଼ିକ"
 
-#: capplets/network/mate-network-properties.ui:113
+#: capplets/network/cafe-network-properties.ui:113
 msgid "<b>Di_rect internet connection</b>"
 msgstr "<b>ସିଧାସଳଖ ଇଣ୍ଟରନେଟ ସଂଯୋଗ (_r)</b>"
 
-#: capplets/network/mate-network-properties.ui:150
+#: capplets/network/cafe-network-properties.ui:150
 msgid "<b>_Manual proxy configuration</b>"
 msgstr "<b>ହସ୍ତଚାଳିତ ପ୍ରକ୍ସି ବିନ୍ୟାସ (_M)</b>"
 
-#: capplets/network/mate-network-properties.ui:238
-#: capplets/network/mate-network-properties.ui:253
-#: capplets/network/mate-network-properties.ui:268
-#: capplets/network/mate-network-properties.ui:283
+#: capplets/network/cafe-network-properties.ui:238
+#: capplets/network/cafe-network-properties.ui:253
+#: capplets/network/cafe-network-properties.ui:268
+#: capplets/network/cafe-network-properties.ui:283
 msgid "Port:"
 msgstr "ସଂଯୋଗିକୀ:"
 
-#: capplets/network/mate-network-properties.ui:363
+#: capplets/network/cafe-network-properties.ui:363
 msgid "_Details"
 msgstr "ବିସ୍ତ୍ରୁତ ବିବରଣୀ (_D)"
 
-#: capplets/network/mate-network-properties.ui:379
+#: capplets/network/cafe-network-properties.ui:379
 msgid "H_TTP proxy:"
 msgstr "HTTP ପ୍ରକ୍ସି (_T):"
 
-#: capplets/network/mate-network-properties.ui:393
+#: capplets/network/cafe-network-properties.ui:393
 msgid "_Secure HTTP proxy:"
 msgstr "_ HTTP ପ୍ରୋକ୍ସି ସୁରକ୍ଷିତକର:"
 
-#: capplets/network/mate-network-properties.ui:407
+#: capplets/network/cafe-network-properties.ui:407
 msgid "_FTP proxy:"
 msgstr "FTP ପ୍ରୋକ୍ସି (_F):"
 
-#: capplets/network/mate-network-properties.ui:421
+#: capplets/network/cafe-network-properties.ui:421
 msgid "S_ocks host:"
 msgstr "ଶକ୍ସ ଆଧାର (_o):"
 
-#: capplets/network/mate-network-properties.ui:479
+#: capplets/network/cafe-network-properties.ui:479
 msgid "<b>_Automatic proxy configuration</b>"
 msgstr "<b>ସ୍ୱୟଂଚାଳିତ ପ୍ରକ୍ସି ବିନ୍ୟାସ (_A)</b>"
 
-#: capplets/network/mate-network-properties.ui:517
+#: capplets/network/cafe-network-properties.ui:517
 msgid "Autoconfiguration _URL:"
 msgstr "ସ୍ୱୟଂବିନ୍ୟାସିତ URL (_U):"
 
-#: capplets/network/mate-network-properties.ui:574
+#: capplets/network/cafe-network-properties.ui:574
 msgid "Proxy Configuration"
 msgstr "ପ୍ରକ୍ସି ସଂରଚନା"
 
-#: capplets/network/mate-network-properties.ui:592
+#: capplets/network/cafe-network-properties.ui:592
 msgid "Ignore Host List"
 msgstr "ଆଧାର ତାଲିକାକୁ ଅଗ୍ରାହ୍ୟ କରନ୍ତୁ"
 
-#: capplets/network/mate-network-properties.ui:730
+#: capplets/network/cafe-network-properties.ui:730
 msgid "Ignored Hosts"
 msgstr "ଅଗ୍ରାହ୍ୟ କରାଯାଇଥିବା ଆଧାରଗୁଡ଼ିକ"
 
-#: capplets/network/mate-network-properties.ui:758
+#: capplets/network/cafe-network-properties.ui:758
 msgid "HTTP Proxy Details"
 msgstr "HTTP ପ୍ରକ୍ସି ବିବରଣୀ"
 
-#: capplets/network/mate-network-properties.ui:829
+#: capplets/network/cafe-network-properties.ui:829
 msgid "<b>_Use authentication</b>"
 msgstr "<b>ବୈଧିକରଣ ବ୍ୟବହାର କରନ୍ତୁ (_U)</b>"
 
-#: capplets/network/mate-network-properties.ui:869
+#: capplets/network/cafe-network-properties.ui:869
 msgid "U_sername:"
 msgstr "ଚାଳକ ନାମ (_s):"
 
-#: capplets/network/mate-network-properties.ui:908
+#: capplets/network/cafe-network-properties.ui:908
 msgid "_Password:"
 msgstr "ପ୍ରବେଶ ସଂଙ୍କେତ (_P):"
 
-#: capplets/windows/mate-metacity-support.c:40
+#: capplets/windows/cafe-metacity-support.c:40
 msgid "Metacity Preferences"
 msgstr ""
 
-#: capplets/windows/mate-metacity-support.c:51
+#: capplets/windows/cafe-metacity-support.c:51
 #: capplets/windows/window-properties.ui:175
 msgid "Compositing Manager"
 msgstr "ମିଶ୍ରଣ ପରିଚାଳକ"
 
-#: capplets/windows/mate-metacity-support.c:58
+#: capplets/windows/cafe-metacity-support.c:58
 #: capplets/windows/window-properties.ui:138
 msgid "Enable software _compositing window manager"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:264
+#: capplets/windows/cafe-window-properties.c:264
 msgid "The current window manager is unsupported"
 msgstr ""
 
-#: capplets/windows/mate-window-properties.c:581
+#: capplets/windows/cafe-window-properties.c:581
 msgid "_Alt"
 msgstr "ଅଲ୍ଟ (_Alt)"
 
-#: capplets/windows/mate-window-properties.c:587
+#: capplets/windows/cafe-window-properties.c:587
 msgid "H_yper"
 msgstr "ଅତି_"
 
-#: capplets/windows/mate-window-properties.c:594
+#: capplets/windows/cafe-window-properties.c:594
 msgid "S_uper (or \"Windows logo\")"
 msgstr "ସୁପର_(କିମ୍ବା \"ଉଇଣ୍ଡୋ ଲୋଗୋ\")"
 
-#: capplets/windows/mate-window-properties.c:601
+#: capplets/windows/cafe-window-properties.c:601
 msgid "_Meta"
 msgstr "_ମେଟା"
 
-#: capplets/windows/mate-window-properties.desktop.in:3
+#: capplets/windows/cafe-window-properties.desktop.in:3
 msgid "Windows"
 msgstr "ୱିଣ୍ଡୋ"
 
-#: capplets/windows/mate-window-properties.desktop.in:4
+#: capplets/windows/cafe-window-properties.desktop.in:4
 msgid "Set your window properties"
 msgstr "ଆପଣଙ୍କର ଉଇଣ୍ଡୋ ବିଶେଷତାଗୁଡିକୁ ସ୍ଥିର କର"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/windows/mate-window-properties.desktop.in:7
+#: capplets/windows/cafe-window-properties.desktop.in:7
 msgid "preferences-system-windows"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/windows/mate-window-properties.desktop.in:13
-msgid "mate-control-center;MATE;window;manager;properties;marco;preferences;"
+#: capplets/windows/cafe-window-properties.desktop.in:13
+msgid "cafe-control-center;MATE;window;manager;properties;marco;preferences;"
 msgstr ""
 
 #: capplets/windows/window-properties.ui:47
@@ -4729,27 +4729,27 @@ msgstr "ପେସୀଫିକ/ୱେକ"
 msgid "Pacific/Wallis"
 msgstr "ପେସୀଫିକ/ୱାଲିସ"
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:3
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:3
 msgid "Time And Date Manager"
 msgstr ""
 
-#: capplets/time-admin/data/mate-time-admin.desktop.in:4
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:4
 msgid "Setting the time and date of the local system"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:9
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
 msgid "preferences-system-time"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/time-admin/data/mate-time-admin.desktop.in:13
-msgid "mate-control-center;MATE;clock;date;time;preferences;"
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:13
+msgid "cafe-control-center;MATE;clock;date;time;preferences;"
 msgstr ""
 
-#: libwindow-settings/mate-wm-manager.c:317
+#: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
 msgstr "ଉଇଣ୍ଡୋ ପ୍ରବନ୍ଧକ\"%s\" ଗୋଟିଏ କନଫିଗରେସନ ଉପକରଣ ପଞ୍ଜିକୃତ କରି ନାହିଁ \n"
@@ -4771,8 +4771,8 @@ msgstr "ସମୂହ"
 msgid "Common Tasks"
 msgstr "ସାଧାରଣ କାର୍ୟ୍ଯଗୁଡିକ"
 
-#: shell/control-center.c:145 shell/matecc.desktop.in:3
-#: shell/matecc.directory.desktop.in:3
+#: shell/control-center.c:145 shell/cafecc.desktop.in:3
+#: shell/cafecc.directory.desktop.in:3
 msgid "Control Center"
 msgstr "ନିୟନ୍ତ୍ରଣ କେନ୍ଦ୍ର"
 
@@ -4780,30 +4780,30 @@ msgstr "ନିୟନ୍ତ୍ରଣ କେନ୍ଦ୍ର"
 msgid "Hide on start (useful to preload the shell)"
 msgstr "ଆରମ୍ଭ ସମୟରେ ଲୁଚାନ୍ତୁ (ସେଲକୁ ପୁନର୍ଦ୍ଧାରଣ କରିବା ପାଇଁ ଉପଯୋଗୀ)"
 
-#: shell/matecc.desktop.in:4
+#: shell/cafecc.desktop.in:4
 msgid "The MATE configuration tool"
 msgstr "MATE କନଫିଗରେସନ୍ ଉପକରଣ"
 
-#: shell/matecc.desktop.in:5
+#: shell/cafecc.desktop.in:5
 msgid "Configure MATE settings"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.desktop.in:7
+#: shell/cafecc.desktop.in:7
 msgid "preferences-desktop"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: shell/matecc.desktop.in:14
+#: shell/cafecc.desktop.in:14
 msgid "MATE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: shell/matecc.directory.desktop.in:5
-msgid "mate-settings"
+#: shell/cafecc.directory.desktop.in:5
+msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4942,24 +4942,24 @@ msgstr ""
 msgid "Font Viewer"
 msgstr "ଅକ୍ଷରରୂପ ପ୍ରଦର୍ଶକ"
 
-#: font-viewer/font-view.c:784 font-viewer/mate-font-viewer.desktop.in:4
+#: font-viewer/font-view.c:784 font-viewer/cafe-font-viewer.desktop.in:4
 msgid "View fonts on your system"
 msgstr ""
 
-#: font-viewer/mate-font-viewer.desktop.in:3
+#: font-viewer/cafe-font-viewer.desktop.in:3
 msgid "MATE Font Viewer"
 msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: font-viewer/mate-font-viewer.desktop.in:6
+#: font-viewer/cafe-font-viewer.desktop.in:6
 msgid "preferences-desktop-font"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: font-viewer/mate-font-viewer.desktop.in:14
-msgid "mate-control-center;MATE;font;viewer;preview;desktop;preferences;"
+#: font-viewer/cafe-font-viewer.desktop.in:14
+msgid "cafe-control-center;MATE;font;viewer;preview;desktop;preferences;"
 msgstr ""
 
 #: font-viewer/font-thumbnailer.c:191

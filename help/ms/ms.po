@@ -10,7 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:21+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
+"Language-Team: Malay (https://www.transifex.com/cafe/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -211,12 +211,12 @@ msgstr "Maklumbalas"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>MATE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
 " Page</ulink>."
 msgstr ""
 "Untuk melaporkan pepijat atau membuat cadangan berkenaan aplikasi "
 "<application>Pusat Kawalan MATE</application> atau panduan ini, ikuti arahan"
-" di dalam <ulink url=\"help:mate-user-guide/feedback\" type=\"help\">Halaman"
+" di dalam <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">Halaman"
 " Maklumbalas MATE</ulink>."
 
 #. (itstool) path: sect1/title
@@ -239,10 +239,10 @@ msgstr ""
 #: C/index.docbook:88
 msgid ""
 "For help on using preference tools, see the <ulink type=\"help\" url=\"help"
-":mate-user-guide/prefs\">User Guide</ulink>."
+":cafe-user-guide/prefs\">User Guide</ulink>."
 msgstr ""
 "Untuk bantuan berkenaan penggunaan alatan keutamaan, sila rujuk <ulink "
-"type=\"help\" url=\"help:mate-user-guide/prefs\">Panduan Pengguna</ulink>."
+"type=\"help\" url=\"help:cafe-user-guide/prefs\">Panduan Pengguna</ulink>."
 
 #. (itstool) path: sect2/title
 #: C/index.docbook:94
@@ -277,8 +277,8 @@ msgstr "Baris perintah"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:108
-msgid "Execute the following command: <command>mate-control-center</command>"
-msgstr "Lakukan perintah berikut: <command>mate-control-center</command>"
+msgid "Execute the following command: <command>cafe-control-center</command>"
+msgstr "Lakukan perintah berikut: <command>cafe-control-center</command>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:118
@@ -1194,12 +1194,12 @@ msgstr "Tilik nasib"
 #. (itstool) path: listitem/para
 #: C/config-hints.xml:34
 msgid ""
-"<_:application-1/> is a small program that displays random quotes. The mate "
+"<_:application-1/> is a small program that displays random quotes. The cafe "
 "startup hints application can display <_:application-2/> quotes instead of "
 "tips."
 msgstr ""
 "<_:application-1/> merupakan sebuah program kecil yang memaparkan kata-kata "
-"hikmah secara rawak. Aplikasi pembayang permulaan mate boleh memaparkan "
+"hikmah secara rawak. Aplikasi pembayang permulaan cafe boleh memaparkan "
 "<_:application-2/> kata-kata hikmah selain dari petua"
 
 #. (itstool) path: varlistentry/term
@@ -1211,12 +1211,12 @@ msgstr "Papar kata-kata hikmah hari ini selain dari pembayang"
 #: C/config-hints.xml:46
 msgid ""
 "Often times administrators will create a \"message of the day\" (\"MOTD\") "
-"to notify users of important events. The mate startup hints application can "
+"to notify users of important events. The cafe startup hints application can "
 "display these instead of tips."
 msgstr ""
 "Biasa para pentadbir akan mewujudkan satu \"mesej hari ini\" (\"MOTD\") "
 "untuk memaklumkan pengguna berkenaan peristiwa-peristiwa pentang. Aplikasi "
-"pembayang permulaan mate ini dapat memaparkannya selain dari petua-petua."
+"pembayang permulaan cafe ini dapat memaparkannya selain dari petua-petua."
 
 #. (itstool) path: para/filename
 #: C/config-hints.xml:53 C/config-hints.xml:55
@@ -1445,14 +1445,14 @@ msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:145
-msgid "Show animated images"
+msgid "Show anicafed images"
 msgstr "Tunjuk imej beranimasi"
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:147
 msgid ""
-"Some images can be animated. You can have the image show up as a static "
-"image instead of as an animated image by unchecking the box."
+"Some images can be anicafed. You can have the image show up as a static "
+"image instead of as an anicafed image by unchecking the box."
 msgstr ""
 "Sesetengah imej boleh dianimasikan. Anda boleh jadikan imej statik selain "
 "dari imej beranimasi dengan menyahtanda pada kotak tanda."
@@ -2422,8 +2422,8 @@ msgstr "xscreensaver"
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:13
-msgid "mate-screensaver"
-msgstr "mate-screensaver"
+msgid "cafe-screensaver"
+msgstr "cafe-screensaver"
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:17

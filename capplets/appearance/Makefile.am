@@ -1,15 +1,15 @@
 SUBDIRS = data
 
-BUILT_SOURCES = mate-appearance-properties-resources.h mate-appearance-properties-resources.c
+BUILT_SOURCES = cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c
 
 # This is used in MATECC_CAPPLETS_CFLAGS
 cappletname = appearance
 
-bin_PROGRAMS = mate-appearance-properties
+bin_PROGRAMS = cafe-appearance-properties
 
-nodist_mate_appearance_properties_SOURCES = \
+nodist_cafe_appearance_properties_SOURCES = \
 	$(BUILT_SOURCES)
-mate_appearance_properties_SOURCES = \
+cafe_appearance_properties_SOURCES = \
 	appearance.h \
 	appearance-desktop.c \
 	appearance-desktop.h \
@@ -24,12 +24,12 @@ mate_appearance_properties_SOURCES = \
 	appearance-ui.h \
 	appearance-support.c \
 	appearance-support.h \
-	mate-wp-info.c \
-	mate-wp-info.h \
-	mate-wp-item.c \
-	mate-wp-item.h \
-	mate-wp-xml.c \
-	mate-wp-xml.h \
+	cafe-wp-info.c \
+	cafe-wp-info.h \
+	cafe-wp-item.c \
+	cafe-wp-item.h \
+	cafe-wp-xml.c \
+	cafe-wp-xml.h \
 	theme-installer.c \
 	theme-installer.h \
 	theme-save.c \
@@ -39,16 +39,16 @@ mate_appearance_properties_SOURCES = \
 
 AM_CFLAGS = -DMATE_DESKTOP_USE_UNSTABLE_API
 
-mate_appearance_properties_LDADD = \
-	$(top_builddir)/libwindow-settings/libmate-window-settings.la \
+cafe_appearance_properties_LDADD = \
+	$(top_builddir)/libwindow-settings/libcafe-window-settings.la \
 	$(top_builddir)/capplets/common/libcommon.la \
 	$(MATECC_CAPPLETS_LIBS) \
 	$(FONT_CAPPLET_LIBS) \
 	$(MARCO_LIBS)
-mate_appearance_properties_LDFLAGS = -export-dynamic
+cafe_appearance_properties_LDFLAGS = -export-dynamic
 
 pixmapdir = $(pkgdatadir)/pixmaps
-wallpaperdir = $(datadir)/mate-background-properties
+wallpaperdir = $(datadir)/cafe-background-properties
 backgrounddir = $(datadir)/backgrounds
 
 AM_CPPFLAGS = \
@@ -61,10 +61,10 @@ AM_CPPFLAGS = \
 	-DWALLPAPER_DATADIR="\"$(wallpaperdir)\"" \
 	-DBACKGROUND_DATADIR="\"$(backgrounddir)\""
 
-mate-appearance-properties-resources.h mate-appearance-properties-resources.c: org.mate.mcc.appearance.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.appearance.gresource.xml)
+cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c: org.cafe.mcc.appearance.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.appearance.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name appearance $<
 
 CLEANFILES = $(MATECC_CAPPLETS_CLEANFILES) $(BUILT_SOURCES)
-EXTRA_DIST = org.mate.mcc.appearance.gresource.xml
+EXTRA_DIST = org.cafe.mcc.appearance.gresource.xml
 
 -include $(top_srcdir)/git.mk

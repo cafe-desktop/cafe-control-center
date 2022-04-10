@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<KeyListEntries name="Desktop" schema="org.mate.SettingsDaemon.plugins.media-keys" package="mate-settings-daemon">
+<KeyListEntries name="Desktop" schema="org.cafe.SettingsDaemon.plugins.media-keys" package="cafe-settings-daemon">
 
 	<KeyListEntry name="help" description="Launch help browser" />
 

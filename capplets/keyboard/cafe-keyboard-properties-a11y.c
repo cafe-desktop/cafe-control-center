@@ -24,14 +24,14 @@
 #  include <config.h>
 #endif
 
-#include "mate-keyboard-properties-a11y.h"
+#include "cafe-keyboard-properties-a11y.h"
 #include <gio/gio.h>
 #include "capplet-util.h"
 
 #define NWID(s) GTK_WIDGET (gtk_builder_get_object (notifications_dialog, s))
 
-#define A11Y_SCHEMA "org.mate.accessibility-keyboard"
-#define MARCO_SCHEMA "org.mate.Marco.general"
+#define A11Y_SCHEMA "org.cafe.accessibility-keyboard"
+#define MARCO_SCHEMA "org.cafe.Marco.general"
 
 static GtkBuilder *notifications_dialog = NULL;
 static GSettings *a11y_settings = NULL;
@@ -136,7 +136,7 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 
 	notifications_dialog = gtk_builder_new ();
 	gtk_builder_add_from_resource (notifications_dialog,
-	                               "/org/mate/mcc/keyboard/mate-keyboard-properties-a11y-notifications.ui",
+	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-a11y-notifications.ui",
 	                               NULL);
 
 	stickykeys_enable_toggled_cb (WID ("stickykeys_enable"), dialog);

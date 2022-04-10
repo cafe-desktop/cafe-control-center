@@ -16,8 +16,8 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/mouse">
-    <file compressed="true">mate-mouse-properties.ui</file>
+  <gresource prefix="/org/cafe/mcc/mouse">
+    <file compressed="true">cafe-mouse-properties.ui</file>
     <file compressed="true">double-click-off.svg</file>
     <file compressed="true">double-click-on.svg</file>
     <file compressed="true">double-click-maybe.svg</file>

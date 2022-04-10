@@ -1,4 +1,4 @@
-/* mate-about-me-fingerprint.h
+/* cafe-about-me-fingerprint.h
  * Copyright (C) 2008 Bastien Nocera <hadess@hadess.net>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -548,7 +548,7 @@ enroll_fingerprints (GtkWindow *parent, GtkWidget *enable, GtkWidget *disable)
 	g_object_unref (p);
 
 	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/mate/mcc/am/mate-about-me-fingerprint.ui", &error) == 0)
+	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-fingerprint.ui", &error) == 0)
 	{
 		g_warning ("Could not parse UI definition: %s", error->message);
 		g_error_free (error);

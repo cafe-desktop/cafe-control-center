@@ -289,7 +289,7 @@ invalid_theme_dialog (GtkWindow *parent,
 }
 
 static gboolean
-mate_theme_install_real (GtkWindow *parent,
+cafe_theme_install_real (GtkWindow *parent,
 			  const gchar *tmp_dir,
 			  const gchar *theme_name,
 			  gboolean ask_user)
@@ -460,7 +460,7 @@ mate_theme_install_real (GtkWindow *parent,
 			    || theme_type == THEME_ICON
 			    || theme_type == THEME_CURSOR
 			    || theme_type == THEME_ICON_CURSOR) {
-				/* TODO: currently cannot apply "mate themes" */
+				/* TODO: currently cannot apply "cafe themes" */
 				gchar *str;
 
 				str = g_strdup_printf (_("The theme \"%s\" has been installed."), theme_name);
@@ -574,7 +574,7 @@ process_local_theme (GtkWindow  *parent,
 
 	if (filetype == DIRECTORY) {
 		gchar *name = g_path_get_basename (path);
-		mate_theme_install_real (parent,
+		cafe_theme_install_real (parent,
 					  path,
 					  name,
 					  TRUE);
@@ -645,7 +645,7 @@ process_local_theme (GtkWindow  *parent,
 			theme_dir = g_build_filename (tmp_dir, name, NULL);
 
 			if (g_file_test (theme_dir, G_FILE_TEST_IS_DIR))
-				ok = mate_theme_install_real (parent,
+				ok = cafe_theme_install_real (parent,
 							       theme_dir,
 							       name,
 							       n_themes == 1);
@@ -692,7 +692,7 @@ transfer_done_cb (GtkWidget *dialog,
 }
 
 void
-mate_theme_install (GFile *file,
+cafe_theme_install (GFile *file,
 		     GtkWindow *parent)
 {
 	GtkWidget *dialog;
@@ -744,11 +744,11 @@ mate_theme_install (GFile *file,
 	if (g_str_has_suffix (base, ".tar.gz")
 	    || g_str_has_suffix (base, ".tgz")
 	    || g_str_has_suffix (base, ".gtp"))
-		template = "mate-theme-%d.gtp";
+		template = "cafe-theme-%d.gtp";
 	else if (g_str_has_suffix (base, ".tar.bz2"))
-		template = "mate-theme-%d.tar.bz2";
+		template = "cafe-theme-%d.tar.bz2";
 	else if (g_str_has_suffix (base, ".tar.xz"))
-		template = "mate-theme-%d.tar.xz";
+		template = "cafe-theme-%d.tar.xz";
 	else {
 		invalid_theme_dialog (parent, base, FALSE);
 		g_free (base);
@@ -796,7 +796,7 @@ mate_theme_install (GFile *file,
 }
 
 void
-mate_theme_installer_run (GtkWindow *parent)
+cafe_theme_installer_run (GtkWindow *parent)
 {
 	static gboolean running_theme_install = FALSE;
 	static gchar old_folder[512] = "";
@@ -823,7 +823,7 @@ mate_theme_installer_run (GtkWindow *parent)
 	gtk_file_filter_add_mime_type (filter, "application/x-bzip-compressed-tar");
 	gtk_file_filter_add_mime_type (filter, "application/x-xz-compressed-tar");
 	gtk_file_filter_add_mime_type (filter, "application/x-compressed-tar");
-	gtk_file_filter_add_mime_type (filter, "application/x-mate-theme-package");
+	gtk_file_filter_add_mime_type (filter, "application/x-cafe-theme-package");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
 
 	filter = gtk_file_filter_new ();
@@ -849,7 +849,7 @@ mate_theme_installer_run (GtkWindow *parent)
 			GFile *file = g_file_new_for_uri (uri_selected);
 			g_free (uri_selected);
 
-			mate_theme_install (file, parent);
+			cafe_theme_install (file, parent);
 			g_object_unref (file);
 		}
 	} else {
@@ -857,7 +857,7 @@ mate_theme_installer_run (GtkWindow *parent)
 	}
 
 	/*
-	 * we're relying on the mate theme info module to pick up changes
+	 * we're relying on the cafe theme info module to pick up changes
 	 * to the themes so we don't need to update the model here
 	 */
 

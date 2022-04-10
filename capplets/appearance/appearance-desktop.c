@@ -21,14 +21,14 @@
  */
 
 #include "appearance.h"
-#include "mate-wp-info.h"
-#include "mate-wp-item.h"
-#include "mate-wp-xml.h"
+#include "cafe-wp-info.h"
+#include "cafe-wp-item.h"
+#include "cafe-wp-xml.h"
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <string.h>
-#include <libmate-desktop/mate-desktop-thumbnail.h>
-#include <libmate-desktop/mate-bg.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-bg.h>
 
 enum {
 	TARGET_URI_LIST,
@@ -120,7 +120,7 @@ static void on_item_changed (MateBG *bg, AppearanceData *data) {
 
     g_signal_handlers_block_by_func (bg, G_CALLBACK (on_item_changed), data);
 
-    pixbuf = mate_wp_item_get_thumbnail (item,
+    pixbuf = cafe_wp_item_get_thumbnail (item,
                                           data->thumb_factory,
                                           data->thumb_width,
                                           data->thumb_height);
@@ -147,10 +147,10 @@ wp_props_load_wallpaper (gchar *key,
 
   gtk_list_store_append (GTK_LIST_STORE (data->wp_model), &iter);
 
-  pixbuf = mate_wp_item_get_thumbnail (item, data->thumb_factory,
+  pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
-  mate_wp_item_update_description (item);
+  cafe_wp_item_update_description (item);
 
   gtk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter,
                       0, pixbuf,
@@ -187,7 +187,7 @@ wp_add_image (AppearanceData *data,
   }
   else
   {
-    item = mate_wp_item_new (filename, data->wp_hash, data->thumb_factory);
+    item = cafe_wp_item_new (filename, data->wp_hash, data->thumb_factory);
 
     if (item != NULL)
     {
@@ -308,7 +308,7 @@ wp_scale_type_changed (GtkComboBox *combobox,
 
   item->options = gtk_combo_box_get_active (GTK_COMBO_BOX (data->wp_style_menu));
 
-  pixbuf = mate_wp_item_get_thumbnail (item, data->thumb_factory,
+  pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
   gtk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
@@ -338,7 +338,7 @@ wp_shade_type_changed (GtkWidget *combobox,
 
   item->shade_type = gtk_combo_box_get_active (GTK_COMBO_BOX (data->wp_color_menu));
 
-  pixbuf = mate_wp_item_get_thumbnail (item, data->thumb_factory,
+  pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
   gtk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
@@ -835,7 +835,7 @@ wp_update_preview (GtkFileChooser *chooser,
 
     if (mime_type)
     {
-      pixbuf = mate_desktop_thumbnail_factory_generate_thumbnail (data->thumb_factory,
+      pixbuf = cafe_desktop_thumbnail_factory_generate_thumbnail (data->thumb_factory,
 								   uri,
 								   mime_type);
     }
@@ -867,7 +867,7 @@ reload_item (GtkTreeModel *model,
 
   gtk_tree_model_get (model, iter, 1, &item, -1);
 
-  pixbuf = mate_wp_item_get_thumbnail (item,
+  pixbuf = cafe_wp_item_get_thumbnail (item,
                                         data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
@@ -930,7 +930,7 @@ wp_load_stuffs (void *user_data)
 
   compute_thumbnail_sizes (data);
 
-  mate_wp_xml_load_list (data);
+  cafe_wp_xml_load_list (data);
   g_hash_table_foreach (data->wp_hash, (GHFunc) wp_props_load_wallpaper,
                         data);
 
@@ -963,7 +963,7 @@ wp_load_stuffs (void *user_data)
   if (item != NULL)
   {
     /* update with the current gsettings */
-    mate_wp_item_update (item);
+    cafe_wp_item_update (item);
 
     if (strcmp (style, "none") != 0)
     {
@@ -986,7 +986,7 @@ wp_load_stuffs (void *user_data)
   item = g_hash_table_lookup (data->wp_hash, "(none)");
   if (item == NULL)
   {
-    item = mate_wp_item_new ("(none)", data->wp_hash, data->thumb_factory);
+    item = cafe_wp_item_new ("(none)", data->wp_hash, data->thumb_factory);
     if (item != NULL)
     {
       wp_props_load_wallpaper (item->filename, item, data);
@@ -1092,7 +1092,7 @@ next_frame (AppearanceData  *data,
   item = get_selected_item (data, &iter);
 
   if (frame >= 0)
-    pixbuf = mate_wp_item_get_frame_thumbnail (item,
+    pixbuf = cafe_wp_item_get_frame_thumbnail (item,
                                                 data->thumb_factory,
                                                 data->thumb_width,
                                                 data->thumb_height,
@@ -1109,7 +1109,7 @@ next_frame (AppearanceData  *data,
       pb = buttons[0];
   }
   else {
-    pixbuf = mate_wp_item_get_frame_thumbnail (item,
+    pixbuf = cafe_wp_item_get_frame_thumbnail (item,
                                                 data->thumb_factory,
                                                 data->thumb_width,
                                                 data->thumb_height,
@@ -1187,7 +1187,7 @@ buttons_cell_data_func (GtkCellLayout   *layout,
 
   if (gtk_icon_view_path_is_selected (GTK_ICON_VIEW (layout), path)) {
     item = get_selected_item (data, NULL);
-    visible = mate_bg_changes_with_time (item->bg);
+    visible = cafe_bg_changes_with_time (item->bg);
   }
   else
     visible = FALSE;
@@ -1363,7 +1363,7 @@ desktop_init (AppearanceData *data,
 void
 desktop_shutdown (AppearanceData *data)
 {
-  mate_wp_xml_save_list (data);
+  cafe_wp_xml_save_list (data);
 
   if (data->screen_monitors_handler > 0) {
     g_signal_handler_disconnect (gtk_widget_get_screen (GTK_WIDGET (data->wp_view)),

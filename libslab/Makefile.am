@@ -1,5 +1,5 @@
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = mate-slab.pc
+pkgconfig_DATA = cafe-slab.pc
 
 AM_CPPFLAGS =					\
 	-DG_LOG_DOMAIN=\"libslab\"		\
@@ -14,40 +14,40 @@ HEADER_FILES=					\
 	application-tile.h			\
 	bookmark-agent.h			\
 	double-click-detector.h			\
-	mate-utils.h				\
+	cafe-utils.h				\
 	libslab-utils.h				\
 	nameplate-tile.h			\
 	search-bar.h				\
 	shell-window.h				\
-	slab-mate-util.h			\
+	slab-cafe-util.h			\
 	slab-section.h				\
 	slab.h					\
 	tile.h
 
-lib_LTLIBRARIES = libmate-slab.la
+lib_LTLIBRARIES = libcafe-slab.la
 
-libmate_slab_la_SOURCES =			\
+libcafe_slab_la_SOURCES =			\
 	$(MARSHAL_GENERATED)			\
 	app-resizer.c				\
 	app-shell.c				\
 	application-tile.c			\
 	bookmark-agent.c			\
 	double-click-detector.c			\
-	mate-utils.c				\
+	cafe-utils.c				\
 	libslab-utils.c				\
 	nameplate-tile.c			\
 	search-bar.c				\
 	shell-window.c				\
-	slab-mate-util.c			\
+	slab-cafe-util.c			\
 	slab-section.c				\
 	themed-icon.c				\
 	themed-icon.h				\
 	tile-action.c				\
 	tile.c
 
-libmate_slab_includedir = $(includedir)/libmate-slab
-libmate_slab_include_HEADERS = $(HEADER_FILES)
-libmate_slab_la_LIBADD = $(LIBSLAB_LIBS)
+libcafe_slab_includedir = $(includedir)/libcafe-slab
+libcafe_slab_include_HEADERS = $(HEADER_FILES)
+libcafe_slab_la_LIBADD = $(LIBSLAB_LIBS)
 
 MARSHAL_GENERATED = nld-marshal.c nld-marshal.h
 

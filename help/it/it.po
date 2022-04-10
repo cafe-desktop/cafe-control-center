@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Dario Di Nucci <linkin88mail@gmail.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Simone Centonze <mypythonit@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # talorno <giovanni.talorno@gmail.com>, 2020
@@ -17,7 +17,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 13:03+0100\n"
 "PO-Revision-Date: 2020-02-15 13:21+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
-"Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
+"Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -222,12 +222,12 @@ msgstr "Commenti"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>MATE Control"
 " Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:mate-user-guide/feedback\" type=\"help\">MATE Feedback"
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">MATE Feedback"
 " Page</ulink>."
 msgstr ""
 "Per segnalare un bug o dare suggerimenti sull'applicazione "
 "<application>Centro di Controllo di MATE</application> o su questo manuale, "
-"seguire le indicazioni della <ulink url=\"help:mate-user-guide/feedback\" "
+"seguire le indicazioni della <ulink url=\"help:cafe-user-guide/feedback\" "
 "type=\"help\">Pagina Feedback di MATE</ulink>."
 
 #. (itstool) path: sect1/title
@@ -251,10 +251,10 @@ msgstr ""
 #: C/index.docbook:88
 msgid ""
 "For help on using preference tools, see the <ulink type=\"help\" url=\"help"
-":mate-user-guide/prefs\">User Guide</ulink>."
+":cafe-user-guide/prefs\">User Guide</ulink>."
 msgstr ""
 "Per aiuti su come utilizzare gli strumenti per impostare le preferenze, "
-"consultare la <ulink type=\"help\" url=\"help:mate-user-guide/prefs\">Guida "
+"consultare la <ulink type=\"help\" url=\"help:cafe-user-guide/prefs\">Guida "
 "Utente</ulink>."
 
 #. (itstool) path: sect2/title
@@ -291,8 +291,8 @@ msgstr "Riga di comando"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:108
-msgid "Execute the following command: <command>mate-control-center</command>"
-msgstr "Eseguire il seguente comando: <command>mate-control-center</command>"
+msgid "Execute the following command: <command>cafe-control-center</command>"
+msgstr "Eseguire il seguente comando: <command>cafe-control-center</command>"
 
 #. (itstool) path: sect1/title
 #: C/index.docbook:118
@@ -1224,7 +1224,7 @@ msgstr "fortune"
 #. (itstool) path: listitem/para
 #: C/config-hints.xml:34
 msgid ""
-"<_:application-1/> is a small program that displays random quotes. The mate "
+"<_:application-1/> is a small program that displays random quotes. The cafe "
 "startup hints application can display <_:application-2/> quotes instead of "
 "tips."
 msgstr ""
@@ -1241,12 +1241,12 @@ msgstr "Mostra il messaggio del giorno invece dei suggerimenti."
 #: C/config-hints.xml:46
 msgid ""
 "Often times administrators will create a \"message of the day\" (\"MOTD\") "
-"to notify users of important events. The mate startup hints application can "
+"to notify users of important events. The cafe startup hints application can "
 "display these instead of tips."
 msgstr ""
 "Di tanto in tanto gli amministratori del sistema creano  un \"messaggio del "
 "giorno\" ('MOTD') per informare gli utenti di eventi importanti. I "
-"suggerimenti di avvio di mate possono mostrare questi al posto dei "
+"suggerimenti di avvio di cafe possono mostrare questi al posto dei "
 "suggerimenti."
 
 #. (itstool) path: para/filename
@@ -1478,16 +1478,16 @@ msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:145
-msgid "Show animated images"
-msgstr "Mostra immagini animate"
+msgid "Show anicafed images"
+msgstr "Mostra immagini anicafe"
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:147
 msgid ""
-"Some images can be animated. You can have the image show up as a static "
-"image instead of as an animated image by unchecking the box."
+"Some images can be anicafed. You can have the image show up as a static "
+"image instead of as an anicafed image by unchecking the box."
 msgstr ""
-"Alcune immagini possono essere animate. Potete lasciare la visualizzazione "
+"Alcune immagini possono essere anicafe. Potete lasciare la visualizzazione "
 "delle immagini come statica invece che animata deselezionando questa "
 "opzione."
 
@@ -2457,8 +2457,8 @@ msgstr "xscreensaver"
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:13
-msgid "mate-screensaver"
-msgstr "mate-screensaver"
+msgid "cafe-screensaver"
+msgstr "cafe-screensaver"
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:17

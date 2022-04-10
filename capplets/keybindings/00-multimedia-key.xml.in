@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<KeyListEntries name="Sound" schema="org.mate.SettingsDaemon.plugins.media-keys" package="mate-settings-daemon">
+<KeyListEntries name="Sound" schema="org.cafe.SettingsDaemon.plugins.media-keys" package="cafe-settings-daemon">
 
 	<KeyListEntry name="volume-mute" description="Volume mute" />
 

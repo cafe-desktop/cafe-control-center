@@ -1,4 +1,4 @@
-/* mate-network-properties.c: network preferences capplet
+/* cafe-network-properties.c: network preferences capplet
  *
  * Copyright (C) 2002 Sun Microsystems Inc.
  *               2012 Stefano Karapetsas
@@ -274,7 +274,7 @@ cb_http_details_button_clicked (GtkWidget *button,
 	}
 
 	builder = gtk_builder_new ();
-	if (gtk_builder_add_objects_from_resource (builder, "/org/mate/mcc/network/mate-network-properties.ui",
+	if (gtk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load details dialog: %s", error->message);
 		g_error_free (error);
@@ -462,7 +462,7 @@ main (int argc, char **argv)
 	capplet_init (NULL, &argc, &argv);
 
 	builder = gtk_builder_new ();
-	if (gtk_builder_add_objects_from_resource (builder, "/org/mate/mcc/network/mate-network-properties.ui",
+	if (gtk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load main dialog: %s",
 			   error->message);

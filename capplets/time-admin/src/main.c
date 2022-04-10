@@ -1,4 +1,4 @@
-/*   mate-user-admin
+/*   cafe-user-admin
 *   Copyright (C) 2018  zhuyaliang https://github.com/zhuyaliang/
 *
 *   This program is free software: you can redistribute it and/or modify
@@ -118,7 +118,7 @@ static void InitMainWindow(TimeAdmin *ta)
     GError     *error = NULL;
     GtkBuilder *builder;
 
-    builder = gtk_builder_new_from_resource ("/org/mate/mcc/ta/time-admin.ui");
+    builder = gtk_builder_new_from_resource ("/org/cafe/mcc/ta/time-admin.ui");
     gtk_builder_add_callback_symbols (builder,
                                       "on_window_quit",       G_CALLBACK (on_window_quit),
                                       "on_button1_clicked",   G_CALLBACK (RunTimeZoneDialog),

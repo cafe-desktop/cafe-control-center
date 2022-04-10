@@ -14,8 +14,8 @@ SUBDIRS += typing-break
 endif
 
 gsettingsschema_in_files = \
-	org.mate.control-center.gschema.xml.in \
-	org.mate.control-center.keybinding.gschema.xml.in
+	org.cafe.control-center.gschema.xml.in \
+	org.cafe.control-center.keybinding.gschema.xml.in
 
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@

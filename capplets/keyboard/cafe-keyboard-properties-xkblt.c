@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkblt.c
+/* cafe-keyboard-properties-xkblt.c
  * Copyright (C) 2003-2007 Sergey V. Udaltsov
  *
  * Written by: Sergey V. Udaltsov <svu@gnome.org>
@@ -29,11 +29,11 @@
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
-#include <libmatekbd/matekbd-desktop-config.h>
-#include <libmatekbd/matekbd-keyboard-drawing.h>
+#include <libcafekbd/cafekbd-desktop-config.h>
+#include <libcafekbd/cafekbd-keyboard-drawing.h>
 
 #include "capplet-util.h"
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-xkb.h"
 
 
 #define SEL_LAYOUT_TREE_COL_DESCRIPTION 0
@@ -282,9 +282,9 @@ gchar *
 xkb_layout_description_utf8 (const gchar * visible)
 {
 	char *l, *sl, *v, *sv;
-	if (matekbd_keyboard_config_get_descriptions
+	if (cafekbd_keyboard_config_get_descriptions
 	    (config_registry, visible, &sl, &l, &sv, &v))
-		visible = matekbd_keyboard_config_format_full_layout (l, v);
+		visible = cafekbd_keyboard_config_format_full_layout (l, v);
 	return g_strstrip (g_strdup (visible));
 }
 
@@ -357,7 +357,7 @@ show_selected_layout (GtkWidget * button, GtkBuilder * dialog)
 		GSList *layouts_list = xkb_layouts_get_selected_list ();
 		const gchar *id = g_slist_nth_data (layouts_list, idx);
 		char *descr = xkb_layout_description_utf8 (id);
-		matekbd_keyboard_drawing_new_dialog (idx, descr);
+		cafekbd_keyboard_drawing_new_dialog (idx, descr);
 		clear_xkb_elements_list (layouts_list);
 		g_free (descr);
 	}

@@ -21,17 +21,17 @@
 
 #include "appearance.h"
 #include "theme-thumbnail.h"
-#include "mate-theme-apply.h"
+#include "cafe-theme-apply.h"
 #include "theme-installer.h"
 #include "theme-save.h"
 #include "theme-util.h"
 #include "gtkrc-utils.h"
 
 #include <glib/gi18n.h>
-#include <libwindow-settings/mate-wm-manager.h>
+#include <libwindow-settings/cafe-wm-manager.h>
 #include <string.h>
-#include <libmate-desktop/mate-desktop-thumbnail.h>
-#include <libmate-desktop/mate-gsettings.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-gsettings.h>
 
 #define CUSTOM_THEME_NAME "__custom__"
 
@@ -60,7 +60,7 @@ static time_t theme_get_mtime(const char* name)
 	MateThemeMetaInfo* theme;
 	time_t mtime = -1;
 
-	theme = mate_theme_meta_info_find(name);
+	theme = cafe_theme_meta_info_find(name);
 	if (theme != NULL)
 	{
 		GFile* file;
@@ -103,7 +103,7 @@ static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, Appeara
 			/* try to share thumbs with caja, use themes:/// */
 			path = g_strconcat("themes:///", theme_name, NULL);
 
-			mate_desktop_thumbnail_factory_save_thumbnail(data->thumb_factory, pixbuf, path, mtime);
+			cafe_desktop_thumbnail_factory_save_thumbnail(data->thumb_factory, pixbuf, path, mtime);
 
 			g_free(path);
 		}
@@ -126,7 +126,7 @@ static GdkPixbuf* theme_get_thumbnail_from_cache(MateThemeMetaInfo* info, Appear
 
 	/* try to share thumbs with caja, use themes:/// */
 	path = g_strconcat ("themes:///", info->name, NULL);
-	thumb_filename = mate_desktop_thumbnail_factory_lookup(data->thumb_factory, path, mtime);
+	thumb_filename = cafe_desktop_thumbnail_factory_lookup(data->thumb_factory, path, mtime);
 	g_free(path);
 
 	if (thumb_filename != NULL)
@@ -203,7 +203,7 @@ theme_load_from_gsettings (AppearanceData *data)
   MateThemeMetaInfo *theme;
   gchar *scheme;
 
-  theme = mate_theme_meta_info_new ();
+  theme = cafe_theme_meta_info_new ();
 
   theme->gtk_theme_name = g_settings_get_string (data->interface_settings, GTK_THEME_KEY);
   if (theme->gtk_theme_name == NULL)
@@ -224,7 +224,7 @@ theme_load_from_gsettings (AppearanceData *data)
   if (theme->icon_theme_name == NULL)
     theme->icon_theme_name = g_strdup ("menta");
 
-  if (mate_gsettings_schema_exists (NOTIFICATION_SCHEMA)) {
+  if (cafe_gsettings_schema_exists (NOTIFICATION_SCHEMA)) {
     GSettings *notification_settings;
     notification_settings = g_settings_new (NOTIFICATION_SCHEMA);
     theme->notification_theme_name = g_settings_get_string (notification_settings, NOTIFICATION_THEME_KEY);
@@ -275,7 +275,7 @@ theme_get_selected (GtkIconView *icon_view, AppearanceData *data)
     if (!strcmp (name, data->theme_custom->name)) {
       theme = data->theme_custom;
     } else {
-      theme = mate_theme_meta_info_find (name);
+      theme = cafe_theme_meta_info_find (name);
     }
 
     g_free (name);
@@ -332,7 +332,7 @@ theme_is_equal (const MateThemeMetaInfo *a, const MateThemeMetaInfo *b)
   a_set = a->gtk_color_scheme && strcmp (a->gtk_color_scheme, "");
   b_set = b->gtk_color_scheme && strcmp (b->gtk_color_scheme, "");
   if ((a_set != b_set) ||
-      (a_set && !mate_theme_color_scheme_equal (a->gtk_color_scheme, b->gtk_color_scheme)))
+      (a_set && !cafe_theme_color_scheme_equal (a->gtk_color_scheme, b->gtk_color_scheme)))
     return FALSE;
 
   return TRUE;
@@ -575,7 +575,7 @@ theme_message_area_update (AppearanceData *data)
     return;
   }
 
-  show_error = !mate_theme_meta_info_validate (theme, &error);
+  show_error = !cafe_theme_meta_info_validate (theme, &error);
 
   if (!show_error) {
     if (theme->background_image != NULL) {
@@ -764,10 +764,10 @@ theme_selection_changed_cb (GtkWidget *icon_view, AppearanceData *data)
     if (is_custom)
       theme = data->theme_custom;
     else
-      theme = mate_theme_meta_info_find (name);
+      theme = cafe_theme_meta_info_find (name);
 
     if (theme) {
-      mate_meta_theme_set (theme);
+      cafe_meta_theme_set (theme);
       theme_message_area_update (data);
     }
 
@@ -801,7 +801,7 @@ theme_save_cb (GtkWidget *button, AppearanceData *data)
 static void
 theme_install_cb (GtkWidget *button, AppearanceData *data)
 {
-  mate_theme_installer_run (
+  cafe_theme_installer_run (
       GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
 }
 
@@ -861,7 +861,7 @@ theme_details_changed_cb (AppearanceData *data)
     /* look for a matching metatheme */
     GList *theme_list, *l;
 
-    theme_list = mate_theme_meta_info_find_all ();
+    theme_list = cafe_theme_meta_info_find_all ();
 
     for (l = theme_list; l; l = l->next) {
       MateThemeMetaInfo *info = l->data;
@@ -879,7 +879,7 @@ theme_details_changed_cb (AppearanceData *data)
     /* didn't find a match, set or update custom */
     theme_set_custom_from_theme (gsettings_theme, data);
 
-  mate_theme_meta_info_free (gsettings_theme);
+  cafe_theme_meta_info_free (gsettings_theme);
 }
 
 static void
@@ -963,7 +963,7 @@ theme_drag_data_received_cb (GtkWidget *widget,
   if (uris != NULL && uris[0] != NULL) {
     GFile *f = g_file_new_for_uri (uris[0]);
 
-    mate_theme_install (f,
+    cafe_theme_install (f,
         GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
     g_object_unref (f);
   }
@@ -989,8 +989,8 @@ void themes_init(AppearanceData* data)
   char *url;
 
   /* initialise some stuff */
-  mate_theme_init ();
-  mate_wm_manager_init ();
+  cafe_theme_init ();
+  cafe_wm_manager_init ();
 
   data->revert_application_font = NULL;
   data->revert_documents_font = NULL;
@@ -1006,8 +1006,8 @@ void themes_init(AppearanceData* data)
       gtk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   /* set up theme list */
-  theme_list = mate_theme_meta_info_find_all ();
-  mate_theme_info_register_theme_change ((ThemeChangedCallback) theme_changed_on_disk_cb, data);
+  theme_list = cafe_theme_meta_info_find_all ();
+  cafe_theme_info_register_theme_change ((ThemeChangedCallback) theme_changed_on_disk_cb, data);
 
   data->theme_custom = theme_load_from_gsettings (data);
   data->theme_custom->name = g_strdup (CUSTOM_THEME_NAME);
@@ -1144,7 +1144,7 @@ void themes_init(AppearanceData* data)
 void
 themes_shutdown (AppearanceData *data)
 {
-  mate_theme_meta_info_free (data->theme_custom);
+  cafe_theme_meta_info_free (data->theme_custom);
 
   if (data->theme_icon)
     g_object_unref (data->theme_icon);

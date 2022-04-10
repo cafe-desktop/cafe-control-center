@@ -66,7 +66,7 @@ Here is the OS X Display menu:
 	  from a monitor identifier. The complication here is that
           it's not completely clear how to do this in MateConf.
 
-	- Would probably be worthwhile to drop libmate/libmateui from
+	- Would probably be worthwhile to drop libcafe/libcafeui from
 	  the craplets.
 
 - Marco work:
@@ -223,7 +223,7 @@ Needed XRandr output properties:
   There is a question here: Where are machine specific preferences
   stored? Havoc mentions three possibilities here:
 
-     http://mail.gnome.org/archives/matecc-list/2001-October/msg00023.html
+     http://mail.gnome.org/archives/cafecc-list/2001-October/msg00023.html
 
   I'm not sure if any of them are implementable at this point. Also
   (1) may mostly take care of the problem.
@@ -445,7 +445,7 @@ Structure of login time program:
 
 - If it isn't found, then nothing changes.
 
-     This could just be mate-screen-resolution-capplet --reset
+     This could just be cafe-screen-resolution-capplet --reset
 
 *******************  Things that need to be done to the xrandr.patch:
 
@@ -828,7 +828,7 @@ Add rotation
 
 Disable panel checkbox for now
 
-Patch into mate-desktop
+Patch into cafe-desktop
 
 Find out how to share code between gcc and gsd
 

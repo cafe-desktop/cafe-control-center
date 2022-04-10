@@ -1,4 +1,4 @@
-/* mate-about-me-fingerprint.h
+/* cafe-about-me-fingerprint.h
  * Copyright (C) 2008 Bastien Nocera <hadess@hadess.net>
  *
  * This program is free software; you can redistribute it and/or modify

@@ -1,7 +1,7 @@
 #include <config.h>
 #include <gtk/gtk.h>
 #include <string.h>
-#include "mate-theme-info.h"
+#include "cafe-theme-info.h"
 
 int
 main (int argc, char *argv[])
@@ -9,9 +9,9 @@ main (int argc, char *argv[])
   GList *themes, *list;
 
   gtk_init (&argc, &argv);
-  mate_theme_init ();
+  cafe_theme_init ();
 
-  themes = mate_theme_meta_info_find_all ();
+  themes = cafe_theme_meta_info_find_all ();
   if (themes == NULL)
     {
       g_print ("No meta themes were found.\n");
@@ -29,7 +29,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = mate_theme_icon_info_find_all ();
+  themes = cafe_theme_icon_info_find_all ();
   if (themes == NULL)
     {
       g_print ("No icon themes were found.\n");
@@ -47,7 +47,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = mate_theme_info_find_by_type (MATE_THEME_MARCO);
+  themes = cafe_theme_info_find_by_type (MATE_THEME_MARCO);
   if (themes == NULL)
     {
       g_print ("No marco themes were found.\n");
@@ -65,7 +65,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = mate_theme_info_find_by_type (MATE_THEME_GTK_2);
+  themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2);
   if (themes == NULL)
     {
       gchar *str;
@@ -91,7 +91,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = mate_theme_info_find_by_type (MATE_THEME_GTK_2_KEYBINDING);
+  themes = cafe_theme_info_find_by_type (MATE_THEME_GTK_2_KEYBINDING);
   if (themes == NULL)
     {
       g_print ("No keybinding themes were found.\n");
@@ -109,7 +109,7 @@ main (int argc, char *argv[])
     }
   g_list_free (themes);
 
-  themes = mate_theme_cursor_info_find_all ();
+  themes = cafe_theme_cursor_info_find_all ();
   if (themes == NULL)
     {
       g_print ("No cursor themes were found.\n");

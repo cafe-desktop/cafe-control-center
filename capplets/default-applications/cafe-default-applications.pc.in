@@ -4,7 +4,7 @@ datadir=@datadir@
 pkgdatadir=${datadir}/@PACKAGE@
 defappsdir=${pkgdatadir}/default-apps
 
-Name: mate-default-applications
+Name: cafe-default-applications
 Description: Default MATE applications configuration
 Version: @VERSION@
 

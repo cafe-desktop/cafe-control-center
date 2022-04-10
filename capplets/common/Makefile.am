@@ -8,7 +8,7 @@ AM_CPPFLAGS = \
 	-DINSTALL_PREFIX=\"$(prefix)\"					\
 	-I$(top_srcdir)							\
 	-I$(top_srcdir)/libwindow-settings				\
-	-DPIXMAP_DIR=\""$(datadir)/mate-control-center/pixmaps"\"	\
+	-DPIXMAP_DIR=\""$(datadir)/cafe-control-center/pixmaps"\"	\
 	$(WARN_CFLAGS)							\
 	$(CAPPLET_CFLAGS)						\
 	$(DBUS_CFLAGS)							\
@@ -30,10 +30,10 @@ libcommon_la_SOURCES = \
 	dconf-util.h			\
 	file-transfer-dialog.c		\
 	file-transfer-dialog.h		\
-	mate-theme-apply.c		\
-	mate-theme-apply.h 		\
-	mate-theme-info.c		\
-	mate-theme-info.h		\
+	cafe-theme-apply.c		\
+	cafe-theme-apply.h 		\
+	cafe-theme-info.c		\
+	cafe-theme-info.h		\
 	gtkrc-utils.c			\
 	gtkrc-utils.h			\
 	theme-thumbnail.c		\
@@ -42,22 +42,22 @@ libcommon_la_SOURCES = \
 	wm-common.h
 
 libcommon_la_LIBADD =							\
-	$(top_builddir)/libwindow-settings/libmate-window-settings.la  \
+	$(top_builddir)/libwindow-settings/libcafe-window-settings.la  \
 	$(MARCO_LIBS)						\
 	$(DBUS_LIBS)							\
 	$(MATE_DESKTOP_LIBS)						\
 	$(GIO_LIBS)									\
 	$(DCONF_LIBS)
 
-mate_theme_test_SOURCES = \
-	mate-theme-test.c
+cafe_theme_test_SOURCES = \
+	cafe-theme-test.c
 
-mate_theme_test_LDADD = 						\
+cafe_theme_test_LDADD = 						\
 	libcommon.la							\
 	$(MATECC_CAPPLETS_LIBS)						\
 	$(MATECC_LIBS)
 
 noinst_PROGRAMS = \
-	mate-theme-test
+	cafe-theme-test
 
 -include $(top_srcdir)/git.mk

@@ -16,7 +16,7 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/accessibility/at">
+  <gresource prefix="/org/cafe/mcc/accessibility/at">
     <file compressed="true">at-enable-dialog.ui</file>
   </gresource>
 </gresources>

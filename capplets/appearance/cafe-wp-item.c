@@ -24,7 +24,7 @@
 #include <gio/gio.h>
 #include <string.h>
 #include "appearance.h"
-#include "mate-wp-item.h"
+#include "cafe-wp-item.h"
 
 const gchar *wp_item_option_to_string (MateBGPlacement type)
 {
@@ -101,22 +101,22 @@ MateBGColorType wp_item_string_to_shading (const gchar *shade_type)
 static void set_bg_properties (MateWPItem *item)
 {
   if (item->filename)
-    mate_bg_set_filename (item->bg, item->filename);
+    cafe_bg_set_filename (item->bg, item->filename);
 
-  mate_bg_set_color (item->bg, item->shade_type, item->pcolor, item->scolor);
-  mate_bg_set_placement (item->bg, item->options);
+  cafe_bg_set_color (item->bg, item->shade_type, item->pcolor, item->scolor);
+  cafe_bg_set_placement (item->bg, item->options);
 }
 
-void mate_wp_item_ensure_mate_bg (MateWPItem *item)
+void cafe_wp_item_ensure_cafe_bg (MateWPItem *item)
 {
   if (!item->bg) {
-    item->bg = mate_bg_new ();
+    item->bg = cafe_bg_new ();
 
     set_bg_properties (item);
   }
 }
 
-void mate_wp_item_update (MateWPItem *item) {
+void cafe_wp_item_update (MateWPItem *item) {
   GSettings *settings;
   GdkRGBA color1 = { 0, 0, 0, 1.0 }, color2 = { 0, 0, 0, 1.0 };
   gchar *s;
@@ -151,13 +151,13 @@ void mate_wp_item_update (MateWPItem *item) {
   item->scolor = gdk_rgba_copy (&color2);
 }
 
-MateWPItem * mate_wp_item_new (const gchar * filename,
+MateWPItem * cafe_wp_item_new (const gchar * filename,
 				 GHashTable * wallpapers,
 				 MateDesktopThumbnailFactory * thumbnails) {
   MateWPItem *item = g_new0 (MateWPItem, 1);
 
   item->filename = g_strdup (filename);
-  item->fileinfo = mate_wp_info_new (filename, thumbnails);
+  item->fileinfo = cafe_wp_info_new (filename, thumbnails);
 
   if (item->fileinfo != NULL && item->fileinfo->mime_type != NULL &&
       (g_str_has_prefix (item->fileinfo->mime_type, "image/") ||
@@ -169,20 +169,20 @@ MateWPItem * mate_wp_item_new (const gchar * filename,
       item->name = g_filename_to_utf8 (item->fileinfo->name, -1, NULL,
 				       NULL, NULL);
 
-    mate_wp_item_update (item);
-    mate_wp_item_ensure_mate_bg (item);
-    mate_wp_item_update_description (item);
+    cafe_wp_item_update (item);
+    cafe_wp_item_ensure_cafe_bg (item);
+    cafe_wp_item_update_description (item);
 
     g_hash_table_insert (wallpapers, item->filename, item);
   } else {
-    mate_wp_item_free (item);
+    cafe_wp_item_free (item);
     item = NULL;
   }
 
   return item;
 }
 
-void mate_wp_item_free (MateWPItem * item) {
+void cafe_wp_item_free (MateWPItem * item) {
   if (item == NULL) {
     return;
   }
@@ -197,7 +197,7 @@ void mate_wp_item_free (MateWPItem * item) {
   if (item->scolor != NULL)
     gdk_rgba_free (item->scolor);
 
-  mate_wp_info_free (item->fileinfo);
+  cafe_wp_info_free (item->fileinfo);
   if (item->bg)
     g_object_unref (item->bg);
 
@@ -234,7 +234,7 @@ add_slideshow_frame (GdkPixbuf *pixbuf)
   return tmp;
 }
 
-GdkPixbuf * mate_wp_item_get_frame_thumbnail (MateWPItem * item,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (MateWPItem * item,
 					       MateDesktopThumbnailFactory * thumbs,
                                                int width,
                                                int height,
@@ -244,11 +244,11 @@ GdkPixbuf * mate_wp_item_get_frame_thumbnail (MateWPItem * item,
   set_bg_properties (item);
 
   if (frame != -1)
-    pixbuf = mate_bg_create_frame_thumbnail (item->bg, thumbs, gdk_screen_get_default (), width, height, frame);
+    pixbuf = cafe_bg_create_frame_thumbnail (item->bg, thumbs, gdk_screen_get_default (), width, height, frame);
   else
-    pixbuf = mate_bg_create_thumbnail (item->bg, thumbs, gdk_screen_get_default(), width, height);
+    pixbuf = cafe_bg_create_thumbnail (item->bg, thumbs, gdk_screen_get_default(), width, height);
 
-  if (pixbuf && mate_bg_changes_with_time (item->bg))
+  if (pixbuf && cafe_bg_changes_with_time (item->bg))
     {
       GdkPixbuf *tmp;
 
@@ -257,20 +257,20 @@ GdkPixbuf * mate_wp_item_get_frame_thumbnail (MateWPItem * item,
       pixbuf = tmp;
     }
 
-  mate_bg_get_image_size (item->bg, thumbs, width, height, &item->width, &item->height);
+  cafe_bg_get_image_size (item->bg, thumbs, width, height, &item->width, &item->height);
 
   return pixbuf;
 }
 
 
-GdkPixbuf * mate_wp_item_get_thumbnail (MateWPItem * item,
+GdkPixbuf * cafe_wp_item_get_thumbnail (MateWPItem * item,
 					 MateDesktopThumbnailFactory * thumbs,
                                          gint width,
                                          gint height) {
-  return mate_wp_item_get_frame_thumbnail (item, thumbs, width, height, -1);
+  return cafe_wp_item_get_frame_thumbnail (item, thumbs, width, height, -1);
 }
 
-void mate_wp_item_update_description (MateWPItem * item) {
+void cafe_wp_item_update_description (MateWPItem * item) {
   g_free (item->description);
 
   if (!strcmp (item->filename, "(none)")) {
@@ -291,7 +291,7 @@ void mate_wp_item_update_description (MateWPItem * item) {
 
     if (strcmp (item->fileinfo->mime_type, "application/xml") == 0)
       {
-        if (mate_bg_changes_with_time (item->bg))
+        if (cafe_bg_changes_with_time (item->bg))
           description = _("Slide Show");
         else if (item->width > 0 && item->height > 0)
           description = _("Image");
@@ -299,7 +299,7 @@ void mate_wp_item_update_description (MateWPItem * item) {
     else
       description = g_content_type_get_description (item->fileinfo->mime_type);
 
-    if (mate_bg_has_multiple_sizes (item->bg))
+    if (cafe_bg_has_multiple_sizes (item->bg))
       size = g_strdup (_("multiple sizes"));
     else if (item->width > 0 && item->height > 0) {
       /* translators: x pixel(s) by y pixel(s) */

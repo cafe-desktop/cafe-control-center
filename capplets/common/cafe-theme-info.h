@@ -1,4 +1,4 @@
-/* mate-theme-info.h - MATE Theme information
+/* cafe-theme-info.h - MATE Theme information
 
    Copyright (C) 2002 Jonathan Blandford <jrb@gnome.org>
    All rights reserved.
@@ -131,7 +131,7 @@ enum {
 
 typedef void (*ThemeChangedCallback) (MateThemeCommonInfo* theme, MateThemeChangeType change_type, MateThemeElement element_type, gpointer user_data);
 
-#define MATE_THEME_ERROR mate_theme_info_error_quark()
+#define MATE_THEME_ERROR cafe_theme_info_error_quark()
 
 enum {
 	MATE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE = 1,
@@ -143,49 +143,49 @@ enum {
 
 
 /* GTK/Marco/keybinding Themes */
-MateThemeInfo     *mate_theme_info_new                   (void);
-void                mate_theme_info_free                  (MateThemeInfo     *theme_info);
-MateThemeInfo     *mate_theme_info_find                  (const gchar        *theme_name);
-GList              *mate_theme_info_find_by_type          (guint               elements);
-GQuark              mate_theme_info_error_quark           (void);
+MateThemeInfo     *cafe_theme_info_new                   (void);
+void                cafe_theme_info_free                  (MateThemeInfo     *theme_info);
+MateThemeInfo     *cafe_theme_info_find                  (const gchar        *theme_name);
+GList              *cafe_theme_info_find_by_type          (guint               elements);
+GQuark              cafe_theme_info_error_quark           (void);
 gchar              *gtk_theme_info_missing_engine          (const gchar *gtk_theme,
                                                             gboolean nameOnly);
 
 /* Icon Themes */
-MateThemeIconInfo *mate_theme_icon_info_new              (void);
-void                mate_theme_icon_info_free             (MateThemeIconInfo *icon_theme_info);
-MateThemeIconInfo *mate_theme_icon_info_find             (const gchar        *icon_theme_name);
-GList              *mate_theme_icon_info_find_all         (void);
-gint                mate_theme_icon_info_compare          (MateThemeIconInfo *a,
+MateThemeIconInfo *cafe_theme_icon_info_new              (void);
+void                cafe_theme_icon_info_free             (MateThemeIconInfo *icon_theme_info);
+MateThemeIconInfo *cafe_theme_icon_info_find             (const gchar        *icon_theme_name);
+GList              *cafe_theme_icon_info_find_all         (void);
+gint                cafe_theme_icon_info_compare          (MateThemeIconInfo *a,
 							    MateThemeIconInfo *b);
 
 /* Cursor Themes */
-MateThemeCursorInfo *mate_theme_cursor_info_new	   (void);
-void                  mate_theme_cursor_info_free	   (MateThemeCursorInfo *info);
-MateThemeCursorInfo *mate_theme_cursor_info_find	   (const gchar          *name);
-GList                *mate_theme_cursor_info_find_all	   (void);
-gint                  mate_theme_cursor_info_compare      (MateThemeCursorInfo *a,
+MateThemeCursorInfo *cafe_theme_cursor_info_new	   (void);
+void                  cafe_theme_cursor_info_free	   (MateThemeCursorInfo *info);
+MateThemeCursorInfo *cafe_theme_cursor_info_find	   (const gchar          *name);
+GList                *cafe_theme_cursor_info_find_all	   (void);
+gint                  cafe_theme_cursor_info_compare      (MateThemeCursorInfo *a,
 							    MateThemeCursorInfo *b);
 
 /* Meta themes*/
-MateThemeMetaInfo *mate_theme_meta_info_new              (void);
-void                mate_theme_meta_info_free             (MateThemeMetaInfo *meta_theme_info);
-MateThemeMetaInfo *mate_theme_meta_info_find             (const gchar        *meta_theme_name);
-GList              *mate_theme_meta_info_find_all         (void);
-gint                mate_theme_meta_info_compare          (MateThemeMetaInfo *a,
+MateThemeMetaInfo *cafe_theme_meta_info_new              (void);
+void                cafe_theme_meta_info_free             (MateThemeMetaInfo *meta_theme_info);
+MateThemeMetaInfo *cafe_theme_meta_info_find             (const gchar        *meta_theme_name);
+GList              *cafe_theme_meta_info_find_all         (void);
+gint                cafe_theme_meta_info_compare          (MateThemeMetaInfo *a,
 							    MateThemeMetaInfo *b);
-gboolean            mate_theme_meta_info_validate         (const MateThemeMetaInfo *info,
+gboolean            cafe_theme_meta_info_validate         (const MateThemeMetaInfo *info,
                                                             GError            **error);
-MateThemeMetaInfo *mate_theme_read_meta_theme            (GFile              *meta_theme_uri);
+MateThemeMetaInfo *cafe_theme_read_meta_theme            (GFile              *meta_theme_uri);
 
 /* Other */
-void                mate_theme_init                       (void);
-void                mate_theme_info_register_theme_change (ThemeChangedCallback func,
+void                cafe_theme_init                       (void);
+void                cafe_theme_info_register_theme_change (ThemeChangedCallback func,
 							    gpointer             data);
 
-gboolean            mate_theme_color_scheme_parse         (const gchar         *scheme,
+gboolean            cafe_theme_color_scheme_parse         (const gchar         *scheme,
 							    GdkRGBA             *colors);
-gboolean            mate_theme_color_scheme_equal         (const gchar         *s1,
+gboolean            cafe_theme_color_scheme_equal         (const gchar         *s1,
 							    const gchar         *s2);
 
 #endif /* MATE_THEME_INFO_H */

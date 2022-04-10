@@ -1,19 +1,19 @@
 man_MANS = \
-    mate-about-me.1 \
-    mate-appearance-properties.1 \
-    mate-at-properties.1 \
-    mate-control-center.1 \
-    mate-default-applications-properties.1 \
-    mate-display-properties.1 \
-    mate-display-properties-install-systemwide.1 \
-    mate-font-viewer.1 \
-    mate-keybinding-properties.1 \
-    mate-keyboard-properties.1 \
-    mate-mouse-properties.1 \
-    mate-network-properties.1 \
-    mate-thumbnail-font.1 \
-    mate-typing-monitor.1 \
-    mate-window-properties.1
+    cafe-about-me.1 \
+    cafe-appearance-properties.1 \
+    cafe-at-properties.1 \
+    cafe-control-center.1 \
+    cafe-default-applications-properties.1 \
+    cafe-display-properties.1 \
+    cafe-display-properties-install-systemwide.1 \
+    cafe-font-viewer.1 \
+    cafe-keybinding-properties.1 \
+    cafe-keyboard-properties.1 \
+    cafe-mouse-properties.1 \
+    cafe-network-properties.1 \
+    cafe-thumbnail-font.1 \
+    cafe-typing-monitor.1 \
+    cafe-window-properties.1
 
 EXTRA_DIST = $(man_MANS)
 

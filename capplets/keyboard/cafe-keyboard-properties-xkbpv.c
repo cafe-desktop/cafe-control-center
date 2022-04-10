@@ -1,6 +1,6 @@
 /* -*- mode: c; style: linux -*- */
 
-/* mate-keyboard-properties-xkbpv.c
+/* cafe-keyboard-properties-xkbpv.c
  * Copyright (C) 2003-2007 Sergey V. Udaltsov
  *
  * Written by: Sergey V. Udaltsov <svu@gnome.org>
@@ -25,10 +25,10 @@
 #  include <config.h>
 #endif
 
-#include <libmatekbd/matekbd-keyboard-drawing.h>
+#include <libcafekbd/cafekbd-keyboard-drawing.h>
 
 #include "capplet-util.h"
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-xkb.h"
 
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 #include "X11/XKBlib.h"
@@ -57,9 +57,9 @@ static MatekbdKeyboardDrawingGroupLevel *pGroupsLevels[] = {
 GtkWidget *
 xkb_layout_preview_create_widget (GtkBuilder * chooserDialog)
 {
-	GtkWidget *kbdraw = matekbd_keyboard_drawing_new ();
+	GtkWidget *kbdraw = cafekbd_keyboard_drawing_new ();
 
-	matekbd_keyboard_drawing_set_groups_levels (MATEKBD_KEYBOARD_DRAWING
+	cafekbd_keyboard_drawing_set_groups_levels (MATEKBD_KEYBOARD_DRAWING
 						 (kbdraw), pGroupsLevels);
 	return kbdraw;
 }
@@ -98,7 +98,7 @@ xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
 
 				data->layouts = g_new0 (char *, 2);
 				data->variants = g_new0 (char *, 2);
-				if (matekbd_keyboard_config_split_items
+				if (cafekbd_keyboard_config_split_items
 				    (id, &layout, &variant)
 				    && variant != NULL) {
 					data->layouts[0] =
@@ -118,7 +118,7 @@ xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
 
 				if (xkl_xkb_config_native_prepare
 				    (engine, data, &component_names)) {
-					matekbd_keyboard_drawing_set_keyboard
+					cafekbd_keyboard_drawing_set_keyboard
 					    (MATEKBD_KEYBOARD_DRAWING
 					     (kbdraw), &component_names);
 
@@ -128,7 +128,7 @@ xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
 			}
 			g_object_unref (G_OBJECT (data));
 		} else
-			matekbd_keyboard_drawing_set_keyboard
+			cafekbd_keyboard_drawing_set_keyboard
 			    (MATEKBD_KEYBOARD_DRAWING (kbdraw), NULL);
 
 	}

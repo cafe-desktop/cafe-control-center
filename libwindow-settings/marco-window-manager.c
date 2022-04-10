@@ -32,7 +32,7 @@
 
 #include "marco-window-manager.h"
 
-#define MARCO_SCHEMA "org.mate.Marco.general"
+#define MARCO_SCHEMA "org.cafe.Marco.general"
 #define MARCO_THEME_KEY "theme"
 #define MARCO_FONT_KEY  "titlebar-font"
 #define MARCO_FOCUS_KEY "focus-mode"
@@ -82,7 +82,7 @@ value_changed (GSettings *settings,
 
         meta_wm = MARCO_WINDOW_MANAGER (data);
 
-        mate_window_manager_settings_changed (MATE_WINDOW_MANAGER (meta_wm));
+        cafe_window_manager_settings_changed (MATE_WINDOW_MANAGER (meta_wm));
 }
 
 /* this function is called when the shared lib is loaded */
@@ -92,7 +92,7 @@ window_manager_new (int expected_interface_version)
         GObject *wm;
 
         if (expected_interface_version != MATE_WINDOW_MANAGER_INTERFACE_VERSION) {
-                g_warning ("Marco window manager module wasn't compiled with the current version of mate-control-center");
+                g_warning ("Marco window manager module wasn't compiled with the current version of cafe-control-center");
                 return NULL;
         }
 
@@ -487,7 +487,7 @@ marco_window_manager_get_type (void)
                 };
 
                 marco_window_manager_type =
-                        g_type_register_static (mate_window_manager_get_type (),
+                        g_type_register_static (cafe_window_manager_get_type (),
                                                 "MarcoWindowManager",
                                                 &marco_window_manager_info, 0);
         }

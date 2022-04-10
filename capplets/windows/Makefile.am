@@ -1,22 +1,22 @@
 # This is used in MATECC_CAPPLETS_CFLAGS
 cappletname = window
 
-bin_PROGRAMS = mate-window-properties
+bin_PROGRAMS = cafe-window-properties
 
-mate_window_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
+cafe_window_properties_LDADD = $(MATECC_CAPPLETS_LIBS)
 
-BUILT_SOURCES = mate-window-properties-resources.h mate-window-properties-resources.c
-nodist_mate_window_properties_SOURCES = $(BUILT_SOURCES)
-mate_window_properties_SOURCES = \
-	mate-metacity-support.h \
-	mate-metacity-support.c \
-	mate-window-properties.c
+BUILT_SOURCES = cafe-window-properties-resources.h cafe-window-properties-resources.c
+nodist_cafe_window_properties_SOURCES = $(BUILT_SOURCES)
+cafe_window_properties_SOURCES = \
+	cafe-metacity-support.h \
+	cafe-metacity-support.c \
+	cafe-window-properties.c
 
 desktopdir = $(datadir)/applications
-Desktop_in_files = mate-window-properties.desktop.in
+Desktop_in_files = cafe-window-properties.desktop.in
 desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 
-mate-window-properties-resources.h mate-window-properties-resources.c: org.mate.mcc.windows.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.mate.mcc.windows.gresource.xml)
+cafe-window-properties-resources.h cafe-window-properties-resources.c: org.cafe.mcc.windows.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.windows.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name window_properties $<
 
 $(desktop_DATA): $(Desktop_in_files)
@@ -29,6 +29,6 @@ AM_CPPFLAGS =				\
 	-DPIXMAPDIR=\""$(pixmapdir)"\"
 
 CLEANFILES = $(BUILT_SOURCES) $(MATECC_CAPPLETS_CLEANFILES) $(desktop_DATA)
-EXTRA_DIST = $(Desktop_in_files) org.mate.mcc.windows.gresource.xml window-properties.ui
+EXTRA_DIST = $(Desktop_in_files) org.cafe.mcc.windows.gresource.xml window-properties.ui
 
 -include $(top_srcdir)/git.mk

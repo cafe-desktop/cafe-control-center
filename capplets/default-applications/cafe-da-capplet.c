@@ -31,7 +31,7 @@
 #include <gio/gdesktopappinfo.h>
 #include <cairo-gobject.h>
 
-#include "mate-da-capplet.h"
+#include "cafe-da-capplet.h"
 #include "capplet-util.h"
 
 
@@ -632,7 +632,7 @@ show_dialog(MateDACapplet* capplet, const gchar* start_page)
 
 	capplet->builder = builder = gtk_builder_new ();
 
-	builder_result = gtk_builder_add_from_resource (builder, "/org/mate/mcc/da/mate-default-applications-properties.ui", NULL);
+	builder_result = gtk_builder_add_from_resource (builder, "/org/cafe/mcc/da/cafe-default-applications-properties.ui", NULL);
 
 	if (builder_result == 0)
 	{

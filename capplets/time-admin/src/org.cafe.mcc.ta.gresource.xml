@@ -16,7 +16,7 @@
     along with MATE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/mcc/ta">
+  <gresource prefix="/org/cafe/mcc/ta">
     <file compressed="true">time-admin.ui</file>
   </gresource>
 </gresources>

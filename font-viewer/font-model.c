@@ -1,5 +1,5 @@
 /* -*- mode: C; c-basic-offset: 4 -*-
- * mate-font-view:
+ * cafe-font-view:
  *
  * Copyright (C) 2012 Cosimo Cecchi <cosimoc@gnome.org>
  *
@@ -36,7 +36,7 @@
 #include <fontconfig/fontconfig.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmate-desktop/mate-desktop-thumbnail.h>
+#include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
 #include "font-model.h"
 #include "font-utils.h"
@@ -190,16 +190,16 @@ create_thumbnail (ThumbInfoData *thumb_info)
 
     mtime = g_file_info_get_attribute_uint64 (info, G_FILE_ATTRIBUTE_TIME_MODIFIED);
 
-    factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
-    pixbuf = mate_desktop_thumbnail_factory_generate_thumbnail
+    factory = cafe_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_NORMAL);
+    pixbuf = cafe_desktop_thumbnail_factory_generate_thumbnail
         (factory,
          thumb_info->uri, g_file_info_get_content_type (info));
 
     if (pixbuf != NULL)
-        mate_desktop_thumbnail_factory_save_thumbnail (factory, pixbuf,
+        cafe_desktop_thumbnail_factory_save_thumbnail (factory, pixbuf,
                                                        thumb_info->uri, (time_t) mtime);
     else
-        mate_desktop_thumbnail_factory_create_failed_thumbnail (factory,
+        cafe_desktop_thumbnail_factory_create_failed_thumbnail (factory,
                                                                 thumb_info->uri, (time_t) mtime);
 
   g_object_unref (factory);

@@ -2,21 +2,21 @@
 AM_CPPFLAGS = $(WARN_CFLAGS) $(FONT_VIEWER_CFLAGS) $(MATECC_CAPPLETS_CFLAGS) -DDIRECTORY_DIR=\"$(directorydir)\" \
   -DMATELOCALEDIR=\"$(datadir)/locale\"
 
-bin_PROGRAMS = mate-thumbnail-font mate-font-viewer
+bin_PROGRAMS = cafe-thumbnail-font cafe-font-viewer
 
 font_loader_SOURCES = \
 	sushi-font-loader.h \
 	sushi-font-loader.c
 
-mate_thumbnail_font_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
-mate_thumbnail_font_SOURCES = \
+cafe_thumbnail_font_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
+cafe_thumbnail_font_SOURCES = \
 	$(font_loader_SOURCES) \
 	font-thumbnailer.c \
 	totem-resources.c \
 	totem-resources.h
 
-mate_font_viewer_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
-mate_font_viewer_SOURCES = \
+cafe_font_viewer_LDADD = $(MATECC_CAPPLETS_LIBS) -lm $(FONT_VIEWER_LIBS)
+cafe_font_viewer_SOURCES = \
 	$(font_loader_SOURCES) \
 	font-model.h \
 	font-model.c \
@@ -29,10 +29,10 @@ mate_font_viewer_SOURCES = \
 	font-view.c
 
 thumbnailerdir = $(datadir)/thumbnailers
-thumbnailer_DATA = mate-font-viewer.thumbnailer
+thumbnailer_DATA = cafe-font-viewer.thumbnailer
 
 desktopdir = $(datadir)/applications
-desktop_in_files = mate-font-viewer.desktop.in
+desktop_in_files = cafe-font-viewer.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 $(desktop_DATA): $(desktop_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@

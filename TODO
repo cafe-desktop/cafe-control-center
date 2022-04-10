@@ -1,5 +1,5 @@
 
-[ Things prefaced with GSD need to be fixed in the mate-settings daemon
+[ Things prefaced with GSD need to be fixed in the cafe-settings daemon
   and not the dialog ]
 
 ACCESSIBILITY:
@@ -40,7 +40,7 @@ KEYBINDINGS:
 
 PANEL:
  * UI love
- * port mateconf-peditor functionality
+ * port cafeconf-peditor functionality
 
 SAWFISH????
 

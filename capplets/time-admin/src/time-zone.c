@@ -39,7 +39,7 @@
 #include <libintl.h>
 #include <glib/gi18n.h>
 
-#include <libmate-desktop/mate-languages.h>
+#include <libcafe-desktop/cafe-languages.h>
 
 #define DEFAULT_TZ "Europe/London"
 #define BACKFILE   TIMPZONEDIR "backward"
@@ -273,7 +273,7 @@ translated_city_name (TzLocation *loc)
 
     length = g_strv_length (split_translated);
 
-    country = mate_get_country_from_code (loc->country, NULL);
+    country = cafe_get_country_from_code (loc->country, NULL);
     name = g_strdup_printf (C_("timezone loc", "%s, %s"),
                             split_translated[length-1],
                             country);

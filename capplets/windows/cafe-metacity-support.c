@@ -1,4 +1,4 @@
-/* mate-metacity-support.c
+/* cafe-metacity-support.c
  * Copyright (C) 2014 Stefano Karapetsas
  *
  * Written by: Stefano Karapetsas <stefano@karapetsas.com>
@@ -27,7 +27,7 @@
 #define COMPOSITING_KEY "compositing-manager"
 
 void
-mate_metacity_config_tool ()
+cafe_metacity_config_tool ()
 {
     GSettings *settings;
     GtkDialog *dialog;

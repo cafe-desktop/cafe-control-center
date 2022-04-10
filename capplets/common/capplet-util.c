@@ -74,7 +74,7 @@ capplet_help (GtkWindow *parent, char const *section)
 
 	g_return_if_fail (section != NULL);
 
-	uri = g_strdup_printf ("help:mate-user-guide/%s", section);
+	uri = g_strdup_printf ("help:cafe-user-guide/%s", section);
 
 	if (!gtk_show_uri_on_window (parent , uri, gtk_get_current_event_time (), &error)) {
 		capplet_error_dialog (

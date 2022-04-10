@@ -34,12 +34,12 @@
 #include "capplet-util.h"
 #include "activate-settings-daemon.h"
 
-#include "mate-keyboard-properties-a11y.h"
-#include "mate-keyboard-properties-xkb.h"
+#include "cafe-keyboard-properties-a11y.h"
+#include "cafe-keyboard-properties-xkb.h"
 
-#define KEYBOARD_SCHEMA "org.mate.peripherals-keyboard"
-#define INTERFACE_SCHEMA "org.mate.interface"
-#define TYPING_BREAK_SCHEMA "org.mate.typing-break"
+#define KEYBOARD_SCHEMA "org.cafe.peripherals-keyboard"
+#define INTERFACE_SCHEMA "org.cafe.interface"
+#define TYPING_BREAK_SCHEMA "org.cafe.typing-break"
 
 enum {
 	RESPONSE_APPLY = 1,
@@ -59,7 +59,7 @@ create_dialog (void)
 	GError *error = NULL;
 
 	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/mate/mcc/keyboard/mate-keyboard-properties-dialog.ui", &error) == 0) {
+	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/keyboard/cafe-keyboard-properties-dialog.ui", &error) == 0) {
 		g_warning ("Could not load UI: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);
@@ -147,7 +147,7 @@ setup_dialog (GtkBuilder * dialog)
 					 G_SETTINGS_BIND_DEFAULT);
 
 	/* Ergonomics */
-	monitor = g_find_program_in_path ("mate-typing-monitor");
+	monitor = g_find_program_in_path ("cafe-typing-monitor");
 	if (monitor != NULL) {
 		g_free (monitor);
 

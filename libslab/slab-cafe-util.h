@@ -23,7 +23,7 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <libmate-desktop/mate-desktop-item.h>
+#include <libcafe-desktop/cafe-desktop-item.h>
 
 #ifdef __cplusplus
 extern "C" {

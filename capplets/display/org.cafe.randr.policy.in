@@ -10,19 +10,19 @@
   -->
 
   <vendor>MATE Monitor Preferences</vendor>
-  <vendor_url>http://www.mate-desktop.org</vendor_url>
-  <icon_name>mate-display-properties</icon_name>
+  <vendor_url>http://www.cafe-desktop.org</vendor_url>
+  <icon_name>cafe-display-properties</icon_name>
 
-  <action id="org.mate.randr.install-system-wide">
+  <action id="org.cafe.randr.install-system-wide">
     <description>Install multi-monitor settings for the whole system</description>
     <message>Authentication is required to install multi-monitor settings for all users</message>
-    <icon_name>mate-display-properties</icon_name>
+    <icon_name>cafe-display-properties</icon_name>
     <defaults>
       <allow_any>no</allow_any>
       <allow_inactive>no</allow_inactive>
       <allow_active>auth_admin_keep</allow_active>
     </defaults>
-    <annotate key="org.freedesktop.policykit.exec.path">/usr/sbin/mate-display-properties-install-systemwide</annotate>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/sbin/cafe-display-properties-install-systemwide</annotate>
   </action>
 
 </policyconfig>

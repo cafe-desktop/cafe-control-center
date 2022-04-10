@@ -74,7 +74,7 @@
     <legalnotice>
         <title>Feedback</title>
         <para>To report a bug or make a suggestion regarding the &app; application or this manual, follow the directions in the
-        <ulink url="help:mate-user-guide/feedback" type="help">MATE Feedback Page</ulink>.
+        <ulink url="help:cafe-user-guide/feedback" type="help">MATE Feedback Page</ulink>.
       </para>
 <!-- Translators may also add here feedback address for translations -->
     </legalnotice>
@@ -86,11 +86,11 @@
       The &app; provides a single window from which to launch all preference tools.
     </para>
     <note><para>
-      For help on using preference tools, see the <ulink type="help" url="help:mate-user-guide/prefs">User Guide</ulink>.
+      For help on using preference tools, see the <ulink type="help" url="help:cafe-user-guide/prefs">User Guide</ulink>.
     </para></note>
 
 <!-- ============= To Start Control Center  ============================ -->
-    <sect2 id="mate-control-center-to-start">
+    <sect2 id="cafe-control-center-to-start">
       <title>To Start &appname;</title>
       <para>You can start &app; in the following ways:</para>
       <variablelist>
@@ -106,7 +106,7 @@
           <term>Command line</term>
           <listitem>
             <para>
-              Execute the following command: <command>mate-control-center</command></para>
+              Execute the following command: <command>cafe-control-center</command></para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -114,7 +114,7 @@
 
   </sect1>
   
-  <sect1 id="matecc-interface">
+  <sect1 id="cafecc-interface">
     <title>Usage</title>
     <para>
       The &app; window lists all preference tools installed on your system in groups.

@@ -24,22 +24,22 @@
 
 #include <gtk/gtk.h>
 
-#define TERMINAL_SCHEMA       "org.mate.applications-terminal"
+#define TERMINAL_SCHEMA       "org.cafe.applications-terminal"
 #define TERMINAL_KEY          "exec"
 
-#define VISUAL_SCHEMA         "org.mate.applications-at-visual"
+#define VISUAL_SCHEMA         "org.cafe.applications-at-visual"
 #define VISUAL_KEY            "exec"
 #define VISUAL_STARTUP_SCHEMA "org.gnome.desktop.a11y.applications"
 #define VISUAL_STARTUP_KEY    "screen-reader-enabled"
 
-#define MOBILITY_SCHEMA       "org.mate.applications-at-mobility"
+#define MOBILITY_SCHEMA       "org.cafe.applications-at-mobility"
 #define MOBILITY_KEY          "exec"
 #define MOBILITY_STARTUP_KEY  "startup"
 
-#define CALCULATOR_SCHEMA     "org.mate.applications-calculator"
+#define CALCULATOR_SCHEMA     "org.cafe.applications-calculator"
 #define CALCULATOR_KEY        "exec"
 
-#define MESSENGER_SCHEMA     "org.mate.applications-messenger"
+#define MESSENGER_SCHEMA     "org.cafe.applications-messenger"
 #define MESSENGER_KEY        "exec"
 
 typedef struct _MateDACapplet {
