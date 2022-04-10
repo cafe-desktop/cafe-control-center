@@ -74,7 +74,7 @@
       <itemizedlist>
 	<listitem>
 	  <para>
-	    Mate Help Browser ("GHB")
+	    Cafe Help Browser ("GHB")
 	  </para>
 	</listitem>
 	<listitem>
@@ -104,7 +104,7 @@
       commands.  For example, if you select to have an application be
       brought up in the console, the terminal defaults will be
       called.  Numerous defaults for terminals exist; the default
-      being <application>Mate Terminal</application>.  Select a
+      being <application>Cafe Terminal</application>.  Select a
       terminal from the list and click <guibutton>OK</guibutton>.
     </para>
     <para>

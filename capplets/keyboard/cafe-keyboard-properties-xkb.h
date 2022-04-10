@@ -36,7 +36,7 @@ extern XklEngine *engine;
 extern XklConfigRegistry *config_registry;
 extern GSettings *xkb_kbd_settings;
 extern GSettings *xkb_general_settings;
-extern MatekbdKeyboardConfig initial_config;
+extern CafekbdKeyboardConfig initial_config;
 
 extern void setup_xkb_tabs (GtkBuilder * dialog);
 

@@ -43,10 +43,10 @@ typedef struct GrabInfo GrabInfo;
 
 struct App
 {
-    MateRRScreen       *screen;
-    MateRRConfig  *current_configuration;
-    MateRRLabeler *labeler;
-    MateRROutputInfo         *current_output;
+    CafeRRScreen       *screen;
+    CafeRRConfig  *current_configuration;
+    CafeRRLabeler *labeler;
+    CafeRROutputInfo         *current_output;
 
     GtkWidget	   *dialog;
     GtkWidget      *current_monitor_event_box;
@@ -88,13 +88,13 @@ enum {
 static void rebuild_gui (App *app);
 static void on_clone_changed (GtkWidget *box, gpointer data);
 static void on_rate_changed (GtkComboBox *box, gpointer data);
-static gboolean output_overlaps (MateRROutputInfo *output, MateRRConfig *config);
+static gboolean output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config);
 static void select_current_output_from_dialog_position (App *app);
 static void monitor_on_off_toggled_cb (GtkToggleButton *toggle, gpointer data);
-static void get_geometry (MateRROutputInfo *output, int *w, int *h);
+static void get_geometry (CafeRROutputInfo *output, int *w, int *h);
 static void apply_configuration_returned_cb (GObject *source_object, GAsyncResult *res, gpointer data);
-static gboolean get_clone_size (MateRRScreen *screen, int *width, int *height);
-static gboolean output_info_supports_mode (App *app, MateRROutputInfo *info, int width, int height);
+static gboolean get_clone_size (CafeRRScreen *screen, int *width, int *height);
+static gboolean output_info_supports_mode (App *app, CafeRROutputInfo *info, int width, int height);
 
 static void
 error_message (App *app, const char *primary_text, const char *secondary_text)
@@ -130,10 +130,10 @@ idle_free (gchar *s)
 }
 
 static void
-on_screen_changed (MateRRScreen *scr,
+on_screen_changed (CafeRRScreen *scr,
 		   gpointer data)
 {
-    MateRRConfig *current;
+    CafeRRConfig *current;
     App *app = data;
 
     current = cafe_rr_config_new_current (app->screen, NULL);
@@ -224,7 +224,7 @@ static void
 add_key (GtkWidget *widget,
 	 const char *text,
 	 int width, int height, int rate,
-	 MateRRRotation rotation)
+	 CafeRRRotation rotation)
 {
     ForeachInfo info;
     GtkComboBox *box = GTK_COMBO_BOX (widget);
@@ -270,10 +270,10 @@ combo_select (GtkWidget *widget, const char *text)
     return TRUE;
 }
 
-static MateRRMode **
+static CafeRRMode **
 get_current_modes (App *app)
 {
-    MateRROutput *output;
+    CafeRROutput *output;
 
     if (cafe_rr_config_get_clone (app->current_configuration))
     {
@@ -299,7 +299,7 @@ rebuild_rotation_combo (App *app)
 {
     typedef struct
     {
-	MateRRRotation	rotation;
+	CafeRRRotation	rotation;
 	const char *	name;
     } RotationInfo;
     static const RotationInfo rotations[] = {
@@ -309,7 +309,7 @@ rebuild_rotation_combo (App *app)
 	{ MATE_RR_ROTATION_180, N_("Upside Down") },
     };
     const char *selection;
-    MateRRRotation current;
+    CafeRRRotation current;
     int i;
 
     clear_combo (app->rotation_combo);
@@ -354,7 +354,7 @@ make_rate_string (int hz)
 static void
 rebuild_rate_combo (App *app)
 {
-    MateRRMode **modes;
+    CafeRRMode **modes;
     int best;
     int i;
 
@@ -370,7 +370,7 @@ rebuild_rate_combo (App *app)
     best = -1;
     for (i = 0; modes[i] != NULL; ++i)
     {
-	MateRRMode *mode = modes[i];
+	CafeRRMode *mode = modes[i];
 	int width, height, rate;
 	int output_width, output_height;
 
@@ -400,7 +400,7 @@ static int
 count_active_outputs (App *app)
 {
     int i, count = 0;
-    MateRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
+    CafeRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
 
     for (i = 0; outputs[i] != NULL; ++i)
     {
@@ -431,7 +431,7 @@ mirror_screens_is_supported (App *app)
     if (have_clone_size) {
 	int i;
 	int num_outputs_with_clone_size;
-	MateRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
+	CafeRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
 
 	num_outputs_with_clone_size = 0;
 
@@ -557,7 +557,7 @@ make_resolution_string (int width, int height)
 }
 
 static void
-find_best_mode (MateRRMode **modes, int *out_width, int *out_height)
+find_best_mode (CafeRRMode **modes, int *out_width, int *out_height)
 {
     int i;
 
@@ -583,7 +583,7 @@ static void
 rebuild_resolution_combo (App *app)
 {
     int i;
-    MateRRMode **modes;
+    CafeRRMode **modes;
     const char *current;
     int output_width, output_height;
 
@@ -663,7 +663,7 @@ rebuild_gui (App *app)
 }
 
 static gboolean
-get_mode (GtkWidget *widget, int *width, int *height, int *freq, MateRRRotation *rot)
+get_mode (GtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation *rot)
 {
     GtkTreeIter iter;
     GtkTreeModel *model;
@@ -683,7 +683,7 @@ get_mode (GtkWidget *widget, int *width, int *height, int *freq, MateRRRotation 
 	freq = &dummy;
 
     if (!rot)
-	rot = (MateRRRotation *)&dummy;
+	rot = (CafeRRRotation *)&dummy;
 
     model = gtk_combo_box_get_model (box);
     gtk_tree_model_get (model, &iter,
@@ -701,7 +701,7 @@ static void
 on_rotation_changed (GtkComboBox *box, gpointer data)
 {
     App *app = data;
-    MateRRRotation rotation;
+    CafeRRRotation rotation;
 
     if (!app->current_output)
 	return;
@@ -730,7 +730,7 @@ on_rate_changed (GtkComboBox *box, gpointer data)
 static void
 select_resolution_for_current_output (App *app)
 {
-    MateRRMode **modes;
+    CafeRRMode **modes;
     int width, height;
     int x, y;
     cafe_rr_output_info_get_geometry (app->current_output, &x, &y, NULL, NULL);
@@ -785,7 +785,7 @@ monitor_on_off_toggled_cb (GtkToggleButton *toggle, gpointer data)
 }
 
 static void
-realign_outputs_after_resolution_change (App *app, MateRROutputInfo *output_that_changed, int old_width, int old_height)
+realign_outputs_after_resolution_change (App *app, CafeRROutputInfo *output_that_changed, int old_width, int old_height)
 {
     /* We find the outputs that were below or to the right of the output that
      * changed, and realign them; we also do that for outputs that shared the
@@ -797,7 +797,7 @@ realign_outputs_after_resolution_change (App *app, MateRROutputInfo *output_that
     int old_right_edge, old_bottom_edge;
     int dx, dy;
     int x, y, width, height;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     g_assert (app->current_configuration != NULL);
 
@@ -875,7 +875,7 @@ lay_out_outputs_horizontally (App *app)
 {
     int i;
     int x;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     /* Lay out all the monitors horizontally when "mirror screens" is turned
      * off, to avoid having all of them overlapped initially.  We put the
@@ -917,9 +917,9 @@ lay_out_outputs_horizontally (App *app)
  * Do we need to put this function in cafe-desktop for public use?
  */
 static gboolean
-get_clone_size (MateRRScreen *screen, int *width, int *height)
+get_clone_size (CafeRRScreen *screen, int *width, int *height)
 {
-        MateRRMode **modes = cafe_rr_screen_list_clone_modes (screen);
+        CafeRRMode **modes = cafe_rr_screen_list_clone_modes (screen);
         int best_w, best_h;
         int i;
 
@@ -927,7 +927,7 @@ get_clone_size (MateRRScreen *screen, int *width, int *height)
         best_h = 0;
 
         for (i = 0; modes[i] != NULL; ++i) {
-                MateRRMode *mode = modes[i];
+                CafeRRMode *mode = modes[i];
                 int w, h;
 
                 w = cafe_rr_mode_get_width (mode);
@@ -952,10 +952,10 @@ get_clone_size (MateRRScreen *screen, int *width, int *height)
 }
 
 static gboolean
-output_info_supports_mode (App *app, MateRROutputInfo *info, int width, int height)
+output_info_supports_mode (App *app, CafeRROutputInfo *info, int width, int height)
 {
-    MateRROutput *output;
-    MateRRMode **modes;
+    CafeRROutput *output;
+    CafeRRMode **modes;
     int i;
 
     if (!cafe_rr_output_info_is_connected (info))
@@ -987,7 +987,7 @@ on_clone_changed (GtkWidget *box, gpointer data)
     {
 	int i;
 	int width, height;
-	MateRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
+	CafeRROutputInfo **outputs = cafe_rr_config_get_outputs (app->current_configuration);
 
 	for (i = 0; outputs[i]; ++i)
 	{
@@ -1024,9 +1024,9 @@ on_clone_changed (GtkWidget *box, gpointer data)
 }
 
 static void
-get_geometry (MateRROutputInfo *output, int *w, int *h)
+get_geometry (CafeRROutputInfo *output, int *w, int *h)
 {
-    MateRRRotation rotation;
+    CafeRRRotation rotation;
 
     if (cafe_rr_output_info_is_active (output))
     {
@@ -1055,7 +1055,7 @@ list_connected_outputs (App *app, int *total_w, int *total_h)
 {
     int i, dummy;
     GList *result = NULL;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     if (!total_w)
 	total_w = &dummy;
@@ -1120,7 +1120,7 @@ compute_scale (App *app)
 
 typedef struct Edge
 {
-    MateRROutputInfo *output;
+    CafeRROutputInfo *output;
     int x1, y1;
     int x2, y2;
 } Edge;
@@ -1133,7 +1133,7 @@ typedef struct Snap
 } Snap;
 
 static void
-add_edge (MateRROutputInfo *output, int x1, int y1, int x2, int y2, GArray *edges)
+add_edge (CafeRROutputInfo *output, int x1, int y1, int x2, int y2, GArray *edges)
 {
     Edge e;
 
@@ -1147,7 +1147,7 @@ add_edge (MateRROutputInfo *output, int x1, int y1, int x2, int y2, GArray *edge
 }
 
 static void
-list_edges_for_output (MateRROutputInfo *output, GArray *edges)
+list_edges_for_output (CafeRROutputInfo *output, GArray *edges)
 {
     int x, y, w, h;
 
@@ -1162,10 +1162,10 @@ list_edges_for_output (MateRROutputInfo *output, GArray *edges)
 }
 
 static void
-list_edges (MateRRConfig *config, GArray *edges)
+list_edges (CafeRRConfig *config, GArray *edges)
 {
     int i;
-    MateRROutputInfo **outputs = cafe_rr_config_get_outputs (config);
+    CafeRROutputInfo **outputs = cafe_rr_config_get_outputs (config);
 
     for (i = 0; outputs[i]; ++i)
     {
@@ -1255,7 +1255,7 @@ add_edge_snaps (Edge *snapper, Edge *snappee, GArray *snaps)
 }
 
 static void
-list_snaps (MateRROutputInfo *output, GArray *edges, GArray *snaps)
+list_snaps (CafeRROutputInfo *output, GArray *edges, GArray *snaps)
 {
     int i;
 
@@ -1311,7 +1311,7 @@ edges_align (Edge *e1, Edge *e2)
 }
 
 static gboolean
-output_is_aligned (MateRROutputInfo *output, GArray *edges)
+output_is_aligned (CafeRROutputInfo *output, GArray *edges)
 {
     gboolean result = FALSE;
     int i;
@@ -1348,18 +1348,18 @@ done:
 }
 
 static void
-get_output_rect (MateRROutputInfo *output, GdkRectangle *rect)
+get_output_rect (CafeRROutputInfo *output, GdkRectangle *rect)
 {
     cafe_rr_output_info_get_geometry (output, &rect->x, &rect->y, &rect->width, &rect->height);
     get_geometry (output, &rect->width, &rect->height); // accounts for rotation
 }
 
 static gboolean
-output_overlaps (MateRROutputInfo *output, MateRRConfig *config)
+output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config)
 {
     int i;
     GdkRectangle output_rect;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     get_output_rect (output, &output_rect);
 
@@ -1380,11 +1380,11 @@ output_overlaps (MateRROutputInfo *output, MateRRConfig *config)
 }
 
 static gboolean
-cafe_rr_config_is_aligned (MateRRConfig *config, GArray *edges)
+cafe_rr_config_is_aligned (CafeRRConfig *config, GArray *edges)
 {
     int i;
     gboolean result = TRUE;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     outputs = cafe_rr_config_get_outputs(config);
     for (i = 0; outputs[i]; ++i)
@@ -1495,7 +1495,7 @@ on_output_event (FooScrollArea *area,
 		 FooScrollAreaEvent *event,
 		 gpointer data)
 {
-    MateRROutputInfo *output = data;
+    CafeRROutputInfo *output = data;
     App *app = g_object_get_data (G_OBJECT (area), "app");
 
     /* If the mouse is inside the outputs, set the cursor to "you can move me".  See
@@ -1618,7 +1618,7 @@ on_canvas_event (FooScrollArea *area,
 
 static PangoLayout *
 get_display_name (App *app,
-		  MateRROutputInfo *output)
+		  CafeRROutputInfo *output)
 {
     char *text;
     PangoLayout * layout;
@@ -1693,10 +1693,10 @@ paint_output (App *app, cairo_t *cr, int i)
     double scale = compute_scale (app);
     double x, y;
     int output_x, output_y;
-    MateRRRotation rotation;
+    CafeRRRotation rotation;
     int total_w, total_h;
     GList *connected_outputs = list_connected_outputs (app, &total_w, &total_h);
-    MateRROutputInfo *output = g_list_nth_data (connected_outputs, i);
+    CafeRROutputInfo *output = g_list_nth_data (connected_outputs, i);
     PangoLayout *layout = get_display_name (app, output);
     PangoRectangle ink_extent, log_extent;
     GdkRectangle viewport;
@@ -1880,12 +1880,12 @@ make_text_combo (GtkWidget *widget, int sort_column)
 }
 
 static void
-compute_virtual_size_for_configuration (MateRRConfig *config, int *ret_width, int *ret_height)
+compute_virtual_size_for_configuration (CafeRRConfig *config, int *ret_width, int *ret_height)
 {
     int i;
     int width, height;
     int output_x, output_y, output_width, output_height;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     width = height = 0;
 
@@ -1997,8 +1997,8 @@ begin_version1_apply_configuration (App *app)
 static void
 ensure_current_configuration_is_saved (void)
 {
-        MateRRScreen *rr_screen;
-        MateRRConfig *rr_config;
+        CafeRRScreen *rr_screen;
+        CafeRRConfig *rr_config;
 
         /* Normally, cafe_rr_config_save() creates a backup file based on the
          * old monitors.xml.  However, if *that* file didn't exist, there is
@@ -2129,7 +2129,7 @@ set_primary (GtkWidget *widget, gpointer data)
 {
     App *app = data;
     int i;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     if (!app->current_output)
         return;
@@ -2156,13 +2156,13 @@ on_show_icon_toggled (GtkWidget *widget, gpointer data)
 			   gtk_toggle_button_get_active (tb));
 }
 
-static MateRROutputInfo *
-get_nearest_output (MateRRConfig *configuration, int x, int y)
+static CafeRROutputInfo *
+get_nearest_output (CafeRRConfig *configuration, int x, int y)
 {
     int i;
     int nearest_index;
     int nearest_dist;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     nearest_index = -1;
     nearest_dist = G_MAXINT;
@@ -2208,14 +2208,14 @@ get_nearest_output (MateRRConfig *configuration, int x, int y)
 /* Gets the output that contains the largest intersection with the window.
  * Logic stolen from gdk_screen_get_monitor_at_window().
  */
-static MateRROutputInfo *
-get_output_for_window (MateRRConfig *configuration, GdkWindow *window)
+static CafeRROutputInfo *
+get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
 {
     GdkRectangle win_rect;
     int i;
     int largest_area;
     int largest_index;
-    MateRROutputInfo **outputs;
+    CafeRROutputInfo **outputs;
 
     gdk_window_get_geometry (window, &win_rect.x, &win_rect.y, &win_rect.width, &win_rect.height);
     gdk_window_get_origin (window, &win_rect.x, &win_rect.y);

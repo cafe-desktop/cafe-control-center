@@ -47,7 +47,7 @@ static const GtkTargetEntry drag_types[] = {
 
 static void wp_update_preview(GtkFileChooser* chooser, AppearanceData* data);
 
-static void select_item(AppearanceData* data, MateWPItem* item, gboolean scroll)
+static void select_item(AppearanceData* data, CafeWPItem* item, gboolean scroll)
 {
 	GtkTreePath* path;
 
@@ -68,9 +68,9 @@ static void select_item(AppearanceData* data, MateWPItem* item, gboolean scroll)
 	gtk_tree_path_free(path);
 }
 
-static MateWPItem* get_selected_item(AppearanceData* data, GtkTreeIter* iter)
+static CafeWPItem* get_selected_item(AppearanceData* data, GtkTreeIter* iter)
 {
-	MateWPItem* item = NULL;
+	CafeWPItem* item = NULL;
 	GList* selected;
 
 	selected = gtk_icon_view_get_selected_items (data->wp_view);
@@ -95,17 +95,17 @@ static MateWPItem* get_selected_item(AppearanceData* data, GtkTreeIter* iter)
 
 static gboolean predicate (gpointer key, gpointer value, gpointer data)
 {
-  MateBG *bg = data;
-  MateWPItem *item = value;
+  CafeBG *bg = data;
+  CafeWPItem *item = value;
 
   return item->bg == bg;
 }
 
-static void on_item_changed (MateBG *bg, AppearanceData *data) {
+static void on_item_changed (CafeBG *bg, AppearanceData *data) {
   GtkTreeModel *model;
   GtkTreeIter iter;
   GtkTreePath *path;
-  MateWPItem *item;
+  CafeWPItem *item;
 
   item = g_hash_table_find (data->wp_hash, predicate, bg);
 
@@ -135,7 +135,7 @@ static void on_item_changed (MateBG *bg, AppearanceData *data) {
 
 static void
 wp_props_load_wallpaper (gchar *key,
-                         MateWPItem *item,
+                         CafeWPItem *item,
                          AppearanceData *data)
 {
   GtkTreeIter iter;
@@ -166,11 +166,11 @@ wp_props_load_wallpaper (gchar *key,
   gtk_tree_path_free (path);
 }
 
-static MateWPItem *
+static CafeWPItem *
 wp_add_image (AppearanceData *data,
               const gchar *filename)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   if (!filename)
     return NULL;
@@ -205,7 +205,7 @@ wp_add_images (AppearanceData *data,
   GdkWindow *window;
   GtkWidget *w;
   GdkCursor *cursor;
-  MateWPItem *item;
+  CafeWPItem *item;
 
   w = appearance_capplet_get_widget (data, "appearance_window");
   window = gtk_widget_get_window (w);
@@ -258,7 +258,7 @@ wp_option_menu_set (AppearanceData *data,
 static void
 wp_set_sensitivities (AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   gchar *filename = NULL;
 
   item = get_selected_item (data, NULL);
@@ -297,7 +297,7 @@ static void
 wp_scale_type_changed (GtkComboBox *combobox,
                        AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   GtkTreeIter iter;
   GdkPixbuf *pixbuf;
 
@@ -327,7 +327,7 @@ static void
 wp_shade_type_changed (GtkWidget *combobox,
                        AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   GtkTreeIter iter;
   GdkPixbuf *pixbuf;
 
@@ -357,7 +357,7 @@ static void
 wp_color_changed (AppearanceData *data,
                   gboolean update)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   item = get_selected_item (data, NULL);
 
@@ -395,7 +395,7 @@ static void
 wp_remove_wallpaper (GtkWidget *widget,
                      AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   GtkTreeIter iter;
   GtkTreePath *path;
 
@@ -420,7 +420,7 @@ static void
 wp_uri_changed (const gchar *uri,
                 AppearanceData *data)
 {
-  MateWPItem *item, *selected;
+  CafeWPItem *item, *selected;
 
   item = g_hash_table_lookup (data->wp_hash, uri);
   selected = get_selected_item (data, NULL);
@@ -461,7 +461,7 @@ wp_options_changed (GSettings *settings,
                     gchar *key,
                     AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   item = get_selected_item (data, NULL);
 
@@ -477,7 +477,7 @@ wp_shading_changed (GSettings *settings,
                     gchar *key,
                     AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   wp_set_sensitivities (data);
 
@@ -531,7 +531,7 @@ wp_color2_changed (GSettings *settings,
 }
 
 static gboolean
-wp_props_wp_set (AppearanceData *data, MateWPItem *item)
+wp_props_wp_set (AppearanceData *data, CafeWPItem *item)
 {
   gchar *pcolor, *scolor;
 
@@ -579,7 +579,7 @@ static void
 wp_props_wp_selected (GtkTreeSelection *selection,
                       AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   item = get_selected_item (data, NULL);
 
@@ -736,7 +736,7 @@ wp_drag_get_data (GtkWidget *widget,
 		  AppearanceData *data)
 {
   if (type == TARGET_URI_LIST) {
-    MateWPItem *item = get_selected_item (data, NULL);
+    CafeWPItem *item = get_selected_item (data, NULL);
 
     if (item != NULL) {
       char *uris[2];
@@ -760,7 +760,7 @@ wp_view_tooltip_cb (GtkWidget  *widget,
                     AppearanceData *data)
 {
   GtkTreeIter iter;
-  MateWPItem *item;
+  CafeWPItem *item;
 
   if (gtk_icon_view_get_tooltip_context (data->wp_view,
                                          &x, &y,
@@ -783,7 +783,7 @@ wp_list_sort (GtkTreeModel *model,
               GtkTreeIter *a, GtkTreeIter *b,
               AppearanceData *data)
 {
-  MateWPItem *itema, *itemb;
+  CafeWPItem *itema, *itemb;
   gint retval;
 
   gtk_tree_model_get (model, a, 1, &itema, -1);
@@ -862,7 +862,7 @@ reload_item (GtkTreeModel *model,
              GtkTreeIter *iter,
              AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   GdkPixbuf *pixbuf;
 
   gtk_tree_model_get (model, iter, 1, &item, -1);
@@ -924,7 +924,7 @@ wp_load_stuffs (void *user_data)
 {
   AppearanceData *data;
   gchar *imagepath, *uri, *style;
-  MateWPItem *item;
+  CafeWPItem *item;
 
   data = (AppearanceData *) user_data;
 
@@ -1021,7 +1021,7 @@ static void
 wp_select_after_realize (GtkWidget *widget,
                          AppearanceData *data)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
 
   g_idle_add (wp_load_stuffs, data);
 
@@ -1081,7 +1081,7 @@ next_frame (AppearanceData  *data,
             GtkCellRenderer *cr,
             gint             direction)
 {
-  MateWPItem *item;
+  CafeWPItem *item;
   GtkTreeIter iter;
   GdkPixbuf *pixbuf, *pb;
   gint frame;
@@ -1180,7 +1180,7 @@ buttons_cell_data_func (GtkCellLayout   *layout,
 {
   AppearanceData *data = user_data;
   GtkTreePath *path;
-  MateWPItem *item;
+  CafeWPItem *item;
   gboolean visible;
 
   path = gtk_tree_model_get_path (model, iter);

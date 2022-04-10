@@ -1047,7 +1047,7 @@ create_app_item (BookmarkAgent *this, const gchar *uri)
 {
 	BookmarkAgentPrivate *priv = bookmark_agent_get_instance_private (this);
 
-	MateDesktopItem *ditem;
+	CafeDesktopItem *ditem;
 	gchar *uri_new = NULL;
 
 	ditem = libslab_cafe_desktop_item_new_from_unknown_id (uri);

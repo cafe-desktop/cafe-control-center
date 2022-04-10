@@ -64,7 +64,7 @@ Here is the OS X Display menu:
 
 	- It needs to store information under a key computed
 	  from a monitor identifier. The complication here is that
-          it's not completely clear how to do this in MateConf.
+          it's not completely clear how to do this in CafeConf.
 
 	- Would probably be worthwhile to drop libcafe/libcafeui from
 	  the craplets.

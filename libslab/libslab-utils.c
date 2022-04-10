@@ -13,10 +13,10 @@
 #include <sys/time.h>
 #include <gtk/gtk.h>
 
-MateDesktopItem *
+CafeDesktopItem *
 libslab_cafe_desktop_item_new_from_unknown_id (const gchar *id)
 {
-	MateDesktopItem *item;
+	CafeDesktopItem *item;
 	gchar            *basename;
 
 	GError *error = NULL;

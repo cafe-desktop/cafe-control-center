@@ -1071,8 +1071,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate mavzu paketi"
+msgid "Cafe Theme Package"
+msgstr "Cafe mavzu paketi"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
@@ -1200,7 +1200,7 @@ msgstr "Yangi mavzu qoʻllansin"
 #: capplets/appearance/theme-installer.c:534
 #, c-format
 msgid "MATE Theme %s correctly installed"
-msgstr "%s Mate mavzusi muvaffaqiyatli oʻrnatildi"
+msgstr "%s Cafe mavzusi muvaffaqiyatli oʻrnatildi"
 
 #: capplets/appearance/theme-installer.c:600
 msgid "Failed to create temporary directory"

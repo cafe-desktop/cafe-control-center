@@ -58,11 +58,11 @@ static GtkWidget *create_groups_section (AppShellData * app_data, const gchar * 
 static GtkWidget *create_actions_section (AppShellData * app_data, const gchar * title,
 	void (*actions_handler) (Tile *, TileEvent *, gpointer));
 
-static void generate_category (const char * category, MateMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive);
-static void generate_launchers (MateMenuTreeDirectory * root_dir, AppShellData * app_data,
+static void generate_category (const char * category, CafeMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive);
+static void generate_launchers (CafeMenuTreeDirectory * root_dir, AppShellData * app_data,
 	CategoryData * cat_data, gboolean recursive);
 static void generate_new_apps (AppShellData * app_data);
-static void insert_launcher_into_category (CategoryData * cat_data, MateDesktopItem * desktop_item,
+static void insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * desktop_item,
 	AppShellData * app_data);
 
 static gboolean main_keypress_callback (GtkWidget * widget, GdkEventKey * event,
@@ -90,7 +90,7 @@ static void handle_launcher_single_clicked (Tile * launcher, gpointer data);
 static void handle_menu_action_performed (Tile * launcher, TileEvent * event, TileAction * action,
 	gpointer data);
 static gint application_launcher_compare (gconstpointer a, gconstpointer b);
-static void cafemenu_tree_changed_callback (MateMenuTree * tree, gpointer user_data);
+static void cafemenu_tree_changed_callback (CafeMenuTree * tree, gpointer user_data);
 gboolean regenerate_categories (AppShellData * app_data);
 
 void
@@ -836,7 +836,7 @@ regenerate_categories (AppShellData * app_data)
 }
 
 static void
-cafemenu_tree_changed_callback (MateMenuTree * old_tree, gpointer user_data)
+cafemenu_tree_changed_callback (CafeMenuTree * old_tree, gpointer user_data)
 {
 	/*
 	This method only gets called on the first change (cafemenu appears to ignore subsequent) until
@@ -879,10 +879,10 @@ appshelldata_new (const gchar * menu_name, GtkIconSize icon_size, gboolean show_
 void
 generate_categories (AppShellData * app_data)
 {
-	MateMenuTreeDirectory *root_dir;
+	CafeMenuTreeDirectory *root_dir;
 	gboolean need_misc = FALSE;
-	MateMenuTreeIter *iter;
-	MateMenuTreeItemType type;
+	CafeMenuTreeIter *iter;
+	CafeMenuTreeItemType type;
 
 	if (!app_data->tree)
 	{
@@ -948,10 +948,10 @@ generate_categories (AppShellData * app_data)
 }
 
 static void
-generate_category (const char * category, MateMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive)
+generate_category (const char * category, CafeMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive)
 {
 	CategoryData *data;
-	/* This is not needed. MateMenu already returns an ordered, non duplicate list
+	/* This is not needed. CafeMenu already returns an ordered, non duplicate list
 	GList *list_entry;
 	list_entry =
 		g_list_find_custom (app_data->categories_list, category,
@@ -980,7 +980,7 @@ generate_category (const char * category, MateMenuTreeDirectory * root_dir, AppS
 }
 
 static gboolean
-check_specific_apps_hack (MateDesktopItem * item)
+check_specific_apps_hack (CafeDesktopItem * item)
 {
 	static const gchar *COMMAND_LINE_LOCKDOWN_SCHEMA = "org.cafe.lockdown";
 	static const gchar *COMMAND_LINE_LOCKDOWN_KEY = "disable-command-line";
@@ -1034,12 +1034,12 @@ check_specific_apps_hack (MateDesktopItem * item)
 }
 
 static void
-generate_launchers (MateMenuTreeDirectory * root_dir, AppShellData * app_data, CategoryData * cat_data, gboolean recursive)
+generate_launchers (CafeMenuTreeDirectory * root_dir, AppShellData * app_data, CategoryData * cat_data, gboolean recursive)
 {
-	MateDesktopItem *desktop_item;
+	CafeDesktopItem *desktop_item;
 	const gchar *desktop_file;
-	MateMenuTreeIter *iter;
-	MateMenuTreeItemType type;
+	CafeMenuTreeIter *iter;
+	CafeMenuTreeItemType type;
 
 	iter = cafemenu_tree_directory_iter (root_dir);
 	while ((type = cafemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
@@ -1063,7 +1063,7 @@ generate_launchers (MateMenuTreeDirectory * root_dir, AppShellData * app_data, C
 						break;	/* duplicate */
 					}
 					/* Fixme - make sure it's safe to store this without duping it. As far as I can tell it is
-					   safe as long as I don't hang on to this anylonger than I hang on to the MateMenuTreeEntry*
+					   safe as long as I don't hang on to this anylonger than I hang on to the CafeMenuTreeEntry*
 					   which brings up another point - am I supposed to free these or does freeing the top level recurse
 					   */
 					g_hash_table_insert (app_data->hash, (gpointer) desktop_file,
@@ -1125,7 +1125,7 @@ generate_new_apps (AppShellData * app_data)
 			for (launchers = data->launcher_list; launchers; launchers = launchers->next)
 			{
 				Tile *tile = TILE (launchers->data);
-				MateDesktopItem *item =
+				CafeDesktopItem *item =
 					application_tile_get_desktop_item (APPLICATION_TILE (tile));
 				const gchar *uri = cafe_desktop_item_get_location (item);
 				g_string_append (gstr, uri);
@@ -1160,7 +1160,7 @@ generate_new_apps (AppShellData * app_data)
 		for (launchers = cat_data->launcher_list; launchers; launchers = launchers->next)
 		{
 			Tile *tile = TILE (launchers->data);
-			MateDesktopItem *item =
+			CafeDesktopItem *item =
 				application_tile_get_desktop_item (APPLICATION_TILE (tile));
 			const gchar *uri = cafe_desktop_item_get_location (item);
 			if (!g_hash_table_lookup (all_apps_cache, uri))
@@ -1260,7 +1260,7 @@ generate_new_apps (AppShellData * app_data)
 }
 
 static void
-insert_launcher_into_category (CategoryData * cat_data, MateDesktopItem * desktop_item,
+insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * desktop_item,
 	AppShellData * app_data)
 {
 	GtkWidget *launcher;

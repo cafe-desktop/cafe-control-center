@@ -1120,7 +1120,7 @@ msgstr ""
 "centrum;MATE;instalace;instalování;nainstalovat;desktop;plocha;motiv;motivy;téma;témata;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
+msgid "Cafe Theme Package"
 msgstr "Balíček motivu MATE"
 
 #: capplets/appearance/cafe-wp-info.c:51

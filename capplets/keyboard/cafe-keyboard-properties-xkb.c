@@ -42,8 +42,8 @@
 XklEngine *engine;
 XklConfigRegistry *config_registry;
 
-MatekbdKeyboardConfig initial_config;
-MatekbdDesktopConfig desktop_config;
+CafekbdKeyboardConfig initial_config;
+CafekbdDesktopConfig desktop_config;
 
 GSettings *xkb_general_settings;
 GSettings *xkb_kbd_settings;
@@ -129,7 +129,7 @@ cleanup_xkb_tabs (GtkBuilder * dialog)
 static void
 reset_to_defaults (GtkWidget * button, GtkBuilder * dialog)
 {
-	MatekbdKeyboardConfig empty_kbd_config;
+	CafekbdKeyboardConfig empty_kbd_config;
 
 	cafekbd_keyboard_config_init (&empty_kbd_config, engine);
 	cafekbd_keyboard_config_save_to_gsettings (&empty_kbd_config);
@@ -241,7 +241,7 @@ setup_xkb_tabs (GtkBuilder * dialog)
 void
 enable_disable_restoring (GtkBuilder * dialog)
 {
-	MatekbdKeyboardConfig gswic;
+	CafekbdKeyboardConfig gswic;
 	gboolean enable;
 
 	cafekbd_keyboard_config_init (&gswic, engine);

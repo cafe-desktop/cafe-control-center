@@ -1002,7 +1002,7 @@ msgid "Installs themes packages for various parts of the desktop"
 msgstr ""
 
 #: ../capplets/appearance/data/cafe-theme-package.xml.in.h:1
-msgid "Mate Theme Package"
+msgid "Cafe Theme Package"
 msgstr ""
 
 #: ../capplets/appearance/cafe-wp-info.c:51

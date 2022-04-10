@@ -24,7 +24,7 @@
 #include <glib.h>
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
-typedef struct _MateWPInfo {
+typedef struct _CafeWPInfo {
 	char* uri;
 	char* thumburi;
 	char* name;
@@ -33,10 +33,10 @@ typedef struct _MateWPInfo {
 	goffset size;
 
 	time_t mtime;
-} MateWPInfo;
+} CafeWPInfo;
 
-MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs);
-void cafe_wp_info_free(MateWPInfo* info);
+CafeWPInfo* cafe_wp_info_new(const char* uri, CafeDesktopThumbnailFactory* thumbs);
+void cafe_wp_info_free(CafeWPInfo* info);
 
 #endif
 

@@ -771,7 +771,7 @@ action_about (GSimpleAction *action,
 {
     FontViewApplication *self = user_data;
     const gchar *authors[] = {
-        "Mate Developer",
+        "Cafe Developer",
         "Cosimo Cecchi",
         "James Henstridge",
         NULL

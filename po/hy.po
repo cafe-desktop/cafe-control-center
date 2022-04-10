@@ -1107,8 +1107,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate Թեմայի Փաթեթ"
+msgid "Cafe Theme Package"
+msgstr "Cafe Թեմայի Փաթեթ"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
@@ -1575,7 +1575,7 @@ msgid ""
 "Applies the current configuration for other MATE users on the computer. Note"
 " that this doesn't affect login screens or other desktop environments."
 msgstr ""
-"Ներկայիս կոնֆիգուրացիան կիրառելի է այլ Mate օգտվողների համակարգչի համար։ "
+"Ներկայիս կոնֆիգուրացիան կիրառելի է այլ Cafe օգտվողների համակարգչի համար։ "
 "Նշենք, որ սա չի ազդում մուտքի էկրանի կամ այլ աշխատանքային սեղանի միջավայրերի"
 " համար։"
 

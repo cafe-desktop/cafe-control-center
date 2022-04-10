@@ -64,7 +64,7 @@ enum
         FOCUS_MODE_MOUSE
 };
 
-static MateWindowManagerClass *parent_class;
+static CafeWindowManagerClass *parent_class;
 
 struct _MarcoWindowManagerPrivate {
         GSettings *settings;
@@ -160,7 +160,7 @@ add_themes_from_dir (GList *current_list, const char *path)
 }
 
 static GList *
-marco_get_theme_list (MateWindowManager *wm)
+marco_get_theme_list (CafeWindowManager *wm)
 {
         GList *themes = NULL;
         char *home_dir_themes;
@@ -177,14 +177,14 @@ marco_get_theme_list (MateWindowManager *wm)
 }
 
 static char *
-marco_get_user_theme_folder (MateWindowManager *wm)
+marco_get_user_theme_folder (CafeWindowManager *wm)
 {
         return g_build_filename (g_get_home_dir (), ".themes", NULL);
 }
 
 static void
-marco_change_settings (MateWindowManager    *wm,
-                          const MateWMSettings *settings)
+marco_change_settings (CafeWindowManager    *wm,
+                          const CafeWMSettings *settings)
 {
         MarcoWindowManager *meta_wm;
 
@@ -246,8 +246,8 @@ marco_change_settings (MateWindowManager    *wm,
 }
 
 static void
-marco_get_settings (MateWindowManager *wm,
-                       MateWMSettings    *settings)
+marco_get_settings (CafeWindowManager *wm,
+                       CafeWMSettings    *settings)
 {
         int to_get;
         MarcoWindowManager *meta_wm;
@@ -380,17 +380,17 @@ marco_get_settings (MateWindowManager *wm,
 }
 
 static int
-marco_get_settings_mask (MateWindowManager *wm)
+marco_get_settings_mask (CafeWindowManager *wm)
 {
         return MATE_WM_SETTING_MASK;
 }
 
 static void
-marco_get_double_click_actions (MateWindowManager              *wm,
-                                   const MateWMDoubleClickAction **actions_p,
+marco_get_double_click_actions (CafeWindowManager              *wm,
+                                   const CafeWMDoubleClickAction **actions_p,
                                    int                             *n_actions_p)
 {
-        static MateWMDoubleClickAction actions[] = {
+        static CafeWMDoubleClickAction actions[] = {
                 { ACTION_TITLEBAR_TOGGLE_SHADE, N_("Roll up") },
                 { ACTION_TITLEBAR_TOGGLE_MAXIMIZE, N_("Maximize") },
                 { ACTION_TITLEBAR_TOGGLE_MAXIMIZE_HORIZONTALLY, N_("Maximize Horizontally") },
@@ -450,7 +450,7 @@ static void
 marco_window_manager_class_init (MarcoWindowManagerClass *class)
 {
         GObjectClass *object_class;
-        MateWindowManagerClass *wm_class;
+        CafeWindowManagerClass *wm_class;
 
         object_class = G_OBJECT_CLASS (class);
         wm_class = MATE_WINDOW_MANAGER_CLASS (class);

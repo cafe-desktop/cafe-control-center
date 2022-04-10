@@ -24,9 +24,9 @@
 #include <gio/gio.h>
 #include "cafe-wp-info.h"
 
-MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumbs)
+CafeWPInfo* cafe_wp_info_new(const char* uri, CafeDesktopThumbnailFactory* thumbs)
 {
-	MateWPInfo* wp;
+	CafeWPInfo* wp;
 
 	GFile* file = g_file_new_for_commandline_arg(uri);
 
@@ -44,7 +44,7 @@ MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumb
 	{
 		if (!strcmp (uri, "(none)"))
 		{
-		  wp = g_new0(MateWPInfo, 1);
+		  wp = g_new0(CafeWPInfo, 1);
 
 		  wp->mime_type = g_strdup("image/x-no-data");
 		  wp->uri = g_strdup(uri);
@@ -58,7 +58,7 @@ MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumb
 	}
 	else
 	{
-		wp = g_new0 (MateWPInfo, 1);
+		wp = g_new0 (CafeWPInfo, 1);
 
 		wp->uri = g_strdup(uri);
 
@@ -83,7 +83,7 @@ MateWPInfo* cafe_wp_info_new(const char* uri, MateDesktopThumbnailFactory* thumb
 	return wp;
 }
 
-void cafe_wp_info_free(MateWPInfo* info)
+void cafe_wp_info_free(CafeWPInfo* info)
 {
 	if (info == NULL)
 	{

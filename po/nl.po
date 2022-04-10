@@ -1131,8 +1131,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr "cafe-control-center;MATE;installeren;bureaublad;thema's;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate-themapakket"
+msgid "Cafe Theme Package"
+msgstr "Cafe-themapakket"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
@@ -1272,7 +1272,7 @@ msgstr "Nieuwe thema toepassen"
 #: capplets/appearance/theme-installer.c:534
 #, c-format
 msgid "MATE Theme %s correctly installed"
-msgstr "Mate-thema %s correct geïnstalleerd"
+msgstr "Cafe-thema %s correct geïnstalleerd"
 
 #: capplets/appearance/theme-installer.c:600
 msgid "Failed to create temporary directory"
@@ -1479,7 +1479,7 @@ msgstr ""
 
 #: capplets/default-applications/cafe-da-capplet.c:844
 msgid "- MATE Default Applications"
-msgstr "- Mate-standaardprogramma's"
+msgstr "- Cafe-standaardprogramma's"
 
 #: capplets/default-applications/cafe-default-applications-properties.ui:134
 msgid "Web Browser"
@@ -2119,7 +2119,7 @@ msgstr "Begin de pagina met de toegankelijkheidsinstellingen zichtbaar"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:228
 msgid "- MATE Keyboard Preferences"
-msgstr "- Mate Toetsenbordeigenschappen"
+msgstr "- Cafe Toetsenbordeigenschappen"
 
 #: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
@@ -4849,7 +4849,7 @@ msgstr "Verbergen bij het starten (handig om de shell vooraf te laden)"
 
 #: shell/cafecc.desktop.in:4
 msgid "The MATE configuration tool"
-msgstr "Het Mate-configuratieprogramma"
+msgstr "Het Cafe-configuratieprogramma"
 
 #: shell/cafecc.desktop.in:5
 msgid "Configure MATE settings"

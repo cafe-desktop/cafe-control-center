@@ -57,7 +57,7 @@ static void theme_message_area_update(AppearanceData* data);
 
 static time_t theme_get_mtime(const char* name)
 {
-	MateThemeMetaInfo* theme;
+	CafeThemeMetaInfo* theme;
 	time_t mtime = -1;
 
 	theme = cafe_theme_meta_info_find(name);
@@ -110,7 +110,7 @@ static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, Appeara
 	}
 }
 
-static GdkPixbuf* theme_get_thumbnail_from_cache(MateThemeMetaInfo* info, AppearanceData* data)
+static GdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, AppearanceData* data)
 {
 	GdkPixbuf* thumb = NULL;
 	gchar* path, *thumb_filename;
@@ -144,7 +144,7 @@ theme_thumbnail_done_cb (GdkPixbuf *pixbuf, gchar *theme_name, AppearanceData *d
   theme_thumbnail_update (pixbuf, theme_name, data, TRUE);
 }
 
-static void theme_thumbnail_generate(MateThemeMetaInfo* info, AppearanceData* data)
+static void theme_thumbnail_generate(CafeThemeMetaInfo* info, AppearanceData* data)
 {
 	GdkPixbuf* thumb = theme_get_thumbnail_from_cache(info, data);
 
@@ -159,11 +159,11 @@ static void theme_thumbnail_generate(MateThemeMetaInfo* info, AppearanceData* da
 	}
 }
 
-static void theme_changed_on_disk_cb(MateThemeCommonInfo* theme, MateThemeChangeType change_type, MateThemeElement element_type, AppearanceData* data)
+static void theme_changed_on_disk_cb(CafeThemeCommonInfo* theme, CafeThemeChangeType change_type, CafeThemeElement element_type, AppearanceData* data)
 {
 	if (theme->type == MATE_THEME_TYPE_METATHEME)
 	{
-		MateThemeMetaInfo* meta = (MateThemeMetaInfo*) theme;
+		CafeThemeMetaInfo* meta = (CafeThemeMetaInfo*) theme;
 
 		if (change_type == MATE_THEME_CHANGE_CREATED)
 		{
@@ -197,10 +197,10 @@ static gboolean is_locked_down()
   return is_locked;
 }
 
-static MateThemeMetaInfo *
+static CafeThemeMetaInfo *
 theme_load_from_gsettings (AppearanceData *data)
 {
-  MateThemeMetaInfo *theme;
+  CafeThemeMetaInfo *theme;
   gchar *scheme;
 
   theme = cafe_theme_meta_info_new ();
@@ -265,10 +265,10 @@ theme_get_selected_name (GtkIconView *icon_view, AppearanceData *data)
   return name;
 }
 
-static const MateThemeMetaInfo *
+static const CafeThemeMetaInfo *
 theme_get_selected (GtkIconView *icon_view, AppearanceData *data)
 {
-  MateThemeMetaInfo *theme = NULL;
+  CafeThemeMetaInfo *theme = NULL;
   gchar *name = theme_get_selected_name (icon_view, data);
 
   if (name != NULL) {
@@ -306,7 +306,7 @@ theme_select_name (GtkIconView *icon_view, const gchar *theme)
 }
 
 static gboolean
-theme_is_equal (const MateThemeMetaInfo *a, const MateThemeMetaInfo *b)
+theme_is_equal (const CafeThemeMetaInfo *a, const CafeThemeMetaInfo *b)
 {
   gboolean a_set, b_set;
 
@@ -339,9 +339,9 @@ theme_is_equal (const MateThemeMetaInfo *a, const MateThemeMetaInfo *b)
 }
 
 static void
-theme_set_custom_from_theme (const MateThemeMetaInfo *info, AppearanceData *data)
+theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data)
 {
-  MateThemeMetaInfo *custom = data->theme_custom;
+  CafeThemeMetaInfo *custom = data->theme_custom;
   GtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
   GtkTreeModel *model;
   GtkTreeIter iter;
@@ -424,7 +424,7 @@ theme_message_area_response_cb (GtkWidget *w,
                                 gint response_id,
                                 AppearanceData *data)
 {
-  const MateThemeMetaInfo *theme;
+  const CafeThemeMetaInfo *theme;
   gchar *tmpfont;
   gchar *engine_path;
 
@@ -558,7 +558,7 @@ theme_message_area_response_cb (GtkWidget *w,
 static void
 theme_message_area_update (AppearanceData *data)
 {
-  const MateThemeMetaInfo *theme;
+  const CafeThemeMetaInfo *theme;
   gboolean show_apply_background = FALSE;
   gboolean show_apply_font = FALSE;
   gboolean show_revert_font = FALSE;
@@ -745,7 +745,7 @@ static void
 theme_selection_changed_cb (GtkWidget *icon_view, AppearanceData *data)
 {
   GList *selection;
-  MateThemeMetaInfo *theme = NULL;
+  CafeThemeMetaInfo *theme = NULL;
   gboolean is_custom = FALSE;
 
   selection = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (icon_view));
@@ -845,8 +845,8 @@ theme_delete_cb (GtkWidget *button, AppearanceData *data)
 static void
 theme_details_changed_cb (AppearanceData *data)
 {
-  MateThemeMetaInfo *gsettings_theme;
-  const MateThemeMetaInfo *selected;
+  CafeThemeMetaInfo *gsettings_theme;
+  const CafeThemeMetaInfo *selected;
   GtkIconView *icon_view;
   gboolean done = FALSE;
 
@@ -864,7 +864,7 @@ theme_details_changed_cb (AppearanceData *data)
     theme_list = cafe_theme_meta_info_find_all ();
 
     for (l = theme_list; l; l = l->next) {
-      MateThemeMetaInfo *info = l->data;
+      CafeThemeMetaInfo *info = l->data;
 
       if (theme_is_equal (gsettings_theme, info)) {
         theme_select_name (icon_view, info->name);
@@ -899,8 +899,8 @@ theme_gsettings_changed (GSettings *settings,
 }
 
 static gint
-theme_list_sort_func (MateThemeMetaInfo *a,
-                      MateThemeMetaInfo *b)
+theme_list_sort_func (CafeThemeMetaInfo *a,
+                      CafeThemeMetaInfo *b)
 {
   return strcmp (a->readable_name, b->readable_name);
 }
@@ -982,7 +982,7 @@ void themes_init(AppearanceData* data)
   GList *theme_list, *l;
   GtkListStore *theme_store;
   GtkTreeModel *sort_model;
-  MateThemeMetaInfo *meta_theme = NULL;
+  CafeThemeMetaInfo *meta_theme = NULL;
   GtkIconView *icon_view;
   GtkCellRenderer *renderer;
   GtkSettings *settings;
@@ -1014,7 +1014,7 @@ void themes_init(AppearanceData* data)
   data->theme_custom->readable_name = g_strdup_printf ("<i>%s</i>", _("Custom"));
 
   for (l = theme_list; l; l = l->next) {
-    MateThemeMetaInfo *info = l->data;
+    CafeThemeMetaInfo *info = l->data;
 
     gtk_list_store_insert_with_values (theme_store, NULL, 0,
         COL_LABEL, info->readable_name,

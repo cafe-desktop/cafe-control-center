@@ -1076,8 +1076,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr "cafe-control-center;MATE;install;desktop;themes;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate 布景主題包"
+msgid "Cafe Theme Package"
+msgstr "Cafe 布景主題包"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"

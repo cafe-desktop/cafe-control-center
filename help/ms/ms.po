@@ -369,8 +369,8 @@ msgstr ""
 #. (itstool) path: para/application
 #: C/config-background.xml:21 C/config-cds.xml:7 C/config-hints.xml:14
 #: C/config-html.xml:9 C/config-screensaver.xml:17
-msgid "Mate Control Center"
-msgstr "Pusat Kawalan Mate"
+msgid "Cafe Control Center"
+msgstr "Pusat Kawalan Cafe"
 
 #. (itstool) path: listitem/para
 #: C/config-background.xml:20
@@ -514,8 +514,8 @@ msgstr "Petak Gambar"
 
 #. (itstool) path: para/application
 #: C/config-background.xml:107
-msgid "Mate File Selector"
-msgstr "Pemilih Fail Mate"
+msgid "Cafe File Selector"
+msgstr "Pemilih Fail Cafe"
 
 #. (itstool) path: listitem/para
 #: C/config-background.xml:104
@@ -573,8 +573,8 @@ msgstr "Palang Alat dan Menu"
 #: C/config-hints.xml:11 C/config-keybindings.xml:16
 #: C/config-screensaver.xml:12 C/config-screensaver.xml:15
 #: C/config-themes.xml:4
-msgid "Mate"
-msgstr "Mate"
+msgid "Cafe"
+msgstr "Cafe"
 
 #. (itstool) path: para/guilabel
 #: C/config-behavior.xml:7 C/config-behavior.xml:11 C/config-html.xml:141
@@ -715,11 +715,11 @@ msgstr "Lanjutan"
 #. (itstool) path: sect1/para
 #: C/config-cds.xml:3
 msgid ""
-"Mate can play your CDs on your computer. You can setup you CD preferences in"
+"Cafe can play your CDs on your computer. You can setup you CD preferences in"
 " the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the "
 "<_:application-3/>."
 msgstr ""
-"Mate boleh memainkan CD di dalam komputer anda. Anda boleh tetapkan "
+"Cafe boleh memainkan CD di dalam komputer anda. Anda boleh tetapkan "
 "keutamaan CD anda dalam capplet <_:guibutton-1/> pada seksyen "
 "<_:guilabel-2/> <_:application-3/>."
 
@@ -1032,8 +1032,8 @@ msgstr "Pilih sebuah Pelihat"
 
 #. (itstool) path: listitem/para
 #: C/config-default-apps.xml:76
-msgid "Mate Help Browser (\"GHB\")"
-msgstr "Pelayar Bantuan Mate (\"GHB\")"
+msgid "Cafe Help Browser (\"GHB\")"
+msgstr "Pelayar Bantuan Cafe (\"GHB\")"
 
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:71
@@ -1079,8 +1079,8 @@ msgstr "Lalai Terminal"
 
 #. (itstool) path: para/application
 #: C/config-default-apps.xml:107
-msgid "Mate Terminal"
-msgstr "Terminal Mate"
+msgid "Cafe Terminal"
+msgstr "Terminal Cafe"
 
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:102
@@ -1270,11 +1270,11 @@ msgstr "Evolution"
 msgid ""
 "The HTML Viewer capplet allows you to configure preferences for the "
 "<_:application-1/> HTML rendering engine. <_:application-2/> is used in "
-"<_:application-3/>, the <_:application-4/>, and other Mate applications."
+"<_:application-3/>, the <_:application-4/>, and other Cafe applications."
 msgstr ""
 "Capplet Pelihat HTML membolehkan anda konfigur keutamaan untuk enjin "
 "penerapan HTML <_:application-1/>. <_:application-2/> digunakan di dalam "
-"<_:application-3/>, <_:application-4/>, dan lain-lain aplikasi Mate."
+"<_:application-3/>, <_:application-4/>, dan lain-lain aplikasi Cafe."
 
 #. (itstool) path: sect2/title
 #: C/config-html.xml:14

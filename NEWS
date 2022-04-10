@@ -375,7 +375,7 @@
 
 ### cafe-control-center 1.14.0
 
-  * Drop MateConf migration script
+  * Drop CafeConf migration script
   * Drop "Ubuntu hacks" (--enable-ubuntu build option) as Ubuntu
     dropped that stuff long ago
   * Move cafe-preferences-categories.menu to cafe-menus
@@ -431,7 +431,7 @@
   * windows: Add option to configure titlebar buttons layout
   * appearance: Add support for metacity-theme-2.xml
   * default-applications: Add support for office applications
-  * Adapt to MateDesktop MateRR* API changes (thanks monsta for testing)
+  * Adapt to CafeDesktop CafeRR* API changes (thanks monsta for testing)
 
 ### cafe-control-center 1.8.1
 

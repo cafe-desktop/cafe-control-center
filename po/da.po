@@ -1117,8 +1117,8 @@ msgstr ""
 "cafe-control-center;MATE;install;desktop;themes;installer;skrivebord;temaer;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate temapakke"
+msgid "Cafe Theme Package"
+msgstr "Cafe temapakke"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"
@@ -1257,7 +1257,7 @@ msgstr "Anvend nyt tema"
 #: capplets/appearance/theme-installer.c:534
 #, c-format
 msgid "MATE Theme %s correctly installed"
-msgstr "Mate-temaet %s er installeret korrekt"
+msgstr "Cafe-temaet %s er installeret korrekt"
 
 #: capplets/appearance/theme-installer.c:600
 msgid "Failed to create temporary directory"
@@ -1315,7 +1315,7 @@ msgid ""
 "Without the MATE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-MATE (e.g. KDE) settings manager may already be active and conflicting with the MATE settings manager."
 msgstr ""
 "Kunne ikke starte konfigurationshåndteringen »cafe-settings-daemon«.\n"
-"Når den ikke kører, træder nogle indstillinger måske ikke i kraft. Dette kan indikere et problem med DBus eller at en anden konfigurationshåndtering som ikke er relateret til Mate (f.eks. KDE), måske er aktiv og forårsager en konflikt med Mates konfigurationshåndtering."
+"Når den ikke kører, træder nogle indstillinger måske ikke i kraft. Dette kan indikere et problem med DBus eller at en anden konfigurationshåndtering som ikke er relateret til Cafe (f.eks. KDE), måske er aktiv og forårsager en konflikt med Cafes konfigurationshåndtering."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -2098,7 +2098,7 @@ msgstr "Start siden med tilgængeligedsindstillinger synlige"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:228
 msgid "- MATE Keyboard Preferences"
-msgstr "- Mate tastaturindstillinger"
+msgstr "- Cafe tastaturindstillinger"
 
 #: capplets/keyboard/cafe-keyboard-properties-a11y-notifications.ui:15
 msgid "Keyboard Accessibility Audio Feedback"
@@ -4821,7 +4821,7 @@ msgstr "Skjul ved start (kan bruges til at forindlæse skallen)"
 
 #: shell/cafecc.desktop.in:4
 msgid "The MATE configuration tool"
-msgstr "Et centralt opsætningsværktøj til Mate"
+msgstr "Et centralt opsætningsværktøj til Cafe"
 
 #: shell/cafecc.desktop.in:5
 msgid "Configure MATE settings"

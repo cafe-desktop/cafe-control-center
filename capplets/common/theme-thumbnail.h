@@ -9,24 +9,24 @@ typedef void (* ThemeThumbnailFunc)          (GdkPixbuf          *pixbuf,
                                               gchar              *theme_name,
                                               gpointer            data);
 
-GdkPixbuf *generate_meta_theme_thumbnail     (MateThemeMetaInfo *theme_info);
-GdkPixbuf *generate_gtk_theme_thumbnail      (MateThemeInfo     *theme_info);
-GdkPixbuf *generate_marco_theme_thumbnail (MateThemeInfo     *theme_info);
-GdkPixbuf *generate_icon_theme_thumbnail     (MateThemeIconInfo *theme_info);
+GdkPixbuf *generate_meta_theme_thumbnail     (CafeThemeMetaInfo *theme_info);
+GdkPixbuf *generate_gtk_theme_thumbnail      (CafeThemeInfo     *theme_info);
+GdkPixbuf *generate_marco_theme_thumbnail (CafeThemeInfo     *theme_info);
+GdkPixbuf *generate_icon_theme_thumbnail     (CafeThemeIconInfo *theme_info);
 
-void generate_meta_theme_thumbnail_async     (MateThemeMetaInfo *theme_info,
+void generate_meta_theme_thumbnail_async     (CafeThemeMetaInfo *theme_info,
                                               ThemeThumbnailFunc  func,
                                               gpointer            data,
                                               GDestroyNotify      destroy);
-void generate_gtk_theme_thumbnail_async      (MateThemeInfo     *theme_info,
+void generate_gtk_theme_thumbnail_async      (CafeThemeInfo     *theme_info,
                                               ThemeThumbnailFunc  func,
                                               gpointer            data,
                                               GDestroyNotify      destroy);
-void generate_marco_theme_thumbnail_async (MateThemeInfo     *theme_info,
+void generate_marco_theme_thumbnail_async (CafeThemeInfo     *theme_info,
                                               ThemeThumbnailFunc  func,
                                               gpointer            data,
                                               GDestroyNotify      destroy);
-void generate_icon_theme_thumbnail_async     (MateThemeIconInfo *theme_info,
+void generate_icon_theme_thumbnail_async     (CafeThemeIconInfo *theme_info,
                                               ThemeThumbnailFunc  func,
                                               gpointer            data,
                                               GDestroyNotify      destroy);

@@ -2,7 +2,7 @@
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
    <mime-type type="application/x-cafe-theme-package">
      <sub-class-of type="application/x-compressed-tar"/>
-     <_comment>Mate Theme Package</_comment>
+     <_comment>Cafe Theme Package</_comment>
      <glob pattern="*.gtp"/>
    </mime-type>
 </mime-info>

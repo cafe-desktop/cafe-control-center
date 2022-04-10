@@ -91,7 +91,7 @@ static GSList* get_actions_list(void)
 void handle_static_action_clicked(Tile* tile, TileEvent* event, gpointer data)
 {
 	AppShellData* app_data = (AppShellData*) data;
-	MateDesktopItem* item = (MateDesktopItem*) g_object_get_data(G_OBJECT(tile), APP_ACTION_KEY);
+	CafeDesktopItem* item = (CafeDesktopItem*) g_object_get_data(G_OBJECT(tile), APP_ACTION_KEY);
 	GSettings *settings;
 	GApplication *app;
 

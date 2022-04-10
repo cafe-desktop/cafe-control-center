@@ -650,22 +650,22 @@ generate_next_in_queue (void)
   theme_queue = g_list_delete_link (theme_queue, g_list_first (theme_queue));
 
   if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_META))
-    generate_meta_theme_thumbnail_async ((MateThemeMetaInfo *) item->theme_info,
+    generate_meta_theme_thumbnail_async ((CafeThemeMetaInfo *) item->theme_info,
                                          item->func,
                                          item->user_data,
                                          item->destroy);
   else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_GTK))
-    generate_gtk_theme_thumbnail_async ((MateThemeInfo *) item->theme_info,
+    generate_gtk_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
                                         item->func,
                                         item->user_data,
                                         item->destroy);
   else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_MARCO))
-    generate_marco_theme_thumbnail_async ((MateThemeInfo *) item->theme_info,
+    generate_marco_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
                                              item->func,
                                              item->user_data,
                                              item->destroy);
   else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_ICON))
-    generate_icon_theme_thumbnail_async ((MateThemeIconInfo *) item->theme_info,
+    generate_icon_theme_thumbnail_async ((CafeThemeIconInfo *) item->theme_info,
                                          item->func,
                                          item->user_data,
                                          item->destroy);
@@ -908,7 +908,7 @@ generate_theme_thumbnail (gchar *thumbnail_type,
 }
 
 GdkPixbuf *
-generate_meta_theme_thumbnail (MateThemeMetaInfo *theme_info)
+generate_meta_theme_thumbnail (CafeThemeMetaInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_META,
                                    theme_info->gtk_theme_name,
@@ -919,7 +919,7 @@ generate_meta_theme_thumbnail (MateThemeMetaInfo *theme_info)
 }
 
 GdkPixbuf *
-generate_gtk_theme_thumbnail (MateThemeInfo *theme_info)
+generate_gtk_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   gchar *scheme;
 
@@ -935,7 +935,7 @@ generate_gtk_theme_thumbnail (MateThemeInfo *theme_info)
 }
 
 GdkPixbuf *
-generate_marco_theme_thumbnail (MateThemeInfo *theme_info)
+generate_marco_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_MARCO,
                                    NULL,
@@ -946,7 +946,7 @@ generate_marco_theme_thumbnail (MateThemeInfo *theme_info)
 }
 
 GdkPixbuf *
-generate_icon_theme_thumbnail (MateThemeIconInfo *theme_info)
+generate_icon_theme_thumbnail (CafeThemeIconInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_ICON,
                                    NULL,
@@ -1007,7 +1007,7 @@ static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_nam
 }
 
 void
-generate_meta_theme_thumbnail_async (MateThemeMetaInfo *theme_info,
+generate_meta_theme_thumbnail_async (CafeThemeMetaInfo *theme_info,
                                      ThemeThumbnailFunc  func,
                                      gpointer            user_data,
                                      GDestroyNotify      destroy)
@@ -1023,7 +1023,7 @@ generate_meta_theme_thumbnail_async (MateThemeMetaInfo *theme_info,
                                          func, user_data, destroy);
 }
 
-void generate_gtk_theme_thumbnail_async (MateThemeInfo* theme_info, ThemeThumbnailFunc  func, gpointer user_data, GDestroyNotify destroy)
+void generate_gtk_theme_thumbnail_async (CafeThemeInfo* theme_info, ThemeThumbnailFunc  func, gpointer user_data, GDestroyNotify destroy)
 {
 	gchar* scheme = gtkrc_get_color_scheme_for_theme(theme_info->name);
 
@@ -1033,7 +1033,7 @@ void generate_gtk_theme_thumbnail_async (MateThemeInfo* theme_info, ThemeThumbna
 }
 
 void
-generate_marco_theme_thumbnail_async (MateThemeInfo *theme_info,
+generate_marco_theme_thumbnail_async (CafeThemeInfo *theme_info,
                                          ThemeThumbnailFunc  func,
                                          gpointer            user_data,
                                          GDestroyNotify      destroy)
@@ -1050,7 +1050,7 @@ generate_marco_theme_thumbnail_async (MateThemeInfo *theme_info,
 }
 
 void
-generate_icon_theme_thumbnail_async (MateThemeIconInfo *theme_info,
+generate_icon_theme_thumbnail_async (CafeThemeIconInfo *theme_info,
                                      ThemeThumbnailFunc  func,
                                      gpointer            user_data,
                                      GDestroyNotify      destroy)

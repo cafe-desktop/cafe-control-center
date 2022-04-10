@@ -1,10 +1,10 @@
 <sect1 id="config-cd">
   <title>Audio CDs</title>
   <para>
-    Mate can play your CDs on your computer.  You can setup you
+    Cafe can play your CDs on your computer.  You can setup you
     CD preferences in the <guibutton>CD Properties</guibutton> capplet
     in the <guilabel>Advanced</guilabel> section of the
-    <application>Mate Control Center</application>.  
+    <application>Cafe Control Center</application>.  
   </para>
   <para>
     Once open, you'll see the window is broken into two sections: Data

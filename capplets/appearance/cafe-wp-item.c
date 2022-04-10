@@ -26,7 +26,7 @@
 #include "appearance.h"
 #include "cafe-wp-item.h"
 
-const gchar *wp_item_option_to_string (MateBGPlacement type)
+const gchar *wp_item_option_to_string (CafeBGPlacement type)
 {
   switch (type)
   {
@@ -52,7 +52,7 @@ const gchar *wp_item_option_to_string (MateBGPlacement type)
   return "";
 }
 
-const gchar *wp_item_shading_to_string (MateBGColorType type)
+const gchar *wp_item_shading_to_string (CafeBGColorType type)
 {
   switch (type) {
     case MATE_BG_COLOR_SOLID:
@@ -68,7 +68,7 @@ const gchar *wp_item_shading_to_string (MateBGColorType type)
   return "";
 }
 
-MateBGPlacement wp_item_string_to_option (const gchar *option)
+CafeBGPlacement wp_item_string_to_option (const gchar *option)
 {
   if (!g_strcmp0(option, "centered"))
     return MATE_BG_PLACEMENT_CENTERED;
@@ -86,7 +86,7 @@ MateBGPlacement wp_item_string_to_option (const gchar *option)
     return MATE_BG_PLACEMENT_SCALED;
 }
 
-MateBGColorType wp_item_string_to_shading (const gchar *shade_type)
+CafeBGColorType wp_item_string_to_shading (const gchar *shade_type)
 {
   if (!g_strcmp0(shade_type, "solid"))
     return MATE_BG_COLOR_SOLID;
@@ -98,7 +98,7 @@ MateBGColorType wp_item_string_to_shading (const gchar *shade_type)
     return MATE_BG_COLOR_SOLID;
 }
 
-static void set_bg_properties (MateWPItem *item)
+static void set_bg_properties (CafeWPItem *item)
 {
   if (item->filename)
     cafe_bg_set_filename (item->bg, item->filename);
@@ -107,7 +107,7 @@ static void set_bg_properties (MateWPItem *item)
   cafe_bg_set_placement (item->bg, item->options);
 }
 
-void cafe_wp_item_ensure_cafe_bg (MateWPItem *item)
+void cafe_wp_item_ensure_cafe_bg (CafeWPItem *item)
 {
   if (!item->bg) {
     item->bg = cafe_bg_new ();
@@ -116,7 +116,7 @@ void cafe_wp_item_ensure_cafe_bg (MateWPItem *item)
   }
 }
 
-void cafe_wp_item_update (MateWPItem *item) {
+void cafe_wp_item_update (CafeWPItem *item) {
   GSettings *settings;
   GdkRGBA color1 = { 0, 0, 0, 1.0 }, color2 = { 0, 0, 0, 1.0 };
   gchar *s;
@@ -151,10 +151,10 @@ void cafe_wp_item_update (MateWPItem *item) {
   item->scolor = gdk_rgba_copy (&color2);
 }
 
-MateWPItem * cafe_wp_item_new (const gchar * filename,
+CafeWPItem * cafe_wp_item_new (const gchar * filename,
 				 GHashTable * wallpapers,
-				 MateDesktopThumbnailFactory * thumbnails) {
-  MateWPItem *item = g_new0 (MateWPItem, 1);
+				 CafeDesktopThumbnailFactory * thumbnails) {
+  CafeWPItem *item = g_new0 (CafeWPItem, 1);
 
   item->filename = g_strdup (filename);
   item->fileinfo = cafe_wp_info_new (filename, thumbnails);
@@ -182,7 +182,7 @@ MateWPItem * cafe_wp_item_new (const gchar * filename,
   return item;
 }
 
-void cafe_wp_item_free (MateWPItem * item) {
+void cafe_wp_item_free (CafeWPItem * item) {
   if (item == NULL) {
     return;
   }
@@ -234,8 +234,8 @@ add_slideshow_frame (GdkPixbuf *pixbuf)
   return tmp;
 }
 
-GdkPixbuf * cafe_wp_item_get_frame_thumbnail (MateWPItem * item,
-					       MateDesktopThumbnailFactory * thumbs,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
+					       CafeDesktopThumbnailFactory * thumbs,
                                                int width,
                                                int height,
                                                gint frame) {
@@ -263,14 +263,14 @@ GdkPixbuf * cafe_wp_item_get_frame_thumbnail (MateWPItem * item,
 }
 
 
-GdkPixbuf * cafe_wp_item_get_thumbnail (MateWPItem * item,
-					 MateDesktopThumbnailFactory * thumbs,
+GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem * item,
+					 CafeDesktopThumbnailFactory * thumbs,
                                          gint width,
                                          gint height) {
   return cafe_wp_item_get_frame_thumbnail (item, thumbs, width, height, -1);
 }
 
-void cafe_wp_item_update_description (MateWPItem * item) {
+void cafe_wp_item_update_description (CafeWPItem * item) {
   g_free (item->description);
 
   if (!strcmp (item->filename, "(none)")) {

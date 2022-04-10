@@ -1108,7 +1108,7 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr "cafe-control-center;MATE;installer;skrivebordstema;tema;"
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
+msgid "Cafe Theme Package"
 msgstr "MATE draktpakke"
 
 #: capplets/appearance/cafe-wp-info.c:51

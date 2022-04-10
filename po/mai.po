@@ -1070,7 +1070,7 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
+msgid "Cafe Theme Package"
 msgstr ""
 
 #: capplets/appearance/cafe-wp-info.c:51
@@ -1200,7 +1200,7 @@ msgstr "नवीन प्रसंग लागू करू"
 #: capplets/appearance/theme-installer.c:534
 #, c-format
 msgid "MATE Theme %s correctly installed"
-msgstr "Mate प्रसंग %s ठीक सँ संस्थापित अछि"
+msgstr "Cafe प्रसंग %s ठीक सँ संस्थापित अछि"
 
 #: capplets/appearance/theme-installer.c:600
 msgid "Failed to create temporary directory"
