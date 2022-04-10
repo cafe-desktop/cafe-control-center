@@ -38,6 +38,7 @@ requires:
     - libxss-dev
     - libxt-dev
     - libpolkit-gobject-1-dev
+    - libtool
     - make
     - python3-lxml
     - shared-mime-info
