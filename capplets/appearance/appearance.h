@@ -57,7 +57,7 @@
 #define CAJA_SCHEMA                  "org.cafe.caja.desktop"
 #define DESKTOP_FONT_KEY             "font"
 
-#define MARCO_SCHEMA                 "org.cafe.Marco.general"
+#define MARCO_SCHEMA                 "org.cafe.Croma.general"
 #define MARCO_THEME_KEY              "theme"
 #define WINDOW_TITLE_FONT_KEY        "titlebar-font"
 #define WINDOW_TITLE_USES_SYSTEM_KEY "titlebar-uses-system-font"

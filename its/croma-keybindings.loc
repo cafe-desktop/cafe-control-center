@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <locatingRules>
-  <locatingRule name="MarcoKeybindings" pattern="*.xml">
+  <locatingRule name="CromaKeybindings" pattern="*.xml">
     <documentRule localName="KeyListEntries" target="croma-keybindings.its"/>
   </locatingRule>
 </locatingRules>

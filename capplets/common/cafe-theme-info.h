@@ -142,7 +142,7 @@ enum {
 };
 
 
-/* GTK/Marco/keybinding Themes */
+/* GTK/Croma/keybinding Themes */
 CafeThemeInfo     *cafe_theme_info_new                   (void);
 void                cafe_theme_info_free                  (CafeThemeInfo     *theme_info);
 CafeThemeInfo     *cafe_theme_info_find                  (const gchar        *theme_name);

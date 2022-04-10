@@ -7,8 +7,8 @@
 # talorno <giovanni.talorno@gmail.com>, 2020
 # Giuseppe Pignataro <rogepix@gmail.com>, 2020
 # Enrico B. <enricobe@hotmail.com>, 2020
-# Marco Bartolucci <nap.84@live.it>, 2020
-# Marco Z. <minaz666@gmail.com>, 2020
+# Croma Bartolucci <nap.84@live.it>, 2020
+# Croma Z. <minaz666@gmail.com>, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""

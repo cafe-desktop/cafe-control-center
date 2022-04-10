@@ -1288,7 +1288,7 @@ add_top_icon_theme_dir_monitor (GFile   *uri,
 
 /* Public functions */
 
-/* GTK/Marco/keybinding Themes */
+/* GTK/Croma/keybinding Themes */
 CafeThemeInfo *
 cafe_theme_info_new (void)
 {
