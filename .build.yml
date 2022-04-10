@@ -11,6 +11,7 @@ requires:
     - cppcheck
     - curl
     - desktop-file-utils
+    - expect #required for unbuffer
     - git
     - gla11y
     - gobject-introspection
@@ -23,9 +24,6 @@ requires:
     - libgtk-3-dev
     - libgtop2-dev
     - libmarco-dev
-    - libcafe-desktop-dev
-    - libcafe-menu-dev
-    - libcafekbd-dev
     - libpango1.0-dev
     - librsvg2-bin
     - librsvg2-dev
@@ -40,8 +38,6 @@ requires:
     - libxt-dev
     - libpolkit-gobject-1-dev
     - make
-    - cafe-common
-    - cafe-settings-daemon-dev
     - python3-lxml
     - shared-mime-info
     - xsltproc
