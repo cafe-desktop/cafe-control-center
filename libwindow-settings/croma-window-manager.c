@@ -32,17 +32,17 @@
 
 #include "croma-window-manager.h"
 
-#define MARCO_SCHEMA "org.cafe.Croma.general"
-#define MARCO_THEME_KEY "theme"
-#define MARCO_FONT_KEY  "titlebar-font"
-#define MARCO_FOCUS_KEY "focus-mode"
-#define MARCO_USE_SYSTEM_FONT_KEY "titlebar-uses-system-font"
-#define MARCO_AUTORAISE_KEY "auto-raise"
-#define MARCO_AUTORAISE_DELAY_KEY "auto-raise-delay"
-#define MARCO_MOUSE_MODIFIER_KEY "mouse-button-modifier"
-#define MARCO_DOUBLE_CLICK_TITLEBAR_KEY "action-double-click-titlebar"
-#define MARCO_COMPOSITING_MANAGER_KEY "compositing-manager"
-#define MARCO_COMPOSITING_FAST_ALT_TAB_KEY "compositing-fast-alt-tab"
+#define CROMA_SCHEMA "org.cafe.Croma.general"
+#define CROMA_THEME_KEY "theme"
+#define CROMA_FONT_KEY  "titlebar-font"
+#define CROMA_FOCUS_KEY "focus-mode"
+#define CROMA_USE_SYSTEM_FONT_KEY "titlebar-uses-system-font"
+#define CROMA_AUTORAISE_KEY "auto-raise"
+#define CROMA_AUTORAISE_DELAY_KEY "auto-raise-delay"
+#define CROMA_MOUSE_MODIFIER_KEY "mouse-button-modifier"
+#define CROMA_DOUBLE_CLICK_TITLEBAR_KEY "action-double-click-titlebar"
+#define CROMA_COMPOSITING_MANAGER_KEY "compositing-manager"
+#define CROMA_COMPOSITING_FAST_ALT_TAB_KEY "compositing-fast-alt-tab"
 
 
 /* keep following enums in sync with croma */
@@ -80,7 +80,7 @@ value_changed (GSettings *settings,
 {
         CromaWindowManager *meta_wm;
 
-        meta_wm = MARCO_WINDOW_MANAGER (data);
+        meta_wm = CROMA_WINDOW_MANAGER (data);
 
         cafe_window_manager_settings_changed (CAFE_WINDOW_MANAGER (meta_wm));
 }
@@ -167,7 +167,7 @@ croma_get_theme_list (CafeWindowManager *wm)
 
         home_dir_themes = g_build_filename (g_get_home_dir (), ".themes", NULL);
 
-        themes = add_themes_from_dir (themes, MARCO_THEME_DIR);
+        themes = add_themes_from_dir (themes, CROMA_THEME_DIR);
         themes = add_themes_from_dir (themes, "/usr/share/themes");
         themes = add_themes_from_dir (themes, home_dir_themes);
 
@@ -188,37 +188,37 @@ croma_change_settings (CafeWindowManager    *wm,
 {
         CromaWindowManager *meta_wm;
 
-        meta_wm = MARCO_WINDOW_MANAGER (wm);
+        meta_wm = CROMA_WINDOW_MANAGER (wm);
 
         if (settings->flags & CAFE_WM_SETTING_COMPOSITING_MANAGER)
                 g_settings_set_boolean (meta_wm->p->settings,
-                                        MARCO_COMPOSITING_MANAGER_KEY,
+                                        CROMA_COMPOSITING_MANAGER_KEY,
                                         settings->compositing_manager);
 
         if (settings->flags & CAFE_WM_SETTING_COMPOSITING_ALTTAB)
                 g_settings_set_boolean (meta_wm->p->settings,
-                                        MARCO_COMPOSITING_FAST_ALT_TAB_KEY,
+                                        CROMA_COMPOSITING_FAST_ALT_TAB_KEY,
                                         settings->compositing_fast_alt_tab);
 
         if (settings->flags & CAFE_WM_SETTING_MOUSE_FOCUS)
                 g_settings_set_enum (meta_wm->p->settings,
-                                     MARCO_FOCUS_KEY,
+                                     CROMA_FOCUS_KEY,
                                      settings->focus_follows_mouse ?
                                      FOCUS_MODE_SLOPPY : FOCUS_MODE_CLICK);
 
         if (settings->flags & CAFE_WM_SETTING_AUTORAISE)
                 g_settings_set_boolean (meta_wm->p->settings,
-                                        MARCO_AUTORAISE_KEY,
+                                        CROMA_AUTORAISE_KEY,
                                         settings->autoraise);
 
         if (settings->flags & CAFE_WM_SETTING_AUTORAISE_DELAY)
                 g_settings_set_int (meta_wm->p->settings,
-                                    MARCO_AUTORAISE_DELAY_KEY,
+                                    CROMA_AUTORAISE_DELAY_KEY,
                                     settings->autoraise_delay);
 
         if (settings->flags & CAFE_WM_SETTING_FONT) {
                 g_settings_set_string (meta_wm->p->settings,
-                                       MARCO_FONT_KEY,
+                                       CROMA_FONT_KEY,
                                        settings->font);
         }
 
@@ -227,20 +227,20 @@ croma_change_settings (CafeWindowManager    *wm,
 
                 value = g_strdup_printf ("<%s>", settings->mouse_move_modifier);
                 g_settings_set_string (meta_wm->p->settings,
-                                       MARCO_MOUSE_MODIFIER_KEY,
+                                       CROMA_MOUSE_MODIFIER_KEY,
                                        value);
                 g_free (value);
         }
 
         if (settings->flags & CAFE_WM_SETTING_THEME) {
                 g_settings_set_string (meta_wm->p->settings,
-                                       MARCO_THEME_KEY,
+                                       CROMA_THEME_KEY,
                                        settings->theme);
         }
 
         if (settings->flags & CAFE_WM_SETTING_DOUBLE_CLICK_ACTION) {
                 g_settings_set_enum (meta_wm->p->settings,
-                                     MARCO_DOUBLE_CLICK_TITLEBAR_KEY,
+                                     CROMA_DOUBLE_CLICK_TITLEBAR_KEY,
                                      settings->double_click_action);
         }
 }
@@ -252,20 +252,20 @@ croma_get_settings (CafeWindowManager *wm,
         int to_get;
         CromaWindowManager *meta_wm;
 
-        meta_wm = MARCO_WINDOW_MANAGER (wm);
+        meta_wm = CROMA_WINDOW_MANAGER (wm);
 
         to_get = settings->flags;
         settings->flags = 0;
 
         if (to_get & CAFE_WM_SETTING_COMPOSITING_MANAGER) {
                 settings->compositing_manager = g_settings_get_boolean (meta_wm->p->settings,
-                                                                        MARCO_COMPOSITING_MANAGER_KEY);
+                                                                        CROMA_COMPOSITING_MANAGER_KEY);
                 settings->flags |= CAFE_WM_SETTING_COMPOSITING_MANAGER;
         }
 
         if (to_get & CAFE_WM_SETTING_COMPOSITING_ALTTAB) {
                 settings->compositing_fast_alt_tab = g_settings_get_boolean (meta_wm->p->settings,
-                                                                             MARCO_COMPOSITING_FAST_ALT_TAB_KEY);
+                                                                             CROMA_COMPOSITING_FAST_ALT_TAB_KEY);
                 settings->flags |= CAFE_WM_SETTING_COMPOSITING_ALTTAB;
         }
 
@@ -273,7 +273,7 @@ croma_get_settings (CafeWindowManager *wm,
                 gint croma_focus_value;
 
                 croma_focus_value = g_settings_get_enum (meta_wm->p->settings,
-                                                         MARCO_FOCUS_KEY);
+                                                         CROMA_FOCUS_KEY);
                 settings->focus_follows_mouse = FALSE;
                 if (croma_focus_value == FOCUS_MODE_SLOPPY || croma_focus_value == FOCUS_MODE_MOUSE)
                         settings->focus_follows_mouse = TRUE;
@@ -283,14 +283,14 @@ croma_get_settings (CafeWindowManager *wm,
 
         if (to_get & CAFE_WM_SETTING_AUTORAISE) {
                 settings->autoraise = g_settings_get_boolean (meta_wm->p->settings,
-                                                              MARCO_AUTORAISE_KEY);
+                                                              CROMA_AUTORAISE_KEY);
                 settings->flags |= CAFE_WM_SETTING_AUTORAISE;
         }
 
         if (to_get & CAFE_WM_SETTING_AUTORAISE_DELAY) {
                 settings->autoraise_delay =
                         g_settings_get_int (meta_wm->p->settings,
-                                            MARCO_AUTORAISE_DELAY_KEY);
+                                            CROMA_AUTORAISE_DELAY_KEY);
                 settings->flags |= CAFE_WM_SETTING_AUTORAISE_DELAY;
         }
 
@@ -298,7 +298,7 @@ croma_get_settings (CafeWindowManager *wm,
                 char *str;
 
                 str = g_settings_get_string (meta_wm->p->settings,
-                                             MARCO_FONT_KEY);
+                                             CROMA_FONT_KEY);
 
                 if (str == NULL)
                         str = g_strdup ("Sans Bold 12");
@@ -321,7 +321,7 @@ croma_get_settings (CafeWindowManager *wm,
                 const char *new;
 
                 str = g_settings_get_string (meta_wm->p->settings,
-                                             MARCO_MOUSE_MODIFIER_KEY);
+                                             CROMA_MOUSE_MODIFIER_KEY);
 
                 if (str == NULL)
                         str = g_strdup ("<Super>");
@@ -358,7 +358,7 @@ croma_get_settings (CafeWindowManager *wm,
                 char *str;
 
                 str = g_settings_get_string (meta_wm->p->settings,
-                                             MARCO_THEME_KEY);
+                                             CROMA_THEME_KEY);
 
                 if (str == NULL)
                         str = g_strdup ("Spidey");
@@ -373,7 +373,7 @@ croma_get_settings (CafeWindowManager *wm,
         if (to_get & CAFE_WM_SETTING_DOUBLE_CLICK_ACTION) {
                 settings->double_click_action =
                         g_settings_get_enum (meta_wm->p->settings,
-                                             MARCO_DOUBLE_CLICK_TITLEBAR_KEY);
+                                             CROMA_DOUBLE_CLICK_TITLEBAR_KEY);
 
                 settings->flags |= CAFE_WM_SETTING_DOUBLE_CLICK_ACTION;
         }
@@ -419,7 +419,7 @@ croma_window_manager_init (CromaWindowManager *croma_window_manager,
                               CromaWindowManagerClass *class)
 {
         croma_window_manager->p = g_new0 (CromaWindowManagerPrivate, 1);
-        croma_window_manager->p->settings = g_settings_new (MARCO_SCHEMA);
+        croma_window_manager->p->settings = g_settings_new (CROMA_SCHEMA);
         croma_window_manager->p->font = NULL;
         croma_window_manager->p->theme = NULL;
         croma_window_manager->p->mouse_modifier = NULL;
@@ -435,9 +435,9 @@ croma_window_manager_finalize (GObject *object)
         CromaWindowManager *croma_window_manager;
 
         g_return_if_fail (object != NULL);
-        g_return_if_fail (IS_MARCO_WINDOW_MANAGER (object));
+        g_return_if_fail (IS_CROMA_WINDOW_MANAGER (object));
 
-        croma_window_manager = MARCO_WINDOW_MANAGER (object);
+        croma_window_manager = CROMA_WINDOW_MANAGER (object);
 
         g_object_unref (croma_window_manager->p->settings);
         g_free (croma_window_manager->p);

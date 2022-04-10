@@ -9,7 +9,7 @@ AM_CPPFLAGS = 								\
 	-I$(top_srcdir)/						\
 	$(WARN_CFLAGS)							\
 	@CAPPLET_CFLAGS@						\
-	-DMARCO_THEME_DIR=\""$(datadir)/themes"\"
+	-DCROMA_THEME_DIR=\""$(datadir)/themes"\"
 
 lib_LTLIBRARIES = libcafe-window-settings.la
 

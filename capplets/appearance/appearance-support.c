@@ -105,7 +105,7 @@ croma_theme_changed(GSettings *settings, gchar *key, AppearanceData* data)
     gchar *font = NULL;
     if (metacity_is_running ())
     {
-        theme = g_settings_get_string (settings, MARCO_THEME_KEY);
+        theme = g_settings_get_string (settings, CROMA_THEME_KEY);
         font = g_settings_get_string (settings, WINDOW_TITLE_FONT_KEY);
         metacity_theme_apply (theme, font);
         g_free (theme);
@@ -119,7 +119,7 @@ support_init(AppearanceData* data)
     /* needed for wm_common_get_current_window_manager() */
     wm_common_update_window ();
     /* GSettings signals */
-    g_signal_connect (data->croma_settings, "changed::" MARCO_THEME_KEY,
+    g_signal_connect (data->croma_settings, "changed::" CROMA_THEME_KEY,
                       G_CALLBACK (croma_theme_changed), data);
     g_signal_connect (data->croma_settings, "changed::" WINDOW_TITLE_FONT_KEY,
                       G_CALLBACK (croma_theme_changed), data);

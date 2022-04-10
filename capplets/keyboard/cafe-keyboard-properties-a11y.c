@@ -31,7 +31,7 @@
 #define NWID(s) GTK_WIDGET (gtk_builder_get_object (notifications_dialog, s))
 
 #define A11Y_SCHEMA "org.cafe.accessibility-keyboard"
-#define MARCO_SCHEMA "org.cafe.Croma.general"
+#define CROMA_SCHEMA "org.cafe.Croma.general"
 
 static GtkBuilder *notifications_dialog = NULL;
 static GSettings *a11y_settings = NULL;
@@ -103,7 +103,7 @@ static void
 bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
 {
 	GSettings *croma_settings;
-	croma_settings = g_settings_new (MARCO_SCHEMA);
+	croma_settings = g_settings_new (CROMA_SCHEMA);
 	int old_bell_flash_type = g_settings_get_enum (croma_settings, "visual-bell-type");
 	int new_bell_flash_type = VISUAL_BELL_TYPE_INVALID;
 
@@ -164,7 +164,7 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 	w = NWID ("bouncekeys_beep_reject");
 	g_settings_bind (a11y_settings, "bouncekeys-beep-reject", w, "active", G_SETTINGS_BIND_DEFAULT);
 
-	GSettings *croma_settings = g_settings_new (MARCO_SCHEMA);
+	GSettings *croma_settings = g_settings_new (CROMA_SCHEMA);
 	w = NWID ("visual_bell_enable");
 	g_settings_bind (croma_settings, "visual-bell", w, "active", G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (w, "toggled",

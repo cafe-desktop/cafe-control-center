@@ -782,7 +782,7 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
     if (change_type == CAFE_THEME_CHANGE_DELETED) {
       if (element_type & CAFE_THEME_GTK_2)
         remove_from_treeview ("gtk_themes_list", info->name, data);
-      if (element_type & CAFE_THEME_MARCO)
+      if (element_type & CAFE_THEME_CROMA)
         remove_from_treeview ("window_themes_list", info->name, data);
 
     } else {
@@ -796,7 +796,7 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
             (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
       }
 
-      if (element_type & CAFE_THEME_MARCO) {
+      if (element_type & CAFE_THEME_CROMA) {
         if (change_type == CAFE_THEME_CHANGE_CREATED)
           add_to_treeview ("window_themes_list", info->name, info->name, data->window_theme_icon, data);
         else if (change_type == CAFE_THEME_CHANGE_CHANGED)
@@ -863,10 +863,10 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       break;
 
     case THEME_TYPE_WINDOW:
-      themes = cafe_theme_info_find_by_type (CAFE_THEME_MARCO);
+      themes = cafe_theme_info_find_by_type (CAFE_THEME_CROMA);
       thumbnail = data->window_theme_icon;
       settings = data->croma_settings;
-      key = MARCO_THEME_KEY;
+      key = CROMA_THEME_KEY;
       generator = (ThumbnailGenFunc) generate_croma_theme_thumbnail_async;
       thumb_cb = (ThemeThumbnailFunc) croma_theme_thumbnail_cb;
       break;
@@ -1008,7 +1008,7 @@ style_init (AppearanceData *data)
   prepare_list (data, appearance_capplet_get_widget (data, "icon_themes_list"), THEME_TYPE_ICON, (GCallback) icon_theme_changed);
   prepare_list (data, appearance_capplet_get_widget (data, "cursor_themes_list"), THEME_TYPE_CURSOR, (GCallback) cursor_theme_changed);
 
-  window_theme_changed (data->croma_settings, MARCO_THEME_KEY, data);
+  window_theme_changed (data->croma_settings, CROMA_THEME_KEY, data);
   gtk_theme_changed (data->interface_settings, GTK_THEME_KEY, data);
   icon_theme_changed (data->interface_settings, ICON_THEME_KEY, data);
   cursor_theme_changed (data->mouse_settings, CURSOR_THEME_KEY, data);

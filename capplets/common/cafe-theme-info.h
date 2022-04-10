@@ -43,7 +43,7 @@ typedef enum {
 } CafeThemeChangeType;
 
 typedef enum {
-	CAFE_THEME_MARCO = 1 << 0,
+	CAFE_THEME_CROMA = 1 << 0,
 	CAFE_THEME_GTK_2 = 1 << 1,
 	CAFE_THEME_GTK_2_KEYBINDING = 1 << 2
 } CafeThemeElement;

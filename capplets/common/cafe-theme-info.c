@@ -45,7 +45,7 @@
 #define THEME_COMMENT "X-GNOME-Metatheme/Comment"
 #define GTK_THEME_KEY "X-GNOME-Metatheme/GtkTheme"
 #define GTK_COLOR_SCHEME_KEY "X-GNOME-Metatheme/GtkColorScheme"
-#define MARCO_THEME_KEY "X-GNOME-Metatheme/MetacityTheme"
+#define CROMA_THEME_KEY "X-GNOME-Metatheme/MetacityTheme"
 #define ICON_THEME_KEY "X-GNOME-Metatheme/IconTheme"
 #define CURSOR_THEME_KEY "X-GNOME-Metatheme/CursorTheme"
 #define NOTIFICATION_THEME_KEY "X-GNOME-Metatheme/NotificationTheme"
@@ -356,7 +356,7 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 				*scheme = '\n';
 	}
 
-	str = cafe_desktop_item_get_string (meta_theme_ditem, MARCO_THEME_KEY);
+	str = cafe_desktop_item_get_string (meta_theme_ditem, CROMA_THEME_KEY);
 
 	if (str == NULL)
 	{
@@ -658,7 +658,7 @@ handle_change_signal (gpointer             data,
       element_str = "gtk-2";
     else if (element_type & CAFE_THEME_GTK_2_KEYBINDING)
       element_str = "keybinding";
-    else if (element_type & CAFE_THEME_MARCO)
+    else if (element_type & CAFE_THEME_CROMA)
       element_str = "croma";
   }
 
@@ -718,7 +718,7 @@ update_theme_index (GFile            *index_uri,
         theme_info->has_gtk = TRUE;
       else if (key_element & CAFE_THEME_GTK_2_KEYBINDING)
         theme_info->has_keybinding = TRUE;
-      else if (key_element & CAFE_THEME_MARCO)
+      else if (key_element & CAFE_THEME_CROMA)
         theme_info->has_croma = TRUE;
 
       g_hash_table_insert (theme_hash_by_uri, g_strdup (common_theme_dir), theme_info);
@@ -734,7 +734,7 @@ update_theme_index (GFile            *index_uri,
     } else if (key_element & CAFE_THEME_GTK_2_KEYBINDING) {
       theme_used_to_exist = theme_info->has_keybinding;
       theme_info->has_keybinding = theme_exists;
-    } else if (key_element & CAFE_THEME_MARCO) {
+    } else if (key_element & CAFE_THEME_CROMA) {
       theme_used_to_exist = theme_info->has_croma;
       theme_info->has_croma = theme_exists;
     }
@@ -780,7 +780,7 @@ static void
 update_croma_index (GFile *croma_index_uri,
                        gint   priority)
 {
-  update_theme_index (croma_index_uri, CAFE_THEME_MARCO, priority);
+  update_theme_index (croma_index_uri, CAFE_THEME_CROMA, priority);
 }
 
 static void
@@ -1332,7 +1332,7 @@ cafe_theme_info_find_by_type_helper (gpointer key,
   do {
     CafeThemeInfo *theme_info = list->data;
 
-    if ((elements & CAFE_THEME_MARCO && theme_info->has_croma) ||
+    if ((elements & CAFE_THEME_CROMA && theme_info->has_croma) ||
         (elements & CAFE_THEME_GTK_2 && theme_info->has_gtk) ||
         (elements & CAFE_THEME_GTK_2_KEYBINDING && theme_info->has_keybinding)) {
       hash_data->list = g_list_prepend (hash_data->list, theme_info);
