@@ -375,8 +375,8 @@ msgstr "Højreklik på baggrunden og venstreklik på <_:guibutton-1/>."
 #. (itstool) path: para/application
 #: C/config-background.xml:21 C/config-cds.xml:7 C/config-hints.xml:14
 #: C/config-html.xml:9 C/config-screensaver.xml:17
-msgid "Mate Control Center"
-msgstr "Mate-kontrolcenter"
+msgid "Cafe Control Center"
+msgstr "Cafe-kontrolcenter"
 
 #. (itstool) path: listitem/para
 #: C/config-background.xml:20
@@ -519,8 +519,8 @@ msgstr "Billedboks"
 
 #. (itstool) path: para/application
 #: C/config-background.xml:107
-msgid "Mate File Selector"
-msgstr "Mates filvælger"
+msgid "Cafe File Selector"
+msgstr "Cafes filvælger"
 
 #. (itstool) path: listitem/para
 #: C/config-background.xml:104
@@ -578,8 +578,8 @@ msgstr "Værktøjslinjer og menuer"
 #: C/config-hints.xml:11 C/config-keybindings.xml:16
 #: C/config-screensaver.xml:12 C/config-screensaver.xml:15
 #: C/config-themes.xml:4
-msgid "Mate"
-msgstr "Mate"
+msgid "Cafe"
+msgstr "Cafe"
 
 #. (itstool) path: para/guilabel
 #: C/config-behavior.xml:7 C/config-behavior.xml:11 C/config-html.xml:141
@@ -721,11 +721,11 @@ msgstr "Avanceret"
 #. (itstool) path: sect1/para
 #: C/config-cds.xml:3
 msgid ""
-"Mate can play your CDs on your computer. You can setup you CD preferences in"
+"Cafe can play your CDs on your computer. You can setup you CD preferences in"
 " the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the "
 "<_:application-3/>."
 msgstr ""
-"Mate kan afspille dine cd'er på din computer. Du kan opsætte dine cd-"
+"Cafe kan afspille dine cd'er på din computer. Du kan opsætte dine cd-"
 "præferencer i <_:guibutton-1/> capplet'en i <_:guilabel-2/>-afsnittet af "
 "<_:application-3/>."
 
@@ -1038,7 +1038,7 @@ msgstr "Vælg en fremviser"
 
 #. (itstool) path: listitem/para
 #: C/config-default-apps.xml:76
-msgid "Mate Help Browser (\"GHB\")"
+msgid "Cafe Help Browser (\"GHB\")"
 msgstr "MATEs hjælpebrowser (»GHB«)"
 
 #. (itstool) path: sect2/para
@@ -1084,8 +1084,8 @@ msgstr "Terminalens standarder"
 
 #. (itstool) path: para/application
 #: C/config-default-apps.xml:107
-msgid "Mate Terminal"
-msgstr "Mateterminalen"
+msgid "Cafe Terminal"
+msgstr "Cafeterminalen"
 
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:102
@@ -1202,7 +1202,7 @@ msgid ""
 "tips."
 msgstr ""
 "<_:application-1/> er et lille program, der viser vilkårlige citater. "
-"Mateprogrammet opstartsfif kan vise  <_:application-2/>-citater i stedet for"
+"Cafeprogrammet opstartsfif kan vise  <_:application-2/>-citater i stedet for"
 " fif."
 
 #. (itstool) path: varlistentry/term
@@ -1272,7 +1272,7 @@ msgstr "Evolution"
 msgid ""
 "The HTML Viewer capplet allows you to configure preferences for the "
 "<_:application-1/> HTML rendering engine. <_:application-2/> is used in "
-"<_:application-3/>, the <_:application-4/>, and other Mate applications."
+"<_:application-3/>, the <_:application-4/>, and other Cafe applications."
 msgstr ""
 "HTML-fremviser-capplet'en gør at du kan konfigurere præferencer for HTML-"
 "optegningsmotoren <_:application-1/>. <_:application-2/> brugs i "

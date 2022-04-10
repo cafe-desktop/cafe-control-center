@@ -168,7 +168,7 @@ setup_directory_structure (const gchar  *theme_name,
 }
 
 static gboolean
-write_theme_to_disk (MateThemeMetaInfo  *theme_info,
+write_theme_to_disk (CafeThemeMetaInfo  *theme_info,
 		     const gchar         *theme_name,
 		     const gchar         *theme_description,
 		     gboolean		  save_background,
@@ -265,7 +265,7 @@ write_theme_to_disk (MateThemeMetaInfo  *theme_info,
 }
 
 static gboolean
-save_theme_to_disk (MateThemeMetaInfo  *theme_info,
+save_theme_to_disk (CafeThemeMetaInfo  *theme_info,
 		    const gchar         *theme_name,
 		    const gchar         *theme_description,
 		    gboolean		 save_background,
@@ -296,7 +296,7 @@ save_dialog_response (GtkWidget      *save_dialog,
     GtkTextIter start_iter;
     GtkTextIter end_iter;
     gchar *buffer_text;
-    MateThemeMetaInfo *theme_info;
+    CafeThemeMetaInfo *theme_info;
     gchar *theme_description = NULL;
     gchar *theme_name = NULL;
     gboolean save_background;
@@ -313,7 +313,7 @@ save_dialog_response (GtkWidget      *save_dialog,
     buffer_text = gtk_text_buffer_get_text (buffer, &start_iter, &end_iter, FALSE);
     theme_description = escape_string_and_dup (buffer_text);
     g_free (buffer_text);
-    theme_info = (MateThemeMetaInfo *) g_object_get_data (G_OBJECT (save_dialog), "meta-theme-info");
+    theme_info = (CafeThemeMetaInfo *) g_object_get_data (G_OBJECT (save_dialog), "meta-theme-info");
     save_background = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (
 		      appearance_capplet_get_widget (data, "save_background_checkbutton")));
     save_notification = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (
@@ -349,7 +349,7 @@ entry_text_changed (GtkEditable *editable,
 }
 
 void
-theme_save_dialog_run (MateThemeMetaInfo *theme_info,
+theme_save_dialog_run (CafeThemeMetaInfo *theme_info,
 		       AppearanceData     *data)
 {
   GtkWidget *entry;

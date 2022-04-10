@@ -111,9 +111,9 @@
 
 
 ========== bn.po ==========
-# Bangla Translation of the Mate Control Center po file.
+# Bangla Translation of the Cafe Control Center po file.
 # Copyright (c)  2003-2006 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Mate Control Center package.
+# This file is distributed under the same license as the Cafe Control Center package.
 #
 # Progga <progga@BengaLinux.Org>, 2003-2006.
 # Runa Bhattacharjee <runabh@gmail.com>, 2006, 2007.
@@ -128,9 +128,9 @@
 
 ========== bn_IN.po ==========
 # translation of bn_IN.po to Bengali INDIA
-# Bangla Translation of the Mate Control Center po file.
+# Bangla Translation of the Cafe Control Center po file.
 # Copyright (c)  2003-2006 Free Software Foundation, Inc.
-# This file is distributed under the same license as the Mate Control Center package.
+# This file is distributed under the same license as the Cafe Control Center package.
 #
 #
 # Progga <progga@BengaLinux.Org>, 2003-2006.
@@ -225,12 +225,12 @@
 # Dafydd Tomos <i10n@da.fydd.org>, 2004.
 # Rhys Jones <rhys@sucs.org>, 2005.
 #
-# Someone needs to check (a) occurrences of key (if MateConf, allwedd;
+# Someone needs to check (a) occurrences of key (if CafeConf, allwedd;
 # if most other things, bysell); (b) occurrences of application(s)
 # rhaglennu or the other one I now can't put my finger on?
 #
 # I think I've caught most of the erroneous "bysell"s. Funnily enough, I
-# changed several occurrences of "bysell" to "allwedd" (MateConf context) and
+# changed several occurrences of "bysell" to "allwedd" (CafeConf context) and
 # several occurrences of "allwedd" to "bysell" (keyboard context). Also
 # replaced "gweithredu" with "cymhwyso" (for "apply") and "wynebfath" with
 # "ffont". I can believe that "wynebfath" is a better word, but I thought it
@@ -244,7 +244,7 @@
 
 
 ========== da.po ==========
-# Danish translation of the Mate Control Center.
+# Danish translation of the Cafe Control Center.
 # Copyright (C) 1998-2010
 # This file is distributed under the same license as the cafe-control-center package.
 # Kenneth Christiansen <kenneth@ripen.dk>, 1998-2000.
@@ -342,7 +342,7 @@
 # t_p_r: 266 messages, 05Aug2002, reviewed translation.
 # simos: 329 messages, 06Aug2002, updated translation.
 # kostas: 461 messages, 18Oct2002, updated and completed translation.
-# kostas: 535 messages, 10Dec2002, reviewed and updated translation for Mate 2.1x.
+# kostas: 535 messages, 10Dec2002, reviewed and updated translation for Cafe 2.1x.
 # kostas: 533 messages, 06Jan2003, one more update.
 # kostas: 537 messages, 26Jan2003, one more update.
 # kostas:  650 messages, 22Jul2003, one more update.
@@ -418,7 +418,7 @@
 # Estonian translation of MATE Control Center.
 #
 # Copyright (C) 1999, 2002, 2003, 2005, 2006 Free Software Foundation, Inc.
-# Copyright (C) 2007-2010 The Mate Project.
+# Copyright (C) 2007-2010 The Cafe Project.
 # This file is distributed under the same license as the cafe-control-center
 # package.
 #
@@ -595,7 +595,7 @@
 # Gabor Sari <saga at cafe dot hu>, 2003.
 # Laszlo Dvornik <dvornik at cafe dot hu>, 2004.
 # Gabor Kelemen <kelemeng at cafe dot hu>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
-# Mate ORY <orycafe at gmail d0t com>, 2006.
+# Cafe ORY <orycafe at gmail d0t com>, 2006.
 
 
 
@@ -651,7 +651,7 @@
 
 ========== ka.po ==========
 # translation of cafe-control-center.po to Georgian
-# Georgian translation for Mate Control Centre.
+# Georgian translation for Cafe Control Centre.
 #
 # Alexander Didebulidze <didebuli@in.tum.de>, 2005, 2006.
 # Vladimer Sichinava <alinux@siena.linux.it>, 2006.
@@ -848,7 +848,7 @@
 
 
 ========== ms.po ==========
-# Mate-control-center v2.0 Bahasa Melayu (ms)
+# Cafe-control-center v2.0 Bahasa Melayu (ms)
 # 1. Hasbullah Bin Pit (sebol) <sebol@ikhlas.com>, 2002
 # 2. Khairulanuar Abd Majid (khai) <khairul@ikhlas.com>, 2002
 
@@ -1108,7 +1108,7 @@
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2004.
 # Matjaž Horvat <m@owca.info>, 2005 - 2006.
 # Matic Žgur <mr.zgur@gmail.com>, 2006 - 2007.
-# Matej Urbančič <cafeju@svn.gnome.org>, 2007 - 2010.
+# Cafej Urbančič <cafeju@svn.gnome.org>, 2007 - 2010.
 #
 
 
@@ -1280,7 +1280,7 @@
 ========== wa.po ==========
 # Traduction into the walloon language.
 #
-# Si vos voloz donner on côp di spale pol ratournaedje di Mate (ou des
+# Si vos voloz donner on côp di spale pol ratournaedje di Cafe (ou des
 # ôtes libes programes) sicrijhoz mu a l' adresse emile
 # <srtxg@chanae.alphanet.ch>; nos avons co bråmint di l' ovraedje a fé.
 #

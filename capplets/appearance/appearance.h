@@ -84,7 +84,7 @@ typedef struct {
 	GSettings* mouse_settings;
 	GSettings* font_settings;
 	GtkBuilder* ui;
-	MateDesktopThumbnailFactory* thumb_factory;
+	CafeDesktopThumbnailFactory* thumb_factory;
 	gulong screen_size_handler;
 	gulong screen_monitors_handler;
 
@@ -110,7 +110,7 @@ typedef struct {
 
 	/* themes */
 	GtkListStore* theme_store;
-	MateThemeMetaInfo* theme_custom;
+	CafeThemeMetaInfo* theme_custom;
 	GdkPixbuf* theme_icon;
 	GtkWidget* theme_save_dialog;
 	GtkWidget* theme_message_area;

@@ -1097,8 +1097,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Пакунак з тэмай для Mate"
+msgid "Cafe Theme Package"
+msgstr "Пакунак з тэмай для Cafe"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"

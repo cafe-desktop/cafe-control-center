@@ -46,7 +46,7 @@
 #define compare(x,y) (!x && y) || (x && !y) || (x && y && strcmp (x, y))
 
 void
-cafe_meta_theme_set (MateThemeMetaInfo *meta_theme_info)
+cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
 {
   GSettings *interface_settings;
   GSettings *marco_settings;

@@ -30,16 +30,16 @@
 #ifndef _MATE_WP_ITEM_H_
 #define _MATE_WP_ITEM_H_
 
-typedef struct _MateWPItem MateWPItem;
+typedef struct _CafeWPItem CafeWPItem;
 
-struct _MateWPItem {
-  MateBG *bg;
+struct _CafeWPItem {
+  CafeBG *bg;
 
   gchar * name;
   gchar * filename;
   gchar * description;
-  MateBGPlacement options;
-  MateBGColorType shade_type;
+  CafeBGPlacement options;
+  CafeBGColorType shade_type;
 
   /* Where the Item is in the List */
   GtkTreeRowReference * rowref;
@@ -48,7 +48,7 @@ struct _MateWPItem {
   GdkRGBA * pcolor;
   GdkRGBA * scolor;
 
-  MateWPInfo * fileinfo;
+  CafeWPInfo * fileinfo;
 
   /* Did the user remove us? */
   gboolean deleted;
@@ -61,27 +61,27 @@ struct _MateWPItem {
   gint height;
 };
 
-MateWPItem * cafe_wp_item_new (const gchar *filename,
+CafeWPItem * cafe_wp_item_new (const gchar *filename,
 				 GHashTable *wallpapers,
-				 MateDesktopThumbnailFactory *thumbnails);
+				 CafeDesktopThumbnailFactory *thumbnails);
 
-void cafe_wp_item_free (MateWPItem *item);
-GdkPixbuf * cafe_wp_item_get_thumbnail (MateWPItem *item,
-					 MateDesktopThumbnailFactory *thumbs,
+void cafe_wp_item_free (CafeWPItem *item);
+GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem *item,
+					 CafeDesktopThumbnailFactory *thumbs,
                                          gint width,
                                          gint height);
-GdkPixbuf * cafe_wp_item_get_frame_thumbnail (MateWPItem *item,
-                                               MateDesktopThumbnailFactory *thumbs,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem *item,
+                                               CafeDesktopThumbnailFactory *thumbs,
                                                gint width,
                                                gint height,
                                                gint frame);
-void cafe_wp_item_update (MateWPItem *item);
-void cafe_wp_item_update_description (MateWPItem *item);
-void cafe_wp_item_ensure_cafe_bg (MateWPItem *item);
+void cafe_wp_item_update (CafeWPItem *item);
+void cafe_wp_item_update_description (CafeWPItem *item);
+void cafe_wp_item_ensure_cafe_bg (CafeWPItem *item);
 
-const gchar *wp_item_option_to_string (MateBGPlacement type);
-const gchar *wp_item_shading_to_string (MateBGColorType type);
-MateBGPlacement wp_item_string_to_option (const gchar *option);
-MateBGColorType wp_item_string_to_shading (const gchar *shade_type);
+const gchar *wp_item_option_to_string (CafeBGPlacement type);
+const gchar *wp_item_shading_to_string (CafeBGColorType type);
+CafeBGPlacement wp_item_string_to_option (const gchar *option);
+CafeBGColorType wp_item_string_to_shading (const gchar *shade_type);
 
 #endif

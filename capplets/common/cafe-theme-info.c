@@ -4,20 +4,20 @@
  * Copyright (C) 2011 Perberos
  * All rights reserved.
  *
- * This file is part of the Mate Library.
+ * This file is part of the Cafe Library.
  *
- * The Mate Library is free software; you can redistribute it and/or
+ * The Cafe Library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public License as
  * published by the Free Software Foundation; either version 2 of the
  * License, or (at your option) any later version.
  *
- * The Mate Library is distributed in the hope that it will be useful,
+ * The Cafe Library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
- * License along with the Mate Library; see the file COPYING.LIB.  If not,
+ * License along with the Cafe Library; see the file COPYING.LIB.  If not,
  * write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
@@ -96,12 +96,12 @@ typedef struct {
 
 /* The hashes_by_dir are indexed by an escaped uri of the common_theme_dir that
  * that particular theme is part of.  The data pointed to by them is a
- * MateTheme{Meta,Icon,}Info struct.  Note that the uri is of the form
+ * CafeTheme{Meta,Icon,}Info struct.  Note that the uri is of the form
  * "file:///home/username/.themes/foo", and not "/home/username/.themes/foo"
  */
 
 /* The hashes_by_name are hashed by the index of the theme.  The data pointed to
- * by them is a GList whose data elements are MateTheme{Meta,Icon,}Info
+ * by them is a GList whose data elements are CafeTheme{Meta,Icon,}Info
  * structs.  This is because a theme can be found both in the users ~/.theme as
  * well as globally in $prefix.  All access to them must be done via helper
  * functions.
@@ -153,7 +153,7 @@ static void
 add_theme_to_hash_by_name (GHashTable *hash_table,
                            gpointer    data)
 {
-  MateThemeCommonInfo *info = data;
+  CafeThemeCommonInfo *info = data;
   GList *list;
 
   list = g_hash_table_lookup (hash_table, info->name);
@@ -166,7 +166,7 @@ add_theme_to_hash_by_name (GHashTable *hash_table,
     while (list_ptr) {
       gint theme_priority;
 
-      theme_priority = ((MateThemeCommonInfo *) list_ptr->data)->priority;
+      theme_priority = ((CafeThemeCommonInfo *) list_ptr->data)->priority;
 
       if (theme_priority == info->priority) {
         /* Swap it in */
@@ -190,7 +190,7 @@ static void
 remove_theme_from_hash_by_name (GHashTable *hash_table,
                                 gpointer    data)
 {
-  MateThemeCommonInfo *info = data;
+  CafeThemeCommonInfo *info = data;
   GList *list;
 
   list = g_hash_table_lookup (hash_table, info->name);
@@ -202,7 +202,7 @@ remove_theme_from_hash_by_name (GHashTable *hash_table,
     g_hash_table_insert (hash_table, g_strdup (info->name), list);
 }
 
-static MateThemeCommonInfo *
+static CafeThemeCommonInfo *
 get_theme_from_hash_by_name (GHashTable  *hash_table,
                              const gchar *name,
                              gint         priority)
@@ -217,7 +217,7 @@ get_theme_from_hash_by_name (GHashTable  *hash_table,
   }
 
   while (list) {
-    MateThemeCommonInfo *info = (MateThemeCommonInfo *) list->data;
+    CafeThemeCommonInfo *info = (CafeThemeCommonInfo *) list->data;
 
     if (info->priority == priority)
       return info;
@@ -228,8 +228,8 @@ get_theme_from_hash_by_name (GHashTable  *hash_table,
 }
 
 static gint
-theme_compare (MateThemeCommonInfo *a,
-               MateThemeCommonInfo *b)
+theme_compare (CafeThemeCommonInfo *a,
+               CafeThemeCommonInfo *b)
 {
   gint cmp;
 
@@ -238,15 +238,15 @@ theme_compare (MateThemeCommonInfo *a,
   switch (a->type) {
   case MATE_THEME_TYPE_METATHEME:
     cmp = cafe_theme_meta_info_compare (
-                    (MateThemeMetaInfo *) a, (MateThemeMetaInfo *) b);
+                    (CafeThemeMetaInfo *) a, (CafeThemeMetaInfo *) b);
     break;
   case MATE_THEME_TYPE_ICON:
     cmp = cafe_theme_icon_info_compare (
-                    (MateThemeIconInfo *) a, (MateThemeIconInfo *) b);
+                    (CafeThemeIconInfo *) a, (CafeThemeIconInfo *) b);
     break;
   case MATE_THEME_TYPE_CURSOR:
     cmp = cafe_theme_cursor_info_compare (
-                    (MateThemeCursorInfo *) a, (MateThemeCursorInfo *) b);
+                    (CafeThemeCursorInfo *) a, (CafeThemeCursorInfo *) b);
     break;
   default:
     /* not supported at this time */
@@ -257,20 +257,20 @@ theme_compare (MateThemeCommonInfo *a,
 }
 
 static void
-theme_free (MateThemeCommonInfo *info)
+theme_free (CafeThemeCommonInfo *info)
 {
   switch (info->type) {
   case MATE_THEME_TYPE_METATHEME:
-    cafe_theme_meta_info_free ((MateThemeMetaInfo *) info);
+    cafe_theme_meta_info_free ((CafeThemeMetaInfo *) info);
     break;
   case MATE_THEME_TYPE_ICON:
-    cafe_theme_icon_info_free ((MateThemeIconInfo *) info);
+    cafe_theme_icon_info_free ((CafeThemeIconInfo *) info);
     break;
   case MATE_THEME_TYPE_REGULAR:
-    cafe_theme_info_free ((MateThemeInfo *) info);
+    cafe_theme_info_free ((CafeThemeInfo *) info);
     break;
   case MATE_THEME_TYPE_CURSOR:
-    cafe_theme_cursor_info_free ((MateThemeCursorInfo *) info);
+    cafe_theme_cursor_info_free ((CafeThemeCursorInfo *) info);
     break;
   default:
     g_assert_not_reached ();
@@ -282,11 +282,11 @@ GQuark cafe_theme_info_error_quark(void)
 	return g_quark_from_static_string("cafe-theme-info-error-quark");
 }
 
-MateThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
+CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 {
-	MateThemeMetaInfo* meta_theme_info;
+	CafeThemeMetaInfo* meta_theme_info;
 	GFile* common_theme_dir_uri;
-	MateDesktopItem* meta_theme_ditem;
+	CafeDesktopItem* meta_theme_ditem;
 	gchar* meta_theme_file;
 	const gchar* str;
 	gchar* scheme;
@@ -437,11 +437,11 @@ MateThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 	return meta_theme_info;
 }
 
-static MateThemeIconInfo *
+static CafeThemeIconInfo *
 read_icon_theme (GFile *icon_theme_uri)
 {
-  MateThemeIconInfo *icon_theme_info;
-  MateDesktopItem *icon_theme_ditem;
+  CafeThemeIconInfo *icon_theme_info;
+  CafeDesktopItem *icon_theme_ditem;
   gchar *icon_theme_file;
   gchar *dir_name;
   const gchar *name;
@@ -486,7 +486,7 @@ read_icon_theme (GFile *icon_theme_uri)
 static void
 add_default_cursor_theme ()
 {
-  MateThemeCursorInfo *theme_info;
+  CafeThemeCursorInfo *theme_info;
 
   theme_info = cafe_theme_cursor_info_new ();
   theme_info->path = g_strdup ("builtin");
@@ -535,10 +535,10 @@ gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
   return pixbuf;
 }
 
-static MateThemeCursorInfo *
+static CafeThemeCursorInfo *
 read_cursor_theme (GFile *cursor_theme_uri)
 {
-  MateThemeCursorInfo *cursor_theme_info = NULL;
+  CafeThemeCursorInfo *cursor_theme_info = NULL;
   GFile *parent_uri, *cursors_uri;
 
   const gint filter_sizes[] = { 12, 16, 18, 24, 32, 36, 40, 48, 64, 96, 128 };
@@ -577,7 +577,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
       g_array_free (sizes, TRUE);
       g_free (name);
     } else {
-      MateDesktopItem *cursor_theme_ditem;
+      CafeDesktopItem *cursor_theme_ditem;
       gchar *cursor_theme_file;
 
       if (!thumbnail) {
@@ -627,15 +627,15 @@ read_cursor_theme (GFile *cursor_theme_uri)
 
 static void
 handle_change_signal (gpointer             data,
-                      MateThemeChangeType change_type,
-                      MateThemeElement    element_type)
+                      CafeThemeChangeType change_type,
+                      CafeThemeElement    element_type)
 {
 #ifdef DEBUG
   gchar *type_str = NULL;
   gchar *change_str = NULL;
   gchar *element_str = NULL;
 #endif
-  MateThemeCommonInfo *theme = data;
+  CafeThemeCommonInfo *theme = data;
   GList *list;
 
   if (initting)
@@ -688,11 +688,11 @@ handle_change_signal (gpointer             data,
 /* index_uri should point to the gtkrc file that was modified */
 static void
 update_theme_index (GFile            *index_uri,
-                    MateThemeElement key_element,
+                    CafeThemeElement key_element,
                     gint              priority)
 {
   gboolean theme_exists;
-  MateThemeInfo *theme_info;
+  CafeThemeInfo *theme_info;
   GFile *parent;
   GFile *common_theme_dir_uri;
   gchar *common_theme_dir;
@@ -785,12 +785,12 @@ update_marco_index (GFile *marco_index_uri,
 
 static void
 update_common_theme_dir_index (GFile         *theme_index_uri,
-                               MateThemeType type,
+                               CafeThemeType type,
                                gint           priority)
 {
   gboolean theme_exists;
-  MateThemeCommonInfo *theme_info = NULL;
-  MateThemeCommonInfo *old_theme_info;
+  CafeThemeCommonInfo *theme_info = NULL;
+  CafeThemeCommonInfo *old_theme_info;
   GFile *common_theme_dir_uri;
   gchar *common_theme_dir;
   GHashTable *hash_by_uri;
@@ -812,9 +812,9 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
     if (get_file_type (theme_index_uri) == G_FILE_TYPE_REGULAR) {
       /* It's an interesting file. Let's try to load it. */
       if (type == MATE_THEME_TYPE_ICON)
-        theme_info = (MateThemeCommonInfo *) read_icon_theme (theme_index_uri);
+        theme_info = (CafeThemeCommonInfo *) read_icon_theme (theme_index_uri);
       else
-        theme_info = (MateThemeCommonInfo *) cafe_theme_read_meta_theme (theme_index_uri);
+        theme_info = (CafeThemeCommonInfo *) cafe_theme_read_meta_theme (theme_index_uri);
     } else {
       theme_info = NULL;
     }
@@ -822,7 +822,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
   }
   /* cursor themes don't necessarily have an index file, so try those in any case */
   else {
-    theme_info = (MateThemeCommonInfo *) read_cursor_theme (theme_index_uri);
+    theme_info = (CafeThemeCommonInfo *) read_cursor_theme (theme_index_uri);
   }
 
   if (theme_info) {
@@ -837,7 +837,7 @@ update_common_theme_dir_index (GFile         *theme_index_uri,
   common_theme_dir = g_file_get_path (common_theme_dir_uri);
   g_object_unref (common_theme_dir_uri);
 
-  old_theme_info = (MateThemeCommonInfo *) g_hash_table_lookup (hash_by_uri, common_theme_dir);
+  old_theme_info = (CafeThemeCommonInfo *) g_hash_table_lookup (hash_by_uri, common_theme_dir);
 
   if (old_theme_info == NULL) {
     if (theme_exists) {
@@ -1289,19 +1289,19 @@ add_top_icon_theme_dir_monitor (GFile   *uri,
 /* Public functions */
 
 /* GTK/Marco/keybinding Themes */
-MateThemeInfo *
+CafeThemeInfo *
 cafe_theme_info_new (void)
 {
-  MateThemeInfo *theme_info;
+  CafeThemeInfo *theme_info;
 
-  theme_info = g_new0 (MateThemeInfo, 1);
+  theme_info = g_new0 (CafeThemeInfo, 1);
   theme_info->type = MATE_THEME_TYPE_REGULAR;
 
   return theme_info;
 }
 
 void
-cafe_theme_info_free (MateThemeInfo *theme_info)
+cafe_theme_info_free (CafeThemeInfo *theme_info)
 {
   g_free (theme_info->path);
   g_free (theme_info->name);
@@ -1309,14 +1309,14 @@ cafe_theme_info_free (MateThemeInfo *theme_info)
   g_free (theme_info);
 }
 
-MateThemeInfo *
+CafeThemeInfo *
 cafe_theme_info_find (const gchar *theme_name)
 {
-  return (MateThemeInfo *)
+  return (CafeThemeInfo *)
          get_theme_from_hash_by_name (theme_hash_by_name, theme_name, -1);
 }
 
-struct MateThemeInfoHashData
+struct CafeThemeInfoHashData
 {
   gconstpointer user_data;
   GList *list;
@@ -1325,12 +1325,12 @@ struct MateThemeInfoHashData
 static void
 cafe_theme_info_find_by_type_helper (gpointer key,
                                       GList *list,
-                                      struct MateThemeInfoHashData *hash_data)
+                                      struct CafeThemeInfoHashData *hash_data)
 {
   guint elements = GPOINTER_TO_INT (hash_data->user_data);
 
   do {
-    MateThemeInfo *theme_info = list->data;
+    CafeThemeInfo *theme_info = list->data;
 
     if ((elements & MATE_THEME_MARCO && theme_info->has_marco) ||
         (elements & MATE_THEME_GTK_2 && theme_info->has_gtk) ||
@@ -1346,7 +1346,7 @@ cafe_theme_info_find_by_type_helper (gpointer key,
 GList *
 cafe_theme_info_find_by_type (guint elements)
 {
-  struct MateThemeInfoHashData data;
+  struct CafeThemeInfoHashData data;
   data.user_data = GINT_TO_POINTER (elements);
   data.list = NULL;
 
@@ -1360,7 +1360,7 @@ cafe_theme_info_find_by_type (guint elements)
 static void cafe_theme_info_find_all_helper(const gchar* key, GList* list, GList** themes)
 {
 	/* only return visible themes */
-	if (!((MateThemeCommonInfo*) list->data)->hidden)
+	if (!((CafeThemeCommonInfo*) list->data)->hidden)
 	{
 		*themes = g_list_prepend(*themes, list->data);
 	}
@@ -1423,19 +1423,19 @@ gchar* gtk_theme_info_missing_engine(const gchar* gtk_theme, gboolean name_only)
 }
 
 /* Icon themes */
-MateThemeIconInfo *
+CafeThemeIconInfo *
 cafe_theme_icon_info_new (void)
 {
-  MateThemeIconInfo *icon_theme_info;
+  CafeThemeIconInfo *icon_theme_info;
 
-  icon_theme_info = g_new0 (MateThemeIconInfo, 1);
+  icon_theme_info = g_new0 (CafeThemeIconInfo, 1);
   icon_theme_info->type = MATE_THEME_TYPE_ICON;
 
   return icon_theme_info;
 }
 
 void
-cafe_theme_icon_info_free (MateThemeIconInfo *icon_theme_info)
+cafe_theme_icon_info_free (CafeThemeIconInfo *icon_theme_info)
 {
   g_free (icon_theme_info->name);
   g_free (icon_theme_info->readable_name);
@@ -1443,12 +1443,12 @@ cafe_theme_icon_info_free (MateThemeIconInfo *icon_theme_info)
   g_free (icon_theme_info);
 }
 
-MateThemeIconInfo *
+CafeThemeIconInfo *
 cafe_theme_icon_info_find (const gchar *icon_theme_name)
 {
   g_return_val_if_fail (icon_theme_name != NULL, NULL);
 
-  return (MateThemeIconInfo *)
+  return (CafeThemeIconInfo *)
          get_theme_from_hash_by_name (icon_theme_hash_by_name, icon_theme_name, -1);
 }
 
@@ -1465,8 +1465,8 @@ cafe_theme_icon_info_find_all (void)
 }
 
 gint
-cafe_theme_icon_info_compare (MateThemeIconInfo *a,
-                               MateThemeIconInfo *b)
+cafe_theme_icon_info_compare (CafeThemeIconInfo *a,
+                               CafeThemeIconInfo *b)
 {
   gint cmp;
 
@@ -1477,19 +1477,19 @@ cafe_theme_icon_info_compare (MateThemeIconInfo *a,
 }
 
 /* Cursor themes */
-MateThemeCursorInfo *
+CafeThemeCursorInfo *
 cafe_theme_cursor_info_new (void)
 {
-  MateThemeCursorInfo *theme_info;
+  CafeThemeCursorInfo *theme_info;
 
-  theme_info = g_new0 (MateThemeCursorInfo, 1);
+  theme_info = g_new0 (CafeThemeCursorInfo, 1);
   theme_info->type = MATE_THEME_TYPE_CURSOR;
 
   return theme_info;
 }
 
 void
-cafe_theme_cursor_info_free (MateThemeCursorInfo *cursor_theme_info)
+cafe_theme_cursor_info_free (CafeThemeCursorInfo *cursor_theme_info)
 {
   g_free (cursor_theme_info->name);
   g_free (cursor_theme_info->readable_name);
@@ -1500,12 +1500,12 @@ cafe_theme_cursor_info_free (MateThemeCursorInfo *cursor_theme_info)
   g_free (cursor_theme_info);
 }
 
-MateThemeCursorInfo *
+CafeThemeCursorInfo *
 cafe_theme_cursor_info_find (const gchar *cursor_theme_name)
 {
   g_return_val_if_fail (cursor_theme_name != NULL, NULL);
 
-  return (MateThemeCursorInfo *)
+  return (CafeThemeCursorInfo *)
          get_theme_from_hash_by_name (cursor_theme_hash_by_name, cursor_theme_name, -1);
 }
 
@@ -1522,8 +1522,8 @@ cafe_theme_cursor_info_find_all (void)
 }
 
 gint
-cafe_theme_cursor_info_compare (MateThemeCursorInfo *a,
-                                 MateThemeCursorInfo *b)
+cafe_theme_cursor_info_compare (CafeThemeCursorInfo *a,
+                                 CafeThemeCursorInfo *b)
 {
   gint cmp;
 
@@ -1534,17 +1534,17 @@ cafe_theme_cursor_info_compare (MateThemeCursorInfo *a,
 }
 
 /* Meta themes */
-MateThemeMetaInfo* cafe_theme_meta_info_new(void)
+CafeThemeMetaInfo* cafe_theme_meta_info_new(void)
 {
-	MateThemeMetaInfo* theme_info;
+	CafeThemeMetaInfo* theme_info;
 
-	theme_info = g_new0(MateThemeMetaInfo, 1);
+	theme_info = g_new0(CafeThemeMetaInfo, 1);
 	theme_info->type = MATE_THEME_TYPE_METATHEME;
 
 	return theme_info;
 }
 
-void cafe_theme_meta_info_free(MateThemeMetaInfo* meta_theme_info)
+void cafe_theme_meta_info_free(CafeThemeMetaInfo* meta_theme_info)
 {
 	g_free (meta_theme_info->application_font);
 	g_free (meta_theme_info->background_image);
@@ -1566,9 +1566,9 @@ void cafe_theme_meta_info_free(MateThemeMetaInfo* meta_theme_info)
 	g_free (meta_theme_info);
 }
 
-gboolean cafe_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** error)
+gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** error)
 {
-	MateThemeInfo* theme;
+	CafeThemeInfo* theme;
 
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
@@ -1603,11 +1603,11 @@ gboolean cafe_theme_meta_info_validate(const MateThemeMetaInfo* info, GError** e
 	return TRUE;
 }
 
-MateThemeMetaInfo* cafe_theme_meta_info_find(const char* meta_theme_name)
+CafeThemeMetaInfo* cafe_theme_meta_info_find(const char* meta_theme_name)
 {
 	g_return_val_if_fail(meta_theme_name != NULL, NULL);
 
-	return (MateThemeMetaInfo*) get_theme_from_hash_by_name (meta_theme_hash_by_name, meta_theme_name, -1);
+	return (CafeThemeMetaInfo*) get_theme_from_hash_by_name (meta_theme_hash_by_name, meta_theme_name, -1);
 }
 
 GList* cafe_theme_meta_info_find_all(void)
@@ -1620,8 +1620,8 @@ GList* cafe_theme_meta_info_find_all(void)
 }
 
 gint
-cafe_theme_meta_info_compare (MateThemeMetaInfo *a,
-                               MateThemeMetaInfo *b)
+cafe_theme_meta_info_compare (CafeThemeMetaInfo *a,
+                               CafeThemeMetaInfo *b)
 {
   gint cmp;
 

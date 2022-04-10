@@ -344,7 +344,7 @@ msgstr ""
 #. (itstool) path: para/application
 #: C/config-background.xml:21 C/config-cds.xml:7 C/config-hints.xml:14
 #: C/config-html.xml:9 C/config-screensaver.xml:17
-msgid "Mate Control Center"
+msgid "Cafe Control Center"
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -467,7 +467,7 @@ msgstr ""
 
 #. (itstool) path: para/application
 #: C/config-background.xml:107
-msgid "Mate File Selector"
+msgid "Cafe File Selector"
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -518,7 +518,7 @@ msgstr ""
 #: C/config-hints.xml:11 C/config-keybindings.xml:16
 #: C/config-screensaver.xml:12 C/config-screensaver.xml:15
 #: C/config-themes.xml:4
-msgid "Mate"
+msgid "Cafe"
 msgstr ""
 
 #. (itstool) path: para/guilabel
@@ -638,7 +638,7 @@ msgstr "Avançat"
 #. (itstool) path: sect1/para
 #: C/config-cds.xml:3
 msgid ""
-"Mate can play your CDs on your computer. You can setup you CD preferences in"
+"Cafe can play your CDs on your computer. You can setup you CD preferences in"
 " the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the "
 "<_:application-3/>."
 msgstr ""
@@ -901,7 +901,7 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/config-default-apps.xml:76
-msgid "Mate Help Browser (\"GHB\")"
+msgid "Cafe Help Browser (\"GHB\")"
 msgstr ""
 
 #. (itstool) path: sect2/para
@@ -939,7 +939,7 @@ msgstr ""
 
 #. (itstool) path: para/application
 #: C/config-default-apps.xml:107
-msgid "Mate Terminal"
+msgid "Cafe Terminal"
 msgstr ""
 
 #. (itstool) path: sect2/para
@@ -1101,7 +1101,7 @@ msgstr ""
 msgid ""
 "The HTML Viewer capplet allows you to configure preferences for the "
 "<_:application-1/> HTML rendering engine. <_:application-2/> is used in "
-"<_:application-3/>, the <_:application-4/>, and other Mate applications."
+"<_:application-3/>, the <_:application-4/>, and other Cafe applications."
 msgstr ""
 
 #. (itstool) path: sect2/title

@@ -2,16 +2,16 @@
   <title>Startup Hints</title>
   <para>
     Startup hints have become a common occurrence in a lot of
-    applications, and <application>Mate</application> is one of
+    applications, and <application>Cafe</application> is one of
     them.  Startup hints open when a program is started, it displays
     tips for the application to make the user's experience more
     fruitful.
   </para>
   <para>
-    In <application>Mate</application>, the startup hints can be
+    In <application>Cafe</application>, the startup hints can be
     configured.  This configuration takes place in the
     <application>Startup Hint</application> capplet of
-    <application>Mate Control Center</application>.
+    <application>Cafe Control Center</application>.
   </para>
   <sect2 id="config-hints-window">
     <title>Configuration</title>

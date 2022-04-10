@@ -1,7 +1,7 @@
 <sect1 id="config-behavior">
   <title>Toolbars and Menus</title>
   <para>
-    <application>Mate</application> allows for the user to configure
+    <application>Cafe</application> allows for the user to configure
     many settings of their desktop.  Anything from the background
     image to where buttons are located can be set.  The
     <guilabel>Behavior</guilabel> window is responsible for a lot of
@@ -10,7 +10,7 @@
   <para>
     If you open up the <guilabel>Behavior</guilabel> window, you'll
     find a few options at your disposal to make your
-    <application>Mate</application> experience better.
+    <application>Cafe</application> experience better.
   </para>
   <sect2 id="config-behavior-toolbar">
     <title>Toolbar Options</title>

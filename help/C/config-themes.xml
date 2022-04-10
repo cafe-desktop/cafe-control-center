@@ -1,7 +1,7 @@
 <sect1 id="config-theme">
   <title>Gtk+ Theme Selector</title>
   <para>
-    The <application>Mate</application> environment is run by
+    The <application>Cafe</application> environment is run by
     <application>Gtk+</application>.  <application>Gtk+</application>
     allows most elements in your desktop to be themed to the look you
     want.  The <application>Gtk+ Theme Selector</application> lets you

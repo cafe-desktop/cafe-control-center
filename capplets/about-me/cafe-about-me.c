@@ -58,7 +58,7 @@ typedef struct {
 
 	GdkScreen    	*screen;
 	GtkIconTheme 	*theme;
-	MateDesktopThumbnailFactory *thumbs;
+	CafeDesktopThumbnailFactory *thumbs;
 
 	gboolean      	 have_image;
 	gboolean      	 image_changed;
@@ -69,9 +69,9 @@ typedef struct {
 	gchar 		*username;
 
 	guint	      	 commit_timeout_id;
-} MateAboutMe;
+} CafeAboutMe;
 
-static MateAboutMe *me = NULL;
+static CafeAboutMe *me = NULL;
 
 static void
 about_me_destroy (void)
@@ -89,7 +89,7 @@ about_me_destroy (void)
 }
 
 static void
-about_me_load_photo (MateAboutMe *me)
+about_me_load_photo (CafeAboutMe *me)
 {
 	gchar         *file = NULL;
 	GError        *error = NULL;
@@ -122,7 +122,7 @@ about_me_load_photo (MateAboutMe *me)
 }
 
 static void
-about_me_update_photo (MateAboutMe *me)
+about_me_update_photo (CafeAboutMe *me)
 {
 	gchar         *file;
 	GError        *error = NULL;
@@ -216,7 +216,7 @@ about_me_update_photo (MateAboutMe *me)
 }
 
 static void
-about_me_load_info (MateAboutMe *me)
+about_me_load_info (CafeAboutMe *me)
 {
 	set_fingerprint_label (me->enable_fingerprint_button,
 			       me->disable_fingerprint_button);
@@ -224,7 +224,7 @@ about_me_load_info (MateAboutMe *me)
 
 static void
 about_me_update_preview (GtkFileChooser *chooser,
-			 MateAboutMe   *me)
+			 CafeAboutMe   *me)
 {
 	gchar *uri;
 
@@ -278,7 +278,7 @@ about_me_update_preview (GtkFileChooser *chooser,
 }
 
 static void
-about_me_image_clicked_cb (GtkWidget *button, MateAboutMe *me)
+about_me_image_clicked_cb (GtkWidget *button, CafeAboutMe *me)
 {
 	GtkFileChooser *chooser_dialog;
 	gint response;
@@ -352,7 +352,7 @@ about_me_image_clicked_cb (GtkWidget *button, MateAboutMe *me)
 }
 
 static void
-about_me_image_changed_cb (GtkWidget *widget, MateAboutMe *me)
+about_me_image_changed_cb (GtkWidget *widget, CafeAboutMe *me)
 {
 	me->have_image = TRUE;
 	me->image_changed = TRUE;
@@ -383,7 +383,7 @@ about_me_icon_theme_changed (GtkWindow    *window,
 }
 
 static void
-about_me_button_clicked_cb (GtkDialog *dialog, gint response_id, MateAboutMe *me)
+about_me_button_clicked_cb (GtkDialog *dialog, gint response_id, CafeAboutMe *me)
 {
 	if (me->commit_timeout_id) {
 		g_source_remove (me->commit_timeout_id);
@@ -394,7 +394,7 @@ about_me_button_clicked_cb (GtkDialog *dialog, gint response_id, MateAboutMe *me
 }
 
 static void
-about_me_passwd_clicked_cb (GtkWidget *button, MateAboutMe *me)
+about_me_passwd_clicked_cb (GtkWidget *button, CafeAboutMe *me)
 {
 	GtkBuilder *dialog;
 
@@ -403,7 +403,7 @@ about_me_passwd_clicked_cb (GtkWidget *button, MateAboutMe *me)
 }
 
 static void
-about_me_fingerprint_button_clicked_cb (GtkWidget *button, MateAboutMe *me)
+about_me_fingerprint_button_clicked_cb (GtkWidget *button, CafeAboutMe *me)
 {
 	fingerprint_button_clicked (me->dialog,
 				    me->enable_fingerprint_button,
@@ -411,7 +411,7 @@ about_me_fingerprint_button_clicked_cb (GtkWidget *button, MateAboutMe *me)
 }
 
 #if HAVE_ACCOUNTSSERVICE
-static void on_user_is_loaded_changed (ActUser *user, GParamSpec *pspec, MateAboutMe* me)
+static void on_user_is_loaded_changed (ActUser *user, GParamSpec *pspec, CafeAboutMe* me)
 {
 	if (act_user_is_loaded (user)) {
 		about_me_load_photo (me);
@@ -435,7 +435,7 @@ about_me_setup_dialog (void)
 	ActUserManager* manager;
 #endif
 
-	me = g_new0 (MateAboutMe, 1);
+	me = g_new0 (CafeAboutMe, 1);
 	me->image = NULL;
 
 	dialog = gtk_builder_new ();

@@ -62,11 +62,11 @@ static void remove_from_startup_list (ApplicationTile *);
 static void update_user_list_menu_item (ApplicationTile *);
 static void agent_notify_cb (GObject *, GParamSpec *, gpointer);
 
-static StartupStatus get_desktop_item_startup_status (MateDesktopItem *);
+static StartupStatus get_desktop_item_startup_status (CafeDesktopItem *);
 static void          update_startup_menu_item (ApplicationTile *);
 
 typedef struct {
-	MateDesktopItem *desktop_item;
+	CafeDesktopItem *desktop_item;
 
 	gchar       *image_id;
 	gboolean     image_is_broken;
@@ -128,7 +128,7 @@ application_tile_new_full (const gchar *desktop_item_id,
 
 	const gchar *uri = NULL;
 
-	MateDesktopItem *desktop_item;
+	CafeDesktopItem *desktop_item;
 
 
 	desktop_item = load_desktop_item_from_unknown (desktop_item_id);
@@ -591,7 +591,7 @@ remove_from_startup_list (ApplicationTile *this)
 	g_free (src_filename);
 }
 
-MateDesktopItem *
+CafeDesktopItem *
 application_tile_get_desktop_item (ApplicationTile *tile)
 {
         ApplicationTilePrivate *priv;
@@ -654,7 +654,7 @@ update_user_list_menu_item (ApplicationTile *this)
 }
 
 static StartupStatus
-get_desktop_item_startup_status (MateDesktopItem *desktop_item)
+get_desktop_item_startup_status (CafeDesktopItem *desktop_item)
 {
 	gchar *filename;
 	gchar *basename;

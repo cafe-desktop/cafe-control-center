@@ -1102,8 +1102,8 @@ msgid "cafe-control-center;MATE;install;desktop;themes;"
 msgstr ""
 
 #: capplets/appearance/data/cafe-theme-package.xml.in:5
-msgid "Mate Theme Package"
-msgstr "Mate सुत्रोयजना संकुल"
+msgid "Cafe Theme Package"
+msgstr "Cafe सुत्रोयजना संकुल"
 
 #: capplets/appearance/cafe-wp-info.c:51
 msgid "No Desktop Background"

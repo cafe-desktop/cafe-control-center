@@ -6,8 +6,8 @@
       The HTML Viewer capplet allows you to configure preferences for
       the <application>GtkHTML</application> HTML rendering engine.
       <application>GtkHTML</application> is used in
-      <application>Evolution</application>, the <application>Mate
-      Control Center</application>, and other Mate applications.
+      <application>Evolution</application>, the <application>Cafe
+      Control Center</application>, and other Cafe applications.
     </para>
   </sect2>
   <sect2 id="cfg-html-viewer-fonts">

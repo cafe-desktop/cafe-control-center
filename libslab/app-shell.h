@@ -84,7 +84,7 @@ typedef struct _AppShellData
 	GtkIconSize icon_size;
 	const gchar *menu_name;
 	NewAppConfig *new_apps;
-	MateMenuTree *tree;
+	CafeMenuTree *tree;
 	GHashTable *hash;
 
 	guint filter_changed_timeout;
@@ -113,13 +113,13 @@ typedef struct
 typedef struct
 {
 	gchar *name;
-	MateDesktopItem *item;
+	CafeDesktopItem *item;
 } AppAction;
 
 typedef struct
 {
 	long time;
-	MateDesktopItem *item;
+	CafeDesktopItem *item;
 } NewAppData;
 
 void generate_categories (AppShellData * app_data);

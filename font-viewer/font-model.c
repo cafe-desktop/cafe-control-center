@@ -172,7 +172,7 @@ static GdkPixbuf *
 create_thumbnail (ThumbInfoData *thumb_info)
 {
     GFile *file = thumb_info->font_file;
-    MateDesktopThumbnailFactory *factory;
+    CafeDesktopThumbnailFactory *factory;
     guint64 mtime;
 
     GdkPixbuf *pixbuf = NULL;

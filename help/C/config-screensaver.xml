@@ -9,12 +9,12 @@
     entertain visitors.
   </para>
   <para>
-    <application>Mate</application> uses either the
+    <application>Cafe</application> uses either the
     <application>xscreensaver</application> or the <application>cafe-screensaver</application>
     programs to display
-    screensavers.  By default, <application>Mate</application> comes
+    screensavers.  By default, <application>Cafe</application> comes
     with dozens of screensavers.  These can all be configured in the
-    <application>Settings Capplet</application> in <application>Mate
+    <application>Settings Capplet</application> in <application>Cafe
     Control Center</application>.
   </para>
   <sect2 id="config-screensaver-config">

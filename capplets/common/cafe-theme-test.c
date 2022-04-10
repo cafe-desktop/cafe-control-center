@@ -21,7 +21,7 @@ main (int argc, char *argv[])
       g_print ("%d meta themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeMetaInfo *meta_theme_info;
+	  CafeThemeMetaInfo *meta_theme_info;
 
 	  meta_theme_info = list->data;
 	  g_print ("\t%s\n", meta_theme_info->readable_name);
@@ -39,7 +39,7 @@ main (int argc, char *argv[])
       g_print ("%d icon themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeIconInfo *icon_theme_info;
+	  CafeThemeIconInfo *icon_theme_info;
 
 	  icon_theme_info = list->data;
 	  g_print ("\t%s\n", icon_theme_info->name);
@@ -57,7 +57,7 @@ main (int argc, char *argv[])
       g_print ("%d marco themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeInfo *theme_info;
+	  CafeThemeInfo *theme_info;
 
 	  theme_info = list->data;
 	  g_print ("\t%s\n", theme_info->name);
@@ -83,7 +83,7 @@ main (int argc, char *argv[])
       g_print ("%d gtk-2 themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeInfo *theme_info;
+	  CafeThemeInfo *theme_info;
 
 	  theme_info = list->data;
 	  g_print ("\t%s\n", theme_info->name);
@@ -101,7 +101,7 @@ main (int argc, char *argv[])
       g_print ("%d keybinding themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeInfo *theme_info;
+	  CafeThemeInfo *theme_info;
 
 	  theme_info = list->data;
 	  g_print ("\t%s\n", theme_info->name);
@@ -119,7 +119,7 @@ main (int argc, char *argv[])
       g_print ("%d cursor themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
-	  MateThemeCursorInfo *cursor_theme_info;
+	  CafeThemeCursorInfo *cursor_theme_info;
 
 	  cursor_theme_info = list->data;
 	  g_print ("\t%s\n", cursor_theme_info->name);

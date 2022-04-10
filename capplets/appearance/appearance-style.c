@@ -387,7 +387,7 @@ style_response_cb (GtkDialog *dialog, gint response_id)
 static void
 gtk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
-  MateThemeInfo *theme = NULL;
+  CafeThemeInfo *theme = NULL;
   gchar *name;
   GtkSettings *gtksettings = gtk_settings_get_default ();
 
@@ -421,7 +421,7 @@ gtk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 static void
 window_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
-  MateThemeInfo *theme = NULL;
+  CafeThemeInfo *theme = NULL;
   gchar *name;
 
   name = g_settings_get_string (settings, key);
@@ -438,7 +438,7 @@ window_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 static void
 icon_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
-  MateThemeIconInfo *theme = NULL;
+  CafeThemeIconInfo *theme = NULL;
   gchar *name;
 
   name = g_settings_get_string (settings, key);
@@ -460,7 +460,7 @@ cursor_size_changed_cb (int size, AppearanceData *data)
 static void
 cursor_size_scale_value_changed_cb (GtkRange *range, AppearanceData *data)
 {
-  MateThemeCursorInfo *theme;
+  CafeThemeCursorInfo *theme;
   gchar *name;
 
   name = g_settings_get_string (data->mouse_settings, CURSOR_THEME_KEY);
@@ -479,7 +479,7 @@ cursor_size_scale_value_changed_cb (GtkRange *range, AppearanceData *data)
 }
 
 static void
-update_cursor_size_scale (MateThemeCursorInfo *theme,
+update_cursor_size_scale (CafeThemeCursorInfo *theme,
                           AppearanceData *data)
 {
   GtkWidget *cursor_size_scale;
@@ -554,7 +554,7 @@ update_cursor_size_scale (MateThemeCursorInfo *theme,
 static void
 cursor_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
-  MateThemeCursorInfo *theme = NULL;
+  CafeThemeCursorInfo *theme = NULL;
   gchar *name;
 
   name = g_settings_get_string (settings, key);
@@ -747,21 +747,21 @@ static void
 create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *data)
 {
   if (default_thumb == data->icon_theme_icon) {
-    MateThemeIconInfo *info;
+    CafeThemeIconInfo *info;
     info = cafe_theme_icon_info_find (name);
     if (info != NULL) {
       generate_icon_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) icon_theme_thumbnail_cb, data, NULL);
     }
   } else if (default_thumb == data->gtk_theme_icon) {
-    MateThemeInfo *info;
+    CafeThemeInfo *info;
     info = cafe_theme_info_find (name);
     if (info != NULL && info->has_gtk) {
       generate_gtk_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
     }
   } else if (default_thumb == data->window_theme_icon) {
-    MateThemeInfo *info;
+    CafeThemeInfo *info;
     info = cafe_theme_info_find (name);
     if (info != NULL && info->has_marco) {
       generate_marco_theme_thumbnail_async (info,
@@ -771,13 +771,13 @@ create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *d
 }
 
 static void
-changed_on_disk_cb (MateThemeCommonInfo *theme,
-		    MateThemeChangeType  change_type,
-                    MateThemeElement     element_type,
+changed_on_disk_cb (CafeThemeCommonInfo *theme,
+		    CafeThemeChangeType  change_type,
+                    CafeThemeElement     element_type,
 		    AppearanceData       *data)
 {
   if (theme->type == MATE_THEME_TYPE_REGULAR) {
-    MateThemeInfo *info = (MateThemeInfo *) theme;
+    CafeThemeInfo *info = (CafeThemeInfo *) theme;
 
     if (change_type == MATE_THEME_CHANGE_DELETED) {
       if (element_type & MATE_THEME_GTK_2)
@@ -808,7 +808,7 @@ changed_on_disk_cb (MateThemeCommonInfo *theme,
     }
 
   } else if (theme->type == MATE_THEME_TYPE_ICON) {
-    MateThemeIconInfo *info = (MateThemeIconInfo *) theme;
+    CafeThemeIconInfo *info = (CafeThemeIconInfo *) theme;
 
     if (change_type == MATE_THEME_CHANGE_DELETED) {
       remove_from_treeview ("icon_themes_list", info->name, data);
@@ -823,7 +823,7 @@ changed_on_disk_cb (MateThemeCommonInfo *theme,
     }
 
   } else if (theme->type == MATE_THEME_TYPE_CURSOR) {
-    MateThemeCursorInfo *info = (MateThemeCursorInfo *) theme;
+    CafeThemeCursorInfo *info = (CafeThemeCursorInfo *) theme;
 
     if (change_type == MATE_THEME_CHANGE_DELETED) {
       remove_from_treeview ("cursor_themes_list", info->name, data);
@@ -898,11 +898,11 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
 
   for (l = themes; l; l = g_list_next (l))
   {
-    MateThemeCommonInfo *theme = (MateThemeCommonInfo *) l->data;
+    CafeThemeCommonInfo *theme = (CafeThemeCommonInfo *) l->data;
     GtkTreeIter i;
 
     if (type == THEME_TYPE_CURSOR) {
-      thumbnail = ((MateThemeCursorInfo *) theme)->thumbnail;
+      thumbnail = ((CafeThemeCursorInfo *) theme)->thumbnail;
     } else {
       generator (theme, thumb_cb, data, NULL);
     }

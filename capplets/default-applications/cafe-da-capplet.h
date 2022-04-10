@@ -42,7 +42,7 @@
 #define MESSENGER_SCHEMA     "org.cafe.applications-messenger"
 #define MESSENGER_KEY        "exec"
 
-typedef struct _MateDACapplet {
+typedef struct _CafeDACapplet {
 	GtkBuilder* builder;
 
 	GtkIconTheme* icon_theme;
@@ -95,6 +95,6 @@ typedef struct _MateDACapplet {
 	GSettings* mobility_settings;
 	GSettings* calculator_settings;
 	GSettings* messenger_settings;
-} MateDACapplet;
+} CafeDACapplet;
 
 #endif

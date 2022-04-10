@@ -20,7 +20,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301, USA.
  *
- * Parts of this code come from Mate-System-Tools.
+ * Parts of this code come from Cafe-System-Tools.
  */
 
 #ifdef HAVE_CONFIG_H

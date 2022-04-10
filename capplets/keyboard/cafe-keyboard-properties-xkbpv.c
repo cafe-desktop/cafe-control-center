@@ -48,9 +48,9 @@ extern void xkl_xkb_config_native_cleanup (XklEngine * engine,
 /* */
 #endif
 
-static MatekbdKeyboardDrawingGroupLevel groupsLevels[] =
+static CafekbdKeyboardDrawingGroupLevel groupsLevels[] =
     { {0, 1}, {0, 3}, {0, 0}, {0, 2} };
-static MatekbdKeyboardDrawingGroupLevel *pGroupsLevels[] = {
+static CafekbdKeyboardDrawingGroupLevel *pGroupsLevels[] = {
 	groupsLevels, groupsLevels + 1, groupsLevels + 2, groupsLevels + 3
 };
 

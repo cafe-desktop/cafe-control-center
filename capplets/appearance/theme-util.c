@@ -29,7 +29,7 @@
 
 gboolean theme_is_writable (const gpointer theme)
 {
-  MateThemeCommonInfo *info = theme;
+  CafeThemeCommonInfo *info = theme;
   GFile *file;
   GFileInfo *file_info;
   gboolean writable;
@@ -60,7 +60,7 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   GtkDialog *dialog;
   gchar *theme_dir;
   gint response;
-  MateThemeCommonInfo *theme;
+  CafeThemeCommonInfo *theme;
   GFile *dir;
   gboolean del_empty_parent;
 
@@ -81,29 +81,29 @@ gboolean theme_delete (const gchar *name, ThemeType type)
 
   switch (type) {
     case THEME_TYPE_GTK:
-      theme = (MateThemeCommonInfo *) cafe_theme_info_find (name);
+      theme = (CafeThemeCommonInfo *) cafe_theme_info_find (name);
       theme_dir = g_build_filename (theme->path, "gtk-2.0", NULL);
       break;
 
     case THEME_TYPE_ICON:
-      theme = (MateThemeCommonInfo *) cafe_theme_icon_info_find (name);
+      theme = (CafeThemeCommonInfo *) cafe_theme_icon_info_find (name);
       theme_dir = g_path_get_dirname (theme->path);
       del_empty_parent = FALSE;
       break;
 
     case THEME_TYPE_WINDOW:
-      theme = (MateThemeCommonInfo *) cafe_theme_info_find (name);
+      theme = (CafeThemeCommonInfo *) cafe_theme_info_find (name);
       theme_dir = g_build_filename (theme->path, "metacity-1", NULL);
       break;
 
     case THEME_TYPE_META:
-      theme = (MateThemeCommonInfo *) cafe_theme_meta_info_find (name);
+      theme = (CafeThemeCommonInfo *) cafe_theme_meta_info_find (name);
       theme_dir = g_path_get_dirname (theme->path);
       del_empty_parent = FALSE;
       break;
 
     case THEME_TYPE_CURSOR:
-      theme = (MateThemeCommonInfo *) cafe_theme_cursor_info_find (name);
+      theme = (CafeThemeCommonInfo *) cafe_theme_cursor_info_find (name);
       theme_dir = g_build_filename (theme->path, "cursors", NULL);
       break;
 

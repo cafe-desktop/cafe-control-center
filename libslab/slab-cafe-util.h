@@ -29,10 +29,10 @@
 extern "C" {
 #endif
 
-MateDesktopItem *load_desktop_item_from_unknown (const gchar * id);
+CafeDesktopItem *load_desktop_item_from_unknown (const gchar * id);
 
-gboolean open_desktop_item_exec (MateDesktopItem * desktop_item);
-gboolean open_desktop_item_help (MateDesktopItem * desktop_item);
+gboolean open_desktop_item_exec (CafeDesktopItem * desktop_item);
+gboolean open_desktop_item_help (CafeDesktopItem * desktop_item);
 
 void copy_file (const gchar * src_uri, const gchar * dst_uri);
 

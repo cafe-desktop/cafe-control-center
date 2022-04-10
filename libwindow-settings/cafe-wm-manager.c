@@ -38,7 +38,7 @@
 #include <string.h>
 
 typedef struct {
-        MateDesktopItem *ditem;
+        CafeDesktopItem *ditem;
         char *name; /* human readable, localized */
         char *identify_name; /* name we expect to be set on the screen */
         char *exec;
@@ -49,7 +49,7 @@ typedef struct {
         guint is_user : 1;
         guint is_present : 1;
         guint is_config_present : 1;
-        MateWindowManager *cafe_wm;
+        CafeWindowManager *cafe_wm;
 } AvailableWindowManager;
 
 static gboolean done_scan = FALSE;
@@ -281,7 +281,7 @@ get_current_wm (GdkScreen *screen)
         return current_wm;
 }
 
-MateWindowManager*
+CafeWindowManager*
 cafe_wm_manager_get_current (GdkScreen *screen)
 {
         AvailableWindowManager *wm;
@@ -290,7 +290,7 @@ cafe_wm_manager_get_current (GdkScreen *screen)
 
         if (wm != NULL && wm->module != NULL)
                 /* may still return NULL here */
-                return (MateWindowManager*) cafe_window_manager_new (wm->ditem);
+                return (CafeWindowManager*) cafe_window_manager_new (wm->ditem);
         else
                 return NULL;
 }

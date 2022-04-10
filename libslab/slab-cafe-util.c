@@ -24,10 +24,10 @@
 #include <gio/gio.h>
 #include <string.h>
 
-MateDesktopItem *
+CafeDesktopItem *
 load_desktop_item_from_unknown (const gchar *id)
 {
-	MateDesktopItem *item;
+	CafeDesktopItem *item;
 	gchar            *basename;
 
 	GError *error = NULL;
@@ -79,7 +79,7 @@ load_desktop_item_from_unknown (const gchar *id)
 }
 
 gboolean
-open_desktop_item_exec (MateDesktopItem * desktop_item)
+open_desktop_item_exec (CafeDesktopItem * desktop_item)
 {
 	GError *error = NULL;
 
@@ -101,7 +101,7 @@ open_desktop_item_exec (MateDesktopItem * desktop_item)
 }
 
 gboolean
-open_desktop_item_help (MateDesktopItem * desktop_item)
+open_desktop_item_help (CafeDesktopItem * desktop_item)
 {
 	const gchar *doc_path;
 	gchar *help_uri;

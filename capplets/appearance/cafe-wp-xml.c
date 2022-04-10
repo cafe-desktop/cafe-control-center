@@ -82,7 +82,7 @@ static void cafe_wp_load_legacy(AppearanceData* data)
 
 			while (fgets(foo, 4096, fp))
 			{
-				MateWPItem * item;
+				CafeWPItem * item;
 
 				if (foo[strlen(foo) - 1] == '\n')
 				{
@@ -144,11 +144,11 @@ static void cafe_wp_xml_load_xml(AppearanceData* data, const char* filename)
 	{
 		if (!strcmp((char*) list->name, "wallpaper"))
 		{
-			MateWPItem * wp;
+			CafeWPItem * wp;
 			char *pcolor = NULL, *scolor = NULL;
 			gboolean have_scale = FALSE, have_shade = FALSE, have_artist = FALSE;
 
-			wp = g_new0(MateWPItem, 1);
+			wp = g_new0(CafeWPItem, 1);
 
 			wp->deleted = cafe_wp_xml_get_bool(list, "deleted");
 
@@ -456,7 +456,7 @@ void cafe_wp_xml_load_list(AppearanceData* data)
 	cafe_wp_load_legacy(data);
 }
 
-static void cafe_wp_list_flatten(const char* key, MateWPItem* item, GSList** list)
+static void cafe_wp_list_flatten(const char* key, CafeWPItem* item, GSList** list)
 {
 	if (key != NULL && item != NULL)
 	{
@@ -485,7 +485,7 @@ void cafe_wp_xml_save_list(AppearanceData* data)
 
 	while (list != NULL)
 	{
-		MateWPItem* wpitem = list->data;
+		CafeWPItem* wpitem = list->data;
 		const char* none = "(none)";
 		char* filename;
 		const char* scale;
