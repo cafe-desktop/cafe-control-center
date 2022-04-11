@@ -15,7 +15,7 @@ CAFE_MAINTAINER_MODE_DEFINES
 
 AC_PROG_CC
 AM_PROG_CC_C_O
-AM_PROG_LIBTOOL
+LT_INIT
 AC_PATH_PROG([GLA11Y], [gla11y], [true])
 
 # Use the Yelp documentation framework
