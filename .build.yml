@@ -38,6 +38,7 @@ requires:
     - libxss-dev
     - libxt-dev
     - libpolkit-gobject-1-dev
+    - librest-0.7-0 #required for ctk
     - libtool
     - make
     - python3-lxml
