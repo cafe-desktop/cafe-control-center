@@ -22,7 +22,8 @@ desktop_in_files = \
 	cafe-appearance-properties.desktop.in \
 	cafe-theme-installer.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-%.desktop: %.desktop.in
+SUFFIXES = .desktop.in .desktop
+.desktop.in.desktop:
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
 xml_in_files = \

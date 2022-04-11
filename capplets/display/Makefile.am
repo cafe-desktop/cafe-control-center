@@ -37,7 +37,8 @@ polkit_policydir = $(datadir)/polkit-1/actions
 dist_polkit_policy_DATA =					\
 	org.cafe.randr.policy
 
-%.policy: %.policy.in
+SUFFIXES = .policy.in .policy
+.policy.in.policy:
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 desktopdir = $(datadir)/applications
