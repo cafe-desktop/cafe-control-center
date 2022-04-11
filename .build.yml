@@ -42,6 +42,7 @@ requires:
     - make
     - python3-lxml
     - shared-mime-info
+    - wget
     - xsltproc
     - yelp-tools
 
