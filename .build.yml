@@ -46,6 +46,7 @@ requires:
     - wget
     - xsltproc
     - yelp-tools
+    - zenity
 
 before_scripts:
   - ./html-cppcheck
