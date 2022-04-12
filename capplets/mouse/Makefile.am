@@ -23,7 +23,7 @@ desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 $(desktop_DATA): $(Desktop_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
-cafe-mouse-properties-resources.h cafe-mouse-properties-resources.c: org.cafe.mcc.mouse.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.mouse.gresource.xml)
+cafe-mouse-properties-resources.h cafe-mouse-properties-resources.c: org.cafe.mcc.mouse.gresource.xml
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name mouse $<
 
 AM_CPPFLAGS = \

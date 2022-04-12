@@ -61,7 +61,7 @@ AM_CPPFLAGS = \
 	-DWALLPAPER_DATADIR="\"$(wallpaperdir)\"" \
 	-DBACKGROUND_DATADIR="\"$(backgrounddir)\""
 
-cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c: org.cafe.mcc.appearance.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.appearance.gresource.xml)
+cafe-appearance-properties-resources.h cafe-appearance-properties-resources.c: org.cafe.mcc.appearance.gresource.xml
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name appearance $<
 
 CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(BUILT_SOURCES)

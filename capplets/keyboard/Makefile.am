@@ -36,7 +36,7 @@ desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
 $(desktop_DATA): $(Desktop_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword= --keyword=Name --keyword=Comment --keyword=Keywords --template $< -d $(top_srcdir)/po -o $@
 
-cafe-keyboard-properties-resources.h cafe-keyboard-properties-resources.c: org.cafe.mcc.keyboard.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.keyboard.gresource.xml)
+cafe-keyboard-properties-resources.h cafe-keyboard-properties-resources.c: org.cafe.mcc.keyboard.gresource.xml
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name keyboard $<
 
 AM_CPPFLAGS = \
