@@ -1,0 +1,435 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - cafe-control-center (cppcheck 2.7-1)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - cafe-control-center (cppcheck 2.7-1)</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"checked/>warning</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"checked/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="text" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="text" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>75</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>18</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>8</td><td>constParameter</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="varFuncNullUB" name="varFuncNullUB" checked></td><td>8</td><td>varFuncNullUB</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowVariable" name="shadowVariable" checked></td><td>7</td><td>shadowVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>4</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>4</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>2</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="duplicateExpression" name="duplicateExpression" checked></td><td>1</td><td>duplicateExpression</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="nullPointer" name="nullPointer" checked></td><td>1</td><td>nullPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="nullPointerRedundantCheck" name="nullPointerRedundantCheck" checked></td><td>1</td><td>nullPointerRedundantCheck</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>1</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantInitialization" name="redundantInitialization" checked></td><td>1</td><td>redundantInitialization</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowArgument" name="shadowArgument" checked></td><td>1</td><td>shadowArgument</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreachableCode" name="unreachableCode" checked></td><td>1</td><td>unreachableCode</td></tr>
+           <tr><td></td><td>134</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="47.html"></a></td></tr>
+         <tr class="missingInclude sev_information issue"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">capplets/about-me/cafe-about-me-fingerprint.c</a></td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="0.html#line-143">143</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;fingers&apos; shadows outer variable</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="0.html#line-307">307</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="0.html#line-320">320</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="0.html#line-345">345</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="0.html#line-393">393</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="0.html#line-444">444</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;name&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="0.html#line-459">459</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;name&apos; shadows outer variable</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">capplets/about-me/cafe-about-me-password.c</a></td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="1.html#line-454">454</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="1.html#line-488">488</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="1.html#line-516">516</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="1.html#line-584">584</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="1.html#line-589">589</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="1.html#line-676">676</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="1.html#line-750">750</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="1.html#line-816">816</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;details&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="1.html#line-912">912</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">capplets/about-me/cafe-about-me.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="2.html#line-97">97</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;act_file&apos; can be reduced.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="2.html#line-106">106</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;file==NULL&apos; is always true</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-139">139</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;scalex&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-139">139</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;scaley&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-291">291</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-401">401</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;dialog&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">capplets/about-me/e-image-chooser.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="3.html#line-248">248</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;scaled&apos; can be reduced.</td></tr>
+         <tr class="shadowArgument sev_style issue"><td><a href="3.html#line-367">367</a></td><td>shadowArgument</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;info&apos; shadows outer argument</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">capplets/appearance/appearance-desktop.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="4.html#line-400">400</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="4.html#line-1160">1160</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;cr&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="4.html#line-1183">1183</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;item&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">capplets/appearance/appearance-font.c</a></td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="5.html#line-686">686</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="5.html#line-699">699</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="5.html#line-716">716</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">capplets/appearance/appearance-style.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="6.html#line-261">261</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;widget&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="6.html#line-340">340</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;widget&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="6.html#line-343">343</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;colstr&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="6.html#line-747">747</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;default_thumb&apos; can be declared with const</td></tr>
+         <tr class="nullPointer sev_warning issue"><td><a href="6.html#line-907">907</a></td><td>nullPointer</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td class="warning">Possible null pointer dereference: generator</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">capplets/appearance/appearance-themes.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="7.html#line-567">567</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;font&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="7.html#line-749">749</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;is_custom&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">capplets/appearance/cafe-wp-xml.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="8.html#line-471">471</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;wallpaper&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">capplets/appearance/theme-installer.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="9.html#line-554">554</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dialog&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">capplets/appearance/theme-save.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="10.html#line-185">185</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;current_background&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="10.html#line-187">187</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;settings&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">capplets/common/cafe-theme-info.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-666">666</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;change_str&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-668">668</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;change_str&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-670">670</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;change_str&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-1697">1697</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;color_scheme_pair&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">capplets/common/theme-thumbnail.c</a></td></tr>
+         <tr class="unreachableCode sev_style issue"><td><a href="12.html#line-934">934</a></td><td>unreachableCode</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>Statements following return, break, continue, goto or throw will never be executed.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">capplets/default-applications/cafe-da-capplet.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="13.html#line-70">70</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;item&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="13.html#line-306">306</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;surface&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="13.html#line-368">368</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;icon&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="13.html#line-371">371</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;surface&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="13.html#line-433">433</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;surface&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">capplets/display/cafe-display-properties-install-systemwide.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="14.html#line-76">76</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;num_read&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">capplets/display/scrollarea.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="15.html#line-355">355</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;Box::x1&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="15.html#line-355">355</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;Box::y1&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="15.html#line-355">355</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;Box::x2&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="15.html#line-355">355</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>struct member &apos;Box::y2&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">capplets/display/xrandr-capplet.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-276">276</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;output&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-477">477</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;tmp&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="16.html#line-1258">1258</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;output&apos; can be declared with const</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="16.html#line-1314">1314</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;output&apos; can be declared with const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-1510">1510</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;info&apos; can be reduced.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="16.html#line-1567">1567</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;new_edges&apos; shadows outer variable</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">capplets/keybindings/cafe-keybinding-properties.c</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="17.html#line-883">883</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;p&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="17.html#line-1008">1008</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;i&apos; shadows outer variable</td></tr>
+         <tr class="nullPointerRedundantCheck sev_warning issue"><td><a href="17.html#line-1107">1107</a></td><td>nullPointerRedundantCheck</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td class="warning">Either the condition &apos;new_key&apos; is redundant or there is possible null pointer dereference: new_key.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="17.html#line-1596">1596</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="17.html#line-1672">1672</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;column&apos; can be declared with const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="17.html#line-1734">1734</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;idle_data&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">capplets/keybindings/eggaccelerators.c</a></td></tr>
+         <tr class="duplicateExpression sev_style issue"><td><a href="18.html#line-369">369</a></td><td>duplicateExpression</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Same expression on both sides of &apos;-=&apos;.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">capplets/keybindings/eggcellrendererkeys.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="19.html#line-682">682</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;text&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">capplets/keyboard/cafe-keyboard-properties-xkbmc.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-49">49</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-185">185</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-250">250</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;path&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">capplets/keyboard/cafe-keyboard-properties-xkbot.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="21.html#line-307">307</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;option_check&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="21.html#line-390">390</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;expander&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">capplets/keyboard/cafe-keyboard-properties-xkbpv.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="22.html#line-88">88</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;p&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="22.html#line-96">96</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;p&apos; is assigned a value that is never used.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="22.html#line-109">109</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;variant==NULL&apos; is always false</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">capplets/mouse/cafe-mouse-properties.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-433">433</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;dialog_win&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="23.html#line-433">433</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;w&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">capplets/mouse/msd-input-helper.c</a></td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="24.html#line-121">121</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;device_info!=NULL&apos; is always true</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">capplets/time-admin/src/time-zone.h</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="25.html#line-82">82</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_AUTOPTR_CLEANUP_FUNC is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">capplets/windows/cafe-window-properties.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-209">209</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;value&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-225">225</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;value&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">font-viewer/font-model.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="27.html#line-520">520</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="27.html#line-521">521</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;monitor&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">font-viewer/font-thumbnailer.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="28.html#line-139">139</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;ptr&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="28.html#line-139">139</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;end&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">font-viewer/font-view.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-110">110</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;str&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-112">112</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;len&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-198">198</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;s&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="29.html#line-284">284</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;error&apos; can be declared with const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-626">626</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;file&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">font-viewer/gd-main-toolbar.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="30.html#line-459">459</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;w&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">font-viewer/sushi-font-widget.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="31.html#line-182">182</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;ptr&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="31.html#line-182">182</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;end&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">libslab/app-resizer.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="32.html#line-110">110</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;table&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="32.html#line-111">111</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;launcher_list&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">libslab/app-shell.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-196">196</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-234">234</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-319">319</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;data&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-395">395</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;launcher&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-398">398</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;action&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-399">399</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;a11y_cat&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="33.html#line-436">436</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;app_data&apos; can be declared with const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-611">611</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;temp1&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-611">611</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;temp2&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-690">690</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;a11y_cat&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-985">985</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;COMMAND_LINE_LOCKDOWN_SCHEMA&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-986">986</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;COMMAND_LINE_LOCKDOWN_KEY&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-987">987</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;COMMAND_LINE_LOCKDOWN_DESKTOP_CATEGORY&apos; can be reduced.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="33.html#line-1112">1112</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;categories&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="33.html#line-1112">1112</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;launchers&apos; shadows outer variable</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-1376">1376</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="33.html#line-1394">1394</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;action&apos; can be declared with const</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="33.html#line-1397">1397</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">libslab/application-tile.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="34.html#line-664">664</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;user_target&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html">libslab/bookmark-agent.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="35.html#line-651">651</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;rank&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="35.html#line-652">652</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;rank_corr&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="35.html#line-870">870</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;groups&apos; can be reduced.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="35.html#line-1185">1185</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;tag_close_ptr[0]&apos; is reassigned a value before the old one has been used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="36.html">libslab/cafe-utils.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="36.html#line-13">13</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;icon_theme&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="37.html">libslab/nameplate-tile.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="37.html#line-46">46</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="38.html">libslab/slab-cafe-util.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="38.html#line-107">107</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;help_uri&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="39.html">libslab/tile.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="39.html#line-413">413</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;tile_event&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="40.html">libwindow-settings/cafe-window-manager.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="40.html#line-240">240</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;settings&apos; can be declared with const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="41.html">libwindow-settings/cafe-wm-manager.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="41.html#line-77">77</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;suffix&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="42.html">libwindow-settings/croma-window-manager.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="42.html#line-109">109</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;theme_file_path&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="43.html">shell/control-center.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="43.html#line-42">42</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;action&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="43.html#line-96">96</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="44.html">typing-break/drw-break-window.c</a></td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="44.html#line-498">498</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;!phrase&apos; is always true</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="45.html">typing-break/drw-monitor.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="45.html#line-145">145</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;now&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="46.html">typing-break/drwright.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="46.html#line-805">805</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;window&apos; can be reduced.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.7 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

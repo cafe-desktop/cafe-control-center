@@ -1,0 +1,6 @@
+capplets: Fix warnings in Makefiles:
+
+Fixes the warnings:
+capplets/appearance/data/Makefile.am:25: warning: '%'-style pattern rules are a GNU make extension
+capplets/display/Makefile.am:40: warning: '%'-style pattern rules are a GNU make extension
+capplets/keybindings/Makefile.am:32: warning: '%'-style pattern rules are a GNU make extension
