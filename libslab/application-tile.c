@@ -116,7 +116,7 @@ application_tile_class_init (ApplicationTileClass *app_tile_class)
 CtkWidget *
 application_tile_new (const gchar *desktop_item_id)
 {
-	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND, TRUE);
+	return application_tile_new_full (desktop_item_id, CTK_ICON_SIZE_DND, TRUE);
 }
 
 CtkWidget *
@@ -155,7 +155,7 @@ application_tile_new_full (const gchar *desktop_item_id,
 
 	application_tile_setup (this);
 
-	return GTK_WIDGET (this);
+	return CTK_WIDGET (this);
 }
 
 static void
@@ -291,7 +291,7 @@ application_tile_setup (ApplicationTile *this)
 	desc = g_key_file_get_locale_string (keyfile, G_KEY_FILE_DESKTOP_GROUP, "GenericName", NULL, NULL);
 	comment = g_key_file_get_locale_string (keyfile, G_KEY_FILE_DESKTOP_GROUP, "Comment", NULL, NULL);
 
-	accessible = ctk_widget_get_accessible (GTK_WIDGET (this));
+	accessible = ctk_widget_get_accessible (CTK_WIDGET (this));
 	if (name)
 	  atk_object_set_name (accessible, name);
 	if (desc)
@@ -306,7 +306,7 @@ application_tile_setup (ApplicationTile *this)
 	else
 		subheader = NULL;
 
-	context_menu = GTK_MENU (ctk_menu_new ());
+	context_menu = CTK_MENU (ctk_menu_new ());
 
 	g_object_set (
 		G_OBJECT (this),
@@ -317,7 +317,7 @@ application_tile_setup (ApplicationTile *this)
 		"application-name",        name,
 		"application-description", desc,
 		NULL);
-	ctk_widget_set_tooltip_text (GTK_WIDGET (this), comment);
+	ctk_widget_set_tooltip_text (CTK_WIDGET (this), comment);
 
 	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_APPS);
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
@@ -332,7 +332,7 @@ application_tile_setup (ApplicationTile *this)
 	TILE (this)->actions   = actions;
 	TILE (this)->n_actions = 6;
 
-	menu_ctnr = GTK_CONTAINER (TILE (this)->context_menu);
+	menu_ctnr = CTK_CONTAINER (TILE (this)->context_menu);
 
 /* make start action */
 
@@ -343,7 +343,7 @@ application_tile_setup (ApplicationTile *this)
 	g_free (markup);
 	g_free (str);
 
-	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+	menu_item = CTK_WIDGET (tile_action_get_menu_item (action));
 
 	ctk_container_add (menu_ctnr, menu_item);
 
@@ -360,7 +360,7 @@ application_tile_setup (ApplicationTile *this)
 			TILE (this), help_trigger, _("Help"),
 			TILE_ACTION_OPENS_NEW_WINDOW | TILE_ACTION_OPENS_HELP);
 
-		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		menu_item = CTK_WIDGET (tile_action_get_menu_item (action));
 		ctk_container_add (menu_ctnr, menu_item);
 	}
 	else {
@@ -386,12 +386,12 @@ application_tile_setup (ApplicationTile *this)
 
 		update_startup_menu_item (this);
 
-		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
+		menu_item = CTK_WIDGET (tile_action_get_menu_item (action));
 
 		ctk_container_add (menu_ctnr, menu_item);
 	}
 
-	ctk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
+	ctk_widget_show_all (CTK_WIDGET (TILE (this)->context_menu));
 
 	g_free (name);
 	g_free (desc);
@@ -407,8 +407,8 @@ create_header (const gchar *name)
 
 
 	header = ctk_label_new (name);
-	ctk_label_set_line_wrap (GTK_LABEL (header), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (header), 0.0);
+	ctk_label_set_line_wrap (CTK_LABEL (header), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (header), 0.0);
 
 	g_signal_connect (
 		G_OBJECT (header),
@@ -426,13 +426,13 @@ create_subheader (const gchar *desc)
 
 
 	subheader = ctk_label_new (desc);
-	ctk_label_set_ellipsize (GTK_LABEL (subheader), PANGO_ELLIPSIZE_END);
-	ctk_label_set_xalign (GTK_LABEL (subheader), 0.0);
+	ctk_label_set_ellipsize (CTK_LABEL (subheader), PANGO_ELLIPSIZE_END);
+	ctk_label_set_xalign (CTK_LABEL (subheader), 0.0);
 
 	ctk_widget_modify_fg (
 		subheader,
-		GTK_STATE_NORMAL,
-		& ctk_widget_get_style (subheader)->fg [GTK_STATE_INSENSITIVE]);
+		CTK_STATE_NORMAL,
+		& ctk_widget_get_style (subheader)->fg [CTK_STATE_INSENSITIVE]);
 
 	return subheader;
 }
@@ -622,9 +622,9 @@ update_user_list_menu_item (ApplicationTile *this)
 		tile_action_set_menu_item_label (
 			TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU], "blah");
 
-		item = GTK_WIDGET (tile_action_get_menu_item (
+		item = CTK_WIDGET (tile_action_get_menu_item (
 			TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU]));
-		ctk_menu_shell_insert (GTK_MENU_SHELL (TILE (this)->context_menu), item, 4);
+		ctk_menu_shell_insert (CTK_MENU_SHELL (TILE (this)->context_menu), item, 4);
 
 		ctk_widget_show_all (item);
 	}
@@ -643,9 +643,9 @@ update_user_list_menu_item (ApplicationTile *this)
 	else
 		tile_action_set_menu_item_label (action, _("Add to Favorites"));
 
-	item = GTK_WIDGET (tile_action_get_menu_item (action));
+	item = CTK_WIDGET (tile_action_get_menu_item (action));
 
-	if (! GTK_IS_MENU_ITEM (item))
+	if (! CTK_IS_MENU_ITEM (item))
 		return;
 
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);

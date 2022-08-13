@@ -35,23 +35,23 @@ ta_refresh_time (TimeAdmin *ta, struct tm *LocalTime)
 {
     gchar *str;
 
-    ctk_spin_button_set_value (GTK_SPIN_BUTTON (ta->HourSpin), LocalTime->tm_hour);
-    ctk_spin_button_set_value (GTK_SPIN_BUTTON (ta->MinuteSpin), LocalTime->tm_min);
+    ctk_spin_button_set_value (CTK_SPIN_BUTTON (ta->HourSpin), LocalTime->tm_hour);
+    ctk_spin_button_set_value (CTK_SPIN_BUTTON (ta->MinuteSpin), LocalTime->tm_min);
     str = g_strdup_printf ("%02d", LocalTime->tm_sec);
-    ctk_entry_set_text (GTK_ENTRY (ta->SecondSpin), str);
+    ctk_entry_set_text (CTK_ENTRY (ta->SecondSpin), str);
     g_free (str);
 }
 
 void
 ta_refresh_date (TimeAdmin *ta, struct tm *LocalTime)
 {
-    ctk_calendar_select_month (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_select_month (CTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mon,
                                LocalTime->tm_year+1900);
-    ctk_calendar_select_day   (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_select_day   (CTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mday);
-    ctk_calendar_clear_marks  (GTK_CALENDAR (ta->Calendar));
-    ctk_calendar_mark_day     (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_clear_marks  (CTK_CALENDAR (ta->Calendar));
+    ctk_calendar_mark_day     (CTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mday);
 }
 
@@ -247,10 +247,10 @@ static guint GetTimeStamp(TimeAdmin *ta)
     GDateTime *dt;
     char      *st;
 
-    ctk_calendar_get_date(GTK_CALENDAR(ta->Calendar),&year,&month,&day);
-    hour = ctk_spin_button_get_value(GTK_SPIN_BUTTON(ta->HourSpin));
-    min  = ctk_spin_button_get_value(GTK_SPIN_BUTTON(ta->MinuteSpin));
-    sec = atoi(ctk_entry_get_text(GTK_ENTRY(ta->SecondSpin)));
+    ctk_calendar_get_date(CTK_CALENDAR(ta->Calendar),&year,&month,&day);
+    hour = ctk_spin_button_get_value(CTK_SPIN_BUTTON(ta->HourSpin));
+    min  = ctk_spin_button_get_value(CTK_SPIN_BUTTON(ta->MinuteSpin));
+    sec = atoi(ctk_entry_get_text(CTK_ENTRY(ta->SecondSpin)));
 
     dt = g_date_time_new_local(year,month+1,day,hour,min,sec);
     st = g_date_time_format(dt,"%s");

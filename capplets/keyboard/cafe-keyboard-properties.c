@@ -66,29 +66,29 @@ create_dialog (void)
 		return NULL;
 	}
 
-	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	size_group = ctk_size_group_new (CTK_SIZE_GROUP_HORIZONTAL);
 	ctk_size_group_add_widget (size_group, WID ("repeat_slow_label"));
 	ctk_size_group_add_widget (size_group, WID ("delay_short_label"));
 	ctk_size_group_add_widget (size_group, WID ("blink_slow_label"));
 	g_object_unref (G_OBJECT (size_group));
 
-	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	size_group = ctk_size_group_new (CTK_SIZE_GROUP_HORIZONTAL);
 	ctk_size_group_add_widget (size_group, WID ("repeat_fast_label"));
 	ctk_size_group_add_widget (size_group, WID ("delay_long_label"));
 	ctk_size_group_add_widget (size_group, WID ("blink_fast_label"));
 	g_object_unref (G_OBJECT (size_group));
 
-	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	size_group = ctk_size_group_new (CTK_SIZE_GROUP_HORIZONTAL);
 	ctk_size_group_add_widget (size_group, WID ("repeat_delay_scale"));
 	ctk_size_group_add_widget (size_group, WID ("repeat_speed_scale"));
 	ctk_size_group_add_widget (size_group, WID ("cursor_blink_time_scale"));
 	g_object_unref (G_OBJECT (size_group));
 
-	image = ctk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON);
-	ctk_button_set_image (GTK_BUTTON (WID ("xkb_layouts_add")), image);
+	image = ctk_image_new_from_icon_name ("list-add", CTK_ICON_SIZE_BUTTON);
+	ctk_button_set_image (CTK_BUTTON (WID ("xkb_layouts_add")), image);
 
-	image = ctk_image_new_from_icon_name ("view-refresh", GTK_ICON_SIZE_BUTTON);
-	ctk_button_set_image (GTK_BUTTON (WID ("xkb_reset_to_defaults")), image);
+	image = ctk_image_new_from_icon_name ("view-refresh", CTK_ICON_SIZE_BUTTON);
+	ctk_button_set_image (CTK_BUTTON (WID ("xkb_reset_to_defaults")), image);
 
 	return dialog;
 }
@@ -97,8 +97,8 @@ static void
 dialog_response (CtkWidget * widget,
 		 gint response_id, guint data)
 {
-	if (response_id == GTK_RESPONSE_HELP)
-		capplet_help (GTK_WINDOW (widget), "goscustperiph-2");
+	if (response_id == CTK_RESPONSE_HELP)
+		capplet_help (CTK_WINDOW (widget), "goscustperiph-2");
 	else
 		ctk_main_quit ();
 }
@@ -121,12 +121,12 @@ setup_dialog (CtkBuilder * dialog)
 
 	g_settings_bind (keyboard_settings,
 					 "delay",
-					 ctk_range_get_adjustment (GTK_RANGE (WID ("repeat_delay_scale"))),
+					 ctk_range_get_adjustment (CTK_RANGE (WID ("repeat_delay_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (keyboard_settings,
 					 "rate",
-					 ctk_range_get_adjustment (GTK_RANGE (WID ("repeat_speed_scale"))),
+					 ctk_range_get_adjustment (CTK_RANGE (WID ("repeat_speed_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
@@ -142,7 +142,7 @@ setup_dialog (CtkBuilder * dialog)
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (interface_settings,
 					 "cursor-blink-time",
-					 ctk_range_get_adjustment (GTK_RANGE (WID ("cursor_blink_time_scale"))),
+					 ctk_range_get_adjustment (CTK_RANGE (WID ("cursor_blink_time_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
@@ -179,7 +179,7 @@ setup_dialog (CtkBuilder * dialog)
 
 	} else {
 		/* don't show the typing break tab if the daemon is not available */
-		CtkNotebook *nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
+		CtkNotebook *nb = CTK_NOTEBOOK (WID ("keyboard_notebook"));
 		gint tb_page = ctk_notebook_page_num (nb, WID ("break_enabled_toggle"));
 		ctk_notebook_remove_page (nb, tb_page);
 	}
@@ -243,11 +243,11 @@ main (int argc, char **argv)
 
 	setup_dialog (dialog);
 
-        CtkNotebook* nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
-        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
-        g_signal_connect (GTK_WIDGET (nb), "scroll-event",
+        CtkNotebook* nb = CTK_NOTEBOOK (WID ("keyboard_notebook"));
+        ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+        g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
-                          GTK_WINDOW (WID ("keyboard_dialog")));
+                          CTK_WINDOW (WID ("keyboard_dialog")));
 
 	if (switch_to_typing_break_page) {
 		ctk_notebook_set_current_page (nb, 4);

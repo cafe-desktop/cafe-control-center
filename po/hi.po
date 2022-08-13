@@ -1371,10 +1371,10 @@ msgstr "मिटाकर लिखें (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"यह प्रसंग वांछित रूप में दिखेगा क्योंकि जरूरी GTK+ प्रसंग '%s' संस्थापित "
+"यह प्रसंग वांछित रूप में दिखेगा क्योंकि जरूरी CTK+ प्रसंग '%s' संस्थापित "
 "नहीं है."
 
 #: capplets/common/cafe-theme-info.c:1588

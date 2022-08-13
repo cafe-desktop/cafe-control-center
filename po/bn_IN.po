@@ -1381,10 +1381,10 @@ msgstr "সমস্ত নতুন করে লেখা হবে (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"আবশ্যক GTK+ থিম '%s' ইনস্টল না থাকার ফলে চিহ্নিত থিমটি সঠিকরূপে প্রদর্শিত "
+"আবশ্যক CTK+ থিম '%s' ইনস্টল না থাকার ফলে চিহ্নিত থিমটি সঠিকরূপে প্রদর্শিত "
 "হবে না।"
 
 #: capplets/common/cafe-theme-info.c:1588

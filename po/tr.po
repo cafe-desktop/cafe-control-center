@@ -1399,10 +1399,10 @@ msgstr "Ü_zerine Yaz"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Bu tema istenildiği gibi görünmeyecek çünkü gerekli GTK+ teması '%s' kurulu "
+"Bu tema istenildiği gibi görünmeyecek çünkü gerekli CTK+ teması '%s' kurulu "
 "değil."
 
 #: capplets/common/cafe-theme-info.c:1588

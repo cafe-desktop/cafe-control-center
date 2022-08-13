@@ -43,8 +43,8 @@
 
 #define THEME_NAME "X-GNOME-Metatheme/Name"
 #define THEME_COMMENT "X-GNOME-Metatheme/Comment"
-#define GTK_THEME_KEY "X-GNOME-Metatheme/CtkTheme"
-#define GTK_COLOR_SCHEME_KEY "X-GNOME-Metatheme/CtkColorScheme"
+#define CTK_THEME_KEY "X-GNOME-Metatheme/CtkTheme"
+#define CTK_COLOR_SCHEME_KEY "X-GNOME-Metatheme/CtkColorScheme"
 #define CROMA_THEME_KEY "X-GNOME-Metatheme/MetacityTheme"
 #define ICON_THEME_KEY "X-GNOME-Metatheme/IconTheme"
 #define CURSOR_THEME_KEY "X-GNOME-Metatheme/CursorTheme"
@@ -331,7 +331,7 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 	if (str != NULL)
 		meta_theme_info->icon_file = g_strdup(str);
 
-	str = cafe_desktop_item_get_string(meta_theme_ditem, GTK_THEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, CTK_THEME_KEY);
 
 	if (str == NULL)
 	{
@@ -340,7 +340,7 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 	}
 	meta_theme_info->ctk_theme_name = g_strdup(str);
 
-	str = cafe_desktop_item_get_string(meta_theme_ditem, GTK_COLOR_SCHEME_KEY);
+	str = cafe_desktop_item_get_string(meta_theme_ditem, CTK_COLOR_SCHEME_KEY);
 
 	if (str == NULL || str[0] == '\0')
 		scheme = ctkrc_get_color_scheme_for_theme(meta_theme_info->ctk_theme_name);
@@ -654,9 +654,9 @@ handle_change_signal (gpointer             data,
   else if (theme->type == CAFE_THEME_TYPE_CURSOR)
     type_str = "cursor";
   else if (theme->type == CAFE_THEME_TYPE_REGULAR) {
-    if (element_type & CAFE_THEME_GTK_2)
+    if (element_type & CAFE_THEME_CTK_2)
       element_str = "ctk-2";
-    else if (element_type & CAFE_THEME_GTK_2_KEYBINDING)
+    else if (element_type & CAFE_THEME_CTK_2_KEYBINDING)
       element_str = "keybinding";
     else if (element_type & CAFE_THEME_CROMA)
       element_str = "croma";
@@ -714,9 +714,9 @@ update_theme_index (GFile            *index_uri,
       theme_info->name = g_file_get_basename (common_theme_dir_uri);
       theme_info->readable_name = g_strdup (theme_info->name);
       theme_info->priority = priority;
-      if (key_element & CAFE_THEME_GTK_2)
+      if (key_element & CAFE_THEME_CTK_2)
         theme_info->has_ctk = TRUE;
-      else if (key_element & CAFE_THEME_GTK_2_KEYBINDING)
+      else if (key_element & CAFE_THEME_CTK_2_KEYBINDING)
         theme_info->has_keybinding = TRUE;
       else if (key_element & CAFE_THEME_CROMA)
         theme_info->has_croma = TRUE;
@@ -728,10 +728,10 @@ update_theme_index (GFile            *index_uri,
   } else {
     gboolean theme_used_to_exist = FALSE;
 
-    if (key_element & CAFE_THEME_GTK_2) {
+    if (key_element & CAFE_THEME_CTK_2) {
       theme_used_to_exist = theme_info->has_ctk;
       theme_info->has_ctk = theme_exists;
-    } else if (key_element & CAFE_THEME_GTK_2_KEYBINDING) {
+    } else if (key_element & CAFE_THEME_CTK_2_KEYBINDING) {
       theme_used_to_exist = theme_info->has_keybinding;
       theme_info->has_keybinding = theme_exists;
     } else if (key_element & CAFE_THEME_CROMA) {
@@ -766,14 +766,14 @@ static void
 update_ctk2_index (GFile *ctk2_index_uri,
                    gint   priority)
 {
-  update_theme_index (ctk2_index_uri, CAFE_THEME_GTK_2, priority);
+  update_theme_index (ctk2_index_uri, CAFE_THEME_CTK_2, priority);
 }
 
 static void
 update_keybinding_index (GFile *keybinding_index_uri,
                          gint   priority)
 {
-  update_theme_index (keybinding_index_uri, CAFE_THEME_GTK_2_KEYBINDING, priority);
+  update_theme_index (keybinding_index_uri, CAFE_THEME_CTK_2_KEYBINDING, priority);
 }
 
 static void
@@ -1288,7 +1288,7 @@ add_top_icon_theme_dir_monitor (GFile   *uri,
 
 /* Public functions */
 
-/* GTK/Croma/keybinding Themes */
+/* CTK/Croma/keybinding Themes */
 CafeThemeInfo *
 cafe_theme_info_new (void)
 {
@@ -1333,8 +1333,8 @@ cafe_theme_info_find_by_type_helper (gpointer key,
     CafeThemeInfo *theme_info = list->data;
 
     if ((elements & CAFE_THEME_CROMA && theme_info->has_croma) ||
-        (elements & CAFE_THEME_GTK_2 && theme_info->has_ctk) ||
-        (elements & CAFE_THEME_GTK_2_KEYBINDING && theme_info->has_keybinding)) {
+        (elements & CAFE_THEME_CTK_2 && theme_info->has_ctk) ||
+        (elements & CAFE_THEME_CTK_2_KEYBINDING && theme_info->has_keybinding)) {
       hash_data->list = g_list_prepend (hash_data->list, theme_info);
       return;
     }
@@ -1393,7 +1393,7 @@ gchar* ctk_theme_info_missing_engine(const gchar* ctk_theme, gboolean name_only)
 			 * some links
 			 * http://forums.linuxmint.com/viewtopic.php?f=190&t=85015
 			 */
-			gchar* full = g_module_build_path(GTK_ENGINE_DIR, l->data);
+			gchar* full = g_module_build_path(CTK_ENGINE_DIR, l->data);
 
 			gboolean found = g_file_test(full, G_FILE_TEST_EXISTS);
 
@@ -1576,8 +1576,8 @@ gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** e
 
 	if (!theme || !theme->has_ctk)
 	{
-		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE,
-			_("This theme will not look as intended because the required GTK+ theme '%s' is not installed."),
+		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_CTK_THEME_NOT_AVAILABLE,
+			_("This theme will not look as intended because the required CTK+ theme '%s' is not installed."),
 			info->ctk_theme_name);
 		return FALSE;
 	}

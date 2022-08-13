@@ -129,7 +129,7 @@ activate (CtkApplication *app)
 
 	list = ctk_application_get_windows (app);
 
-	AppShellData* app_data = appshelldata_new("cafecc.menu", GTK_ICON_SIZE_DND, FALSE, TRUE, 0);
+	AppShellData* app_data = appshelldata_new("cafecc.menu", CTK_ICON_SIZE_DND, FALSE, TRUE, 0);
 
 	generate_categories(app_data);
 
@@ -138,12 +138,12 @@ activate (CtkApplication *app)
 
 	if (list)
 	{
-		ctk_window_present (GTK_WINDOW (list->data));
+		ctk_window_present (CTK_WINDOW (list->data));
 	}
 	else
 	{
 		create_main_window(app_data, "MyControlCenter", _("Control Center"), "preferences-desktop", 975, 600, hidden);
-		ctk_application_add_window (app, GTK_WINDOW(app_data->main_app));
+		ctk_application_add_window (app, CTK_WINDOW(app_data->main_app));
 	}
 }
 

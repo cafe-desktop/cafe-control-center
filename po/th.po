@@ -1363,10 +1363,10 @@ msgstr "เขียนทับทั้งห_มด"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ชุดตกแต่งนี้อาจแสดงไม่เหมือนที่ออกแบบไว้ เพราะชุดตกแต่ง GTK+ '%s' ที่ต้องการ"
+"ชุดตกแต่งนี้อาจแสดงไม่เหมือนที่ออกแบบไว้ เพราะชุดตกแต่ง CTK+ '%s' ที่ต้องการ"
 " ไม่ได้ติดตั้งไว้"
 
 #: capplets/common/cafe-theme-info.c:1588

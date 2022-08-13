@@ -1389,10 +1389,10 @@ msgstr "_החלפת הכול"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ערכת הנושא לא תיראה כמצופה כיוון שערכת הנושא של GTK+‎ ‏'%s' אינה מותקנת."
+"ערכת הנושא לא תיראה כמצופה כיוון שערכת הנושא של CTK+‎ ‏'%s' אינה מותקנת."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

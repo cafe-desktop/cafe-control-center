@@ -72,7 +72,7 @@ static void image_drag_data_received_cb (CtkWidget *widget,
 					 CtkSelectionData *selection_data,
 					 guint info, guint time, EImageChooser *chooser);
 
-G_DEFINE_TYPE_WITH_PRIVATE (EImageChooser, e_image_chooser, GTK_TYPE_BOX);
+G_DEFINE_TYPE_WITH_PRIVATE (EImageChooser, e_image_chooser, CTK_TYPE_BOX);
 
 enum DndTargetType {
 	DND_TARGET_TYPE_URI_LIST
@@ -87,7 +87,7 @@ static const int num_image_drag_types = sizeof (image_drag_types) / sizeof (imag
 CtkWidget *
 e_image_chooser_new (void)
 {
-	return g_object_new (E_TYPE_IMAGE_CHOOSER, "orientation", GTK_ORIENTATION_VERTICAL, NULL);
+	return g_object_new (E_TYPE_IMAGE_CHOOSER, "orientation", CTK_ORIENTATION_VERTICAL, NULL);
 }
 
 CtkWidget *e_image_chooser_new_with_size (int width, int height)
@@ -95,7 +95,7 @@ CtkWidget *e_image_chooser_new_with_size (int width, int height)
 	return g_object_new (E_TYPE_IMAGE_CHOOSER,
 			"width", width,
 			"height", height,
-			"orientation", GTK_ORIENTATION_VERTICAL, NULL);
+			"orientation", CTK_ORIENTATION_VERTICAL, NULL);
 }
 
 static void
@@ -190,8 +190,8 @@ e_image_chooser_init (EImageChooser *chooser)
 	priv->image = ctk_image_new ();
 	priv->scaleable = TRUE;
 
-	ctk_box_set_homogeneous (GTK_BOX (chooser), FALSE);
-	ctk_box_pack_start (GTK_BOX (chooser), priv->image, TRUE, TRUE, 0);
+	ctk_box_set_homogeneous (CTK_BOX (chooser), FALSE);
+	ctk_box_pack_start (CTK_BOX (chooser), priv->image, TRUE, TRUE, 0);
 
 	ctk_drag_dest_set (priv->image, 0, image_drag_types, num_image_drag_types, GDK_ACTION_COPY);
 	g_signal_connect (priv->image,
@@ -247,13 +247,13 @@ set_image_from_data (EImageChooser *chooser,
 	if (pixbuf) {
 		GdkPixbuf *scaled;
 		if (priv->scaleable) {
-			ctk_image_set_from_pixbuf (GTK_IMAGE (priv->image), pixbuf);
+			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), pixbuf);
 		} else {
 			scaled = gdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
 							  GDK_INTERP_BILINEAR);
 
-			ctk_image_set_from_pixbuf (GTK_IMAGE (priv->image), scaled);
+			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), scaled);
 			g_object_unref (scaled);
 		}
 

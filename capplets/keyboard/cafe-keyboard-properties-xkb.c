@@ -77,10 +77,10 @@ set_model_text (CtkWidget * picker, gchar * value)
 		char *d;
 
 		d = xci_desc_to_utf8 (ci);
-		ctk_button_set_label (GTK_BUTTON (picker), d);
+		ctk_button_set_label (CTK_BUTTON (picker), d);
 		g_free (d);
 	} else {
-		ctk_button_set_label (GTK_BUTTON (picker), _("Unknown"));
+		ctk_button_set_label (CTK_BUTTON (picker), _("Unknown"));
 	}
 	g_object_unref (G_OBJECT (ci));
 	g_free (model);
@@ -155,7 +155,7 @@ chk_new_windows_inherit_layout_toggled (CtkWidget *
 					CtkBuilder * dialog)
 {
 	xkb_save_default_group (ctk_toggle_button_get_active
-				(GTK_TOGGLE_BUTTON
+				(CTK_TOGGLE_BUTTON
 				 (chk_new_windows_inherit_layout)) ? -1 :
 				0);
 }
@@ -203,10 +203,10 @@ setup_xkb_tabs (CtkBuilder * dialog)
 
 	ctk_widget_set_sensitive (chk_new_windows_inherit_layout,
 				  ctk_toggle_button_get_active
-				  (GTK_TOGGLE_BUTTON
+				  (CTK_TOGGLE_BUTTON
 				   (WID
 				    ("chk_separate_group_per_window"))));
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON
 				      (chk_new_windows_inherit_layout),
 				      xkb_get_default_group () < 0);
 

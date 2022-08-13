@@ -12,13 +12,13 @@ static void popup_error_message (void)
 {
   CtkWidget *dialog;
 
-  dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_WARNING,
-				   GTK_BUTTONS_OK, _("Unable to start the settings manager 'cafe-settings-daemon'.\n"
+  dialog = ctk_message_dialog_new (NULL, CTK_DIALOG_DESTROY_WITH_PARENT, CTK_MESSAGE_WARNING,
+				   CTK_BUTTONS_OK, _("Unable to start the settings manager 'cafe-settings-daemon'.\n"
 				   "Without the CAFE settings manager running, some preferences may not take effect. This could "
 				   "indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already "
 				   "be active and conflicting with the CAFE settings manager."));
 
-  ctk_dialog_run (GTK_DIALOG (dialog));
+  ctk_dialog_run (CTK_DIALOG (dialog));
   ctk_widget_destroy (dialog);
 }
 

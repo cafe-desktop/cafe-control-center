@@ -100,15 +100,15 @@ main (int argc, char *argv[])
 
 		dialog = ctk_message_dialog_new (
 			NULL, 0,
-			GTK_MESSAGE_INFO,
-			GTK_BUTTONS_CLOSE,
+			CTK_MESSAGE_INFO,
+			CTK_BUTTONS_CLOSE,
 			_("The typing monitor uses the notification area to display "
 			  "information. You don't seem to have a notification area "
 			  "on your panel. You can add it by right-clicking on your "
 			  "panel and choosing 'Add to panel', selecting 'Notification "
 			  "area' and clicking 'Add'."));
 
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 
 		ctk_widget_destroy (dialog);
 	}

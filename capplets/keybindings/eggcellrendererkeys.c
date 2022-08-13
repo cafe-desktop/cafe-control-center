@@ -78,7 +78,7 @@ GType egg_cell_renderer_keys_get_type(void)
 			(GInstanceInitFunc) egg_cell_renderer_keys_init
 		};
 
-	  cell_keys_type = g_type_register_static (GTK_TYPE_CELL_RENDERER_TEXT, "EggCellRendererKeys", &cell_keys_info, 0);
+	  cell_keys_type = g_type_register_static (CTK_TYPE_CELL_RENDERER_TEXT, "EggCellRendererKeys", &cell_keys_info, 0);
 	}
 
 	return cell_keys_type;
@@ -86,7 +86,7 @@ GType egg_cell_renderer_keys_get_type(void)
 
 static void egg_cell_renderer_keys_init(EggCellRendererKeys* cell_keys)
 {
-	cell_keys->accel_mode = EGG_CELL_RENDERER_KEYS_MODE_GTK;
+	cell_keys->accel_mode = EGG_CELL_RENDERER_KEYS_MODE_CTK;
 }
 
 /* FIXME setup stuff to generate this */
@@ -136,10 +136,10 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
   CtkCellRendererClass *cell_renderer_class;
 
   object_class = G_OBJECT_CLASS (cell_keys_class);
-  cell_renderer_class = GTK_CELL_RENDERER_CLASS (cell_keys_class);
+  cell_renderer_class = CTK_CELL_RENDERER_CLASS (cell_keys_class);
   parent_class = g_type_class_peek_parent (object_class);
 
-  GTK_CELL_RENDERER_CLASS (cell_keys_class)->start_editing = egg_cell_renderer_keys_start_editing;
+  CTK_CELL_RENDERER_CLASS (cell_keys_class)->start_editing = egg_cell_renderer_keys_start_editing;
 
   object_class->set_property = egg_cell_renderer_keys_set_property;
   object_class->get_property = egg_cell_renderer_keys_get_property;
@@ -148,7 +148,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
   object_class->finalize = egg_cell_renderer_keys_finalize;
 
   /* FIXME if this gets moved to a real library, rename the properties
-   * to match whatever the GTK convention is
+   * to match whatever the CTK convention is
    */
 
   g_object_class_install_property (object_class,
@@ -180,7 +180,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
 						      0,
 						      G_PARAM_READABLE | G_PARAM_WRITABLE));
 
-  /* FIXME: Register the enum when moving to GTK+ */
+  /* FIXME: Register the enum when moving to CTK+ */
   g_object_class_install_property (object_class,
                                    PROP_ACCEL_MODE,
                                    g_param_spec_int ("accel_mode",
@@ -216,7 +216,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
 
 CtkCellRenderer* egg_cell_renderer_keys_new(void)
 {
-	return GTK_CELL_RENDERER(g_object_new(EGG_TYPE_CELL_RENDERER_KEYS, NULL));
+	return CTK_CELL_RENDERER(g_object_new(EGG_TYPE_CELL_RENDERER_KEYS, NULL));
 }
 
 static void egg_cell_renderer_keys_finalize(GObject* object)
@@ -354,7 +354,7 @@ egg_cell_renderer_keys_get_size(CtkCellRenderer    *cell,
     keys->sizing_label = ctk_label_new (TOOLTIP_TEXT);
 
   ctk_widget_get_preferred_size (keys->sizing_label, &requisition, NULL);
-  (* GTK_CELL_RENDERER_CLASS (parent_class)->get_size) (cell, widget, cell_area, x_offset, y_offset, width, height);
+  (* CTK_CELL_RENDERER_CLASS (parent_class)->get_size) (cell, widget, cell_area, x_offset, y_offset, width, height);
   /* FIXME: need to take the cell_area et al. into account */
   if (width)
     *width = MAX (*width, requisition.width);
@@ -363,7 +363,7 @@ egg_cell_renderer_keys_get_size(CtkCellRenderer    *cell,
 }
 
 /* FIXME: Currently we don't differentiate between a 'bogus' key (like tab in
- * GTK mode) and a removed key.
+ * CTK mode) and a removed key.
  */
 
 static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* data)
@@ -426,7 +426,7 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 		GDK_BUTTON5_MASK;
 
 	/* filter consumed/ignored modifiers */
-	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_GTK)
+	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_CTK)
 	{
 		accel_mods = event->state & GDK_MODIFIER_MASK & ~(consumed_modifiers | ignored_modifiers);
 	}
@@ -451,7 +451,7 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 		goto out;
 	}
 
-	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_GTK)
+	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_CTK)
 	{
 		if (!ctk_accelerator_valid (accel_keyval, accel_mods))
 		{
@@ -471,8 +471,8 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 
 	path = g_strdup(g_object_get_data(G_OBJECT(keys->edit_widget), EGG_CELL_RENDERER_TEXT_PATH));
 
-	ctk_cell_editable_editing_done(GTK_CELL_EDITABLE(keys->edit_widget));
-	ctk_cell_editable_remove_widget(GTK_CELL_EDITABLE(keys->edit_widget));
+	ctk_cell_editable_editing_done(CTK_CELL_EDITABLE(keys->edit_widget));
+	ctk_cell_editable_remove_widget(CTK_CELL_EDITABLE(keys->edit_widget));
 	keys->edit_widget = NULL;
 	keys->grab_widget = NULL;
 
@@ -537,10 +537,10 @@ pointless_eventbox_subclass_get_type (void)
         (GInterfaceInitFunc) pointless_eventbox_cell_editable_init,
         NULL, NULL };
 
-      eventbox_type = g_type_register_static (GTK_TYPE_EVENT_BOX, "EggCellEditableEventBox", &eventbox_info, 0);
+      eventbox_type = g_type_register_static (CTK_TYPE_EVENT_BOX, "EggCellEditableEventBox", &eventbox_info, 0);
 
       g_type_add_interface_static (eventbox_type,
-				   GTK_TYPE_CELL_EDITABLE,
+				   CTK_TYPE_CELL_EDITABLE,
 				   &cell_editable_info);
     }
 
@@ -562,8 +562,8 @@ override_background_color (CtkWidget *widget,
   g_free (css);
 
   ctk_style_context_add_provider (ctk_widget_get_style_context (widget),
-                                  GTK_STYLE_PROVIDER (provider),
-                                  GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+                                  CTK_STYLE_PROVIDER (provider),
+                                  CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   g_object_unref (provider);
 }
 
@@ -582,8 +582,8 @@ override_color (CtkWidget *widget,
   g_free (css);
 
   ctk_style_context_add_provider (ctk_widget_get_style_context (widget),
-                                  GTK_STYLE_PROVIDER (provider),
-                                  GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+                                  CTK_STYLE_PROVIDER (provider),
+                                  CTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   g_object_unref (provider);
 }
 
@@ -607,7 +607,7 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
   GdkRGBA label_color;
   GdkRGBA *c;
 
-  celltext = GTK_CELL_RENDERER_TEXT (cell);
+  celltext = CTK_CELL_RENDERER_TEXT (cell);
   keys = EGG_CELL_RENDERER_KEYS (cell);
 
   /* If the cell isn't editable we return NULL. */
@@ -643,10 +643,10 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
                              (void**) &keys->edit_widget);
 
   label = ctk_label_new (NULL);
-  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+  ctk_label_set_xalign (CTK_LABEL (label), 0.0);
 
-  ctk_style_context_get (ctk_widget_get_style_context (widget), GTK_STATE_INSENSITIVE,
-                         GTK_STYLE_PROPERTY_BACKGROUND_COLOR,
+  ctk_style_context_get (ctk_widget_get_style_context (widget), CTK_STATE_INSENSITIVE,
+                         CTK_STYLE_PROPERTY_BACKGROUND_COLOR,
                          &c, NULL);
   box_color = *c;
   gdk_rgba_free (c);
@@ -654,15 +654,15 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
   override_background_color (eventbox, &box_color);
 
   ctk_style_context_get_color (ctk_widget_get_style_context (widget),
-                               GTK_STATE_INSENSITIVE,
+                               CTK_STATE_INSENSITIVE,
                                &label_color);
 
   override_color (label, &label_color);
 
-  ctk_label_set_text (GTK_LABEL (label),
+  ctk_label_set_text (CTK_LABEL (label),
 		  TOOLTIP_TEXT);
 
-  ctk_container_add (GTK_CONTAINER (eventbox), label);
+  ctk_container_add (CTK_CONTAINER (eventbox), label);
 
   g_object_set_data_full (G_OBJECT (keys->edit_widget), EGG_CELL_RENDERER_TEXT_PATH,
                           g_strdup (path), g_free);
@@ -674,7 +674,7 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
 
   keys->edit_key = keys->accel_key;
 
-  return GTK_CELL_EDITABLE (keys->edit_widget);
+  return CTK_CELL_EDITABLE (keys->edit_widget);
 }
 
 void egg_cell_renderer_keys_set_accelerator(EggCellRendererKeys* keys, guint keyval, guint keycode, EggVirtualModifierType mask)

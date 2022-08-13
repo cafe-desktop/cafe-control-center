@@ -1418,10 +1418,10 @@ msgstr "Tout éc_raser"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Ce thème n'aura pas l'aspect souhaité car le thème GTK+ requis « %s » n'est "
+"Ce thème n'aura pas l'aspect souhaité car le thème CTK+ requis « %s » n'est "
 "pas installé."
 
 #: capplets/common/cafe-theme-info.c:1588

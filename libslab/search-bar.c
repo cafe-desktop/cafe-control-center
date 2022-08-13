@@ -50,7 +50,7 @@ enum
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (NldSearchBar, nld_search_bar, GTK_TYPE_BOX)
+G_DEFINE_TYPE_WITH_PRIVATE (NldSearchBar, nld_search_bar, CTK_TYPE_BOX)
 
 static void emit_search (NldSearchBar * search_bar);
 static void emit_search_callback (CtkWidget * widget, gpointer search_bar);
@@ -58,7 +58,7 @@ static void emit_search_callback (CtkWidget * widget, gpointer search_bar);
 static void nld_search_bar_class_init (NldSearchBarClass * nld_search_bar_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (nld_search_bar_class);
-	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (nld_search_bar_class);
+	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (nld_search_bar_class);
 
 	object_class->finalize = nld_search_bar_finalize;
 	widget_class->focus = nld_search_bar_focus;
@@ -76,18 +76,18 @@ nld_search_bar_init (NldSearchBar * search_bar)
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 	CtkWidget *entry;
 
-	ctk_widget_set_can_focus (GTK_WIDGET (search_bar), TRUE);
-	ctk_orientable_set_orientation (GTK_ORIENTABLE (search_bar), GTK_ORIENTATION_VERTICAL);
+	ctk_widget_set_can_focus (CTK_WIDGET (search_bar), TRUE);
+	ctk_orientable_set_orientation (CTK_ORIENTABLE (search_bar), CTK_ORIENTATION_VERTICAL);
 
-	priv->hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
-	ctk_box_pack_start (GTK_BOX (search_bar), priv->hbox, TRUE, FALSE, 0);
+	priv->hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 3);
+	ctk_box_pack_start (CTK_BOX (search_bar), priv->hbox, TRUE, FALSE, 0);
 
 	entry = ctk_search_entry_new ();
-	ctk_widget_set_halign (entry, GTK_ALIGN_START);
-	ctk_widget_set_valign (entry, GTK_ALIGN_CENTER);
-	priv->entry = GTK_ENTRY (entry);
+	ctk_widget_set_halign (entry, CTK_ALIGN_START);
+	ctk_widget_set_valign (entry, CTK_ALIGN_CENTER);
+	priv->entry = CTK_ENTRY (entry);
 	ctk_widget_show (entry);
-	ctk_box_pack_start (GTK_BOX (priv->hbox), entry, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (priv->hbox), entry, TRUE, TRUE, 0);
 
 	g_signal_connect (entry, "activate", G_CALLBACK (emit_search_callback), search_bar);
 
@@ -118,7 +118,7 @@ nld_search_bar_has_focus (NldSearchBar * search_bar)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 
-	return ctk_widget_has_focus (GTK_WIDGET (priv->entry));
+	return ctk_widget_has_focus (CTK_WIDGET (priv->entry));
 }
 
 static void
@@ -126,7 +126,7 @@ nld_search_bar_grab_focus (CtkWidget * widget)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (NLD_SEARCH_BAR(widget));
 
-	ctk_widget_grab_focus (GTK_WIDGET (priv->entry));
+	ctk_widget_grab_focus (CTK_WIDGET (priv->entry));
 }
 
 CtkWidget *

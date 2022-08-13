@@ -65,14 +65,14 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   gboolean del_empty_parent;
 
   dialog = (CtkDialog *) ctk_message_dialog_new (NULL,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_QUESTION,
-						 GTK_BUTTONS_CANCEL,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_QUESTION,
+						 CTK_BUTTONS_CANCEL,
 						 _("Would you like to delete this theme?"));
-  ctk_dialog_add_button (dialog, "ctk-delete", GTK_RESPONSE_ACCEPT);
+  ctk_dialog_add_button (dialog, "ctk-delete", CTK_RESPONSE_ACCEPT);
   response = ctk_dialog_run (dialog);
-  ctk_widget_destroy (GTK_WIDGET (dialog));
-  if (response != GTK_RESPONSE_ACCEPT)
+  ctk_widget_destroy (CTK_WIDGET (dialog));
+  if (response != CTK_RESPONSE_ACCEPT)
     return FALSE;
 
   /* Most theme types are put into separate subdirectories. For those
@@ -80,7 +80,7 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   del_empty_parent = TRUE;
 
   switch (type) {
-    case THEME_TYPE_GTK:
+    case THEME_TYPE_CTK:
       theme = (CafeThemeCommonInfo *) cafe_theme_info_find (name);
       theme_dir = g_build_filename (theme->path, "ctk-2.0", NULL);
       break;
@@ -116,11 +116,11 @@ gboolean theme_delete (const gchar *name, ThemeType type)
 
   if (!capplet_file_delete_recursive (dir, NULL)) {
     CtkWidget *info_dialog = ctk_message_dialog_new (NULL,
-						     GTK_DIALOG_MODAL,
-						     GTK_MESSAGE_ERROR,
-						     GTK_BUTTONS_OK,
+						     CTK_DIALOG_MODAL,
+						     CTK_MESSAGE_ERROR,
+						     CTK_BUTTONS_OK,
 						     _("Theme cannot be deleted"));
-    ctk_dialog_run (GTK_DIALOG (info_dialog));
+    ctk_dialog_run (CTK_DIALOG (info_dialog));
     ctk_widget_destroy (info_dialog);
     rc = FALSE;
   } else {
@@ -276,13 +276,13 @@ void theme_install_file(CtkWindow* parent, const gchar* path)
 
   if (variant == NULL) {
     CtkWidget* dialog = ctk_message_dialog_new(NULL,
-                                               GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-                                               GTK_MESSAGE_ERROR,
-                                               GTK_BUTTONS_OK,
+                                               CTK_DIALOG_MODAL | CTK_DIALOG_DESTROY_WITH_PARENT,
+                                               CTK_MESSAGE_ERROR,
+                                               CTK_BUTTONS_OK,
                                                _("Could not install theme engine"));
-    ctk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
+    ctk_message_dialog_format_secondary_text(CTK_MESSAGE_DIALOG (dialog), "%s", error->message);
 
-    ctk_dialog_run(GTK_DIALOG(dialog));
+    ctk_dialog_run(CTK_DIALOG(dialog));
     ctk_widget_destroy(dialog);
     g_error_free(error);
   } else {

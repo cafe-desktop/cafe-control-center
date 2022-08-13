@@ -1391,10 +1391,10 @@ msgstr "_Kirjoita kaikkien yli"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Tämä teema ei näytä siltä miltä sen pitäisi, koska vaadittua GTK+-teemaa "
+"Tämä teema ei näytä siltä miltä sen pitäisi, koska vaadittua CTK+-teemaa "
 "”%s” ei ole asennettu."
 
 #: capplets/common/cafe-theme-info.c:1588

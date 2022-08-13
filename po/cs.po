@@ -1406,11 +1406,11 @@ msgstr "Přeps_at vše"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
 "Tento motiv nebude zobrazen jak bylo zamýšleno, protože požadovaný motiv "
-"GTK+ \"%s\" není nainstalován."
+"CTK+ \"%s\" není nainstalován."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

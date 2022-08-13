@@ -30,15 +30,15 @@ int ErrorMessage (const char *Title,
     CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new (NULL,
-                                     GTK_DIALOG_MODAL,
-                                     GTK_MESSAGE_ERROR,
-                                     GTK_BUTTONS_OK,
+                                     CTK_DIALOG_MODAL,
+                                     CTK_MESSAGE_ERROR,
+                                     CTK_BUTTONS_OK,
                                      "%s", Title);
 
-    ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+    ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
                                               "%s", Msg);
 
-    nRet =  ctk_dialog_run (GTK_DIALOG (dialog));
+    nRet =  ctk_dialog_run (CTK_DIALOG (dialog));
     ctk_widget_destroy (dialog);
 
     return nRet;

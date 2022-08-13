@@ -1387,10 +1387,10 @@ msgstr "_Замени сè"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Оваа тема нема да изгледа како што треба бидејќи потребната GTK+ тема %s не "
+"Оваа тема нема да изгледа како што треба бидејќи потребната CTK+ тема %s не "
 "е инсталирана."
 
 #: capplets/common/cafe-theme-info.c:1588

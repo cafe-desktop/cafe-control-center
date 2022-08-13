@@ -1389,10 +1389,10 @@ msgstr "Sobroscribir _too"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Esti tema nun va amosase como se pretende porque'l el tema GTK+ necesariu "
+"Esti tema nun va amosase como se pretende porque'l el tema CTK+ necesariu "
 "«%s» nun ta instaláu."
 
 #: capplets/common/cafe-theme-info.c:1588

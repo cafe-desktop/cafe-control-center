@@ -1398,10 +1398,10 @@ msgstr "Timp_a Semua"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Tema ini tidak akan tampak seperti yang diinginkan karena tema GTK+ '%s' "
+"Tema ini tidak akan tampak seperti yang diinginkan karena tema CTK+ '%s' "
 "yang diperlukan tidak terpasang."
 
 #: capplets/common/cafe-theme-info.c:1588

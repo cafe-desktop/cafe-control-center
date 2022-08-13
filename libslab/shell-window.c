@@ -32,7 +32,7 @@ gboolean shell_window_paint_window (CtkWidget * widget, cairo_t * cr, gpointer d
 
 #define SHELL_WINDOW_BORDER_WIDTH 6
 
-G_DEFINE_TYPE (ShellWindow, shell_window, GTK_TYPE_FRAME);
+G_DEFINE_TYPE (ShellWindow, shell_window, CTK_TYPE_FRAME);
 
 static void
 shell_window_class_init (ShellWindowClass * klass)
@@ -52,23 +52,23 @@ shell_window_new (AppShellData * app_data)
 {
 	ShellWindow *window = g_object_new (SHELL_WINDOW_TYPE, NULL);
 
-	ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-	ctk_frame_set_shadow_type(GTK_FRAME(window), GTK_SHADOW_NONE);
+	ctk_widget_set_app_paintable (CTK_WIDGET (window), TRUE);
+	ctk_frame_set_shadow_type(CTK_FRAME(window), CTK_SHADOW_NONE);
 
-	window->_hbox = GTK_BOX (ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0));
-	ctk_container_add (GTK_CONTAINER (window), GTK_WIDGET (window->_hbox));
+	window->_hbox = CTK_BOX (ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0));
+	ctk_container_add (CTK_CONTAINER (window), CTK_WIDGET (window->_hbox));
 
 	g_signal_connect (G_OBJECT (window), "draw", G_CALLBACK (shell_window_paint_window),
 		NULL);
 
-/* FIXME add some replacement for GTK+3, or just remove this code? */
+/* FIXME add some replacement for CTK+3, or just remove this code? */
 #if 0
 	window->resize_handler_id =
 		g_signal_connect (G_OBJECT (window), "size-request",
 		G_CALLBACK (shell_window_handle_size_request), app_data);
 #endif
 
-	return GTK_WIDGET (window);
+	return CTK_WIDGET (window);
 }
 
 void
@@ -93,7 +93,7 @@ shell_window_handle_size_request (CtkWidget * widget, CtkRequisition * requisiti
 	gint height;
 	CtkRequisition child_requisiton;
 
-	ctk_widget_get_preferred_size (GTK_WIDGET (APP_RESIZER (app_data->category_layout)->child), &child_requisiton, NULL);
+	ctk_widget_get_preferred_size (CTK_WIDGET (APP_RESIZER (app_data->category_layout)->child), &child_requisiton, NULL);
 
 	requisition->width += child_requisiton.width;
 
@@ -111,19 +111,19 @@ shell_window_handle_size_request (CtkWidget * widget, CtkRequisition * requisiti
 void
 shell_window_set_contents (ShellWindow * shell, CtkWidget * left_pane, CtkWidget * right_pane)
 {
-	shell->_left_pane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	ctk_widget_set_margin_top (GTK_WIDGET (shell->_left_pane), 15);
-	ctk_widget_set_margin_bottom (GTK_WIDGET (shell->_left_pane), 15);
-	ctk_widget_set_margin_start (GTK_WIDGET (shell->_left_pane), 15);
-	ctk_widget_set_margin_end (GTK_WIDGET (shell->_left_pane), 15);
+	shell->_left_pane = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+	ctk_widget_set_margin_top (CTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_bottom (CTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_start (CTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_end (CTK_WIDGET (shell->_left_pane), 15);
 
-	shell->_right_pane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	shell->_right_pane = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 
 	ctk_box_pack_start (shell->_hbox, shell->_left_pane, FALSE, FALSE, 0);
 	ctk_box_pack_start (shell->_hbox, shell->_right_pane, TRUE, TRUE, 0);	/* this one takes any extra space */
 
-	ctk_container_add (GTK_CONTAINER (shell->_left_pane), left_pane);
-	ctk_container_add (GTK_CONTAINER (shell->_right_pane), right_pane);
+	ctk_container_add (CTK_CONTAINER (shell->_left_pane), left_pane);
+	ctk_container_add (CTK_CONTAINER (shell->_right_pane), right_pane);
 }
 
 gboolean
@@ -141,7 +141,7 @@ shell_window_paint_window (CtkWidget * widget, cairo_t * cr, gpointer data)
 		ctk_widget_get_style (widget),
 		cr,
 		ctk_widget_get_state (widget),
-		GTK_SHADOW_NONE,
+		CTK_SHADOW_NONE,
 		widget,
 		"",
 		allocation.x,

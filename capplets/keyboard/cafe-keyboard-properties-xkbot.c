@@ -114,7 +114,7 @@ xkb_options_expander_highlight (void)
 		    g_strconcat (counter >
 				 0 ? "<span weight=\"bold\">" : "<span>",
 				 utf_group_name, "</span>", NULL);
-		ctk_expander_set_label (GTK_EXPANDER (current_expander),
+		ctk_expander_set_label (CTK_EXPANDER (current_expander),
 					titlemarkup);
 		g_free (titlemarkup);
 	}
@@ -184,7 +184,7 @@ static gboolean
 option_focused_cb (CtkWidget * widget, GdkEventFocus * event,
 		   gpointer data)
 {
-	CtkScrolledWindow *win = GTK_SCROLLED_WINDOW (data);
+	CtkScrolledWindow *win = CTK_SCROLLED_WINDOW (data);
 	CtkAllocation alloc;
 	CtkAdjustment *adj;
 
@@ -202,7 +202,7 @@ option_toggled_cb (CtkWidget * checkbutton, gpointer data)
 {
 	gpointer optionID =
 	    g_object_get_data (G_OBJECT (checkbutton), OPTION_ID_PROP);
-	if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (checkbutton)))
+	if (ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (checkbutton)))
 		xkb_options_select (optionID);
 	else
 		xkb_options_deselect (optionID);
@@ -235,7 +235,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 			option_check =
 			    ctk_radio_button_new_with_label
 			    (current_radio_group, _("Default"));
-			ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+			ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON
 						      (option_check),
 						      TRUE);
 			/* Make option name underscore -
@@ -247,7 +247,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 			    g_slist_append (option_checks_list,
 					    option_check);
 			current_radio_group =
-			    ctk_radio_button_get_group (GTK_RADIO_BUTTON
+			    ctk_radio_button_get_group (CTK_RADIO_BUTTON
 							(option_check));
 			current_none_radio = option_check;
 
@@ -259,7 +259,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 		    ctk_radio_button_new_with_label (current_radio_group,
 						     utf_option_name);
 		current_radio_group =
-		    ctk_radio_button_get_group (GTK_RADIO_BUTTON
+		    ctk_radio_button_get_group (CTK_RADIO_BUTTON
 						(option_check));
 		g_object_set_data (G_OBJECT (option_check), "NoneRadio",
 				   current_none_radio);
@@ -267,7 +267,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 
 	initial_state = xkb_options_is_selected (full_option_name);
 
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (option_check),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (option_check),
 				      initial_state);
 
 	g_object_set_data_full (G_OBJECT (option_check), OPTION_ID_PROP,
@@ -317,7 +317,7 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 	    g_strconcat ("<span>", utf_group_name, "</span>", NULL);
 
 	current_expander = ctk_expander_new (titlemarkup);
-	ctk_expander_set_use_markup (GTK_EXPANDER (current_expander),
+	ctk_expander_set_use_markup (CTK_EXPANDER (current_expander),
 				     TRUE);
 	g_object_set_data_full (G_OBJECT (current_expander),
 				"utfGroupName", utf_group_name, g_free);
@@ -325,15 +325,15 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 				g_strdup (config_item->name), g_free);
 
 	g_free (titlemarkup);
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_widget_set_halign (vbox, GTK_ALIGN_FILL);
-	ctk_widget_set_valign (vbox, GTK_ALIGN_START);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_set_halign (vbox, CTK_ALIGN_FILL);
+	ctk_widget_set_valign (vbox, CTK_ALIGN_START);
 	ctk_widget_set_hexpand (vbox, TRUE);
 	ctk_widget_set_vexpand (vbox, TRUE);
 	ctk_widget_set_margin_top (vbox, 6);
 	ctk_widget_set_margin_bottom (vbox, 12);
 	ctk_widget_set_margin_start (vbox, 12);
-	ctk_container_add (GTK_CONTAINER (current_expander), vbox);
+	ctk_container_add (CTK_CONTAINER (current_expander), vbox);
 
 	current_multi_select = (gboolean) allow_multiple_selection;
 	current_radio_group = NULL;
@@ -351,8 +351,8 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 	    g_slist_sort (option_checks_list,
 			  (GCompareFunc) xkb_option_checks_compare);
 	while (option_checks_list) {
-		option_check = GTK_WIDGET (option_checks_list->data);
-		ctk_box_pack_start (GTK_BOX (vbox), option_check, TRUE, TRUE, 0);
+		option_check = CTK_WIDGET (option_checks_list->data);
+		ctk_box_pack_start (CTK_BOX (vbox), option_check, TRUE, TRUE, 0);
 		option_checks_list = option_checks_list->next;
 	}
 	/* free it */
@@ -408,8 +408,8 @@ xkb_options_load_options (CtkBuilder * dialog)
 	g_object_set_data (G_OBJECT (dialog), EXPANDERS_PROP,
 			   expanders_list);
 	while (expanders_list) {
-		expander = GTK_WIDGET (expanders_list->data);
-		ctk_box_pack_start (GTK_BOX (opts_vbox), expander, FALSE,
+		expander = CTK_WIDGET (expanders_list->data);
+		ctk_box_pack_start (CTK_BOX (opts_vbox), expander, FALSE,
 				    FALSE, 0);
 		expanders_list = expanders_list->next;
 	}
@@ -421,11 +421,11 @@ static void
 chooser_response_cb (CtkDialog * dialog, gint response, gpointer data)
 {
 	switch (response) {
-	case GTK_RESPONSE_HELP:
-		capplet_help (GTK_WINDOW (dialog),
+	case CTK_RESPONSE_HELP:
+		capplet_help (CTK_WINDOW (dialog),
 			      "prefs-keyboard#prefs-keyboard-layoutoptions");
 		break;
-	case GTK_RESPONSE_CLOSE:{
+	case CTK_RESPONSE_CLOSE:{
 			/* just cleanup */
 			GSList *expanders_list =
 			    g_object_get_data (G_OBJECT (dialog),
@@ -434,7 +434,7 @@ chooser_response_cb (CtkDialog * dialog, gint response, gpointer data)
 					   EXPANDERS_PROP, NULL);
 			g_slist_free (expanders_list);
 
-			ctk_widget_destroy (GTK_WIDGET (dialog));
+			ctk_widget_destroy (CTK_WIDGET (dialog));
 			chooser_dialog = NULL;
 		}
 		break;
@@ -453,15 +453,15 @@ xkb_options_popup_dialog (CtkBuilder * dialog)
 	                               NULL);
 
 	chooser = CWID ("xkb_options_dialog");
-	ctk_window_set_transient_for (GTK_WINDOW (chooser),
-				      GTK_WINDOW (WID
+	ctk_window_set_transient_for (CTK_WINDOW (chooser),
+				      CTK_WINDOW (WID
 						  ("keyboard_dialog")));
 	xkb_options_load_options (chooser_dialog);
 
 	g_signal_connect (chooser, "response",
 			  G_CALLBACK (chooser_response_cb), dialog);
 
-	ctk_dialog_run (GTK_DIALOG (chooser));
+	ctk_dialog_run (CTK_DIALOG (chooser));
 }
 
 /* Update selected option counters for a group-bound expander */
@@ -492,7 +492,7 @@ xkb_options_update (GSettings * settings, gchar * key, CtkBuilder * dialog)
 				       EXPANDERS_PROP);
 		while (expanders_list) {
 			current_expander =
-			    GTK_WIDGET (expanders_list->data);
+			    CTK_WIDGET (expanders_list->data);
 			gchar *group_id =
 			    g_object_get_data (G_OBJECT (current_expander),
 					       "groupId");

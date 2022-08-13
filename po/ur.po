@@ -1376,10 +1376,10 @@ msgstr "_سب پر لکھیں"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"یہ تھیم اس طرح سے نظر نہیں آرہی جس طرح اسے نظر آنا چاہیے کیونکہ درکار GTK+ "
+"یہ تھیم اس طرح سے نظر نہیں آرہی جس طرح اسے نظر آنا چاہیے کیونکہ درکار CTK+ "
 "تھیم '%s' نصب نہیں ہے."
 
 #: capplets/common/cafe-theme-info.c:1588

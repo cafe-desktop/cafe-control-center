@@ -1377,11 +1377,11 @@ msgstr "Skrifa_yfir allt"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
 "Þetta útlit kemur ekki út eins og þú vilt vegna þess að það er ekki búið að "
-"setja GTK+ útlitið ‚%s‘ upp."
+"setja CTK+ útlitið ‚%s‘ upp."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

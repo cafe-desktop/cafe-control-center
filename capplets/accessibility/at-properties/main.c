@@ -52,17 +52,17 @@ create_builder (void)
         GDesktopAppInfo *app_info = NULL;
 
         object = ctk_builder_get_object (builder, "at_enable_image");
-        ctk_image_set_from_file (GTK_IMAGE (object),
+        ctk_image_set_from_file (CTK_IMAGE (object),
                                  PIXMAPDIR "/at-startup.png");
 
         object = ctk_builder_get_object (builder,
                                          "at_applications_image");
-        ctk_image_set_from_file (GTK_IMAGE (object),
+        ctk_image_set_from_file (CTK_IMAGE (object),
                                  PIXMAPDIR "/at-support.png");
         app_info = get_desktop_app_info_from_dm ();
         if (app_info == NULL) {
             object = ctk_builder_get_object (builder, "login_button");
-            ctk_widget_hide (GTK_WIDGET (object));
+            ctk_widget_hide (CTK_WIDGET (object));
         } else {
             g_object_unref (app_info);
         }
@@ -167,10 +167,10 @@ do_logout (void)
 static void
 cb_dialog_response (CtkDialog *dialog, gint response_id)
 {
-	if (response_id == GTK_RESPONSE_HELP)
-		capplet_help (GTK_WINDOW (dialog),
+	if (response_id == CTK_RESPONSE_HELP)
+		capplet_help (CTK_WINDOW (dialog),
 			      "goscustaccess-11");
-	else if (response_id == GTK_RESPONSE_CLOSE || response_id == GTK_RESPONSE_DELETE_EVENT)
+	else if (response_id == CTK_RESPONSE_CLOSE || response_id == CTK_RESPONSE_DELETE_EVENT)
 		ctk_main_quit ();
 	else {
 	        g_message ("CLOSE AND LOGOUT!");
@@ -188,7 +188,7 @@ close_logout_update (CtkBuilder *builder)
 	GObject *btn = ctk_builder_get_object (builder,
 					       "at_close_logout_button");
 
-	ctk_widget_set_sensitive (GTK_WIDGET (btn), initial_state != curr_state);
+	ctk_widget_set_sensitive (CTK_WIDGET (btn), initial_state != curr_state);
 	g_object_unref (settings);
 }
 
@@ -210,7 +210,7 @@ at_enable_update (GSettings *settings,
 	gboolean is_enabled = g_settings_get_boolean (settings, ACCESSIBILITY_KEY);
 	GObject *btn = ctk_builder_get_object (builder, "at_enable_toggle");
 
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (btn),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (btn),
 				      is_enabled);
 }
 
@@ -257,7 +257,7 @@ setup_dialog (CtkBuilder *builder, GSettings *settings)
 	g_signal_connect (object, "clicked",
 			  G_CALLBACK (cb_login_preferences), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder,
+	widget = CTK_WIDGET (ctk_builder_get_object (builder,
 						     "at_properties_dialog"));
 	capplet_set_icon (widget, "preferences-desktop-accessibility");
 

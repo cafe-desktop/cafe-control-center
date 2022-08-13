@@ -42,16 +42,16 @@ capplet_error_dialog (CtkWindow *parent, char const *msg, GError *err)
 	if (err != NULL) {
 		CtkWidget *dialog;
 
-		dialog = ctk_message_dialog_new (GTK_WINDOW (parent),
-			GTK_DIALOG_DESTROY_WITH_PARENT,
-			GTK_MESSAGE_ERROR,
-			GTK_BUTTONS_CLOSE,
+		dialog = ctk_message_dialog_new (CTK_WINDOW (parent),
+			CTK_DIALOG_DESTROY_WITH_PARENT,
+			CTK_MESSAGE_ERROR,
+			CTK_BUTTONS_CLOSE,
 			msg, err->message);
 
 		g_signal_connect (G_OBJECT (dialog),
 			"response",
 			G_CALLBACK (ctk_widget_destroy), NULL);
-		ctk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_resizable (CTK_WINDOW (dialog), FALSE);
 		ctk_widget_show (dialog);
 		g_error_free (err);
 	}
@@ -99,7 +99,7 @@ capplet_set_icon (CtkWidget *window, char const *icon_file_name)
 {
 	/* Make sure that every window gets an icon */
 	ctk_window_set_default_icon_name (icon_file_name);
-	ctk_window_set_icon_name (GTK_WINDOW (window), icon_file_name);
+	ctk_window_set_icon_name (CTK_WINDOW (window), icon_file_name);
 }
 
 static gboolean
@@ -173,7 +173,7 @@ capplet_file_delete_recursive (GFile *file, GError **error)
 gboolean
 capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow *window)
 {
-    CtkNotebook *notebook = GTK_NOTEBOOK (widget);
+    CtkNotebook *notebook = CTK_NOTEBOOK (widget);
     CtkWidget *child, *event_widget, *action_widget;
 
     child = ctk_notebook_get_nth_page (notebook, ctk_notebook_get_current_page (notebook));
@@ -189,11 +189,11 @@ capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, C
         return FALSE;
 
     /* And also from the action widgets */
-    action_widget = ctk_notebook_get_action_widget (notebook, GTK_PACK_START);
+    action_widget = ctk_notebook_get_action_widget (notebook, CTK_PACK_START);
     if (event_widget == action_widget ||
         (action_widget != NULL && ctk_widget_is_ancestor (event_widget, action_widget)))
         return FALSE;
-    action_widget = ctk_notebook_get_action_widget (notebook, GTK_PACK_END);
+    action_widget = ctk_notebook_get_action_widget (notebook, CTK_PACK_END);
     if (event_widget == action_widget ||
         (action_widget != NULL && ctk_widget_is_ancestor (event_widget, action_widget)))
         return FALSE;
@@ -209,15 +209,15 @@ capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, C
         break;
     case GDK_SCROLL_SMOOTH:
         switch (ctk_notebook_get_tab_pos (notebook)) {
-            case GTK_POS_LEFT:
-            case GTK_POS_RIGHT:
+            case CTK_POS_LEFT:
+            case CTK_POS_RIGHT:
                 if (event->delta_y > 0)
                     ctk_notebook_next_page (notebook);
                 else if (event->delta_y < 0)
                     ctk_notebook_prev_page (notebook);
                 break;
-            case GTK_POS_TOP:
-            case GTK_POS_BOTTOM:
+            case CTK_POS_TOP:
+            case CTK_POS_BOTTOM:
                 if (event->delta_x > 0)
                     ctk_notebook_next_page (notebook);
                 else if (event->delta_x < 0)

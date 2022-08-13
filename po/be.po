@@ -1383,10 +1383,10 @@ msgstr "Перазапісаць _усё"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Гэтая тэма не будзе выглядаць належным чынам, бо патрабная ёй тэма GTK+ '%s'"
+"Гэтая тэма не будзе выглядаць належным чынам, бо патрабная ёй тэма CTK+ '%s'"
 " не ўсталявана."
 
 #: capplets/common/cafe-theme-info.c:1588

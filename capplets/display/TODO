@@ -19,7 +19,7 @@ Here is the OS X Display menu:
 
 	Color LCD means "laptop panel".
 
-- GTK+ work.
+- CTK+ work.
 
 	Allow applications to be notified whenever monitors are added
 	or removed. Allow applications to get more detailed
@@ -117,7 +117,7 @@ Havoc:
 > physical monitors) as one logical monitor.
 
 > The problem is that the setting for "ignore Xinerama" or "don't be
-> Xinerama aware" should be global to the desktop (GTK, all apps, WM)
+> Xinerama aware" should be global to the desktop (CTK, all apps, WM)
 > and should not be a window manager setting.
 
 > Bryan thought people who wanted non-Xinerama-aware should just use
@@ -128,11 +128,11 @@ Havoc:
 > It should not be a croma or Compiz option, but in some way an X
 > option in short. The implementation could be either an X server
 > feature or an EWMH hint or whatever, but it should be controlled by
-> the monitor config dialog and used by apps, GTK, etc. in addition to
+> the monitor config dialog and used by apps, CTK, etc. in addition to
 > used by the WM.
 
 > People tend to insist this should be a WM option, but that's just
-> busted, since GTK and apps also have Xinerama-awareness features.
+> busted, since CTK and apps also have Xinerama-awareness features.
 
 
 ******************* EDID
@@ -451,7 +451,7 @@ Structure of login time program:
 
 ===
 
-XRRGetScreenResources() is a roundtrip and very slow (~0.5 s). GTK+
+XRRGetScreenResources() is a roundtrip and very slow (~0.5 s). CTK+
 needs to keep information up-to-date by tracking events rather than
 calling this function. In fact we probably can't call it at all unless
 its performance improves significantly.
@@ -647,7 +647,7 @@ Server work:
       should say that BadMatch will be returned if the outputs aren't
       clones.
 
-GTK+ patch is in now.
+CTK+ patch is in now.
 
 === Add helper function
 

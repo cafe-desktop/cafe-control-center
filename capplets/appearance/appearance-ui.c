@@ -40,7 +40,7 @@ set_have_icons (AppearanceData *data, gboolean value)
     const char **name;
 
     for (name = menu_item_names; *name != NULL; name++) {
-        CtkImageMenuItem *item = GTK_IMAGE_MENU_ITEM (appearance_capplet_get_widget (data, *name));
+        CtkImageMenuItem *item = CTK_IMAGE_MENU_ITEM (appearance_capplet_get_widget (data, *name));
         CtkWidget *image;
 
         if (value) {
@@ -88,7 +88,7 @@ ui_init (AppearanceData *data)
     /* FIXME maybe just remove that stuff from .ui file */
     CtkWidget* container = appearance_capplet_get_widget(data, "vbox24");
 
-    // Remove menu accels and toolbar style toggles for new GTK versions
+    // Remove menu accels and toolbar style toggles for new CTK versions
     ctk_container_remove((CtkContainer *) container,
                          appearance_capplet_get_widget(data, "menu_accel_toggle"));
     ctk_container_remove((CtkContainer *) container,

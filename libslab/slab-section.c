@@ -20,7 +20,7 @@
 
 #include "slab-section.h"
 
-G_DEFINE_TYPE (SlabSection, slab_section, GTK_TYPE_BOX)
+G_DEFINE_TYPE (SlabSection, slab_section, CTK_TYPE_BOX)
 
 static void slab_section_finalize (GObject *);
 
@@ -51,16 +51,16 @@ slab_section_set_title_color (CtkWidget * widget)
 	switch (SLAB_SECTION (widget)->style)
 	{
 	case Style1:
-		ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-			&ctk_widget_get_style (widget)->bg[GTK_STATE_SELECTED]);
+		ctk_widget_modify_fg (SLAB_SECTION (widget)->title, CTK_STATE_NORMAL,
+			&ctk_widget_get_style (widget)->bg[CTK_STATE_SELECTED]);
 		break;
 	case Style2:
 		if (SLAB_SECTION (widget)->selected)
-			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-				&ctk_widget_get_style (widget)->dark[GTK_STATE_SELECTED]);
+			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, CTK_STATE_NORMAL,
+				&ctk_widget_get_style (widget)->dark[CTK_STATE_SELECTED]);
 		else
-			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-				&ctk_widget_get_style (widget)->text[GTK_STATE_INSENSITIVE]);
+			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, CTK_STATE_NORMAL,
+				&ctk_widget_get_style (widget)->text[CTK_STATE_INSENSITIVE]);
 		break;
 	default:
 		g_assert_not_reached ();
@@ -85,7 +85,7 @@ slab_section_style_set (CtkWidget * widget, CtkStyle * prev_style, gpointer user
 gboolean
 slab_section_expose_event (CtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
-	gdk_draw_rectangle (widget->window, widget->style->light_gc[GTK_STATE_SELECTED], TRUE,
+	gdk_draw_rectangle (widget->window, widget->style->light_gc[CTK_STATE_SELECTED], TRUE,
 		widget->allocation.x, widget->allocation.y,
 		widget->allocation.width + 40, widget->allocation.height);
 
@@ -112,7 +112,7 @@ slab_section_set_selected (SlabSection * section, gboolean selected)
 	   }
 	 */
 
-	slab_section_set_title_color (GTK_WIDGET (section));
+	slab_section_set_title_color (CTK_WIDGET (section));
 }
 
 CtkWidget *
@@ -122,41 +122,41 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	gchar * widget_theming_name;
 
 	section = g_object_new (SLAB_SECTION_TYPE, NULL);
-	ctk_orientable_set_orientation (GTK_ORIENTABLE (section), GTK_ORIENTATION_VERTICAL);
-	ctk_box_set_homogeneous (GTK_BOX (section), FALSE);
-	ctk_box_set_spacing (GTK_BOX (section), 0);
+	ctk_orientable_set_orientation (CTK_ORIENTABLE (section), CTK_ORIENTATION_VERTICAL);
+	ctk_box_set_homogeneous (CTK_BOX (section), FALSE);
+	ctk_box_set_spacing (CTK_BOX (section), 0);
 	section->style = style;
 	section->selected = FALSE;
 
-	section->childbox = GTK_BOX (ctk_box_new (GTK_ORIENTATION_VERTICAL, 10));
+	section->childbox = CTK_BOX (ctk_box_new (CTK_ORIENTATION_VERTICAL, 10));
 	switch (style)
 	{
 	case Style1:
 		widget_theming_name = "slab_section_style1";
 		break;
 	case Style2:
-		ctk_widget_set_margin_top (GTK_WIDGET (section->childbox), SLAB_TOP_PADDING);
-		ctk_widget_set_margin_bottom (GTK_WIDGET (section->childbox), SLAB_BOTTOM_PADDING);
-		ctk_widget_set_margin_start (GTK_WIDGET (section->childbox), SLAB_LEFT_PADDING);
-		ctk_widget_set_margin_end (GTK_WIDGET (section->childbox), 0);
+		ctk_widget_set_margin_top (CTK_WIDGET (section->childbox), SLAB_TOP_PADDING);
+		ctk_widget_set_margin_bottom (CTK_WIDGET (section->childbox), SLAB_BOTTOM_PADDING);
+		ctk_widget_set_margin_start (CTK_WIDGET (section->childbox), SLAB_LEFT_PADDING);
+		ctk_widget_set_margin_end (CTK_WIDGET (section->childbox), 0);
 		widget_theming_name = "slab_section_style2";
 		break;
 	default:
 		g_assert_not_reached ();
 	}
-	ctk_box_pack_start (GTK_BOX (section), GTK_WIDGET (section->childbox), TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (section), CTK_WIDGET (section->childbox), TRUE, TRUE, 0);
 
 	section->title = ctk_label_new (title_markup);
-	ctk_label_set_use_markup (GTK_LABEL (section->title), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (section->title), 0.0);
+	ctk_label_set_use_markup (CTK_LABEL (section->title), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (section->title), 0.0);
 
-	ctk_widget_set_name (GTK_WIDGET (section), widget_theming_name);
+	ctk_widget_set_name (CTK_WIDGET (section), widget_theming_name);
 	g_signal_connect (G_OBJECT (section), "style-set", G_CALLBACK (slab_section_style_set),
 		NULL);
 
 	ctk_box_pack_start (section->childbox, section->title, FALSE, FALSE, 0);
 
-	return GTK_WIDGET (section);
+	return CTK_WIDGET (section);
 }
 
 CtkWidget *
@@ -178,7 +178,7 @@ slab_section_set_title (SlabSection * section, const gchar * title)
 {
 	gchar *markup = g_strdup_printf ("<span size=\"large\">%s</span>", title);
 
-	ctk_label_set_markup (GTK_LABEL (section->title), markup);
+	ctk_label_set_markup (CTK_LABEL (section->title), markup);
 
 	g_free (markup);
 }

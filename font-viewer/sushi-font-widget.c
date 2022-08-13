@@ -62,7 +62,7 @@ struct _SushiFontWidgetPrivate {
 static GParamSpec *properties[NUM_PROPERTIES] = { NULL, };
 static guint signals[NUM_SIGNALS] = { 0, };
 
-G_DEFINE_TYPE_WITH_PRIVATE (SushiFontWidget, sushi_font_widget, GTK_TYPE_DRAWING_AREA);
+G_DEFINE_TYPE_WITH_PRIVATE (SushiFontWidget, sushi_font_widget, CTK_TYPE_DRAWING_AREA);
 
 #define SURFACE_SIZE 4
 #define SECTION_SPACING 16
@@ -91,7 +91,7 @@ draw_string (SushiFontWidget *self,
   CtkTextDirection text_dir;
   gint pos_x;
 
-  text_dir = ctk_widget_get_direction (GTK_WIDGET (self));
+  text_dir = ctk_widget_get_direction (CTK_WIDGET (self));
 
   cairo_font_extents (cr, &font_extents);
   cairo_text_extents (cr, text, &extents);
@@ -99,10 +99,10 @@ draw_string (SushiFontWidget *self,
   if (pos_y != NULL)
     *pos_y += font_extents.ascent + font_extents.descent +
       extents.y_advance + LINE_SPACING / 2;
-  if (text_dir == GTK_TEXT_DIR_LTR)
+  if (text_dir == CTK_TEXT_DIR_LTR)
     pos_x = padding.left;
   else {
-    pos_x = ctk_widget_get_allocated_width (GTK_WIDGET (self)) -
+    pos_x = ctk_widget_get_allocated_width (CTK_WIDGET (self)) -
       extents.x_advance - padding.right;
   }
 
@@ -567,7 +567,7 @@ font_face_async_ready_cb (GObject *object,
 
   build_strings_for_face (self);
 
-  ctk_widget_queue_resize (GTK_WIDGET (self));
+  ctk_widget_queue_resize (CTK_WIDGET (self));
   g_signal_emit (self, signals[LOADED], 0);
 }
 
@@ -594,8 +594,8 @@ sushi_font_widget_init (SushiFontWidget *self)
   if (err != FT_Err_Ok)
     g_error ("Unable to initialize FreeType");
 
-  ctk_style_context_add_class (ctk_widget_get_style_context (GTK_WIDGET (self)),
-                               GTK_STYLE_CLASS_VIEW);
+  ctk_style_context_add_class (ctk_widget_get_style_context (CTK_WIDGET (self)),
+                               CTK_STYLE_CLASS_VIEW);
 }
 
 static void
@@ -678,7 +678,7 @@ static void
 sushi_font_widget_class_init (SushiFontWidgetClass *klass)
 {
   GObjectClass *oclass = G_OBJECT_CLASS (klass);
-  CtkWidgetClass *wclass = GTK_WIDGET_CLASS (klass);
+  CtkWidgetClass *wclass = CTK_WIDGET_CLASS (klass);
 
   oclass->finalize = sushi_font_widget_finalize;
   oclass->set_property = sushi_font_widget_set_property;
