@@ -421,7 +421,7 @@ dpi_from_pixels_and_mm (int pixels, int mm)
 static double
 get_dpi_from_x_server (void)
 {
-  GdkScreen  *screen;
+  CdkScreen  *screen;
   double dpi;
 
   screen = cdk_screen_get_default ();
@@ -454,7 +454,7 @@ static void
 dpi_load (GSettings     *settings,
 	  CtkSpinButton *spinner)
 {
-  GdkScreen *screen;
+  CdkScreen *screen;
   gint scale;
   gdouble dpi;
 
@@ -493,7 +493,7 @@ dpi_changed (GSettings      *settings,
 }
 
 static void
-monitors_changed (GdkScreen      *screen,
+monitors_changed (CdkScreen      *screen,
 		  AppearanceData *data)
 {
   CtkWidget *widget;
@@ -514,7 +514,7 @@ dpi_value_changed (CtkSpinButton  *spinner,
    * received from GSettings, this may cause mildly strange effects.
    */
   if (!in_change) {
-    GdkScreen *screen;
+    CdkScreen *screen;
     CtkWidget *toggle;
     gint scale;
     gdouble new_dpi;

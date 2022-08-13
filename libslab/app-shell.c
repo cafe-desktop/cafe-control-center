@@ -65,9 +65,9 @@ static void generate_new_apps (AppShellData * app_data);
 static void insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * desktop_item,
 	AppShellData * app_data);
 
-static gboolean main_keypress_callback (CtkWidget * widget, GdkEventKey * event,
+static gboolean main_keypress_callback (CtkWidget * widget, CdkEventKey * event,
 	AppShellData * app_data);
-static gboolean main_delete_callback (CtkWidget * widget, GdkEvent * event,
+static gboolean main_delete_callback (CtkWidget * widget, CdkEvent * event,
 	AppShellData * app_data);
 static void application_launcher_clear_search_bar (AppShellData * app_data);
 static void launch_selected_app (AppShellData * app_data);
@@ -191,7 +191,7 @@ launch_selected_app (AppShellData * app_data)
 }
 
 static gboolean
-main_keypress_callback (CtkWidget * widget, GdkEventKey * event, AppShellData * app_data)
+main_keypress_callback (CtkWidget * widget, CdkEventKey * event, AppShellData * app_data)
 {
 	GApplication *app;
 
@@ -229,7 +229,7 @@ main_keypress_callback (CtkWidget * widget, GdkEventKey * event, AppShellData * 
 }
 
 static gboolean
-main_delete_callback (CtkWidget * widget, GdkEvent * event, AppShellData * app_data)
+main_delete_callback (CtkWidget * widget, CdkEvent * event, AppShellData * app_data)
 {
 	GApplication *app;
 

@@ -158,7 +158,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
                                CtkAllocation *allocation)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
-    GdkPixbuf *pixbuf;
+    CdkPixbuf *pixbuf;
 
     if (map->background)
         g_object_unref (map->background);
@@ -190,9 +190,9 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
 static void
 cc_timezone_map_realize (CtkWidget *widget)
 {
-    GdkWindowAttr attr = { 0, };
+    CdkWindowAttr attr = { 0, };
     CtkAllocation allocation;
-    GdkWindow *window;
+    CdkWindow *window;
 
     ctk_widget_get_allocation (widget, &allocation);
 
@@ -326,7 +326,7 @@ cc_timezone_map_draw (CtkWidget *widget,
                       cairo_t   *cr)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
-    g_autoptr(GdkPixbuf) orig_hilight = NULL;
+    g_autoptr(CdkPixbuf) orig_hilight = NULL;
     CtkAllocation alloc;
     g_autofree gchar *file = NULL;
     g_autoptr(GError) err = NULL;
@@ -362,7 +362,7 @@ cc_timezone_map_draw (CtkWidget *widget,
     }
     else
     {
-        g_autoptr(GdkPixbuf) hilight = NULL;
+        g_autoptr(CdkPixbuf) hilight = NULL;
 
         hilight = cdk_pixbuf_scale_simple (orig_hilight, alloc.width,
                                            alloc.height, GDK_INTERP_BILINEAR);
@@ -394,15 +394,15 @@ cc_timezone_map_draw (CtkWidget *widget,
 static void
 update_cursor (CtkWidget *widget)
 {
-    GdkWindow *window;
-    g_autoptr(GdkCursor) cursor = NULL;
+    CdkWindow *window;
+    g_autoptr(CdkCursor) cursor = NULL;
 
     if (!ctk_widget_get_realized (widget))
         return;
 
     if (ctk_widget_is_sensitive (widget))
     {
-        GdkDisplay *display;
+        CdkDisplay *display;
         display = ctk_widget_get_display (widget);
         cursor = cdk_cursor_new_for_display (display, GDK_HAND2);
     }
@@ -449,7 +449,7 @@ set_location (TimezoneMap   *map,
 
 static gboolean
 button_press_event (TimezoneMap    *map,
-                    GdkEventButton *event)
+                    CdkEventButton *event)
 {
     gint x, y;
     guchar r, g, b, a;

@@ -64,12 +64,12 @@ struct FooScrollAreaClass
 				    CtkAdjustment *vadjustment);
 
     void (*viewport_changed) (FooScrollArea *scroll_area,
-			      GdkRectangle  *old_viewport,
-			      GdkRectangle  *new_viewport);
+			      CdkRectangle  *old_viewport,
+			      CdkRectangle  *new_viewport);
 
     void (*paint) (FooScrollArea *scroll_area,
 		   cairo_t       *cr,
-		   GdkRectangle  *extents,
+		   CdkRectangle  *extents,
 		   cairo_region_t *region);
 };
 
@@ -95,7 +95,7 @@ void	      foo_scroll_area_set_viewport_pos (FooScrollArea  *scroll_area,
 						int		x,
 						int		y);
 void	      foo_scroll_area_get_viewport (FooScrollArea *scroll_area,
-					    GdkRectangle  *viewport);
+					    CdkRectangle  *viewport);
 void          foo_scroll_area_add_input_from_stroke (FooScrollArea           *scroll_area,
 						     cairo_t	                *cr,
 						     FooScrollAreaEventFunc   func,

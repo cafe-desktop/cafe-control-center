@@ -28,7 +28,7 @@
 extern "C" {
 #endif
 
-/* Where a value is also in GdkModifierType we coincide,
+/* Where a value is also in CdkModifierType we coincide,
  * otherwise we don't overlap.
  */
 typedef enum
@@ -57,12 +57,12 @@ typedef enum
   EGG_VIRTUAL_NUM_LOCK_MASK = 1 << 24,
   EGG_VIRTUAL_SCROLL_LOCK_MASK = 1 << 25,
 
-  /* Also in GdkModifierType */
+  /* Also in CdkModifierType */
   EGG_VIRTUAL_SUPER_MASK = 1 << 26,
   EGG_VIRTUAL_HYPER_MASK = 1 << 27,
   EGG_VIRTUAL_META_MASK = 1 << 28,
 
-  /* Also in GdkModifierType */
+  /* Also in CdkModifierType */
   EGG_VIRTUAL_RELEASE_MASK  = 1 << 30,
 
   /*     28-31 24-27 20-23 16-19 12-15 8-11 4-7 0-3
@@ -76,11 +76,11 @@ gboolean egg_accelerator_parse_virtual        (const gchar            *accelerat
                                                guint                  *accelerator_key,
 					       guint                  *keycode,
                                                EggVirtualModifierType *accelerator_mods);
-void     egg_keymap_resolve_virtual_modifiers (GdkKeymap              *keymap,
+void     egg_keymap_resolve_virtual_modifiers (CdkKeymap              *keymap,
                                                EggVirtualModifierType  virtual_mods,
-                                               GdkModifierType        *concrete_mods);
-void     egg_keymap_virtualize_modifiers      (GdkKeymap              *keymap,
-                                               GdkModifierType         concrete_mods,
+                                               CdkModifierType        *concrete_mods);
+void     egg_keymap_virtualize_modifiers      (CdkKeymap              *keymap,
+                                               CdkModifierType         concrete_mods,
                                                EggVirtualModifierType *virtual_mods);
 
 gchar* egg_virtual_accelerator_name (guint                  accelerator_key,

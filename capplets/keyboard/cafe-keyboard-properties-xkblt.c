@@ -163,7 +163,7 @@ xkb_layouts_enable_disable_buttons (CtkBuilder * dialog)
 }
 
 static void
-xkb_layouts_dnd_data_get (CtkWidget * widget, GdkDragContext * dc,
+xkb_layouts_dnd_data_get (CtkWidget * widget, CdkDragContext * dc,
 			  CtkSelectionData * selection_data, guint info,
 			  guint t, CtkBuilder * dialog)
 {
@@ -177,7 +177,7 @@ xkb_layouts_dnd_data_get (CtkWidget * widget, GdkDragContext * dc,
 }
 
 static void
-xkb_layouts_dnd_data_received (CtkWidget * widget, GdkDragContext * dc,
+xkb_layouts_dnd_data_received (CtkWidget * widget, CdkDragContext * dc,
 			       gint x, gint y,
 			       CtkSelectionData * selection_data,
 			       guint info, guint t, CtkBuilder * dialog)

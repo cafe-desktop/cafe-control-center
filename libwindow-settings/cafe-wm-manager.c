@@ -237,7 +237,7 @@ void cafe_wm_manager_init(void)
 }
 
 static AvailableWindowManager*
-get_current_wm (GdkScreen *screen)
+get_current_wm (CdkScreen *screen)
 {
         AvailableWindowManager *current_wm;
         const char *name;
@@ -282,7 +282,7 @@ get_current_wm (GdkScreen *screen)
 }
 
 CafeWindowManager*
-cafe_wm_manager_get_current (GdkScreen *screen)
+cafe_wm_manager_get_current (CdkScreen *screen)
 {
         AvailableWindowManager *wm;
 
@@ -296,7 +296,7 @@ cafe_wm_manager_get_current (GdkScreen *screen)
 }
 
 gboolean
-cafe_wm_manager_spawn_config_tool_for_current (GdkScreen  *screen,
+cafe_wm_manager_spawn_config_tool_for_current (CdkScreen  *screen,
                                                 GError    **error)
 {
         AvailableWindowManager *wm;

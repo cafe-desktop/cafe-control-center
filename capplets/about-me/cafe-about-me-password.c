@@ -670,8 +670,8 @@ passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 {
 	CtkBuilder *dialog;
 	CtkWidget  *toplevel;
-	GdkCursor  *cursor = NULL;
-	GdkDisplay *display;
+	CdkCursor  *cursor = NULL;
+	CdkDisplay *display;
 
 	dialog = pdialog->ui;
 

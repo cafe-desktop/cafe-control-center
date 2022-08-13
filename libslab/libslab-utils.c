@@ -73,11 +73,11 @@ libslab_cafe_desktop_item_new_from_unknown_id (const gchar *id)
 /* Ugh, here we don't have knowledge of the screen that is being used.  So, do
  * what we can to find it.
  */
-GdkScreen *
+CdkScreen *
 libslab_get_current_screen (void)
 {
-	GdkEvent *event;
-	GdkScreen *screen = NULL;
+	CdkEvent *event;
+	CdkScreen *screen = NULL;
 
 	event = ctk_get_current_event ();
 	if (event) {

@@ -24,7 +24,7 @@ static void nameplate_tile_get_property (GObject *, guint, GValue *, GParamSpec 
 static void nameplate_tile_set_property (GObject *, guint, const GValue *, GParamSpec *);
 static GObject *nameplate_tile_constructor (GType, guint, GObjectConstructParam *);
 
-static void nameplate_tile_drag_begin (CtkWidget *, GdkDragContext *);
+static void nameplate_tile_drag_begin (CtkWidget *, CdkDragContext *);
 
 static void nameplate_tile_setup (NameplateTile *);
 
@@ -240,7 +240,7 @@ nameplate_tile_setup (NameplateTile *this)
 }
 
 static void
-nameplate_tile_drag_begin (CtkWidget * widget, GdkDragContext * context)
+nameplate_tile_drag_begin (CtkWidget * widget, CdkDragContext * context)
 {
 	NameplateTile *this = NAMEPLATE_TILE (widget);
 	CtkImage *image;

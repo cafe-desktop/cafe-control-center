@@ -111,7 +111,7 @@ typedef struct {
 	/* themes */
 	CtkListStore* theme_store;
 	CafeThemeMetaInfo* theme_custom;
-	GdkPixbuf* theme_icon;
+	CdkPixbuf* theme_icon;
 	CtkWidget* theme_save_dialog;
 	CtkWidget* theme_message_area;
 	CtkWidget* theme_message_label;
@@ -128,9 +128,9 @@ typedef struct {
 	gchar* revert_monospace_font;
 
 	/* style */
-	GdkPixbuf* ctk_theme_icon;
-	GdkPixbuf* window_theme_icon;
-	GdkPixbuf* icon_theme_icon;
+	CdkPixbuf* ctk_theme_icon;
+	CdkPixbuf* window_theme_icon;
+	CdkPixbuf* icon_theme_icon;
 	CtkWidget* style_message_area;
 	CtkWidget* style_message_label;
 	CtkWidget* style_install_button;

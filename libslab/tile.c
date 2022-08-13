@@ -46,15 +46,15 @@ static void tile_enter (CtkButton * widget);
 static void tile_leave (CtkButton * widget);
 static void tile_clicked (CtkButton *widget);
 
-static gboolean tile_focus_in (CtkWidget *, GdkEventFocus *);
-static gboolean tile_focus_out (CtkWidget *, GdkEventFocus *);
+static gboolean tile_focus_in (CtkWidget *, CdkEventFocus *);
+static gboolean tile_focus_out (CtkWidget *, CdkEventFocus *);
 static gboolean tile_draw (CtkWidget *, cairo_t *);
-static gboolean tile_button_release (CtkWidget *, GdkEventButton *);
-static gboolean tile_key_release (CtkWidget *, GdkEventKey *);
+static gboolean tile_button_release (CtkWidget *, CdkEventButton *);
+static gboolean tile_key_release (CtkWidget *, CdkEventKey *);
 static gboolean tile_popup_menu (CtkWidget *);
 
-static void tile_drag_begin (CtkWidget *, GdkDragContext *);
-static void tile_drag_data_get (CtkWidget *, GdkDragContext *, CtkSelectionData *, guint,
+static void tile_drag_begin (CtkWidget *, CdkDragContext *);
+static void tile_drag_data_get (CtkWidget *, CdkDragContext *, CtkSelectionData *, guint,
 guint);
 
 static void tile_tile_action_triggered (Tile *, TileEvent *, TileAction *);
@@ -319,7 +319,7 @@ tile_clicked (CtkButton * widget)
 }
 
 static gboolean
-tile_focus_in (CtkWidget * widget, GdkEventFocus * event)
+tile_focus_in (CtkWidget * widget, CdkEventFocus * event)
 {
 	ctk_widget_set_state_flags (widget, TILE_STATE_FOCUSED, TRUE);
 
@@ -327,7 +327,7 @@ tile_focus_in (CtkWidget * widget, GdkEventFocus * event)
 }
 
 static gboolean
-tile_focus_out (CtkWidget * widget, GdkEventFocus * event)
+tile_focus_out (CtkWidget * widget, CdkEventFocus * event)
 {
 	if (TILE (widget)->entered)
 		ctk_widget_set_state_flags (widget, TILE_STATE_ENTERED, TRUE);
@@ -357,7 +357,7 @@ tile_draw (CtkWidget * widget, cairo_t * cr)
 }
 
 static gboolean
-tile_button_release (CtkWidget * widget, GdkEventButton * event)
+tile_button_release (CtkWidget * widget, CdkEventButton * event)
 {
 	Tile *tile = TILE (widget);
 	TilePrivate *priv = tile_get_instance_private (tile);
@@ -396,7 +396,7 @@ tile_button_release (CtkWidget * widget, GdkEventButton * event)
 		                              widget,
 		                              GDK_GRAVITY_SOUTH_WEST,
 		                              GDK_GRAVITY_NORTH_WEST,
-		                              (const GdkEvent*) event);
+		                              (const CdkEvent*) event);
 
 		break;
 
@@ -408,7 +408,7 @@ tile_button_release (CtkWidget * widget, GdkEventButton * event)
 }
 
 static gboolean
-tile_key_release (CtkWidget * widget, GdkEventKey * event)
+tile_key_release (CtkWidget * widget, CdkEventKey * event)
 {
 	TileEvent *tile_event;
 
@@ -447,7 +447,7 @@ tile_popup_menu (CtkWidget * widget)
 }
 
 static void
-tile_drag_begin (CtkWidget * widget, GdkDragContext * context)
+tile_drag_begin (CtkWidget * widget, CdkDragContext * context)
 {
 	TilePrivate *priv;
 
@@ -456,7 +456,7 @@ tile_drag_begin (CtkWidget * widget, GdkDragContext * context)
 }
 
 static void
-tile_drag_data_get (CtkWidget * widget, GdkDragContext * context, CtkSelectionData * data,
+tile_drag_data_get (CtkWidget * widget, CdkDragContext * context, CtkSelectionData * data,
 	guint info, guint time)
 {
 	gchar *uris[2];

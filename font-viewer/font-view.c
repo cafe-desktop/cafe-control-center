@@ -582,8 +582,8 @@ font_view_application_do_open (FontViewApplication *self,
     uri = g_file_get_uri (file);
 
     if (self->font_widget == NULL) {
-        GdkRGBA white = { 1.0, 1.0, 1.0, 1.0 };
-        GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+        CdkRGBA white = { 1.0, 1.0, 1.0, 1.0 };
+        CdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
         CtkWidget *w;
 
         self->font_widget = CTK_WIDGET (sushi_font_widget_new (uri, face_index));
@@ -614,7 +614,7 @@ font_view_application_do_open (FontViewApplication *self,
 
 static gboolean
 icon_view_release_cb (CtkWidget *widget,
-                      GdkEventButton *event,
+                      CdkEventButton *event,
                       gpointer user_data)
 {
     FontViewApplication *self = user_data;

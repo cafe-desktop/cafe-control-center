@@ -176,7 +176,7 @@ main (int argc,
     gchar *contents = NULL;
     gboolean retval, default_thumbstr = TRUE;
     gint rv = 1;
-    GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+    CdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
     cairo_surface_t *surface;
     cairo_t *cr;
     cairo_text_extents_t text_extents;

@@ -118,7 +118,7 @@ void cafe_wp_item_ensure_cafe_bg (CafeWPItem *item)
 
 void cafe_wp_item_update (CafeWPItem *item) {
   GSettings *settings;
-  GdkRGBA color1 = { 0, 0, 0, 1.0 }, color2 = { 0, 0, 0, 1.0 };
+  CdkRGBA color1 = { 0, 0, 0, 1.0 }, color2 = { 0, 0, 0, 1.0 };
   gchar *s;
 
   settings = g_settings_new (WP_SCHEMA);
@@ -206,11 +206,11 @@ void cafe_wp_item_free (CafeWPItem * item) {
   g_free (item);
 }
 
-static GdkPixbuf *
-add_slideshow_frame (GdkPixbuf *pixbuf)
+static CdkPixbuf *
+add_slideshow_frame (CdkPixbuf *pixbuf)
 {
-  GdkPixbuf *sheet, *sheet2;
-  GdkPixbuf *tmp;
+  CdkPixbuf *sheet, *sheet2;
+  CdkPixbuf *tmp;
   gint w, h;
 
   w = cdk_pixbuf_get_width (pixbuf);
@@ -234,12 +234,12 @@ add_slideshow_frame (GdkPixbuf *pixbuf)
   return tmp;
 }
 
-GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
+CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 					       CafeDesktopThumbnailFactory * thumbs,
                                                int width,
                                                int height,
                                                gint frame) {
-  GdkPixbuf *pixbuf = NULL;
+  CdkPixbuf *pixbuf = NULL;
 
   set_bg_properties (item);
 
@@ -250,7 +250,7 @@ GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 
   if (pixbuf && cafe_bg_changes_with_time (item->bg))
     {
-      GdkPixbuf *tmp;
+      CdkPixbuf *tmp;
 
       tmp = add_slideshow_frame (pixbuf);
       g_object_unref (pixbuf);
@@ -263,7 +263,7 @@ GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 }
 
 
-GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem * item,
+CdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem * item,
 					 CafeDesktopThumbnailFactory * thumbs,
                                          gint width,
                                          gint height) {

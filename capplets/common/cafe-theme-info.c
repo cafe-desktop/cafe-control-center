@@ -498,10 +498,10 @@ add_default_cursor_theme ()
   add_theme_to_hash_by_name (cursor_theme_hash_by_name, theme_info);
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 cdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 {
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 #define BUF_SIZE sizeof(guint32) * cursor->width * cursor->height
   guchar *buf = g_malloc0 (BUF_SIZE);
   guchar *it;
@@ -526,7 +526,7 @@ cdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
                         GDK_COLORSPACE_RGB, TRUE, 8,
                         cursor->width, cursor->height,
                         cursor->width * 4,
-                        (GdkPixbufDestroyNotify) g_free,
+                        (CdkPixbufDestroyNotify) g_free,
                         NULL);
 
   if (!pixbuf)
@@ -550,7 +550,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
   if (get_file_type (cursors_uri) == G_FILE_TYPE_DIRECTORY) {
     GArray *sizes;
     XcursorImage *cursor;
-    GdkPixbuf *thumbnail = NULL;
+    CdkPixbuf *thumbnail = NULL;
     gchar *name;
     gint i;
 
@@ -1692,7 +1692,7 @@ cafe_theme_info_register_theme_change (ThemeChangedCallback func,
 }
 
 gboolean
-cafe_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
+cafe_theme_color_scheme_parse (const gchar *scheme, CdkRGBA *colors)
 {
   gchar **color_scheme_strings, **color_scheme_pair, *current_string;
   gint i;
@@ -1747,7 +1747,7 @@ cafe_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
 gboolean
 cafe_theme_color_scheme_equal (const gchar *s1, const gchar *s2)
 {
-  GdkRGBA c1[NUM_SYMBOLIC_COLORS], c2[NUM_SYMBOLIC_COLORS];
+  CdkRGBA c1[NUM_SYMBOLIC_COLORS], c2[NUM_SYMBOLIC_COLORS];
   int i;
 
   if (!cafe_theme_color_scheme_parse (s1, c1) ||

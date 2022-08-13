@@ -434,7 +434,7 @@ static void
 xkb_layout_chooser_response (CtkDialog * dialog,
 			     gint response, CtkBuilder * chooser_dialog)
 {
-	GdkRectangle rect;
+	CdkRectangle rect;
 
 	if (response == CTK_RESPONSE_OK) {
 		gchar *selected_id = (gchar *)
@@ -556,7 +556,7 @@ xkb_layout_choose (CtkBuilder * dialog)
 
 	toplevel = ctk_widget_get_toplevel (chooser);
 	if (ctk_widget_is_toplevel (toplevel)) {
-		GdkRectangle *rect = cafekbd_preview_load_position ();
+		CdkRectangle *rect = cafekbd_preview_load_position ();
 		if (rect != NULL) {
 			ctk_window_move (CTK_WINDOW (toplevel),
 					 rect->x, rect->y);

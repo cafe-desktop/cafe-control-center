@@ -83,7 +83,7 @@ slab_section_style_set (CtkWidget * widget, CtkStyle * prev_style, gpointer user
 
 /*
 gboolean
-slab_section_expose_event (CtkWidget * widget, GdkEventExpose * event, gpointer data)
+slab_section_expose_event (CtkWidget * widget, CdkEventExpose * event, gpointer data)
 {
 	cdk_draw_rectangle (widget->window, widget->style->light_gc[CTK_STATE_SELECTED], TRUE,
 		widget->allocation.x, widget->allocation.y,

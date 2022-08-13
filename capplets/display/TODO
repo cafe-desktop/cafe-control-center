@@ -525,8 +525,8 @@ get_resolutions()
 
 etc.
 
-Should there be a GdkMonitor object that would correspond to an
-output? Or maybe GdkOutput?
+Should there be a CdkMonitor object that would correspond to an
+output? Or maybe CdkOutput?
 
 screen_list_monitors()
 

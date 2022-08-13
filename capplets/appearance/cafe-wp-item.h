@@ -45,8 +45,8 @@ struct _CafeWPItem {
   CtkTreeRowReference * rowref;
 
   /* Real colors */
-  GdkRGBA * pcolor;
-  GdkRGBA * scolor;
+  CdkRGBA * pcolor;
+  CdkRGBA * scolor;
 
   CafeWPInfo * fileinfo;
 
@@ -66,11 +66,11 @@ CafeWPItem * cafe_wp_item_new (const gchar *filename,
 				 CafeDesktopThumbnailFactory *thumbnails);
 
 void cafe_wp_item_free (CafeWPItem *item);
-GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem *item,
+CdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem *item,
 					 CafeDesktopThumbnailFactory *thumbs,
                                          gint width,
                                          gint height);
-GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem *item,
+CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem *item,
                                                CafeDesktopThumbnailFactory *thumbs,
                                                gint width,
                                                gint height,

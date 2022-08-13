@@ -24,11 +24,11 @@ static void             egg_cell_renderer_keys_finalize      (GObject           
 static void             egg_cell_renderer_keys_init          (EggCellRendererKeys *cell_keys);
 static void             egg_cell_renderer_keys_class_init    (EggCellRendererKeysClass *cell_keys_class);
 static CtkCellEditable *egg_cell_renderer_keys_start_editing (CtkCellRenderer          *cell,
-							      GdkEvent                 *event,
+							      CdkEvent                 *event,
 							      CtkWidget                *widget,
 							      const gchar              *path,
-							      const GdkRectangle       *background_area,
-							      const GdkRectangle       *cell_area,
+							      const CdkRectangle       *background_area,
+							      const CdkRectangle       *cell_area,
 							      CtkCellRendererState      flags);
 
 
@@ -42,7 +42,7 @@ static void egg_cell_renderer_keys_set_property (GObject         *object,
 						 GParamSpec      *pspec);
 static void egg_cell_renderer_keys_get_size	(CtkCellRenderer    *cell,
 						 CtkWidget          *widget,
-						 const GdkRectangle *cell_area,
+						 const CdkRectangle *cell_area,
 						 gint               *x_offset,
 						 gint               *y_offset,
 						 gint               *width,
@@ -341,7 +341,7 @@ static gboolean is_modifier(guint keycode)
 static void
 egg_cell_renderer_keys_get_size(CtkCellRenderer    *cell,
 				 CtkWidget          *widget,
-				 const GdkRectangle *cell_area,
+				 const CdkRectangle *cell_area,
 				 gint               *x_offset,
 				 gint               *y_offset,
 				 gint               *width,
@@ -366,19 +366,19 @@ egg_cell_renderer_keys_get_size(CtkCellRenderer    *cell,
  * CTK mode) and a removed key.
  */
 
-static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* data)
+static gboolean grab_key_callback(CtkWidget* widget, CdkEventKey* event, void* data)
 {
-	GdkModifierType accel_mods = 0;
+	CdkModifierType accel_mods = 0;
 	guint accel_keyval;
 	EggCellRendererKeys *keys;
 	char *path;
 	gboolean edited;
 	gboolean cleared;
-	GdkModifierType consumed_modifiers;
+	CdkModifierType consumed_modifiers;
 	guint upper;
-	GdkModifierType ignored_modifiers;
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkModifierType ignored_modifiers;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	keys = EGG_CELL_RENDERER_KEYS(data);
 
@@ -492,8 +492,8 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 static void ungrab_stuff(CtkWidget* widget, gpointer data)
 {
 	EggCellRendererKeys* keys = EGG_CELL_RENDERER_KEYS(data);
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	display = ctk_widget_get_display (widget);
 	seat = cdk_display_get_default_seat (display);
@@ -503,7 +503,7 @@ static void ungrab_stuff(CtkWidget* widget, gpointer data)
 	g_signal_handlers_disconnect_by_func(G_OBJECT(keys->grab_widget), G_CALLBACK(grab_key_callback), data);
 }
 
-static void pointless_eventbox_start_editing(CtkCellEditable* cell_editable, GdkEvent* event)
+static void pointless_eventbox_start_editing(CtkCellEditable* cell_editable, CdkEvent* event)
 {
 	/* do nothing, because we are pointless */
 }
@@ -549,7 +549,7 @@ pointless_eventbox_subclass_get_type (void)
 
 static void
 override_background_color (CtkWidget *widget,
-                           GdkRGBA   *rgba)
+                           CdkRGBA   *rgba)
 {
   gchar          *css;
   CtkCssProvider *provider;
@@ -569,7 +569,7 @@ override_background_color (CtkWidget *widget,
 
 static void
 override_color (CtkWidget *widget,
-                GdkRGBA   *rgba)
+                CdkRGBA   *rgba)
 {
   gchar          *css;
   CtkCssProvider *provider;
@@ -589,23 +589,23 @@ override_color (CtkWidget *widget,
 
 static CtkCellEditable *
 egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
-				      GdkEvent             *event,
+				      CdkEvent             *event,
 				      CtkWidget            *widget,
 				      const gchar          *path,
-				      const GdkRectangle   *background_area,
-				      const GdkRectangle   *cell_area,
+				      const CdkRectangle   *background_area,
+				      const CdkRectangle   *cell_area,
 				      CtkCellRendererState  flags)
 {
   CtkCellRendererText *celltext;
   EggCellRendererKeys *keys;
-  GdkDisplay *display;
-  GdkSeat *seat;
+  CdkDisplay *display;
+  CdkSeat *seat;
   CtkWidget *label;
   CtkWidget *eventbox;
   GValue celltext_editable = {0};
-  GdkRGBA box_color;
-  GdkRGBA label_color;
-  GdkRGBA *c;
+  CdkRGBA box_color;
+  CdkRGBA label_color;
+  CdkRGBA *c;
 
   celltext = CTK_CELL_RENDERER_TEXT (cell);
   keys = EGG_CELL_RENDERER_KEYS (cell);

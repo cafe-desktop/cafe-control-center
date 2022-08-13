@@ -79,7 +79,7 @@ static void ChangeTimeValue(CtkSpinButton *spin_button,
 }
 
 static gboolean on_window_quit (CtkWidget *widget,
-                                GdkEvent  *event,
+                                CdkEvent  *event,
                                 gpointer   user_data)
 {
     TimeAdmin *ta = (TimeAdmin *)user_data;
