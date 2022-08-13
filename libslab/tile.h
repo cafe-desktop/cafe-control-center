@@ -22,7 +22,7 @@
 #define __TILE_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -68,7 +68,7 @@ typedef enum
 
 struct _Tile
 {
-	GtkButton gtk_button;
+	GtkButton ctk_button;
 
 	gchar *uri;
 	GtkMenu *context_menu;
@@ -83,7 +83,7 @@ struct _Tile
 
 struct _TileClass
 {
-	GtkButtonClass gtk_button_class;
+	GtkButtonClass ctk_button_class;
 
 	void (*tile_activated) (Tile *, TileEvent *);
 	void (*tile_action_triggered) (Tile *, TileEvent *, TileAction *);

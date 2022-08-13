@@ -26,7 +26,7 @@
 #ifndef __FONT_VIEW_MODEL_H__
 #define __FONT_VIEW_MODEL_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

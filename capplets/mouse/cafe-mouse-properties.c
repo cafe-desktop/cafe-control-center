@@ -85,7 +85,7 @@ test_maybe_timeout (struct test_data_t *data)
 {
 	double_click_state = DOUBLE_CLICK_TEST_OFF;
 
-	gtk_image_set_from_resource (GTK_IMAGE (data->image), "/org/cafe/mcc/mouse/double-click-off.svg");
+	ctk_image_set_from_resource (GTK_IMAGE (data->image), "/org/cafe/mcc/mouse/double-click-off.svg");
 
 	*data->timeout_id = 0;
 
@@ -146,13 +146,13 @@ event_box_button_press_event (GtkWidget   *widget,
 
 	switch (double_click_state) {
 	case DOUBLE_CLICK_TEST_ON:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-on.svg");
+		ctk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-on.svg");
 		break;
 	case DOUBLE_CLICK_TEST_MAYBE:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-maybe.svg");
+		ctk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-maybe.svg");
 		break;
 	case DOUBLE_CLICK_TEST_OFF:
-		gtk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-off.svg");
+		ctk_image_set_from_resource (GTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-off.svg");
 		break;
 	}
 
@@ -163,7 +163,7 @@ static void
 orientation_radio_button_release_event (GtkWidget   *widget,
 				        GdkEventButton *event)
 {
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 }
 
 static void
@@ -171,7 +171,7 @@ orientation_radio_button_toggled (GtkToggleButton *togglebutton,
 				        GtkBuilder *dialog)
 {
 	gboolean left_handed;
-	left_handed = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (WID ("left_handed_radio")));
+	left_handed = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (WID ("left_handed_radio")));
 	g_settings_set_boolean (mouse_settings, "left-handed", left_handed);
 }
 
@@ -209,8 +209,8 @@ synaptics_check_capabilities (GtkBuilder *dialog)
 			/* Property data is booleans for has_left, has_middle,
 			 * has_right, has_double, has_triple */
 			if (!data[0]) {
-				gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (WID ("tap_to_click_toggle")), TRUE);
-				gtk_widget_set_sensitive (WID ("tap_to_click_toggle"), FALSE);
+				ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (WID ("tap_to_click_toggle")), TRUE);
+				ctk_widget_set_sensitive (WID ("tap_to_click_toggle"), FALSE);
 			}
 
 			XFree (data);
@@ -226,14 +226,14 @@ synaptics_check_capabilities (GtkBuilder *dialog)
 static void
 accel_profile_combobox_changed_callback (GtkWidget *combobox, void *data)
 {
-	AccelProfile value = gtk_combo_box_get_active (GTK_COMBO_BOX (combobox));
+	AccelProfile value = ctk_combo_box_get_active (GTK_COMBO_BOX (combobox));
 	g_settings_set_enum (mouse_settings, (const gchar *) "accel-profile", value);
 }
 
 static void
 comboxbox_changed (GtkWidget *combobox, GtkBuilder *dialog, const char *key)
 {
-	gint value = gtk_combo_box_get_active (GTK_COMBO_BOX (combobox));
+	gint value = ctk_combo_box_get_active (GTK_COMBO_BOX (combobox));
 	gint value2, value3;
 	GtkLabel *warn = GTK_LABEL (WID ("multi_finger_warning"));
 
@@ -242,7 +242,7 @@ comboxbox_changed (GtkWidget *combobox, GtkBuilder *dialog, const char *key)
 	/* Show warning if some multi-finger click emulation is enabled. */
 	value2 = g_settings_get_int (touchpad_settings, "two-finger-click");
 	value3 = g_settings_get_int (touchpad_settings, "three-finger-click");
-	gtk_widget_set_opacity (GTK_WIDGET (warn), (value2 || value3)?  1.0: 0.0);
+	ctk_widget_set_opacity (GTK_WIDGET (warn), (value2 || value3)?  1.0: 0.0);
 }
 
 static void
@@ -265,7 +265,7 @@ setup_dialog (GtkBuilder *dialog)
 
 	/* Orientation radio buttons */
 	radio = GTK_RADIO_BUTTON (WID ("left_handed_radio"));
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio),
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON(radio),
 		g_settings_get_boolean(mouse_settings, "left-handed"));
 	/* explicitly connect to button-release so that you can change orientation with either button */
 	g_signal_connect (WID ("right_handed_radio"), "button_release_event",
@@ -284,41 +284,41 @@ setup_dialog (GtkBuilder *dialog)
 		"active", G_SETTINGS_BIND_DEFAULT);
 
 	/* Middle Button Paste */
-	g_settings_bind (interface_settings, "gtk-enable-primary-paste", WID ("middle_button_paste_toggle"),
+	g_settings_bind (interface_settings, "ctk-enable-primary-paste", WID ("middle_button_paste_toggle"),
 		"active", G_SETTINGS_BIND_DEFAULT);
 
 
 	/* Double-click time */
 	g_settings_bind (mouse_settings, DOUBLE_CLICK_KEY,
-		gtk_range_get_adjustment (GTK_RANGE (WID ("delay_scale"))), "value",
+		ctk_range_get_adjustment (GTK_RANGE (WID ("delay_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 
-	gtk_image_set_from_resource (GTK_IMAGE (WID ("double_click_image")), "/org/cafe/mcc/mouse/double-click-off.svg");
+	ctk_image_set_from_resource (GTK_IMAGE (WID ("double_click_image")), "/org/cafe/mcc/mouse/double-click-off.svg");
 	g_object_set_data (G_OBJECT (WID ("double_click_eventbox")), "image", WID ("double_click_image"));
 	g_signal_connect (WID ("double_click_eventbox"), "button_press_event",
 			  G_CALLBACK (event_box_button_press_event), NULL);
 
 	/* speed */
 	g_settings_bind (mouse_settings, "motion-acceleration",
-		gtk_range_get_adjustment (GTK_RANGE (WID ("accel_scale"))), "value",
+		ctk_range_get_adjustment (GTK_RANGE (WID ("accel_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (mouse_settings, "motion-threshold",
-		gtk_range_get_adjustment (GTK_RANGE (WID ("sensitivity_scale"))), "value",
+		ctk_range_get_adjustment (GTK_RANGE (WID ("sensitivity_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 
 	g_signal_connect (WID ("mouse_accel_profile"), "changed",
 			  G_CALLBACK (accel_profile_combobox_changed_callback), NULL);
-	gtk_combo_box_set_active (GTK_COMBO_BOX (WID ("mouse_accel_profile")),
+	ctk_combo_box_set_active (GTK_COMBO_BOX (WID ("mouse_accel_profile")),
 				  g_settings_get_enum (mouse_settings, "accel-profile"));
 
 	/* DnD threshold */
 	g_settings_bind (mouse_settings, "drag-threshold",
-		gtk_range_get_adjustment (GTK_RANGE (WID ("drag_threshold_scale"))), "value",
+		ctk_range_get_adjustment (GTK_RANGE (WID ("drag_threshold_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 
 	/* Trackpad page */
 	if (touchpad_is_present () == FALSE)
-		gtk_notebook_remove_page (GTK_NOTEBOOK (WID ("prefs_widget")), -1);
+		ctk_notebook_remove_page (GTK_NOTEBOOK (WID ("prefs_widget")), -1);
 	else {
 		g_settings_bind (touchpad_settings, "touchpad-enabled",
 			WID ("touchpad_enable"), "active",
@@ -346,29 +346,29 @@ setup_dialog (GtkBuilder *dialog)
 
 		char * emulation_values[] = { _("Disabled"), _("Left button"), _("Middle button"), _("Right button") };
 
-		GtkWidget *two_click_comboxbox = gtk_combo_box_text_new ();
-		GtkWidget *three_click_comboxbox = gtk_combo_box_text_new ();
-		gtk_box_pack_start (GTK_BOX (WID ("hbox_two_finger_click")), two_click_comboxbox, FALSE, FALSE, 6);
-		gtk_box_pack_start (GTK_BOX (WID ("hbox_three_finger_click")), three_click_comboxbox, FALSE, FALSE, 6);
+		GtkWidget *two_click_comboxbox = ctk_combo_box_text_new ();
+		GtkWidget *three_click_comboxbox = ctk_combo_box_text_new ();
+		ctk_box_pack_start (GTK_BOX (WID ("hbox_two_finger_click")), two_click_comboxbox, FALSE, FALSE, 6);
+		ctk_box_pack_start (GTK_BOX (WID ("hbox_three_finger_click")), three_click_comboxbox, FALSE, FALSE, 6);
 		int i;
 		for (i=0; i<4; i++) {
-			gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (two_click_comboxbox), emulation_values[i]);
-			gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (three_click_comboxbox), emulation_values[i]);
+			ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (two_click_comboxbox), emulation_values[i]);
+			ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (three_click_comboxbox), emulation_values[i]);
 		}
 
 		g_signal_connect (two_click_comboxbox, "changed", G_CALLBACK (comboxbox_two_finger_changed_callback), dialog);
 		g_signal_connect (three_click_comboxbox, "changed", G_CALLBACK (comboxbox_three_finger_changed_callback), dialog);
-		gtk_combo_box_set_active (GTK_COMBO_BOX (two_click_comboxbox), g_settings_get_int (touchpad_settings, "two-finger-click"));
-		gtk_combo_box_set_active (GTK_COMBO_BOX (three_click_comboxbox), g_settings_get_int (touchpad_settings, "three-finger-click"));
-		gtk_widget_show (two_click_comboxbox);
-		gtk_widget_show (three_click_comboxbox);
+		ctk_combo_box_set_active (GTK_COMBO_BOX (two_click_comboxbox), g_settings_get_int (touchpad_settings, "two-finger-click"));
+		ctk_combo_box_set_active (GTK_COMBO_BOX (three_click_comboxbox), g_settings_get_int (touchpad_settings, "three-finger-click"));
+		ctk_widget_show (two_click_comboxbox);
+		ctk_widget_show (three_click_comboxbox);
 
 		/* speed */
 		g_settings_bind (touchpad_settings, "motion-acceleration",
-			gtk_range_get_adjustment (GTK_RANGE (WID ("touchpad_accel_scale"))), "value",
+			ctk_range_get_adjustment (GTK_RANGE (WID ("touchpad_accel_scale"))), "value",
 			G_SETTINGS_BIND_DEFAULT);
 		g_settings_bind (touchpad_settings, "motion-threshold",
-			gtk_range_get_adjustment (GTK_RANGE (WID ("touchpad_sensitivity_scale"))), "value",
+			ctk_range_get_adjustment (GTK_RANGE (WID ("touchpad_sensitivity_scale"))), "value",
 			G_SETTINGS_BIND_DEFAULT);
 
 		synaptics_check_capabilities (dialog);
@@ -385,31 +385,31 @@ create_dialog (void)
 	GtkSizeGroup *size_group;
 	GError       *error = NULL;
 
-	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/mouse/cafe-mouse-properties.ui", &error) == 0) {
+	dialog = ctk_builder_new ();
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/mouse/cafe-mouse-properties.ui", &error) == 0) {
 		g_warning ("Error loading UI file: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);
 		return NULL;
 	}
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("acceleration_label"));
-	gtk_size_group_add_widget (size_group, WID ("sensitivity_label"));
-	gtk_size_group_add_widget (size_group, WID ("threshold_label"));
-	gtk_size_group_add_widget (size_group, WID ("timeout_label"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("acceleration_label"));
+	ctk_size_group_add_widget (size_group, WID ("sensitivity_label"));
+	ctk_size_group_add_widget (size_group, WID ("threshold_label"));
+	ctk_size_group_add_widget (size_group, WID ("timeout_label"));
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("acceleration_fast_label"));
-	gtk_size_group_add_widget (size_group, WID ("sensitivity_high_label"));
-	gtk_size_group_add_widget (size_group, WID ("threshold_large_label"));
-	gtk_size_group_add_widget (size_group, WID ("timeout_long_label"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("acceleration_fast_label"));
+	ctk_size_group_add_widget (size_group, WID ("sensitivity_high_label"));
+	ctk_size_group_add_widget (size_group, WID ("threshold_large_label"));
+	ctk_size_group_add_widget (size_group, WID ("timeout_long_label"));
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("acceleration_slow_label"));
-	gtk_size_group_add_widget (size_group, WID ("sensitivity_low_label"));
-	gtk_size_group_add_widget (size_group, WID ("threshold_small_label"));
-	gtk_size_group_add_widget (size_group, WID ("timeout_short_label"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("acceleration_slow_label"));
+	ctk_size_group_add_widget (size_group, WID ("sensitivity_low_label"));
+	ctk_size_group_add_widget (size_group, WID ("threshold_small_label"));
+	ctk_size_group_add_widget (size_group, WID ("timeout_short_label"));
 
 	return dialog;
 }
@@ -423,7 +423,7 @@ dialog_response_cb (GtkDialog *dialog, gint response_id, gpointer data)
 		capplet_help (GTK_WINDOW (dialog),
 			      "goscustperiph-5");
 	else
-		gtk_main_quit ();
+		ctk_main_quit ();
 }
 
 int
@@ -464,7 +464,7 @@ main (int argc, char **argv)
 				  G_CALLBACK (dialog_response_cb), NULL);
 
                 GtkNotebook* nb = GTK_NOTEBOOK (WID ("prefs_widget"));
-                gtk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
+                ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
                 g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                                   G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                                   GTK_WINDOW (dialog_win));
@@ -480,17 +480,17 @@ main (int argc, char **argv)
 			if (w != NULL) {
 				gint pindex;
 
-				pindex = gtk_notebook_page_num (nb, w);
+				pindex = ctk_notebook_page_num (nb, w);
 				if (pindex != -1)
-					gtk_notebook_set_current_page (nb, pindex);
+					ctk_notebook_set_current_page (nb, pindex);
 			}
 			g_free (page_name);
 		}
 
 		capplet_set_icon (dialog_win, "input-mouse");
-		gtk_widget_show (dialog_win);
+		ctk_widget_show (dialog_win);
 
-		gtk_main ();
+		ctk_main ();
 
 		g_object_unref (dialog);
 	}

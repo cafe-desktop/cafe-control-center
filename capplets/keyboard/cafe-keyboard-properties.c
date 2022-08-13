@@ -58,37 +58,37 @@ create_dialog (void)
 	GtkWidget *image;
 	GError *error = NULL;
 
-	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/keyboard/cafe-keyboard-properties-dialog.ui", &error) == 0) {
+	dialog = ctk_builder_new ();
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/keyboard/cafe-keyboard-properties-dialog.ui", &error) == 0) {
 		g_warning ("Could not load UI: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);
 		return NULL;
 	}
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("repeat_slow_label"));
-	gtk_size_group_add_widget (size_group, WID ("delay_short_label"));
-	gtk_size_group_add_widget (size_group, WID ("blink_slow_label"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("repeat_slow_label"));
+	ctk_size_group_add_widget (size_group, WID ("delay_short_label"));
+	ctk_size_group_add_widget (size_group, WID ("blink_slow_label"));
 	g_object_unref (G_OBJECT (size_group));
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("repeat_fast_label"));
-	gtk_size_group_add_widget (size_group, WID ("delay_long_label"));
-	gtk_size_group_add_widget (size_group, WID ("blink_fast_label"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("repeat_fast_label"));
+	ctk_size_group_add_widget (size_group, WID ("delay_long_label"));
+	ctk_size_group_add_widget (size_group, WID ("blink_fast_label"));
 	g_object_unref (G_OBJECT (size_group));
 
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, WID ("repeat_delay_scale"));
-	gtk_size_group_add_widget (size_group, WID ("repeat_speed_scale"));
-	gtk_size_group_add_widget (size_group, WID ("cursor_blink_time_scale"));
+	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	ctk_size_group_add_widget (size_group, WID ("repeat_delay_scale"));
+	ctk_size_group_add_widget (size_group, WID ("repeat_speed_scale"));
+	ctk_size_group_add_widget (size_group, WID ("cursor_blink_time_scale"));
 	g_object_unref (G_OBJECT (size_group));
 
-	image = gtk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON);
-	gtk_button_set_image (GTK_BUTTON (WID ("xkb_layouts_add")), image);
+	image = ctk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON);
+	ctk_button_set_image (GTK_BUTTON (WID ("xkb_layouts_add")), image);
 
-	image = gtk_image_new_from_icon_name ("view-refresh", GTK_ICON_SIZE_BUTTON);
-	gtk_button_set_image (GTK_BUTTON (WID ("xkb_reset_to_defaults")), image);
+	image = ctk_image_new_from_icon_name ("view-refresh", GTK_ICON_SIZE_BUTTON);
+	ctk_button_set_image (GTK_BUTTON (WID ("xkb_reset_to_defaults")), image);
 
 	return dialog;
 }
@@ -100,7 +100,7 @@ dialog_response (GtkWidget * widget,
 	if (response_id == GTK_RESPONSE_HELP)
 		capplet_help (GTK_WINDOW (widget), "goscustperiph-2");
 	else
-		gtk_main_quit ();
+		ctk_main_quit ();
 }
 
 static void
@@ -121,12 +121,12 @@ setup_dialog (GtkBuilder * dialog)
 
 	g_settings_bind (keyboard_settings,
 					 "delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("repeat_delay_scale"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("repeat_delay_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (keyboard_settings,
 					 "rate",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("repeat_speed_scale"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("repeat_speed_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
@@ -142,7 +142,7 @@ setup_dialog (GtkBuilder * dialog)
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (interface_settings,
 					 "cursor-blink-time",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("cursor_blink_time_scale"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("cursor_blink_time_scale"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
@@ -180,8 +180,8 @@ setup_dialog (GtkBuilder * dialog)
 	} else {
 		/* don't show the typing break tab if the daemon is not available */
 		GtkNotebook *nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
-		gint tb_page = gtk_notebook_page_num (nb, WID ("break_enabled_toggle"));
-		gtk_notebook_remove_page (nb, tb_page);
+		gint tb_page = ctk_notebook_page_num (nb, WID ("break_enabled_toggle"));
+		ctk_notebook_remove_page (nb, tb_page);
 	}
 
 	g_signal_connect (WID ("keyboard_dialog"), "response",
@@ -244,23 +244,23 @@ main (int argc, char **argv)
 	setup_dialog (dialog);
 
         GtkNotebook* nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
-        gtk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
+        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                           GTK_WINDOW (WID ("keyboard_dialog")));
 
 	if (switch_to_typing_break_page) {
-		gtk_notebook_set_current_page (nb, 4);
+		ctk_notebook_set_current_page (nb, 4);
 	}
 	else if (switch_to_a11y_page) {
-		gtk_notebook_set_current_page (nb, 2);
+		ctk_notebook_set_current_page (nb, 2);
 
 	}
 
 	capplet_set_icon (WID ("keyboard_dialog"),
 			  "input-keyboard");
-	gtk_widget_show (WID ("keyboard_dialog"));
-	gtk_main ();
+	ctk_widget_show (WID ("keyboard_dialog"));
+	ctk_main ();
 
 	finalize_a11y_tabs ();
 	g_object_unref (keyboard_settings);

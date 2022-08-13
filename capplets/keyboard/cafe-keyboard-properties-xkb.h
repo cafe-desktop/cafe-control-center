@@ -31,7 +31,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define CWID(s) GTK_WIDGET (gtk_builder_get_object (chooser_dialog, s))
+#define CWID(s) GTK_WIDGET (ctk_builder_get_object (chooser_dialog, s))
 extern XklEngine *engine;
 extern XklConfigRegistry *config_registry;
 extern GSettings *xkb_kbd_settings;

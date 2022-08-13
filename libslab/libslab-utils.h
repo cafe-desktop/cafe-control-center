@@ -2,7 +2,7 @@
 #define __LIBSLAB_UTILS_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <libcafe-desktop/cafe-desktop-item.h>
 
 #ifdef __cplusplus

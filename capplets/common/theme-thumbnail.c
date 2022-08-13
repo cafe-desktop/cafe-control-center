@@ -16,7 +16,7 @@
 #include <glib.h>
 
 #include "theme-thumbnail.h"
-#include "gtkrc-utils.h"
+#include "ctkrc-utils.h"
 #include "capplet-util.h"
 
 
@@ -60,7 +60,7 @@ typedef struct {
 	gint status;
 	GByteArray* type;
 	GByteArray* control_theme_name;
-	GByteArray* gtk_color_scheme;
+	GByteArray* ctk_color_scheme;
 	GByteArray* wm_theme_name;
 	GByteArray* icon_theme_name;
 	GByteArray* application_font;
@@ -80,7 +80,7 @@ static int pipe_to_factory_fd[2];
 static int pipe_from_factory_fd[2];
 
 #define THUMBNAIL_TYPE_META     "meta"
-#define THUMBNAIL_TYPE_GTK      "gtk"
+#define THUMBNAIL_TYPE_GTK      "ctk"
 #define THUMBNAIL_TYPE_CROMA    "croma"
 #define THUMBNAIL_TYPE_ICON     "icon"
 
@@ -132,12 +132,12 @@ create_folder_icon (char *icon_theme_name)
   const gchar *icon_names[5];
   gint i;
 
-  icon_theme = gtk_icon_theme_new ();
-  gtk_icon_theme_set_custom_theme (icon_theme, icon_theme_name);
+  icon_theme = ctk_icon_theme_new ();
+  ctk_icon_theme_set_custom_theme (icon_theme, icon_theme_name);
 
   i = 0;
   /* Get the Example icon name in the theme if specified */
-  example_icon_name = gtk_icon_theme_get_example_icon_name (icon_theme);
+  example_icon_name = ctk_icon_theme_get_example_icon_name (icon_theme);
   if (example_icon_name != NULL)
     icon_names[i++] = example_icon_name;
   icon_names[i++] = "x-directory-normal";
@@ -145,16 +145,16 @@ create_folder_icon (char *icon_theme_name)
   icon_names[i++] = "folder";
   icon_names[i++] = NULL;
 
-  folder_icon_info = gtk_icon_theme_choose_icon (icon_theme, icon_names, 48, GTK_ICON_LOOKUP_FORCE_SIZE);
+  folder_icon_info = ctk_icon_theme_choose_icon (icon_theme, icon_names, 48, GTK_ICON_LOOKUP_FORCE_SIZE);
   if (folder_icon_info != NULL)
   {
-    folder_icon = gtk_icon_info_load_icon (folder_icon_info, NULL);
+    folder_icon = ctk_icon_info_load_icon (folder_icon_info, NULL);
     g_object_unref (folder_icon_info);
   }
 
   if (folder_icon == NULL)
   {
-    folder_icon = gtk_icon_theme_load_icon (icon_theme,
+    folder_icon = ctk_icon_theme_load_icon (icon_theme,
                                             "image-missing",
                                             48, 0, NULL);
   }
@@ -185,11 +185,11 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   int icon_width, icon_height;
   cairo_region_t *region;
 
-  g_object_set (gtk_settings_get_default (),
-    "gtk-theme-name", (char *) theme_thumbnail_data->control_theme_name->data,
-    "gtk-font-name", (char *) theme_thumbnail_data->application_font->data,
-    "gtk-icon-theme-name", (char *) theme_thumbnail_data->icon_theme_name->data,
-    "gtk-color-scheme", (char *) theme_thumbnail_data->gtk_color_scheme->data,
+  g_object_set (ctk_settings_get_default (),
+    "ctk-theme-name", (char *) theme_thumbnail_data->control_theme_name->data,
+    "ctk-font-name", (char *) theme_thumbnail_data->application_font->data,
+    "ctk-icon-theme-name", (char *) theme_thumbnail_data->icon_theme_name->data,
+    "ctk-color-scheme", (char *) theme_thumbnail_data->ctk_color_scheme->data,
     NULL);
 
   theme = meta_theme_load ((char *) theme_thumbnail_data->wm_theme_name->data, NULL);
@@ -212,53 +212,53 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
           META_FRAME_ALLOWS_SHADE |
           META_FRAME_ALLOWS_MOVE;
 
-  window = gtk_offscreen_window_new ();
+  window = ctk_offscreen_window_new ();
   preview = meta_preview_new ();
-  gtk_container_add (GTK_CONTAINER (window), preview);
-  gtk_widget_show_all (window);
+  ctk_container_add (GTK_CONTAINER (window), preview);
+  ctk_widget_show_all (window);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
-  gtk_container_add (GTK_CONTAINER (preview), vbox);
+  vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  ctk_container_set_border_width (GTK_CONTAINER (vbox), 6);
+  ctk_container_add (GTK_CONTAINER (preview), vbox);
 
-  image_button = gtk_button_new_with_mnemonic (_("_Open"));
-  gtk_button_set_image (GTK_BUTTON (image_button), gtk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON));
+  image_button = ctk_button_new_with_mnemonic (_("_Open"));
+  ctk_button_set_image (GTK_BUTTON (image_button), ctk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON));
 
-  gtk_widget_set_halign (image_button, GTK_ALIGN_START);
-  gtk_widget_set_valign (image_button, GTK_ALIGN_START);
-  gtk_widget_show (image_button);
-  gtk_box_pack_start (GTK_BOX (vbox), image_button, FALSE, FALSE, 0);
-  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
-  checkbox = gtk_check_button_new ();
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), TRUE);
-  gtk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
-  radio = gtk_radio_button_new (NULL);
-  gtk_box_pack_start (GTK_BOX (box), radio, FALSE, FALSE, 0);
+  ctk_widget_set_halign (image_button, GTK_ALIGN_START);
+  ctk_widget_set_valign (image_button, GTK_ALIGN_START);
+  ctk_widget_show (image_button);
+  ctk_box_pack_start (GTK_BOX (vbox), image_button, FALSE, FALSE, 0);
+  box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  ctk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
+  checkbox = ctk_check_button_new ();
+  ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), TRUE);
+  ctk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
+  radio = ctk_radio_button_new (NULL);
+  ctk_box_pack_start (GTK_BOX (box), radio, FALSE, FALSE, 0);
 
-  gtk_widget_show_all (preview);
+  ctk_widget_show_all (preview);
 
   meta_preview_set_frame_flags (META_PREVIEW (preview), flags);
   meta_preview_set_theme (META_PREVIEW (preview), theme);
   meta_preview_set_title (META_PREVIEW (preview), "");
 
-  gtk_window_set_default_size (GTK_WINDOW (window), META_THUMBNAIL_SIZE, META_THUMBNAIL_SIZE);
+  ctk_window_set_default_size (GTK_WINDOW (window), META_THUMBNAIL_SIZE, META_THUMBNAIL_SIZE);
 
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
   allocation.x = 0;
   allocation.y = 0;
   allocation.width = META_THUMBNAIL_SIZE;
   allocation.height = META_THUMBNAIL_SIZE;
-  gtk_widget_size_allocate (window, &allocation);
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_size_allocate (window, &allocation);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
 
-  gtk_widget_queue_draw (window);
-  while (gtk_events_pending ())
-    gtk_main_iteration ();
+  ctk_widget_queue_draw (window);
+  while (ctk_events_pending ())
+    ctk_main_iteration ();
 
-  pixbuf = gtk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
+  pixbuf = ctk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
 
-  gtk_widget_get_allocation (vbox, &vbox_allocation);
+  ctk_widget_get_allocation (vbox, &vbox_allocation);
 
   /* Add the icon theme to the pixbuf */
   gdk_pixbuf_composite (icon, pixbuf,
@@ -274,14 +274,14 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   cairo_region_destroy (region);
 
   g_object_unref (icon);
-  gtk_widget_destroy (window);
+  ctk_widget_destroy (window);
   meta_theme_free (theme);
 
   return pixbuf;
 }
 
 static GdkPixbuf *
-create_gtk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
+create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   GtkSettings *settings;
   GtkWidget *window, *vbox, *box, *image_button, *checkbox, *radio;
@@ -290,62 +290,62 @@ create_gtk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   GdkPixbuf *pixbuf, *retval;
   gint width, height;
 
-  settings = gtk_settings_get_default ();
-  g_object_set (settings, "gtk-theme-name", (char *) theme_thumbnail_data->control_theme_name->data,
-			  "gtk-color-scheme", (char *) theme_thumbnail_data->gtk_color_scheme->data,
+  settings = ctk_settings_get_default ();
+  g_object_set (settings, "ctk-theme-name", (char *) theme_thumbnail_data->control_theme_name->data,
+			  "ctk-color-scheme", (char *) theme_thumbnail_data->ctk_color_scheme->data,
  			  NULL);
 
-  window = gtk_offscreen_window_new ();
+  window = ctk_offscreen_window_new ();
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_add (GTK_CONTAINER (window), vbox);
-  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (box), 6);
-  gtk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
+  vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+  ctk_container_add (GTK_CONTAINER (window), vbox);
+  box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+  ctk_container_set_border_width (GTK_CONTAINER (box), 6);
+  ctk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
 
-  image_button = gtk_button_new_with_mnemonic (_("_Open"));
-  gtk_button_set_image (GTK_BUTTON (image_button), gtk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON));
+  image_button = ctk_button_new_with_mnemonic (_("_Open"));
+  ctk_button_set_image (GTK_BUTTON (image_button), ctk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON));
 
-  gtk_box_pack_start (GTK_BOX (box), image_button, FALSE, FALSE, 0);
-  checkbox = gtk_check_button_new ();
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), TRUE);
-  gtk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
-  radio = gtk_radio_button_new_from_widget (NULL);
-  gtk_box_pack_start (GTK_BOX (box), radio, FALSE, FALSE, 0);
+  ctk_box_pack_start (GTK_BOX (box), image_button, FALSE, FALSE, 0);
+  checkbox = ctk_check_button_new ();
+  ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), TRUE);
+  ctk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
+  radio = ctk_radio_button_new_from_widget (NULL);
+  ctk_box_pack_start (GTK_BOX (box), radio, FALSE, FALSE, 0);
 
-  gtk_widget_show_all (window);
-  gtk_widget_show_all (vbox);
-  gtk_widget_realize (image_button);
-  gtk_widget_realize (gtk_bin_get_child (GTK_BIN (image_button)));
-  gtk_widget_realize (checkbox);
-  gtk_widget_realize (radio);
-  gtk_widget_map (image_button);
-  gtk_widget_map (gtk_bin_get_child (GTK_BIN (image_button)));
-  gtk_widget_map (checkbox);
-  gtk_widget_map (radio);
+  ctk_widget_show_all (window);
+  ctk_widget_show_all (vbox);
+  ctk_widget_realize (image_button);
+  ctk_widget_realize (ctk_bin_get_child (GTK_BIN (image_button)));
+  ctk_widget_realize (checkbox);
+  ctk_widget_realize (radio);
+  ctk_widget_map (image_button);
+  ctk_widget_map (ctk_bin_get_child (GTK_BIN (image_button)));
+  ctk_widget_map (checkbox);
+  ctk_widget_map (radio);
 
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
   allocation.x = 0;
   allocation.y = 0;
   allocation.width = requisition.width;
   allocation.height = requisition.height;
-  gtk_widget_size_allocate (window, &allocation);
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_size_allocate (window, &allocation);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
 
-  gtk_window_get_size (GTK_WINDOW (window), &width, &height);
+  ctk_window_get_size (GTK_WINDOW (window), &width, &height);
 
-  gtk_widget_queue_draw (window);
-  while (gtk_events_pending ())
-    gtk_main_iteration ();
+  ctk_widget_queue_draw (window);
+  while (ctk_events_pending ())
+    ctk_main_iteration ();
 
-  pixbuf = gtk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
+  pixbuf = ctk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
 
   retval = gdk_pixbuf_scale_simple (pixbuf,
                                     GTK_THUMBNAIL_SIZE,
                                     (int) GTK_THUMBNAIL_SIZE * (((double) height) / ((double) width)),
                                     GDK_INTERP_BILINEAR);
   g_object_unref (pixbuf);
-  gtk_widget_destroy (window);
+  ctk_widget_destroy (window);
 
   return retval;
 }
@@ -375,33 +375,33 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
           META_FRAME_ALLOWS_SHADE |
           META_FRAME_ALLOWS_MOVE;
 
-  window = gtk_offscreen_window_new ();
-  gtk_window_set_default_size (GTK_WINDOW (window), (int) CROMA_THUMBNAIL_WIDTH * 1.2, (int) CROMA_THUMBNAIL_HEIGHT * 1.2);
+  window = ctk_offscreen_window_new ();
+  ctk_window_set_default_size (GTK_WINDOW (window), (int) CROMA_THUMBNAIL_WIDTH * 1.2, (int) CROMA_THUMBNAIL_HEIGHT * 1.2);
 
   preview = meta_preview_new ();
   meta_preview_set_frame_flags (META_PREVIEW (preview), flags);
   meta_preview_set_theme (META_PREVIEW (preview), theme);
   meta_preview_set_title (META_PREVIEW (preview), "");
-  gtk_container_add (GTK_CONTAINER (window), preview);
+  ctk_container_add (GTK_CONTAINER (window), preview);
 
-  dummy = gtk_label_new ("");
-  gtk_container_add (GTK_CONTAINER (preview), dummy);
+  dummy = ctk_label_new ("");
+  ctk_container_add (GTK_CONTAINER (preview), dummy);
 
-  gtk_widget_show_all (window);
+  ctk_widget_show_all (window);
 
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
   allocation.x = 0;
   allocation.y = 0;
   allocation.width = (int) CROMA_THUMBNAIL_WIDTH * 1.2;
   allocation.height = (int) CROMA_THUMBNAIL_HEIGHT * 1.2;
-  gtk_widget_size_allocate (window, &allocation);
-  gtk_widget_get_preferred_size (window, &requisition, NULL);
+  ctk_widget_size_allocate (window, &allocation);
+  ctk_widget_get_preferred_size (window, &requisition, NULL);
 
-  gtk_widget_queue_draw (window);
-  while (gtk_events_pending ())
-    gtk_main_iteration ();
+  ctk_widget_queue_draw (window);
+  while (ctk_events_pending ())
+    ctk_main_iteration ();
 
-  pixbuf = gtk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
+  pixbuf = ctk_offscreen_window_get_pixbuf (GTK_OFFSCREEN_WINDOW (window));
 
   region = meta_preview_get_clip_region (META_PREVIEW (preview),
       CROMA_THUMBNAIL_WIDTH * 1.2, CROMA_THUMBNAIL_HEIGHT * 1.2);
@@ -415,7 +415,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
                                     GDK_INTERP_BILINEAR);
   g_object_unref (pixbuf);
 
-  gtk_widget_destroy (window);
+  ctk_widget_destroy (window);
   meta_theme_free (theme);
 
   return retval;
@@ -481,12 +481,12 @@ handle_bytes (const guint8       *buffer,
         nil = memchr (ptr, '\000', bytes_read);
         if (nil == NULL)
         {
-          g_byte_array_append (theme_thumbnail_data->gtk_color_scheme, ptr, bytes_read);
+          g_byte_array_append (theme_thumbnail_data->ctk_color_scheme, ptr, bytes_read);
           bytes_read = 0;
         }
         else
         {
-          g_byte_array_append (theme_thumbnail_data->gtk_color_scheme, ptr, nil - ptr + 1);
+          g_byte_array_append (theme_thumbnail_data->ctk_color_scheme, ptr, nil - ptr + 1);
           bytes_read -= (nil - ptr + 1);
           ptr = nil + 1;
           theme_thumbnail_data->status = READING_WM_THEME_NAME;
@@ -580,7 +580,7 @@ message_from_capplet (GIOChannel   *source,
         if (!strcmp (type, THUMBNAIL_TYPE_META))
           pixbuf = create_meta_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_GTK))
-          pixbuf = create_gtk_theme_pixbuf (theme_thumbnail_data);
+          pixbuf = create_ctk_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_CROMA))
           pixbuf = create_croma_theme_pixbuf (theme_thumbnail_data);
         else if (!strcmp (type, THUMBNAIL_TYPE_ICON))
@@ -616,7 +616,7 @@ message_from_capplet (GIOChannel   *source,
           g_object_unref (pixbuf);
         g_byte_array_set_size (theme_thumbnail_data->type, 0);
         g_byte_array_set_size (theme_thumbnail_data->control_theme_name, 0);
-        g_byte_array_set_size (theme_thumbnail_data->gtk_color_scheme, 0);
+        g_byte_array_set_size (theme_thumbnail_data->ctk_color_scheme, 0);
         g_byte_array_set_size (theme_thumbnail_data->wm_theme_name, 0);
         g_byte_array_set_size (theme_thumbnail_data->icon_theme_name, 0);
         g_byte_array_set_size (theme_thumbnail_data->application_font, 0);
@@ -655,7 +655,7 @@ generate_next_in_queue (void)
                                          item->user_data,
                                          item->destroy);
   else if (!strcmp (item->thumbnail_type, THUMBNAIL_TYPE_GTK))
-    generate_gtk_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
+    generate_ctk_theme_thumbnail_async ((CafeThemeInfo *) item->theme_info,
                                         item->func,
                                         item->user_data,
                                         item->destroy);
@@ -766,8 +766,8 @@ message_from_child (GIOChannel   *source,
 
 static void
 send_thumbnail_request (gchar *thumbnail_type,
-                        gchar *gtk_theme_name,
-                        gchar *gtk_color_scheme,
+                        gchar *ctk_theme_name,
+                        gchar *ctk_color_scheme,
                         gchar *croma_theme_name,
                         gchar *icon_theme_name,
                         gchar *application_font)
@@ -775,9 +775,9 @@ send_thumbnail_request (gchar *thumbnail_type,
   if (write (pipe_to_factory_fd[1], thumbnail_type, strlen (thumbnail_type) + 1) == -1)
     perror ("write error");
 
-  if (gtk_theme_name)
+  if (ctk_theme_name)
   {
-    if (write (pipe_to_factory_fd[1], gtk_theme_name, strlen (gtk_theme_name) + 1) == -1)
+    if (write (pipe_to_factory_fd[1], ctk_theme_name, strlen (ctk_theme_name) + 1) == -1)
       perror ("write error");
   }
   else
@@ -786,9 +786,9 @@ send_thumbnail_request (gchar *thumbnail_type,
       perror ("write error");
   }
 
-  if (gtk_color_scheme)
+  if (ctk_color_scheme)
   {
-    if (write (pipe_to_factory_fd[1], gtk_color_scheme, strlen (gtk_color_scheme) + 1) == -1)
+    if (write (pipe_to_factory_fd[1], ctk_color_scheme, strlen (ctk_color_scheme) + 1) == -1)
       perror ("write error");
   }
   else
@@ -888,8 +888,8 @@ eof:
 
 static GdkPixbuf *
 generate_theme_thumbnail (gchar *thumbnail_type,
-                          gchar *gtk_theme_name,
-                          gchar *gtk_color_scheme,
+                          gchar *ctk_theme_name,
+                          gchar *ctk_color_scheme,
                           gchar *croma_theme_name,
                           gchar *icon_theme_name,
                           gchar *application_font)
@@ -898,8 +898,8 @@ generate_theme_thumbnail (gchar *thumbnail_type,
     return NULL;
 
   send_thumbnail_request (thumbnail_type,
-                          gtk_theme_name,
-                          gtk_color_scheme,
+                          ctk_theme_name,
+                          ctk_color_scheme,
                           croma_theme_name,
                           icon_theme_name,
                           application_font);
@@ -911,19 +911,19 @@ GdkPixbuf *
 generate_meta_theme_thumbnail (CafeThemeMetaInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_META,
-                                   theme_info->gtk_theme_name,
-                                   theme_info->gtk_color_scheme,
+                                   theme_info->ctk_theme_name,
+                                   theme_info->ctk_color_scheme,
                                    theme_info->croma_theme_name,
                                    theme_info->icon_theme_name,
                                    theme_info->application_font);
 }
 
 GdkPixbuf *
-generate_gtk_theme_thumbnail (CafeThemeInfo *theme_info)
+generate_ctk_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   gchar *scheme;
 
-  scheme = gtkrc_get_color_scheme_for_theme (theme_info->name);
+  scheme = ctkrc_get_color_scheme_for_theme (theme_info->name);
 
   return generate_theme_thumbnail (THUMBNAIL_TYPE_GTK,
                                    theme_info->name,
@@ -956,7 +956,7 @@ generate_icon_theme_thumbnail (CafeThemeIconInfo *theme_info)
                                    NULL);
 }
 
-static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_name, gchar* thumbnail_type, gchar* gtk_theme_name, gchar* gtk_color_scheme, gchar* croma_theme_name, gchar* icon_theme_name, gchar* application_font, ThemeThumbnailFunc func, gpointer user_data, GDestroyNotify destroy)
+static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_name, gchar* thumbnail_type, gchar* ctk_theme_name, gchar* ctk_color_scheme, gchar* croma_theme_name, gchar* icon_theme_name, gchar* application_font, ThemeThumbnailFunc func, gpointer user_data, GDestroyNotify destroy)
 {
 	if (async_data.set)
 	{
@@ -1003,7 +1003,7 @@ static void generate_theme_thumbnail_async(gpointer theme_info, gchar* theme_nam
 	async_data.user_data = user_data;
 	async_data.destroy = destroy;
 
-	send_thumbnail_request(thumbnail_type, gtk_theme_name, gtk_color_scheme, croma_theme_name, icon_theme_name, application_font);
+	send_thumbnail_request(thumbnail_type, ctk_theme_name, ctk_color_scheme, croma_theme_name, icon_theme_name, application_font);
 }
 
 void
@@ -1015,17 +1015,17 @@ generate_meta_theme_thumbnail_async (CafeThemeMetaInfo *theme_info,
   generate_theme_thumbnail_async (theme_info,
                                          theme_info->name,
                                          THUMBNAIL_TYPE_META,
-                                         theme_info->gtk_theme_name,
-                                         theme_info->gtk_color_scheme,
+                                         theme_info->ctk_theme_name,
+                                         theme_info->ctk_color_scheme,
                                          theme_info->croma_theme_name,
                                          theme_info->icon_theme_name,
                                          theme_info->application_font,
                                          func, user_data, destroy);
 }
 
-void generate_gtk_theme_thumbnail_async (CafeThemeInfo* theme_info, ThemeThumbnailFunc  func, gpointer user_data, GDestroyNotify destroy)
+void generate_ctk_theme_thumbnail_async (CafeThemeInfo* theme_info, ThemeThumbnailFunc  func, gpointer user_data, GDestroyNotify destroy)
 {
-	gchar* scheme = gtkrc_get_color_scheme_for_theme(theme_info->name);
+	gchar* scheme = ctkrc_get_color_scheme_for_theme(theme_info->name);
 
 	generate_theme_thumbnail_async(theme_info, theme_info->name, THUMBNAIL_TYPE_GTK, theme_info->name, scheme,  NULL, NULL, NULL, func, user_data, destroy);
 
@@ -1084,7 +1084,7 @@ theme_thumbnail_factory_init (int argc, char *argv[])
     GIOChannel *channel;
 
     /* Child */
-    gtk_init (&argc, &argv);
+    ctk_init (&argc, &argv);
 
     close (pipe_to_factory_fd[1]);
     pipe_to_factory_fd[1] = 0;
@@ -1094,7 +1094,7 @@ theme_thumbnail_factory_init (int argc, char *argv[])
     data.status = READY_FOR_THEME;
     data.type = g_byte_array_new ();
     data.control_theme_name = g_byte_array_new ();
-    data.gtk_color_scheme = g_byte_array_new ();
+    data.ctk_color_scheme = g_byte_array_new ();
     data.wm_theme_name = g_byte_array_new ();
     data.icon_theme_name = g_byte_array_new ();
     data.application_font = g_byte_array_new ();
@@ -1106,7 +1106,7 @@ theme_thumbnail_factory_init (int argc, char *argv[])
     g_io_add_watch (channel, G_IO_IN | G_IO_HUP, message_from_capplet, &data);
     g_io_channel_unref (channel);
 
-    gtk_main ();
+    ctk_main ();
     _exit (0);
   }
 

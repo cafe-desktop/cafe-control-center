@@ -23,7 +23,7 @@
 
 #include "tile.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

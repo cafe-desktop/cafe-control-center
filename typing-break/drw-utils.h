@@ -21,7 +21,7 @@
 #ifndef __DRW_UTILS_H__
 #define __DRW_UTILS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void drw_setup_background (GtkWidget *window);
 

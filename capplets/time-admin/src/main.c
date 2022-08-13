@@ -45,7 +45,7 @@ QuitApp (TimeAdmin *ta)
     if (ta->ApplyId > 0)
         g_source_remove (ta->ApplyId);
 
-    gtk_main_quit ();
+    ctk_main_quit ();
 }
 
 static gboolean CheckClockHealth(gpointer data)
@@ -100,9 +100,9 @@ static void UpdatePermission(TimeAdmin *ta)
     gboolean is_authorized;
 
     is_authorized = g_permission_get_allowed (G_PERMISSION (ta->Permission));
-    gtk_widget_set_sensitive(ta->TimeZoneButton, is_authorized);
-    gtk_widget_set_sensitive(ta->NtpSyncSwitch,  is_authorized);
-    gtk_widget_set_sensitive(ta->SaveButton,     is_authorized && !ta->NtpState);
+    ctk_widget_set_sensitive(ta->TimeZoneButton, is_authorized);
+    ctk_widget_set_sensitive(ta->NtpSyncSwitch,  is_authorized);
+    ctk_widget_set_sensitive(ta->SaveButton,     is_authorized && !ta->NtpState);
 }
 
 static void on_permission_changed (GPermission *permission,
@@ -118,8 +118,8 @@ static void InitMainWindow(TimeAdmin *ta)
     GError     *error = NULL;
     GtkBuilder *builder;
 
-    builder = gtk_builder_new_from_resource ("/org/cafe/mcc/ta/time-admin.ui");
-    gtk_builder_add_callback_symbols (builder,
+    builder = ctk_builder_new_from_resource ("/org/cafe/mcc/ta/time-admin.ui");
+    ctk_builder_add_callback_symbols (builder,
                                       "on_window_quit",       G_CALLBACK (on_window_quit),
                                       "on_button1_clicked",   G_CALLBACK (RunTimeZoneDialog),
                                       "on_button2_clicked",   G_CALLBACK (SaveModifyTime),
@@ -129,21 +129,21 @@ static void InitMainWindow(TimeAdmin *ta)
                                       "on_spin3_changed",     G_CALLBACK (ChangeTimeValue),
                                       "on_switch1_state_set", G_CALLBACK (ChangeNtpSync),
                                       NULL);
-    gtk_builder_connect_signals (builder, ta);
-    ta->MainWindow = GTK_WIDGET (gtk_builder_get_object (builder, "window1"));
-    ta->HourSpin = GTK_WIDGET (gtk_builder_get_object (builder, "spin1"));
-    ta->MinuteSpin = GTK_WIDGET (gtk_builder_get_object (builder, "spin2"));
-    ta->SecondSpin = GTK_WIDGET (gtk_builder_get_object (builder, "spin3"));
-    ta->TimeZoneButton = GTK_WIDGET (gtk_builder_get_object (builder, "button1"));
-    ta->TimeZoneEntry = GTK_WIDGET (gtk_builder_get_object (builder, "entry1"));
-    ta->NtpSyncSwitch = GTK_WIDGET (gtk_builder_get_object (builder, "switch1"));
-    ta->Calendar = GTK_WIDGET (gtk_builder_get_object (builder, "calendar1"));
-    ta->SaveButton = GTK_WIDGET (gtk_builder_get_object (builder, "button2"));
-    ta->ButtonLock = GTK_WIDGET (gtk_builder_get_object (builder, "button4"));
+    ctk_builder_connect_signals (builder, ta);
+    ta->MainWindow = GTK_WIDGET (ctk_builder_get_object (builder, "window1"));
+    ta->HourSpin = GTK_WIDGET (ctk_builder_get_object (builder, "spin1"));
+    ta->MinuteSpin = GTK_WIDGET (ctk_builder_get_object (builder, "spin2"));
+    ta->SecondSpin = GTK_WIDGET (ctk_builder_get_object (builder, "spin3"));
+    ta->TimeZoneButton = GTK_WIDGET (ctk_builder_get_object (builder, "button1"));
+    ta->TimeZoneEntry = GTK_WIDGET (ctk_builder_get_object (builder, "entry1"));
+    ta->NtpSyncSwitch = GTK_WIDGET (ctk_builder_get_object (builder, "switch1"));
+    ta->Calendar = GTK_WIDGET (ctk_builder_get_object (builder, "calendar1"));
+    ta->SaveButton = GTK_WIDGET (ctk_builder_get_object (builder, "button2"));
+    ta->ButtonLock = GTK_WIDGET (ctk_builder_get_object (builder, "button4"));
     g_object_unref (builder);
 
     /* Make sure that every window gets an icon */
-    gtk_window_set_default_icon_name ("preferences-system-time");
+    ctk_window_set_default_icon_name ("preferences-system-time");
 
     ta->Permission = polkit_permission_new_sync (TIME_ADMIN_PERMISSION, NULL, NULL, &error);
     if (ta->Permission == NULL)
@@ -151,18 +151,18 @@ static void InitMainWindow(TimeAdmin *ta)
         g_warning ("Failed to acquire %s: %s", TIME_ADMIN_PERMISSION, error->message);
         g_error_free (error);
     }
-    gtk_lock_button_set_permission(GTK_LOCK_BUTTON (ta->ButtonLock),ta->Permission);
+    ctk_lock_button_set_permission(GTK_LOCK_BUTTON (ta->ButtonLock),ta->Permission);
     g_signal_connect(ta->Permission, "notify", G_CALLBACK (on_permission_changed), ta);
 
     /* NTP sync switch */
     ta->NtpState = GetNtpState(ta);
-    gtk_switch_set_state (GTK_SWITCH(ta->NtpSyncSwitch), ta->NtpState);
+    ctk_switch_set_state (GTK_SWITCH(ta->NtpSyncSwitch), ta->NtpState);
 
     /* Time zone */
     SetupTimezoneDialog(ta);
     const char *TimeZone = GetTimeZone(ta);
     char       *ZoneName = translate(TimeZone);
-    gtk_entry_set_text (GTK_ENTRY (ta->TimeZoneEntry), ZoneName);
+    ctk_entry_set_text (GTK_ENTRY (ta->TimeZoneEntry), ZoneName);
     g_free (ZoneName);
 
     /* Local time & date */
@@ -300,8 +300,8 @@ int main(int argc, char **argv)
     InitMainWindow(&ta);
 
     UpdatePermission(&ta);
-    gtk_widget_show_all(ta.MainWindow);
-    gtk_main();
+    ctk_widget_show_all(ta.MainWindow);
+    ctk_main();
 
     return TRUE;
 }

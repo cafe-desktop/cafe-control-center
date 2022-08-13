@@ -26,7 +26,7 @@
 #	define PACKAGE "cafe-main-menu"
 #endif
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <string.h>
 #include <stdlib.h>
@@ -71,8 +71,8 @@ typedef struct {
 	void                  (* save_store)  (BookmarkAgent *);
 	void                  (* create_item) (BookmarkAgent *, const gchar *);
 
-	gchar                   *gtk_store_path;
-	GFileMonitor            *gtk_store_monitor;
+	gchar                   *ctk_store_path;
+	GFileMonitor            *ctk_store_monitor;
 } BookmarkAgentPrivate;
 
 enum {
@@ -208,7 +208,7 @@ bookmark_agent_move_item (BookmarkAgent *this, const gchar *uri, const gchar *ur
 	if (! TYPE_IS_RECENT (priv->type))
 		return;
 
-	gtk_recent_manager_move_item (gtk_recent_manager_get_default (), uri, uri_new, &error);
+	ctk_recent_manager_move_item (ctk_recent_manager_get_default (), uri, uri_new, &error);
 	if (error) {
 		g_warning ("Unable to update %s with renamed file, [%s] -> [%s]: %s",
 		           priv->store_path, uri, uri_new, error->message);
@@ -231,7 +231,7 @@ bookmark_agent_purge_items (BookmarkAgent *this)
 	uris = g_bookmark_file_get_uris (priv->store, &uris_len);
 	if (TYPE_IS_RECENT (priv->type)) {
 		for (i = 0; i < uris_len; i++) {
-			gtk_recent_manager_remove_item (gtk_recent_manager_get_default (), uris [i], &error);
+			ctk_recent_manager_remove_item (ctk_recent_manager_get_default (), uris [i], &error);
 			if (error) {
 				g_warning ("Unable to remove [%s] from %s: %s",
 				           priv->store_path, uris [i], error->message);
@@ -266,7 +266,7 @@ bookmark_agent_remove_item (BookmarkAgent *this, const gchar *uri)
 		return;
 
 	if (TYPE_IS_RECENT (priv->type)) {
-		gtk_recent_manager_remove_item (gtk_recent_manager_get_default (), uri, &error);
+		ctk_recent_manager_remove_item (ctk_recent_manager_get_default (), uri, &error);
 		if (error) {
 			g_warning ("Unable to remove [%s] from %s: %s", priv->store_path, uri, error->message);
 			g_error_free (error);
@@ -467,8 +467,8 @@ bookmark_agent_init (BookmarkAgent *this)
 	priv->save_store          = NULL;
 	priv->create_item         = NULL;
 
-	priv->gtk_store_path      = NULL;
-	priv->gtk_store_monitor   = NULL;
+	priv->ctk_store_path      = NULL;
+	priv->ctk_store_monitor   = NULL;
 }
 
 static BookmarkAgent *
@@ -476,7 +476,7 @@ bookmark_agent_new (BookmarkStoreType type)
 {
 	BookmarkAgent        *this;
 	BookmarkAgentPrivate *priv;
-	GFile *gtk_store_file;
+	GFile *ctk_store_file;
 
 	this = g_object_new (BOOKMARK_AGENT_TYPE, NULL);
 	priv = bookmark_agent_get_instance_private (this);
@@ -506,17 +506,17 @@ bookmark_agent_new (BookmarkStoreType type)
 
 			priv->load_store = load_places_store;
 
-			priv->gtk_store_path = g_build_filename (g_get_user_config_dir (),
-                                                     "gtk-3.0", GTK_BOOKMARKS_FILE, NULL);
-			gtk_store_file = g_file_new_for_path (priv->gtk_store_path);
-			priv->gtk_store_monitor = g_file_monitor_file (gtk_store_file,
+			priv->ctk_store_path = g_build_filename (g_get_user_config_dir (),
+                                                     "ctk-3.0", GTK_BOOKMARKS_FILE, NULL);
+			ctk_store_file = g_file_new_for_path (priv->ctk_store_path);
+			priv->ctk_store_monitor = g_file_monitor_file (ctk_store_file,
 								       0, NULL, NULL);
-			if (priv->gtk_store_monitor) {
-				g_signal_connect (priv->gtk_store_monitor, "changed",
+			if (priv->ctk_store_monitor) {
+				g_signal_connect (priv->ctk_store_monitor, "changed",
 						  G_CALLBACK (store_monitor_cb), this);
 			}
 
-			g_object_unref (gtk_store_file);
+			g_object_unref (ctk_store_file);
 
 			break;
 
@@ -601,7 +601,7 @@ finalize (GObject *g_obj)
 	g_free (priv->items);
 	g_free (priv->store_path);
 	g_free (priv->user_store_path);
-	g_free (priv->gtk_store_path);
+	g_free (priv->ctk_store_path);
 
 	if (priv->store_monitor) {
 		g_signal_handlers_disconnect_by_func (priv->store_monitor, store_monitor_cb, this);
@@ -615,10 +615,10 @@ finalize (GObject *g_obj)
 		g_object_unref (priv->user_store_monitor);
 	}
 
-	if (priv->gtk_store_monitor) {
-		g_signal_handlers_disconnect_by_func (priv->gtk_store_monitor, store_monitor_cb, this);
-		g_file_monitor_cancel (priv->gtk_store_monitor);
-		g_object_unref (priv->gtk_store_monitor);
+	if (priv->ctk_store_monitor) {
+		g_signal_handlers_disconnect_by_func (priv->ctk_store_monitor, store_monitor_cb, this);
+		g_file_monitor_cancel (priv->ctk_store_monitor);
+		g_object_unref (priv->ctk_store_monitor);
 	}
 
 	g_bookmark_file_free (priv->store);
@@ -882,7 +882,7 @@ load_places_store (BookmarkAgent *this)
 		groups = g_bookmark_file_get_groups (priv->store, uris [i], NULL, NULL);
 
 		for (j = 0; groups && groups [j]; ++j) {
-			if (! strcmp (groups [j], "gtk-bookmarks")) {
+			if (! strcmp (groups [j], "ctk-bookmarks")) {
 				g_bookmark_file_remove_item (priv->store, uris [i], NULL);
 
 				break;
@@ -894,7 +894,7 @@ load_places_store (BookmarkAgent *this)
 
 	g_strfreev (uris);
 
-	g_file_get_contents (priv->gtk_store_path, & buf, NULL, NULL);
+	g_file_get_contents (priv->ctk_store_path, & buf, NULL, NULL);
 
 	if (buf) {
 		bookmarks = g_strsplit (buf, "\n", -1);
@@ -909,7 +909,7 @@ load_places_store (BookmarkAgent *this)
 				uri = g_strndup (bookmarks [i], bookmark_len - strlen (label));
 			else
 				uri = bookmarks [i];
-			g_bookmark_file_add_group (priv->store, uri, "gtk-bookmarks");
+			g_bookmark_file_add_group (priv->store, uri, "ctk-bookmarks");
 			priv->create_item (this, uri);
 			if (label != NULL) {
 				label++;

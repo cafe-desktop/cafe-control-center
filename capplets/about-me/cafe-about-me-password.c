@@ -476,7 +476,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition condition, PasswordDialog *pdi
 					}
 
 					/* Focus current password */
-					gtk_widget_grab_focus (GTK_WIDGET (pdialog->current_password));
+					ctk_widget_grab_focus (GTK_WIDGET (pdialog->current_password));
 				}
 
 				reinit = TRUE;
@@ -528,7 +528,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition condition, PasswordDialog *pdi
 					/* Ohnoes! */
 
 					/* Focus new password */
-					gtk_widget_grab_focus (GTK_WIDGET (pdialog->new_password));
+					ctk_widget_grab_focus (GTK_WIDGET (pdialog->new_password));
 
 					if (g_strrstr (str->str, "recovered") != NULL) {
 						/* What does this indicate?
@@ -634,7 +634,7 @@ authenticate (PasswordDialog *pdialog)
 {
 	gchar	*s;
 
-	s = g_strdup_printf ("%s\n", gtk_entry_get_text (pdialog->current_password));
+	s = g_strdup_printf ("%s\n", ctk_entry_get_text (pdialog->current_password));
 
 	g_queue_push_tail (pdialog->backend_stdin_queue, s);
 }
@@ -645,7 +645,7 @@ update_password (PasswordDialog *pdialog)
 {
 	gchar	*s;
 
-	s = g_strdup_printf ("%s\n", gtk_entry_get_text (pdialog->new_password));
+	s = g_strdup_printf ("%s\n", ctk_entry_get_text (pdialog->new_password));
 
 	g_queue_push_tail (pdialog->backend_stdin_queue, s);
 	/* We need to allocate new space because io_queue_pop() g_free()s
@@ -677,12 +677,12 @@ passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 
 	/* Set cursor */
 	toplevel = WID ("change-password");
-	display = gtk_widget_get_display (toplevel);
+	display = ctk_widget_get_display (toplevel);
 	if (busy) {
 		cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
 	}
 
-	gdk_window_set_cursor (gtk_widget_get_window (toplevel), cursor);
+	gdk_window_set_cursor (ctk_widget_get_window (toplevel), cursor);
 	gdk_display_flush (display);
 
 	if (busy) {
@@ -719,17 +719,17 @@ passdlg_error_dialog (GtkWindow *parent, const gchar *title,
 {
 	GtkWidget *dialog;
 
-	dialog = gtk_message_dialog_new (parent, GTK_DIALOG_MODAL,
+	dialog = ctk_message_dialog_new (parent, GTK_DIALOG_MODAL,
 					 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
 					 "%s", msg);
 	if (title)
-		gtk_window_set_title (GTK_WINDOW (dialog), title);
+		ctk_window_set_title (GTK_WINDOW (dialog), title);
 
 	if (details)
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 							  "%s", details);
-	gtk_dialog_run (GTK_DIALOG (dialog));
-	gtk_widget_destroy (dialog);
+	ctk_dialog_run (GTK_DIALOG (dialog));
+	ctk_widget_destroy (dialog);
 }
 
 /* Set authenticated state of dialog according to state
@@ -771,18 +771,18 @@ passdlg_set_auth_state (PasswordDialog *pdialog, gboolean state)
 		/* Authenticated state */
 
 		/* Focus new password */
-		gtk_widget_grab_focus (GTK_WIDGET (pdialog->new_password));
+		ctk_widget_grab_focus (GTK_WIDGET (pdialog->new_password));
 
 		/* Set open lock image */
-		gtk_image_set_from_icon_name (GTK_IMAGE (pdialog->dialog_image), "changes-allow", GTK_ICON_SIZE_DIALOG);
+		ctk_image_set_from_icon_name (GTK_IMAGE (pdialog->dialog_image), "changes-allow", GTK_ICON_SIZE_DIALOG);
 	} else {
 		/* Not authenticated state */
 
 		/* Focus current password */
-		gtk_widget_grab_focus (GTK_WIDGET (pdialog->current_password));
+		ctk_widget_grab_focus (GTK_WIDGET (pdialog->current_password));
 
 		/* Set closed lock image */
-		gtk_image_set_from_icon_name (GTK_IMAGE (pdialog->dialog_image), "changes-prevent", GTK_ICON_SIZE_DIALOG);
+		ctk_image_set_from_icon_name (GTK_IMAGE (pdialog->dialog_image), "changes-prevent", GTK_ICON_SIZE_DIALOG);
 	}
 }
 
@@ -801,9 +801,9 @@ passdlg_clear (PasswordDialog *pdialog)
 	passdlg_set_auth_state (pdialog, FALSE);
 
 	/* Clear password entries */
-	gtk_entry_set_text (pdialog->current_password, "");
-	gtk_entry_set_text (pdialog->new_password, "");
-	gtk_entry_set_text (pdialog->retyped_password, "");
+	ctk_entry_set_text (pdialog->current_password, "");
+	ctk_entry_set_text (pdialog->new_password, "");
+	ctk_entry_set_text (pdialog->retyped_password, "");
 }
 
 /* Start backend and handle errors
@@ -820,7 +820,7 @@ passdlg_spawn_passwd (PasswordDialog *pdialog)
 
 	/* Spawn backend */
 	if (!spawn_passwd (pdialog, &error)) {
-		GtkWidget *parent = GTK_WIDGET (gtk_builder_get_object (pdialog->ui, "change-password"));
+		GtkWidget *parent = GTK_WIDGET (ctk_builder_get_object (pdialog->ui, "change-password"));
 
 		/* translators: Unable to launch <program>: <error message> */
 		details = g_strdup_printf (_("Unable to launch %s: %s"),
@@ -874,8 +874,8 @@ passdlg_validate_passwords (PasswordDialog *pdialog)
 	const gchar	*new_password, *retyped_password;
 	glong			nlen, rlen;
 
-	new_password = gtk_entry_get_text (pdialog->new_password);
-	retyped_password = gtk_entry_get_text (pdialog->retyped_password);
+	new_password = ctk_entry_get_text (pdialog->new_password);
+	retyped_password = ctk_entry_get_text (pdialog->retyped_password);
 
 	nlen = g_utf8_strlen (new_password, -1);
 	rlen = g_utf8_strlen (retyped_password, -1);
@@ -1001,9 +1001,9 @@ static void
 passdlg_activate (GtkEntry *entry, GtkWidget *w)
 {
 	if (GTK_IS_BUTTON (w)) {
-		gtk_widget_activate (w);
+		ctk_widget_activate (w);
 	} else {
-		gtk_widget_grab_focus (w);
+		ctk_widget_grab_focus (w);
 	}
 }
 
@@ -1017,8 +1017,8 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 	GError 		*error = NULL;
 
 	/* Initialize dialog */
-	dialog = gtk_builder_new ();
-	if (gtk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-password.ui", &error) == 0)
+	dialog = ctk_builder_new ();
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-password.ui", &error) == 0)
 	{
 		g_warning ("Could not parse UI definition: %s", error->message);
 		g_error_free (error);
@@ -1028,7 +1028,7 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 	wpassdlg = WID ("change-password");
 	capplet_set_icon (wpassdlg, "user-info");
 
-	group = gtk_accel_group_new ();
+	group = ctk_accel_group_new ();
 
 	/*
 	 * Initialize backend
@@ -1063,12 +1063,12 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 	pdialog->status_label		= GTK_LABEL (WID ("status-label"));
 
 	/* Initialize accelerators */
-	gtk_widget_add_accelerator (GTK_WIDGET (pdialog->current_password),
+	ctk_widget_add_accelerator (GTK_WIDGET (pdialog->current_password),
 								"activate", group,
 								GDK_KEY_Return, 0,
 								0);
 
-	gtk_widget_add_accelerator (GTK_WIDGET (pdialog->new_password),
+	ctk_widget_add_accelerator (GTK_WIDGET (pdialog->new_password),
 								"activate", group,
 								GDK_KEY_Return, 0,
 								0);
@@ -1098,8 +1098,8 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 					  G_CALLBACK (passdlg_check_password), pdialog);
 
 	/* Set misc dialog properties */
-	gtk_window_set_resizable (GTK_WINDOW (wpassdlg), FALSE);
-	gtk_window_set_transient_for (GTK_WINDOW (wpassdlg), GTK_WINDOW (parent));
+	ctk_window_set_resizable (GTK_WINDOW (wpassdlg), FALSE);
+	ctk_window_set_transient_for (GTK_WINDOW (wpassdlg), GTK_WINDOW (parent));
 }
 
 /* Main */
@@ -1121,16 +1121,16 @@ cafe_about_me_password (GtkWindow *parent)
 	wpassdlg = WID ("change-password");
 
 	/* Go! */
-	gtk_widget_show_all (wpassdlg);
+	ctk_widget_show_all (wpassdlg);
 
 	do {
-		result = gtk_dialog_run (GTK_DIALOG (wpassdlg));
+		result = ctk_dialog_run (GTK_DIALOG (wpassdlg));
 		response = passdlg_process_response (pdialog, result);
 	} while (response);
 
 	/* Clean up */
 	stop_passwd (pdialog);
-	gtk_widget_destroy (wpassdlg);
+	ctk_widget_destroy (wpassdlg);
 	g_queue_free (pdialog->backend_stdin_queue);
 	g_object_unref (dialog);
 	g_free (pdialog);

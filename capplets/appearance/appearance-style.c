@@ -25,7 +25,7 @@
 #include <gio/gio.h>
 
 #include "theme-util.h"
-#include "gtkrc-utils.h"
+#include "ctkrc-utils.h"
 #include "theme-thumbnail.h"
 #include "capplet-util.h"
 
@@ -63,10 +63,10 @@ find_string_in_model (GtkTreeModel *model, const gchar *value, gint column)
   if (!value)
     return NULL;
 
-  for (valid = gtk_tree_model_get_iter_first (model, &iter); valid;
-       valid = gtk_tree_model_iter_next (model, &iter))
+  for (valid = ctk_tree_model_get_iter_first (model, &iter); valid;
+       valid = ctk_tree_model_iter_next (model, &iter))
   {
-    gtk_tree_model_get (model, &iter, column, &test, -1);
+    ctk_tree_model_get (model, &iter, column, &test, -1);
 
     if (test)
     {
@@ -75,7 +75,7 @@ find_string_in_model (GtkTreeModel *model, const gchar *value, gint column)
 
       if (!cmp)
       {
-        path = gtk_tree_model_get_string_from_iter (model, &iter);
+        path = ctk_tree_model_get_string_from_iter (model, &iter);
         break;
       }
     }
@@ -93,7 +93,7 @@ treeview_gsettings_changed_callback (GSettings *settings, gchar *key, GtkTreeVie
 
   /* find value in model */
   curr_value = g_settings_get_string (settings, key);
-  store = gtk_tree_view_get_model (list);
+  store = ctk_tree_view_get_model (list);
 
   path = find_string_in_model (store, curr_value, COL_NAME);
 
@@ -106,27 +106,27 @@ treeview_gsettings_changed_callback (GSettings *settings, gchar *key, GtkTreeVie
     GtkTreeIter iter, sort_iter;
     ThemeConvData *conv;
 
-    list_store = GTK_LIST_STORE (gtk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (store)));
+    list_store = GTK_LIST_STORE (ctk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (store)));
 
     conv = g_object_get_data (G_OBJECT(list), THEME_DATA);
-    gtk_list_store_insert_with_values (list_store, &iter, 0,
+    ctk_list_store_insert_with_values (list_store, &iter, 0,
                                        COL_LABEL, curr_value,
                                        COL_NAME, curr_value,
                                        COL_THUMBNAIL, conv->thumbnail,
                                        -1);
     /* convert the tree store iter for use with the sort model */
-    gtk_tree_model_sort_convert_child_iter_to_iter (GTK_TREE_MODEL_SORT (store),
+    ctk_tree_model_sort_convert_child_iter_to_iter (GTK_TREE_MODEL_SORT (store),
                                                     &sort_iter, &iter);
-    path = gtk_tree_model_get_string_from_iter (store, &sort_iter);
+    path = ctk_tree_model_get_string_from_iter (store, &sort_iter);
 
     create_thumbnail (curr_value, conv->thumbnail, conv->data);
   }
   /* select the new gsettings theme in treeview */
-  GtkTreeSelection *selection = gtk_tree_view_get_selection (list);
-  GtkTreePath *treepath = gtk_tree_path_new_from_string (path);
-  gtk_tree_selection_select_path (selection, treepath);
-  gtk_tree_view_scroll_to_cell (list, treepath, NULL, FALSE, 0, 0);
-  gtk_tree_path_free (treepath);
+  GtkTreeSelection *selection = ctk_tree_view_get_selection (list);
+  GtkTreePath *treepath = ctk_tree_path_new_from_string (path);
+  ctk_tree_selection_select_path (selection, treepath);
+  ctk_tree_view_scroll_to_cell (list, treepath, NULL, FALSE, 0, 0);
+  ctk_tree_path_free (treepath);
 }
 
 static void
@@ -138,15 +138,15 @@ treeview_selection_changed_callback (GtkTreeSelection *selection, guint data)
   GtkTreeModel *model;
   GtkTreeView *list;
 
-  list = gtk_tree_selection_get_tree_view (selection);
+  list = ctk_tree_selection_get_tree_view (selection);
 
   settings = g_object_get_data (G_OBJECT (list), GSETTINGS_SETTINGS);
   key = g_object_get_data (G_OBJECT (list), GSETTINGS_KEY);
 
-  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+  if (ctk_tree_selection_get_selected (selection, &model, &iter)) {
     gchar *list_value;
 
-    gtk_tree_model_get (model, &iter, COL_NAME, &list_value, -1);
+    ctk_tree_model_get (model, &iter, COL_NAME, &list_value, -1);
 
     if (list_value) {
       g_settings_set_string (settings, key, list_value);
@@ -165,8 +165,8 @@ cursor_theme_sort_func (GtkTreeModel *model,
   const gchar *default_label;
   gint result;
 
-  gtk_tree_model_get (model, a, COL_LABEL, &a_label, -1);
-  gtk_tree_model_get (model, b, COL_LABEL, &b_label, -1);
+  ctk_tree_model_get (model, a, COL_LABEL, &a_label, -1);
+  ctk_tree_model_get (model, b, COL_LABEL, &b_label, -1);
 
   default_label = _("Default Pointer");
 
@@ -188,16 +188,16 @@ style_message_area_response_cb (GtkWidget *w,
                                 gint response_id,
                                 AppearanceData *data)
 {
-  GtkSettings *settings = gtk_settings_get_default ();
+  GtkSettings *settings = ctk_settings_get_default ();
   gchar *theme;
   gchar *engine_path;
 
-  g_object_get (settings, "gtk-theme-name", &theme, NULL);
-  engine_path = gtk_theme_info_missing_engine (theme, FALSE);
+  g_object_get (settings, "ctk-theme-name", &theme, NULL);
+  engine_path = ctk_theme_info_missing_engine (theme, FALSE);
   g_free (theme);
 
   if (engine_path != NULL) {
-    theme_install_file (GTK_WINDOW (gtk_widget_get_toplevel (data->style_message_area)),
+    theme_install_file (GTK_WINDOW (ctk_widget_get_toplevel (data->style_message_area)),
                         engine_path);
     g_free (engine_path);
   }
@@ -206,12 +206,12 @@ style_message_area_response_cb (GtkWidget *w,
 
 static void update_message_area(AppearanceData* data)
 {
-	GtkSettings* settings = gtk_settings_get_default();
+	GtkSettings* settings = ctk_settings_get_default();
 	gchar* theme = NULL;
 	gchar* engine;
 
-	g_object_get(settings, "gtk-theme-name", &theme, NULL);
-	engine = gtk_theme_info_missing_engine(theme, TRUE);
+	g_object_get(settings, "ctk-theme-name", &theme, NULL);
+	engine = ctk_theme_info_missing_engine(theme, TRUE);
 	g_free(theme);
 
 	if (data->style_message_area == NULL)
@@ -226,32 +226,32 @@ static void update_message_area(AppearanceData* data)
 			return;
 		}
 
-		data->style_message_area = gtk_info_bar_new ();
+		data->style_message_area = ctk_info_bar_new ();
 
 		g_signal_connect (data->style_message_area, "response", (GCallback) style_message_area_response_cb, data);
 
-		data->style_install_button = gtk_info_bar_add_button(GTK_INFO_BAR (data->style_message_area), _("Install"), GTK_RESPONSE_APPLY);
+		data->style_install_button = ctk_info_bar_add_button(GTK_INFO_BAR (data->style_message_area), _("Install"), GTK_RESPONSE_APPLY);
 
-		data->style_message_label = gtk_label_new (NULL);
-		gtk_label_set_line_wrap (GTK_LABEL (data->style_message_label), TRUE);
-		gtk_label_set_xalign (GTK_LABEL (data->style_message_label), 0.0);
+		data->style_message_label = ctk_label_new (NULL);
+		ctk_label_set_line_wrap (GTK_LABEL (data->style_message_label), TRUE);
+		ctk_label_set_xalign (GTK_LABEL (data->style_message_label), 0.0);
 
-		hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 9);
-		icon = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
-		gtk_widget_set_halign (icon, GTK_ALIGN_CENTER);
-		gtk_widget_set_valign (icon, GTK_ALIGN_START);
-		gtk_box_pack_start (GTK_BOX (hbox), icon, FALSE, FALSE, 0);
-		gtk_box_pack_start (GTK_BOX (hbox), data->style_message_label, TRUE, TRUE, 0);
-		content = gtk_info_bar_get_content_area (GTK_INFO_BAR (data->style_message_area));
-		gtk_container_add (GTK_CONTAINER (content), hbox);
-		gtk_widget_show_all (data->style_message_area);
-		gtk_widget_set_no_show_all (data->style_message_area, TRUE);
+		hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 9);
+		icon = ctk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
+		ctk_widget_set_halign (icon, GTK_ALIGN_CENTER);
+		ctk_widget_set_valign (icon, GTK_ALIGN_START);
+		ctk_box_pack_start (GTK_BOX (hbox), icon, FALSE, FALSE, 0);
+		ctk_box_pack_start (GTK_BOX (hbox), data->style_message_label, TRUE, TRUE, 0);
+		content = ctk_info_bar_get_content_area (GTK_INFO_BAR (data->style_message_area));
+		ctk_container_add (GTK_CONTAINER (content), hbox);
+		ctk_widget_show_all (data->style_message_area);
+		ctk_widget_set_no_show_all (data->style_message_area, TRUE);
 
-		parent = appearance_capplet_get_widget (data, "gtk_themes_vbox");
-		gtk_box_pack_start (GTK_BOX (parent), data->style_message_area, FALSE, FALSE, 0);
+		parent = appearance_capplet_get_widget (data, "ctk_themes_vbox");
+		ctk_box_pack_start (GTK_BOX (parent), data->style_message_area, FALSE, FALSE, 0);
 	}
 
-  gtk_widget_hide(data->style_message_area);
+  ctk_widget_hide(data->style_message_area);
 }
 
 static void
@@ -267,7 +267,7 @@ update_color_buttons_from_string (const gchar *color_scheme, AppearanceData *dat
   /* now set all the buttons to the correct settings */
   for (i = 0; i < NUM_SYMBOLIC_COLORS; ++i) {
     widget = appearance_capplet_get_widget (data, symbolic_names[i]);
-    gtk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (widget), &colors[i]);
+    ctk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (widget), &colors[i]);
   }
 }
 
@@ -278,10 +278,10 @@ update_color_buttons_from_settings (GtkSettings *settings,
   gchar *scheme, *setting;
 
   scheme = g_settings_get_string (data->interface_settings, COLOR_SCHEME_KEY);
-  g_object_get (settings, "gtk-color-scheme", &setting, NULL);
+  g_object_get (settings, "ctk-color-scheme", &setting, NULL);
 
   if (scheme == NULL || strcmp (scheme, "") == 0)
-    gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), FALSE);
+    ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), FALSE);
 
   g_free (scheme);
   update_color_buttons_from_string (setting, data);
@@ -306,18 +306,18 @@ check_color_schemes_enabled (GtkSettings *settings,
   gboolean enable_colors = FALSE;
   gint i;
 
-  g_object_get (settings, "gtk-theme-name", &theme, NULL);
-  filename = gtkrc_find_named (theme);
+  g_object_get (settings, "ctk-theme-name", &theme, NULL);
+  filename = ctkrc_find_named (theme);
   g_free (theme);
 
-  gtkrc_get_details (filename, NULL, &symbolic_colors);
+  ctkrc_get_details (filename, NULL, &symbolic_colors);
   g_free (filename);
 
   for (i = 0; i < NUM_SYMBOLIC_COLORS; ++i) {
     gboolean found;
 
     found = (g_slist_find_custom (symbolic_colors, symbolic_names[i], (GCompareFunc) strcmp) != NULL);
-    gtk_widget_set_sensitive (appearance_capplet_get_widget (data, symbolic_names[i]), found);
+    ctk_widget_set_sensitive (appearance_capplet_get_widget (data, symbolic_names[i]), found);
 
     enable_colors |= found;
   }
@@ -325,13 +325,13 @@ check_color_schemes_enabled (GtkSettings *settings,
   g_slist_foreach (symbolic_colors, (GFunc) g_free, NULL);
   g_slist_free (symbolic_colors);
 
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_table"), enable_colors);
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), enable_colors);
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_table"), enable_colors);
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), enable_colors);
 
   if (enable_colors)
-    gtk_widget_hide (appearance_capplet_get_widget (data, "color_scheme_message_hbox"));
+    ctk_widget_hide (appearance_capplet_get_widget (data, "color_scheme_message_hbox"));
   else
-    gtk_widget_show (appearance_capplet_get_widget (data, "color_scheme_message_hbox"));
+    ctk_widget_show (appearance_capplet_get_widget (data, "color_scheme_message_hbox"));
 }
 
 static void
@@ -346,7 +346,7 @@ color_button_clicked_cb (GtkWidget *colorbutton, AppearanceData *data)
 
   for (i = 0; i < NUM_SYMBOLIC_COLORS; ++i) {
     widget = appearance_capplet_get_widget (data, symbolic_names[i]);
-    gtk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
+    ctk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (widget), &color);
 
     colstr = gdk_rgba_to_string (&color);
     g_string_append_printf (scheme, "%s:%s\n", symbolic_names[i], colstr);
@@ -356,12 +356,12 @@ color_button_clicked_cb (GtkWidget *colorbutton, AppearanceData *data)
   g_string_truncate (scheme, scheme->len - 1);
 
   /* verify that the scheme really has changed */
-  g_object_get (gtk_settings_get_default (), "gtk-color-scheme", &old_scheme, NULL);
+  g_object_get (ctk_settings_get_default (), "ctk-color-scheme", &old_scheme, NULL);
 
   if (!cafe_theme_color_scheme_equal (old_scheme, scheme->str)) {
     g_settings_set_string (data->interface_settings, COLOR_SCHEME_KEY, scheme->str);
 
-    gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), TRUE);
+    ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), TRUE);
   }
   g_free (old_scheme);
   g_string_free (scheme, TRUE);
@@ -371,7 +371,7 @@ static void
 color_scheme_defaults_button_clicked_cb (GtkWidget *button, AppearanceData *data)
 {
   g_settings_reset (data->interface_settings, COLOR_SCHEME_KEY);
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), FALSE);
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), FALSE);
 }
 
 static void
@@ -380,16 +380,16 @@ style_response_cb (GtkDialog *dialog, gint response_id)
   if (response_id == GTK_RESPONSE_HELP) {
     capplet_help (GTK_WINDOW (dialog), "goscustdesk-61");
   } else {
-    gtk_widget_hide (GTK_WIDGET (dialog));
+    ctk_widget_hide (GTK_WIDGET (dialog));
   }
 }
 
 static void
-gtk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
+ctk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
   CafeThemeInfo *theme = NULL;
   gchar *name;
-  GtkSettings *gtksettings = gtk_settings_get_default ();
+  GtkSettings *ctksettings = ctk_settings_get_default ();
 
   name = g_settings_get_string (settings, key);
   if (name) {
@@ -397,24 +397,24 @@ gtk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 
     theme = cafe_theme_info_find (name);
 
-    /* Manually update GtkSettings to new gtk+ theme.
+    /* Manually update GtkSettings to new ctk+ theme.
      * This will eventually happen anyway, but we need the
      * info for the color scheme updates already. */
-    g_object_get (gtksettings, "gtk-theme-name", &current, NULL);
+    g_object_get (ctksettings, "ctk-theme-name", &current, NULL);
 
     if (strcmp (current, name) != 0) {
-      g_object_set (gtksettings, "gtk-theme-name", name, NULL);
+      g_object_set (ctksettings, "ctk-theme-name", name, NULL);
       update_message_area (data);
     }
 
     g_free (current);
 
-    check_color_schemes_enabled (gtksettings, data);
-    update_color_buttons_from_settings (gtksettings, data);
+    check_color_schemes_enabled (ctksettings, data);
+    update_color_buttons_from_settings (ctksettings, data);
     g_free (name);
   }
 
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "gtk_themes_delete"),
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "ctk_themes_delete"),
 			    theme_is_writable (theme));
 }
 
@@ -431,7 +431,7 @@ window_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
     g_free (name);
   }
 
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "window_themes_delete"),
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "window_themes_delete"),
 			    theme_is_writable (theme));
 }
 
@@ -447,7 +447,7 @@ icon_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
     g_free (name);
 }
 
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "icon_themes_delete"),
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "icon_themes_delete"),
 			    theme_is_writable (theme));
 }
 
@@ -473,7 +473,7 @@ cursor_size_scale_value_changed_cb (GtkRange *range, AppearanceData *data)
   if (theme) {
     gint size;
 
-    size = g_array_index (theme->sizes, gint, (int) gtk_range_get_value (range));
+    size = g_array_index (theme->sizes, gint, (int) ctk_range_get_value (range));
     cursor_size_changed_cb (size, data);
   }
 }
@@ -495,10 +495,10 @@ update_cursor_size_scale (CafeThemeCursorInfo *theme,
   cursor_size_large_label = appearance_capplet_get_widget (data, "cursor_size_large_label");
 
   sensitive = theme && theme->sizes->len > 1;
-  gtk_widget_set_sensitive (cursor_size_scale, sensitive);
-  gtk_widget_set_sensitive (cursor_size_label, sensitive);
-  gtk_widget_set_sensitive (cursor_size_small_label, sensitive);
-  gtk_widget_set_sensitive (cursor_size_large_label, sensitive);
+  ctk_widget_set_sensitive (cursor_size_scale, sensitive);
+  ctk_widget_set_sensitive (cursor_size_label, sensitive);
+  ctk_widget_set_sensitive (cursor_size_small_label, sensitive);
+  ctk_widget_set_sensitive (cursor_size_large_label, sensitive);
 
   gsettings_size = g_settings_get_int (data->mouse_settings, CURSOR_SIZE_KEY);
 
@@ -507,7 +507,7 @@ update_cursor_size_scale (CafeThemeCursorInfo *theme,
     gint i, index;
     GtkRange *range = GTK_RANGE (cursor_size_scale);
 
-    adjustment = gtk_range_get_adjustment (range);
+    adjustment = ctk_range_get_adjustment (range);
     g_object_set (adjustment, "upper", (gdouble) theme->sizes->len - 1, NULL);
 
 
@@ -537,7 +537,7 @@ update_cursor_size_scale (CafeThemeCursorInfo *theme,
       }
     }
 
-    gtk_range_set_value (range, (gdouble) index);
+    ctk_range_set_value (range, (gdouble) index);
 
     size = g_array_index (theme->sizes, gint, index);
   } else {
@@ -565,7 +565,7 @@ cursor_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 
   update_cursor_size_scale (theme, data);
 
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "cursor_themes_delete"),
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "cursor_themes_delete"),
 			    theme_is_writable (theme));
 
 }
@@ -574,43 +574,43 @@ static void
 generic_theme_delete (const gchar *tv_name, ThemeType type, AppearanceData *data)
 {
   GtkTreeView *treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
-  GtkTreeSelection *selection = gtk_tree_view_get_selection (treeview);
+  GtkTreeSelection *selection = ctk_tree_view_get_selection (treeview);
   GtkTreeModel *model;
   GtkTreeIter iter;
 
-  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+  if (ctk_tree_selection_get_selected (selection, &model, &iter)) {
     gchar *name;
 
-    gtk_tree_model_get (model, &iter, COL_NAME, &name, -1);
+    ctk_tree_model_get (model, &iter, COL_NAME, &name, -1);
 
     if (name != NULL && theme_delete (name, type)) {
       /* remove theme from the model, too */
       GtkTreeIter child;
       GtkTreePath *path;
 
-      path = gtk_tree_model_get_path (model, &iter);
-      gtk_tree_model_sort_convert_iter_to_child_iter (
+      path = ctk_tree_model_get_path (model, &iter);
+      ctk_tree_model_sort_convert_iter_to_child_iter (
           GTK_TREE_MODEL_SORT (model), &child, &iter);
-      gtk_list_store_remove (GTK_LIST_STORE (
-          gtk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (model))), &child);
+      ctk_list_store_remove (GTK_LIST_STORE (
+          ctk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (model))), &child);
 
-      if (gtk_tree_model_get_iter (model, &iter, path) ||
+      if (ctk_tree_model_get_iter (model, &iter, path) ||
           theme_model_iter_last (model, &iter)) {
-        gtk_tree_path_free (path);
-        path = gtk_tree_model_get_path (model, &iter);
-	gtk_tree_selection_select_path (selection, path);
-	gtk_tree_view_scroll_to_cell (treeview, path, NULL, FALSE, 0, 0);
+        ctk_tree_path_free (path);
+        path = ctk_tree_model_get_path (model, &iter);
+	ctk_tree_selection_select_path (selection, path);
+	ctk_tree_view_scroll_to_cell (treeview, path, NULL, FALSE, 0, 0);
       }
-      gtk_tree_path_free (path);
+      ctk_tree_path_free (path);
     }
     g_free (name);
   }
 }
 
 static void
-gtk_theme_delete_cb (GtkWidget *button, AppearanceData *data)
+ctk_theme_delete_cb (GtkWidget *button, AppearanceData *data)
 {
-  generic_theme_delete ("gtk_themes_list", THEME_TYPE_GTK, data);
+  generic_theme_delete ("ctk_themes_list", THEME_TYPE_GTK, data);
 }
 
 static void
@@ -643,10 +643,10 @@ add_to_treeview (const gchar *tv_name,
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
-          gtk_tree_model_sort_get_model (
-          GTK_TREE_MODEL_SORT (gtk_tree_view_get_model (treeview))));
+          ctk_tree_model_sort_get_model (
+          GTK_TREE_MODEL_SORT (ctk_tree_view_get_model (treeview))));
 
-  gtk_list_store_insert_with_values (model, NULL, 0,
+  ctk_list_store_insert_with_values (model, NULL, 0,
           COL_LABEL, theme_label,
           COL_NAME, theme_name,
           COL_THUMBNAIL, theme_thumbnail,
@@ -664,11 +664,11 @@ remove_from_treeview (const gchar *tv_name,
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
-          gtk_tree_model_sort_get_model (
-          GTK_TREE_MODEL_SORT (gtk_tree_view_get_model (treeview))));
+          ctk_tree_model_sort_get_model (
+          GTK_TREE_MODEL_SORT (ctk_tree_view_get_model (treeview))));
 
   if (theme_find_in_model (GTK_TREE_MODEL (model), theme_name, &iter))
-    gtk_list_store_remove (model, &iter);
+    ctk_list_store_remove (model, &iter);
 }
 
 static void
@@ -683,11 +683,11 @@ update_in_treeview (const gchar *tv_name,
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
-          gtk_tree_model_sort_get_model (
-          GTK_TREE_MODEL_SORT (gtk_tree_view_get_model (treeview))));
+          ctk_tree_model_sort_get_model (
+          GTK_TREE_MODEL_SORT (ctk_tree_view_get_model (treeview))));
 
   if (theme_find_in_model (GTK_TREE_MODEL (model), theme_name, &iter)) {
-    gtk_list_store_set (model, &iter,
+    ctk_list_store_set (model, &iter,
           COL_LABEL, theme_label,
           COL_NAME, theme_name,
           -1);
@@ -709,22 +709,22 @@ update_thumbnail_in_treeview (const gchar *tv_name,
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
-          gtk_tree_model_sort_get_model (
-          GTK_TREE_MODEL_SORT (gtk_tree_view_get_model (treeview))));
+          ctk_tree_model_sort_get_model (
+          GTK_TREE_MODEL_SORT (ctk_tree_view_get_model (treeview))));
 
   if (theme_find_in_model (GTK_TREE_MODEL (model), theme_name, &iter)) {
-    gtk_list_store_set (model, &iter,
+    ctk_list_store_set (model, &iter,
           COL_THUMBNAIL, theme_thumbnail,
           -1);
   }
 }
 
 static void
-gtk_theme_thumbnail_cb (GdkPixbuf *pixbuf,
+ctk_theme_thumbnail_cb (GdkPixbuf *pixbuf,
                         gchar *theme_name,
                         AppearanceData *data)
 {
-  update_thumbnail_in_treeview ("gtk_themes_list", theme_name, pixbuf, data);
+  update_thumbnail_in_treeview ("ctk_themes_list", theme_name, pixbuf, data);
 }
 
 static void
@@ -753,12 +753,12 @@ create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *d
       generate_icon_theme_thumbnail_async (info,
           (ThemeThumbnailFunc) icon_theme_thumbnail_cb, data, NULL);
     }
-  } else if (default_thumb == data->gtk_theme_icon) {
+  } else if (default_thumb == data->ctk_theme_icon) {
     CafeThemeInfo *info;
     info = cafe_theme_info_find (name);
-    if (info != NULL && info->has_gtk) {
-      generate_gtk_theme_thumbnail_async (info,
-          (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
+    if (info != NULL && info->has_ctk) {
+      generate_ctk_theme_thumbnail_async (info,
+          (ThemeThumbnailFunc) ctk_theme_thumbnail_cb, data, NULL);
     }
   } else if (default_thumb == data->window_theme_icon) {
     CafeThemeInfo *info;
@@ -781,19 +781,19 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
 
     if (change_type == CAFE_THEME_CHANGE_DELETED) {
       if (element_type & CAFE_THEME_GTK_2)
-        remove_from_treeview ("gtk_themes_list", info->name, data);
+        remove_from_treeview ("ctk_themes_list", info->name, data);
       if (element_type & CAFE_THEME_CROMA)
         remove_from_treeview ("window_themes_list", info->name, data);
 
     } else {
       if (element_type & CAFE_THEME_GTK_2) {
         if (change_type == CAFE_THEME_CHANGE_CREATED)
-          add_to_treeview ("gtk_themes_list", info->name, info->name, data->gtk_theme_icon, data);
+          add_to_treeview ("ctk_themes_list", info->name, info->name, data->ctk_theme_icon, data);
         else if (change_type == CAFE_THEME_CHANGE_CHANGED)
-          update_in_treeview ("gtk_themes_list", info->name, info->name, data);
+          update_in_treeview ("ctk_themes_list", info->name, info->name, data);
 
-        generate_gtk_theme_thumbnail_async (info,
-            (ThemeThumbnailFunc) gtk_theme_thumbnail_cb, data, NULL);
+        generate_ctk_theme_thumbnail_async (info,
+            (ThemeThumbnailFunc) ctk_theme_thumbnail_cb, data, NULL);
       }
 
       if (element_type & CAFE_THEME_CROMA) {
@@ -855,11 +855,11 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   {
     case THEME_TYPE_GTK:
       themes = cafe_theme_info_find_by_type (CAFE_THEME_GTK_2);
-      thumbnail = data->gtk_theme_icon;
+      thumbnail = data->ctk_theme_icon;
       settings = data->interface_settings;
       key = GTK_THEME_KEY;
-      generator = (ThumbnailGenFunc) generate_gtk_theme_thumbnail_async;
-      thumb_cb = (ThemeThumbnailFunc) gtk_theme_thumbnail_cb;
+      generator = (ThumbnailGenFunc) generate_ctk_theme_thumbnail_async;
+      thumb_cb = (ThemeThumbnailFunc) ctk_theme_thumbnail_cb;
       break;
 
     case THEME_TYPE_WINDOW:
@@ -894,7 +894,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       return;
   }
 
-  store = gtk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+  store = ctk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   for (l = themes; l; l = g_list_next (l))
   {
@@ -907,7 +907,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
       generator (theme, thumb_cb, data, NULL);
     }
 
-    gtk_list_store_insert_with_values (store, &i, 0,
+    ctk_list_store_insert_with_values (store, &i, 0,
                                        COL_LABEL, theme->readable_name,
                                        COL_NAME, theme->name,
                                        COL_THUMBNAIL, thumbnail,
@@ -920,31 +920,31 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   }
   g_list_free (themes);
 
-  sort_model = gtk_tree_model_sort_new_with_model (GTK_TREE_MODEL (store));
-  gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model),
+  sort_model = ctk_tree_model_sort_new_with_model (GTK_TREE_MODEL (store));
+  ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model),
                                         COL_LABEL, GTK_SORT_ASCENDING);
 
   if (type == THEME_TYPE_CURSOR)
-    gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (sort_model), COL_LABEL,
+    ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (sort_model), COL_LABEL,
                                      (GtkTreeIterCompareFunc) cursor_theme_sort_func,
                                      NULL, NULL);
 
-  gtk_tree_view_set_model (GTK_TREE_VIEW (list), GTK_TREE_MODEL (sort_model));
+  ctk_tree_view_set_model (GTK_TREE_VIEW (list), GTK_TREE_MODEL (sort_model));
 
-  renderer = gtk_cell_renderer_pixbuf_new ();
+  renderer = ctk_cell_renderer_pixbuf_new ();
   g_object_set (renderer, "xpad", 3, "ypad", 3, NULL);
 
-  column = gtk_tree_view_column_new ();
-  gtk_tree_view_column_pack_start (column, renderer, FALSE);
-  gtk_tree_view_column_add_attribute (column, renderer, "pixbuf", COL_THUMBNAIL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list), column);
+  column = ctk_tree_view_column_new ();
+  ctk_tree_view_column_pack_start (column, renderer, FALSE);
+  ctk_tree_view_column_add_attribute (column, renderer, "pixbuf", COL_THUMBNAIL);
+  ctk_tree_view_append_column (GTK_TREE_VIEW (list), column);
 
-  renderer = gtk_cell_renderer_text_new ();
+  renderer = ctk_cell_renderer_text_new ();
 
-  column = gtk_tree_view_column_new ();
-  gtk_tree_view_column_pack_start (column, renderer, FALSE);
-  gtk_tree_view_column_add_attribute (column, renderer, "text", COL_LABEL);
-  gtk_tree_view_append_column (GTK_TREE_VIEW (list), column);
+  column = ctk_tree_view_column_new ();
+  ctk_tree_view_column_pack_start (column, renderer, FALSE);
+  ctk_tree_view_column_add_attribute (column, renderer, "text", COL_LABEL);
+  ctk_tree_view_append_column (GTK_TREE_VIEW (list), column);
 
   conv_data = g_new (ThemeConvData, 1);
   conv_data->data = data;
@@ -957,16 +957,16 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
 
   /* select in treeview the theme set in gsettings */
   GtkTreeModel *treemodel;
-  treemodel = gtk_tree_view_get_model (GTK_TREE_VIEW (list));
+  treemodel = ctk_tree_view_get_model (GTK_TREE_VIEW (list));
   gchar *theme = g_settings_get_string (settings, key);
   gchar *path = find_string_in_model (treemodel, theme, COL_NAME);
   if (path)
   {
-    GtkTreeSelection *selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (list));
-    GtkTreePath *treepath = gtk_tree_path_new_from_string (path);
-    gtk_tree_selection_select_path (selection, treepath);
-    gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW (list), treepath, NULL, FALSE, 0, 0);
-    gtk_tree_path_free (treepath);
+    GtkTreeSelection *selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (list));
+    GtkTreePath *treepath = ctk_tree_path_new_from_string (path);
+    ctk_tree_selection_select_path (selection, treepath);
+    ctk_tree_view_scroll_to_cell (GTK_TREE_VIEW (list), treepath, NULL, FALSE, 0, 0);
+    ctk_tree_path_free (treepath);
     g_free (path);
   }
   if (theme)
@@ -980,7 +980,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   g_free (signal_name);
 
   /* connect to treeview change event */
-  g_signal_connect (gtk_tree_view_get_selection (GTK_TREE_VIEW (list)),
+  g_signal_connect (ctk_tree_view_get_selection (GTK_TREE_VIEW (list)),
       "changed", G_CALLBACK (treeview_selection_changed_callback), list);
 }
 
@@ -992,7 +992,7 @@ style_init (AppearanceData *data)
   gchar *label;
   gint i;
 
-  data->gtk_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/gtk-theme-thumbnailing.png", NULL);
+  data->ctk_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/ctk-theme-thumbnailing.png", NULL);
   data->window_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
   data->icon_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
   data->style_message_area = NULL;
@@ -1001,43 +1001,43 @@ style_init (AppearanceData *data)
 
   w = appearance_capplet_get_widget (data, "theme_details");
   g_signal_connect (w, "response", (GCallback) style_response_cb, NULL);
-  g_signal_connect (w, "delete_event", (GCallback) gtk_true, NULL);
+  g_signal_connect (w, "delete_event", (GCallback) ctk_true, NULL);
 
   prepare_list (data, appearance_capplet_get_widget (data, "window_themes_list"), THEME_TYPE_WINDOW, (GCallback) window_theme_changed);
-  prepare_list (data, appearance_capplet_get_widget (data, "gtk_themes_list"), THEME_TYPE_GTK, (GCallback) gtk_theme_changed);
+  prepare_list (data, appearance_capplet_get_widget (data, "ctk_themes_list"), THEME_TYPE_GTK, (GCallback) ctk_theme_changed);
   prepare_list (data, appearance_capplet_get_widget (data, "icon_themes_list"), THEME_TYPE_ICON, (GCallback) icon_theme_changed);
   prepare_list (data, appearance_capplet_get_widget (data, "cursor_themes_list"), THEME_TYPE_CURSOR, (GCallback) cursor_theme_changed);
 
   window_theme_changed (data->croma_settings, CROMA_THEME_KEY, data);
-  gtk_theme_changed (data->interface_settings, GTK_THEME_KEY, data);
+  ctk_theme_changed (data->interface_settings, GTK_THEME_KEY, data);
   icon_theme_changed (data->interface_settings, ICON_THEME_KEY, data);
   cursor_theme_changed (data->mouse_settings, CURSOR_THEME_KEY, data);
 
   GtkNotebook *style_nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "notebook2"));
-  gtk_notebook_remove_page (style_nb, 1);
+  ctk_notebook_remove_page (style_nb, 1);
 
   w = appearance_capplet_get_widget (data, "color_scheme_message_hbox");
-  gtk_widget_set_no_show_all (w, TRUE);
+  ctk_widget_set_no_show_all (w, TRUE);
 
   w = appearance_capplet_get_widget (data, "color_scheme_defaults_button");
-  gtk_button_set_image (GTK_BUTTON (w),
-                        gtk_image_new_from_icon_name ("document-revert",
+  ctk_button_set_image (GTK_BUTTON (w),
+                        ctk_image_new_from_icon_name ("document-revert",
                                                       GTK_ICON_SIZE_BUTTON));
 
-  settings = gtk_settings_get_default ();
-  g_signal_connect (settings, "notify::gtk-color-scheme", (GCallback) color_scheme_changed, data);
+  settings = ctk_settings_get_default ();
+  g_signal_connect (settings, "notify::ctk-color-scheme", (GCallback) color_scheme_changed, data);
 
   w = appearance_capplet_get_widget (data, "cursor_size_scale");
   g_signal_connect (w, "value-changed", (GCallback) cursor_size_scale_value_changed_cb, data);
 
   w = appearance_capplet_get_widget (data, "cursor_size_small_label");
-  label = g_strdup_printf ("<small><i>%s</i></small>", gtk_label_get_text (GTK_LABEL (w)));
-  gtk_label_set_markup (GTK_LABEL (w), label);
+  label = g_strdup_printf ("<small><i>%s</i></small>", ctk_label_get_text (GTK_LABEL (w)));
+  ctk_label_set_markup (GTK_LABEL (w), label);
   g_free (label);
 
   w = appearance_capplet_get_widget (data, "cursor_size_large_label");
-  label = g_strdup_printf ("<small><i>%s</i></small>", gtk_label_get_text (GTK_LABEL (w)));
-  gtk_label_set_markup (GTK_LABEL (w), label);
+  label = g_strdup_printf ("<small><i>%s</i></small>", ctk_label_get_text (GTK_LABEL (w)));
+  ctk_label_set_markup (GTK_LABEL (w), label);
   g_free (label);
 
   /* connect signals */
@@ -1048,7 +1048,7 @@ style_init (AppearanceData *data)
   /* revert button */
   g_signal_connect (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), "clicked", (GCallback) color_scheme_defaults_button_clicked_cb, data);
   /* delete buttons */
-  g_signal_connect (appearance_capplet_get_widget (data, "gtk_themes_delete"), "clicked", (GCallback) gtk_theme_delete_cb, data);
+  g_signal_connect (appearance_capplet_get_widget (data, "ctk_themes_delete"), "clicked", (GCallback) ctk_theme_delete_cb, data);
   g_signal_connect (appearance_capplet_get_widget (data, "window_themes_delete"), "clicked", (GCallback) window_theme_delete_cb, data);
   g_signal_connect (appearance_capplet_get_widget (data, "icon_themes_delete"), "clicked", (GCallback) icon_theme_delete_cb, data);
   g_signal_connect (appearance_capplet_get_widget (data, "cursor_themes_delete"), "clicked", (GCallback) cursor_theme_delete_cb, data);
@@ -1060,8 +1060,8 @@ style_init (AppearanceData *data)
 void
 style_shutdown (AppearanceData *data)
 {
-  if (data->gtk_theme_icon)
-    g_object_unref (data->gtk_theme_icon);
+  if (data->ctk_theme_icon)
+    g_object_unref (data->ctk_theme_icon);
   if (data->window_theme_icon)
     g_object_unref (data->window_theme_icon);
   if (data->icon_theme_icon)

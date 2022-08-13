@@ -16,7 +16,7 @@
  * Boston, MA 02110-1301, USA.
  */
 #include <cairo.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #define FOO_TYPE_SCROLL_AREA            (foo_scroll_area_get_type ())
 #define FOO_SCROLL_AREA(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), FOO_TYPE_SCROLL_AREA, FooScrollArea))

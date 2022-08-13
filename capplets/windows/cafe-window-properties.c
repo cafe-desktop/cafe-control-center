@@ -110,18 +110,18 @@ update_sensitivity ()
 {
     gchar *str;
 
-    gtk_widget_set_sensitive (GTK_WIDGET (compositing_fast_alt_tab_checkbutton),
+    ctk_widget_set_sensitive (GTK_WIDGET (compositing_fast_alt_tab_checkbutton),
                               g_settings_get_boolean (croma_settings, CROMA_COMPOSITING_MANAGER_KEY));
-    gtk_widget_set_sensitive (GTK_WIDGET (focus_mode_mouse_checkbutton),
+    ctk_widget_set_sensitive (GTK_WIDGET (focus_mode_mouse_checkbutton),
                               g_settings_get_enum (croma_settings, CROMA_FOCUS_KEY) != FOCUS_MODE_CLICK);
-    gtk_widget_set_sensitive (GTK_WIDGET (autoraise_checkbutton),
+    ctk_widget_set_sensitive (GTK_WIDGET (autoraise_checkbutton),
                               g_settings_get_enum (croma_settings, CROMA_FOCUS_KEY) != FOCUS_MODE_CLICK);
-    gtk_widget_set_sensitive (GTK_WIDGET (autoraise_delay_hbox),
+    ctk_widget_set_sensitive (GTK_WIDGET (autoraise_delay_hbox),
                               g_settings_get_enum (croma_settings, CROMA_FOCUS_KEY) != FOCUS_MODE_CLICK &&
                               g_settings_get_boolean (croma_settings, CROMA_AUTORAISE_KEY));
 
     str = g_settings_get_string (croma_settings, CROMA_BUTTON_LAYOUT_KEY);
-    gtk_widget_set_sensitive (GTK_WIDGET (titlebar_layout_optionmenu),
+    ctk_widget_set_sensitive (GTK_WIDGET (titlebar_layout_optionmenu),
                               g_strcmp0 (str, CROMA_BUTTON_LAYOUT_LEFT) == 0 ||
                               g_strcmp0 (str, CROMA_BUTTON_LAYOUT_RIGHT) == 0);
     g_free (str);
@@ -139,10 +139,10 @@ static void
 mouse_focus_toggled_callback (GtkWidget *button,
                               void      *data)
 {
-    if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton))) {
+    if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton))) {
         g_settings_set_enum (croma_settings,
                              CROMA_FOCUS_KEY,
-                             gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton)) ?
+                             ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton)) ?
                              FOCUS_MODE_MOUSE : FOCUS_MODE_SLOPPY);
     }
     else {
@@ -156,16 +156,16 @@ mouse_focus_changed_callback (GSettings *settings,
                               gpointer user_data)
 {
     if (g_settings_get_enum (settings, key) == FOCUS_MODE_MOUSE) {
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), TRUE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), TRUE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), TRUE);
     }
     else if (g_settings_get_enum (settings, key) == FOCUS_MODE_SLOPPY) {
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), TRUE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), FALSE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), TRUE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), FALSE);
     }
     else {
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), FALSE);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), FALSE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton), FALSE);
+        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (focus_mode_mouse_checkbutton), FALSE);
     }
 }
 
@@ -175,7 +175,7 @@ autoraise_delay_value_changed_callback (GtkWidget *slider,
 {
     g_settings_set_int (croma_settings,
                         CROMA_AUTORAISE_DELAY_KEY,
-                        gtk_range_get_value (GTK_RANGE (slider)) * 1000);
+                        ctk_range_get_value (GTK_RANGE (slider)) * 1000);
 }
 
 static void
@@ -183,14 +183,14 @@ double_click_titlebar_changed_callback (GtkWidget *optionmenu,
                                         void      *data)
 {
     g_settings_set_enum (croma_settings, CROMA_DOUBLE_CLICK_TITLEBAR_KEY,
-                         gtk_combo_box_get_active (GTK_COMBO_BOX (optionmenu)));
+                         ctk_combo_box_get_active (GTK_COMBO_BOX (optionmenu)));
 }
 
 static void
 titlebar_layout_changed_callback (GtkWidget *optionmenu,
                                   void      *data)
 {
-    gint value = gtk_combo_box_get_active (GTK_COMBO_BOX (optionmenu));
+    gint value = ctk_combo_box_get_active (GTK_COMBO_BOX (optionmenu));
 
     if (value == 0) {
         g_settings_set_string (croma_settings, CROMA_BUTTON_LAYOUT_KEY, CROMA_BUTTON_LAYOUT_RIGHT);
@@ -208,7 +208,7 @@ alt_click_radio_toggled_callback (GtkWidget *radio,
     gboolean active;
     gchar *value;
 
-    active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (radio));
+    active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (radio));
 
     if (active) {
         value = g_strdup_printf ("<%s>", modifier->value);
@@ -232,7 +232,7 @@ set_alt_click_value ()
         for (i = 0; i < n_mouse_modifiers; i ++) {
             value = g_strdup_printf ("<%s>", mouse_modifiers[i].value);
             if (strcmp (value, mouse_move_modifier) == 0) {
-                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (mouse_modifiers[i].radio), TRUE);
+                ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (mouse_modifiers[i].radio), TRUE);
                 match_found = TRUE;
                 break;
             }
@@ -244,7 +244,7 @@ set_alt_click_value ()
     /* No matching modifier was found; we set all the toggle buttons to be
      * insensitive. */
     for (i = 0; i < n_mouse_modifiers; i++) {
-        gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (mouse_modifiers[i].radio), ! match_found);
+        ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (mouse_modifiers[i].radio), ! match_found);
     }
 }
 
@@ -253,19 +253,19 @@ wm_unsupported ()
 {
     GtkWidget *no_tool_dialog;
 
-    no_tool_dialog = gtk_message_dialog_new (NULL,
+    no_tool_dialog = ctk_message_dialog_new (NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_MESSAGE_ERROR,
                                              GTK_BUTTONS_CLOSE,
                                              " ");
-    gtk_window_set_title (GTK_WINDOW (no_tool_dialog), "");
-    gtk_window_set_resizable (GTK_WINDOW (no_tool_dialog), FALSE);
+    ctk_window_set_title (GTK_WINDOW (no_tool_dialog), "");
+    ctk_window_set_resizable (GTK_WINDOW (no_tool_dialog), FALSE);
 
-    gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (no_tool_dialog), _("The current window manager is unsupported"));
+    ctk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (no_tool_dialog), _("The current window manager is unsupported"));
 
-    gtk_dialog_run (GTK_DIALOG (no_tool_dialog));
+    ctk_dialog_run (GTK_DIALOG (no_tool_dialog));
 
-    gtk_widget_destroy (no_tool_dialog);
+    ctk_widget_destroy (no_tool_dialog);
 }
 
 static void
@@ -276,7 +276,7 @@ wm_changed_callback (GdkScreen *screen,
 
     current_wm = gdk_x11_screen_get_window_manager_name (screen);
 
-    gtk_widget_set_sensitive (dialog_win, g_strcmp0 (current_wm, WM_COMMON_CROMA) == 0);
+    ctk_widget_set_sensitive (dialog_win, g_strcmp0 (current_wm, WM_COMMON_CROMA) == 0);
 }
 
 static void
@@ -288,7 +288,7 @@ response_cb (GtkWidget *dialog_win,
     if (response_id == GTK_RESPONSE_HELP) {
         capplet_help (GTK_WINDOW (dialog_win), "goscustdesk-58");
     } else {
-        gtk_widget_destroy (dialog_win);
+        ctk_widget_destroy (dialog_win);
     }
 }
 
@@ -299,12 +299,12 @@ title_label_new (const char* title)
     gchar *str;
 
     str = g_strdup_printf ("<b>%s</b>", _(title));
-    widget = gtk_label_new (str);
+    widget = ctk_label_new (str);
     g_free (str);
 
-    gtk_label_set_use_markup (GTK_LABEL (widget), TRUE);
-    gtk_label_set_xalign (GTK_LABEL (widget), 0.0);
-    gtk_label_set_yalign (GTK_LABEL (widget), 0.0);
+    ctk_label_set_use_markup (GTK_LABEL (widget), TRUE);
+    ctk_label_set_xalign (GTK_LABEL (widget), 0.0);
+    ctk_label_set_yalign (GTK_LABEL (widget), 0.0);
 
     return widget;
 }
@@ -336,8 +336,8 @@ main (int argc, char **argv)
 
     croma_settings = g_settings_new (CROMA_SCHEMA);
 
-    builder = gtk_builder_new ();
-    if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/windows/window-properties.ui", &error) == 0) {
+    builder = ctk_builder_new ();
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/windows/window-properties.ui", &error) == 0) {
         g_warning ("Could not load UI: %s", error->message);
         g_error_free (error);
         g_object_unref (croma_settings);
@@ -345,7 +345,7 @@ main (int argc, char **argv)
         return -1;
     }
 
-    gtk_builder_add_callback_symbols (builder,
+    ctk_builder_add_callback_symbols (builder,
                                       "on_dialog_win_response",                        G_CALLBACK (response_cb),
                                       "on_autoraise_delay_slider_value_changed",       G_CALLBACK (autoraise_delay_value_changed_callback),
                                       "on_double_click_titlebar_optionmenu_changed",   G_CALLBACK (double_click_titlebar_changed_callback),
@@ -354,36 +354,36 @@ main (int argc, char **argv)
                                       "on_focus_mode_mouse_checkbutton_toggled",       G_CALLBACK (mouse_focus_toggled_callback),
                                       NULL);
 
-    gtk_builder_connect_signals (builder, NULL);
+    ctk_builder_connect_signals (builder, NULL);
 
     /* Window */
-    dialog_win = GTK_WIDGET (gtk_builder_get_object (builder, "dialog_win"));
+    dialog_win = GTK_WIDGET (ctk_builder_get_object (builder, "dialog_win"));
 
     /* Compositing manager */
-    compositing_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "compositing_checkbutton"));
-    compositing_fast_alt_tab_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "compositing_fast_alt_tab_checkbutton"));
+    compositing_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "compositing_checkbutton"));
+    compositing_fast_alt_tab_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "compositing_fast_alt_tab_checkbutton"));
 
     /* Titlebar buttons */
-    titlebar_layout_optionmenu = GTK_WIDGET (gtk_builder_get_object (builder, "titlebar_layout_optionmenu"));
+    titlebar_layout_optionmenu = GTK_WIDGET (ctk_builder_get_object (builder, "titlebar_layout_optionmenu"));
 
     /* New Windows */
-    center_new_windows_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "center_new_windows_checkbutton"));
+    center_new_windows_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "center_new_windows_checkbutton"));
 
     /* Window Snapping */
-    allow_tiling_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "allow_tiling_checkbutton"));
+    allow_tiling_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "allow_tiling_checkbutton"));
 
     /* Window Selection */
-    focus_mode_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "focus_mode_checkbutton"));
-    focus_mode_mouse_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "focus_mode_mouse_checkbutton"));
-    autoraise_checkbutton = GTK_WIDGET (gtk_builder_get_object (builder, "autoraise_checkbutton"));
-    autoraise_delay_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "autoraise_delay_hbox"));
-    autoraise_delay_slider = GTK_WIDGET (gtk_builder_get_object (builder, "autoraise_delay_slider"));
+    focus_mode_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "focus_mode_checkbutton"));
+    focus_mode_mouse_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "focus_mode_mouse_checkbutton"));
+    autoraise_checkbutton = GTK_WIDGET (ctk_builder_get_object (builder, "autoraise_checkbutton"));
+    autoraise_delay_hbox = GTK_WIDGET (ctk_builder_get_object (builder, "autoraise_delay_hbox"));
+    autoraise_delay_slider = GTK_WIDGET (ctk_builder_get_object (builder, "autoraise_delay_slider"));
 
     /* Titlebar Action */
-    double_click_titlebar_optionmenu = GTK_WIDGET (gtk_builder_get_object (builder, "double_click_titlebar_optionmenu"));
+    double_click_titlebar_optionmenu = GTK_WIDGET (ctk_builder_get_object (builder, "double_click_titlebar_optionmenu"));
 
     /* Movement Key */
-    alt_click_vbox = GTK_WIDGET (gtk_builder_get_object (builder, "alt_click_vbox"));
+    alt_click_vbox = GTK_WIDGET (ctk_builder_get_object (builder, "alt_click_vbox"));
 
 
     g_object_unref (builder);
@@ -392,17 +392,17 @@ main (int argc, char **argv)
     reload_mouse_modifiers ();
 
     str = g_settings_get_string (croma_settings, CROMA_BUTTON_LAYOUT_KEY);
-    gtk_combo_box_set_active (GTK_COMBO_BOX (titlebar_layout_optionmenu),
+    ctk_combo_box_set_active (GTK_COMBO_BOX (titlebar_layout_optionmenu),
                               g_strcmp0 (str, CROMA_BUTTON_LAYOUT_RIGHT) == 0 ? 0 : 1);
     g_free (str);
 
-    gtk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
+    ctk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
                               g_settings_get_enum (croma_settings, CROMA_DOUBLE_CLICK_TITLEBAR_KEY));
 
     set_alt_click_value ();
-    gtk_range_set_value (GTK_RANGE (autoraise_delay_slider),
+    ctk_range_set_value (GTK_RANGE (autoraise_delay_slider),
                          g_settings_get_int (croma_settings, CROMA_AUTORAISE_DELAY_KEY) / 1000.0);
-    gtk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
+    ctk_combo_box_set_active (GTK_COMBO_BOX (double_click_titlebar_optionmenu),
                               g_settings_get_enum (croma_settings, CROMA_DOUBLE_CLICK_TITLEBAR_KEY));
 
     g_settings_bind (croma_settings,
@@ -440,7 +440,7 @@ main (int argc, char **argv)
 
 
     g_signal_connect (G_OBJECT (dialog_win), "destroy",
-                      G_CALLBACK (gtk_main_quit), NULL);
+                      G_CALLBACK (ctk_main_quit), NULL);
 
     g_signal_connect (croma_settings, "changed",
                       G_CALLBACK (croma_settings_changed_callback), NULL);
@@ -462,9 +462,9 @@ main (int argc, char **argv)
     /* update sensitivity */
     update_sensitivity ();
 
-    gtk_widget_show_all (dialog_win);
+    ctk_widget_show_all (dialog_win);
 
-    gtk_main ();
+    ctk_main ();
 
     g_object_unref (croma_settings);
 
@@ -479,10 +479,10 @@ static void
 fill_radio (GtkRadioButton     *group,
         MouseClickModifier *modifier)
 {
-    modifier->radio = gtk_radio_button_new_with_mnemonic_from_widget (group, modifier->name);
-    gtk_box_pack_start (GTK_BOX (alt_click_vbox), modifier->radio, FALSE, FALSE, 0);
+    modifier->radio = ctk_radio_button_new_with_mnemonic_from_widget (group, modifier->name);
+    ctk_box_pack_start (GTK_BOX (alt_click_vbox), modifier->radio, FALSE, FALSE, 0);
 
-    gtk_widget_show (modifier->radio);
+    ctk_widget_show (modifier->radio);
 }
 
 static void
@@ -559,7 +559,7 @@ reload_mouse_modifiers (void)
     while (i < n_mouse_modifiers) {
         g_free (mouse_modifiers[i].name);
         if (mouse_modifiers[i].radio)
-            gtk_widget_destroy (mouse_modifiers[i].radio);
+            ctk_widget_destroy (mouse_modifiers[i].radio);
         ++i;
     }
     g_free (mouse_modifiers);

@@ -31,7 +31,7 @@ msgid ""
 "[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
 "Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
-"[Schimbă temă;gtk-theme-selector.desktop,Definire aplicații preferate;cafe-"
+"[Schimbă temă;ctk-theme-selector.desktop,Definire aplicații preferate;cafe-"
 "default-applications-properties.desktop' ]"
 
 #: org.cafe.control-center.gschema.xml.in:6

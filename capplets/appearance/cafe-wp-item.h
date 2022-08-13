@@ -21,7 +21,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 #include <libcafe-desktop/cafe-bg.h>
 

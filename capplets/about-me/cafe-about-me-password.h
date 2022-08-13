@@ -1,7 +1,7 @@
 #ifndef __CAFE_ABOUT_ME_PASSWORD_H__
 #define __CAFE_ABOUT_ME_PASSWORD_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void
 cafe_about_me_password (GtkWindow *parent);

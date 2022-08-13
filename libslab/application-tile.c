@@ -291,7 +291,7 @@ application_tile_setup (ApplicationTile *this)
 	desc = g_key_file_get_locale_string (keyfile, G_KEY_FILE_DESKTOP_GROUP, "GenericName", NULL, NULL);
 	comment = g_key_file_get_locale_string (keyfile, G_KEY_FILE_DESKTOP_GROUP, "Comment", NULL, NULL);
 
-	accessible = gtk_widget_get_accessible (GTK_WIDGET (this));
+	accessible = ctk_widget_get_accessible (GTK_WIDGET (this));
 	if (name)
 	  atk_object_set_name (accessible, name);
 	if (desc)
@@ -306,7 +306,7 @@ application_tile_setup (ApplicationTile *this)
 	else
 		subheader = NULL;
 
-	context_menu = GTK_MENU (gtk_menu_new ());
+	context_menu = GTK_MENU (ctk_menu_new ());
 
 	g_object_set (
 		G_OBJECT (this),
@@ -317,7 +317,7 @@ application_tile_setup (ApplicationTile *this)
 		"application-name",        name,
 		"application-description", desc,
 		NULL);
-	gtk_widget_set_tooltip_text (GTK_WIDGET (this), comment);
+	ctk_widget_set_tooltip_text (GTK_WIDGET (this), comment);
 
 	priv->agent = bookmark_agent_get_instance (BOOKMARK_STORE_USER_APPS);
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
@@ -345,13 +345,13 @@ application_tile_setup (ApplicationTile *this)
 
 	menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 
-	gtk_container_add (menu_ctnr, menu_item);
+	ctk_container_add (menu_ctnr, menu_item);
 
 	TILE (this)->default_action = action;
 
 /* insert separator */
 
-	gtk_container_add (menu_ctnr, gtk_separator_menu_item_new ());
+	ctk_container_add (menu_ctnr, ctk_separator_menu_item_new ());
 
 /* make help action */
 
@@ -361,7 +361,7 @@ application_tile_setup (ApplicationTile *this)
 			TILE_ACTION_OPENS_NEW_WINDOW | TILE_ACTION_OPENS_HELP);
 
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
-		gtk_container_add (menu_ctnr, menu_item);
+		ctk_container_add (menu_ctnr, menu_item);
 	}
 	else {
 		action = NULL;
@@ -372,7 +372,7 @@ application_tile_setup (ApplicationTile *this)
 /* insert separator */
 
 	if (action != NULL)
-		gtk_container_add (menu_ctnr, gtk_separator_menu_item_new ());
+		ctk_container_add (menu_ctnr, ctk_separator_menu_item_new ());
 
 /* make "add/remove to favorites" action */
 
@@ -388,10 +388,10 @@ application_tile_setup (ApplicationTile *this)
 
 		menu_item = GTK_WIDGET (tile_action_get_menu_item (action));
 
-		gtk_container_add (menu_ctnr, menu_item);
+		ctk_container_add (menu_ctnr, menu_item);
 	}
 
-	gtk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
+	ctk_widget_show_all (GTK_WIDGET (TILE (this)->context_menu));
 
 	g_free (name);
 	g_free (desc);
@@ -406,9 +406,9 @@ create_header (const gchar *name)
 	GtkWidget *header;
 
 
-	header = gtk_label_new (name);
-	gtk_label_set_line_wrap (GTK_LABEL (header), TRUE);
-	gtk_label_set_xalign (GTK_LABEL (header), 0.0);
+	header = ctk_label_new (name);
+	ctk_label_set_line_wrap (GTK_LABEL (header), TRUE);
+	ctk_label_set_xalign (GTK_LABEL (header), 0.0);
 
 	g_signal_connect (
 		G_OBJECT (header),
@@ -425,14 +425,14 @@ create_subheader (const gchar *desc)
 	GtkWidget *subheader;
 
 
-	subheader = gtk_label_new (desc);
-	gtk_label_set_ellipsize (GTK_LABEL (subheader), PANGO_ELLIPSIZE_END);
-	gtk_label_set_xalign (GTK_LABEL (subheader), 0.0);
+	subheader = ctk_label_new (desc);
+	ctk_label_set_ellipsize (GTK_LABEL (subheader), PANGO_ELLIPSIZE_END);
+	ctk_label_set_xalign (GTK_LABEL (subheader), 0.0);
 
-	gtk_widget_modify_fg (
+	ctk_widget_modify_fg (
 		subheader,
 		GTK_STATE_NORMAL,
-		& gtk_widget_get_style (subheader)->fg [GTK_STATE_INSENSITIVE]);
+		& ctk_widget_get_style (subheader)->fg [GTK_STATE_INSENSITIVE]);
 
 	return subheader;
 }
@@ -624,9 +624,9 @@ update_user_list_menu_item (ApplicationTile *this)
 
 		item = GTK_WIDGET (tile_action_get_menu_item (
 			TILE (this)->actions [APPLICATION_TILE_ACTION_UPDATE_MAIN_MENU]));
-		gtk_menu_shell_insert (GTK_MENU_SHELL (TILE (this)->context_menu), item, 4);
+		ctk_menu_shell_insert (GTK_MENU_SHELL (TILE (this)->context_menu), item, 4);
 
-		gtk_widget_show_all (item);
+		ctk_widget_show_all (item);
 	}
 	else
 		/* do nothing */ ;
@@ -650,7 +650,7 @@ update_user_list_menu_item (ApplicationTile *this)
 
 	g_object_get (G_OBJECT (priv->agent), BOOKMARK_AGENT_STORE_STATUS_PROP, & priv->agent_status, NULL);
 
-	gtk_widget_set_sensitive (item, (priv->agent_status != BOOKMARK_STORE_DEFAULT_ONLY));
+	ctk_widget_set_sensitive (item, (priv->agent_status != BOOKMARK_STORE_DEFAULT_ONLY));
 }
 
 static StartupStatus
@@ -734,7 +734,7 @@ update_startup_menu_item (ApplicationTile *this)
 static void
 header_size_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_data)
 {
-	gtk_widget_set_size_request (widget, alloc->width, -1);
+	ctk_widget_set_size_request (widget, alloc->width, -1);
 }
 
 static void

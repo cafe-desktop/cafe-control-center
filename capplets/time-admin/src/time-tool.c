@@ -35,23 +35,23 @@ ta_refresh_time (TimeAdmin *ta, struct tm *LocalTime)
 {
     gchar *str;
 
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (ta->HourSpin), LocalTime->tm_hour);
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (ta->MinuteSpin), LocalTime->tm_min);
+    ctk_spin_button_set_value (GTK_SPIN_BUTTON (ta->HourSpin), LocalTime->tm_hour);
+    ctk_spin_button_set_value (GTK_SPIN_BUTTON (ta->MinuteSpin), LocalTime->tm_min);
     str = g_strdup_printf ("%02d", LocalTime->tm_sec);
-    gtk_entry_set_text (GTK_ENTRY (ta->SecondSpin), str);
+    ctk_entry_set_text (GTK_ENTRY (ta->SecondSpin), str);
     g_free (str);
 }
 
 void
 ta_refresh_date (TimeAdmin *ta, struct tm *LocalTime)
 {
-    gtk_calendar_select_month (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_select_month (GTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mon,
                                LocalTime->tm_year+1900);
-    gtk_calendar_select_day   (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_select_day   (GTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mday);
-    gtk_calendar_clear_marks  (GTK_CALENDAR (ta->Calendar));
-    gtk_calendar_mark_day     (GTK_CALENDAR (ta->Calendar),
+    ctk_calendar_clear_marks  (GTK_CALENDAR (ta->Calendar));
+    ctk_calendar_mark_day     (GTK_CALENDAR (ta->Calendar),
                                LocalTime->tm_mday);
 }
 
@@ -203,7 +203,7 @@ void SetTimeZone(GDBusProxy *proxy,const char *zone)
 static void
 ChangeSpinBttonState (TimeAdmin *ta)
 {
-    gtk_widget_set_sensitive (ta->SaveButton, !ta->NtpState);
+    ctk_widget_set_sensitive (ta->SaveButton, !ta->NtpState);
     SetTooltip (ta->SaveButton, !ta->NtpState);
     SetTooltip (ta->HourSpin,   !ta->NtpState);
     SetTooltip (ta->MinuteSpin, !ta->NtpState);
@@ -247,10 +247,10 @@ static guint GetTimeStamp(TimeAdmin *ta)
     GDateTime *dt;
     char      *st;
 
-    gtk_calendar_get_date(GTK_CALENDAR(ta->Calendar),&year,&month,&day);
-    hour = gtk_spin_button_get_value(GTK_SPIN_BUTTON(ta->HourSpin));
-    min  = gtk_spin_button_get_value(GTK_SPIN_BUTTON(ta->MinuteSpin));
-    sec = atoi(gtk_entry_get_text(GTK_ENTRY(ta->SecondSpin)));
+    ctk_calendar_get_date(GTK_CALENDAR(ta->Calendar),&year,&month,&day);
+    hour = ctk_spin_button_get_value(GTK_SPIN_BUTTON(ta->HourSpin));
+    min  = ctk_spin_button_get_value(GTK_SPIN_BUTTON(ta->MinuteSpin));
+    sec = atoi(ctk_entry_get_text(GTK_ENTRY(ta->SecondSpin)));
 
     dt = g_date_time_new_local(year,month+1,day,hour,min,sec);
     st = g_date_time_format(dt,"%s");

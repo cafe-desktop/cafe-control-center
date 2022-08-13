@@ -2911,8 +2911,8 @@ msgstr "Spostarsi nella cartella dove è installato il vostro tema."
 
 #. (itstool) path: listitem/para
 #: C/config-themes.xml:38
-msgid "Open the gtkrc file which contains the specifications of your theme."
-msgstr "Aprire il file gtkrc che contiene le specifiche del vostro tema."
+msgid "Open the ctkrc file which contains the specifications of your theme."
+msgstr "Aprire il file ctkrc che contiene le specifiche del vostro tema."
 
 #. (itstool) path: sect2/para
 #: C/config-themes.xml:24

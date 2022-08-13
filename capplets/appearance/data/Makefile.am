@@ -9,7 +9,7 @@ dist_pixmap_DATA = \
         subpixel-vbgr.png \
         subpixel-vrgb.png \
         theme-thumbnailing.png \
-        gtk-theme-thumbnailing.png \
+        ctk-theme-thumbnailing.png \
         window-theme-thumbnailing.png \
         icon-theme-thumbnailing.png \
         mouse-cursor-normal.png \

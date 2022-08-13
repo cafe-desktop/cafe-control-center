@@ -1,4 +1,4 @@
-/* gtkcellrendererkeybinding.h
+/* ctkcellrendererkeybinding.h
  * Copyright (C) 2000  Red Hat, Inc.,  Jonathan Blandford <jrb@redhat.com>
  *
  * This library is free software; you can redistribute it and/or
@@ -20,7 +20,7 @@
 #ifndef __EGG_CELL_RENDERER_KEYS_H__
 #define __EGG_CELL_RENDERER_KEYS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "eggaccelerators.h"
 
 #ifdef __cplusplus

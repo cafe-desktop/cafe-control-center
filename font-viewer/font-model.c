@@ -29,7 +29,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include <ft2build.h>
 #include FT_FREETYPE_H
@@ -87,7 +87,7 @@ iter_for_face_foreach (GtkTreeModel *model,
     gchar *font_name, *match_name;
     gboolean retval;
 
-    gtk_tree_model_get (GTK_TREE_MODEL (model), iter,
+    ctk_tree_model_get (GTK_TREE_MODEL (model), iter,
                         COLUMN_NAME, &font_name,
                         -1);
 
@@ -116,7 +116,7 @@ font_view_model_get_iter_for_face (FontViewModel *self,
     data->face = face;
     data->found = FALSE;
 
-    gtk_tree_model_foreach (GTK_TREE_MODEL (self),
+    ctk_tree_model_foreach (GTK_TREE_MODEL (self),
                             iter_for_face_foreach,
                             data);
 
@@ -159,7 +159,7 @@ one_thumbnail_done (gpointer user_data)
     ThumbInfoData *thumb_info = user_data;
 
     if (thumb_info->pixbuf != NULL)
-        gtk_list_store_set (GTK_LIST_STORE (thumb_info->self), &(thumb_info->iter),
+        ctk_list_store_set (GTK_LIST_STORE (thumb_info->self), &(thumb_info->iter),
                             COLUMN_ICON, thumb_info->pixbuf,
                             -1);
 
@@ -345,7 +345,7 @@ font_infos_loaded (GObject *source_object,
         ThumbInfoData *thumb_info;
 
         collation_key = g_utf8_collate_key (font_info->font_name, -1);
-        gtk_list_store_insert_with_values (GTK_LIST_STORE (self), &iter, -1,
+        ctk_list_store_insert_with_values (GTK_LIST_STORE (self), &iter, -1,
                                            COLUMN_NAME, font_info->font_name,
                                            COLUMN_PATH, font_info->font_path,
                                            COLUMN_FACE_INDEX, font_info->face_index,
@@ -434,7 +434,7 @@ ensure_font_list (FontViewModel *self)
         g_clear_object (&self->priv->cancellable);
     }
 
-    gtk_list_store_clear (GTK_LIST_STORE (self));
+    ctk_list_store_clear (GTK_LIST_STORE (self));
 
     pat = FcPatternCreate ();
     os = FcObjectSetBuild (FC_FILE, FC_INDEX, FC_FAMILY, FC_WEIGHT, FC_SLANT, NULL);
@@ -481,10 +481,10 @@ font_view_model_sort_func (GtkTreeModel *model,
     gchar *key_a = NULL, *key_b = NULL;
     int retval;
 
-    gtk_tree_model_get (model, a,
+    ctk_tree_model_get (model, a,
                         COLUMN_COLLATION_KEY, &key_a,
                         -1);
-    gtk_tree_model_get (model, b,
+    ctk_tree_model_get (model, b,
                         COLUMN_COLLATION_KEY, &key_b,
                         -1);
 
@@ -548,16 +548,16 @@ get_fallback_icon (void)
     GdkPixbuf *pix;
     GIcon *icon = NULL;
 
-    icon_theme = gtk_icon_theme_get_default ();
+    icon_theme = ctk_icon_theme_get_default ();
     icon = g_content_type_get_icon ("application/x-font-ttf");
-    icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme, icon,
+    icon_info = ctk_icon_theme_lookup_by_gicon (icon_theme, icon,
                                                 128, 0);
     g_object_unref (icon);
 
     if (!icon_info)
         return NULL;
 
-    pix = gtk_icon_info_load_icon (icon_info, NULL);
+    pix = ctk_icon_info_load_icon (icon_info, NULL);
     g_object_unref (icon_info);
 
     return pix;
@@ -576,13 +576,13 @@ font_view_model_init (FontViewModel *self)
 
     g_mutex_init (&self->priv->font_list_mutex);
 
-    gtk_list_store_set_column_types (GTK_LIST_STORE (self),
+    ctk_list_store_set_column_types (GTK_LIST_STORE (self),
                                      NUM_COLUMNS, types);
 
-    gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self),
+    ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self),
                                           COLUMN_NAME,
                                           GTK_SORT_ASCENDING);
-    gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (self),
+    ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (self),
                                      COLUMN_NAME,
                                      font_view_model_sort_func,
                                      NULL, NULL);

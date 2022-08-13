@@ -76,18 +76,18 @@ nld_search_bar_init (NldSearchBar * search_bar)
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 	GtkWidget *entry;
 
-	gtk_widget_set_can_focus (GTK_WIDGET (search_bar), TRUE);
-	gtk_orientable_set_orientation (GTK_ORIENTABLE (search_bar), GTK_ORIENTATION_VERTICAL);
+	ctk_widget_set_can_focus (GTK_WIDGET (search_bar), TRUE);
+	ctk_orientable_set_orientation (GTK_ORIENTABLE (search_bar), GTK_ORIENTATION_VERTICAL);
 
-	priv->hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
-	gtk_box_pack_start (GTK_BOX (search_bar), priv->hbox, TRUE, FALSE, 0);
+	priv->hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
+	ctk_box_pack_start (GTK_BOX (search_bar), priv->hbox, TRUE, FALSE, 0);
 
-	entry = gtk_search_entry_new ();
-	gtk_widget_set_halign (entry, GTK_ALIGN_START);
-	gtk_widget_set_valign (entry, GTK_ALIGN_CENTER);
+	entry = ctk_search_entry_new ();
+	ctk_widget_set_halign (entry, GTK_ALIGN_START);
+	ctk_widget_set_valign (entry, GTK_ALIGN_CENTER);
 	priv->entry = GTK_ENTRY (entry);
-	gtk_widget_show (entry);
-	gtk_box_pack_start (GTK_BOX (priv->hbox), entry, TRUE, TRUE, 0);
+	ctk_widget_show (entry);
+	ctk_box_pack_start (GTK_BOX (priv->hbox), entry, TRUE, TRUE, 0);
 
 	g_signal_connect (entry, "activate", G_CALLBACK (emit_search_callback), search_bar);
 
@@ -110,7 +110,7 @@ nld_search_bar_focus (GtkWidget * widget, GtkDirectionType dir)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (NLD_SEARCH_BAR(widget));
 
-	return gtk_widget_child_focus (priv->hbox, dir);
+	return ctk_widget_child_focus (priv->hbox, dir);
 }
 
 gboolean
@@ -118,7 +118,7 @@ nld_search_bar_has_focus (NldSearchBar * search_bar)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 
-	return gtk_widget_has_focus (GTK_WIDGET (priv->entry));
+	return ctk_widget_has_focus (GTK_WIDGET (priv->entry));
 }
 
 static void
@@ -126,7 +126,7 @@ nld_search_bar_grab_focus (GtkWidget * widget)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (NLD_SEARCH_BAR(widget));
 
-	gtk_widget_grab_focus (GTK_WIDGET (priv->entry));
+	ctk_widget_grab_focus (GTK_WIDGET (priv->entry));
 }
 
 GtkWidget *
@@ -141,7 +141,7 @@ nld_search_bar_clear (NldSearchBar * search_bar)
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 
 	priv->block_signal = TRUE;
-	gtk_entry_set_text (priv->entry, "");
+	ctk_entry_set_text (priv->entry, "");
 	priv->block_signal = FALSE;
 }
 
@@ -223,7 +223,7 @@ nld_search_bar_get_text (NldSearchBar * search_bar)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 
-	return gtk_entry_get_text (priv->entry);
+	return ctk_entry_get_text (priv->entry);
 }
 
 void
@@ -231,7 +231,7 @@ nld_search_bar_set_text (NldSearchBar * search_bar, const char *text, gboolean a
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 
-	gtk_entry_set_text (priv->entry, text);
+	ctk_entry_set_text (priv->entry, text);
 	if (activate)
 		emit_search (search_bar);
 }

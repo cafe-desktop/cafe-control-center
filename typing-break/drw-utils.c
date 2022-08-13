@@ -21,7 +21,7 @@
 #include <config.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "drw-utils.h"
 
 static GdkPixbuf *
@@ -98,7 +98,7 @@ window_draw_event   (GtkWidget      *widget,
 	int              width;
 	int              height;
 
-	gtk_window_get_size (GTK_WINDOW (widget), &width, &height);
+	ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
 
 	cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
 	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
@@ -122,10 +122,10 @@ set_pixmap_background (GtkWidget *window)
 	gint          width, height, scale;
 	cairo_t      *cr;
 
-	gtk_widget_realize (window);
+	ctk_widget_realize (window);
 
-	screen = gtk_widget_get_screen (window);
-	scale = gtk_widget_get_scale_factor (window);
+	screen = ctk_widget_get_screen (window);
+	scale = ctk_widget_get_scale_factor (window);
 	width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
 	height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
 
@@ -168,7 +168,7 @@ set_pixmap_background (GtkWidget *window)
 
 	g_object_unref (tile_pixbuf);
 
-	cr = gdk_cairo_create (gtk_widget_get_window (window));
+	cr = gdk_cairo_create (ctk_widget_get_window (window));
 	gdk_cairo_set_source_pixbuf (cr, tmp_pixbuf, 0, 0);
 	cairo_paint (cr);
 
@@ -183,7 +183,7 @@ drw_setup_background (GtkWidget *window)
 	GdkScreen    *screen;
 	gboolean      is_composited;
 
-	screen = gtk_widget_get_screen (window);
+	screen = ctk_widget_get_screen (window);
 	is_composited = gdk_screen_is_composited (screen);
 
 	if (is_composited) {

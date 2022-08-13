@@ -24,7 +24,7 @@
 #ifndef __CAFE_KEYBOARD_PROPERTY_A11Y_H
 #define __CAFE_KEYBOARD_PROPERTY_A11Y_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 extern void setup_a11y_tabs (GtkBuilder * dialog);
 extern void finalize_a11y_tabs (void);

@@ -95,7 +95,7 @@ create_listmodel(void)
 {
 	GtkListStore *store;
 
-	store = gtk_list_store_new(1, G_TYPE_STRING);
+	store = ctk_list_store_new(1, G_TYPE_STRING);
 
 	return GTK_TREE_MODEL(store);
 }
@@ -106,13 +106,13 @@ populate_listmodel(GtkListStore *store, GSList *list)
 	GtkTreeIter iter;
 	GSList *pointer;
 
-	gtk_list_store_clear(store);
+	ctk_list_store_clear(store);
 
 	pointer = list;
 	while(pointer)
 	{
-		gtk_list_store_append(store, &iter);
-		gtk_list_store_set(store, &iter, 0, (char *) pointer->data, -1);
+		ctk_list_store_append(store, &iter);
+		ctk_list_store_set(store, &iter, 0, (char *) pointer->data, -1);
 		pointer = g_slist_next(pointer);
 	}
 
@@ -124,20 +124,20 @@ config_treeview(GtkTreeView *tree, GtkTreeModel *model)
 {
 	GtkCellRenderer *renderer;
 
-	renderer = gtk_cell_renderer_text_new();
-	gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tree),
+	renderer = ctk_cell_renderer_text_new();
+	ctk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tree),
 												-1, "Hosts", renderer,
 												"text", 0, NULL);
 
-	gtk_tree_view_set_model(GTK_TREE_VIEW(tree), model);
+	ctk_tree_view_set_model(GTK_TREE_VIEW(tree), model);
 
 	return GTK_WIDGET(tree);
 }
 
 static GtkWidget*
-_gtk_builder_get_widget (GtkBuilder *builder, const gchar *name)
+_ctk_builder_get_widget (GtkBuilder *builder, const gchar *name)
 {
-	return GTK_WIDGET (gtk_builder_get_object (builder, name));
+	return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
 static void
@@ -175,14 +175,14 @@ cb_add_url (GtkButton *button, gpointer data)
 {
 	GtkBuilder *builder = GTK_BUILDER (data);
 
-	const gchar *entry_text = gtk_entry_get_text (GTK_ENTRY (gtk_builder_get_object (builder, "entry_url")));
+	const gchar *entry_text = ctk_entry_get_text (GTK_ENTRY (ctk_builder_get_object (builder, "entry_url")));
 	if (entry_text == NULL || strlen (entry_text) == 0) {
 		return;
 	}
 
 	ignore_hosts = g_slist_append(ignore_hosts, g_strdup (entry_text));
 	populate_listmodel(GTK_LIST_STORE(model), ignore_hosts);
-	gtk_entry_set_text(GTK_ENTRY (gtk_builder_get_object (builder,
+	ctk_entry_set_text(GTK_ENTRY (ctk_builder_get_object (builder,
 							     "entry_url")), "");
 
 	save_ignore_hosts_to_gsettings ();
@@ -195,13 +195,13 @@ cb_remove_url (GtkButton *button, gpointer data)
 	GtkTreeSelection *selection;
 	GtkTreeIter       iter;
 
-	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (gtk_builder_get_object (builder, "treeview_ignore_host")));
-	if (gtk_tree_selection_get_selected(selection, &model, &iter))
+	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (ctk_builder_get_object (builder, "treeview_ignore_host")));
+	if (ctk_tree_selection_get_selected(selection, &model, &iter))
 	{
 		gchar *url;
 		GSList *pointer;
 
-		gtk_tree_model_get (model, &iter, 0, &url, -1);
+		ctk_tree_model_get (model, &iter, 0, &url, -1);
 
 		pointer = ignore_hosts;
 		while(pointer)
@@ -235,7 +235,7 @@ cb_dialog_response (GtkDialog *dialog, gint response_id)
 			g_slist_free (ignore_hosts);
 		}
 
-		gtk_main_quit ();
+		ctk_main_quit ();
 	}
 }
 
@@ -246,7 +246,7 @@ cb_details_dialog_response (GtkDialog *dialog, gint response_id)
 		capplet_help (GTK_WINDOW (dialog),
 			      "goscustdesk-50");
 	else {
-		gtk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (GTK_WIDGET (dialog));
 		details_dialog = NULL;
 	}
 }
@@ -255,7 +255,7 @@ static void
 cb_use_auth_toggled (GtkToggleButton *toggle,
 		     GtkWidget *table)
 {
-	gtk_widget_set_sensitive (table, gtk_toggle_button_get_active (toggle));
+	ctk_widget_set_sensitive (table, ctk_toggle_button_get_active (toggle));
 }
 
 static void
@@ -268,13 +268,13 @@ cb_http_details_button_clicked (GtkWidget *button,
 	GtkWidget *widget;
 
 	if (details_dialog != NULL) {
-		gtk_window_present (GTK_WINDOW (details_dialog));
-		gtk_widget_grab_focus (details_dialog);
+		ctk_window_present (GTK_WINDOW (details_dialog));
+		ctk_widget_grab_focus (details_dialog);
 		return;
 	}
 
-	builder = gtk_builder_new ();
-	if (gtk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
+	builder = ctk_builder_new ();
+	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load details dialog: %s", error->message);
 		g_error_free (error);
@@ -282,24 +282,24 @@ cb_http_details_button_clicked (GtkWidget *button,
 		return;
 	}
 
-	details_dialog = widget = _gtk_builder_get_widget (builder,
+	details_dialog = widget = _ctk_builder_get_widget (builder,
 							   "details_dialog");
 
-	gtk_window_set_transient_for (GTK_WINDOW (widget), GTK_WINDOW (parent));
+	ctk_window_set_transient_for (GTK_WINDOW (widget), GTK_WINDOW (parent));
 
-	g_signal_connect (gtk_builder_get_object (builder, "use_auth_checkbutton"),
+	g_signal_connect (ctk_builder_get_object (builder, "use_auth_checkbutton"),
 			  "toggled",
 			  G_CALLBACK (cb_use_auth_toggled),
-			  _gtk_builder_get_widget (builder, "auth_table"));
+			  _ctk_builder_get_widget (builder, "auth_table"));
 
 	g_settings_bind (http_proxy_settings, HTTP_USE_AUTH_KEY,
-			gtk_builder_get_object (builder, "use_auth_checkbutton"), "active",
+			ctk_builder_get_object (builder, "use_auth_checkbutton"), "active",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (http_proxy_settings, HTTP_AUTH_USER_KEY,
-			gtk_builder_get_object (builder, "username_entry"), "text",
+			ctk_builder_get_object (builder, "username_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (http_proxy_settings, HTTP_AUTH_PASSWD_KEY,
-			gtk_builder_get_object (builder, "password_entry"), "text",
+			ctk_builder_get_object (builder, "password_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 
 	g_signal_connect (widget, "response",
@@ -307,7 +307,7 @@ cb_http_details_button_clicked (GtkWidget *button,
 
 	capplet_set_icon (widget, "network-server");
 
-	gtk_widget_show_all (widget);
+	ctk_widget_show_all (widget);
 }
 
 static void
@@ -318,14 +318,14 @@ proxy_mode_gsettings_changed (GSettings *settings,
 	int mode;
 	mode = g_settings_get_enum (settings, PROXY_MODE_KEY);
 	if (mode == G_DESKTOP_PROXY_MODE_NONE)
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (gtk_builder_get_object(builder, "none_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "none_radiobutton")), TRUE);
 	else if (mode == G_DESKTOP_PROXY_MODE_AUTO)
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (gtk_builder_get_object(builder, "auto_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "auto_radiobutton")), TRUE);
 	else if (mode == G_DESKTOP_PROXY_MODE_MANUAL)
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (gtk_builder_get_object(builder, "manual_radiobutton")), TRUE);
-	gtk_widget_set_sensitive (_gtk_builder_get_widget (builder, "manual_box"),
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "manual_radiobutton")), TRUE);
+	ctk_widget_set_sensitive (_ctk_builder_get_widget (builder, "manual_box"),
 				  mode == G_DESKTOP_PROXY_MODE_MANUAL);
-	gtk_widget_set_sensitive (_gtk_builder_get_widget (builder, "auto_box"),
+	ctk_widget_set_sensitive (_ctk_builder_get_widget (builder, "auto_box"),
 				  mode == G_DESKTOP_PROXY_MODE_AUTO);
 }
 
@@ -337,11 +337,11 @@ proxy_mode_radiobutton_clicked_cb (GtkWidget *widget,
 	int mode;
 	int old_mode;
 
-	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget)))
+	if (!ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget)))
 		return;
 
-	mode_group = g_slist_copy (gtk_radio_button_get_group
-		(GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "none_radiobutton"))));
+	mode_group = g_slist_copy (ctk_radio_button_get_group
+		(GTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton"))));
 	mode_group = g_slist_reverse (mode_group);
 	mode = g_slist_index (mode_group, widget);
 	g_slist_free (mode_group);
@@ -386,66 +386,66 @@ setup_dialog (GtkBuilder *builder)
 
 	/* Mode */
 	proxy_mode_gsettings_changed (proxy_settings, PROXY_MODE_KEY, builder);
-	mode_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "none_radiobutton")));
+	mode_group = ctk_radio_button_get_group (GTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton")));
 	connect_sensitivity_signals (builder, mode_group);
 	g_signal_connect (proxy_settings, "changed::" PROXY_MODE_KEY,
 					  G_CALLBACK (proxy_mode_gsettings_changed), builder);
 
 	/* Http */
 	g_settings_bind (http_proxy_settings, HTTP_PROXY_PORT_KEY,
-			gtk_builder_get_object (builder, "http_port_spinbutton"), "value",
+			ctk_builder_get_object (builder, "http_port_spinbutton"), "value",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (http_proxy_settings, HTTP_PROXY_HOST_KEY,
-			gtk_builder_get_object (builder, "http_host_entry"), "text",
+			ctk_builder_get_object (builder, "http_host_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
-	g_signal_connect (gtk_builder_get_object (builder, "details_button"),
+	g_signal_connect (ctk_builder_get_object (builder, "details_button"),
 			  "clicked",
 			  G_CALLBACK (cb_http_details_button_clicked),
-			  _gtk_builder_get_widget (builder, "network_dialog"));
+			  _ctk_builder_get_widget (builder, "network_dialog"));
 
 	/* Secure */
 	g_settings_bind (https_proxy_settings, SECURE_PROXY_PORT_KEY,
-			gtk_builder_get_object (builder, "secure_port_spinbutton"), "value",
+			ctk_builder_get_object (builder, "secure_port_spinbutton"), "value",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (https_proxy_settings, SECURE_PROXY_HOST_KEY,
-			gtk_builder_get_object (builder, "secure_host_entry"), "text",
+			ctk_builder_get_object (builder, "secure_host_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 
 	/* Ftp */
 	g_settings_bind (ftp_proxy_settings, FTP_PROXY_PORT_KEY,
-			gtk_builder_get_object (builder, "ftp_port_spinbutton"), "value",
+			ctk_builder_get_object (builder, "ftp_port_spinbutton"), "value",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (ftp_proxy_settings, FTP_PROXY_HOST_KEY,
-			gtk_builder_get_object (builder, "ftp_host_entry"), "text",
+			ctk_builder_get_object (builder, "ftp_host_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 
 	/* Socks */
 	g_settings_bind (socks_proxy_settings, SOCKS_PROXY_PORT_KEY,
-			gtk_builder_get_object (builder, "socks_port_spinbutton"), "value",
+			ctk_builder_get_object (builder, "socks_port_spinbutton"), "value",
 			G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (socks_proxy_settings, SOCKS_PROXY_HOST_KEY,
-			gtk_builder_get_object (builder, "socks_host_entry"), "text",
+			ctk_builder_get_object (builder, "socks_host_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 
 	/* Autoconfiguration */
 	g_settings_bind (proxy_settings, PROXY_AUTOCONFIG_URL_KEY,
-			gtk_builder_get_object (builder, "autoconfig_entry"), "text",
+			ctk_builder_get_object (builder, "autoconfig_entry"), "text",
 			G_SETTINGS_BIND_DEFAULT);
 
-	g_signal_connect (gtk_builder_get_object (builder, "network_dialog"),
+	g_signal_connect (ctk_builder_get_object (builder, "network_dialog"),
 			"response", G_CALLBACK (cb_dialog_response), NULL);
 
 	read_ignore_hosts_from_gsettings ();
 
 	model = create_listmodel();
 	populate_listmodel(GTK_LIST_STORE(model), ignore_hosts);
-	config_treeview(GTK_TREE_VIEW(gtk_builder_get_object (builder, "treeview_ignore_host")), model);
+	config_treeview(GTK_TREE_VIEW(ctk_builder_get_object (builder, "treeview_ignore_host")), model);
 
-	g_signal_connect (gtk_builder_get_object (builder, "button_add_url"),
+	g_signal_connect (ctk_builder_get_object (builder, "button_add_url"),
 			  "clicked", G_CALLBACK (cb_add_url), builder);
-	g_signal_connect (gtk_builder_get_object (builder, "entry_url"),
+	g_signal_connect (ctk_builder_get_object (builder, "entry_url"),
 			  "activate", G_CALLBACK (cb_add_url), builder);
-	g_signal_connect (gtk_builder_get_object (builder, "button_remove_url"),
+	g_signal_connect (ctk_builder_get_object (builder, "button_remove_url"),
 			  "clicked", G_CALLBACK (cb_remove_url), builder);
 }
 
@@ -461,8 +461,8 @@ main (int argc, char **argv)
 
 	capplet_init (NULL, &argc, &argv);
 
-	builder = gtk_builder_new ();
-	if (gtk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
+	builder = ctk_builder_new ();
+	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load main dialog: %s",
 			   error->message);
@@ -478,17 +478,17 @@ main (int argc, char **argv)
 	socks_proxy_settings = g_settings_new (SOCKS_PROXY_SCHEMA);
 
 	setup_dialog (builder);
-	widget = _gtk_builder_get_widget (builder, "network_dialog");
+	widget = _ctk_builder_get_widget (builder, "network_dialog");
 
-        GtkNotebook* nb = GTK_NOTEBOOK (_gtk_builder_get_widget (builder, "notebook1"));
-        gtk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
+        GtkNotebook* nb = GTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
+        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                           GTK_WINDOW (widget));
 
 	capplet_set_icon (widget, "network-server");
-	gtk_widget_show_all (widget);
-	gtk_main ();
+	ctk_widget_show_all (widget);
+	ctk_main ();
 
 	g_object_unref (builder);
 	g_object_unref (proxy_settings);

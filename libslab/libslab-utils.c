@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 #include <sys/resource.h>
 #include <sys/time.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 CafeDesktopItem *
 libslab_cafe_desktop_item_new_from_unknown_id (const gchar *id)
@@ -79,10 +79,10 @@ libslab_get_current_screen (void)
 	GdkEvent *event;
 	GdkScreen *screen = NULL;
 
-	event = gtk_get_current_event ();
+	event = ctk_get_current_event ();
 	if (event) {
 		if (event->any.window)
-			screen = gtk_window_get_screen (GTK_WINDOW (event->any.window));
+			screen = ctk_window_get_screen (GTK_WINDOW (event->any.window));
 
 		gdk_event_free (event);
 	}

@@ -204,7 +204,7 @@ tile_dispose (GObject * g_object)
 
 	/* free the GtkMenu object */
 	if (tile->context_menu != NULL) {
-		gtk_widget_destroy (GTK_WIDGET (tile->context_menu));
+		ctk_widget_destroy (GTK_WIDGET (tile->context_menu));
 		tile->context_menu = NULL;
 	}
 
@@ -256,12 +256,12 @@ tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamS
 			break;
 
 		if (tile->context_menu)
-			gtk_menu_detach (tile->context_menu);
+			ctk_menu_detach (tile->context_menu);
 
 		tile->context_menu = menu;
 
 		if (tile->context_menu)
-			gtk_menu_attach_to_widget (tile->context_menu, GTK_WIDGET (tile), NULL);
+			ctk_menu_attach_to_widget (tile->context_menu, GTK_WIDGET (tile), NULL);
 
 		break;
 
@@ -273,21 +273,21 @@ tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamS
 static void
 tile_setup (Tile * tile)
 {
-	gtk_button_set_relief (GTK_BUTTON (tile), GTK_RELIEF_NONE);
+	ctk_button_set_relief (GTK_BUTTON (tile), GTK_RELIEF_NONE);
 
 	if (tile->uri)
 	{
-		gtk_drag_source_set (GTK_WIDGET (tile), GDK_BUTTON1_MASK, NULL, 0,
+		ctk_drag_source_set (GTK_WIDGET (tile), GDK_BUTTON1_MASK, NULL, 0,
 			GDK_ACTION_COPY | GDK_ACTION_MOVE);
 
-		gtk_drag_source_add_uri_targets (GTK_WIDGET (tile));
+		ctk_drag_source_add_uri_targets (GTK_WIDGET (tile));
 	}
 }
 
 static void
 tile_enter (GtkButton * widget)
 {
-	gtk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_ENTERED, TRUE);
+	ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_ENTERED, TRUE);
 
 	TILE (widget)->entered = TRUE;
 }
@@ -295,10 +295,10 @@ tile_enter (GtkButton * widget)
 static void
 tile_leave (GtkButton * widget)
 {
-	if (gtk_widget_has_focus (GTK_WIDGET (widget)))
-		gtk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_FOCUSED, TRUE);
+	if (ctk_widget_has_focus (GTK_WIDGET (widget)))
+		ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_FOCUSED, TRUE);
 	else
-		gtk_widget_set_state_flags (GTK_WIDGET (widget), GTK_STATE_FLAG_NORMAL, TRUE);
+		ctk_widget_set_state_flags (GTK_WIDGET (widget), GTK_STATE_FLAG_NORMAL, TRUE);
 
 	TILE (widget)->entered = FALSE;
 }
@@ -310,18 +310,18 @@ tile_clicked (GtkButton * widget)
 
 	tile_event = g_new0 (TileEvent, 1);
 	tile_event->type = TILE_EVENT_ACTIVATED_DOUBLE_CLICK;
-	tile_event->time = gtk_get_current_event_time ();
+	tile_event->time = ctk_get_current_event_time ();
 
 	g_signal_emit (widget, tile_signals[TILE_ACTIVATED_SIGNAL], 0, tile_event);
 
-	gtk_button_released (widget);
+	ctk_button_released (widget);
 	g_free (tile_event);
 }
 
 static gboolean
 tile_focus_in (GtkWidget * widget, GdkEventFocus * event)
 {
-	gtk_widget_set_state_flags (widget, TILE_STATE_FOCUSED, TRUE);
+	ctk_widget_set_state_flags (widget, TILE_STATE_FOCUSED, TRUE);
 
 	return FALSE;
 }
@@ -330,9 +330,9 @@ static gboolean
 tile_focus_out (GtkWidget * widget, GdkEventFocus * event)
 {
 	if (TILE (widget)->entered)
-		gtk_widget_set_state_flags (widget, TILE_STATE_ENTERED, TRUE);
+		ctk_widget_set_state_flags (widget, TILE_STATE_ENTERED, TRUE);
 	else
-		gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
+		ctk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
 
 	return FALSE;
 }
@@ -345,13 +345,13 @@ tile_draw (GtkWidget * widget, cairo_t * cr)
 	gboolean has_focus;
 	gboolean retval;
 
-	if ((has_focus = gtk_widget_has_focus (widget)))
-		gtk_widget_unset_state_flags (widget, GTK_STATE_FLAG_FOCUSED);
+	if ((has_focus = ctk_widget_has_focus (widget)))
+		ctk_widget_unset_state_flags (widget, GTK_STATE_FLAG_FOCUSED);
 
 	retval = (*GTK_WIDGET_CLASS (tile_parent_class)->draw) (widget, cr);
 
 	if (has_focus)
-		gtk_widget_set_state_flags (widget, GTK_STATE_FLAG_FOCUSED, TRUE);
+		ctk_widget_set_state_flags (widget, GTK_STATE_FLAG_FOCUSED, TRUE);
 
 	return retval;
 }
@@ -385,14 +385,14 @@ tile_button_release (GtkWidget * widget, GdkEventButton * event)
 
 		g_signal_emit (tile, tile_signals[TILE_ACTIVATED_SIGNAL], 0, tile_event);
 
-		gtk_button_released (GTK_BUTTON (widget));
+		ctk_button_released (GTK_BUTTON (widget));
 		g_free (tile_event);
 
 		break;
 
 	case 3:
 		if (GTK_IS_MENU (tile->context_menu))
-		    gtk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
+		    ctk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
 		                              widget,
 		                              GDK_GRAVITY_SOUTH_WEST,
 		                              GDK_GRAVITY_NORTH_WEST,
@@ -433,7 +433,7 @@ tile_popup_menu (GtkWidget * widget)
 
 	if (GTK_IS_MENU (tile->context_menu))
 	{
-		gtk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
+		ctk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,
@@ -466,7 +466,7 @@ tile_drag_data_get (GtkWidget * widget, GdkDragContext * context, GtkSelectionDa
 		uris[0] = TILE (widget)->uri;
 		uris[1] = NULL;
 
-		gtk_selection_data_set_uris (data, uris);
+		ctk_selection_data_set_uris (data, uris);
 	}
 }
 

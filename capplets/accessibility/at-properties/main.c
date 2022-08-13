@@ -1,5 +1,5 @@
 #include <config.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 #include "dm-util.h"
@@ -34,7 +34,7 @@ static GDesktopAppInfo *get_desktop_app_info_from_dm (void)
     if (dm_type == DM_TYPE_MDM) {
         app_info = g_desktop_app_info_new ("mdmsetup.desktop");
     } else if (dm_type == DM_TYPE_LIGHTDM) {
-        app_info = g_desktop_app_info_new ("lightdm-gtk-greeter-settings.desktop");
+        app_info = g_desktop_app_info_new ("lightdm-ctk-greeter-settings.desktop");
     }
     return app_info;
 }
@@ -45,24 +45,24 @@ create_builder (void)
     GtkBuilder *builder;
     GError *error = NULL;
 
-    builder = gtk_builder_new ();
+    builder = ctk_builder_new ();
 
-    if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/accessibility/at/at-enable-dialog.ui", &error)) {
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/accessibility/at/at-enable-dialog.ui", &error)) {
         GObject *object;
         GDesktopAppInfo *app_info = NULL;
 
-        object = gtk_builder_get_object (builder, "at_enable_image");
-        gtk_image_set_from_file (GTK_IMAGE (object),
+        object = ctk_builder_get_object (builder, "at_enable_image");
+        ctk_image_set_from_file (GTK_IMAGE (object),
                                  PIXMAPDIR "/at-startup.png");
 
-        object = gtk_builder_get_object (builder,
+        object = ctk_builder_get_object (builder,
                                          "at_applications_image");
-        gtk_image_set_from_file (GTK_IMAGE (object),
+        ctk_image_set_from_file (GTK_IMAGE (object),
                                  PIXMAPDIR "/at-support.png");
         app_info = get_desktop_app_info_from_dm ();
         if (app_info == NULL) {
-            object = gtk_builder_get_object (builder, "login_button");
-            gtk_widget_hide (GTK_WIDGET (object));
+            object = ctk_builder_get_object (builder, "login_button");
+            ctk_widget_hide (GTK_WIDGET (object));
         } else {
             g_object_unref (app_info);
         }
@@ -171,12 +171,12 @@ cb_dialog_response (GtkDialog *dialog, gint response_id)
 		capplet_help (GTK_WINDOW (dialog),
 			      "goscustaccess-11");
 	else if (response_id == GTK_RESPONSE_CLOSE || response_id == GTK_RESPONSE_DELETE_EVENT)
-		gtk_main_quit ();
+		ctk_main_quit ();
 	else {
 	        g_message ("CLOSE AND LOGOUT!");
 
 		if (!do_logout ())
-                       gtk_main_quit ();
+                       ctk_main_quit ();
 	}
 }
 
@@ -185,10 +185,10 @@ close_logout_update (GtkBuilder *builder)
 {
 	GSettings *settings = g_settings_new (ACCESSIBILITY_SCHEMA);
 	gboolean curr_state = g_settings_get_boolean (settings, ACCESSIBILITY_KEY);
-	GObject *btn = gtk_builder_get_object (builder,
+	GObject *btn = ctk_builder_get_object (builder,
 					       "at_close_logout_button");
 
-	gtk_widget_set_sensitive (GTK_WIDGET (btn), initial_state != curr_state);
+	ctk_widget_set_sensitive (GTK_WIDGET (btn), initial_state != curr_state);
 	g_object_unref (settings);
 }
 
@@ -197,7 +197,7 @@ at_enable_toggled (GtkToggleButton *toggle_button,
 		   GtkBuilder      *builder)
 {
 	GSettings *settings = g_settings_new (ACCESSIBILITY_SCHEMA);
-	gboolean is_enabled = gtk_toggle_button_get_active (toggle_button);
+	gboolean is_enabled = ctk_toggle_button_get_active (toggle_button);
 
 	g_settings_set_boolean (settings, ACCESSIBILITY_KEY, is_enabled);
 	g_object_unref (settings);
@@ -208,9 +208,9 @@ at_enable_update (GSettings *settings,
 		  GtkBuilder  *builder)
 {
 	gboolean is_enabled = g_settings_get_boolean (settings, ACCESSIBILITY_KEY);
-	GObject *btn = gtk_builder_get_object (builder, "at_enable_toggle");
+	GObject *btn = ctk_builder_get_object (builder, "at_enable_toggle");
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (btn),
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (btn),
 				      is_enabled);
 }
 
@@ -229,7 +229,7 @@ setup_dialog (GtkBuilder *builder, GSettings *settings)
 	GtkWidget *widget;
 	GObject *object;
 
-	object = gtk_builder_get_object (builder, "at_enable_toggle");
+	object = ctk_builder_get_object (builder, "at_enable_toggle");
 	g_signal_connect (object, "toggled",
 			  G_CALLBACK (at_enable_toggled),
 			  builder);
@@ -241,23 +241,23 @@ setup_dialog (GtkBuilder *builder, GSettings *settings)
 	g_signal_connect (settings, "changed::" ACCESSIBILITY_KEY, G_CALLBACK (at_enable_changed),
 				 builder);
 
-	object = gtk_builder_get_object (builder, "at_pref_button");
+	object = ctk_builder_get_object (builder, "at_pref_button");
 	g_signal_connect (object, "clicked",
 			  G_CALLBACK (cb_at_preferences), NULL);
 
-	object = gtk_builder_get_object (builder, "keyboard_button");
+	object = ctk_builder_get_object (builder, "keyboard_button");
 	g_signal_connect (object, "clicked",
 			  G_CALLBACK (cb_keyboard_preferences), NULL);
 
-	object = gtk_builder_get_object (builder, "mouse_button");
+	object = ctk_builder_get_object (builder, "mouse_button");
 	g_signal_connect (object, "clicked",
 			  G_CALLBACK (cb_mouse_preferences), NULL);
 
-	object = gtk_builder_get_object (builder, "login_button");
+	object = ctk_builder_get_object (builder, "login_button");
 	g_signal_connect (object, "clicked",
 			  G_CALLBACK (cb_login_preferences), NULL);
 
-	widget = GTK_WIDGET (gtk_builder_get_object (builder,
+	widget = GTK_WIDGET (ctk_builder_get_object (builder,
 						     "at_properties_dialog"));
 	capplet_set_icon (widget, "preferences-desktop-accessibility");
 
@@ -265,7 +265,7 @@ setup_dialog (GtkBuilder *builder, GSettings *settings)
 			  "response",
 			  G_CALLBACK (cb_dialog_response), NULL);
 
-	gtk_widget_show (widget);
+	ctk_widget_show (widget);
 }
 
 int
@@ -285,7 +285,7 @@ main (int argc, char *argv[])
 
 		setup_dialog (builder, settings);
 
-		gtk_main ();
+		ctk_main ();
 
 		g_object_unref (builder);
 		g_object_unref (settings);

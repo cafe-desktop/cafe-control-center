@@ -22,7 +22,7 @@
 #define __SLAB_SECTION_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

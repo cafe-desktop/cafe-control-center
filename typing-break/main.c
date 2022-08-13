@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <glib/gi18n.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "drw-selection.h"
 #include "drwright.h"
@@ -75,7 +75,7 @@ main (int argc, char *argv[])
         option_context = g_option_context_new (NULL);
         g_option_context_set_translation_domain (option_context, GETTEXT_PACKAGE);
         g_option_context_add_main_entries (option_context, options, GETTEXT_PACKAGE);
-        g_option_context_add_group (option_context, gtk_get_option_group (TRUE));
+        g_option_context_add_group (option_context, ctk_get_option_group (TRUE));
 
         retval = g_option_context_parse (option_context, &argc, &argv, &error);
         g_option_context_free (option_context);
@@ -86,7 +86,7 @@ main (int argc, char *argv[])
         }
 
 	g_set_application_name (_("Typing Monitor"));
-	gtk_window_set_default_icon_name ("cafe-typing-monitor");
+	ctk_window_set_default_icon_name ("cafe-typing-monitor");
 
 	selection = drw_selection_start ();
 	if (!drw_selection_is_master (selection)) {
@@ -98,7 +98,7 @@ main (int argc, char *argv[])
 	if (!no_check && !have_tray ()) {
 		GtkWidget *dialog;
 
-		dialog = gtk_message_dialog_new (
+		dialog = ctk_message_dialog_new (
 			NULL, 0,
 			GTK_MESSAGE_INFO,
 			GTK_BUTTONS_CLOSE,
@@ -108,15 +108,15 @@ main (int argc, char *argv[])
 			  "panel and choosing 'Add to panel', selecting 'Notification "
 			  "area' and clicking 'Add'."));
 
-		gtk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (GTK_DIALOG (dialog));
 
-		gtk_widget_destroy (dialog);
+		ctk_widget_destroy (dialog);
 	}
 #endif /* HAVE_APP_INDICATOR */
 
 	drwright_new ();
 
-	gtk_main ();
+	ctk_main ();
 
 	return 0;
 }

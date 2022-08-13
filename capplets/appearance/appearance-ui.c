@@ -46,16 +46,16 @@ set_have_icons (AppearanceData *data, gboolean value)
         if (value) {
             image = g_object_get_data (G_OBJECT (item), "image");
             if (image) {
-                gtk_image_menu_item_set_image (item, image);
+                ctk_image_menu_item_set_image (item, image);
                 g_object_unref (image);
             }
         }
         else
         {
-            image = gtk_image_menu_item_get_image (item);
+            image = ctk_image_menu_item_get_image (item);
             g_object_set_data (G_OBJECT (item), "image", image);
             g_object_ref (image);
-            gtk_image_menu_item_set_image (item, NULL);
+            ctk_image_menu_item_set_image (item, NULL);
         }
     }
 }
@@ -89,9 +89,9 @@ ui_init (AppearanceData *data)
     GtkWidget* container = appearance_capplet_get_widget(data, "vbox24");
 
     // Remove menu accels and toolbar style toggles for new GTK versions
-    gtk_container_remove((GtkContainer *) container,
+    ctk_container_remove((GtkContainer *) container,
                          appearance_capplet_get_widget(data, "menu_accel_toggle"));
-    gtk_container_remove((GtkContainer *) container,
+    ctk_container_remove((GtkContainer *) container,
                          appearance_capplet_get_widget(data, "hbox11"));
 
     widget = appearance_capplet_get_widget(data, "menu_icons_toggle");

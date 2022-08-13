@@ -24,7 +24,7 @@
 
 #include <libcafe-desktop/cafe-desktop-item.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 #include <gdk/gdkkeysyms.h>
 #include <sys/types.h>
@@ -96,22 +96,22 @@ gboolean regenerate_categories (AppShellData * app_data);
 void
 hide_shell (AppShellData * app_data)
 {
-	gtk_window_get_position (GTK_WINDOW (app_data->main_app),
+	ctk_window_get_position (GTK_WINDOW (app_data->main_app),
 		&app_data->main_app_window_x, &app_data->main_app_window_y);
 	/* clear the search bar now so reshowing is fast and flicker free - BNC#283186 */
 	application_launcher_clear_search_bar (app_data);
-	gtk_widget_hide (app_data->main_app);
+	ctk_widget_hide (app_data->main_app);
 }
 
 void
 show_shell (AppShellData * app_data)
 {
-	gtk_widget_show_all (app_data->main_app);
+	ctk_widget_show_all (app_data->main_app);
 	if (!app_data->static_actions)
-		gtk_widget_hide (app_data->actions_section);  /* don't show unless a launcher is selected */
+		ctk_widget_hide (app_data->actions_section);  /* don't show unless a launcher is selected */
 
 	if (app_data->main_app_window_shown_once)
-		gtk_window_move (GTK_WINDOW (app_data->main_app),
+		ctk_window_move (GTK_WINDOW (app_data->main_app),
 			app_data->main_app_window_x, app_data->main_app_window_y);
 
 	/* if this is the first time shown, need to clear this handler */
@@ -124,19 +124,19 @@ gboolean
 create_main_window (AppShellData * app_data, const gchar * app_name, const gchar * title,
 	const gchar * window_icon, gint width, gint height, gboolean hidden)
 {
-	GtkWidget *main_app = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+	GtkWidget *main_app = ctk_window_new (GTK_WINDOW_TOPLEVEL);
 	app_data->main_app = main_app;
-	gtk_widget_set_name (main_app, app_name);
-	gtk_window_set_title (GTK_WINDOW (main_app), title);
-	gtk_window_set_default_size(GTK_WINDOW(main_app), width, height);
-	gtk_window_set_icon_name (GTK_WINDOW (main_app), window_icon);
-	gtk_container_add (GTK_CONTAINER (main_app), app_data->shell);
+	ctk_widget_set_name (main_app, app_name);
+	ctk_window_set_title (GTK_WINDOW (main_app), title);
+	ctk_window_set_default_size(GTK_WINDOW(main_app), width, height);
+	ctk_window_set_icon_name (GTK_WINDOW (main_app), window_icon);
+	ctk_container_add (GTK_CONTAINER (main_app), app_data->shell);
 
 	g_signal_connect (main_app, "delete-event", G_CALLBACK (main_delete_callback), app_data);
 	g_signal_connect (main_app, "key-press-event", G_CALLBACK (main_keypress_callback),
 		app_data);
 
-	gtk_window_set_position (GTK_WINDOW (app_data->main_app), GTK_WIN_POS_CENTER);
+	ctk_window_set_position (GTK_WINDOW (app_data->main_app), GTK_WIN_POS_CENTER);
 	if (!hidden)
 		show_shell (app_data);
 
@@ -263,7 +263,7 @@ layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar *
 	app_data->shell = shell_window_new (app_data);
 	app_data->static_actions = actions;
 
-	right_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	right_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
 	num_cols = SIZING_SCREEN_WIDTH_LARGE_NUMCOLS;
 	if (WidthOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ())) <= SIZING_SCREEN_WIDTH_LARGE)
@@ -276,13 +276,13 @@ layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar *
 	app_data->category_layout =
 		app_resizer_new (GTK_BOX (right_vbox), num_cols, TRUE, app_data);
 
-	sw = gtk_scrolled_window_new (NULL, NULL);
-	gtk_widget_set_vexpand (GTK_WIDGET (sw), TRUE);
-	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw), GTK_POLICY_AUTOMATIC,
+	sw = ctk_scrolled_window_new (NULL, NULL);
+	ctk_widget_set_vexpand (GTK_WIDGET (sw), TRUE);
+	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (sw), GTK_POLICY_AUTOMATIC,
 		GTK_POLICY_AUTOMATIC);
-	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw), GTK_SHADOW_IN);
-	gtk_container_add (GTK_CONTAINER (sw), app_data->category_layout);
-	adjustment = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
+	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (sw), GTK_SHADOW_IN);
+	ctk_container_add (GTK_CONTAINER (sw), app_data->category_layout);
+	adjustment = ctk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
 	g_object_set (adjustment, "step-increment", (double) 20, NULL);
 
 	create_application_category_sections (app_data);
@@ -290,23 +290,23 @@ layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar *
 	app_resizer_set_table_cache (APP_RESIZER (app_data->category_layout),
 		app_data->cached_tables_list);
 
-	gtk_container_set_focus_vadjustment (GTK_CONTAINER (right_vbox),
-		gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw)));
+	ctk_container_set_focus_vadjustment (GTK_CONTAINER (right_vbox),
+		ctk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw)));
 
-	left_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 15);
+	left_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 15);
 
 	filter_section = create_filter_section (app_data, filter_title);
 	app_data->filter_section = filter_section;
-	gtk_box_pack_start (GTK_BOX (left_vbox), filter_section, FALSE, FALSE, 0);
+	ctk_box_pack_start (GTK_BOX (left_vbox), filter_section, FALSE, FALSE, 0);
 
 	groups_section = create_groups_section (app_data, groups_title);
 	app_data->groups_section = groups_section;
 	populate_groups_section (app_data);
-	gtk_box_pack_start (GTK_BOX (left_vbox), groups_section, FALSE, FALSE, 0);
+	ctk_box_pack_start (GTK_BOX (left_vbox), groups_section, FALSE, FALSE, 0);
 
 	actions_section = create_actions_section (app_data, actions_title, actions_handler);
 	app_data->actions_section = actions_section;
-	gtk_box_pack_start (GTK_BOX (left_vbox), actions_section, FALSE, FALSE, 0);
+	ctk_box_pack_start (GTK_BOX (left_vbox), actions_section, FALSE, FALSE, 0);
 
 	shell_window_set_contents (SHELL_WINDOW (app_data->shell), left_vbox, sw);
 }
@@ -329,7 +329,7 @@ relayout_shell_partial (gpointer user_data)
 		{
 			populate_application_category_section (app_data, data->section,
 				data->filtered_launcher_list);
-			gtk_box_pack_start (vbox, GTK_WIDGET (data->section), TRUE, TRUE,
+			ctk_box_pack_start (vbox, GTK_WIDGET (data->section), TRUE, TRUE,
 				0);
 			app_data->filtered_out_everything = FALSE;
 		}
@@ -347,8 +347,8 @@ relayout_shell_partial (gpointer user_data)
 		app_data->cached_tables_list);
 	populate_groups_section (app_data);
 
-	gtk_widget_show_all (app_data->category_layout);
-	gdk_window_set_cursor (gtk_widget_get_window (app_data->shell), NULL);
+	ctk_widget_show_all (app_data->category_layout);
+	gdk_window_set_cursor (ctk_widget_get_window (app_data->shell), NULL);
 
 	app_data->stop_incremental_relayout = TRUE;
 	return FALSE;
@@ -383,9 +383,9 @@ relayout_shell (AppShellData * app_data)
 		app_data->cached_tables_list);
 	populate_groups_section (app_data);
 
-	gtk_widget_show_all (shell);
+	ctk_widget_show_all (shell);
 	if (!app_data->static_actions && !app_data->last_clicked_launcher)
-		gtk_widget_hide (app_data->actions_section);  /* don't show unless a launcher is selected */
+		ctk_widget_hide (app_data->actions_section);  /* don't show unless a launcher is selected */
 }
 
 static GtkWidget *
@@ -403,7 +403,7 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 	section = slab_section_new (title, Style1);
 	g_object_ref (section);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	slab_section_set_contents (SLAB_SECTION (section), vbox);
 
 	if (app_data->static_actions)
@@ -413,18 +413,18 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 			GtkWidget *header;
 
 			action = (AppAction *) actions->data;
-			header = gtk_label_new (action->name);
-			gtk_label_set_line_wrap (GTK_LABEL (header), TRUE);
-			gtk_label_set_max_width_chars (GTK_LABEL (header), 0);
-			gtk_label_set_xalign (GTK_LABEL (header), 0.0);
+			header = ctk_label_new (action->name);
+			ctk_label_set_line_wrap (GTK_LABEL (header), TRUE);
+			ctk_label_set_max_width_chars (GTK_LABEL (header), 0);
+			ctk_label_set_xalign (GTK_LABEL (header), 0.0);
 			launcher = nameplate_tile_new (NULL, NULL, header, NULL);
 
 			g_object_set_data (G_OBJECT (launcher), APP_ACTION_KEY, action->item);
 			g_signal_connect (launcher, "tile-activated", G_CALLBACK (actions_handler),
 				app_data);
-			gtk_box_pack_start (GTK_BOX (vbox), launcher, FALSE, FALSE, 0);
+			ctk_box_pack_start (GTK_BOX (vbox), launcher, FALSE, FALSE, 0);
 
-			a11y_cat = gtk_widget_get_accessible (GTK_WIDGET (launcher));
+			a11y_cat = ctk_widget_get_accessible (GTK_WIDGET (launcher));
 			atk_object_set_name (a11y_cat, action->name);
 		}
 	}
@@ -443,7 +443,7 @@ create_groups_section (AppShellData * app_data, const gchar * title)
 	section = slab_section_new (title, Style1);
 	g_object_ref (section);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	slab_section_set_contents (SLAB_SECTION (section), vbox);
 
 	return section;
@@ -465,8 +465,8 @@ populate_groups_section (AppShellData * app_data)
 		CategoryData *data = (CategoryData *) cat_list->data;
 		if (NULL != data->filtered_launcher_list)
 		{
-			gtk_widget_set_state (GTK_WIDGET (data->group_launcher), GTK_STATE_NORMAL);
-			gtk_box_pack_start (vbox, GTK_WIDGET (data->group_launcher),
+			ctk_widget_set_state (GTK_WIDGET (data->group_launcher), GTK_STATE_NORMAL);
+			ctk_box_pack_start (vbox, GTK_WIDGET (data->group_launcher),
 				FALSE, FALSE, 0);
 		}
 	}
@@ -500,7 +500,7 @@ handle_group_clicked (Tile * tile, TileEvent * event, gpointer user_data)
 
 		if (NULL != cat_data->filtered_launcher_list)
 		{
-			gtk_widget_get_allocation (GTK_WIDGET (cat_data->section), &allocation);
+			ctk_widget_get_allocation (GTK_WIDGET (cat_data->section), &allocation);
 			total += allocation.height;
 		}
 	}
@@ -526,7 +526,7 @@ set_state (AppShellData * app_data, GtkWidget * widget)
 		app_data->selected_group = SLAB_SECTION (widget);
 		slab_section_set_selected (SLAB_SECTION (widget), TRUE);
 	}
-	gtk_widget_queue_draw (app_data->shell);
+	ctk_widget_queue_draw (app_data->shell);
 }
 
 static GtkWidget *
@@ -565,10 +565,10 @@ handle_filter_changed_delayed (gpointer user_data)
 	   incremental updates
 	 */
 	/* gdk_window_freeze_updates(app_data->category_layout->window); */
-	gtk_widget_hide (app_data->category_layout);
+	ctk_widget_hide (app_data->category_layout);
 	app_data->busy_cursor =
-		gdk_cursor_new_for_display (gtk_widget_get_display (app_data->shell), GDK_WATCH);
-	gdk_window_set_cursor (gtk_widget_get_window (app_data->shell), app_data->busy_cursor);
+		gdk_cursor_new_for_display (ctk_widget_get_display (app_data->shell), GDK_WATCH);
+	gdk_window_set_cursor (ctk_widget_get_window (app_data->shell), app_data->busy_cursor);
 	g_object_unref (app_data->busy_cursor);
 
 	set_state (app_data, NULL);
@@ -624,7 +624,7 @@ generate_filtered_lists (gpointer catdata, gpointer user_data)
 
 		/* Since the filter may remove this entry from the
 		   container it will not get a mouse out event */
-		gtk_widget_set_state (GTK_WIDGET (launcher), GTK_STATE_NORMAL);
+		ctk_widget_set_state (GTK_WIDGET (launcher), GTK_STATE_NORMAL);
 		filename = g_object_get_data (G_OBJECT (launcher), TILE_EXEC_NAME); /* do I need to free this */
 
 		temp1 = g_ascii_strdown (launcher->name, -1);
@@ -660,8 +660,8 @@ delete_old_data (AppShellData * app_data)
 	do
 	{
 		CategoryData *data = (CategoryData *) cat_list->data;
-		gtk_widget_destroy (GTK_WIDGET (data->section));
-		gtk_widget_destroy (GTK_WIDGET (data->group_launcher));
+		ctk_widget_destroy (GTK_WIDGET (data->section));
+		ctk_widget_destroy (GTK_WIDGET (data->group_launcher));
 		g_object_unref (data->section);
 		g_object_unref (data->group_launcher);
 		g_free (data->category);
@@ -698,12 +698,12 @@ create_application_category_sections (AppShellData * app_data)
 	do
 	{
 		CategoryData *data = (CategoryData *) cat_list->data;
-		GtkWidget *header = gtk_label_new (data->category);
+		GtkWidget *header = ctk_label_new (data->category);
 		gchar *markup;
 		GtkWidget *hbox;
 		GtkWidget *table;
 
-		gtk_label_set_xalign (GTK_LABEL (header), 0.0);
+		ctk_label_set_xalign (GTK_LABEL (header), 0.0);
 		data->group_launcher = TILE (nameplate_tile_new (NULL, NULL, header, NULL));
 		g_object_ref (data->group_launcher);
 
@@ -712,7 +712,7 @@ create_application_category_sections (AppShellData * app_data)
 		pos++;
 		g_signal_connect (data->group_launcher, "tile-activated",
 			G_CALLBACK (handle_group_clicked), app_data);
-		a11y_cat = gtk_widget_get_accessible (GTK_WIDGET (data->group_launcher));
+		a11y_cat = ctk_widget_get_accessible (GTK_WIDGET (data->group_launcher));
 		atk_object_set_name (a11y_cat, data->category);
 
 		markup = g_markup_printf_escaped ("<span size=\"x-large\" weight=\"bold\">%s</span>",
@@ -723,11 +723,11 @@ create_application_category_sections (AppShellData * app_data)
 		g_object_ref (data->section);
 		g_free (markup);
 
-		hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-		table = gtk_table_new (0, 0, TRUE);
-		gtk_table_set_col_spacings (GTK_TABLE (table), 5);
-		gtk_table_set_row_spacings (GTK_TABLE (table), 5);
-		gtk_box_pack_start (GTK_BOX (hbox), table, FALSE, FALSE, 15);
+		hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+		table = ctk_table_new (0, 0, TRUE);
+		ctk_table_set_col_spacings (GTK_TABLE (table), 5);
+		ctk_table_set_row_spacings (GTK_TABLE (table), 5);
+		ctk_box_pack_start (GTK_BOX (hbox), table, FALSE, FALSE, 15);
 		slab_section_set_contents (SLAB_SECTION (data->section), hbox);
 	}
 	while (NULL != (cat_list = g_list_next (cat_list)));
@@ -745,17 +745,17 @@ show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
 		GtkWidget *image;
 		GtkWidget *label;
 
-		app_data->filtered_out_everything_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-		gtk_widget_set_halign (app_data->filtered_out_everything_widget, GTK_ALIGN_CENTER);
-		gtk_widget_set_valign (app_data->filtered_out_everything_widget, GTK_ALIGN_CENTER);
+		app_data->filtered_out_everything_widget = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+		ctk_widget_set_halign (app_data->filtered_out_everything_widget, GTK_ALIGN_CENTER);
+		ctk_widget_set_valign (app_data->filtered_out_everything_widget, GTK_ALIGN_CENTER);
 		g_object_ref (app_data->filtered_out_everything_widget);
 
 		image = themed_icon_new ("face-surprise", GTK_ICON_SIZE_DIALOG);
-		gtk_box_pack_start (GTK_BOX (app_data->filtered_out_everything_widget), image, FALSE, FALSE, 0);
+		ctk_box_pack_start (GTK_BOX (app_data->filtered_out_everything_widget), image, FALSE, FALSE, 0);
 
-		label = gtk_label_new (NULL);
-		gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-		gtk_box_pack_start (GTK_BOX (app_data->filtered_out_everything_widget), label, TRUE, TRUE, 15);
+		label = ctk_label_new (NULL);
+		ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+		ctk_box_pack_start (GTK_BOX (app_data->filtered_out_everything_widget), label, TRUE, TRUE, 15);
 		app_data->filtered_out_everything_widget_label = GTK_LABEL (label);
 	}
 
@@ -763,9 +763,9 @@ show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
 	str2 = g_strdup_printf (_("Your filter \"%s\" does not match any items."), str1);
 	markup = g_strdup_printf ("<span size=\"large\"><b>%s</b></span>\n\n%s",
 		_("No matches found."), str2);
-	gtk_label_set_text (app_data->filtered_out_everything_widget_label, markup);
-	gtk_label_set_use_markup (app_data->filtered_out_everything_widget_label, TRUE);
-	gtk_box_pack_start (GTK_BOX (containing_vbox), app_data->filtered_out_everything_widget,
+	ctk_label_set_text (app_data->filtered_out_everything_widget_label, markup);
+	ctk_label_set_use_markup (app_data->filtered_out_everything_widget_label, TRUE);
+	ctk_box_pack_start (GTK_BOX (containing_vbox), app_data->filtered_out_everything_widget,
 		TRUE, TRUE, 0);
 	g_free (str1);
 	g_free (str2);
@@ -789,7 +789,7 @@ populate_application_category_sections (AppShellData * app_data, GtkWidget * con
 		{
 			populate_application_category_section (app_data, data->section,
 				data->filtered_launcher_list);
-			gtk_box_pack_start (GTK_BOX (containing_vbox), GTK_WIDGET (data->section),
+			ctk_box_pack_start (GTK_BOX (containing_vbox), GTK_WIDGET (data->section),
 				TRUE, TRUE, 0);
 			filtered_out_everything = FALSE;
 		}
@@ -810,7 +810,7 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 
 	hbox = GTK_WIDGET (section->contents);
 
-	children = gtk_container_get_children (GTK_CONTAINER (hbox));
+	children = ctk_container_get_children (GTK_CONTAINER (hbox));
 	table = children->data;
 	g_list_free (children);
 
@@ -904,11 +904,11 @@ generate_categories (AppShellData * app_data)
 		root_dir = NULL;
 
 	if ( app_data->tree == NULL || root_dir == NULL) {
-		GtkWidget *dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+		GtkWidget *dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Failure loading - %s",
 				app_data->menu_name);
-		gtk_dialog_run (GTK_DIALOG (dialog));
-		gtk_widget_destroy (dialog);
+		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_widget_destroy (dialog);
 		exit (1);	/* Fixme - is there a CAFE/GTK way to do this. */
 	}
 
@@ -1271,12 +1271,12 @@ insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * deskto
 	GtkWidget *tile_icon;
 
 	if (!icon_group)
-		icon_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+		icon_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 
 	launcher =
 		application_tile_new_full (cafe_desktop_item_get_location (desktop_item),
 		app_data->icon_size, app_data->show_tile_generic_name);
-	gtk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
+	ctk_widget_set_size_request (launcher, SIZING_TILE_WIDTH, -1);
 
 	filepath =
 		g_strdup (cafe_desktop_item_get_string (desktop_item, CAFE_DESKTOP_ITEM_EXEC));
@@ -1289,7 +1289,7 @@ insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * deskto
 	g_object_set_data (G_OBJECT (launcher), TILE_EXEC_NAME, filename);
 
 	tile_icon = NAMEPLATE_TILE (launcher)->image;
-	gtk_size_group_add_widget (icon_group, tile_icon);
+	ctk_size_group_add_widget (icon_group, tile_icon);
 
 	g_signal_connect (launcher, "tile-activated", G_CALLBACK (tile_activated_cb), app_data);
 

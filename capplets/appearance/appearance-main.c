@@ -44,8 +44,8 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
   activate_settings_daemon ();
 
   /* set up the data */
-  ui = gtk_builder_new ();
-  gtk_builder_add_from_resource (ui, "/org/cafe/mcc/appearance/data/appearance.ui", &err);
+  ui = ctk_builder_new ();
+  ctk_builder_add_from_resource (ui, "/org/cafe/mcc/appearance/data/appearance.ui", &err);
 
   if (err)
     {
@@ -83,7 +83,7 @@ main_window_response (GtkWidget *widget,
   if (response_id == GTK_RESPONSE_CLOSE ||
       response_id == GTK_RESPONSE_DELETE_EVENT)
   {
-    gtk_main_quit ();
+    ctk_main_quit ();
 
     themes_shutdown (data);
     style_shutdown (data);
@@ -110,7 +110,7 @@ main_window_response (GtkWidget *widget,
       gint pindex;
 
       nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "main_notebook"));
-      pindex = gtk_notebook_get_current_page (nb);
+      pindex = ctk_notebook_get_current_page (nb);
 
       switch (pindex)
       {
@@ -191,11 +191,11 @@ main (int argc, char **argv)
 
   /* prepare the main window */
   w = appearance_capplet_get_widget (data, "appearance_window");
-  context = gtk_widget_get_style_context (GTK_WIDGET (w));
-  gtk_style_context_add_class (context, "appearance-window");
+  context = ctk_widget_get_style_context (GTK_WIDGET (w));
+  ctk_style_context_add_class (context, "appearance-window");
 
   capplet_set_icon (w, "preferences-desktop-theme");
-  gtk_widget_show_all (w);
+  ctk_widget_show_all (w);
 
   g_signal_connect_after (w, "response",
                           (GCallback) main_window_response, data);
@@ -205,7 +205,7 @@ main (int argc, char **argv)
     start_page = g_strdup ("background");
 
   GtkNotebook* nb = GTK_NOTEBOOK(appearance_capplet_get_widget (data, "main_notebook"));
-  gtk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
+  ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
   g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                     G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                     GTK_WINDOW (w));
@@ -220,9 +220,9 @@ main (int argc, char **argv)
     if (w != NULL) {
       gint pindex;
 
-      pindex = gtk_notebook_page_num (nb, w);
+      pindex = ctk_notebook_page_num (nb, w);
       if (pindex != -1)
-        gtk_notebook_set_current_page (nb, pindex);
+        ctk_notebook_set_current_page (nb, pindex);
     }
     g_free (page_name);
   }
@@ -237,7 +237,7 @@ main (int argc, char **argv)
   g_option_context_free (option_context);
 
   /* start the mainloop */
-  gtk_main ();
+  ctk_main ();
 
   /* free stuff */
   g_free (data);

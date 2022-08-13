@@ -24,7 +24,7 @@
 #ifndef __FILE_TRANSFER_DIALOG_H__
 #define __FILE_TRANSFER_DIALOG_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

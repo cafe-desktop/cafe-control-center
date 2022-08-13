@@ -29,7 +29,7 @@
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "capplet-util.h"
 
@@ -43,25 +43,25 @@ static void fill_models_list (GtkBuilder * chooser_dialog);
 static gboolean fill_vendors_list (GtkBuilder * chooser_dialog);
 
 static GtkTreePath *
-gtk_list_store_find_entry (GtkListStore * list_store,
+ctk_list_store_find_entry (GtkListStore * list_store,
 			   GtkTreeIter * iter, gchar * name, int column_id)
 {
 	GtkTreePath *path;
 	char *current_name = NULL;
-	if (gtk_tree_model_get_iter_first
+	if (ctk_tree_model_get_iter_first
 	    (GTK_TREE_MODEL (list_store), iter)) {
 		do {
-			gtk_tree_model_get (GTK_TREE_MODEL
+			ctk_tree_model_get (GTK_TREE_MODEL
 					    (list_store), iter, column_id,
 					    &current_name, -1);
 			if (!g_ascii_strcasecmp (name, current_name)) {
 				path =
-				    gtk_tree_model_get_path
+				    ctk_tree_model_get_path
 				    (GTK_TREE_MODEL (list_store), iter);
 				return path;
 			}
 			g_free (current_name);
-		} while (gtk_tree_model_iter_next
+		} while (ctk_tree_model_iter_next
 			 (GTK_TREE_MODEL (list_store), iter));
 	}
 	return NULL;
@@ -84,22 +84,22 @@ add_vendor_to_list (XklConfigRegistry * config_registry,
 		return;
 
 	list_store =
-	    GTK_LIST_STORE (gtk_tree_view_get_model (vendors_list));
+	    GTK_LIST_STORE (ctk_tree_view_get_model (vendors_list));
 
 	if (!g_ascii_strcasecmp (config_item->name, current_model_name)) {
 		current_vendor_name = g_strdup (vendor_name);
 	}
 
 	found_existing =
-	    gtk_list_store_find_entry (list_store, &iter, vendor_name, 0);
+	    ctk_list_store_find_entry (list_store, &iter, vendor_name, 0);
 	/* This vendor is already there */
 	if (found_existing != NULL) {
-		gtk_tree_path_free (found_existing);
+		ctk_tree_path_free (found_existing);
 		return;
 	}
 
-	gtk_list_store_append (list_store, &iter);
-	gtk_list_store_set (list_store, &iter, 0, vendor_name, -1);
+	ctk_list_store_append (list_store, &iter);
+	ctk_list_store_set (list_store, &iter, 0, vendor_name, -1);
 }
 
 static void
@@ -108,7 +108,7 @@ add_model_to_list (XklConfigRegistry * config_registry,
 {
 	GtkTreeIter iter;
 	GtkListStore *list_store =
-	    GTK_LIST_STORE (gtk_tree_view_get_model (models_list));
+	    GTK_LIST_STORE (ctk_tree_view_get_model (models_list));
 	char *utf_model_name;
 	if (current_vendor_name != NULL) {
 		gchar *vendor_name =
@@ -121,8 +121,8 @@ add_model_to_list (XklConfigRegistry * config_registry,
 			return;
 	}
 	utf_model_name = xci_desc_to_utf8 (config_item);
-	gtk_list_store_append (list_store, &iter);
-	gtk_list_store_set (list_store, &iter,
+	ctk_list_store_append (list_store, &iter);
+	ctk_list_store_set (list_store, &iter,
 			    0, utf_model_name, 1, config_item->name, -1);
 
 	g_free (utf_model_name);
@@ -134,10 +134,10 @@ xkb_model_chooser_change_vendor_sel (GtkTreeSelection * selection,
 {
 	GtkTreeIter iter;
 	GtkTreeModel *list_store = NULL;
-	if (gtk_tree_selection_get_selected
+	if (ctk_tree_selection_get_selected
 	    (selection, &list_store, &iter)) {
 		gchar *vendor_name = NULL;
-		gtk_tree_model_get (list_store, &iter,
+		ctk_tree_model_get (list_store, &iter,
 				    0, &vendor_name, -1);
 
 		current_vendor_name = vendor_name;
@@ -155,8 +155,8 @@ xkb_model_chooser_change_model_sel (GtkTreeSelection * selection,
 				    GtkBuilder * chooser_dialog)
 {
 	gboolean anysel =
-	    gtk_tree_selection_get_selected (selection, NULL, NULL);
-	gtk_dialog_set_response_sensitive (GTK_DIALOG
+	    ctk_tree_selection_get_selected (selection, NULL, NULL);
+	ctk_dialog_set_response_sensitive (GTK_DIALOG
 					   (CWID ("xkb_model_chooser")),
 					   GTK_RESPONSE_OK, anysel);
 }
@@ -165,14 +165,14 @@ static void
 prepare_vendors_list (GtkBuilder * chooser_dialog)
 {
 	GtkWidget *vendors_list = CWID ("vendors_list");
-	GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+	GtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
 	GtkTreeViewColumn *vendor_col =
-	    gtk_tree_view_column_new_with_attributes (_("Vendors"),
+	    ctk_tree_view_column_new_with_attributes (_("Vendors"),
 						      renderer,
 						      "text", 0,
 						      NULL);
-	gtk_tree_view_column_set_visible (vendor_col, TRUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (vendors_list),
+	ctk_tree_view_column_set_visible (vendor_col, TRUE);
+	ctk_tree_view_append_column (GTK_TREE_VIEW (vendors_list),
 				     vendor_col);
 }
 
@@ -180,14 +180,14 @@ static gboolean
 fill_vendors_list (GtkBuilder * chooser_dialog)
 {
 	GtkWidget *vendors_list = CWID ("vendors_list");
-	GtkListStore *list_store = gtk_list_store_new (1, G_TYPE_STRING);
+	GtkListStore *list_store = ctk_list_store_new (1, G_TYPE_STRING);
 	GtkTreeIter iter;
 	GtkTreePath *path;
 
-	gtk_tree_view_set_model (GTK_TREE_VIEW (vendors_list),
+	ctk_tree_view_set_model (GTK_TREE_VIEW (vendors_list),
 				 GTK_TREE_MODEL (list_store));
 
-	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE
+	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE
 					      (list_store), 0,
 					      GTK_SORT_ASCENDING);
 
@@ -199,17 +199,17 @@ fill_vendors_list (GtkBuilder * chooser_dialog)
 					   vendors_list);
 
 	if (current_vendor_name != NULL) {
-		path = gtk_list_store_find_entry (list_store,
+		path = ctk_list_store_find_entry (list_store,
 						  &iter,
 						  current_vendor_name, 0);
 		if (path != NULL) {
-			gtk_tree_selection_select_iter
-			    (gtk_tree_view_get_selection
+			ctk_tree_selection_select_iter
+			    (ctk_tree_view_get_selection
 			     (GTK_TREE_VIEW (vendors_list)), &iter);
-			gtk_tree_view_scroll_to_cell
+			ctk_tree_view_scroll_to_cell
 			    (GTK_TREE_VIEW (vendors_list),
 			     path, NULL, TRUE, 0.5, 0);
-			gtk_tree_path_free (path);
+			ctk_tree_path_free (path);
 		}
 		fill_models_list (chooser_dialog);
 		g_free (current_vendor_name);
@@ -218,12 +218,12 @@ fill_vendors_list (GtkBuilder * chooser_dialog)
 	}
 
 	g_signal_connect (G_OBJECT
-			  (gtk_tree_view_get_selection
+			  (ctk_tree_view_get_selection
 			   (GTK_TREE_VIEW (vendors_list))), "changed",
 			  G_CALLBACK (xkb_model_chooser_change_vendor_sel),
 			  chooser_dialog);
 
-	return gtk_tree_model_get_iter_first (GTK_TREE_MODEL (list_store),
+	return ctk_tree_model_get_iter_first (GTK_TREE_MODEL (list_store),
 					      &iter);
 }
 
@@ -231,14 +231,14 @@ static void
 prepare_models_list (GtkBuilder * chooser_dialog)
 {
 	GtkWidget *models_list = CWID ("models_list");
-	GtkCellRenderer *renderer = gtk_cell_renderer_text_new ();
+	GtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
 	GtkTreeViewColumn *description_col =
-	    gtk_tree_view_column_new_with_attributes (_("Models"),
+	    ctk_tree_view_column_new_with_attributes (_("Models"),
 						      renderer,
 						      "text", 0,
 						      NULL);
-	gtk_tree_view_column_set_visible (description_col, TRUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (models_list),
+	ctk_tree_view_column_set_visible (description_col, TRUE);
+	ctk_tree_view_append_column (GTK_TREE_VIEW (models_list),
 				     description_col);
 }
 
@@ -250,13 +250,13 @@ fill_models_list (GtkBuilder * chooser_dialog)
 	GtkTreePath *path;
 
 	GtkListStore *list_store =
-	    gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
+	    ctk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
 
-	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE
+	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE
 					      (list_store), 0,
 					      GTK_SORT_ASCENDING);
 
-	gtk_tree_view_set_model (GTK_TREE_VIEW (models_list),
+	ctk_tree_view_set_model (GTK_TREE_VIEW (models_list),
 				 GTK_TREE_MODEL (list_store));
 
 	xkl_config_registry_foreach_model (config_registry,
@@ -264,22 +264,22 @@ fill_models_list (GtkBuilder * chooser_dialog)
 					   add_model_to_list, models_list);
 
 	if (current_model_name != NULL) {
-		path = gtk_list_store_find_entry (list_store,
+		path = ctk_list_store_find_entry (list_store,
 						  &iter,
 						  current_model_name, 1);
 		if (path != NULL) {
-			gtk_tree_selection_select_iter
-			    (gtk_tree_view_get_selection
+			ctk_tree_selection_select_iter
+			    (ctk_tree_view_get_selection
 			     (GTK_TREE_VIEW (models_list)), &iter);
-			gtk_tree_view_scroll_to_cell
+			ctk_tree_view_scroll_to_cell
 			    (GTK_TREE_VIEW (models_list),
 			     path, NULL, TRUE, 0.5, 0);
-			gtk_tree_path_free (path);
+			ctk_tree_path_free (path);
 		}
 	}
 
 	g_signal_connect (G_OBJECT
-			  (gtk_tree_view_get_selection
+			  (ctk_tree_view_get_selection
 			   (GTK_TREE_VIEW (models_list))), "changed",
 			  G_CALLBACK (xkb_model_chooser_change_model_sel),
 			  chooser_dialog);
@@ -292,14 +292,14 @@ xkb_model_chooser_response (GtkDialog * dialog,
 	if (response == GTK_RESPONSE_OK) {
 		GtkWidget *models_list = CWID ("models_list");
 		GtkTreeSelection *selection =
-		    gtk_tree_view_get_selection (GTK_TREE_VIEW
+		    ctk_tree_view_get_selection (GTK_TREE_VIEW
 						 (models_list));
 		GtkTreeIter iter;
 		GtkTreeModel *list_store = NULL;
-		if (gtk_tree_selection_get_selected
+		if (ctk_tree_selection_get_selected
 		    (selection, &list_store, &iter)) {
 			gchar *model_name = NULL;
-			gtk_tree_model_get (list_store, &iter,
+			ctk_tree_model_get (list_store, &iter,
 					    1, &model_name, -1);
 
 			g_settings_set_string (xkb_kbd_settings, "model", model_name);
@@ -314,12 +314,12 @@ choose_model (GtkBuilder * dialog)
 	GtkBuilder *chooser_dialog;
 	GtkWidget *chooser;
 
-	chooser_dialog = gtk_builder_new ();
-	gtk_builder_add_from_resource (chooser_dialog,
+	chooser_dialog = ctk_builder_new ();
+	ctk_builder_add_from_resource (chooser_dialog,
 	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-model-chooser.ui",
 	                               NULL);
 	chooser = CWID ("xkb_model_chooser");
-	gtk_window_set_transient_for (GTK_WINDOW (chooser),
+	ctk_window_set_transient_for (GTK_WINDOW (chooser),
 				      GTK_WINDOW (WID
 						  ("keyboard_dialog")));
 	current_model_name =
@@ -329,8 +329,8 @@ choose_model (GtkBuilder * dialog)
 	prepare_models_list (chooser_dialog);
 
 	if (!fill_vendors_list (chooser_dialog)) {
-		gtk_widget_hide (CWID ("vendors_label"));
-		gtk_widget_hide (CWID ("vendors_scrolledwindow"));
+		ctk_widget_hide (CWID ("vendors_label"));
+		ctk_widget_hide (CWID ("vendors_scrolledwindow"));
 		current_vendor_name = NULL;
 		fill_models_list (chooser_dialog);
 	}
@@ -339,7 +339,7 @@ choose_model (GtkBuilder * dialog)
 			  "response",
 			  G_CALLBACK (xkb_model_chooser_response),
 			  chooser_dialog);
-	gtk_dialog_run (GTK_DIALOG (chooser));
-	gtk_widget_destroy (chooser);
+	ctk_dialog_run (GTK_DIALOG (chooser));
+	ctk_widget_destroy (chooser);
 	g_free (current_model_name);
 }

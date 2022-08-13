@@ -29,17 +29,17 @@ int ErrorMessage (const char *Title,
     int nRet;
     GtkWidget *dialog;
 
-    dialog = gtk_message_dialog_new (NULL,
+    dialog = ctk_message_dialog_new (NULL,
                                      GTK_DIALOG_MODAL,
                                      GTK_MESSAGE_ERROR,
                                      GTK_BUTTONS_OK,
                                      "%s", Title);
 
-    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+    ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
                                               "%s", Msg);
 
-    nRet =  gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
+    nRet =  ctk_dialog_run (GTK_DIALOG (dialog));
+    ctk_widget_destroy (dialog);
 
     return nRet;
 }
@@ -47,5 +47,5 @@ int ErrorMessage (const char *Title,
 void SetTooltip(GtkWidget *box, gboolean mode)
 {
     gchar *text = mode ? NULL : _("Network time synchronization has been set up. Manual time/date setting is disabled.");
-    gtk_widget_set_tooltip_text (box, text);
+    ctk_widget_set_tooltip_text (box, text);
 }

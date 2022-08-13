@@ -69,7 +69,7 @@ set_changed(GtkComboBox* combo, CafeDACapplet* capplet, GList* list, gint type)
 	guint index;
 	GAppInfo* item;
 
-	index = gtk_combo_box_get_active(combo);
+	index = ctk_combo_box_get_active(combo);
 
 	if (index < g_list_length(list))
 	{
@@ -201,8 +201,8 @@ close_cb(GtkWidget* window, gint response, CafeDACapplet* capplet)
 		set_changed(GTK_COMBO_BOX(capplet->calculator_combo_box), capplet, capplet->calculators, DA_TYPE_CALCULATOR);
 		set_changed(GTK_COMBO_BOX(capplet->messenger_combo_box), capplet, capplet->messengers, DA_TYPE_MESSENGER);
 
-		gtk_widget_destroy(window);
-		gtk_main_quit();
+		ctk_widget_destroy(window);
+		ctk_main_quit();
 	}
 }
 
@@ -307,27 +307,27 @@ refresh_combo_box_icons(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_
 	gchar* icon_name;
 	gint scale_factor;
 
-	model = gtk_combo_box_get_model(combo_box);
+	model = ctk_combo_box_get_model(combo_box);
 
 	if (model == NULL)
 		return;
 
-	valid = gtk_tree_model_get_iter_first(model, &iter);
-	scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (combo_box));
+	valid = ctk_tree_model_get_iter_first(model, &iter);
+	scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (combo_box));
 
 	while (valid)
 	{
-		gtk_tree_model_get (model, &iter,
+		ctk_tree_model_get (model, &iter,
 		                    ICONAME_COL, &icon_name,
 		                    -1);
 
-		surface = gtk_icon_theme_load_surface (theme, icon_name,
+		surface = ctk_icon_theme_load_surface (theme, icon_name,
 		                                       22, scale_factor,
 		                                       NULL,
 		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		gtk_list_store_set (GTK_LIST_STORE(model), &iter,
+		ctk_list_store_set (GTK_LIST_STORE(model), &iter,
 		                    SURFACE_COL, surface,
 		                    -1);
 
@@ -336,7 +336,7 @@ refresh_combo_box_icons(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_
 
 		g_free (icon_name);
 
-		valid = gtk_tree_model_iter_next(model, &iter);
+		valid = ctk_tree_model_iter_next(model, &iter);
 	}
 }
 
@@ -370,19 +370,19 @@ theme_changed_cb(GtkIconTheme* theme, CafeDACapplet* capplet)
 	gint scale_factor;
 	cairo_surface_t *surface;
 
-	scale_factor = gtk_widget_get_scale_factor (capplet->window);
+	scale_factor = ctk_widget_get_scale_factor (capplet->window);
 
 	for (i = 0; i < G_N_ELEMENTS(icons); i++)
 	{
-		icon = gtk_builder_get_object(capplet->builder, icons[i].name);
+		icon = ctk_builder_get_object(capplet->builder, icons[i].name);
 
-		surface = gtk_icon_theme_load_surface (theme, icons[i].icon,
+		surface = ctk_icon_theme_load_surface (theme, icons[i].icon,
 		                                       32, scale_factor,
 		                                       NULL,
 		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		gtk_image_set_from_surface (GTK_IMAGE(icon), surface);
+		ctk_image_set_from_surface (GTK_IMAGE(icon), surface);
 
 		if (surface)
 			cairo_surface_destroy (surface);
@@ -409,7 +409,7 @@ screen_changed_cb(GtkWidget* widget, GdkScreen* screen, CafeDACapplet* capplet)
 {
 	GtkIconTheme* theme;
 
-	theme = gtk_icon_theme_get_for_screen (screen);
+	theme = ctk_icon_theme_get_for_screen (screen);
 
 	if (capplet->icon_theme != NULL)
 	{
@@ -517,33 +517,33 @@ fill_combo_box(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_list, gch
 
 	if (theme == NULL)
 	{
-		theme = gtk_icon_theme_get_default();
+		theme = ctk_icon_theme_get_default();
 	}
 
-	model = GTK_TREE_MODEL (gtk_list_store_new (4,
+	model = GTK_TREE_MODEL (ctk_list_store_new (4,
 	                                            CAIRO_GOBJECT_TYPE_SURFACE,
 	                                            G_TYPE_STRING,
 	                                            G_TYPE_STRING,
 	                                            G_TYPE_STRING));
-	gtk_combo_box_set_model(combo_box, model);
+	ctk_combo_box_set_model(combo_box, model);
 
-	renderer = gtk_cell_renderer_pixbuf_new();
+	renderer = ctk_cell_renderer_pixbuf_new();
 
 	/* Not all cells have an icon, this prevents the combo box to shrink */
-	gtk_cell_renderer_set_fixed_size(renderer, 22, 22);
-	gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, FALSE);
-	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box), renderer,
+	ctk_cell_renderer_set_fixed_size(renderer, 22, 22);
+	ctk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, FALSE);
+	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box), renderer,
 	                                "surface", SURFACE_COL,
 	                                NULL);
 
-	renderer = gtk_cell_renderer_text_new();
+	renderer = ctk_cell_renderer_text_new();
 
-	gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, TRUE);
-	gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(combo_box), renderer,
+	ctk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, TRUE);
+	ctk_cell_layout_set_attributes(GTK_CELL_LAYOUT(combo_box), renderer,
 		"text", TEXT_COL,
 		NULL);
 
-	scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (combo_box));
+	scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (combo_box));
 
 	for (entry = app_list; entry != NULL; entry = g_list_next(entry))
 	{
@@ -563,14 +563,14 @@ fill_combo_box(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_list, gch
 			icon_name = g_strdup ("binary");
 		}
 
-		surface = gtk_icon_theme_load_surface (theme, icon_name,
+		surface = ctk_icon_theme_load_surface (theme, icon_name,
 		                                       22, scale_factor,
 		                                       NULL,
 		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		gtk_list_store_append(GTK_LIST_STORE(model), &iter);
-		gtk_list_store_set (GTK_LIST_STORE (model), &iter,
+		ctk_list_store_append(GTK_LIST_STORE(model), &iter);
+		ctk_list_store_set (GTK_LIST_STORE (model), &iter,
 		                    SURFACE_COL, surface,
 		                    TEXT_COL, g_app_info_get_display_name(item),
 		                    ID_COL, g_app_info_get_id(item),
@@ -583,7 +583,7 @@ fill_combo_box(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_list, gch
 		/* Set the index for the default app */
 		if (default_app != NULL && g_app_info_equal(item, default_app))
 		{
-			gtk_combo_box_set_active(combo_box, index);
+			ctk_combo_box_set_active(combo_box, index);
 		}
 
 		g_free(icon_name);
@@ -625,24 +625,24 @@ compare_apps (gconstpointer a, gconstpointer b)
 static void
 show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 {
-	#define get_widget(name) GTK_WIDGET(gtk_builder_get_object(builder, name))
+	#define get_widget(name) GTK_WIDGET(ctk_builder_get_object(builder, name))
 
 	GtkBuilder* builder;
 	guint builder_result;
 
-	capplet->builder = builder = gtk_builder_new ();
+	capplet->builder = builder = ctk_builder_new ();
 
-	builder_result = gtk_builder_add_from_resource (builder, "/org/cafe/mcc/da/cafe-default-applications-properties.ui", NULL);
+	builder_result = ctk_builder_add_from_resource (builder, "/org/cafe/mcc/da/cafe-default-applications-properties.ui", NULL);
 
 	if (builder_result == 0)
 	{
-		GtkWidget* dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Could not load the main interface"));
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), _("Please make sure that the applet is properly installed"));
-		gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+		GtkWidget* dialog = ctk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Could not load the main interface"));
+		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), _("Please make sure that the applet is properly installed"));
+		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
-		gtk_dialog_run(GTK_DIALOG(dialog));
+		ctk_dialog_run(GTK_DIALOG(dialog));
 
-		gtk_widget_destroy(dialog);
+		ctk_widget_destroy(dialog);
 		exit(EXIT_FAILURE);
 	}
 
@@ -785,10 +785,10 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	g_settings_bind (capplet->mobility_settings, MOBILITY_STARTUP_KEY, capplet->mobility_startup_checkbutton, "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (capplet->visual_startup_settings, VISUAL_STARTUP_KEY, capplet->visual_startup_checkbutton, "active", G_SETTINGS_BIND_DEFAULT);
 
-	gtk_window_set_icon_name(GTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
+	ctk_window_set_icon_name(GTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
 
         GtkNotebook* nb = GTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
-        gtk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
+        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                           GTK_WINDOW (capplet->window));
@@ -806,18 +806,18 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 		{
 			gint pindex;
 
-			pindex = gtk_notebook_page_num(nb, w);
+			pindex = ctk_notebook_page_num(nb, w);
 
 			if (pindex != -1)
 			{
-				gtk_notebook_set_current_page(nb, pindex);
+				ctk_notebook_set_current_page(nb, pindex);
 			}
 		}
 
 		g_free(page_name);
 	}
 
-	gtk_widget_show(capplet->window);
+	ctk_widget_show(capplet->window);
 
 	#undef get_widget
 }
@@ -858,7 +858,7 @@ main(int argc, char** argv)
 	show_dialog(capplet, start_page);
 	g_free(start_page);
 
-	gtk_main();
+	ctk_main();
 
 	g_object_unref (capplet->terminal_settings);
 	g_object_unref (capplet->mobility_settings);

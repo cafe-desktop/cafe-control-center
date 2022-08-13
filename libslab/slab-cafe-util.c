@@ -118,7 +118,7 @@ open_desktop_item_help (CafeDesktopItem * desktop_item)
 		help_uri = g_strdup_printf ("help:%s", doc_path);
 
 		error = NULL;
-		if (!gtk_show_uri_on_window (NULL, help_uri, gtk_get_current_event_time (), &error))
+		if (!ctk_show_uri_on_window (NULL, help_uri, ctk_get_current_event_time (), &error))
 		{
 			g_warning ("error opening %s [%s]\n", help_uri, error->message);
 

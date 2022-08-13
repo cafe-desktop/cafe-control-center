@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.20.0 -->
 <interface>
-  <requires lib="gtk+" version="3.14"/>
+  <requires lib="ctk+" version="3.14"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keyboard-properties-layout-chooser -->
   <!-- interface-description keyboard properties layout dialog window -->
@@ -29,7 +29,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="btnPrint">
-                <property name="label">gtk-print</property>
+                <property name="label">ctk-print</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -45,7 +45,7 @@
             </child>
             <child>
               <object class="GtkButton" id="cancelbutton2">
-                <property name="label">gtk-cancel</property>
+                <property name="label">ctk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -60,7 +60,7 @@
             </child>
             <child>
               <object class="GtkButton" id="btnOk1">
-                <property name="label">gtk-add</property>
+                <property name="label">ctk-add</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>

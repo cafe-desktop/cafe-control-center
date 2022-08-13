@@ -22,7 +22,7 @@
 #ifndef _CAFE_DA_CAPPLET_H_
 #define _CAFE_DA_CAPPLET_H_
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #define TERMINAL_SCHEMA       "org.cafe.applications-terminal"
 #define TERMINAL_KEY          "exec"
