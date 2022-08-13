@@ -31,7 +31,7 @@
 #include FT_FREETYPE_H
 
 #include <cdk/cdk.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 

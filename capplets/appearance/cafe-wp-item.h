@@ -20,7 +20,7 @@
 
 #include <glib.h>
 #include <gio/gio.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <ctk/ctk.h>
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 #include <libcafe-desktop/cafe-bg.h>
