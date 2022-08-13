@@ -44,7 +44,7 @@ static int idx2select = -1;
 static int max_selected_layouts = -1;
 static int default_group = -1;
 
-static GtkCellRenderer *text_renderer;
+static CtkCellRenderer *text_renderer;
 
 static gboolean disable_buttons_sensibility_update = FALSE;
 
@@ -60,14 +60,14 @@ clear_xkb_elements_list (GSList * list)
 }
 
 static gint
-find_selected_layout_idx (GtkBuilder * dialog)
+find_selected_layout_idx (CtkBuilder * dialog)
 {
-	GtkTreeSelection *selection =
+	CtkTreeSelection *selection =
 	    ctk_tree_view_get_selection (GTK_TREE_VIEW
 					 (WID ("xkb_layouts_selected")));
-	GtkTreeIter selected_iter;
-	GtkTreeModel *model;
-	GtkTreePath *path;
+	CtkTreeIter selected_iter;
+	CtkTreeModel *model;
+	CtkTreePath *path;
 	gint *indices;
 	gint rv;
 
@@ -125,21 +125,21 @@ xkb_save_default_group (gint default_group)
 }
 
 static void
-xkb_layouts_enable_disable_buttons (GtkBuilder * dialog)
+xkb_layouts_enable_disable_buttons (CtkBuilder * dialog)
 {
-	GtkWidget *add_layout_btn = WID ("xkb_layouts_add");
-	GtkWidget *show_layout_btn = WID ("xkb_layouts_show");
-	GtkWidget *del_layout_btn = WID ("xkb_layouts_remove");
-	GtkWidget *selected_layouts_tree = WID ("xkb_layouts_selected");
-	GtkWidget *move_up_layout_btn = WID ("xkb_layouts_move_up");
-	GtkWidget *move_down_layout_btn = WID ("xkb_layouts_move_down");
+	CtkWidget *add_layout_btn = WID ("xkb_layouts_add");
+	CtkWidget *show_layout_btn = WID ("xkb_layouts_show");
+	CtkWidget *del_layout_btn = WID ("xkb_layouts_remove");
+	CtkWidget *selected_layouts_tree = WID ("xkb_layouts_selected");
+	CtkWidget *move_up_layout_btn = WID ("xkb_layouts_move_up");
+	CtkWidget *move_down_layout_btn = WID ("xkb_layouts_move_down");
 
-	GtkTreeSelection *s_selection =
+	CtkTreeSelection *s_selection =
 	    ctk_tree_view_get_selection (GTK_TREE_VIEW
 					 (selected_layouts_tree));
 	const int n_selected_selected_layouts =
 	    ctk_tree_selection_count_selected_rows (s_selection);
-	GtkTreeModel *selected_layouts_model = ctk_tree_view_get_model
+	CtkTreeModel *selected_layouts_model = ctk_tree_view_get_model
 	    (GTK_TREE_VIEW (selected_layouts_tree));
 	const int n_selected_layouts =
 	    ctk_tree_model_iter_n_children (selected_layouts_model,
@@ -163,9 +163,9 @@ xkb_layouts_enable_disable_buttons (GtkBuilder * dialog)
 }
 
 static void
-xkb_layouts_dnd_data_get (GtkWidget * widget, GdkDragContext * dc,
-			  GtkSelectionData * selection_data, guint info,
-			  guint t, GtkBuilder * dialog)
+xkb_layouts_dnd_data_get (CtkWidget * widget, GdkDragContext * dc,
+			  CtkSelectionData * selection_data, guint info,
+			  guint t, CtkBuilder * dialog)
 {
 	/* Storing the value into selection -
 	 * while it is actually not used
@@ -177,15 +177,15 @@ xkb_layouts_dnd_data_get (GtkWidget * widget, GdkDragContext * dc,
 }
 
 static void
-xkb_layouts_dnd_data_received (GtkWidget * widget, GdkDragContext * dc,
+xkb_layouts_dnd_data_received (CtkWidget * widget, GdkDragContext * dc,
 			       gint x, gint y,
-			       GtkSelectionData * selection_data,
-			       guint info, guint t, GtkBuilder * dialog)
+			       CtkSelectionData * selection_data,
+			       guint info, guint t, CtkBuilder * dialog)
 {
 	gint sidx = find_selected_layout_idx (dialog);
-	GtkWidget *tree_view = WID ("xkb_layouts_selected");
-	GtkTreePath *path = NULL;
-	GtkTreeViewDropPosition pos;
+	CtkWidget *tree_view = WID ("xkb_layouts_selected");
+	CtkTreePath *path = NULL;
+	CtkTreeViewDropPosition pos;
 	gint didx;
 	gchar *id;
 	GSList *layouts_list;
@@ -223,16 +223,16 @@ xkb_layouts_dnd_data_received (GtkWidget * widget, GdkDragContext * dc,
 }
 
 void
-xkb_layouts_prepare_selected_tree (GtkBuilder * dialog)
+xkb_layouts_prepare_selected_tree (CtkBuilder * dialog)
 {
-	GtkListStore *list_store =
+	CtkListStore *list_store =
 	    ctk_list_store_new (3, G_TYPE_STRING, G_TYPE_STRING,
 				G_TYPE_BOOLEAN);
-	GtkWidget *tree_view = WID ("xkb_layouts_selected");
-	GtkTreeSelection *selection;
-	GtkTargetEntry self_drag_target =
+	CtkWidget *tree_view = WID ("xkb_layouts_selected");
+	CtkTreeSelection *selection;
+	CtkTargetEntry self_drag_target =
 	    { "xkb_layouts_selected", GTK_TARGET_SAME_WIDGET, 0 };
-	GtkTreeViewColumn *desc_column;
+	CtkTreeViewColumn *desc_column;
 
 	text_renderer = GTK_CELL_RENDERER (ctk_cell_renderer_text_new ());
 
@@ -289,11 +289,11 @@ xkb_layout_description_utf8 (const gchar * visible)
 }
 
 void
-xkb_layouts_fill_selected_tree (GtkBuilder * dialog)
+xkb_layouts_fill_selected_tree (CtkBuilder * dialog)
 {
 	GSList *layouts = xkb_layouts_get_selected_list ();
 	GSList *cur_layout;
-	GtkListStore *list_store =
+	CtkListStore *list_store =
 	    GTK_LIST_STORE (ctk_tree_view_get_model
 			    (GTK_TREE_VIEW
 			     (WID ("xkb_layouts_selected"))));
@@ -306,7 +306,7 @@ xkb_layouts_fill_selected_tree (GtkBuilder * dialog)
 
 	for (cur_layout = layouts; cur_layout != NULL;
 	     cur_layout = cur_layout->next, counter++) {
-		GtkTreeIter iter;
+		CtkTreeIter iter;
 		const char *visible = (char *) cur_layout->data;
 		gchar *utf_visible = xkb_layout_description_utf8 (visible);
 		ctk_list_store_append (list_store, &iter);
@@ -326,11 +326,11 @@ xkb_layouts_fill_selected_tree (GtkBuilder * dialog)
 	disable_buttons_sensibility_update = FALSE;
 
 	if (idx2select != -1) {
-		GtkTreeSelection *selection =
+		CtkTreeSelection *selection =
 		    ctk_tree_view_get_selection ((GTK_TREE_VIEW
 						  (WID
 						   ("xkb_layouts_selected"))));
-		GtkTreePath *path =
+		CtkTreePath *path =
 		    ctk_tree_path_new_from_indices (idx2select, -1);
 		ctk_tree_selection_select_path (selection, path);
 		ctk_tree_path_free (path);
@@ -343,13 +343,13 @@ xkb_layouts_fill_selected_tree (GtkBuilder * dialog)
 }
 
 static void
-add_selected_layout (GtkWidget * button, GtkBuilder * dialog)
+add_selected_layout (CtkWidget * button, CtkBuilder * dialog)
 {
 	xkb_layout_choose (dialog);
 }
 
 static void
-show_selected_layout (GtkWidget * button, GtkBuilder * dialog)
+show_selected_layout (CtkWidget * button, CtkBuilder * dialog)
 {
 	gint idx = find_selected_layout_idx (dialog);
 
@@ -364,7 +364,7 @@ show_selected_layout (GtkWidget * button, GtkBuilder * dialog)
 }
 
 static void
-remove_selected_layout (GtkWidget * button, GtkBuilder * dialog)
+remove_selected_layout (CtkWidget * button, CtkBuilder * dialog)
 {
 	gint idx = find_selected_layout_idx (dialog);
 
@@ -391,7 +391,7 @@ remove_selected_layout (GtkWidget * button, GtkBuilder * dialog)
 }
 
 static void
-move_up_selected_layout (GtkWidget * button, GtkBuilder * dialog)
+move_up_selected_layout (CtkWidget * button, CtkBuilder * dialog)
 {
 	gint idx = find_selected_layout_idx (dialog);
 
@@ -413,7 +413,7 @@ move_up_selected_layout (GtkWidget * button, GtkBuilder * dialog)
 }
 
 static void
-move_down_selected_layout (GtkWidget * button, GtkBuilder * dialog)
+move_down_selected_layout (CtkWidget * button, CtkBuilder * dialog)
 {
 	gint idx = find_selected_layout_idx (dialog);
 
@@ -435,7 +435,7 @@ move_down_selected_layout (GtkWidget * button, GtkBuilder * dialog)
 }
 
 void
-xkb_layouts_register_buttons_handlers (GtkBuilder * dialog)
+xkb_layouts_register_buttons_handlers (CtkBuilder * dialog)
 {
 	g_signal_connect (G_OBJECT (WID ("xkb_layouts_add")), "clicked",
 			  G_CALLBACK (add_selected_layout), dialog);
@@ -452,14 +452,14 @@ xkb_layouts_register_buttons_handlers (GtkBuilder * dialog)
 }
 
 static void
-xkb_layouts_update_list (GSettings * settings, gchar * key, GtkBuilder * dialog)
+xkb_layouts_update_list (GSettings * settings, gchar * key, CtkBuilder * dialog)
 {
 	xkb_layouts_fill_selected_tree (dialog);
 	enable_disable_restoring (dialog);
 }
 
 void
-xkb_layouts_register_gsettings_listener (GtkBuilder * dialog)
+xkb_layouts_register_gsettings_listener (CtkBuilder * dialog)
 {
 	g_signal_connect (xkb_kbd_settings,
 			  "changed::layouts",

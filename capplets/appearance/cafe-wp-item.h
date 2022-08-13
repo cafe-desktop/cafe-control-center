@@ -42,7 +42,7 @@ struct _CafeWPItem {
   CafeBGColorType shade_type;
 
   /* Where the Item is in the List */
-  GtkTreeRowReference * rowref;
+  CtkTreeRowReference * rowref;
 
   /* Real colors */
   GdkRGBA * pcolor;

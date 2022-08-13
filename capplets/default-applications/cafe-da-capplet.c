@@ -64,7 +64,7 @@ enum {
 };
 
 static void
-set_changed(GtkComboBox* combo, CafeDACapplet* capplet, GList* list, gint type)
+set_changed(CtkComboBox* combo, CafeDACapplet* capplet, GList* list, gint type)
 {
 	guint index;
 	GAppInfo* item;
@@ -177,7 +177,7 @@ set_changed(GtkComboBox* combo, CafeDACapplet* capplet, GList* list, gint type)
 }
 
 static void
-close_cb(GtkWidget* window, gint response, CafeDACapplet* capplet)
+close_cb(CtkWidget* window, gint response, CafeDACapplet* capplet)
 {
 	if (response == GTK_RESPONSE_HELP)
 	{
@@ -208,100 +208,100 @@ close_cb(GtkWidget* window, gint response, CafeDACapplet* capplet)
 
 /* Combo boxes callbacks */
 static void
-web_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+web_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->web_browsers, DA_TYPE_WEB_BROWSER);
 }
 
 static void
-mail_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+mail_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->mail_readers, DA_TYPE_EMAIL);
 }
 
 static void
-file_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+file_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->file_managers, DA_TYPE_FILE);
 }
 
 static void
-text_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+text_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->text_editors, DA_TYPE_TEXT);
 }
 
 static void
-media_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+media_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->media_players, DA_TYPE_MEDIA);
 }
 
 static void
-video_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+video_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->video_players, DA_TYPE_VIDEO);
 }
 
 static void
-terminal_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+terminal_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->terminals, DA_TYPE_TERMINAL);
 }
 
 static void
-visual_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+visual_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->visual_ats, DA_TYPE_VISUAL);
 }
 
 static void
-mobility_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+mobility_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->mobility_ats, DA_TYPE_MOBILITY);
 }
 
 static void
-image_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+image_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->image_viewers, DA_TYPE_IMAGE);
 }
 
 static void
-document_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+document_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->document_viewers, DA_TYPE_DOCUMENT);
 }
 
 static void
-word_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+word_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->word_editors, DA_TYPE_WORD);
 }
 
 static void
-spreadsheet_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+spreadsheet_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->spreadsheet_editors, DA_TYPE_SPREADSHEET);
 }
 
 static void
-calculator_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+calculator_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
 	set_changed(combo, capplet, capplet->calculators, DA_TYPE_CALCULATOR);
 }
 
 static void
-messenger_combo_changed_cb(GtkComboBox* combo, CafeDACapplet* capplet)
+messenger_combo_changed_cb(CtkComboBox* combo, CafeDACapplet* capplet)
 {
         set_changed(combo, capplet, capplet->messengers, DA_TYPE_MESSENGER);
 }
 
 static void
-refresh_combo_box_icons(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_list)
+refresh_combo_box_icons(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_list)
 {
-	GtkTreeIter iter;
-	GtkTreeModel* model;
+	CtkTreeIter iter;
+	CtkTreeModel* model;
 	gboolean valid;
 	cairo_surface_t *surface;
 	gchar* icon_name;
@@ -363,7 +363,7 @@ static struct {
 
 /* Callback for icon theme change */
 static void
-theme_changed_cb(GtkIconTheme* theme, CafeDACapplet* capplet)
+theme_changed_cb(CtkIconTheme* theme, CafeDACapplet* capplet)
 {
 	GObject* icon;
 	gint i;
@@ -405,9 +405,9 @@ theme_changed_cb(GtkIconTheme* theme, CafeDACapplet* capplet)
 }
 
 static void
-screen_changed_cb(GtkWidget* widget, GdkScreen* screen, CafeDACapplet* capplet)
+screen_changed_cb(CtkWidget* widget, GdkScreen* screen, CafeDACapplet* capplet)
 {
-	GtkIconTheme* theme;
+	CtkIconTheme* theme;
 
 	theme = ctk_icon_theme_get_for_screen (screen);
 
@@ -423,13 +423,13 @@ screen_changed_cb(GtkWidget* widget, GdkScreen* screen, CafeDACapplet* capplet)
 }
 
 static void
-fill_combo_box(GtkIconTheme* theme, GtkComboBox* combo_box, GList* app_list, gchar* mime)
+fill_combo_box(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_list, gchar* mime)
 {
 	guint index = 0;
 	GList* entry;
-	GtkTreeModel* model;
-	GtkCellRenderer* renderer;
-	GtkTreeIter iter;
+	CtkTreeModel* model;
+	CtkCellRenderer* renderer;
+	CtkTreeIter iter;
 	cairo_surface_t *surface;
 	GAppInfo* default_app;
 	gint scale_factor;
@@ -627,7 +627,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 {
 	#define get_widget(name) GTK_WIDGET(ctk_builder_get_object(builder, name))
 
-	GtkBuilder* builder;
+	CtkBuilder* builder;
 	guint builder_result;
 
 	capplet->builder = builder = ctk_builder_new ();
@@ -636,7 +636,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 
 	if (builder_result == 0)
 	{
-		GtkWidget* dialog = ctk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Could not load the main interface"));
+		CtkWidget* dialog = ctk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Could not load the main interface"));
 		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), _("Please make sure that the applet is properly installed"));
 		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
@@ -787,7 +787,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 
 	ctk_window_set_icon_name(GTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
 
-        GtkNotebook* nb = GTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
+        CtkNotebook* nb = GTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
         ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
@@ -796,7 +796,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	if (start_page != NULL)
 	{
 		gchar* page_name;
-		GtkWidget* w;
+		CtkWidget* w;
 
 		page_name = g_strconcat (start_page, "_vbox", NULL);
 

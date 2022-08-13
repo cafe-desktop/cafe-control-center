@@ -63,7 +63,7 @@ TzDB      *tz_load_db                 (void);
 
 void       SetupTimezoneDialog        (TimeAdmin *ta);
 
-void       RunTimeZoneDialog          (GtkButton *button,
+void       RunTimeZoneDialog          (CtkButton *button,
                                        gpointer   data);
 
 void       TimeZoneDateBaseFree       (TzDB      *db);

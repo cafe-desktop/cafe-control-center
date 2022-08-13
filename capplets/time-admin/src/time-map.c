@@ -123,7 +123,7 @@ timezone_map_finalize (GObject *object)
     G_OBJECT_CLASS (timezone_map_parent_class)->finalize (object);
 }
 static void
-cc_timezone_map_get_preferred_width (GtkWidget *widget,
+cc_timezone_map_get_preferred_width (CtkWidget *widget,
                                      gint      *minimum,
                                      gint      *natural)
 {
@@ -139,7 +139,7 @@ cc_timezone_map_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-cc_timezone_map_get_preferred_height (GtkWidget *widget,
+cc_timezone_map_get_preferred_height (CtkWidget *widget,
                                       gint      *minimum,
                                       gint      *natural)
 {
@@ -154,8 +154,8 @@ cc_timezone_map_get_preferred_height (GtkWidget *widget,
         *natural = size;
 }
 static void
-cc_timezone_map_size_allocate (GtkWidget     *widget,
-                               GtkAllocation *allocation)
+cc_timezone_map_size_allocate (CtkWidget     *widget,
+                               CtkAllocation *allocation)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
     GdkPixbuf *pixbuf;
@@ -188,10 +188,10 @@ cc_timezone_map_size_allocate (GtkWidget     *widget,
 }
 
 static void
-cc_timezone_map_realize (GtkWidget *widget)
+cc_timezone_map_realize (CtkWidget *widget)
 {
     GdkWindowAttr attr = { 0, };
-    GtkAllocation allocation;
+    CtkAllocation allocation;
     GdkWindow *window;
 
     ctk_widget_get_allocation (widget, &allocation);
@@ -252,7 +252,7 @@ convert_latitude_to_y (gdouble latitude, gdouble map_height)
 
 static void
 draw_text_bubble (cairo_t *cr,
-                  GtkWidget *widget,
+                  CtkWidget *widget,
                   gdouble pointx,
                   gdouble pointy)
 {
@@ -263,7 +263,7 @@ draw_text_bubble (cairo_t *cr,
     static const double margin_right = 24.0;
 
     TimezoneMap *map = TIMEZONEMAP (widget);
-    GtkAllocation alloc;
+    CtkAllocation alloc;
     PangoLayout *layout;
     PangoRectangle text_rect;
     double x;
@@ -322,12 +322,12 @@ draw_text_bubble (cairo_t *cr,
 }
 
 static gboolean
-cc_timezone_map_draw (GtkWidget *widget,
+cc_timezone_map_draw (CtkWidget *widget,
                       cairo_t   *cr)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
     g_autoptr(GdkPixbuf) orig_hilight = NULL;
-    GtkAllocation alloc;
+    CtkAllocation alloc;
     g_autofree gchar *file = NULL;
     g_autoptr(GError) err = NULL;
     gdouble pointx, pointy;
@@ -392,7 +392,7 @@ cc_timezone_map_draw (GtkWidget *widget,
     return TRUE;
 }
 static void
-update_cursor (GtkWidget *widget)
+update_cursor (CtkWidget *widget)
 {
     GdkWindow *window;
     g_autoptr(GdkCursor) cursor = NULL;
@@ -412,8 +412,8 @@ update_cursor (GtkWidget *widget)
 }
 
 static void
-cc_timezone_map_state_flags_changed (GtkWidget     *widget,
-                                     GtkStateFlags  prev_state)
+cc_timezone_map_state_flags_changed (CtkWidget     *widget,
+                                     CtkStateFlags  prev_state)
 {
     update_cursor (widget);
 
@@ -460,7 +460,7 @@ button_press_event (TimezoneMap    *map,
     const GPtrArray *array;
     gint width, height;
     GList *distances = NULL;
-    GtkAllocation alloc;
+    CtkAllocation alloc;
 
     x = event->x;
     y = event->y;
@@ -522,7 +522,7 @@ static void
 timezone_map_class_init (TimezoneMapClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
-    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+    CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     object_class->dispose = cc_timezone_map_dispose;
     object_class->finalize = timezone_map_finalize;

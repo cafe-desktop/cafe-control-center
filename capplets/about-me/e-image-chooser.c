@@ -32,7 +32,7 @@
 typedef struct _EImageChooserPrivate EImageChooserPrivate;
 struct _EImageChooserPrivate {
 
-	GtkWidget *image;
+	CtkWidget *image;
 
 	char *image_buf;
 	int   image_buf_size;
@@ -60,16 +60,16 @@ static guint image_chooser_signals [LAST_SIGNAL] = { 0 };
 
 static void e_image_chooser_dispose      (GObject *object);
 
-static gboolean image_drag_motion_cb (GtkWidget *widget,
+static gboolean image_drag_motion_cb (CtkWidget *widget,
 				      GdkDragContext *context,
 				      gint x, gint y, guint time, EImageChooser *chooser);
-static gboolean image_drag_drop_cb (GtkWidget *widget,
+static gboolean image_drag_drop_cb (CtkWidget *widget,
 				    GdkDragContext *context,
 				    gint x, gint y, guint time, EImageChooser *chooser);
-static void image_drag_data_received_cb (GtkWidget *widget,
+static void image_drag_data_received_cb (CtkWidget *widget,
 					 GdkDragContext *context,
 					 gint x, gint y,
-					 GtkSelectionData *selection_data,
+					 CtkSelectionData *selection_data,
 					 guint info, guint time, EImageChooser *chooser);
 
 G_DEFINE_TYPE_WITH_PRIVATE (EImageChooser, e_image_chooser, GTK_TYPE_BOX);
@@ -79,18 +79,18 @@ enum DndTargetType {
 };
 #define URI_LIST_TYPE "text/uri-list"
 
-static GtkTargetEntry image_drag_types[] = {
+static CtkTargetEntry image_drag_types[] = {
 	{ URI_LIST_TYPE, 0, DND_TARGET_TYPE_URI_LIST },
 };
 static const int num_image_drag_types = sizeof (image_drag_types) / sizeof (image_drag_types[0]);
 
-GtkWidget *
+CtkWidget *
 e_image_chooser_new (void)
 {
 	return g_object_new (E_TYPE_IMAGE_CHOOSER, "orientation", GTK_ORIENTATION_VERTICAL, NULL);
 }
 
-GtkWidget *e_image_chooser_new_with_size (int width, int height)
+CtkWidget *e_image_chooser_new_with_size (int width, int height)
 {
 	return g_object_new (E_TYPE_IMAGE_CHOOSER,
 			"width", width,
@@ -273,7 +273,7 @@ set_image_from_data (EImageChooser *chooser,
 }
 
 static gboolean
-image_drag_motion_cb (GtkWidget *widget,
+image_drag_motion_cb (CtkWidget *widget,
 		      GdkDragContext *context,
 		      gint x, gint y, guint time, EImageChooser *chooser)
 {
@@ -302,7 +302,7 @@ image_drag_motion_cb (GtkWidget *widget,
 }
 
 static gboolean
-image_drag_drop_cb (GtkWidget *widget,
+image_drag_drop_cb (CtkWidget *widget,
 		    GdkDragContext *context,
 		    gint x, gint y, guint time, EImageChooser *chooser)
 {
@@ -337,10 +337,10 @@ image_drag_drop_cb (GtkWidget *widget,
 }
 
 static void
-image_drag_data_received_cb (GtkWidget *widget,
+image_drag_data_received_cb (CtkWidget *widget,
 			     GdkDragContext *context,
 			     gint x, gint y,
-			     GtkSelectionData *selection_data,
+			     CtkSelectionData *selection_data,
 			     guint info, guint time, EImageChooser *chooser)
 {
 	char *target_type;

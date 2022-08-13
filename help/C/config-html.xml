@@ -4,8 +4,8 @@
     <title>Introduction</title>
     <para>
       The HTML Viewer capplet allows you to configure preferences for
-      the <application>GtkHTML</application> HTML rendering engine.
-      <application>GtkHTML</application> is used in
+      the <application>CtkHTML</application> HTML rendering engine.
+      <application>CtkHTML</application> is used in
       <application>Evolution</application>, the <application>Cafe
       Control Center</application>, and other Cafe applications.
     </para>
@@ -13,7 +13,7 @@
   <sect2 id="cfg-html-viewer-fonts">
     <title>HTML Fonts</title>
     <para>
-      <application>GtkHTML</application> can be setup to use different
+      <application>CtkHTML</application> can be setup to use different
       fonts and font sizes for different types of text.
       <variablelist>
 	<varlistentry>
@@ -54,7 +54,7 @@
 	  <listitem>
 	    <para>
 	      Configures the fonts to use when you print something on
-	      your printer from <application>GtkHTML</application>.
+	      your printer from <application>CtkHTML</application>.
 	      <variablelist>
 		<varlistentry>
 		  <term>Variable width</term>
@@ -92,14 +92,14 @@
   <sect2 id="cfg-kbd-shortcuts">
     <title>Keyboard Shortcuts</title>
     <para>
-      <application>GtkHTML</application> can use different
+      <application>CtkHTML</application> can use different
       keybindings.  Keybindings allow the user to use keystrokes to do
       commands that otherwise the mouse would be required to do.  This
       can often times speed up the user's commands fast enough to
       impress others.
     </para>
     <para>
-      <application>GtkHTML</application> includes three different
+      <application>CtkHTML</application> includes three different
       predefined settings:
       <itemizedlist>
 	<listitem>
@@ -134,7 +134,7 @@
     <title>Miscellaneous Settings</title>
     <para>
       There are a couple other changes which you can edit to make
-      <application>GtkHTML</application> work the way you want it to.
+      <application>CtkHTML</application> work the way you want it to.
       These are located in the <guilabel>Miscellaneous</guilabel> tab.
     </para>
     <para>
@@ -155,7 +155,7 @@
 	  <term>Automatically detect links</term>
 	  <listitem>
 	    <para>
-	      If <application>GtkHTML</application> detects you are
+	      If <application>CtkHTML</application> detects you are
 	      typing a URL, it will automatically format the URL as a
 	      link.
 	    </para>
@@ -165,7 +165,7 @@
 	  <term>Enable spell checking</term>
 	  <listitem>
 	    <para>
-	      While typing in <application>GtkHTML</application>, you
+	      While typing in <application>CtkHTML</application>, you
 	      may spell a word incorrectly.  If you have this box
 	      checked, an incorrectly spelled word will be underlined
 	      to symbolize that it's incorrect.

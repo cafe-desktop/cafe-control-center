@@ -34,7 +34,7 @@ G_BEGIN_DECLS
 #define TIMEZONEMAP(object)   (G_TYPE_CHECK_INSTANCE_CAST ((object), TYPE_TIMEZONE_MAP,TimezoneMap))
 typedef struct TimezoneMap
 {
-    GtkWidget parent_instance;
+    CtkWidget parent_instance;
     GdkPixbuf *orig_background;
     GdkPixbuf *orig_background_dim;
     GdkPixbuf *orig_color_map;
@@ -57,7 +57,7 @@ typedef struct TimezoneMap
 
 typedef struct TimezoneMapClass
 {
-    GtkWidgetClass parent_class;
+    CtkWidgetClass parent_class;
 
 } TimezoneMapClass;
 

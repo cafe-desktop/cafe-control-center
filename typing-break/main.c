@@ -96,7 +96,7 @@ main (int argc, char *argv[])
 
 #ifndef HAVE_APP_INDICATOR
 	if (!no_check && !have_tray ()) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (
 			NULL, 0,

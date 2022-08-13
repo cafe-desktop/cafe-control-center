@@ -37,19 +37,19 @@ extern "C" {
 
 typedef struct
 {
-	GtkImage parent;
+	CtkImage parent;
 
-	GtkIconSize size;
+	CtkIconSize size;
 	gchar *id;
 } ThemedIcon;
 
 typedef struct
 {
-	GtkImageClass parent_class;
+	CtkImageClass parent_class;
 } ThemedIconClass;
 
 GType themed_icon_get_type (void);
-GtkWidget *themed_icon_new (const gchar * id, GtkIconSize size);
+CtkWidget *themed_icon_new (const gchar * id, CtkIconSize size);
 
 #ifdef __cplusplus
 }

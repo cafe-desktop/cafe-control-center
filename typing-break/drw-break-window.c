@@ -39,12 +39,12 @@
 #include "drw-timer.h"
 
 struct _DrwBreakWindowPrivate {
-	GtkWidget *clock_label;
-	GtkWidget *break_label;
-	GtkWidget *image;
+	CtkWidget *clock_label;
+	CtkWidget *break_label;
+	CtkWidget *image;
 
-	GtkWidget *postpone_entry;
-	GtkWidget *postpone_button;
+	CtkWidget *postpone_entry;
+	CtkWidget *postpone_button;
 
 	DrwTimer  *timer;
 
@@ -68,12 +68,12 @@ static void         drw_break_window_finalize      (GObject             *object)
 static void         drw_break_window_dispose       (GObject             *object);
 static gboolean     postpone_sensitize_cb          (DrwBreakWindow      *window);
 static gboolean     clock_timeout_cb               (DrwBreakWindow      *window);
-static void         postpone_clicked_cb            (GtkWidget           *button,
-						    GtkWidget           *window);
-static gboolean     label_draw_event_cb            (GtkLabel            *label,
+static void         postpone_clicked_cb            (CtkWidget           *button,
+						    CtkWidget           *window);
+static gboolean     label_draw_event_cb            (CtkLabel            *label,
 						    cairo_t             *cr,
 						    gpointer             user_data);
-static void         label_size_allocate_cb         (GtkLabel            *label,
+static void         label_size_allocate_cb         (CtkLabel            *label,
 						    GdkRectangle        *allocation,
 						    gpointer             user_data);
 
@@ -112,11 +112,11 @@ static void
 drw_break_window_init (DrwBreakWindow *window)
 {
 	DrwBreakWindowPrivate *priv;
-	GtkWidget             *vbox;
-	GtkWidget             *hbox;
+	CtkWidget             *vbox;
+	CtkWidget             *hbox;
 	gchar                 *str;
-	GtkWidget             *outer_vbox;
-	GtkWidget             *button_box;
+	CtkWidget             *outer_vbox;
+	CtkWidget             *button_box;
 	gboolean               allow_postpone;
 
 	gint                   root_monitor = 0;
@@ -330,7 +330,7 @@ drw_break_window_dispose (GObject *object)
 	}
 }
 
-GtkWidget *
+CtkWidget *
 drw_break_window_new (void)
 {
 	GObject *object;
@@ -401,7 +401,7 @@ clock_timeout_cb (DrwBreakWindow *window)
 }
 
 static void
-postpone_entry_activate_cb (GtkWidget      *entry,
+postpone_entry_activate_cb (CtkWidget      *entry,
 			  DrwBreakWindow *window)
 {
 	const gchar *str;
@@ -459,7 +459,7 @@ postpone_cancel_cb (DrwBreakWindow *window)
 }
 
 static gboolean
-postpone_entry_key_press_event_cb (GtkEntry       *entry,
+postpone_entry_key_press_event_cb (CtkEntry       *entry,
 				   GdkEventKey    *event,
 				   DrwBreakWindow *window)
 {
@@ -485,8 +485,8 @@ postpone_entry_key_press_event_cb (GtkEntry       *entry,
 }
 
 static void
-postpone_clicked_cb (GtkWidget *button,
-		     GtkWidget *window)
+postpone_clicked_cb (CtkWidget *button,
+		     CtkWidget *window)
 {
 	DrwBreakWindow        *bw = DRW_BREAK_WINDOW (window);
 	DrwBreakWindowPrivate *priv = bw->priv;
@@ -525,13 +525,13 @@ postpone_clicked_cb (GtkWidget *button,
 }
 
 static void
-get_layout_location (GtkLabel *label,
+get_layout_location (CtkLabel *label,
                      gint     *xp,
                      gint     *yp)
 {
-	GtkWidget      *widget;
-	GtkAllocation  widget_allocation;
-	GtkRequisition widget_requisition;
+	CtkWidget      *widget;
+	CtkAllocation  widget_allocation;
+	CtkRequisition widget_requisition;
 	gfloat         xalign, yalign;
 	gint           x, y;
 	gint           xpad, ypad;
@@ -579,12 +579,12 @@ get_layout_location (GtkLabel *label,
 }
 
 static gboolean
-label_draw_event_cb (GtkLabel *label,
+label_draw_event_cb (CtkLabel *label,
                      cairo_t  *cr,
                      gpointer  user_data)
 {
 	gint       x, y;
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	get_layout_location (label, &x, &y);
 
@@ -605,7 +605,7 @@ label_draw_event_cb (GtkLabel *label,
 }
 
 static void
-label_size_allocate_cb (GtkLabel     *label,
+label_size_allocate_cb (CtkLabel     *label,
 			GdkRectangle *allocation,
 			gpointer      user_data)
 {

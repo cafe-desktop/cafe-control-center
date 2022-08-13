@@ -40,8 +40,8 @@ set_have_icons (AppearanceData *data, gboolean value)
     const char **name;
 
     for (name = menu_item_names; *name != NULL; name++) {
-        GtkImageMenuItem *item = GTK_IMAGE_MENU_ITEM (appearance_capplet_get_widget (data, *name));
-        GtkWidget *image;
+        CtkImageMenuItem *item = GTK_IMAGE_MENU_ITEM (appearance_capplet_get_widget (data, *name));
+        CtkWidget *image;
 
         if (value) {
             image = g_object_get_data (G_OBJECT (item), "image");
@@ -71,7 +71,7 @@ menus_have_icons_cb (GSettings *settings,
 /** GUI Callbacks **/
 
 static gint
-button_press_block_cb (GtkWidget *toolbar,
+button_press_block_cb (CtkWidget *toolbar,
                        GdkEvent  *event,
                        gpointer   data)
 {
@@ -83,15 +83,15 @@ button_press_block_cb (GtkWidget *toolbar,
 void
 ui_init (AppearanceData *data)
 {
-    GtkWidget* widget;
+    CtkWidget* widget;
 
     /* FIXME maybe just remove that stuff from .ui file */
-    GtkWidget* container = appearance_capplet_get_widget(data, "vbox24");
+    CtkWidget* container = appearance_capplet_get_widget(data, "vbox24");
 
     // Remove menu accels and toolbar style toggles for new GTK versions
-    ctk_container_remove((GtkContainer *) container,
+    ctk_container_remove((CtkContainer *) container,
                          appearance_capplet_get_widget(data, "menu_accel_toggle"));
-    ctk_container_remove((GtkContainer *) container,
+    ctk_container_remove((CtkContainer *) container,
                          appearance_capplet_get_widget(data, "hbox11"));
 
     widget = appearance_capplet_get_widget(data, "menu_icons_toggle");

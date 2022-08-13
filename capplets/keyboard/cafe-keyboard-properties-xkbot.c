@@ -34,11 +34,11 @@
 
 #include "cafe-keyboard-properties-xkb.h"
 
-static GtkBuilder *chooser_dialog = NULL;
+static CtkBuilder *chooser_dialog = NULL;
 static const char *current1st_level_id = NULL;
 static GSList *option_checks_list = NULL;
-static GtkWidget *current_none_radio = NULL;
-static GtkWidget *current_expander = NULL;
+static CtkWidget *current_none_radio = NULL;
+static CtkWidget *current_expander = NULL;
 static gboolean current_multi_select = FALSE;
 static GSList *current_radio_group = NULL;
 
@@ -181,12 +181,12 @@ xkb_options_is_selected (gchar * optionname)
 
 /* Make sure selected options stay visible when navigating with the keyboard */
 static gboolean
-option_focused_cb (GtkWidget * widget, GdkEventFocus * event,
+option_focused_cb (CtkWidget * widget, GdkEventFocus * event,
 		   gpointer data)
 {
-	GtkScrolledWindow *win = GTK_SCROLLED_WINDOW (data);
-	GtkAllocation alloc;
-	GtkAdjustment *adj;
+	CtkScrolledWindow *win = GTK_SCROLLED_WINDOW (data);
+	CtkAllocation alloc;
+	CtkAdjustment *adj;
 
 	ctk_widget_get_allocation (widget, &alloc);
 	adj = ctk_scrolled_window_get_vadjustment (win);
@@ -198,7 +198,7 @@ option_focused_cb (GtkWidget * widget, GdkEventFocus * event,
 
 /* Update xkb backend to reflect the new UI state */
 static void
-option_toggled_cb (GtkWidget * checkbutton, gpointer data)
+option_toggled_cb (CtkWidget * checkbutton, gpointer data)
 {
 	gpointer optionID =
 	    g_object_get_data (G_OBJECT (checkbutton), OPTION_ID_PROP);
@@ -213,9 +213,9 @@ option_toggled_cb (GtkWidget * checkbutton, gpointer data)
    the top of this file. */
 static void
 xkb_options_add_option (XklConfigRegistry * config_registry,
-			XklConfigItem * config_item, GtkBuilder * dialog)
+			XklConfigItem * config_item, CtkBuilder * dialog)
 {
-	GtkWidget *option_check;
+	CtkWidget *option_check;
 	gchar *utf_option_name = xci_desc_to_utf8 (config_item);
 	/* Copy this out because we'll load it into the widget with set_data */
 	gchar *full_option_name =
@@ -289,7 +289,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 }
 
 static gint
-xkb_option_checks_compare (GtkWidget * chk1, GtkWidget * chk2)
+xkb_option_checks_compare (CtkWidget * chk1, CtkWidget * chk2)
 {
 	const gchar *t1 =
 	    g_object_get_data (G_OBJECT (chk1), "utfOptionName");
@@ -302,9 +302,9 @@ xkb_option_checks_compare (GtkWidget * chk1, GtkWidget * chk2)
    add widgets for all the options in the group. */
 static void
 xkb_options_add_group (XklConfigRegistry * config_registry,
-		       XklConfigItem * config_item, GtkBuilder * dialog)
+		       XklConfigItem * config_item, CtkBuilder * dialog)
 {
-	GtkWidget *vbox, *option_check;
+	CtkWidget *vbox, *option_check;
 	gboolean allow_multiple_selection =
 	    GPOINTER_TO_INT (g_object_get_data (G_OBJECT (config_item),
 						XCI_PROP_ALLOW_MULTIPLE_SELECTION));
@@ -371,8 +371,8 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 }
 
 static gint
-xkb_options_expanders_compare (GtkWidget * expander1,
-			       GtkWidget * expander2)
+xkb_options_expanders_compare (CtkWidget * expander1,
+			       CtkWidget * expander2)
 {
 	const gchar *t1 =
 	    g_object_get_data (G_OBJECT (expander1), "utfGroupName");
@@ -383,11 +383,11 @@ xkb_options_expanders_compare (GtkWidget * expander1,
 
 /* Create widgets to represent the options made available by the backend */
 void
-xkb_options_load_options (GtkBuilder * dialog)
+xkb_options_load_options (CtkBuilder * dialog)
 {
-	GtkWidget *opts_vbox = WID ("options_vbox");
+	CtkWidget *opts_vbox = WID ("options_vbox");
 	GSList *expanders_list;
-	GtkWidget *expander;
+	CtkWidget *expander;
 
 	current1st_level_id = NULL;
 	current_none_radio = NULL;
@@ -418,7 +418,7 @@ xkb_options_load_options (GtkBuilder * dialog)
 }
 
 static void
-chooser_response_cb (GtkDialog * dialog, gint response, gpointer data)
+chooser_response_cb (CtkDialog * dialog, gint response, gpointer data)
 {
 	switch (response) {
 	case GTK_RESPONSE_HELP:
@@ -443,9 +443,9 @@ chooser_response_cb (GtkDialog * dialog, gint response, gpointer data)
 
 /* Create popup dialog */
 void
-xkb_options_popup_dialog (GtkBuilder * dialog)
+xkb_options_popup_dialog (CtkBuilder * dialog)
 {
-	GtkWidget *chooser;
+	CtkWidget *chooser;
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,
@@ -479,7 +479,7 @@ xkb_options_update_option_counters (XklConfigRegistry * config_registry,
 
 /* Respond to a change in the xkb gsettings settings */
 static void
-xkb_options_update (GSettings * settings, gchar * key, GtkBuilder * dialog)
+xkb_options_update (GSettings * settings, gchar * key, CtkBuilder * dialog)
 {
 	/* Updating options is handled by gsettings notifies for each widget
 	   This is here to avoid calling it N_OPTIONS times for each gsettings
@@ -510,7 +510,7 @@ xkb_options_update (GSettings * settings, gchar * key, GtkBuilder * dialog)
 }
 
 void
-xkb_options_register_gsettings_listener (GtkBuilder * dialog)
+xkb_options_register_gsettings_listener (CtkBuilder * dialog)
 {
 	g_signal_connect (xkb_kbd_settings,
 			  "changed::options",

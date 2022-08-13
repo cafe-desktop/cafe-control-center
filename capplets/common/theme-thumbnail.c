@@ -125,9 +125,9 @@ static void pixbuf_apply_mask_region(GdkPixbuf* pixbuf, cairo_region_t* region)
 static GdkPixbuf *
 create_folder_icon (char *icon_theme_name)
 {
-  GtkIconTheme *icon_theme;
+  CtkIconTheme *icon_theme;
   GdkPixbuf *folder_icon = NULL;
-  GtkIconInfo *folder_icon_info;
+  CtkIconInfo *folder_icon_info;
   gchar *example_icon_name;
   const gchar *icon_names[5];
   gint i;
@@ -168,17 +168,17 @@ create_folder_icon (char *icon_theme_name)
 static GdkPixbuf *
 create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
-  GtkWidget *window;
-  GtkWidget *preview;
-  GtkWidget *vbox;
-  GtkWidget *box;
-  GtkWidget *image_button;
-  GtkWidget *checkbox;
-  GtkWidget *radio;
+  CtkWidget *window;
+  CtkWidget *preview;
+  CtkWidget *vbox;
+  CtkWidget *box;
+  CtkWidget *image_button;
+  CtkWidget *checkbox;
+  CtkWidget *radio;
 
-  GtkRequisition requisition;
-  GtkAllocation allocation;
-  GtkAllocation vbox_allocation;
+  CtkRequisition requisition;
+  CtkAllocation allocation;
+  CtkAllocation vbox_allocation;
   MetaFrameFlags flags;
   MetaTheme *theme;
   GdkPixbuf *pixbuf, *icon;
@@ -283,10 +283,10 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 static GdkPixbuf *
 create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
-  GtkSettings *settings;
-  GtkWidget *window, *vbox, *box, *image_button, *checkbox, *radio;
-  GtkRequisition requisition;
-  GtkAllocation allocation;
+  CtkSettings *settings;
+  CtkWidget *window, *vbox, *box, *image_button, *checkbox, *radio;
+  CtkRequisition requisition;
+  CtkAllocation allocation;
   GdkPixbuf *pixbuf, *retval;
   gint width, height;
 
@@ -353,11 +353,11 @@ create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 static GdkPixbuf *
 create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
-  GtkWidget *window, *preview, *dummy;
+  CtkWidget *window, *preview, *dummy;
   MetaFrameFlags flags;
   MetaTheme *theme;
-  GtkRequisition requisition;
-  GtkAllocation allocation;
+  CtkRequisition requisition;
+  CtkAllocation allocation;
   GdkPixbuf *pixbuf, *retval;
   cairo_region_t *region;
 

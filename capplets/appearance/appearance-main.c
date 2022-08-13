@@ -36,7 +36,7 @@ static AppearanceData *
 init_appearance_data (int *argc, char ***argv, GOptionContext *context)
 {
   AppearanceData *data = NULL;
-  GtkBuilder *ui;
+  CtkBuilder *ui;
   GError *err = NULL;
 
   theme_thumbnail_factory_init (*argc, *argv);
@@ -76,7 +76,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
 }
 
 static void
-main_window_response (GtkWidget *widget,
+main_window_response (CtkWidget *widget,
                       gint response_id,
                       AppearanceData *data)
 {
@@ -106,7 +106,7 @@ main_window_response (GtkWidget *widget,
   }
   else if (response_id == GTK_RESPONSE_HELP)
   {
-      GtkNotebook *nb;
+      CtkNotebook *nb;
       gint pindex;
 
       nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "main_notebook"));
@@ -137,8 +137,8 @@ int
 main (int argc, char **argv)
 {
   AppearanceData *data;
-  GtkWidget *w;
-  GtkStyleContext *context;
+  CtkWidget *w;
+  CtkStyleContext *context;
 
   gchar *install_filename = NULL;
   gchar *start_page = NULL;
@@ -204,7 +204,7 @@ main (int argc, char **argv)
   if (wallpaper_files && !install_filename && !start_page)
     start_page = g_strdup ("background");
 
-  GtkNotebook* nb = GTK_NOTEBOOK(appearance_capplet_get_widget (data, "main_notebook"));
+  CtkNotebook* nb = GTK_NOTEBOOK(appearance_capplet_get_widget (data, "main_notebook"));
   ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
   g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                     G_CALLBACK (capplet_dialog_page_scroll_event_cb),

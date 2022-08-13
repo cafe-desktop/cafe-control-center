@@ -237,13 +237,13 @@ TzDB *tz_load_db (void)
     return tz_db;
 }
 
-static GtkWidget*
+static CtkWidget*
 GetTimeZoneMap(TimeAdmin *ta)
 {
-    GtkWidget *map;
-    g_autoptr(GtkEntryCompletion) completion = NULL;
+    CtkWidget *map;
+    g_autoptr(CtkEntryCompletion) completion = NULL;
 
-    map = (GtkWidget *) timezone_map_new ();
+    map = (CtkWidget *) timezone_map_new ();
     g_signal_connect (map,
                      "location-changed",
                       G_CALLBACK (LocationChanged),
@@ -344,7 +344,7 @@ get_initial_timezone (TimeAdmin *ta)
 
 static void
 LoadCities (TzLocation   *loc,
-            GtkListStore *CityStore)
+            CtkListStore *CityStore)
 {
     g_autofree gchar *human_readable = NULL;
 
@@ -370,10 +370,10 @@ CreateCityList(TimeAdmin *ta)
     TimeZoneDateBaseFree(db);
 }
 
-static GtkWidget*
+static CtkWidget*
 CreateZoneFrame(TimeAdmin *ta)
 {
-    GtkWidget *TimeZoneFrame;
+    CtkWidget *TimeZoneFrame;
 
     TimeZoneFrame = ctk_frame_new (_("Time Zone"));
     ctk_widget_set_size_request(TimeZoneFrame,300,200);
@@ -382,10 +382,10 @@ CreateZoneFrame(TimeAdmin *ta)
     return TimeZoneFrame;
 }
 
-static GtkWidget*
+static CtkWidget*
 CreateZoneScrolled(TimeAdmin *ta)
 {
-    GtkWidget *Scrolled;
+    CtkWidget *Scrolled;
 
     Scrolled = ctk_scrolled_window_new (NULL, NULL);
 
@@ -402,7 +402,7 @@ CreateZoneScrolled(TimeAdmin *ta)
 static void
 CreateZoneEntry(TimeAdmin *ta)
 {
-    GtkWidget *hbox;
+    CtkWidget *hbox;
 
     ta->TimezoneEntry = ctk_search_entry_new ();
     hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
@@ -418,12 +418,12 @@ CreateZoneEntry(TimeAdmin *ta)
 }
 
 static gboolean
-CityChanged(GtkEntryCompletion *completion,
-            GtkTreeModel       *model,
-            GtkTreeIter        *iter,
+CityChanged(CtkEntryCompletion *completion,
+            CtkTreeModel       *model,
+            CtkTreeIter        *iter,
             TimeAdmin          *self)
 {
-    GtkWidget *entry;
+    CtkWidget *entry;
     g_autofree gchar *zone = NULL;
 
     ctk_tree_model_get (model,
@@ -440,7 +440,7 @@ CityChanged(GtkEntryCompletion *completion,
 }
 
 static void
-ChoooseTimezoneDone (GtkWidget *widget,
+ChoooseTimezoneDone (CtkWidget *widget,
                      TimeAdmin *ta)
 {
     TimezoneMap *map;
@@ -452,7 +452,7 @@ ChoooseTimezoneDone (GtkWidget *widget,
 }
 
 static void
-ChoooseTimezoneClose(GtkWidget  *widget,
+ChoooseTimezoneClose(CtkWidget  *widget,
                      TimeAdmin  *ta)
 {
     ctk_widget_hide_on_delete(GTK_WIDGET(ta->dialog));
@@ -460,7 +460,7 @@ ChoooseTimezoneClose(GtkWidget  *widget,
 
 void SetupTimezoneDialog(TimeAdmin *ta)
 {
-    GtkWidget *Vbox, *TimeZoneFrame, *Scrolled, *image;
+    CtkWidget *Vbox, *TimeZoneFrame, *Scrolled, *image;
 
     ta->dialog = ctk_dialog_new_with_buttons (_("Time Zone Selection"),
                                               NULL,
@@ -678,7 +678,7 @@ glong tz_location_get_utc_offset (TzLocation *loc)
     return offset;
 }
 
-void RunTimeZoneDialog  (GtkButton *button,
+void RunTimeZoneDialog  (CtkButton *button,
                          gpointer   data)
 {
     TimeAdmin *ta = (TimeAdmin *)data;

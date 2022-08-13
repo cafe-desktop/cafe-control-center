@@ -77,7 +77,7 @@ typedef struct
   guint keycode;
   EggVirtualModifierType mask;
   gboolean editable;
-  GtkTreeModel *model;
+  CtkTreeModel *model;
   char *description;
   char *desc_gsettings_key;
   gboolean desc_editable;
@@ -90,19 +90,19 @@ typedef struct
 } KeyEntry;
 
 static gboolean block_accels = FALSE;
-static GtkWidget *custom_shortcut_dialog = NULL;
-static GtkWidget *custom_shortcut_name_entry = NULL;
-static GtkWidget *custom_shortcut_command_entry = NULL;
+static CtkWidget *custom_shortcut_dialog = NULL;
+static CtkWidget *custom_shortcut_name_entry = NULL;
+static CtkWidget *custom_shortcut_command_entry = NULL;
 
-static GtkWidget* _ctk_builder_get_widget(GtkBuilder* builder, const gchar* name)
+static CtkWidget* _ctk_builder_get_widget(CtkBuilder* builder, const gchar* name)
 {
     return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
-static GtkBuilder *
+static CtkBuilder *
 create_builder (void)
 {
-  GtkBuilder *builder = ctk_builder_new();
+  CtkBuilder *builder = ctk_builder_new();
   GError *error = NULL;
 
   if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
@@ -159,10 +159,10 @@ binding_from_string (const char             *str,
 }
 
 static void
-accel_set_func (GtkTreeViewColumn *tree_column,
-                GtkCellRenderer   *cell,
-                GtkTreeModel      *model,
-                GtkTreeIter       *iter,
+accel_set_func (CtkTreeViewColumn *tree_column,
+                CtkCellRenderer   *cell,
+                CtkTreeModel      *model,
+                CtkTreeIter       *iter,
                 gpointer           data)
 {
   KeyEntry *key_entry;
@@ -196,10 +196,10 @@ accel_set_func (GtkTreeViewColumn *tree_column,
 }
 
 static void
-description_set_func (GtkTreeViewColumn *tree_column,
-                      GtkCellRenderer   *cell,
-                      GtkTreeModel      *model,
-                      GtkTreeIter       *iter,
+description_set_func (CtkTreeViewColumn *tree_column,
+                      CtkCellRenderer   *cell,
+                      CtkTreeModel      *model,
+                      CtkTreeIter       *iter,
                       gpointer           data)
 {
   KeyEntry *key_entry;
@@ -220,9 +220,9 @@ description_set_func (GtkTreeViewColumn *tree_column,
 }
 
 static gboolean
-keybinding_key_changed_foreach (GtkTreeModel *model,
-                GtkTreePath  *path,
-                GtkTreeIter  *iter,
+keybinding_key_changed_foreach (CtkTreeModel *model,
+                CtkTreePath  *path,
+                CtkTreeIter  *iter,
                 gpointer      user_data)
 {
   KeyEntry *key_entry;
@@ -295,9 +295,9 @@ keybinding_command_changed (GSettings *settings,
 }
 
 static int
-keyentry_sort_func (GtkTreeModel *model,
-                    GtkTreeIter  *a,
-                    GtkTreeIter  *b,
+keyentry_sort_func (CtkTreeModel *model,
+                    CtkTreeIter  *a,
+                    CtkTreeIter  *b,
                     gpointer      user_data)
 {
   KeyEntry *key_entry_a;
@@ -354,11 +354,11 @@ keyentry_sort_func (GtkTreeModel *model,
 }
 
 static void
-clear_old_model (GtkBuilder *builder)
+clear_old_model (CtkBuilder *builder)
 {
-  GtkWidget *tree_view;
-  GtkWidget *actions_swindow;
-  GtkTreeModel *model;
+  CtkWidget *tree_view;
+  CtkWidget *actions_swindow;
+  CtkTreeModel *model;
 
   tree_view = _ctk_builder_get_widget (builder, "shortcut_treeview");
   model = ctk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
@@ -366,7 +366,7 @@ clear_old_model (GtkBuilder *builder)
   if (model == NULL)
     {
       /* create a new model */
-      model = (GtkTreeModel *) ctk_tree_store_new (N_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER);
+      model = (CtkTreeModel *) ctk_tree_store_new (N_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER);
 
       ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
                                        KEYENTRY_COLUMN,
@@ -381,7 +381,7 @@ clear_old_model (GtkBuilder *builder)
     {
       /* clear the existing model */
       gboolean valid;
-      GtkTreeIter iter;
+      CtkTreeIter iter;
       KeyEntry *key_entry;
 
       for (valid = ctk_tree_model_get_iter_first (model, &iter);
@@ -428,7 +428,7 @@ typedef struct {
   gboolean found;
 } KeyMatchData;
 
-static gboolean key_match(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer data)
+static gboolean key_match(CtkTreeModel* model, CtkTreePath* path, CtkTreeIter* iter, gpointer data)
 {
     KeyMatchData* match_data = data;
     KeyEntry* element = NULL;
@@ -456,7 +456,7 @@ static gboolean key_match(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* i
     return FALSE;
 }
 
-static gboolean key_is_already_shown(GtkTreeModel* model, const KeyListEntry* entry)
+static gboolean key_is_already_shown(CtkTreeModel* model, const KeyListEntry* entry)
 {
     KeyMatchData data;
 
@@ -516,7 +516,7 @@ static gboolean should_show_key(const KeyListEntry* entry)
 }
 
 static gboolean
-count_rows_foreach (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data)
+count_rows_foreach (CtkTreeModel *model, CtkTreePath *path, CtkTreeIter *iter, gpointer data)
 {
   gint *rows = data;
 
@@ -526,14 +526,14 @@ count_rows_foreach (GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, g
 }
 
 static void
-ensure_scrollbar (GtkBuilder *builder, int i)
+ensure_scrollbar (CtkBuilder *builder, int i)
 {
   if (i == MAX_ELEMENTS_BEFORE_SCROLLING)
     {
-      GtkRequisition rectangle;
+      CtkRequisition rectangle;
       GObject *actions_swindow = ctk_builder_get_object (builder,
                                                          "actions_swindow");
-      GtkWidget *treeview = _ctk_builder_get_widget (builder,
+      CtkWidget *treeview = _ctk_builder_get_widget (builder,
                                                      "shortcut_treeview");
       ctk_widget_get_preferred_size (treeview, &rectangle, NULL);
       ctk_widget_set_size_request (treeview, -1, rectangle.height);
@@ -543,8 +543,8 @@ ensure_scrollbar (GtkBuilder *builder, int i)
 }
 
 static void
-find_section (GtkTreeModel *model,
-              GtkTreeIter  *iter,
+find_section (CtkTreeModel *model,
+              CtkTreeIter  *iter,
           const char   *title)
 {
   gboolean success;
@@ -570,14 +570,14 @@ find_section (GtkTreeModel *model,
 }
 
 static void
-append_keys_to_tree (GtkBuilder         *builder,
+append_keys_to_tree (CtkBuilder         *builder,
                      const gchar        *title,
                      const gchar        *schema,
                      const gchar        *package,
                      const KeyListEntry *keys_list)
 {
-  GtkTreeIter parent_iter, iter;
-  GtkTreeModel *model;
+  CtkTreeIter parent_iter, iter;
+  CtkTreeModel *model;
   gint i, j;
 
   model = ctk_tree_view_get_model (GTK_TREE_VIEW (ctk_builder_get_object (builder, "shortcut_treeview")));
@@ -888,7 +888,7 @@ strv_contains (char **strv,
 }
 
 static void
-append_keys_to_tree_from_file (GtkBuilder *builder,
+append_keys_to_tree_from_file (CtkBuilder *builder,
                    const char *filename,
                    char      **wm_keybindings)
 {
@@ -971,7 +971,7 @@ append_keys_to_tree_from_file (GtkBuilder *builder,
 }
 
 static void
-append_keys_to_tree_from_gsettings (GtkBuilder *builder, const gchar *gsettings_path)
+append_keys_to_tree_from_gsettings (CtkBuilder *builder, const gchar *gsettings_path)
 {
   gchar **custom_list;
   GArray *entries;
@@ -1029,7 +1029,7 @@ append_keys_to_tree_from_gsettings (GtkBuilder *builder, const gchar *gsettings_
 }
 
 static void
-reload_key_entries (GtkBuilder *builder)
+reload_key_entries (CtkBuilder *builder)
 {
   gchar **wm_keybindings;
   GList *list, *l;
@@ -1100,7 +1100,7 @@ key_entry_controlling_key_changed (GSettings *settings, gchar *key, gpointer use
   reload_key_entries (user_data);
 }
 
-static gboolean cb_check_for_uniqueness(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, KeyEntry* new_key)
+static gboolean cb_check_for_uniqueness(CtkTreeModel* model, CtkTreePath* path, CtkTreeIter* iter, KeyEntry* new_key)
 {
     KeyEntry* element;
 
@@ -1195,9 +1195,9 @@ static gboolean keyval_is_forbidden(guint keyval)
     return FALSE;
 }
 
-static void show_error(GtkWindow* parent, GError* err)
+static void show_error(CtkWindow* parent, GError* err)
 {
-  GtkWidget *dialog;
+  CtkWidget *dialog;
 
   dialog = ctk_message_dialog_new (parent,
                    GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL,
@@ -1211,12 +1211,12 @@ static void show_error(GtkWindow* parent, GError* err)
   ctk_widget_destroy (dialog);
 }
 
-static void accel_edited_callback(GtkCellRendererText* cell, const char* path_string, guint keyval, EggVirtualModifierType mask, guint keycode, gpointer data)
+static void accel_edited_callback(CtkCellRendererText* cell, const char* path_string, guint keyval, EggVirtualModifierType mask, guint keycode, gpointer data)
 {
-    GtkTreeView* view = (GtkTreeView*) data;
-    GtkTreeModel* model;
-    GtkTreePath* path = ctk_tree_path_new_from_string (path_string);
-    GtkTreeIter iter;
+    CtkTreeView* view = (CtkTreeView*) data;
+    CtkTreeModel* model;
+    CtkTreePath* path = ctk_tree_path_new_from_string (path_string);
+    CtkTreeIter iter;
     KeyEntry* key_entry, tmp_key;
     char* str;
 
@@ -1249,7 +1249,7 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
 
     if (keyval != 0 || keycode != 0) /* any number of keys can be disabled */
     {
-        ctk_tree_model_foreach(model, (GtkTreeModelForeachFunc) cb_check_for_uniqueness, &tmp_key);
+        ctk_tree_model_foreach(model, (CtkTreeModelForeachFunc) cb_check_for_uniqueness, &tmp_key);
     }
 
     /* Check for unmodified keys */
@@ -1269,7 +1269,7 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
             || keyval_is_forbidden (tmp_key.keyval))
         {
 
-            GtkWidget *dialog;
+            CtkWidget *dialog;
             char *name;
 
             name = binding_name (keyval, keycode, mask, TRUE);
@@ -1300,7 +1300,7 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
     /* flag to see if the new accelerator was in use by something */
     if (!tmp_key.editable)
     {
-        GtkWidget* dialog;
+        CtkWidget* dialog;
         char* name;
         int response;
 
@@ -1364,15 +1364,15 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
 }
 
 static void
-accel_cleared_callback (GtkCellRendererText *cell,
+accel_cleared_callback (CtkCellRendererText *cell,
             const char          *path_string,
             gpointer             data)
 {
-  GtkTreeView *view = (GtkTreeView *) data;
-  GtkTreePath *path = ctk_tree_path_new_from_string (path_string);
+  CtkTreeView *view = (CtkTreeView *) data;
+  CtkTreePath *path = ctk_tree_path_new_from_string (path_string);
   KeyEntry *key_entry;
-  GtkTreeIter iter;
-  GtkTreeModel *model;
+  CtkTreeIter iter;
+  CtkTreeModel *model;
 
   block_accels = FALSE;
 
@@ -1394,15 +1394,15 @@ accel_cleared_callback (GtkCellRendererText *cell,
 }
 
 static void
-description_edited_callback (GtkCellRendererText *renderer,
+description_edited_callback (CtkCellRendererText *renderer,
                              gchar               *path_string,
                              gchar               *new_text,
                              gpointer             user_data)
 {
-  GtkTreeView *view = GTK_TREE_VIEW (user_data);
-  GtkTreeModel *model;
-  GtkTreePath *path = ctk_tree_path_new_from_string (path_string);
-  GtkTreeIter iter;
+  CtkTreeView *view = GTK_TREE_VIEW (user_data);
+  CtkTreeModel *model;
+  CtkTreePath *path = ctk_tree_path_new_from_string (path_string);
+  CtkTreeIter iter;
   KeyEntry *key_entry;
 
   model = ctk_tree_view_get_model (view);
@@ -1424,9 +1424,9 @@ description_edited_callback (GtkCellRendererText *renderer,
 
 typedef struct
 {
-  GtkTreeView *tree_view;
-  GtkTreePath *path;
-  GtkTreeViewColumn *column;
+  CtkTreeView *tree_view;
+  CtkTreePath *path;
+  CtkTreeViewColumn *column;
 } IdleData;
 
 static gboolean
@@ -1479,9 +1479,9 @@ edit_custom_shortcut (KeyEntry *key)
 }
 
 static gboolean
-remove_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
+remove_custom_shortcut (CtkTreeModel *model, CtkTreeIter *iter)
 {
-  GtkTreeIter parent;
+  CtkTreeIter parent;
   KeyEntry *key;
 
   ctk_tree_model_get (model, iter,
@@ -1518,7 +1518,7 @@ remove_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
 }
 
 static void
-update_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
+update_custom_shortcut (CtkTreeModel *model, CtkTreeIter *iter)
 {
   KeyEntry *key;
 
@@ -1587,13 +1587,13 @@ find_free_gsettings_path (GError **error)
 }
 
 static void
-add_custom_shortcut (GtkTreeView  *tree_view,
-                     GtkTreeModel *model)
+add_custom_shortcut (CtkTreeView  *tree_view,
+                     CtkTreeModel *model)
 {
   KeyEntry *key_entry;
-  GtkTreeIter iter;
-  GtkTreeIter parent_iter;
-  GtkTreePath *path;
+  CtkTreeIter iter;
+  CtkTreeIter parent_iter;
+  CtkTreePath *path;
   gchar *dir;
   GError *error;
 
@@ -1667,13 +1667,13 @@ add_custom_shortcut (GtkTreeView  *tree_view,
 }
 
 static void
-start_editing_kb_cb (GtkTreeView *treeview,
-              GtkTreePath *path,
-              GtkTreeViewColumn *column,
+start_editing_kb_cb (CtkTreeView *treeview,
+              CtkTreePath *path,
+              CtkTreeViewColumn *column,
               gpointer user_data)
 {
-      GtkTreeModel *model;
-      GtkTreeIter iter;
+      CtkTreeModel *model;
+      CtkTreeIter iter;
       KeyEntry *key;
 
       model = ctk_tree_view_get_model (treeview);
@@ -1714,12 +1714,12 @@ start_editing_kb_cb (GtkTreeView *treeview,
 }
 
 static gboolean
-start_editing_cb (GtkTreeView    *tree_view,
+start_editing_cb (CtkTreeView    *tree_view,
           GdkEventButton *event,
           gpointer        user_data)
 {
-  GtkTreePath *path;
-  GtkTreeViewColumn *column;
+  CtkTreePath *path;
+  CtkTreeViewColumn *column;
 
   if ((event->window != ctk_tree_view_get_bin_window (tree_view)) ||
       (event->type != GDK_2BUTTON_PRESS))
@@ -1732,8 +1732,8 @@ start_editing_cb (GtkTreeView    *tree_view,
                      NULL, NULL))
     {
       IdleData *idle_data;
-      GtkTreeModel *model;
-      GtkTreeIter iter;
+      CtkTreeModel *model;
+      CtkTreeIter iter;
       KeyEntry *key;
 
       if (ctk_tree_path_get_depth (path) == 1)
@@ -1777,7 +1777,7 @@ start_editing_cb (GtkTreeView    *tree_view,
 /* this handler is used to keep accels from activating while the user
  * is assigning a new shortcut so that he won't accidentally trigger one
  * of the widgets */
-static gboolean maybe_block_accels(GtkWidget* widget, GdkEventKey* event, gpointer user_data)
+static gboolean maybe_block_accels(CtkWidget* widget, GdkEventKey* event, gpointer user_data)
 {
     if (block_accels)
     {
@@ -1788,13 +1788,13 @@ static gboolean maybe_block_accels(GtkWidget* widget, GdkEventKey* event, gpoint
 }
 
 static void
-cb_dialog_response (GtkWidget *widget, gint response_id, gpointer data)
+cb_dialog_response (CtkWidget *widget, gint response_id, gpointer data)
 {
-  GtkBuilder *builder = data;
-  GtkTreeView *treeview;
-  GtkTreeModel *model;
-  GtkTreeSelection *selection;
-  GtkTreeIter iter;
+  CtkBuilder *builder = data;
+  CtkTreeView *treeview;
+  CtkTreeModel *model;
+  CtkTreeSelection *selection;
+  CtkTreeIter iter;
 
   treeview = GTK_TREE_VIEW (ctk_builder_get_object (builder,
                                                     "shortcut_treeview"));
@@ -1825,11 +1825,11 @@ cb_dialog_response (GtkWidget *widget, gint response_id, gpointer data)
 }
 
 static void
-selection_changed (GtkTreeSelection *selection, gpointer data)
+selection_changed (CtkTreeSelection *selection, gpointer data)
 {
-  GtkWidget *button = data;
-  GtkTreeModel *model;
-  GtkTreeIter iter;
+  CtkWidget *button = data;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
   KeyEntry *key;
   gboolean can_remove;
 
@@ -1845,7 +1845,7 @@ selection_changed (GtkTreeSelection *selection, gpointer data)
 }
 
 static void
-cb_app_dialog_response (GtkWidget *dialog, gint response_id, gpointer data)
+cb_app_dialog_response (CtkWidget *dialog, gint response_id, gpointer data)
 {
   if (response_id == GTK_RESPONSE_OK)
     {
@@ -1869,14 +1869,14 @@ cb_app_dialog_response (GtkWidget *dialog, gint response_id, gpointer data)
 }
 
 static void
-setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
+setup_dialog (CtkBuilder *builder, GSettings *croma_settings)
 {
-  GtkCellRenderer *renderer;
-  GtkTreeViewColumn *column;
-  GtkWidget *widget;
-  GtkTreeView *treeview;
-  GtkTreeSelection *selection;
-  GtkWidget *button;
+  CtkCellRenderer *renderer;
+  CtkTreeViewColumn *column;
+  CtkWidget *widget;
+  CtkTreeView *treeview;
+  CtkTreeSelection *selection;
+  CtkWidget *button;
 
   treeview = GTK_TREE_VIEW (ctk_builder_get_object (builder,
                                                     "shortcut_treeview"));
@@ -1902,7 +1902,7 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
   ctk_tree_view_append_column (treeview, column);
   ctk_tree_view_column_set_sort_column_id (column, DESCRIPTION_COLUMN);
 
-  renderer = (GtkCellRenderer *) g_object_new (EGG_TYPE_CELL_RENDERER_KEYS,
+  renderer = (CtkCellRenderer *) g_object_new (EGG_TYPE_CELL_RENDERER_KEYS,
                            "accel_mode", EGG_CELL_RENDERER_KEYS_MODE_X,
                            NULL);
 
@@ -1967,7 +1967,7 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
 }
 
 static void
-on_window_manager_change (const char *wm_name, GtkBuilder *builder)
+on_window_manager_change (const char *wm_name, CtkBuilder *builder)
 {
   reload_key_entries (builder);
 }
@@ -1975,7 +1975,7 @@ on_window_manager_change (const char *wm_name, GtkBuilder *builder)
 int
 main (int argc, char *argv[])
 {
-  GtkBuilder *builder;
+  CtkBuilder *builder;
   GSettings *croma_settings;
 
   capplet_init (NULL, &argc, &argv);

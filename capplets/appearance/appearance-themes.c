@@ -47,7 +47,7 @@ enum {
 	TARGET_NS_URL
 };
 
-static const GtkTargetEntry drop_types[] =
+static const CtkTargetEntry drop_types[] =
 {
 	{"text/uri-list", 0, TARGET_URI_LIST},
 	{"_NETSCAPE_URL", 0, TARGET_NS_URL}
@@ -82,8 +82,8 @@ static time_t theme_get_mtime(const char* name)
 
 static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, AppearanceData* data, gboolean cache)
 {
-	GtkTreeIter iter;
-	GtkTreeModel* model = GTK_TREE_MODEL(data->theme_store);
+	CtkTreeIter iter;
+	CtkTreeModel* model = GTK_TREE_MODEL(data->theme_store);
 
 	/* find item in model and update thumbnail */
 	if (!pixbuf)
@@ -172,7 +172,7 @@ static void theme_changed_on_disk_cb(CafeThemeCommonInfo* theme, CafeThemeChange
 		}
 		else if (change_type == CAFE_THEME_CHANGE_DELETED)
 		{
-			GtkTreeIter iter;
+			CtkTreeIter iter;
 
 			if (theme_find_in_model(GTK_TREE_MODEL(data->theme_store), meta->name, &iter))
 			{
@@ -245,15 +245,15 @@ theme_load_from_gsettings (AppearanceData *data)
 }
 
 static gchar *
-theme_get_selected_name (GtkIconView *icon_view, AppearanceData *data)
+theme_get_selected_name (CtkIconView *icon_view, AppearanceData *data)
 {
   gchar *name = NULL;
   GList *selected = ctk_icon_view_get_selected_items (icon_view);
 
   if (selected) {
-    GtkTreePath *path = selected->data;
-    GtkTreeModel *model = ctk_icon_view_get_model (icon_view);
-    GtkTreeIter iter;
+    CtkTreePath *path = selected->data;
+    CtkTreeModel *model = ctk_icon_view_get_model (icon_view);
+    CtkTreeIter iter;
 
     if (ctk_tree_model_get_iter (model, &iter, path))
       ctk_tree_model_get (model, &iter, COL_NAME, &name, -1);
@@ -266,7 +266,7 @@ theme_get_selected_name (GtkIconView *icon_view, AppearanceData *data)
 }
 
 static const CafeThemeMetaInfo *
-theme_get_selected (GtkIconView *icon_view, AppearanceData *data)
+theme_get_selected (CtkIconView *icon_view, AppearanceData *data)
 {
   CafeThemeMetaInfo *theme = NULL;
   gchar *name = theme_get_selected_name (icon_view, data);
@@ -285,9 +285,9 @@ theme_get_selected (GtkIconView *icon_view, AppearanceData *data)
 }
 
 static void
-theme_select_iter (GtkIconView *icon_view, GtkTreeIter *iter)
+theme_select_iter (CtkIconView *icon_view, CtkTreeIter *iter)
 {
-  GtkTreePath *path;
+  CtkTreePath *path;
 
   path = ctk_tree_model_get_path (ctk_icon_view_get_model (icon_view), iter);
   ctk_icon_view_select_path (icon_view, path);
@@ -296,10 +296,10 @@ theme_select_iter (GtkIconView *icon_view, GtkTreeIter *iter)
 }
 
 static void
-theme_select_name (GtkIconView *icon_view, const gchar *theme)
+theme_select_name (CtkIconView *icon_view, const gchar *theme)
 {
-  GtkTreeIter iter;
-  GtkTreeModel *model = ctk_icon_view_get_model (icon_view);
+  CtkTreeIter iter;
+  CtkTreeModel *model = ctk_icon_view_get_model (icon_view);
 
   if (theme_find_in_model (model, theme, &iter))
     theme_select_iter (icon_view, &iter);
@@ -342,10 +342,10 @@ static void
 theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data)
 {
   CafeThemeMetaInfo *custom = data->theme_custom;
-  GtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
-  GtkTreeModel *model;
-  GtkTreeIter iter;
-  GtkTreePath *path;
+  CtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  CtkTreeModel *model;
+  CtkTreeIter iter;
+  CtkTreePath *path;
 
   if (info == custom)
     return;
@@ -383,7 +383,7 @@ theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data
   /* select the custom theme */
   model = ctk_icon_view_get_model (icon_view);
   if (!theme_find_in_model (model, custom->name, &iter)) {
-    GtkTreeIter child;
+    CtkTreeIter child;
 
     ctk_list_store_insert_with_values (data->theme_store, &child, 0,
         COL_LABEL, custom->readable_name,
@@ -405,7 +405,7 @@ theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data
 
 /** GUI Callbacks **/
 
-static void custom_font_cb(GtkWidget* button, AppearanceData* data)
+static void custom_font_cb(CtkWidget* button, AppearanceData* data)
 {
   g_free(data->revert_application_font);
   g_free(data->revert_documents_font);
@@ -420,7 +420,7 @@ static void custom_font_cb(GtkWidget* button, AppearanceData* data)
 }
 
 static void
-theme_message_area_response_cb (GtkWidget *w,
+theme_message_area_response_cb (CtkWidget *w,
                                 gint response_id,
                                 AppearanceData *data)
 {
@@ -628,9 +628,9 @@ theme_message_area_update (AppearanceData *data)
   }
 
   if (data->theme_message_area == NULL) {
-    GtkWidget *hbox;
-    GtkWidget *parent;
-    GtkWidget *content;
+    CtkWidget *hbox;
+    CtkWidget *parent;
+    CtkWidget *content;
 
     if (!show_apply_background && !show_revert_font && !show_apply_font && !show_error)
       return;
@@ -742,7 +742,7 @@ theme_message_area_update (AppearanceData *data)
 }
 
 static void
-theme_selection_changed_cb (GtkWidget *icon_view, AppearanceData *data)
+theme_selection_changed_cb (CtkWidget *icon_view, AppearanceData *data)
 {
   GList *selection;
   CafeThemeMetaInfo *theme = NULL;
@@ -751,8 +751,8 @@ theme_selection_changed_cb (GtkWidget *icon_view, AppearanceData *data)
   selection = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (icon_view));
 
   if (selection) {
-    GtkTreeModel *model;
-    GtkTreeIter iter;
+    CtkTreeModel *model;
+    CtkTreeIter iter;
     gchar *name;
 
     model = ctk_icon_view_get_model (GTK_ICON_VIEW (icon_view));
@@ -782,9 +782,9 @@ theme_selection_changed_cb (GtkWidget *icon_view, AppearanceData *data)
 }
 
 static void
-theme_custom_cb (GtkWidget *button, AppearanceData *data)
+theme_custom_cb (CtkWidget *button, AppearanceData *data)
 {
-  GtkWidget *w, *parent;
+  CtkWidget *w, *parent;
 
   w = appearance_capplet_get_widget (data, "theme_details");
   parent = appearance_capplet_get_widget (data, "appearance_window");
@@ -793,28 +793,28 @@ theme_custom_cb (GtkWidget *button, AppearanceData *data)
 }
 
 static void
-theme_save_cb (GtkWidget *button, AppearanceData *data)
+theme_save_cb (CtkWidget *button, AppearanceData *data)
 {
   theme_save_dialog_run (data->theme_custom, data);
 }
 
 static void
-theme_install_cb (GtkWidget *button, AppearanceData *data)
+theme_install_cb (CtkWidget *button, AppearanceData *data)
 {
   cafe_theme_installer_run (
       GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
 }
 
 static void
-theme_delete_cb (GtkWidget *button, AppearanceData *data)
+theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
-  GtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  CtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
   GList *selected = ctk_icon_view_get_selected_items (icon_view);
 
   if (selected) {
-    GtkTreePath *path = selected->data;
-    GtkTreeModel *model = ctk_icon_view_get_model (icon_view);
-    GtkTreeIter iter;
+    CtkTreePath *path = selected->data;
+    CtkTreeModel *model = ctk_icon_view_get_model (icon_view);
+    CtkTreeIter iter;
     gchar *name = NULL;
 
     if (ctk_tree_model_get_iter (model, &iter, path))
@@ -824,7 +824,7 @@ theme_delete_cb (GtkWidget *button, AppearanceData *data)
         strcmp (name, data->theme_custom->name) &&
         theme_delete (name, THEME_TYPE_META)) {
       /* remove theme from the model, too */
-      GtkTreeIter child;
+      CtkTreeIter child;
 
       if (ctk_tree_model_iter_next (model, &iter) ||
           theme_model_iter_last (model, &iter))
@@ -847,7 +847,7 @@ theme_details_changed_cb (AppearanceData *data)
 {
   CafeThemeMetaInfo *gsettings_theme;
   const CafeThemeMetaInfo *selected;
-  GtkIconView *icon_view;
+  CtkIconView *icon_view;
   gboolean done = FALSE;
 
   /* load new state from gsettings */
@@ -906,9 +906,9 @@ theme_list_sort_func (CafeThemeMetaInfo *a,
 }
 
 static gint
-theme_store_sort_func (GtkTreeModel *model,
-                      GtkTreeIter *a,
-                      GtkTreeIter *b,
+theme_store_sort_func (CtkTreeModel *model,
+                      CtkTreeIter *a,
+                      CtkTreeIter *b,
                       gpointer user_data)
 {
   gchar *a_name, *a_label;
@@ -946,10 +946,10 @@ theme_store_sort_func (GtkTreeModel *model,
 }
 
 static void
-theme_drag_data_received_cb (GtkWidget *widget,
+theme_drag_data_received_cb (CtkWidget *widget,
                              GdkDragContext *context,
                              gint x, gint y,
-                             GtkSelectionData *selection_data,
+                             CtkSelectionData *selection_data,
                              guint info, guint time,
                              AppearanceData *data)
 {
@@ -978,14 +978,14 @@ static void background_or_font_changed(GSettings *settings, gchar *key, Appearan
 
 void themes_init(AppearanceData* data)
 {
-  GtkWidget *w, *del_button;
+  CtkWidget *w, *del_button;
   GList *theme_list, *l;
-  GtkListStore *theme_store;
-  GtkTreeModel *sort_model;
+  CtkListStore *theme_store;
+  CtkTreeModel *sort_model;
   CafeThemeMetaInfo *meta_theme = NULL;
-  GtkIconView *icon_view;
-  GtkCellRenderer *renderer;
-  GtkSettings *settings;
+  CtkIconView *icon_view;
+  CtkCellRenderer *renderer;
+  CtkSettings *settings;
   char *url;
 
   /* initialise some stuff */

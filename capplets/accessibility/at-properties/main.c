@@ -39,10 +39,10 @@ static GDesktopAppInfo *get_desktop_app_info_from_dm (void)
     return app_info;
 }
 
-static GtkBuilder *
+static CtkBuilder *
 create_builder (void)
 {
-    GtkBuilder *builder;
+    CtkBuilder *builder;
     GError *error = NULL;
 
     builder = ctk_builder_new ();
@@ -78,25 +78,25 @@ create_builder (void)
 }
 
 static void
-cb_at_preferences (GtkDialog *dialog, gint response_id)
+cb_at_preferences (CtkDialog *dialog, gint response_id)
 {
 	g_spawn_command_line_async ("cafe-default-applications-properties --show-page=a11y", NULL);
 }
 
 static void
-cb_keyboard_preferences (GtkDialog *dialog, gint response_id)
+cb_keyboard_preferences (CtkDialog *dialog, gint response_id)
 {
 	g_spawn_command_line_async ("cafe-keyboard-properties --a11y", NULL);
 }
 
 static void
-cb_mouse_preferences (GtkDialog *dialog, gint response_id)
+cb_mouse_preferences (CtkDialog *dialog, gint response_id)
 {
 	g_spawn_command_line_async ("cafe-mouse-properties --show-page=accessibility", NULL);
 }
 
 static void
-cb_login_preferences (GtkDialog *dialog, gint response_id)
+cb_login_preferences (CtkDialog *dialog, gint response_id)
 {
     GDesktopAppInfo *app_info = NULL;
 
@@ -165,7 +165,7 @@ do_logout (void)
 }
 
 static void
-cb_dialog_response (GtkDialog *dialog, gint response_id)
+cb_dialog_response (CtkDialog *dialog, gint response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 		capplet_help (GTK_WINDOW (dialog),
@@ -181,7 +181,7 @@ cb_dialog_response (GtkDialog *dialog, gint response_id)
 }
 
 static void
-close_logout_update (GtkBuilder *builder)
+close_logout_update (CtkBuilder *builder)
 {
 	GSettings *settings = g_settings_new (ACCESSIBILITY_SCHEMA);
 	gboolean curr_state = g_settings_get_boolean (settings, ACCESSIBILITY_KEY);
@@ -193,8 +193,8 @@ close_logout_update (GtkBuilder *builder)
 }
 
 static void
-at_enable_toggled (GtkToggleButton *toggle_button,
-		   GtkBuilder      *builder)
+at_enable_toggled (CtkToggleButton *toggle_button,
+		   CtkBuilder      *builder)
 {
 	GSettings *settings = g_settings_new (ACCESSIBILITY_SCHEMA);
 	gboolean is_enabled = ctk_toggle_button_get_active (toggle_button);
@@ -205,7 +205,7 @@ at_enable_toggled (GtkToggleButton *toggle_button,
 
 static void
 at_enable_update (GSettings *settings,
-		  GtkBuilder  *builder)
+		  CtkBuilder  *builder)
 {
 	gboolean is_enabled = g_settings_get_boolean (settings, ACCESSIBILITY_KEY);
 	GObject *btn = ctk_builder_get_object (builder, "at_enable_toggle");
@@ -224,9 +224,9 @@ at_enable_changed (GSettings *settings,
 }
 
 static void
-setup_dialog (GtkBuilder *builder, GSettings *settings)
+setup_dialog (CtkBuilder *builder, GSettings *settings)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 	GObject *object;
 
 	object = ctk_builder_get_object (builder, "at_enable_toggle");
@@ -272,7 +272,7 @@ int
 main (int argc, char *argv[])
 {
 	GSettings  *settings;
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 
 	capplet_init (NULL, &argc, &argv);
 

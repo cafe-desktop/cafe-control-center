@@ -33,7 +33,7 @@
 #define A11Y_SCHEMA "org.cafe.accessibility-keyboard"
 #define CROMA_SCHEMA "org.cafe.Croma.general"
 
-static GtkBuilder *notifications_dialog = NULL;
+static CtkBuilder *notifications_dialog = NULL;
 static GSettings *a11y_settings = NULL;
 
 enum
@@ -44,7 +44,7 @@ enum
 };
 
 static void
-stickykeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
+stickykeys_enable_toggled_cb (CtkWidget *w, CtkBuilder *dialog)
 {
 	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
@@ -55,7 +55,7 @@ stickykeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 }
 
 static void
-slowkeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
+slowkeys_enable_toggled_cb (CtkWidget *w, CtkBuilder *dialog)
 {
 	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
@@ -65,7 +65,7 @@ slowkeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 }
 
 static void
-bouncekeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
+bouncekeys_enable_toggled_cb (CtkWidget *w, CtkBuilder *dialog)
 {
 	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
@@ -75,7 +75,7 @@ bouncekeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 }
 
 static void
-visual_bell_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
+visual_bell_enable_toggled_cb (CtkWidget *w, CtkBuilder *dialog)
 {
 	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
@@ -86,7 +86,7 @@ visual_bell_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 }
 
 static void
-bell_flash_gsettings_changed (GSettings *settings, gchar *key, GtkBuilder *dialog)
+bell_flash_gsettings_changed (GSettings *settings, gchar *key, CtkBuilder *dialog)
 {
 	int bell_flash_type = g_settings_get_enum (settings, key);
 	if (bell_flash_type == VISUAL_BELL_TYPE_FULLSCREEN)
@@ -100,7 +100,7 @@ bell_flash_gsettings_changed (GSettings *settings, gchar *key, GtkBuilder *dialo
 }
 
 static void
-bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
+bell_flash_radio_changed (CtkWidget *widget, CtkBuilder *builder)
 {
 	GSettings *croma_settings;
 	croma_settings = g_settings_new (CROMA_SCHEMA);
@@ -119,7 +119,7 @@ bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
 }
 
 static void
-a11y_notifications_dialog_response_cb (GtkWidget *w, gint response)
+a11y_notifications_dialog_response_cb (CtkWidget *w, gint response)
 {
 	if (response == GTK_RESPONSE_HELP) {
 		capplet_help (GTK_WINDOW (w),
@@ -130,9 +130,9 @@ a11y_notifications_dialog_response_cb (GtkWidget *w, gint response)
 	}
 }
 static void
-notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
+notifications_button_clicked_cb (CtkWidget *button, CtkBuilder *dialog)
 {
-	GtkWidget *w;
+	CtkWidget *w;
 
 	notifications_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (notifications_dialog,
@@ -197,7 +197,7 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 }
 
 static void
-mousekeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
+mousekeys_enable_toggled_cb (CtkWidget *w, CtkBuilder *dialog)
 {
 	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 	ctk_widget_set_sensitive (WID ("mousekeys_table"), active);
@@ -210,9 +210,9 @@ finalize_a11y_tabs (void)
 }
 
 void
-setup_a11y_tabs (GtkBuilder *dialog)
+setup_a11y_tabs (CtkBuilder *dialog)
 {
-	GtkWidget *w;
+	CtkWidget *w;
 
 	a11y_settings = g_settings_new (A11Y_SCHEMA);
 

@@ -23,7 +23,7 @@
 G_DEFINE_TYPE (TileAction, tile_action, G_TYPE_OBJECT)
 
 static void tile_action_finalize (GObject *);
-static void tile_action_menu_item_activate_cb (GtkMenuItem *, gpointer);
+static void tile_action_menu_item_activate_cb (CtkMenuItem *, gpointer);
 
 static void tile_action_class_init (TileActionClass * this_class)
 {
@@ -72,7 +72,7 @@ tile_action_new (Tile * tile, TileActionFunc func, const gchar * menu_item_marku
 void
 tile_action_set_menu_item_label (TileAction * this, const gchar * markup)
 {
-	GtkWidget *label;
+	CtkWidget *label;
 
 	if (this->menu_item)
 	{
@@ -93,14 +93,14 @@ tile_action_set_menu_item_label (TileAction * this, const gchar * markup)
 	}
 }
 
-GtkMenuItem *
+CtkMenuItem *
 tile_action_get_menu_item (TileAction * this)
 {
 	return this->menu_item;
 }
 
 static void
-tile_action_menu_item_activate_cb (GtkMenuItem * menu_item, gpointer user_data)
+tile_action_menu_item_activate_cb (CtkMenuItem * menu_item, gpointer user_data)
 {
 	TileAction *this = TILE_ACTION (user_data);
 

@@ -43,8 +43,8 @@
 
 #define THEME_NAME "X-GNOME-Metatheme/Name"
 #define THEME_COMMENT "X-GNOME-Metatheme/Comment"
-#define GTK_THEME_KEY "X-GNOME-Metatheme/GtkTheme"
-#define GTK_COLOR_SCHEME_KEY "X-GNOME-Metatheme/GtkColorScheme"
+#define GTK_THEME_KEY "X-GNOME-Metatheme/CtkTheme"
+#define GTK_COLOR_SCHEME_KEY "X-GNOME-Metatheme/CtkColorScheme"
 #define CROMA_THEME_KEY "X-GNOME-Metatheme/MetacityTheme"
 #define ICON_THEME_KEY "X-GNOME-Metatheme/IconTheme"
 #define CURSOR_THEME_KEY "X-GNOME-Metatheme/CursorTheme"

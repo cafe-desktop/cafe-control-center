@@ -1379,7 +1379,7 @@ msgid ""
 "This theme will not look as intended because the required GTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Ova tema neće izgledati kako treba jer nije instalirana potrebna %s Gtk+ "
+"Ova tema neće izgledati kako treba jer nije instalirana potrebna %s Ctk+ "
 "tema."
 
 #: capplets/common/cafe-theme-info.c:1588

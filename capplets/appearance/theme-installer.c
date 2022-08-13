@@ -162,7 +162,7 @@ file_theme_type (const gchar *dir)
 }
 
 static void
-transfer_cancel_cb (GtkWidget *dialog,
+transfer_cancel_cb (CtkWidget *dialog,
 		    gchar *path)
 {
 	GFile *todelete;
@@ -176,10 +176,10 @@ transfer_cancel_cb (GtkWidget *dialog,
 }
 
 static void
-missing_utility_message_dialog (GtkWindow *parent,
+missing_utility_message_dialog (CtkWindow *parent,
 				const gchar *utility)
 {
-	GtkWidget *dialog = ctk_message_dialog_new (parent,
+	CtkWidget *dialog = ctk_message_dialog_new (parent,
 						    GTK_DIALOG_MODAL,
 						    GTK_MESSAGE_ERROR,
 						    GTK_BUTTONS_OK,
@@ -201,7 +201,7 @@ missing_utility_message_dialog (GtkWindow *parent,
  * see bugzilla.gnome.org #86141 for details
  */
 static gboolean
-process_local_theme_tgz_tbz (GtkWindow *parent,
+process_local_theme_tgz_tbz (CtkWindow *parent,
 			     const gchar *util,
 			     const gchar *tmp_dir,
 			     const gchar *archive)
@@ -233,7 +233,7 @@ process_local_theme_tgz_tbz (GtkWindow *parent,
 	g_free (command);
 
 	if (rc == FALSE) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (parent,
 						 GTK_DIALOG_MODAL,
@@ -250,7 +250,7 @@ process_local_theme_tgz_tbz (GtkWindow *parent,
 }
 
 static gboolean
-process_local_theme_archive (GtkWindow *parent,
+process_local_theme_archive (CtkWindow *parent,
 			     gint filetype,
 			     const gchar *tmp_dir,
 			     const gchar *archive)
@@ -266,11 +266,11 @@ process_local_theme_archive (GtkWindow *parent,
 }
 
 static void
-invalid_theme_dialog (GtkWindow *parent,
+invalid_theme_dialog (CtkWindow *parent,
 		      const gchar *filename,
 		      gboolean maybe_theme_engine)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	const gchar *primary = _("There was an error installing the selected file");
 	const gchar *secondary = _("\"%s\" does not appear to be a valid theme.");
 	const gchar *engine = _("\"%s\" does not appear to be a valid theme. It may be a theme engine which you need to compile.");
@@ -289,13 +289,13 @@ invalid_theme_dialog (GtkWindow *parent,
 }
 
 static gboolean
-cafe_theme_install_real (GtkWindow *parent,
+cafe_theme_install_real (CtkWindow *parent,
 			  const gchar *tmp_dir,
 			  const gchar *theme_name,
 			  gboolean ask_user)
 {
 	gboolean success = TRUE;
-	GtkWidget *dialog, *apply_button;
+	CtkWidget *dialog, *apply_button;
 	GFile *theme_source_dir, *theme_dest_dir;
 	GError *error = NULL;
 	gint theme_type;
@@ -402,7 +402,7 @@ cafe_theme_install_real (GtkWindow *parent,
 			ctk_widget_destroy (dialog);
 
 			if (!capplet_file_delete_recursive (theme_dest_dir, NULL)) {
-				GtkWidget *info_dialog = ctk_message_dialog_new (NULL,
+				CtkWidget *info_dialog = ctk_message_dialog_new (NULL,
 									   GTK_DIALOG_MODAL,
 									   GTK_MESSAGE_ERROR,
 									   GTK_BUTTONS_OK,
@@ -548,10 +548,10 @@ end:
 }
 
 static void
-process_local_theme (GtkWindow  *parent,
+process_local_theme (CtkWindow  *parent,
 		     const char *path)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	gint filetype;
 
 	if (g_str_has_suffix (path, ".tar.gz")
@@ -671,12 +671,12 @@ process_local_theme (GtkWindow  *parent,
 
 typedef struct
 {
-	GtkWindow *parent;
+	CtkWindow *parent;
 	char      *path;
 } TransferData;
 
 static void
-transfer_done_cb (GtkWidget *dialog,
+transfer_done_cb (CtkWidget *dialog,
 		  TransferData *tdata)
 {
 	/* XXX: path should be on the local filesystem by now? */
@@ -693,9 +693,9 @@ transfer_done_cb (GtkWidget *dialog,
 
 void
 cafe_theme_install (GFile *file,
-		     GtkWindow *parent)
+		     CtkWindow *parent)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 	gchar *path, *base;
 	GList *src, *target;
 	const gchar *template;
@@ -796,12 +796,12 @@ cafe_theme_install (GFile *file,
 }
 
 void
-cafe_theme_installer_run (GtkWindow *parent)
+cafe_theme_installer_run (CtkWindow *parent)
 {
 	static gboolean running_theme_install = FALSE;
 	static gchar old_folder[512] = "";
-	GtkWidget *dialog;
-	GtkFileFilter *filter;
+	CtkWidget *dialog;
+	CtkFileFilter *filter;
 
 	if (running_theme_install)
 		return;

@@ -41,11 +41,11 @@ enum {
 };
 
 typedef struct {
-	GtkWidget *enable;
-	GtkWidget *disable;
+	CtkWidget *enable;
+	CtkWidget *disable;
 
-	GtkWidget *ass;
-	GtkBuilder *dialog;
+	CtkWidget *ass;
+	CtkBuilder *dialog;
 
 	DBusGProxy *device;
 	gboolean is_swipe;
@@ -106,12 +106,12 @@ get_reason_for_error (const char *dbus_error)
 	return NULL;
 }
 
-static GtkWidget *
+static CtkWidget *
 get_error_dialog (const char *title,
 		  const char *dbus_error,
-		  GtkWindow *parent)
+		  CtkWindow *parent)
 {
-	GtkWidget *error_dialog;
+	CtkWidget *error_dialog;
 	const char *reason;
 
 	if (dbus_error == NULL)
@@ -138,7 +138,7 @@ get_error_dialog (const char *title,
 }
 
 void
-set_fingerprint_label (GtkWidget *enable, GtkWidget *disable)
+set_fingerprint_label (CtkWidget *enable, CtkWidget *disable)
 {
 	char **fingers;
 	DBusGProxy *device;
@@ -209,10 +209,10 @@ delete_fingerprints (void)
 }
 
 static void
-delete_fingerprints_question (GtkBuilder *dialog, GtkWidget *enable, GtkWidget *disable)
+delete_fingerprints_question (CtkBuilder *dialog, CtkWidget *enable, CtkWidget *disable)
 {
-	GtkWidget *question;
-	GtkWidget *button;
+	CtkWidget *question;
+	CtkWidget *button;
 
 	question = ctk_message_dialog_new (GTK_WINDOW (WID ("about-me-dialog")),
 					   GTK_DIALOG_MODAL,
@@ -263,7 +263,7 @@ enroll_data_destroy (EnrollData *data)
 }
 
 static const char *
-selected_finger (GtkBuilder *dialog)
+selected_finger (CtkBuilder *dialog)
 {
 	int index;
 
@@ -302,9 +302,9 @@ selected_finger (GtkBuilder *dialog)
 }
 
 static void
-finger_radio_button_toggled (GtkToggleButton *button, EnrollData *data)
+finger_radio_button_toggled (CtkToggleButton *button, EnrollData *data)
 {
-	GtkBuilder *dialog = data->dialog;
+	CtkBuilder *dialog = data->dialog;
 	char *msg;
 
 	data->finger = selected_finger (data->dialog);
@@ -315,9 +315,9 @@ finger_radio_button_toggled (GtkToggleButton *button, EnrollData *data)
 }
 
 static void
-finger_combobox_changed (GtkComboBox *combobox, EnrollData *data)
+finger_combobox_changed (CtkComboBox *combobox, EnrollData *data)
 {
-	GtkBuilder *dialog = data->dialog;
+	CtkBuilder *dialog = data->dialog;
 	char *msg;
 
 	data->finger = selected_finger (data->dialog);
@@ -328,9 +328,9 @@ finger_combobox_changed (GtkComboBox *combobox, EnrollData *data)
 }
 
 static void
-assistant_cancelled (GtkAssistant *ass, EnrollData *data)
+assistant_cancelled (CtkAssistant *ass, EnrollData *data)
 {
-	GtkWidget *enable, *disable;
+	CtkWidget *enable, *disable;
 
 	enable = data->enable;
 	disable = data->disable;
@@ -342,7 +342,7 @@ assistant_cancelled (GtkAssistant *ass, EnrollData *data)
 static void
 enroll_result (GObject *object, const char *result, gboolean done, EnrollData *data)
 {
-	GtkBuilder *dialog = data->dialog;
+	CtkBuilder *dialog = data->dialog;
 	char *msg;
 
 	if (g_str_equal (result, "enroll-completed") || g_str_equal (result, "enroll-stage-passed")) {
@@ -379,7 +379,7 @@ enroll_result (GObject *object, const char *result, gboolean done, EnrollData *d
 }
 
 static void
-assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
+assistant_prepare (CtkAssistant *ass, CtkWidget *page, EnrollData *data)
 {
 	const char *name;
 
@@ -390,13 +390,13 @@ assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
 	if (g_str_equal (name, "enroll")) {
 		DBusGProxy *p;
 		GError *error = NULL;
-		GtkBuilder *dialog = data->dialog;
+		CtkBuilder *dialog = data->dialog;
 		char *path;
 		guint i;
 		GValue value = { 0, };
 
 		if (!dbus_g_proxy_call (data->device, "Claim", &error, G_TYPE_STRING, "", G_TYPE_INVALID, G_TYPE_INVALID)) {
-			GtkWidget *d;
+			CtkWidget *d;
 			char *msg;
 
 			/* translators:
@@ -418,7 +418,7 @@ assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
 		p = dbus_g_proxy_new_from_proxy (data->device, "org.freedesktop.DBus.Properties", NULL);
 		if (!dbus_g_proxy_call (p, "Get", NULL, G_TYPE_STRING, "net.reactivated.Fprint.Device", G_TYPE_STRING, "num-enroll-stages", G_TYPE_INVALID,
 				       G_TYPE_VALUE, &value, G_TYPE_INVALID) || g_value_get_int (&value) < 1) {
-			GtkWidget *d;
+			CtkWidget *d;
 			char *msg;
 
 			/* translators:
@@ -467,7 +467,7 @@ assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
 		dbus_g_proxy_connect_signal(data->device, "EnrollStatus", G_CALLBACK(enroll_result), data, NULL);
 
 		if (!dbus_g_proxy_call(data->device, "EnrollStart", &error, G_TYPE_STRING, data->finger, G_TYPE_INVALID, G_TYPE_INVALID)) {
-			GtkWidget *d;
+			CtkWidget *d;
 			char *msg;
 
 			/* translators:
@@ -498,13 +498,13 @@ assistant_prepare (GtkAssistant *ass, GtkWidget *page, EnrollData *data)
 }
 
 static void
-enroll_fingerprints (GtkWindow *parent, GtkWidget *enable, GtkWidget *disable)
+enroll_fingerprints (CtkWindow *parent, CtkWidget *enable, CtkWidget *disable)
 {
 	DBusGProxy *device, *p;
 	GHashTable *props;
-	GtkBuilder *dialog;
+	CtkBuilder *dialog;
 	EnrollData *data;
-	GtkWidget *ass;
+	CtkWidget *ass;
 	char *msg;
 	GError *error = NULL;
 
@@ -519,7 +519,7 @@ enroll_fingerprints (GtkWindow *parent, GtkWidget *enable, GtkWidget *disable)
 	}
 
 	if (manager == NULL || device == NULL) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = get_error_dialog (_("Could not access any fingerprint readers"),
 				      _("Please contact your system administrator for help."),
@@ -613,9 +613,9 @@ enroll_fingerprints (GtkWindow *parent, GtkWidget *enable, GtkWidget *disable)
 }
 
 void
-fingerprint_button_clicked (GtkBuilder *dialog,
-			    GtkWidget *enable,
-			    GtkWidget *disable)
+fingerprint_button_clicked (CtkBuilder *dialog,
+			    CtkWidget *enable,
+			    CtkWidget *disable)
 {
 	bindtextdomain ("fprintd", CAFELOCALEDIR);
 	bind_textdomain_codeset ("fprintd", "UTF-8");

@@ -54,10 +54,10 @@ static CafekbdKeyboardDrawingGroupLevel *pGroupsLevels[] = {
 	groupsLevels, groupsLevels + 1, groupsLevels + 2, groupsLevels + 3
 };
 
-GtkWidget *
-xkb_layout_preview_create_widget (GtkBuilder * chooserDialog)
+CtkWidget *
+xkb_layout_preview_create_widget (CtkBuilder * chooserDialog)
 {
-	GtkWidget *kbdraw = cafekbd_keyboard_drawing_new ();
+	CtkWidget *kbdraw = cafekbd_keyboard_drawing_new ();
 
 	cafekbd_keyboard_drawing_set_groups_levels (CAFEKBD_KEYBOARD_DRAWING
 						 (kbdraw), pGroupsLevels);
@@ -65,11 +65,11 @@ xkb_layout_preview_create_widget (GtkBuilder * chooserDialog)
 }
 
 void
-xkb_layout_preview_update (GtkBuilder * chooser_dialog)
+xkb_layout_preview_update (CtkBuilder * chooser_dialog)
 {
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
-	GtkWidget *chooser = CWID ("xkb_layout_chooser");
-	GtkWidget *kbdraw =
+	CtkWidget *chooser = CWID ("xkb_layout_chooser");
+	CtkWidget *kbdraw =
 	    GTK_WIDGET (g_object_get_data (G_OBJECT (chooser), "kbdraw"));
 	gchar *id = xkb_layout_chooser_get_selected_id (chooser_dialog);
 	xkb_layout_preview_set_drawing_layout (kbdraw, id);
@@ -78,7 +78,7 @@ xkb_layout_preview_update (GtkBuilder * chooser_dialog)
 }
 
 void
-xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
+xkb_layout_preview_set_drawing_layout (CtkWidget * kbdraw,
 				       const gchar * id)
 {
 #ifdef HAVE_X11_EXTENSIONS_XKB_H

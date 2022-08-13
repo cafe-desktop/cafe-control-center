@@ -57,14 +57,14 @@ gboolean theme_is_writable (const gpointer theme)
 gboolean theme_delete (const gchar *name, ThemeType type)
 {
   gboolean rc;
-  GtkDialog *dialog;
+  CtkDialog *dialog;
   gchar *theme_dir;
   gint response;
   CafeThemeCommonInfo *theme;
   GFile *dir;
   gboolean del_empty_parent;
 
-  dialog = (GtkDialog *) ctk_message_dialog_new (NULL,
+  dialog = (CtkDialog *) ctk_message_dialog_new (NULL,
 						 GTK_DIALOG_MODAL,
 						 GTK_MESSAGE_QUESTION,
 						 GTK_BUTTONS_CANCEL,
@@ -115,7 +115,7 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   g_free (theme_dir);
 
   if (!capplet_file_delete_recursive (dir, NULL)) {
-    GtkWidget *info_dialog = ctk_message_dialog_new (NULL,
+    CtkWidget *info_dialog = ctk_message_dialog_new (NULL,
 						     GTK_DIALOG_MODAL,
 						     GTK_MESSAGE_ERROR,
 						     GTK_BUTTONS_OK,
@@ -137,9 +137,9 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   return rc;
 }
 
-gboolean theme_model_iter_last (GtkTreeModel *model, GtkTreeIter *iter)
+gboolean theme_model_iter_last (CtkTreeModel *model, CtkTreeIter *iter)
 {
-  GtkTreeIter walk, prev;
+  CtkTreeIter walk, prev;
   gboolean valid;
 
   valid = ctk_tree_model_get_iter_first (model, &walk);
@@ -156,9 +156,9 @@ gboolean theme_model_iter_last (GtkTreeModel *model, GtkTreeIter *iter)
   return FALSE;
 }
 
-gboolean theme_find_in_model (GtkTreeModel *model, const gchar *name, GtkTreeIter *iter)
+gboolean theme_find_in_model (CtkTreeModel *model, const gchar *name, CtkTreeIter *iter)
 {
-  GtkTreeIter walk;
+  CtkTreeIter walk;
   gboolean valid;
   gchar *test;
 
@@ -236,7 +236,7 @@ gboolean packagekit_available (void)
   return available;
 }
 
-void theme_install_file(GtkWindow* parent, const gchar* path)
+void theme_install_file(CtkWindow* parent, const gchar* path)
 {
   GDBusConnection *connection;
   GDBusProxy *proxy;
@@ -275,7 +275,7 @@ void theme_install_file(GtkWindow* parent, const gchar* path)
                                     &error);
 
   if (variant == NULL) {
-    GtkWidget* dialog = ctk_message_dialog_new(NULL,
+    CtkWidget* dialog = ctk_message_dialog_new(NULL,
                                                GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_OK,

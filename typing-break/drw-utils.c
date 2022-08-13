@@ -91,7 +91,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 }
 
 static gboolean
-window_draw_event   (GtkWidget      *widget,
+window_draw_event   (CtkWidget      *widget,
 		     cairo_t        *cr,
 		     gpointer        data)
 {
@@ -113,7 +113,7 @@ window_draw_event   (GtkWidget      *widget,
 }
 
 static void
-set_pixmap_background (GtkWidget *window)
+set_pixmap_background (CtkWidget *window)
 {
 	GdkScreen    *screen;
 	GdkPixbuf    *tmp_pixbuf, *pixbuf, *tile_pixbuf;
@@ -178,7 +178,7 @@ set_pixmap_background (GtkWidget *window)
 }
 
 void
-drw_setup_background (GtkWidget *window)
+drw_setup_background (CtkWidget *window)
 {
 	GdkScreen    *screen;
 	gboolean      is_composited;

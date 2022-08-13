@@ -1087,7 +1087,7 @@ msgstr ""
 #: C/config-html.xml:7 C/config-html.xml:8 C/config-html.xml:16
 #: C/config-html.xml:57 C/config-html.xml:95 C/config-html.xml:102
 #: C/config-html.xml:137 C/config-html.xml:158 C/config-html.xml:168
-msgid "GtkHTML"
+msgid "CtkHTML"
 msgstr ""
 
 #. (itstool) path: para/application
@@ -2362,12 +2362,12 @@ msgstr ""
 #. (itstool) path: sect1/title
 #. (itstool) path: para/application
 #: C/config-themes.xml:2 C/config-themes.xml:7 C/config-themes.xml:13
-msgid "Gtk+ Theme Selector"
+msgid "Ctk+ Theme Selector"
 msgstr ""
 
 #. (itstool) path: para/application
 #: C/config-themes.xml:5 C/config-themes.xml:5
-msgid "Gtk+"
+msgid "Ctk+"
 msgstr ""
 
 #. (itstool) path: sect1/para

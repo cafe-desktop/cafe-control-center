@@ -53,9 +53,9 @@
 #define EXIT_SHELL_ON_ACTION_UPGRADE_UNINSTALL "cc-exit-shell-on-action-upgrade-uninstall"
 
 static void create_application_category_sections (AppShellData * app_data);
-static GtkWidget *create_filter_section (AppShellData * app_data, const gchar * title);
-static GtkWidget *create_groups_section (AppShellData * app_data, const gchar * title);
-static GtkWidget *create_actions_section (AppShellData * app_data, const gchar * title,
+static CtkWidget *create_filter_section (AppShellData * app_data, const gchar * title);
+static CtkWidget *create_groups_section (AppShellData * app_data, const gchar * title);
+static CtkWidget *create_actions_section (AppShellData * app_data, const gchar * title,
 	void (*actions_handler) (Tile *, TileEvent *, gpointer));
 
 static void generate_category (const char * category, CafeMenuTreeDirectory * root_dir, AppShellData * app_data, gboolean recursive);
@@ -65,9 +65,9 @@ static void generate_new_apps (AppShellData * app_data);
 static void insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * desktop_item,
 	AppShellData * app_data);
 
-static gboolean main_keypress_callback (GtkWidget * widget, GdkEventKey * event,
+static gboolean main_keypress_callback (CtkWidget * widget, GdkEventKey * event,
 	AppShellData * app_data);
-static gboolean main_delete_callback (GtkWidget * widget, GdkEvent * event,
+static gboolean main_delete_callback (CtkWidget * widget, GdkEvent * event,
 	AppShellData * app_data);
 static void application_launcher_clear_search_bar (AppShellData * app_data);
 static void launch_selected_app (AppShellData * app_data);
@@ -77,12 +77,12 @@ static void relayout_shell (AppShellData * app_data);
 static gboolean handle_filter_changed (NldSearchBar * search_bar, const char *text,
 	gpointer user_data);
 static void handle_group_clicked (Tile * tile, TileEvent * event, gpointer user_data);
-static void set_state (AppShellData * app_data, GtkWidget * widget);
+static void set_state (AppShellData * app_data, CtkWidget * widget);
 static void populate_groups_section (AppShellData * app_data);
 static void generate_filtered_lists (gpointer catdata, gpointer user_data);
-static void show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox);
+static void show_no_results_message (AppShellData * app_data, CtkWidget * containing_vbox);
 static void populate_application_category_sections (AppShellData * app_data,
-	GtkWidget * containing_vbox);
+	CtkWidget * containing_vbox);
 static void populate_application_category_section (AppShellData * app_data, SlabSection * section,
 	GList * launcher_list);
 static void tile_activated_cb (Tile * tile, TileEvent * event, gpointer user_data);
@@ -124,7 +124,7 @@ gboolean
 create_main_window (AppShellData * app_data, const gchar * app_name, const gchar * title,
 	const gchar * window_icon, gint width, gint height, gboolean hidden)
 {
-	GtkWidget *main_app = ctk_window_new (GTK_WINDOW_TOPLEVEL);
+	CtkWidget *main_app = ctk_window_new (GTK_WINDOW_TOPLEVEL);
 	app_data->main_app = main_app;
 	ctk_widget_set_name (main_app, app_name);
 	ctk_window_set_title (GTK_WINDOW (main_app), title);
@@ -191,7 +191,7 @@ launch_selected_app (AppShellData * app_data)
 }
 
 static gboolean
-main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * app_data)
+main_keypress_callback (CtkWidget * widget, GdkEventKey * event, AppShellData * app_data)
 {
 	GApplication *app;
 
@@ -229,7 +229,7 @@ main_keypress_callback (GtkWidget * widget, GdkEventKey * event, AppShellData * 
 }
 
 static gboolean
-main_delete_callback (GtkWidget * widget, GdkEvent * event, AppShellData * app_data)
+main_delete_callback (CtkWidget * widget, GdkEvent * event, AppShellData * app_data)
 {
 	GApplication *app;
 
@@ -249,16 +249,16 @@ layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar *
 	const gchar * actions_title, GSList * actions,
 	void (*actions_handler) (Tile *, TileEvent *, gpointer))
 {
-	GtkWidget *filter_section;
-	GtkWidget *groups_section;
-	GtkWidget *actions_section;
+	CtkWidget *filter_section;
+	CtkWidget *groups_section;
+	CtkWidget *actions_section;
 
-	GtkWidget *left_vbox;
-	GtkWidget *right_vbox;
+	CtkWidget *left_vbox;
+	CtkWidget *right_vbox;
 	gint num_cols;
 
-	GtkWidget *sw;
-	GtkAdjustment *adjustment;
+	CtkWidget *sw;
+	CtkAdjustment *adjustment;
 
 	app_data->shell = shell_window_new (app_data);
 	app_data->static_actions = actions;
@@ -315,7 +315,7 @@ static gboolean
 relayout_shell_partial (gpointer user_data)
 {
 	AppShellData *app_data = (AppShellData *) user_data;
-	GtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
+	CtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
 	CategoryData *data;
 
 	if (app_data->stop_incremental_relayout)
@@ -357,7 +357,7 @@ relayout_shell_partial (gpointer user_data)
 static void
 relayout_shell_incremental (AppShellData * app_data)
 {
-	GtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
+	CtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
 
 	app_data->stop_incremental_relayout = FALSE;
 	app_data->filtered_out_everything = TRUE;
@@ -375,8 +375,8 @@ relayout_shell_incremental (AppShellData * app_data)
 static void
 relayout_shell (AppShellData * app_data)
 {
-	GtkWidget *shell = app_data->shell;
-	GtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
+	CtkWidget *shell = app_data->shell;
+	CtkBox *vbox = APP_RESIZER (app_data->category_layout)->child;
 
 	populate_application_category_sections (app_data, GTK_WIDGET (vbox));
 	app_resizer_set_table_cache (APP_RESIZER (app_data->category_layout),
@@ -388,12 +388,12 @@ relayout_shell (AppShellData * app_data)
 		ctk_widget_hide (app_data->actions_section);  /* don't show unless a launcher is selected */
 }
 
-static GtkWidget *
+static CtkWidget *
 create_actions_section (AppShellData * app_data, const gchar * title,
 	void (*actions_handler) (Tile *, TileEvent *, gpointer))
 {
-	GtkWidget *section, *launcher;
-	GtkWidget *vbox;
+	CtkWidget *section, *launcher;
+	CtkWidget *vbox;
 	GSList *actions;
 	AppAction *action;
 	AtkObject *a11y_cat;
@@ -410,7 +410,7 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 	{
 		for (actions = app_data->static_actions; actions; actions = actions->next)
 		{
-			GtkWidget *header;
+			CtkWidget *header;
 
 			action = (AppAction *) actions->data;
 			header = ctk_label_new (action->name);
@@ -432,11 +432,11 @@ create_actions_section (AppShellData * app_data, const gchar * title,
 	return section;
 }
 
-static GtkWidget *
+static CtkWidget *
 create_groups_section (AppShellData * app_data, const gchar * title)
 {
-	GtkWidget *section;
-	GtkWidget *vbox;
+	CtkWidget *section;
+	CtkWidget *vbox;
 
 	g_assert (app_data != NULL);
 
@@ -453,7 +453,7 @@ static void
 populate_groups_section (AppShellData * app_data)
 {
 	SlabSection *section = SLAB_SECTION (app_data->groups_section);
-	GtkBox *vbox;
+	CtkBox *vbox;
 	GList *cat_list;
 
 	vbox = GTK_BOX (section->contents);
@@ -477,8 +477,8 @@ static void
 handle_group_clicked (Tile * tile, TileEvent * event, gpointer user_data)
 {
 	AppShellData *app_data = (AppShellData *) user_data;
-	GtkWidget *section = NULL;
-	GtkAllocation allocation;
+	CtkWidget *section = NULL;
+	CtkAllocation allocation;
 
 	gint clicked_pos =
 		GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tile), GROUP_POSITION_NUMBER_KEY));
@@ -513,7 +513,7 @@ handle_group_clicked (Tile * tile, TileEvent * event, gpointer user_data)
 }
 
 static void
-set_state (AppShellData * app_data, GtkWidget * widget)
+set_state (AppShellData * app_data, CtkWidget * widget)
 {
 	if (app_data->selected_group)
 	{
@@ -529,12 +529,12 @@ set_state (AppShellData * app_data, GtkWidget * widget)
 	ctk_widget_queue_draw (app_data->shell);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_filter_section (AppShellData * app_data, const gchar * title)
 {
-	GtkWidget *section;
+	CtkWidget *section;
 
-	GtkWidget *search_bar;
+	CtkWidget *search_bar;
 
 	section = slab_section_new (title, Style1);
 	g_object_ref (section);
@@ -698,10 +698,10 @@ create_application_category_sections (AppShellData * app_data)
 	do
 	{
 		CategoryData *data = (CategoryData *) cat_list->data;
-		GtkWidget *header = ctk_label_new (data->category);
+		CtkWidget *header = ctk_label_new (data->category);
 		gchar *markup;
-		GtkWidget *hbox;
-		GtkWidget *table;
+		CtkWidget *hbox;
+		CtkWidget *table;
 
 		ctk_label_set_xalign (GTK_LABEL (header), 0.0);
 		data->group_launcher = TILE (nameplate_tile_new (NULL, NULL, header, NULL));
@@ -734,7 +734,7 @@ create_application_category_sections (AppShellData * app_data)
 }
 
 static void
-show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
+show_no_results_message (AppShellData * app_data, CtkWidget * containing_vbox)
 {
 	gchar *markup;
 	gchar *str1;
@@ -742,8 +742,8 @@ show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
 
 	if (!app_data->filtered_out_everything_widget)
 	{
-		GtkWidget *image;
-		GtkWidget *label;
+		CtkWidget *image;
+		CtkWidget *label;
 
 		app_data->filtered_out_everything_widget = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 		ctk_widget_set_halign (app_data->filtered_out_everything_widget, GTK_ALIGN_CENTER);
@@ -773,7 +773,7 @@ show_no_results_message (AppShellData * app_data, GtkWidget * containing_vbox)
 }
 
 static void
-populate_application_category_sections (AppShellData * app_data, GtkWidget * containing_vbox)
+populate_application_category_sections (AppShellData * app_data, CtkWidget * containing_vbox)
 {
 	GList *cat_list = app_data->categories_list;
 	gboolean filtered_out_everything = TRUE;
@@ -804,8 +804,8 @@ static void
 populate_application_category_section (AppShellData * app_data, SlabSection * section,
 	GList * launcher_list)
 {
-	GtkWidget *hbox;
-	GtkTable *table;
+	CtkWidget *hbox;
+	CtkTable *table;
 	GList *children;
 
 	hbox = GTK_WIDGET (section->contents);
@@ -814,7 +814,7 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 	table = children->data;
 	g_list_free (children);
 
-	/* Make sure our implementation has not changed and it's still a GtkTable */
+	/* Make sure our implementation has not changed and it's still a CtkTable */
 	g_assert (GTK_IS_TABLE (table));
 
 	app_data->cached_tables_list = g_list_append (app_data->cached_tables_list, table);
@@ -859,7 +859,7 @@ cafemenu_tree_changed_callback (CafeMenuTree * old_tree, gpointer user_data)
 }
 
 AppShellData *
-appshelldata_new (const gchar * menu_name, GtkIconSize icon_size, gboolean show_tile_generic_name, gboolean exit_on_close, gint new_apps_max_items)
+appshelldata_new (const gchar * menu_name, CtkIconSize icon_size, gboolean show_tile_generic_name, gboolean exit_on_close, gint new_apps_max_items)
 {
 	AppShellData *app_data = g_new0 (AppShellData, 1);
 	app_data->settings = g_settings_new (CC_SCHEMA);
@@ -904,7 +904,7 @@ generate_categories (AppShellData * app_data)
 		root_dir = NULL;
 
 	if ( app_data->tree == NULL || root_dir == NULL) {
-		GtkWidget *dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+		CtkWidget *dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Failure loading - %s",
 				app_data->menu_name);
 		ctk_dialog_run (GTK_DIALOG (dialog));
@@ -1263,12 +1263,12 @@ static void
 insert_launcher_into_category (CategoryData * cat_data, CafeDesktopItem * desktop_item,
 	AppShellData * app_data)
 {
-	GtkWidget *launcher;
-	static GtkSizeGroup *icon_group = NULL;
+	CtkWidget *launcher;
+	static CtkSizeGroup *icon_group = NULL;
 
 	gchar *filepath;
 	gchar *filename;
-	GtkWidget *tile_icon;
+	CtkWidget *tile_icon;
 
 	if (!icon_group)
 		icon_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);

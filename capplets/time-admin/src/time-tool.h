@@ -30,14 +30,14 @@ void          ta_refresh_date   (TimeAdmin   *ta,
 
 void          Update_Clock_Stop (TimeAdmin   *ta);
 
-gboolean      ChangeNtpSync     (GtkSwitch   *widget,
+gboolean      ChangeNtpSync     (CtkSwitch   *widget,
                                  gboolean     state,
                                  gpointer     data);
 
-void          SelectDate        (GtkCalendar *calendar,
+void          SelectDate        (CtkCalendar *calendar,
                                  gpointer     data);
 
-void          SaveModifyTime    (GtkButton   *button,
+void          SaveModifyTime    (CtkButton   *button,
                                  gpointer     data);
 
 gboolean      GetNtpState       (TimeAdmin   *ta);

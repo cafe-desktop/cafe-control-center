@@ -211,7 +211,7 @@ ChangeSpinBttonState (TimeAdmin *ta)
     SetTooltip (ta->Calendar,   !ta->NtpState);
 }
 
-gboolean ChangeNtpSync (GtkSwitch *widget, gboolean state, gpointer data)
+gboolean ChangeNtpSync (CtkSwitch *widget, gboolean state, gpointer data)
 {
     TimeAdmin *ta = (TimeAdmin *)data;
     GError *error = NULL;
@@ -282,7 +282,7 @@ SetTime (GDBusProxy *proxy, gint64 TimeSec)
     return TRUE;
 }
 
-void SaveModifyTime (GtkButton *button, gpointer data)
+void SaveModifyTime (CtkButton *button, gpointer data)
 {
     TimeAdmin *ta = (TimeAdmin *)data;
 

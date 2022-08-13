@@ -46,21 +46,21 @@ typedef struct _FontViewModelPrivate FontViewModelPrivate;
   (G_TYPE_CHECK_INSTANCE_CAST ((obj), FONT_VIEW_TYPE_MODEL, FontViewModel))
 
 typedef struct {
-  GtkListStore parent;
+  CtkListStore parent;
 
   FontViewModelPrivate *priv;
 } FontViewModel;
 
 typedef struct {
-  GtkListStoreClass parent_class;
+  CtkListStoreClass parent_class;
 } FontViewModelClass;
 
 GType font_view_model_get_type (void);
-GtkTreeModel * font_view_model_new (void);
+CtkTreeModel * font_view_model_new (void);
 
 gboolean font_view_model_get_iter_for_face (FontViewModel *self,
                                             FT_Face face,
-                                            GtkTreeIter *iter);
+                                            CtkTreeIter *iter);
 
 G_END_DECLS
 

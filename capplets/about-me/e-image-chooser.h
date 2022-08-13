@@ -36,12 +36,12 @@ typedef struct _EImageChooserClass   EImageChooserClass;
 
 struct _EImageChooser
 {
-	GtkBox parent;
+	CtkBox parent;
 };
 
 struct _EImageChooserClass
 {
-	GtkBoxClass parent_class;
+	CtkBoxClass parent_class;
 
 	/* signals */
 	void (*changed) (EImageChooser *chooser);
@@ -49,8 +49,8 @@ struct _EImageChooserClass
 
 };
 
-GtkWidget *e_image_chooser_new            (void);
-GtkWidget *e_image_chooser_new_with_size  (int width, int height);
+CtkWidget *e_image_chooser_new            (void);
+CtkWidget *e_image_chooser_new_with_size  (int width, int height);
 GType      e_image_chooser_get_type       (void);
 
 gboolean   e_image_chooser_set_from_file  (EImageChooser *chooser, const char *filename);

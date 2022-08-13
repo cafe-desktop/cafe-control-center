@@ -43,33 +43,33 @@
 #define MESSENGER_KEY        "exec"
 
 typedef struct _CafeDACapplet {
-	GtkBuilder* builder;
+	CtkBuilder* builder;
 
-	GtkIconTheme* icon_theme;
+	CtkIconTheme* icon_theme;
 
-	GtkWidget* window;
+	CtkWidget* window;
 
-	GtkWidget* web_combo_box;
-	GtkWidget* mail_combo_box;
-	GtkWidget* term_combo_box;
-	GtkWidget* media_combo_box;
-	GtkWidget* video_combo_box;
-	GtkWidget* visual_combo_box;
-	GtkWidget* mobility_combo_box;
-	GtkWidget* file_combo_box;
-	GtkWidget* text_combo_box;
-	GtkWidget* image_combo_box;
-	GtkWidget* document_combo_box;
-	GtkWidget* word_combo_box;
-	GtkWidget* spreadsheet_combo_box;
-	GtkWidget* calculator_combo_box;
-        GtkWidget* messenger_combo_box;
+	CtkWidget* web_combo_box;
+	CtkWidget* mail_combo_box;
+	CtkWidget* term_combo_box;
+	CtkWidget* media_combo_box;
+	CtkWidget* video_combo_box;
+	CtkWidget* visual_combo_box;
+	CtkWidget* mobility_combo_box;
+	CtkWidget* file_combo_box;
+	CtkWidget* text_combo_box;
+	CtkWidget* image_combo_box;
+	CtkWidget* document_combo_box;
+	CtkWidget* word_combo_box;
+	CtkWidget* spreadsheet_combo_box;
+	CtkWidget* calculator_combo_box;
+        CtkWidget* messenger_combo_box;
 
 	/* Visual Accessibility */
-	GtkWidget* visual_startup_checkbutton;
+	CtkWidget* visual_startup_checkbutton;
 
 	/* Mobility Accessibility */
-	GtkWidget* mobility_startup_checkbutton;
+	CtkWidget* mobility_startup_checkbutton;
 
 	/* Lists of available apps */
 	GList* web_browsers;

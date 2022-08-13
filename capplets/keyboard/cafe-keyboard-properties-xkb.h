@@ -38,21 +38,21 @@ extern GSettings *xkb_kbd_settings;
 extern GSettings *xkb_general_settings;
 extern CafekbdKeyboardConfig initial_config;
 
-extern void setup_xkb_tabs (GtkBuilder * dialog);
+extern void setup_xkb_tabs (CtkBuilder * dialog);
 
-extern void xkb_layouts_fill_selected_tree (GtkBuilder * dialog);
+extern void xkb_layouts_fill_selected_tree (CtkBuilder * dialog);
 
-extern void xkb_layouts_register_buttons_handlers (GtkBuilder * dialog);
+extern void xkb_layouts_register_buttons_handlers (CtkBuilder * dialog);
 
-extern void xkb_layouts_register_gsettings_listener (GtkBuilder * dialog);
+extern void xkb_layouts_register_gsettings_listener (CtkBuilder * dialog);
 
-extern void xkb_options_register_gsettings_listener (GtkBuilder * dialog);
+extern void xkb_options_register_gsettings_listener (CtkBuilder * dialog);
 
-extern void xkb_layouts_prepare_selected_tree (GtkBuilder * dialog);
+extern void xkb_layouts_prepare_selected_tree (CtkBuilder * dialog);
 
-extern void xkb_options_load_options (GtkBuilder * dialog);
+extern void xkb_options_load_options (CtkBuilder * dialog);
 
-extern void xkb_options_popup_dialog (GtkBuilder * dialog);
+extern void xkb_options_popup_dialog (CtkBuilder * dialog);
 
 extern void clear_xkb_elements_list (GSList * list);
 
@@ -60,13 +60,13 @@ extern char *xci_desc_to_utf8 (XklConfigItem * ci);
 
 extern gchar *xkb_layout_description_utf8 (const gchar * visible);
 
-extern void enable_disable_restoring (GtkBuilder * dialog);
+extern void enable_disable_restoring (CtkBuilder * dialog);
 
-extern void preview_toggled (GtkBuilder * dialog, GtkWidget * button);
+extern void preview_toggled (CtkBuilder * dialog, CtkWidget * button);
 
-extern void choose_model (GtkBuilder * dialog);
+extern void choose_model (CtkBuilder * dialog);
 
-extern void xkb_layout_choose (GtkBuilder * dialog);
+extern void xkb_layout_choose (CtkBuilder * dialog);
 
 extern GSList *xkb_layouts_get_selected_list (void);
 
@@ -76,15 +76,15 @@ extern void xkb_layouts_set_selected_list(GSList *list);
 
 extern void xkb_options_set_selected_list(GSList *list);
 
-extern GtkWidget *xkb_layout_preview_create_widget (GtkBuilder *
+extern CtkWidget *xkb_layout_preview_create_widget (CtkBuilder *
 						    chooser_dialog);
 
-extern void xkb_layout_preview_update (GtkBuilder * chooser_dialog);
+extern void xkb_layout_preview_update (CtkBuilder * chooser_dialog);
 
-extern void xkb_layout_preview_set_drawing_layout (GtkWidget * kbdraw,
+extern void xkb_layout_preview_set_drawing_layout (CtkWidget * kbdraw,
 						   const gchar * id);
 
-extern gchar *xkb_layout_chooser_get_selected_id (GtkBuilder *
+extern gchar *xkb_layout_chooser_get_selected_id (CtkBuilder *
 						  chooser_dialog);
 
 extern void xkb_save_default_group (gint group_no);

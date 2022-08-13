@@ -26,8 +26,8 @@ static void themed_icon_finalize (GObject *);
 static void themed_icon_get_property (GObject *, guint, GValue *, GParamSpec *);
 static void themed_icon_set_property (GObject *, guint, const GValue *, GParamSpec *);
 
-static void themed_icon_show (GtkWidget *);
-static void themed_icon_style_updated (GtkWidget *);
+static void themed_icon_show (CtkWidget *);
+static void themed_icon_style_updated (CtkWidget *);
 
 enum
 {
@@ -46,7 +46,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (ThemedIcon, themed_icon, GTK_TYPE_IMAGE)
 static void themed_icon_class_init (ThemedIconClass * themed_icon_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (themed_icon_class);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (themed_icon_class);
+	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (themed_icon_class);
 
 	g_obj_class->get_property = themed_icon_get_property;
 	g_obj_class->set_property = themed_icon_set_property;
@@ -73,10 +73,10 @@ themed_icon_init (ThemedIcon * icon)
 	priv->icon_loaded = FALSE;
 }
 
-GtkWidget *
-themed_icon_new (const gchar * id, GtkIconSize size)
+CtkWidget *
+themed_icon_new (const gchar * id, CtkIconSize size)
 {
-	GtkWidget *icon = GTK_WIDGET (g_object_new (
+	CtkWidget *icon = GTK_WIDGET (g_object_new (
 		THEMED_ICON_TYPE, "icon-id", id, "icon-size", size, NULL));
 
 	return icon;
@@ -139,7 +139,7 @@ themed_icon_set_property (GObject * g_obj, guint prop_id, const GValue * value,
 }
 
 static void
-themed_icon_show (GtkWidget * widget)
+themed_icon_show (CtkWidget * widget)
 {
 	ThemedIcon *icon = THEMED_ICON (widget);
 	ThemedIconPrivate *priv = themed_icon_get_instance_private (icon);
@@ -151,7 +151,7 @@ themed_icon_show (GtkWidget * widget)
 }
 
 static void
-themed_icon_style_updated (GtkWidget * widget)
+themed_icon_style_updated (CtkWidget * widget)
 {
 	ThemedIcon *icon = THEMED_ICON (widget);
 

@@ -73,14 +73,14 @@ G_DEFINE_TYPE_WITH_PRIVATE (FontViewModel, font_view_model, GTK_TYPE_LIST_STORE)
 typedef struct {
     const gchar *file;
     FT_Face face;
-    GtkTreeIter iter;
+    CtkTreeIter iter;
     gboolean found;
 } IterForFaceData;
 
 static gboolean
-iter_for_face_foreach (GtkTreeModel *model,
-                       GtkTreePath *path,
-                       GtkTreeIter *iter,
+iter_for_face_foreach (CtkTreeModel *model,
+                       CtkTreePath *path,
+                       CtkTreeIter *iter,
                        gpointer user_data)
 {
     IterForFaceData *data = user_data;
@@ -108,7 +108,7 @@ iter_for_face_foreach (GtkTreeModel *model,
 gboolean
 font_view_model_get_iter_for_face (FontViewModel *self,
                                    FT_Face face,
-                                   GtkTreeIter *iter)
+                                   CtkTreeIter *iter)
 {
     IterForFaceData *data = g_slice_new0 (IterForFaceData);
     gboolean found;
@@ -136,7 +136,7 @@ typedef struct {
     gint face_index;
     gchar *uri;
     GdkPixbuf *pixbuf;
-    GtkTreeIter iter;
+    CtkTreeIter iter;
 } ThumbInfoData;
 
 static void
@@ -341,7 +341,7 @@ font_infos_loaded (GObject *source_object,
     for (l = font_infos; l != NULL; l = l->next) {
         FontInfoData *font_info = l->data;
         gchar *collation_key;
-        GtkTreeIter iter;
+        CtkTreeIter iter;
         ThumbInfoData *thumb_info;
 
         collation_key = g_utf8_collate_key (font_info->font_name, -1);
@@ -473,9 +473,9 @@ ensure_font_list_idle (gpointer user_data)
 }
 
 static int
-font_view_model_sort_func (GtkTreeModel *model,
-                           GtkTreeIter *a,
-                           GtkTreeIter *b,
+font_view_model_sort_func (CtkTreeModel *model,
+                           CtkTreeIter *a,
+                           CtkTreeIter *b,
                            gpointer user_data)
 {
     gchar *key_a = NULL, *key_b = NULL;
@@ -543,8 +543,8 @@ create_file_monitors (FontViewModel *self)
 static GdkPixbuf *
 get_fallback_icon (void)
 {
-    GtkIconTheme *icon_theme;
-    GtkIconInfo *icon_info;
+    CtkIconTheme *icon_theme;
+    CtkIconInfo *icon_info;
     GdkPixbuf *pix;
     GIcon *icon = NULL;
 
@@ -636,7 +636,7 @@ font_view_model_class_init (FontViewModelClass *klass)
 
 }
 
-GtkTreeModel *
+CtkTreeModel *
 font_view_model_new (void)
 {
     return g_object_new (FONT_VIEW_TYPE_MODEL, NULL);

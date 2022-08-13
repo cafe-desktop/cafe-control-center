@@ -39,9 +39,9 @@ extern "C" {
 typedef struct {
 	Tile tile;
 
-	GtkWidget *image;
-	GtkWidget *header;
-	GtkWidget *subheader;
+	CtkWidget *image;
+	CtkWidget *header;
+	CtkWidget *subheader;
 } NameplateTile;
 
 typedef struct {
@@ -50,8 +50,8 @@ typedef struct {
 
 GType nameplate_tile_get_type (void);
 
-GtkWidget *nameplate_tile_new (const gchar * uri, GtkWidget * image, GtkWidget * header,
-	GtkWidget * subheader);
+CtkWidget *nameplate_tile_new (const gchar * uri, CtkWidget * image, CtkWidget * header,
+	CtkWidget * subheader);
 
 #ifdef __cplusplus
 }

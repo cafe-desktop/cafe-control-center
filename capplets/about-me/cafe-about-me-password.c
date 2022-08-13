@@ -53,14 +53,14 @@ typedef enum {
 } PasswdState;
 
 typedef struct {
-	GtkBuilder  *ui;
+	CtkBuilder  *ui;
 
 	/* Commonly used widgets */
-	GtkEntry *current_password;
-	GtkEntry *new_password;
-	GtkEntry *retyped_password;
-	GtkImage *dialog_image;
-	GtkLabel *status_label;
+	CtkEntry *current_password;
+	CtkEntry *new_password;
+	CtkEntry *retyped_password;
+	CtkImage *dialog_image;
+	CtkLabel *status_label;
 
 	/* Whether we have authenticated */
 	gboolean authenticated;
@@ -668,8 +668,8 @@ update_password (PasswordDialog *pdialog)
 static void
 passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 {
-	GtkBuilder *dialog;
-	GtkWidget  *toplevel;
+	CtkBuilder *dialog;
+	CtkWidget  *toplevel;
 	GdkCursor  *cursor = NULL;
 	GdkDisplay *display;
 
@@ -714,10 +714,10 @@ passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 
 /* Launch an error dialog */
 static void
-passdlg_error_dialog (GtkWindow *parent, const gchar *title,
+passdlg_error_dialog (CtkWindow *parent, const gchar *title,
 		      const gchar *msg, const gchar *details)
 {
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	dialog = ctk_message_dialog_new (parent, GTK_DIALOG_MODAL,
 					 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
@@ -745,7 +745,7 @@ passdlg_error_dialog (GtkWindow *parent, const gchar *title,
 static void
 passdlg_set_auth_state (PasswordDialog *pdialog, gboolean state)
 {
-	GtkBuilder *dialog;
+	CtkBuilder *dialog;
 
 	dialog = pdialog->ui;
 
@@ -820,7 +820,7 @@ passdlg_spawn_passwd (PasswordDialog *pdialog)
 
 	/* Spawn backend */
 	if (!spawn_passwd (pdialog, &error)) {
-		GtkWidget *parent = GTK_WIDGET (ctk_builder_get_object (pdialog->ui, "change-password"));
+		CtkWidget *parent = GTK_WIDGET (ctk_builder_get_object (pdialog->ui, "change-password"));
 
 		/* translators: Unable to launch <program>: <error message> */
 		details = g_strdup_printf (_("Unable to launch %s: %s"),
@@ -842,7 +842,7 @@ passdlg_spawn_passwd (PasswordDialog *pdialog)
 
 /* Called when the "Authenticate" button is clicked */
 static void
-passdlg_authenticate (GtkButton *button, PasswordDialog *pdialog)
+passdlg_authenticate (CtkButton *button, PasswordDialog *pdialog)
 {
 	/* Set busy as this can be a long process */
 	passdlg_set_busy (pdialog, TRUE);
@@ -905,7 +905,7 @@ passdlg_validate_passwords (PasswordDialog *pdialog)
 static guint
 passdlg_refresh_password_state (PasswordDialog *pdialog)
 {
-	GtkBuilder *dialog;
+	CtkBuilder *dialog;
 	guint		ret;
 	gboolean	valid = FALSE;
 
@@ -924,7 +924,7 @@ passdlg_refresh_password_state (PasswordDialog *pdialog)
 
 /* Called whenever any of the new password fields have changed */
 static void
-passdlg_check_password (GtkEntry *entry, PasswordDialog *pdialog)
+passdlg_check_password (CtkEntry *entry, PasswordDialog *pdialog)
 {
 	guint	ret;
 
@@ -998,7 +998,7 @@ passdlg_process_response (PasswordDialog *pdialog, gint response_id)
 
 /* Activates (moves focus or activates) widget w */
 static void
-passdlg_activate (GtkEntry *entry, GtkWidget *w)
+passdlg_activate (CtkEntry *entry, CtkWidget *w)
 {
 	if (GTK_IS_BUTTON (w)) {
 		ctk_widget_activate (w);
@@ -1009,11 +1009,11 @@ passdlg_activate (GtkEntry *entry, GtkWidget *w)
 
 /* Initialize password dialog */
 static void
-passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
+passdlg_init (PasswordDialog *pdialog, CtkWindow *parent)
 {
-	GtkBuilder	*dialog;
-	GtkWidget	*wpassdlg;
-	GtkAccelGroup	*group;
+	CtkBuilder	*dialog;
+	CtkWidget	*wpassdlg;
+	CtkAccelGroup	*group;
 	GError 		*error = NULL;
 
 	/* Initialize dialog */
@@ -1104,11 +1104,11 @@ passdlg_init (PasswordDialog *pdialog, GtkWindow *parent)
 
 /* Main */
 void
-cafe_about_me_password (GtkWindow *parent)
+cafe_about_me_password (CtkWindow *parent)
 {
 	PasswordDialog	*pdialog;
-	GtkBuilder		*dialog;
-	GtkWidget		*wpassdlg;
+	CtkBuilder		*dialog;
+	CtkWidget		*wpassdlg;
 
 	gint			result;
 	gboolean		response;

@@ -30,7 +30,7 @@
 struct _DrwSelection
 {
 	GdkWindow *owner_window;
-	GtkWidget *invisible;
+	CtkWidget *invisible;
 };
 
 #define SELECTION_NAME "_CODEFACTORY_DRWRIGHT"
@@ -57,7 +57,7 @@ drw_selection_reset (DrwSelection *drw_selection)
 }
 
 static void
-drw_selection_clear (GtkWidget         *widget,
+drw_selection_clear (CtkWidget         *widget,
 		    GdkEventSelection *event,
 		    gpointer           user_data)
 {

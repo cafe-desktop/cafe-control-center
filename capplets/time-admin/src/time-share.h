@@ -36,29 +36,29 @@
 extern int TimeoutFlag;
 typedef struct
 {
-    GtkWidget        *MainWindow;
-    GtkWidget        *HourSpin;
-    GtkWidget        *MinuteSpin;
-    GtkWidget        *SecondSpin;
-    GtkWidget        *TimeZoneButton;
-    GtkWidget        *TimeZoneEntry;
-    GtkWidget        *NtpSyncSwitch;
-    GtkWidget        *Calendar;
-    GtkWidget        *SaveButton;
+    CtkWidget        *MainWindow;
+    CtkWidget        *HourSpin;
+    CtkWidget        *MinuteSpin;
+    CtkWidget        *SecondSpin;
+    CtkWidget        *TimeZoneButton;
+    CtkWidget        *TimeZoneEntry;
+    CtkWidget        *NtpSyncSwitch;
+    CtkWidget        *Calendar;
+    CtkWidget        *SaveButton;
     int               UpdateTimeId;
     int               ApplyId;
     gboolean          NtpState;
     GDBusConnection  *Connection;
     GDBusProxy       *proxy;
-    GtkWidget        *dialog;
-    GtkWidget        *TZconfire;
-    GtkWidget        *TZclose;
-    GtkWidget        *TimezoneEntry;
-    GtkWidget        *SearchBar;
-    GtkWidget        *map;
-    GtkListStore     *CityListStore;
-    GtkTreeModelSort *CityModelSort;
-    GtkWidget        *ButtonLock;
+    CtkWidget        *dialog;
+    CtkWidget        *TZconfire;
+    CtkWidget        *TZclose;
+    CtkWidget        *TimezoneEntry;
+    CtkWidget        *SearchBar;
+    CtkWidget        *map;
+    CtkListStore     *CityListStore;
+    CtkTreeModelSort *CityModelSort;
+    CtkWidget        *ButtonLock;
     GPermission      *Permission;
 
 }TimeAdmin;
@@ -66,6 +66,6 @@ typedef struct
 int          ErrorMessage                (const char  *Title,
                                           const char  *Msg);
 
-void         SetTooltip                  (GtkWidget   *box,
+void         SetTooltip                  (CtkWidget   *box,
                                           gboolean     mode);
 #endif

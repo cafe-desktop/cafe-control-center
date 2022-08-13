@@ -48,25 +48,25 @@ struct App
     CafeRRLabeler *labeler;
     CafeRROutputInfo         *current_output;
 
-    GtkWidget	   *dialog;
-    GtkWidget      *current_monitor_event_box;
-    GtkWidget      *current_monitor_label;
-    GtkWidget      *monitor_on_radio;
-    GtkWidget      *monitor_off_radio;
-    GtkListStore   *resolution_store;
-    GtkWidget	   *resolution_combo;
-    GtkWidget	   *refresh_combo;
-    GtkWidget	   *rotation_combo;
-    GtkWidget	   *panel_checkbox;
-    GtkWidget	   *clone_checkbox;
-    GtkWidget	   *show_icon_checkbox;
-    GtkWidget      *primary_button;
+    CtkWidget	   *dialog;
+    CtkWidget      *current_monitor_event_box;
+    CtkWidget      *current_monitor_label;
+    CtkWidget      *monitor_on_radio;
+    CtkWidget      *monitor_off_radio;
+    CtkListStore   *resolution_store;
+    CtkWidget	   *resolution_combo;
+    CtkWidget	   *refresh_combo;
+    CtkWidget	   *rotation_combo;
+    CtkWidget	   *panel_checkbox;
+    CtkWidget	   *clone_checkbox;
+    CtkWidget	   *show_icon_checkbox;
+    CtkWidget      *primary_button;
 
     /* We store the event timestamp when the Apply button is clicked */
-    GtkWidget      *apply_button;
+    CtkWidget      *apply_button;
     guint32         apply_button_clicked_timestamp;
 
-    GtkWidget      *area;
+    CtkWidget      *area;
     gboolean	    ignore_gui_changes;
     GSettings	   *settings;
 
@@ -86,11 +86,11 @@ enum {
 };
 
 static void rebuild_gui (App *app);
-static void on_clone_changed (GtkWidget *box, gpointer data);
-static void on_rate_changed (GtkComboBox *box, gpointer data);
+static void on_clone_changed (CtkWidget *box, gpointer data);
+static void on_rate_changed (CtkComboBox *box, gpointer data);
 static gboolean output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config);
 static void select_current_output_from_dialog_position (App *app);
-static void monitor_on_off_toggled_cb (GtkToggleButton *toggle, gpointer data);
+static void monitor_on_off_toggled_cb (CtkToggleButton *toggle, gpointer data);
 static void get_geometry (CafeRROutputInfo *output, int *w, int *h);
 static void apply_configuration_returned_cb (GObject *source_object, GAsyncResult *res, gpointer data);
 static gboolean get_clone_size (CafeRRScreen *screen, int *width, int *height);
@@ -99,7 +99,7 @@ static gboolean output_info_supports_mode (App *app, CafeRROutputInfo *info, int
 static void
 error_message (App *app, const char *primary_text, const char *secondary_text)
 {
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new ((app && app->dialog) ? GTK_WINDOW (app->dialog) : NULL,
 				     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -181,11 +181,11 @@ layout_set_font (PangoLayout *layout, const char *font)
 }
 
 static void
-clear_combo (GtkWidget *widget)
+clear_combo (CtkWidget *widget)
 {
-    GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = ctk_combo_box_get_model (box);
-    GtkListStore *store = GTK_LIST_STORE (model);
+    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkTreeModel *model = ctk_combo_box_get_model (box);
+    CtkListStore *store = GTK_LIST_STORE (model);
 
     ctk_list_store_clear (store);
 }
@@ -194,13 +194,13 @@ typedef struct
 {
     const char *text;
     gboolean found;
-    GtkTreeIter iter;
+    CtkTreeIter iter;
 } ForeachInfo;
 
 static gboolean
-foreach (GtkTreeModel *model,
-	 GtkTreePath *path,
-	 GtkTreeIter *iter,
+foreach (CtkTreeModel *model,
+	 CtkTreePath *path,
+	 CtkTreeIter *iter,
 	 gpointer data)
 {
     ForeachInfo *info = data;
@@ -221,15 +221,15 @@ foreach (GtkTreeModel *model,
 }
 
 static void
-add_key (GtkWidget *widget,
+add_key (CtkWidget *widget,
 	 const char *text,
 	 int width, int height, int rate,
 	 CafeRRRotation rotation)
 {
     ForeachInfo info;
-    GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = ctk_combo_box_get_model (box);
-    GtkListStore *store = GTK_LIST_STORE (model);
+    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkTreeModel *model = ctk_combo_box_get_model (box);
+    CtkListStore *store = GTK_LIST_STORE (model);
 
     info.text = text;
     info.found = FALSE;
@@ -238,7 +238,7 @@ add_key (GtkWidget *widget,
 
     if (!info.found)
     {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	ctk_list_store_insert_with_values (store, &iter, -1,
                                            0, text,
                                            1, width,
@@ -252,10 +252,10 @@ add_key (GtkWidget *widget,
 }
 
 static gboolean
-combo_select (GtkWidget *widget, const char *text)
+combo_select (CtkWidget *widget, const char *text)
 {
-    GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = ctk_combo_box_get_model (box);
+    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkTreeModel *model = ctk_combo_box_get_model (box);
     ForeachInfo info;
 
     info.text = text;
@@ -663,11 +663,11 @@ rebuild_gui (App *app)
 }
 
 static gboolean
-get_mode (GtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation *rot)
+get_mode (CtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation *rot)
 {
-    GtkTreeIter iter;
-    GtkTreeModel *model;
-    GtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkTreeIter iter;
+    CtkTreeModel *model;
+    CtkComboBox *box = GTK_COMBO_BOX (widget);
     int dummy;
 
     if (!ctk_combo_box_get_active_iter (box, &iter))
@@ -698,7 +698,7 @@ get_mode (GtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation 
 }
 
 static void
-on_rotation_changed (GtkComboBox *box, gpointer data)
+on_rotation_changed (CtkComboBox *box, gpointer data)
 {
     App *app = data;
     CafeRRRotation rotation;
@@ -713,7 +713,7 @@ on_rotation_changed (GtkComboBox *box, gpointer data)
 }
 
 static void
-on_rate_changed (GtkComboBox *box, gpointer data)
+on_rate_changed (CtkComboBox *box, gpointer data)
 {
     App *app = data;
     int rate;
@@ -754,7 +754,7 @@ select_resolution_for_current_output (App *app)
 }
 
 static void
-monitor_on_off_toggled_cb (GtkToggleButton *toggle, gpointer data)
+monitor_on_off_toggled_cb (CtkToggleButton *toggle, gpointer data)
 {
     App *app = data;
     gboolean is_on;
@@ -839,7 +839,7 @@ realign_outputs_after_resolution_change (App *app, CafeRROutputInfo *output_that
 }
 
 static void
-on_resolution_changed (GtkComboBox *box, gpointer data)
+on_resolution_changed (CtkComboBox *box, gpointer data)
 {
     App *app = data;
     int old_width, old_height;
@@ -977,7 +977,7 @@ output_info_supports_mode (App *app, CafeRROutputInfo *info, int width, int heig
 }
 
 static void
-on_clone_changed (GtkWidget *box, gpointer data)
+on_clone_changed (CtkWidget *box, gpointer data)
 {
     App *app = data;
 
@@ -1458,7 +1458,7 @@ compare_snaps (gconstpointer v1, gconstpointer v2)
  * window's cursor to its default).
  */
 static void
-set_cursor (GtkWidget *widget, GdkCursorType type)
+set_cursor (CtkWidget *widget, GdkCursorType type)
 {
 	GdkCursor *cursor;
 	GdkWindow *window;
@@ -1646,8 +1646,8 @@ paint_background (FooScrollArea *area,
 		  cairo_t       *cr)
 {
     GdkRectangle viewport;
-    GtkWidget *widget;
-    GtkStyleContext *widget_style;
+    CtkWidget *widget;
+    CtkStyleContext *widget_style;
     GdkRGBA *base_color = NULL;
     GdkRGBA dark_color;
 
@@ -1847,10 +1847,10 @@ on_area_paint (FooScrollArea *area,
 }
 
 static void
-make_text_combo (GtkWidget *widget, int sort_column)
+make_text_combo (CtkWidget *widget, int sort_column)
 {
-    GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkListStore *store = ctk_list_store_new (
+    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkListStore *store = ctk_list_store_new (
 	6,
 	G_TYPE_STRING,		/* Text */
 	G_TYPE_INT,		/* Width */
@@ -1859,7 +1859,7 @@ make_text_combo (GtkWidget *widget, int sort_column)
 	G_TYPE_INT,		/* Width * Height */
 	G_TYPE_INT);		/* Rotation */
 
-    GtkCellRenderer *cell;
+    CtkCellRenderer *cell;
 
     ctk_cell_layout_clear (GTK_CELL_LAYOUT (widget));
 
@@ -2110,7 +2110,7 @@ apply (App *app)
 }
 
 static void
-on_detect_displays (GtkWidget *widget, gpointer data)
+on_detect_displays (CtkWidget *widget, gpointer data)
 {
     App *app = data;
     GError *error;
@@ -2125,7 +2125,7 @@ on_detect_displays (GtkWidget *widget, gpointer data)
 }
 
 static void
-set_primary (GtkWidget *widget, gpointer data)
+set_primary (CtkWidget *widget, gpointer data)
 {
     App *app = data;
     int i;
@@ -2147,9 +2147,9 @@ set_primary (GtkWidget *widget, gpointer data)
 #define DEFAULT_CONFIGURATION_FILE_KEY    "default-configuration-file"
 
 static void
-on_show_icon_toggled (GtkWidget *widget, gpointer data)
+on_show_icon_toggled (CtkWidget *widget, gpointer data)
 {
-    GtkToggleButton *tb = GTK_TOGGLE_BUTTON (widget);
+    CtkToggleButton *tb = GTK_TOGGLE_BUTTON (widget);
     App *app = data;
 
     g_settings_set_boolean (app->settings, SHOW_ICON_KEY,
@@ -2265,12 +2265,12 @@ select_current_output_from_dialog_position (App *app)
     rebuild_gui (app);
 }
 
-/* This is a GtkWidget::map-event handler.  We wait for the display-properties
+/* This is a CtkWidget::map-event handler.  We wait for the display-properties
  * dialog to be mapped, and then we select the output which corresponds to the
  * monitor on which the dialog is being shown.
  */
 static gboolean
-dialog_map_event_cb (GtkWidget *widget, GdkEventAny *event, gpointer data)
+dialog_map_event_cb (CtkWidget *widget, GdkEventAny *event, gpointer data)
 {
     App *app = data;
 
@@ -2279,7 +2279,7 @@ dialog_map_event_cb (GtkWidget *widget, GdkEventAny *event, gpointer data)
 }
 
 static void
-apply_button_clicked_cb (GtkButton *button, gpointer data)
+apply_button_clicked_cb (CtkButton *button, gpointer data)
 {
     App *app = data;
 
@@ -2294,7 +2294,7 @@ apply_button_clicked_cb (GtkButton *button, gpointer data)
 static void
 success_dialog_for_make_default (App *app)
 {
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new (GTK_WINDOW (app->dialog),
 				     GTK_DIALOG_MODAL,
@@ -2363,8 +2363,8 @@ make_default (App *app)
     g_free (command_line);
 }
 
-static GtkWidget*
-_ctk_builder_get_widget (GtkBuilder *builder, const gchar *name)
+static CtkWidget*
+_ctk_builder_get_widget (CtkBuilder *builder, const gchar *name)
 {
     return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
@@ -2372,8 +2372,8 @@ _ctk_builder_get_widget (GtkBuilder *builder, const gchar *name)
 static void
 run_application (App *app)
 {
-    GtkBuilder *builder;
-    GtkWidget *align;
+    CtkBuilder *builder;
+    CtkWidget *align;
     GError *error = NULL;
 
     builder = ctk_builder_new ();
@@ -2461,7 +2461,7 @@ run_application (App *app)
     g_assert (app->panel_checkbox);
 
     /* Scroll Area */
-    app->area = (GtkWidget *)foo_scroll_area_new ();
+    app->area = (CtkWidget *)foo_scroll_area_new ();
 
     g_object_set_data (G_OBJECT (app->area), "app", app);
 

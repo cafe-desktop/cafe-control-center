@@ -43,9 +43,9 @@ typedef struct _AppResizerClass AppResizerClass;
 
 struct _AppResizer
 {
-	GtkLayout parent;
+	CtkLayout parent;
 
-	GtkBox *child;
+	CtkBox *child;
 	GList *cached_tables_list;
 	gint cached_element_width;
 	gint cached_table_spacing;
@@ -57,17 +57,17 @@ struct _AppResizer
 
 struct _AppResizerClass
 {
-	GtkLayoutClass parent_class;
+	CtkLayoutClass parent_class;
 };
 
-void remove_container_entries (GtkContainer * widget);
+void remove_container_entries (CtkContainer * widget);
 
 GType app_resizer_get_type (void);
-GtkWidget *app_resizer_new (GtkBox * child, gint initial_num_columns, gboolean homogeneous,
+CtkWidget *app_resizer_new (CtkBox * child, gint initial_num_columns, gboolean homogeneous,
 	AppShellData * app_data);
 void app_resizer_set_table_cache (AppResizer * widget, GList * cache_list);
-void app_resizer_layout_table_default (AppResizer * widget, GtkTable * table, GList * element_list);
-void app_resizer_set_vadjustment_value (GtkWidget * widget, gdouble value);
+void app_resizer_layout_table_default (AppResizer * widget, CtkTable * table, GList * element_list);
+void app_resizer_set_vadjustment_value (CtkWidget * widget, gdouble value);
 
 #ifdef __cplusplus
 }

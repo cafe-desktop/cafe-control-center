@@ -81,22 +81,22 @@ typedef struct
     int number;
     char *name;
     const char *value; /* machine-readable name for storing config */
-    GtkWidget *radio;
+    CtkWidget *radio;
 } MouseClickModifier;
 
-static GtkWidget *dialog_win;
-static GtkWidget *compositing_checkbutton;
-static GtkWidget *compositing_fast_alt_tab_checkbutton;
-static GtkWidget *allow_tiling_checkbutton;
-static GtkWidget *center_new_windows_checkbutton;
-static GtkWidget *focus_mode_checkbutton;
-static GtkWidget *focus_mode_mouse_checkbutton;
-static GtkWidget *autoraise_checkbutton;
-static GtkWidget *autoraise_delay_slider;
-static GtkWidget *autoraise_delay_hbox;
-static GtkWidget *double_click_titlebar_optionmenu;
-static GtkWidget *titlebar_layout_optionmenu;
-static GtkWidget *alt_click_vbox;
+static CtkWidget *dialog_win;
+static CtkWidget *compositing_checkbutton;
+static CtkWidget *compositing_fast_alt_tab_checkbutton;
+static CtkWidget *allow_tiling_checkbutton;
+static CtkWidget *center_new_windows_checkbutton;
+static CtkWidget *focus_mode_checkbutton;
+static CtkWidget *focus_mode_mouse_checkbutton;
+static CtkWidget *autoraise_checkbutton;
+static CtkWidget *autoraise_delay_slider;
+static CtkWidget *autoraise_delay_hbox;
+static CtkWidget *double_click_titlebar_optionmenu;
+static CtkWidget *titlebar_layout_optionmenu;
+static CtkWidget *alt_click_vbox;
 
 static GSettings *croma_settings;
 
@@ -136,7 +136,7 @@ croma_settings_changed_callback (GSettings *settings,
 }
 
 static void
-mouse_focus_toggled_callback (GtkWidget *button,
+mouse_focus_toggled_callback (CtkWidget *button,
                               void      *data)
 {
     if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (focus_mode_checkbutton))) {
@@ -170,7 +170,7 @@ mouse_focus_changed_callback (GSettings *settings,
 }
 
 static void
-autoraise_delay_value_changed_callback (GtkWidget *slider,
+autoraise_delay_value_changed_callback (CtkWidget *slider,
                                         void      *data)
 {
     g_settings_set_int (croma_settings,
@@ -179,7 +179,7 @@ autoraise_delay_value_changed_callback (GtkWidget *slider,
 }
 
 static void
-double_click_titlebar_changed_callback (GtkWidget *optionmenu,
+double_click_titlebar_changed_callback (CtkWidget *optionmenu,
                                         void      *data)
 {
     g_settings_set_enum (croma_settings, CROMA_DOUBLE_CLICK_TITLEBAR_KEY,
@@ -187,7 +187,7 @@ double_click_titlebar_changed_callback (GtkWidget *optionmenu,
 }
 
 static void
-titlebar_layout_changed_callback (GtkWidget *optionmenu,
+titlebar_layout_changed_callback (CtkWidget *optionmenu,
                                   void      *data)
 {
     gint value = ctk_combo_box_get_active (GTK_COMBO_BOX (optionmenu));
@@ -201,7 +201,7 @@ titlebar_layout_changed_callback (GtkWidget *optionmenu,
 }
 
 static void
-alt_click_radio_toggled_callback (GtkWidget *radio,
+alt_click_radio_toggled_callback (CtkWidget *radio,
                                   void      *data)
 {
     MouseClickModifier *modifier = data;
@@ -251,7 +251,7 @@ set_alt_click_value ()
 static void
 wm_unsupported ()
 {
-    GtkWidget *no_tool_dialog;
+    CtkWidget *no_tool_dialog;
 
     no_tool_dialog = ctk_message_dialog_new (NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -280,7 +280,7 @@ wm_changed_callback (GdkScreen *screen,
 }
 
 static void
-response_cb (GtkWidget *dialog_win,
+response_cb (CtkWidget *dialog_win,
              int    response_id,
              void      *data)
 {
@@ -292,10 +292,10 @@ response_cb (GtkWidget *dialog_win,
     }
 }
 
-GtkWidget*
+CtkWidget*
 title_label_new (const char* title)
 {
-    GtkWidget *widget;
+    CtkWidget *widget;
     gchar *str;
 
     str = g_strdup_printf ("<b>%s</b>", _(title));
@@ -313,7 +313,7 @@ int
 main (int argc, char **argv)
 {
     GError     *error = NULL;
-    GtkBuilder *builder;
+    CtkBuilder *builder;
     GdkScreen  *screen;
     gchar      *str;
     const char *current_wm;
@@ -476,7 +476,7 @@ main (int argc, char **argv)
 #include <gdk/gdkx.h>
 
 static void
-fill_radio (GtkRadioButton     *group,
+fill_radio (CtkRadioButton     *group,
         MouseClickModifier *modifier)
 {
     modifier->radio = ctk_radio_button_new_with_mnemonic_from_widget (group, modifier->name);

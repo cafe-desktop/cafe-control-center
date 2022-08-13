@@ -56,7 +56,7 @@ xci_desc_to_utf8 (XklConfigItem * ci)
 }
 
 static void
-set_model_text (GtkWidget * picker, gchar * value)
+set_model_text (CtkWidget * picker, gchar * value)
 {
 	XklConfigItem *ci = xkl_config_item_new ();
 	char *model = NULL;
@@ -87,7 +87,7 @@ set_model_text (GtkWidget * picker, gchar * value)
 }
 
 static void
-model_key_changed (GSettings * settings, gchar * key, GtkBuilder * dialog)
+model_key_changed (GSettings * settings, gchar * key, CtkBuilder * dialog)
 {
 	set_model_text (WID ("xkb_model_pick"),
 			g_settings_get_string (settings, key));
@@ -96,7 +96,7 @@ model_key_changed (GSettings * settings, gchar * key, GtkBuilder * dialog)
 }
 
 static void
-setup_model_entry (GtkBuilder * dialog)
+setup_model_entry (CtkBuilder * dialog)
 {
 	gchar *value;
 
@@ -112,7 +112,7 @@ setup_model_entry (GtkBuilder * dialog)
 }
 
 static void
-cleanup_xkb_tabs (GtkBuilder * dialog)
+cleanup_xkb_tabs (CtkBuilder * dialog)
 {
 	cafekbd_desktop_config_term (&desktop_config);
 	cafekbd_keyboard_config_term (&initial_config);
@@ -127,7 +127,7 @@ cleanup_xkb_tabs (GtkBuilder * dialog)
 }
 
 static void
-reset_to_defaults (GtkWidget * button, GtkBuilder * dialog)
+reset_to_defaults (CtkWidget * button, CtkBuilder * dialog)
 {
 	CafekbdKeyboardConfig empty_kbd_config;
 
@@ -143,16 +143,16 @@ reset_to_defaults (GtkWidget * button, GtkBuilder * dialog)
 static void
 chk_separate_group_per_window_toggled (GSettings * settings,
 				       gchar * key,
-				       GtkBuilder * dialog)
+				       CtkBuilder * dialog)
 {
 	ctk_widget_set_sensitive (WID ("chk_new_windows_inherit_layout"),
 				  g_settings_get_boolean (settings, key));
 }
 
 static void
-chk_new_windows_inherit_layout_toggled (GtkWidget *
+chk_new_windows_inherit_layout_toggled (CtkWidget *
 					chk_new_windows_inherit_layout,
-					GtkBuilder * dialog)
+					CtkBuilder * dialog)
 {
 	xkb_save_default_group (ctk_toggle_button_get_active
 				(GTK_TOGGLE_BUTTON
@@ -161,9 +161,9 @@ chk_new_windows_inherit_layout_toggled (GtkWidget *
 }
 
 void
-setup_xkb_tabs (GtkBuilder * dialog)
+setup_xkb_tabs (CtkBuilder * dialog)
 {
-	GtkWidget *chk_new_windows_inherit_layout =
+	CtkWidget *chk_new_windows_inherit_layout =
 	    WID ("chk_new_windows_inherit_layout");
 
 	xkb_general_settings = g_settings_new (XKB_GENERAL_SCHEMA);
@@ -239,7 +239,7 @@ setup_xkb_tabs (GtkBuilder * dialog)
 }
 
 void
-enable_disable_restoring (GtkBuilder * dialog)
+enable_disable_restoring (CtkBuilder * dialog)
 {
 	CafekbdKeyboardConfig gswic;
 	gboolean enable;

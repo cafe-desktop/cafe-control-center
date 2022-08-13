@@ -47,14 +47,14 @@ typedef struct _SushiFontWidgetClass     SushiFontWidgetClass;
 
 struct _SushiFontWidget
 {
-  GtkDrawingArea parent_instance;
+  CtkDrawingArea parent_instance;
 
   SushiFontWidgetPrivate *priv;
 };
 
 struct _SushiFontWidgetClass
 {
-  GtkDrawingAreaClass parent_class;
+  CtkDrawingAreaClass parent_class;
 };
 
 GType    sushi_font_widget_get_type     (void) G_GNUC_CONST;

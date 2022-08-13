@@ -68,7 +68,7 @@ static void update_apply_timeout(TimeAdmin *ta)
     ta->ApplyId = g_timeout_add (10000, (GSourceFunc)CheckClockHealth,ta);
 }
 
-static void ChangeTimeValue(GtkSpinButton *spin_button,
+static void ChangeTimeValue(CtkSpinButton *spin_button,
                             gpointer       data)
 {
     TimeAdmin *ta = (TimeAdmin *)data;
@@ -78,7 +78,7 @@ static void ChangeTimeValue(GtkSpinButton *spin_button,
     }
 }
 
-static gboolean on_window_quit (GtkWidget *widget,
+static gboolean on_window_quit (CtkWidget *widget,
                                 GdkEvent  *event,
                                 gpointer   user_data)
 {
@@ -88,7 +88,7 @@ static gboolean on_window_quit (GtkWidget *widget,
     return TRUE;
 }
 
-static void CloseWindow (GtkButton *button,gpointer data)
+static void CloseWindow (CtkButton *button,gpointer data)
 {
     TimeAdmin *ta = (TimeAdmin *)data;
 
@@ -116,7 +116,7 @@ static void on_permission_changed (GPermission *permission,
 static void InitMainWindow(TimeAdmin *ta)
 {
     GError     *error = NULL;
-    GtkBuilder *builder;
+    CtkBuilder *builder;
 
     builder = ctk_builder_new_from_resource ("/org/cafe/mcc/ta/time-admin.ui");
     ctk_builder_add_callback_symbols (builder,

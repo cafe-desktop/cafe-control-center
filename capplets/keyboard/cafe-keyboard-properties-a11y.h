@@ -26,7 +26,7 @@
 
 #include <ctk/ctk.h>
 
-extern void setup_a11y_tabs (GtkBuilder * dialog);
+extern void setup_a11y_tabs (CtkBuilder * dialog);
 extern void finalize_a11y_tabs (void);
 
 #endif /* __CAFE_KEYBOARD_PROPERTY_A11Y_H */

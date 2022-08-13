@@ -3,14 +3,14 @@
 #include <string.h>
 
 gboolean
-load_image_by_id (GtkImage *image, GtkIconSize size, const gchar *image_id)
+load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 {
 	cairo_surface_t *surface;
 	gint width;
 	gint height;
 	gint scale_factor;
 
-	GtkIconTheme *icon_theme;
+	CtkIconTheme *icon_theme;
 
 	gchar *id;
 

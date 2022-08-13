@@ -146,11 +146,11 @@ setup_directory_structure (const gchar  *theme_name,
   g_free (theme_name_dir);
 
   if (g_file_test (dir, G_FILE_TEST_EXISTS)) {
-    GtkDialog *dialog;
-    GtkWidget *button;
+    CtkDialog *dialog;
+    CtkWidget *button;
     gint response;
 
-    dialog = (GtkDialog *) ctk_message_dialog_new (NULL,
+    dialog = (CtkDialog *) ctk_message_dialog_new (NULL,
 						   GTK_DIALOG_MODAL,
 						   GTK_MESSAGE_QUESTION,
 	 					   GTK_BUTTONS_CANCEL,
@@ -192,7 +192,7 @@ write_theme_to_disk (CafeThemeMetaInfo  *theme_info,
 		"Comment=%s\n"
 		"\n"
 		"[X-GNOME-Metatheme]\n"
-		"GtkTheme=%s\n"
+		"CtkTheme=%s\n"
 		"MetacityTheme=%s\n"
 		"IconTheme=%s\n";
 
@@ -218,7 +218,7 @@ write_theme_to_disk (CafeThemeMetaInfo  *theme_info,
     for (a = tmp; *a != '\0'; a++)
       if (*a == '\n')
         *a = ',';
-    str = g_strdup_printf ("GtkColorScheme=%s\n", tmp);
+    str = g_strdup_printf ("CtkColorScheme=%s\n", tmp);
     g_output_stream_write (output, str, strlen (str), NULL, NULL);
 
     g_free (str);
@@ -285,16 +285,16 @@ save_theme_to_disk (CafeThemeMetaInfo  *theme_info,
 }
 
 static void
-save_dialog_response (GtkWidget      *save_dialog,
+save_dialog_response (CtkWidget      *save_dialog,
 		      gint            response_id,
 		      AppearanceData *data)
 {
   if (response_id == GTK_RESPONSE_OK) {
-    GtkWidget *entry;
-    GtkWidget *text_view;
-    GtkTextBuffer *buffer;
-    GtkTextIter start_iter;
-    GtkTextIter end_iter;
+    CtkWidget *entry;
+    CtkWidget *text_view;
+    CtkTextBuffer *buffer;
+    CtkTextIter start_iter;
+    CtkTextIter end_iter;
     gchar *buffer_text;
     CafeThemeMetaInfo *theme_info;
     gchar *theme_description = NULL;
@@ -321,7 +321,7 @@ save_dialog_response (GtkWidget      *save_dialog,
 
     if (save_theme_to_disk (theme_info, theme_name, theme_description, save_background, save_notification, &error)) {
       /* remove the custom theme */
-      GtkTreeIter iter;
+      CtkTreeIter iter;
 
       if (theme_find_in_model (GTK_TREE_MODEL (data->theme_store), "__custom__", &iter))
         ctk_list_store_remove (data->theme_store, &iter);
@@ -336,11 +336,11 @@ save_dialog_response (GtkWidget      *save_dialog,
 }
 
 static void
-entry_text_changed (GtkEditable *editable,
+entry_text_changed (CtkEditable *editable,
                     AppearanceData  *data)
 {
   const gchar *text;
-  GtkWidget *button;
+  CtkWidget *button;
 
   text = ctk_entry_get_text (GTK_ENTRY (editable));
   button = appearance_capplet_get_widget (data, "save_dialog_save_button");
@@ -352,9 +352,9 @@ void
 theme_save_dialog_run (CafeThemeMetaInfo *theme_info,
 		       AppearanceData     *data)
 {
-  GtkWidget *entry;
-  GtkWidget *text_view;
-  GtkTextBuffer *text_buffer;
+  CtkWidget *entry;
+  CtkWidget *text_view;
+  CtkTextBuffer *text_buffer;
 
   entry = appearance_capplet_get_widget (data, "save_dialog_entry");
   text_view = appearance_capplet_get_widget (data, "save_dialog_textview");

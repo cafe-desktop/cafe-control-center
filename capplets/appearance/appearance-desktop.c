@@ -35,21 +35,21 @@ enum {
 	TARGET_BGIMAGE
 };
 
-static const GtkTargetEntry drop_types[] = {
+static const CtkTargetEntry drop_types[] = {
 	{"text/uri-list", 0, TARGET_URI_LIST},
 	{"property/bgimage", 0, TARGET_BGIMAGE}
 };
 
-static const GtkTargetEntry drag_types[] = {
+static const CtkTargetEntry drag_types[] = {
 	{"text/uri-list", GTK_TARGET_OTHER_WIDGET, TARGET_URI_LIST}
 };
 
 
-static void wp_update_preview(GtkFileChooser* chooser, AppearanceData* data);
+static void wp_update_preview(CtkFileChooser* chooser, AppearanceData* data);
 
 static void select_item(AppearanceData* data, CafeWPItem* item, gboolean scroll)
 {
-	GtkTreePath* path;
+	CtkTreePath* path;
 
 	g_return_if_fail(data != NULL);
 
@@ -68,7 +68,7 @@ static void select_item(AppearanceData* data, CafeWPItem* item, gboolean scroll)
 	ctk_tree_path_free(path);
 }
 
-static CafeWPItem* get_selected_item(AppearanceData* data, GtkTreeIter* iter)
+static CafeWPItem* get_selected_item(AppearanceData* data, CtkTreeIter* iter)
 {
 	CafeWPItem* item = NULL;
 	GList* selected;
@@ -77,7 +77,7 @@ static CafeWPItem* get_selected_item(AppearanceData* data, GtkTreeIter* iter)
 
 	if (selected != NULL)
 	{
-		GtkTreeIter sel_iter;
+		CtkTreeIter sel_iter;
 
 		ctk_tree_model_get_iter(data->wp_model, &sel_iter, selected->data);
 
@@ -102,9 +102,9 @@ static gboolean predicate (gpointer key, gpointer value, gpointer data)
 }
 
 static void on_item_changed (CafeBG *bg, AppearanceData *data) {
-  GtkTreeModel *model;
-  GtkTreeIter iter;
-  GtkTreePath *path;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
+  CtkTreePath *path;
   CafeWPItem *item;
 
   item = g_hash_table_find (data->wp_hash, predicate, bg);
@@ -138,8 +138,8 @@ wp_props_load_wallpaper (gchar *key,
                          CafeWPItem *item,
                          AppearanceData *data)
 {
-  GtkTreeIter iter;
-  GtkTreePath *path;
+  CtkTreeIter iter;
+  CtkTreePath *path;
   GdkPixbuf *pixbuf;
 
   if (item->deleted == TRUE)
@@ -203,7 +203,7 @@ wp_add_images (AppearanceData *data,
                GSList *images)
 {
   GdkWindow *window;
-  GtkWidget *w;
+  CtkWidget *w;
   GdkCursor *cursor;
   CafeWPItem *item;
 
@@ -294,11 +294,11 @@ wp_set_sensitivities (AppearanceData *data)
 }
 
 static void
-wp_scale_type_changed (GtkComboBox *combobox,
+wp_scale_type_changed (CtkComboBox *combobox,
                        AppearanceData *data)
 {
   CafeWPItem *item;
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   GdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
@@ -324,11 +324,11 @@ wp_scale_type_changed (GtkComboBox *combobox,
 }
 
 static void
-wp_shade_type_changed (GtkWidget *combobox,
+wp_shade_type_changed (CtkWidget *combobox,
                        AppearanceData *data)
 {
   CafeWPItem *item;
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   GdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
@@ -385,19 +385,19 @@ wp_color_changed (AppearanceData *data,
 }
 
 static void
-wp_scolor_changed (GtkWidget *widget,
+wp_scolor_changed (CtkWidget *widget,
                    AppearanceData *data)
 {
   wp_color_changed (data, TRUE);
 }
 
 static void
-wp_remove_wallpaper (GtkWidget *widget,
+wp_remove_wallpaper (CtkWidget *widget,
                      AppearanceData *data)
 {
   CafeWPItem *item;
-  GtkTreeIter iter;
-  GtkTreePath *path;
+  CtkTreeIter iter;
+  CtkTreePath *path;
 
   item = get_selected_item (data, &iter);
 
@@ -576,7 +576,7 @@ wp_props_wp_set (AppearanceData *data, CafeWPItem *item)
 }
 
 static void
-wp_props_wp_selected (GtkTreeSelection *selection,
+wp_props_wp_selected (CtkTreeSelection *selection,
                       AppearanceData *data)
 {
   CafeWPItem *item;
@@ -609,7 +609,7 @@ void
 wp_create_filechooser (AppearanceData *data)
 {
   const char *start_dir, *pictures = NULL;
-  GtkFileFilter *filter;
+  CtkFileFilter *filter;
 
   data->wp_filesel = GTK_FILE_CHOOSER (
                      ctk_file_chooser_dialog_new (_("Add Wallpaper"),
@@ -662,7 +662,7 @@ wp_create_filechooser (AppearanceData *data)
 }
 
 static void
-wp_file_open_dialog (GtkWidget *widget,
+wp_file_open_dialog (CtkWidget *widget,
                      AppearanceData *data)
 {
   GSList *files;
@@ -683,10 +683,10 @@ wp_file_open_dialog (GtkWidget *widget,
 }
 
 static void
-wp_drag_received (GtkWidget *widget,
+wp_drag_received (CtkWidget *widget,
                   GdkDragContext *context,
                   gint x, gint y,
-                  GtkSelectionData *selection_data,
+                  CtkSelectionData *selection_data,
                   guint info, guint time,
                   AppearanceData *data)
 {
@@ -698,7 +698,7 @@ wp_drag_received (GtkWidget *widget,
     uris = g_uri_list_extract_uris ((gchar *) ctk_selection_data_get_data (selection_data));
     if (uris != NULL)
     {
-      GtkWidget *w;
+      CtkWidget *w;
       GdkWindow *window;
       GdkCursor *cursor;
       gchar **uri;
@@ -729,9 +729,9 @@ wp_drag_received (GtkWidget *widget,
 }
 
 static void
-wp_drag_get_data (GtkWidget *widget,
+wp_drag_get_data (CtkWidget *widget,
 		  GdkDragContext *context,
-		  GtkSelectionData *selection_data,
+		  CtkSelectionData *selection_data,
 		  guint type, guint time,
 		  AppearanceData *data)
 {
@@ -752,14 +752,14 @@ wp_drag_get_data (GtkWidget *widget,
 }
 
 static gboolean
-wp_view_tooltip_cb (GtkWidget  *widget,
+wp_view_tooltip_cb (CtkWidget  *widget,
                     gint x,
                     gint y,
                     gboolean keyboard_mode,
-                    GtkTooltip *tooltip,
+                    CtkTooltip *tooltip,
                     AppearanceData *data)
 {
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   CafeWPItem *item;
 
   if (ctk_icon_view_get_tooltip_context (data->wp_view,
@@ -779,8 +779,8 @@ wp_view_tooltip_cb (GtkWidget  *widget,
 }
 
 static gint
-wp_list_sort (GtkTreeModel *model,
-              GtkTreeIter *a, GtkTreeIter *b,
+wp_list_sort (CtkTreeModel *model,
+              CtkTreeIter *a, CtkTreeIter *b,
               AppearanceData *data)
 {
   CafeWPItem *itema, *itemb;
@@ -806,7 +806,7 @@ wp_list_sort (GtkTreeModel *model,
 }
 
 static void
-wp_update_preview (GtkFileChooser *chooser,
+wp_update_preview (CtkFileChooser *chooser,
                    AppearanceData *data)
 {
   gchar *uri;
@@ -857,9 +857,9 @@ wp_update_preview (GtkFileChooser *chooser,
 }
 
 static gboolean
-reload_item (GtkTreeModel *model,
-             GtkTreePath *path,
-             GtkTreeIter *iter,
+reload_item (CtkTreeModel *model,
+             CtkTreePath *path,
+             CtkTreeIter *iter,
              AppearanceData *data)
 {
   CafeWPItem *item;
@@ -880,7 +880,7 @@ reload_item (GtkTreeModel *model,
 }
 
 static gdouble
-get_monitor_aspect_ratio_for_widget (GtkWidget *widget)
+get_monitor_aspect_ratio_for_widget (CtkWidget *widget)
 {
   gdouble aspect;
   GdkMonitor *monitor;
@@ -916,7 +916,7 @@ static void
 reload_wallpapers (AppearanceData *data)
 {
   compute_thumbnail_sizes (data);
-  ctk_tree_model_foreach (data->wp_model, (GtkTreeModelForeachFunc)reload_item, data);
+  ctk_tree_model_foreach (data->wp_model, (CtkTreeModelForeachFunc)reload_item, data);
 }
 
 static gboolean
@@ -1018,7 +1018,7 @@ wp_load_stuffs (void *user_data)
 }
 
 static void
-wp_select_after_realize (GtkWidget *widget,
+wp_select_after_realize (CtkWidget *widget,
                          AppearanceData *data)
 {
   CafeWPItem *item;
@@ -1037,9 +1037,9 @@ static GdkPixbuf *buttons[3];
 static void
 create_button_images (AppearanceData  *data)
 {
-  GtkWidget *widget = (GtkWidget*)data->wp_view;
-  GtkStyle *style = ctk_widget_get_style (widget);
-  GtkIconSet *icon_set;
+  CtkWidget *widget = (CtkWidget*)data->wp_view;
+  CtkStyle *style = ctk_widget_get_style (widget);
+  CtkIconSet *icon_set;
   GdkPixbuf *pixbuf, *pb, *pb2;
   gint i, w, h;
 
@@ -1078,11 +1078,11 @@ create_button_images (AppearanceData  *data)
 
 static void
 next_frame (AppearanceData  *data,
-            GtkCellRenderer *cr,
+            CtkCellRenderer *cr,
             gint             direction)
 {
   CafeWPItem *item;
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   GdkPixbuf *pixbuf, *pb;
   gint frame;
 
@@ -1123,11 +1123,11 @@ next_frame (AppearanceData  *data,
 }
 
 static gboolean
-wp_button_press_cb (GtkWidget      *widget,
+wp_button_press_cb (CtkWidget      *widget,
                     GdkEventButton *event,
                     AppearanceData *data)
 {
-  GtkCellRenderer *cell;
+  CtkCellRenderer *cell;
   GdkEventButton *button_event = (GdkEventButton *) event;
 
   if (event->type != GDK_BUTTON_PRESS)
@@ -1138,7 +1138,7 @@ wp_button_press_cb (GtkWidget      *widget,
                                      NULL, &cell)) {
     if (g_object_get_data (G_OBJECT (cell), "buttons")) {
       gint w, h;
-      GtkCellRenderer *cell2 = NULL;
+      CtkCellRenderer *cell2 = NULL;
       ctk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
       if (ctk_icon_view_get_item_at_pos (GTK_ICON_VIEW (widget),
                                          button_event->x + w, button_event->y,
@@ -1154,10 +1154,10 @@ wp_button_press_cb (GtkWidget      *widget,
 }
 
 static void
-wp_selected_changed_cb (GtkIconView    *view,
+wp_selected_changed_cb (CtkIconView    *view,
                         AppearanceData *data)
 {
-  GtkCellRenderer *cr;
+  CtkCellRenderer *cr;
   GList *cells, *l;
 
   data->frame = -1;
@@ -1172,14 +1172,14 @@ wp_selected_changed_cb (GtkIconView    *view,
 }
 
 static void
-buttons_cell_data_func (GtkCellLayout   *layout,
-                        GtkCellRenderer *cell,
-                        GtkTreeModel    *model,
-                        GtkTreeIter     *iter,
+buttons_cell_data_func (CtkCellLayout   *layout,
+                        CtkCellRenderer *cell,
+                        CtkTreeModel    *model,
+                        CtkTreeIter     *iter,
                         gpointer         user_data)
 {
   AppearanceData *data = user_data;
-  GtkTreePath *path;
+  CtkTreePath *path;
   CafeWPItem *item;
   gboolean visible;
 
@@ -1208,8 +1208,8 @@ void
 desktop_init (AppearanceData *data,
 	      const gchar **uris)
 {
-  GtkWidget *add_button, *w;
-  GtkCellRenderer *cr;
+  CtkWidget *add_button, *w;
+  CtkCellRenderer *cr;
   char *url;
 
   data->wp_uris = NULL;
@@ -1291,7 +1291,7 @@ desktop_init (AppearanceData *data,
   data->frame = -1;
 
   ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (data->wp_model), 1,
-                                   (GtkTreeIterCompareFunc) wp_list_sort,
+                                   (CtkTreeIterCompareFunc) wp_list_sort,
                                    data, NULL);
 
   ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (data->wp_model),

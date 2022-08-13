@@ -46,33 +46,33 @@
   (G_TYPE_CHECK_INSTANCE_CAST ((obj), FONT_VIEW_TYPE_APPLICATION, FontViewApplication))
 
 typedef struct {
-    GtkApplication parent;
+    CtkApplication parent;
 
-    GtkWidget *main_window;
-    GtkWidget *main_grid;
-    GtkWidget *toolbar;
-    GtkWidget *title_label;
-    GtkWidget *side_grid;
-    GtkWidget *font_widget;
-    GtkWidget *info_button;
-    GtkWidget *install_button;
-    GtkWidget *back_button;
-    GtkWidget *notebook;
-    GtkWidget *swin_view;
-    GtkWidget *swin_preview;
-    GtkWidget *icon_view;
-    GtkWidget *search_bar;
-    GtkWidget *entry;
-    GtkWidget *search_button;
+    CtkWidget *main_window;
+    CtkWidget *main_grid;
+    CtkWidget *toolbar;
+    CtkWidget *title_label;
+    CtkWidget *side_grid;
+    CtkWidget *font_widget;
+    CtkWidget *info_button;
+    CtkWidget *install_button;
+    CtkWidget *back_button;
+    CtkWidget *notebook;
+    CtkWidget *swin_view;
+    CtkWidget *swin_preview;
+    CtkWidget *icon_view;
+    CtkWidget *search_bar;
+    CtkWidget *entry;
+    CtkWidget *search_button;
 
-    GtkTreeModel *model;
-    GtkTreeModel *filter_model;
+    CtkTreeModel *model;
+    CtkTreeModel *filter_model;
 
     GFile *font_file;
 } FontViewApplication;
 
 typedef struct {
-    GtkApplicationClass parent_class;
+    CtkApplicationClass parent_class;
 } FontViewApplicationClass;
 
 G_DEFINE_TYPE (FontViewApplication, font_view_application, GTK_TYPE_APPLICATION);
@@ -158,12 +158,12 @@ strip_version (gchar **original)
 }
 
 static void
-add_row (GtkWidget *grid,
+add_row (CtkWidget *grid,
 	 const gchar *name,
 	 const gchar *value,
 	 gboolean multiline)
 {
-    GtkWidget *name_w, *label;
+    CtkWidget *name_w, *label;
 
     name_w = ctk_label_new (name);
     ctk_style_context_add_class (ctk_widget_get_style_context (name_w), "dim-label");
@@ -192,7 +192,7 @@ add_row (GtkWidget *grid,
 
 static void
 populate_grid (FontViewApplication *self,
-               GtkWidget *grid,
+               CtkWidget *grid,
 	       FT_Face face)
 {
     gchar *s;
@@ -330,7 +330,7 @@ font_model_config_changed_cb (FontViewModel *model,
 }
 
 static void
-install_button_clicked_cb (GtkButton *button,
+install_button_clicked_cb (CtkButton *button,
                            gpointer user_data)
 {
     FontViewApplication *self = user_data;
@@ -412,7 +412,7 @@ install_button_clicked_cb (GtkButton *button,
 }
 
 static void
-back_button_clicked_cb (GtkButton *button,
+back_button_clicked_cb (CtkButton *button,
                         gpointer user_data)
 {
     FontViewApplication *self = user_data;
@@ -423,7 +423,7 @@ static void
 font_view_show_font_error (FontViewApplication *self,
                            const gchar *message)
 {
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new (GTK_WINDOW (self->main_window),
                                      GTK_DIALOG_MODAL,
@@ -469,11 +469,11 @@ font_widget_loaded_cb (SushiFontWidget *font_widget,
 }
 
 static void
-info_button_clicked_cb (GtkButton *button,
+info_button_clicked_cb (CtkButton *button,
                         gpointer user_data)
 {
     FontViewApplication *self = user_data;
-    GtkWidget *grid, *dialog;
+    CtkWidget *grid, *dialog;
     FT_Face face = sushi_font_widget_get_ft_face (SUSHI_FONT_WIDGET (self->font_widget));
 
     if (face == NULL)
@@ -503,8 +503,8 @@ info_button_clicked_cb (GtkButton *button,
 }
 
 static gboolean
-font_visible_func (GtkTreeModel *model,
-                   GtkTreeIter  *iter,
+font_visible_func (CtkTreeModel *model,
+                   CtkTreeIter  *iter,
                    gpointer      data)
 {
   FontViewApplication *self = data;
@@ -584,7 +584,7 @@ font_view_application_do_open (FontViewApplication *self,
     if (self->font_widget == NULL) {
         GdkRGBA white = { 1.0, 1.0, 1.0, 1.0 };
         GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
-        GtkWidget *w;
+        CtkWidget *w;
 
         self->font_widget = GTK_WIDGET (sushi_font_widget_new (uri, face_index));
 
@@ -613,14 +613,14 @@ font_view_application_do_open (FontViewApplication *self,
 }
 
 static gboolean
-icon_view_release_cb (GtkWidget *widget,
+icon_view_release_cb (CtkWidget *widget,
                       GdkEventButton *event,
                       gpointer user_data)
 {
     FontViewApplication *self = user_data;
-    GtkTreePath *path;
-    GtkTreeIter iter;
-    GtkTreeIter filter_iter;
+    CtkTreePath *path;
+    CtkTreeIter iter;
+    CtkTreeIter filter_iter;
     gchar *font_path;
     gint face_index;
     GFile *file;
@@ -679,8 +679,8 @@ font_view_application_do_overview (FontViewApplication *self)
     gd_main_toolbar_set_labels (GD_MAIN_TOOLBAR (self->toolbar), _("All Fonts"), NULL);
 
     if (self->icon_view == NULL) {
-        GtkWidget *icon_view;
-        GtkCellRenderer *cell;
+        CtkWidget *icon_view;
+        CtkCellRenderer *cell;
 
         self->icon_view = icon_view = ctk_icon_view_new_with_model (self->filter_model);
         g_object_set (icon_view,
@@ -796,7 +796,7 @@ static GActionEntry action_entries[] = {
 };
 
 static void
-search_text_changed (GtkEntry *entry,
+search_text_changed (CtkEntry *entry,
                      FontViewApplication *self)
 {
   ctk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (self->filter_model));
@@ -806,8 +806,8 @@ static void
 font_view_application_startup (GApplication *application)
 {
     FontViewApplication *self = FONT_VIEW_APPLICATION (application);
-    GtkWidget *window, *swin;
-    GtkBuilder *builder;
+    CtkWidget *window, *swin;
+    CtkBuilder *builder;
     GMenuModel *menu;
 
     G_APPLICATION_CLASS (font_view_application_parent_class)->startup (application);
@@ -824,7 +824,7 @@ font_view_application_startup (GApplication *application)
 
     self->main_window = window = ctk_application_window_new (GTK_APPLICATION (application));
 
-    GtkStyleContext *context;
+    CtkStyleContext *context;
     context = ctk_widget_get_style_context (GTK_WIDGET (self->main_window));
     ctk_style_context_add_class (context, "font-viewer");
 

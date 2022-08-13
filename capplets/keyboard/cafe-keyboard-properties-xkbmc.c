@@ -38,15 +38,15 @@
 static gchar *current_model_name = NULL;
 static gchar *current_vendor_name = NULL;
 
-static void fill_models_list (GtkBuilder * chooser_dialog);
+static void fill_models_list (CtkBuilder * chooser_dialog);
 
-static gboolean fill_vendors_list (GtkBuilder * chooser_dialog);
+static gboolean fill_vendors_list (CtkBuilder * chooser_dialog);
 
-static GtkTreePath *
-ctk_list_store_find_entry (GtkListStore * list_store,
-			   GtkTreeIter * iter, gchar * name, int column_id)
+static CtkTreePath *
+ctk_list_store_find_entry (CtkListStore * list_store,
+			   CtkTreeIter * iter, gchar * name, int column_id)
 {
-	GtkTreePath *path;
+	CtkTreePath *path;
 	char *current_name = NULL;
 	if (ctk_tree_model_get_iter_first
 	    (GTK_TREE_MODEL (list_store), iter)) {
@@ -70,11 +70,11 @@ ctk_list_store_find_entry (GtkListStore * list_store,
 static void
 add_vendor_to_list (XklConfigRegistry * config_registry,
 		    XklConfigItem * config_item,
-		    GtkTreeView * vendors_list)
+		    CtkTreeView * vendors_list)
 {
-	GtkTreeIter iter;
-	GtkTreePath *found_existing;
-	GtkListStore *list_store;
+	CtkTreeIter iter;
+	CtkTreePath *found_existing;
+	CtkListStore *list_store;
 
 	gchar *vendor_name =
 	    (gchar *) g_object_get_data (G_OBJECT (config_item),
@@ -104,10 +104,10 @@ add_vendor_to_list (XklConfigRegistry * config_registry,
 
 static void
 add_model_to_list (XklConfigRegistry * config_registry,
-		   XklConfigItem * config_item, GtkTreeView * models_list)
+		   XklConfigItem * config_item, CtkTreeView * models_list)
 {
-	GtkTreeIter iter;
-	GtkListStore *list_store =
+	CtkTreeIter iter;
+	CtkListStore *list_store =
 	    GTK_LIST_STORE (ctk_tree_view_get_model (models_list));
 	char *utf_model_name;
 	if (current_vendor_name != NULL) {
@@ -129,11 +129,11 @@ add_model_to_list (XklConfigRegistry * config_registry,
 }
 
 static void
-xkb_model_chooser_change_vendor_sel (GtkTreeSelection * selection,
-				     GtkBuilder * chooser_dialog)
+xkb_model_chooser_change_vendor_sel (CtkTreeSelection * selection,
+				     CtkBuilder * chooser_dialog)
 {
-	GtkTreeIter iter;
-	GtkTreeModel *list_store = NULL;
+	CtkTreeIter iter;
+	CtkTreeModel *list_store = NULL;
 	if (ctk_tree_selection_get_selected
 	    (selection, &list_store, &iter)) {
 		gchar *vendor_name = NULL;
@@ -151,8 +151,8 @@ xkb_model_chooser_change_vendor_sel (GtkTreeSelection * selection,
 }
 
 static void
-xkb_model_chooser_change_model_sel (GtkTreeSelection * selection,
-				    GtkBuilder * chooser_dialog)
+xkb_model_chooser_change_model_sel (CtkTreeSelection * selection,
+				    CtkBuilder * chooser_dialog)
 {
 	gboolean anysel =
 	    ctk_tree_selection_get_selected (selection, NULL, NULL);
@@ -162,11 +162,11 @@ xkb_model_chooser_change_model_sel (GtkTreeSelection * selection,
 }
 
 static void
-prepare_vendors_list (GtkBuilder * chooser_dialog)
+prepare_vendors_list (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *vendors_list = CWID ("vendors_list");
-	GtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
-	GtkTreeViewColumn *vendor_col =
+	CtkWidget *vendors_list = CWID ("vendors_list");
+	CtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
+	CtkTreeViewColumn *vendor_col =
 	    ctk_tree_view_column_new_with_attributes (_("Vendors"),
 						      renderer,
 						      "text", 0,
@@ -177,12 +177,12 @@ prepare_vendors_list (GtkBuilder * chooser_dialog)
 }
 
 static gboolean
-fill_vendors_list (GtkBuilder * chooser_dialog)
+fill_vendors_list (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *vendors_list = CWID ("vendors_list");
-	GtkListStore *list_store = ctk_list_store_new (1, G_TYPE_STRING);
-	GtkTreeIter iter;
-	GtkTreePath *path;
+	CtkWidget *vendors_list = CWID ("vendors_list");
+	CtkListStore *list_store = ctk_list_store_new (1, G_TYPE_STRING);
+	CtkTreeIter iter;
+	CtkTreePath *path;
 
 	ctk_tree_view_set_model (GTK_TREE_VIEW (vendors_list),
 				 GTK_TREE_MODEL (list_store));
@@ -228,11 +228,11 @@ fill_vendors_list (GtkBuilder * chooser_dialog)
 }
 
 static void
-prepare_models_list (GtkBuilder * chooser_dialog)
+prepare_models_list (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *models_list = CWID ("models_list");
-	GtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
-	GtkTreeViewColumn *description_col =
+	CtkWidget *models_list = CWID ("models_list");
+	CtkCellRenderer *renderer = ctk_cell_renderer_text_new ();
+	CtkTreeViewColumn *description_col =
 	    ctk_tree_view_column_new_with_attributes (_("Models"),
 						      renderer,
 						      "text", 0,
@@ -243,13 +243,13 @@ prepare_models_list (GtkBuilder * chooser_dialog)
 }
 
 static void
-fill_models_list (GtkBuilder * chooser_dialog)
+fill_models_list (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *models_list = CWID ("models_list");
-	GtkTreeIter iter;
-	GtkTreePath *path;
+	CtkWidget *models_list = CWID ("models_list");
+	CtkTreeIter iter;
+	CtkTreePath *path;
 
-	GtkListStore *list_store =
+	CtkListStore *list_store =
 	    ctk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
 
 	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE
@@ -286,16 +286,16 @@ fill_models_list (GtkBuilder * chooser_dialog)
 }
 
 static void
-xkb_model_chooser_response (GtkDialog * dialog,
-			    gint response, GtkBuilder * chooser_dialog)
+xkb_model_chooser_response (CtkDialog * dialog,
+			    gint response, CtkBuilder * chooser_dialog)
 {
 	if (response == GTK_RESPONSE_OK) {
-		GtkWidget *models_list = CWID ("models_list");
-		GtkTreeSelection *selection =
+		CtkWidget *models_list = CWID ("models_list");
+		CtkTreeSelection *selection =
 		    ctk_tree_view_get_selection (GTK_TREE_VIEW
 						 (models_list));
-		GtkTreeIter iter;
-		GtkTreeModel *list_store = NULL;
+		CtkTreeIter iter;
+		CtkTreeModel *list_store = NULL;
 		if (ctk_tree_selection_get_selected
 		    (selection, &list_store, &iter)) {
 			gchar *model_name = NULL;
@@ -309,10 +309,10 @@ xkb_model_chooser_response (GtkDialog * dialog,
 }
 
 void
-choose_model (GtkBuilder * dialog)
+choose_model (CtkBuilder * dialog)
 {
-	GtkBuilder *chooser_dialog;
-	GtkWidget *chooser;
+	CtkBuilder *chooser_dialog;
+	CtkWidget *chooser;
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,

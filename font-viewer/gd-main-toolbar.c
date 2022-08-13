@@ -31,26 +31,26 @@ typedef enum {
 } ChildType;
 
 struct _GdMainToolbarPrivate {
-  GtkSizeGroup *size_group;
-  GtkSizeGroup *vertical_size_group;
+  CtkSizeGroup *size_group;
+  CtkSizeGroup *vertical_size_group;
 
-  GtkToolItem *left_group;
-  GtkToolItem *center_group;
-  GtkToolItem *right_group;
+  CtkToolItem *left_group;
+  CtkToolItem *center_group;
+  CtkToolItem *right_group;
 
-  GtkWidget *left_grid;
-  GtkWidget *center_grid;
+  CtkWidget *left_grid;
+  CtkWidget *center_grid;
 
-  GtkWidget *labels_grid;
-  GtkWidget *title_label;
-  GtkWidget *detail_label;
+  CtkWidget *labels_grid;
+  CtkWidget *title_label;
+  CtkWidget *detail_label;
 
-  GtkWidget *modes_box;
+  CtkWidget *modes_box;
 
-  GtkWidget *center_menu;
-  GtkWidget *center_menu_child;
+  CtkWidget *center_menu;
+  CtkWidget *center_menu_child;
 
-  GtkWidget *right_grid;
+  CtkWidget *right_grid;
 
   gboolean show_modes;
 };
@@ -73,10 +73,10 @@ gd_main_toolbar_dispose (GObject *obj)
   G_OBJECT_CLASS (gd_main_toolbar_parent_class)->dispose (obj);
 }
 
-static GtkWidget *
+static CtkWidget *
 get_empty_button (ChildType type)
 {
-  GtkWidget *button;
+  CtkWidget *button;
 
   switch (type)
     {
@@ -95,11 +95,11 @@ get_empty_button (ChildType type)
   return button;
 }
 
-static GtkWidget *
+static CtkWidget *
 get_symbolic_button (const gchar *icon_name,
                      ChildType    type)
 {
-  GtkWidget *button, *w;
+  CtkWidget *button, *w;
 
   switch (type)
     {
@@ -126,11 +126,11 @@ get_symbolic_button (const gchar *icon_name,
   return button;
 }
 
-static GtkWidget *
+static CtkWidget *
 get_text_button (const gchar *label,
                  ChildType    type)
 {
-  GtkWidget *button, *w;
+  CtkWidget *button, *w;
 
   switch (type)
     {
@@ -157,12 +157,12 @@ get_text_button (const gchar *label,
   return button;
 }
 
-static GtkSizeGroup *
+static CtkSizeGroup *
 get_vertical_size_group (GdMainToolbar *self)
 {
-  GtkSizeGroup *retval;
-  GtkWidget *dummy;
-  GtkToolItem *container;
+  CtkSizeGroup *retval;
+  CtkWidget *dummy;
+  CtkToolItem *container;
 
   dummy = get_text_button ("Dummy", CHILD_NORMAL);
   container = ctk_tool_item_new ();
@@ -255,8 +255,8 @@ static void
 gd_main_toolbar_constructed (GObject *obj)
 {
   GdMainToolbar *self = GD_MAIN_TOOLBAR (obj);
-  GtkToolbar *tb = GTK_TOOLBAR (obj);
-  GtkWidget *grid;
+  CtkToolbar *tb = GTK_TOOLBAR (obj);
+  CtkWidget *grid;
 
   G_OBJECT_CLASS (gd_main_toolbar_parent_class)->constructed (obj);
 
@@ -360,11 +360,11 @@ gd_main_toolbar_clear (GdMainToolbar *self)
 
   /* clear all added buttons */
   ctk_container_foreach (GTK_CONTAINER (self->priv->left_grid),
-                         (GtkCallback) ctk_widget_destroy, self);
+                         (CtkCallback) ctk_widget_destroy, self);
   ctk_container_foreach (GTK_CONTAINER (self->priv->modes_box),
-                         (GtkCallback) ctk_widget_destroy, self);
+                         (CtkCallback) ctk_widget_destroy, self);
   ctk_container_foreach (GTK_CONTAINER (self->priv->right_grid),
-                         (GtkCallback) ctk_widget_destroy, self);
+                         (CtkCallback) ctk_widget_destroy, self);
 }
 
 /**
@@ -409,20 +409,20 @@ gd_main_toolbar_set_labels (GdMainToolbar *self,
   g_free (real_primary);
 }
 
-GtkWidget *
+CtkWidget *
 gd_main_toolbar_new (void)
 {
   return g_object_new (GD_TYPE_MAIN_TOOLBAR, NULL);
 }
 
-static GtkWidget *
+static CtkWidget *
 add_button_internal (GdMainToolbar *self,
                      const gchar *icon_name,
                      const gchar *label,
                      gboolean pack_start,
                      ChildType type)
 {
-  GtkWidget *button;
+  CtkWidget *button;
 
   if (icon_name != NULL)
     {
@@ -456,7 +456,7 @@ void
 gd_main_toolbar_set_labels_menu (GdMainToolbar *self,
                                  GMenuModel    *menu)
 {
-  GtkWidget *button, *grid, *w;
+  CtkWidget *button, *grid, *w;
 
   if (menu == NULL &&
       ((ctk_widget_get_parent (self->priv->labels_grid) == self->priv->center_grid) ||
@@ -512,11 +512,11 @@ gd_main_toolbar_set_labels_menu (GdMainToolbar *self,
  *
  * Returns: (transfer none):
  */
-GtkWidget *
+CtkWidget *
 gd_main_toolbar_add_mode (GdMainToolbar *self,
                           const gchar *label)
 {
-  GtkWidget *button;
+  CtkWidget *button;
   GList *group;
 
   button = ctk_radio_button_new_with_label (NULL, label);
@@ -547,7 +547,7 @@ gd_main_toolbar_add_mode (GdMainToolbar *self,
  *
  * Returns: (transfer none):
  */
-GtkWidget *
+CtkWidget *
 gd_main_toolbar_add_button (GdMainToolbar *self,
                             const gchar *icon_name,
                             const gchar *label,
@@ -565,7 +565,7 @@ gd_main_toolbar_add_button (GdMainToolbar *self,
  *
  * Returns: (transfer none):
  */
-GtkWidget *
+CtkWidget *
 gd_main_toolbar_add_menu (GdMainToolbar *self,
                           const gchar *icon_name,
                           const gchar *label,
@@ -583,7 +583,7 @@ gd_main_toolbar_add_menu (GdMainToolbar *self,
  *
  * Returns: (transfer none):
  */
-GtkWidget *
+CtkWidget *
 gd_main_toolbar_add_toggle (GdMainToolbar *self,
                             const gchar *icon_name,
                             const gchar *label,
@@ -601,7 +601,7 @@ gd_main_toolbar_add_toggle (GdMainToolbar *self,
  */
 void
 gd_main_toolbar_add_widget (GdMainToolbar *self,
-                            GtkWidget *widget,
+                            CtkWidget *widget,
                             gboolean pack_start)
 {
   if (pack_start)
