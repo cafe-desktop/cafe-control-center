@@ -125,8 +125,8 @@ static void cafe_wp_xml_load_xml(AppearanceData* data, const char* filename)
 	xmlNode* wpa;
 	xmlChar* nodelang;
 	const char* const* syslangs;
-	GdkRGBA color1;
-	GdkRGBA color2;
+	CdkRGBA color1;
+	CdkRGBA color2;
 	gint i;
 
 	wplist = xmlParseFile(filename);
@@ -271,7 +271,7 @@ static void cafe_wp_xml_load_xml(AppearanceData* data, const char* filename)
 				continue;
 			}
 
-			/* Verify the colors and alloc some GdkRGBA here */
+			/* Verify the colors and alloc some CdkRGBA here */
 			if (!have_scale)
 			{
 				wp->options = g_settings_get_enum(data->wp_settings, WP_OPTIONS_KEY);

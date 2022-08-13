@@ -44,7 +44,7 @@ static gboolean
 device_has_property (XDevice    *device,
                      const char *property_name)
 {
-        GdkDisplay *display;
+        CdkDisplay *display;
         Atom realtype, prop;
         int realformat;
         unsigned long nitems, bytes_after;
@@ -71,7 +71,7 @@ device_has_property (XDevice    *device,
 XDevice*
 device_is_touchpad (XDeviceInfo *deviceinfo)
 {
-        GdkDisplay *display;
+        CdkDisplay *display;
         XDevice *device;
 
         display = cdk_display_get_default ();

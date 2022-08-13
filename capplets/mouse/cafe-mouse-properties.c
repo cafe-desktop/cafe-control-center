@@ -96,7 +96,7 @@ test_maybe_timeout (struct test_data_t *data)
 
 static gboolean
 event_box_button_press_event (CtkWidget   *widget,
-			      GdkEventButton *event,
+			      CdkEventButton *event,
 			      gpointer user_data)
 {
 	gint                       double_click_time;
@@ -161,7 +161,7 @@ event_box_button_press_event (CtkWidget   *widget,
 
 static void
 orientation_radio_button_release_event (CtkWidget   *widget,
-				        GdkEventButton *event)
+				        CdkEventButton *event)
 {
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), TRUE);
 }
@@ -178,7 +178,7 @@ orientation_radio_button_toggled (CtkToggleButton *togglebutton,
 static void
 synaptics_check_capabilities (CtkBuilder *dialog)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 	int numdevices, i;
 	XDeviceInfo *devicelist;
 	Atom realtype, prop;

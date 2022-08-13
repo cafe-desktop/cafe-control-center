@@ -24,12 +24,12 @@
 #include <ctk/ctk.h>
 #include "drw-utils.h"
 
-static GdkPixbuf *
-create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
-		    GdkPixbuf    *src_pixbuf,
-		    GdkRectangle *field_geom,
+static CdkPixbuf *
+create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
+		    CdkPixbuf    *src_pixbuf,
+		    CdkRectangle *field_geom,
 		    guint         alpha,
-		    GdkColor     *bg_color)
+		    CdkColor     *bg_color)
 {
 	gboolean need_composite;
 	gboolean use_simple;
@@ -115,10 +115,10 @@ window_draw_event   (CtkWidget      *widget,
 static void
 set_pixmap_background (CtkWidget *window)
 {
-	GdkScreen    *screen;
-	GdkPixbuf    *tmp_pixbuf, *pixbuf, *tile_pixbuf;
-	GdkRectangle  rect;
-	GdkColor      color;
+	CdkScreen    *screen;
+	CdkPixbuf    *tmp_pixbuf, *pixbuf, *tile_pixbuf;
+	CdkRectangle  rect;
+	CdkColor      color;
 	gint          width, height, scale;
 	cairo_t      *cr;
 
@@ -180,7 +180,7 @@ set_pixmap_background (CtkWidget *window)
 void
 drw_setup_background (CtkWidget *window)
 {
-	GdkScreen    *screen;
+	CdkScreen    *screen;
 	gboolean      is_composited;
 
 	screen = ctk_widget_get_screen (window);

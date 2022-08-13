@@ -29,14 +29,14 @@
 
 struct _DrwSelection
 {
-	GdkWindow *owner_window;
+	CdkWindow *owner_window;
 	CtkWidget *invisible;
 };
 
 #define SELECTION_NAME "_CODEFACTORY_DRWRIGHT"
 
-static GdkFilterReturn drw_selection_filter     (GdkXEvent   *xevent,
-						 GdkEvent    *event,
+static CdkFilterReturn drw_selection_filter     (CdkXEvent   *xevent,
+						 CdkEvent    *event,
 						 gpointer     data);
 static void            drw_selection_negotiate  (DrwSelection *drw_selection);
 
@@ -58,7 +58,7 @@ drw_selection_reset (DrwSelection *drw_selection)
 
 static void
 drw_selection_clear (CtkWidget         *widget,
-		    GdkEventSelection *event,
+		    CdkEventSelection *event,
 		    gpointer           user_data)
 {
 	DrwSelection *drw_selection = user_data;
@@ -70,7 +70,7 @@ drw_selection_clear (CtkWidget         *widget,
 static gboolean
 drw_selection_find_existing (DrwSelection *drw_selection)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 	Window old;
 	Display *xdisplay;
 
@@ -147,9 +147,9 @@ drw_selection_negotiate (DrwSelection *drw_selection)
 	}
 }
 
-static GdkFilterReturn
-drw_selection_filter (GdkXEvent *xevent,
-		     GdkEvent  *event,
+static CdkFilterReturn
+drw_selection_filter (CdkXEvent *xevent,
+		     CdkEvent  *event,
 		     gpointer   data)
 {
 	DrwSelection *drw_selection = data;

@@ -405,7 +405,7 @@ theme_changed_cb(CtkIconTheme* theme, CafeDACapplet* capplet)
 }
 
 static void
-screen_changed_cb(CtkWidget* widget, GdkScreen* screen, CafeDACapplet* capplet)
+screen_changed_cb(CtkWidget* widget, CdkScreen* screen, CafeDACapplet* capplet)
 {
 	CtkIconTheme* theme;
 

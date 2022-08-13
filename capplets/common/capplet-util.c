@@ -171,7 +171,7 @@ capplet_file_delete_recursive (GFile *file, GError **error)
 }
 
 gboolean
-capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow *window)
+capplet_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
 {
     CtkNotebook *notebook = CTK_NOTEBOOK (widget);
     CtkWidget *child, *event_widget, *action_widget;
@@ -180,7 +180,7 @@ capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, C
     if (child == NULL)
         return FALSE;
 
-    event_widget = ctk_get_event_widget ((GdkEvent *) event);
+    event_widget = ctk_get_event_widget ((CdkEvent *) event);
 
     /* Ignore scroll events from the content of the page */
     if (event_widget == NULL ||

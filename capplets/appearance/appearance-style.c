@@ -40,11 +40,11 @@ typedef void (* ThumbnailGenFunc) (void               *type,
 
 typedef struct {
   AppearanceData *data;
-  GdkPixbuf *thumbnail;
+  CdkPixbuf *thumbnail;
 } ThemeConvData;
 
 static void update_message_area (AppearanceData *data);
-static void create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *data);
+static void create_thumbnail (const gchar *name, CdkPixbuf *default_thumb, AppearanceData *data);
 
 static const gchar *symbolic_names[NUM_SYMBOLIC_COLORS] = {
   "fg_color", "bg_color",
@@ -257,7 +257,7 @@ static void update_message_area(AppearanceData* data)
 static void
 update_color_buttons_from_string (const gchar *color_scheme, AppearanceData *data)
 {
-  GdkRGBA colors[NUM_SYMBOLIC_COLORS];
+  CdkRGBA colors[NUM_SYMBOLIC_COLORS];
   CtkWidget *widget;
   gint i;
 
@@ -338,7 +338,7 @@ static void
 color_button_clicked_cb (CtkWidget *colorbutton, AppearanceData *data)
 {
   CtkWidget *widget;
-  GdkRGBA color;
+  CdkRGBA color;
   GString *scheme = g_string_new (NULL);
   gchar *colstr;
   gchar *old_scheme = NULL;
@@ -635,7 +635,7 @@ static void
 add_to_treeview (const gchar *tv_name,
 		 const gchar *theme_name,
 		 const gchar *theme_label,
-		 GdkPixbuf *theme_thumbnail,
+		 CdkPixbuf *theme_thumbnail,
 		 AppearanceData *data)
 {
   CtkTreeView *treeview;
@@ -697,7 +697,7 @@ update_in_treeview (const gchar *tv_name,
 static void
 update_thumbnail_in_treeview (const gchar *tv_name,
 		    const gchar *theme_name,
-		    GdkPixbuf *theme_thumbnail,
+		    CdkPixbuf *theme_thumbnail,
 		    AppearanceData *data)
 {
   CtkTreeView *treeview;
@@ -720,7 +720,7 @@ update_thumbnail_in_treeview (const gchar *tv_name,
 }
 
 static void
-ctk_theme_thumbnail_cb (GdkPixbuf *pixbuf,
+ctk_theme_thumbnail_cb (CdkPixbuf *pixbuf,
                         gchar *theme_name,
                         AppearanceData *data)
 {
@@ -728,7 +728,7 @@ ctk_theme_thumbnail_cb (GdkPixbuf *pixbuf,
 }
 
 static void
-croma_theme_thumbnail_cb (GdkPixbuf *pixbuf,
+croma_theme_thumbnail_cb (CdkPixbuf *pixbuf,
                              gchar *theme_name,
                              AppearanceData *data)
 {
@@ -736,7 +736,7 @@ croma_theme_thumbnail_cb (GdkPixbuf *pixbuf,
 }
 
 static void
-icon_theme_thumbnail_cb (GdkPixbuf *pixbuf,
+icon_theme_thumbnail_cb (CdkPixbuf *pixbuf,
                          gchar *theme_name,
                          AppearanceData *data)
 {
@@ -744,7 +744,7 @@ icon_theme_thumbnail_cb (GdkPixbuf *pixbuf,
 }
 
 static void
-create_thumbnail (const gchar *name, GdkPixbuf *default_thumb, AppearanceData *data)
+create_thumbnail (const gchar *name, CdkPixbuf *default_thumb, AppearanceData *data)
 {
   if (default_thumb == data->icon_theme_icon) {
     CafeThemeIconInfo *info;
@@ -844,7 +844,7 @@ prepare_list (AppearanceData *data, CtkWidget *list, ThemeType type, GCallback c
   CtkCellRenderer *renderer;
   CtkTreeViewColumn *column;
   CtkTreeModel *sort_model;
-  GdkPixbuf *thumbnail;
+  CdkPixbuf *thumbnail;
   const gchar *key;
   ThumbnailGenFunc generator;
   ThemeThumbnailFunc thumb_cb;

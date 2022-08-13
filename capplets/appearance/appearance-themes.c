@@ -80,7 +80,7 @@ static time_t theme_get_mtime(const char* name)
 	return mtime;
 }
 
-static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, AppearanceData* data, gboolean cache)
+static void theme_thumbnail_update(CdkPixbuf* pixbuf, gchar* theme_name, AppearanceData* data, gboolean cache)
 {
 	CtkTreeIter iter;
 	CtkTreeModel* model = CTK_TREE_MODEL(data->theme_store);
@@ -110,9 +110,9 @@ static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, Appeara
 	}
 }
 
-static GdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, AppearanceData* data)
+static CdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, AppearanceData* data)
 {
-	GdkPixbuf* thumb = NULL;
+	CdkPixbuf* thumb = NULL;
 	gchar* path, *thumb_filename;
 	time_t mtime;
 
@@ -139,14 +139,14 @@ static GdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, Appear
 }
 
 static void
-theme_thumbnail_done_cb (GdkPixbuf *pixbuf, gchar *theme_name, AppearanceData *data)
+theme_thumbnail_done_cb (CdkPixbuf *pixbuf, gchar *theme_name, AppearanceData *data)
 {
   theme_thumbnail_update (pixbuf, theme_name, data, TRUE);
 }
 
 static void theme_thumbnail_generate(CafeThemeMetaInfo* info, AppearanceData* data)
 {
-	GdkPixbuf* thumb = theme_get_thumbnail_from_cache(info, data);
+	CdkPixbuf* thumb = theme_get_thumbnail_from_cache(info, data);
 
 	if (thumb != NULL)
 	{
@@ -947,7 +947,7 @@ theme_store_sort_func (CtkTreeModel *model,
 
 static void
 theme_drag_data_received_cb (CtkWidget *widget,
-                             GdkDragContext *context,
+                             CdkDragContext *context,
                              gint x, gint y,
                              CtkSelectionData *selection_data,
                              guint info, guint time,

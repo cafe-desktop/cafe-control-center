@@ -181,7 +181,7 @@ xkb_options_is_selected (gchar * optionname)
 
 /* Make sure selected options stay visible when navigating with the keyboard */
 static gboolean
-option_focused_cb (CtkWidget * widget, GdkEventFocus * event,
+option_focused_cb (CtkWidget * widget, CdkEventFocus * event,
 		   gpointer data)
 {
 	CtkScrolledWindow *win = CTK_SCROLLED_WINDOW (data);

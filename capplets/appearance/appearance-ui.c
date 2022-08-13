@@ -72,7 +72,7 @@ menus_have_icons_cb (GSettings *settings,
 
 static gint
 button_press_block_cb (CtkWidget *toolbar,
-                       GdkEvent  *event,
+                       CdkEvent  *event,
                        gpointer   data)
 {
     return TRUE;

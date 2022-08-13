@@ -104,7 +104,7 @@ struct _DrWright {
 	cairo_surface_t *red_bar;
 	cairo_surface_t *green_bar;
 	cairo_surface_t *disabled_bar;
-	GdkPixbuf       *composite_bar;
+	CdkPixbuf       *composite_bar;
 #endif /* HAVE_APP_INDICATOR */
 
 	CtkWidget      *warn_dialog;
@@ -179,7 +179,7 @@ update_app_indicator (DrWright *dr)
 static void
 set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	pixbuf = cdk_pixbuf_get_from_surface (surface, 0, 0,
 					      cairo_image_surface_get_width (surface),
@@ -193,8 +193,8 @@ set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 static void
 update_icon (DrWright *dr)
 {
-	GdkPixbuf *pixbuf;
-	GdkPixbuf *tmp_pixbuf;
+	CdkPixbuf *pixbuf;
+	CdkPixbuf *tmp_pixbuf;
 	gint       width, height;
 	gfloat     r;
 	gint       offset;
@@ -336,12 +336,12 @@ stop_blinking (DrWright *dr)
 }
 
 static gboolean
-grab_keyboard_on_window (GdkWindow *window,
+grab_keyboard_on_window (CdkWindow *window,
 			 guint32    activate_time)
 {
-	GdkDisplay *display;
-	GdkSeat *seat;
-	GdkGrabStatus status;
+	CdkDisplay *display;
+	CdkSeat *seat;
+	CdkGrabStatus status;
 
 	display = cdk_window_get_display (window);
 	seat = cdk_display_get_default_seat (display);
@@ -364,7 +364,7 @@ grab_keyboard_on_window (GdkWindow *window,
 
 static gboolean
 break_window_map_event_cb (CtkWidget *widget,
-			   GdkEvent  *event,
+			   CdkEvent  *event,
 			   DrWright  *dr)
 {
 	grab_keyboard_on_window (ctk_widget_get_window (dr->break_window), ctk_get_current_event_time ());
@@ -621,7 +621,7 @@ popup_break_cb (CtkAction *action, DrWright *dr)
 static void
 popup_preferences_cb (CtkAction *action, DrWright *dr)
 {
-	GdkScreen *screen;
+	CdkScreen *screen;
 	GError    *error = NULL;
 	CtkWidget *menu;
 
@@ -778,7 +778,7 @@ init_app_indicator (DrWright *dr)
 static void
 init_tray_icon (DrWright *dr)
 {
-	GdkPixbuf *pixbuf;
+	CdkPixbuf *pixbuf;
 
 	pixbuf = cdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
 					      cairo_image_surface_get_width (dr->neutral_bar),
@@ -800,8 +800,8 @@ init_tray_icon (DrWright *dr)
 static GList *
 create_secondary_break_windows (void)
 {
-	GdkDisplay *display;
-	GdkScreen  *screen;
+	CdkDisplay *display;
+	CdkScreen  *screen;
 	CtkWidget  *window;
 	GList      *windows = NULL;
 	gint        scale;

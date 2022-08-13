@@ -19,7 +19,7 @@ static char *
 wm_common_get_window_manager_property (Atom atom)
 {
   Atom utf8_string, type;
-  GdkDisplay *display;
+  CdkDisplay *display;
   int result;
   char *retval;
   int format;
@@ -107,7 +107,7 @@ wm_common_get_current_keybindings (void)
 static void
 update_wm_window (void)
 {
-  GdkDisplay *display;
+  CdkDisplay *display;
   Window *xwindow;
   Atom type;
   gint format;
@@ -141,9 +141,9 @@ update_wm_window (void)
     XFree (xwindow);
 }
 
-static GdkFilterReturn
-wm_window_event_filter (GdkXEvent *xev,
-			GdkEvent  *event,
+static CdkFilterReturn
+wm_window_event_filter (CdkXEvent *xev,
+			CdkEvent  *event,
 			gpointer   data)
 {
   WMCallbackData *ncb_data = (WMCallbackData*) data;

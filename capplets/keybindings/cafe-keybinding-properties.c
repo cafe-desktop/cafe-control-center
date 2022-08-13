@@ -1715,7 +1715,7 @@ start_editing_kb_cb (CtkTreeView *treeview,
 
 static gboolean
 start_editing_cb (CtkTreeView    *tree_view,
-          GdkEventButton *event,
+          CdkEventButton *event,
           gpointer        user_data)
 {
   CtkTreePath *path;
@@ -1777,7 +1777,7 @@ start_editing_cb (CtkTreeView    *tree_view,
 /* this handler is used to keep accels from activating while the user
  * is assigning a new shortcut so that he won't accidentally trigger one
  * of the widgets */
-static gboolean maybe_block_accels(CtkWidget* widget, GdkEventKey* event, gpointer user_data)
+static gboolean maybe_block_accels(CtkWidget* widget, CdkEventKey* event, gpointer user_data)
 {
     if (block_accels)
     {

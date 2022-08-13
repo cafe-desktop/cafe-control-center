@@ -116,7 +116,7 @@ static void on_item_changed (CafeBG *bg, AppearanceData *data) {
   path = ctk_tree_row_reference_get_path (item->rowref);
 
   if (ctk_tree_model_get_iter (model, &iter, path)) {
-    GdkPixbuf *pixbuf;
+    CdkPixbuf *pixbuf;
 
     g_signal_handlers_block_by_func (bg, G_CALLBACK (on_item_changed), data);
 
@@ -140,7 +140,7 @@ wp_props_load_wallpaper (gchar *key,
 {
   CtkTreeIter iter;
   CtkTreePath *path;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 
   if (item->deleted == TRUE)
     return;
@@ -202,9 +202,9 @@ static void
 wp_add_images (AppearanceData *data,
                GSList *images)
 {
-  GdkWindow *window;
+  CdkWindow *window;
   CtkWidget *w;
-  GdkCursor *cursor;
+  CdkCursor *cursor;
   CafeWPItem *item;
 
   w = appearance_capplet_get_widget (data, "appearance_window");
@@ -299,7 +299,7 @@ wp_scale_type_changed (CtkComboBox *combobox,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
 
@@ -329,7 +329,7 @@ wp_shade_type_changed (CtkWidget *combobox,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
 
@@ -495,7 +495,7 @@ wp_color1_changed (GSettings *settings,
                    gchar *key,
                    AppearanceData *data)
 {
-  GdkRGBA color;
+  CdkRGBA color;
   gchar *colorhex;
 
   colorhex = g_settings_get_string (settings, key);
@@ -514,7 +514,7 @@ wp_color2_changed (GSettings *settings,
                    gchar *key,
                    AppearanceData *data)
 {
-  GdkRGBA color;
+  CdkRGBA color;
   gchar *colorhex;
 
   wp_set_sensitivities (data);
@@ -684,7 +684,7 @@ wp_file_open_dialog (CtkWidget *widget,
 
 static void
 wp_drag_received (CtkWidget *widget,
-                  GdkDragContext *context,
+                  CdkDragContext *context,
                   gint x, gint y,
                   CtkSelectionData *selection_data,
                   guint info, guint time,
@@ -699,8 +699,8 @@ wp_drag_received (CtkWidget *widget,
     if (uris != NULL)
     {
       CtkWidget *w;
-      GdkWindow *window;
-      GdkCursor *cursor;
+      CdkWindow *window;
+      CdkCursor *cursor;
       gchar **uri;
 
       w = appearance_capplet_get_widget (data, "appearance_window");
@@ -730,7 +730,7 @@ wp_drag_received (CtkWidget *widget,
 
 static void
 wp_drag_get_data (CtkWidget *widget,
-		  GdkDragContext *context,
+		  CdkDragContext *context,
 		  CtkSelectionData *selection_data,
 		  guint type, guint time,
 		  AppearanceData *data)
@@ -815,7 +815,7 @@ wp_update_preview (CtkFileChooser *chooser,
 
   if (uri)
   {
-    GdkPixbuf *pixbuf = NULL;
+    CdkPixbuf *pixbuf = NULL;
     const gchar *mime_type = NULL;
     GFile *file;
     GFileInfo *file_info;
@@ -863,7 +863,7 @@ reload_item (CtkTreeModel *model,
              AppearanceData *data)
 {
   CafeWPItem *item;
-  GdkPixbuf *pixbuf;
+  CdkPixbuf *pixbuf;
 
   ctk_tree_model_get (model, iter, 1, &item, -1);
 
@@ -883,8 +883,8 @@ static gdouble
 get_monitor_aspect_ratio_for_widget (CtkWidget *widget)
 {
   gdouble aspect;
-  GdkMonitor *monitor;
-  GdkRectangle rect;
+  CdkMonitor *monitor;
+  CdkRectangle rect;
 
   monitor = cdk_display_get_monitor_at_window (ctk_widget_get_display (widget), ctk_widget_get_window (widget));
   cdk_monitor_get_geometry (monitor, &rect);
@@ -1032,7 +1032,7 @@ wp_select_after_realize (CtkWidget *widget,
   select_item (data, item, TRUE);
 }
 
-static GdkPixbuf *buttons[3];
+static CdkPixbuf *buttons[3];
 
 static void
 create_button_images (AppearanceData  *data)
@@ -1040,7 +1040,7 @@ create_button_images (AppearanceData  *data)
   CtkWidget *widget = (CtkWidget*)data->wp_view;
   CtkStyle *style = ctk_widget_get_style (widget);
   CtkIconSet *icon_set;
-  GdkPixbuf *pixbuf, *pb, *pb2;
+  CdkPixbuf *pixbuf, *pb, *pb2;
   gint i, w, h;
 
   icon_set = ctk_style_lookup_icon_set (style, "ctk-media-play");
@@ -1083,7 +1083,7 @@ next_frame (AppearanceData  *data,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  GdkPixbuf *pixbuf, *pb;
+  CdkPixbuf *pixbuf, *pb;
   gint frame;
 
   pixbuf = NULL;
@@ -1124,11 +1124,11 @@ next_frame (AppearanceData  *data,
 
 static gboolean
 wp_button_press_cb (CtkWidget      *widget,
-                    GdkEventButton *event,
+                    CdkEventButton *event,
                     AppearanceData *data)
 {
   CtkCellRenderer *cell;
-  GdkEventButton *button_event = (GdkEventButton *) event;
+  CdkEventButton *button_event = (CdkEventButton *) event;
 
   if (event->type != GDK_BUTTON_PRESS)
     return FALSE;
@@ -1198,7 +1198,7 @@ buttons_cell_data_func (CtkCellLayout   *layout,
 }
 
 static void
-screen_monitors_changed (GdkScreen *screen,
+screen_monitors_changed (CdkScreen *screen,
                          AppearanceData *data)
 {
   reload_wallpapers (data);

@@ -473,7 +473,7 @@ sushi_font_widget_draw (CtkWidget *drawing_area,
   cairo_font_face_t *font;
   FT_Face face = priv->face;
   CtkStyleContext *context;
-  GdkRGBA color;
+  CdkRGBA color;
   CtkBorder padding;
   CtkStateFlags state;
   gint allocated_width, allocated_height;

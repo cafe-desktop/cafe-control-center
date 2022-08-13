@@ -66,7 +66,7 @@ struct AutoScrollInfo
 
 struct FooScrollAreaPrivate
 {
-    GdkWindow		       *input_window;
+    CdkWindow		       *input_window;
 
     int				width;
     int				height;
@@ -134,11 +134,11 @@ static void foo_scroll_area_unrealize (CtkWidget *widget);
 static void foo_scroll_area_map (CtkWidget *widget);
 static void foo_scroll_area_unmap (CtkWidget *widget);
 static gboolean foo_scroll_area_button_press (CtkWidget *widget,
-					      GdkEventButton *event);
+					      CdkEventButton *event);
 static gboolean foo_scroll_area_button_release (CtkWidget *widget,
-						GdkEventButton *event);
+						CdkEventButton *event);
 static gboolean foo_scroll_area_motion (CtkWidget *widget,
-					GdkEventMotion *event);
+					CdkEventMotion *event);
 
 static void
 foo_scroll_area_map (CtkWidget *widget)
@@ -377,7 +377,7 @@ input_region_free (InputRegion *region)
 
 static void
 get_viewport (FooScrollArea *scroll_area,
-	      GdkRectangle  *viewport)
+	      CdkRectangle  *viewport)
 {
     CtkAllocation allocation;
     CtkWidget *widget = CTK_WIDGET (scroll_area);
@@ -405,7 +405,7 @@ clear_exposed_input_region (FooScrollArea *area,
 {
     int i;
     cairo_region_t *viewport;
-    GdkRectangle allocation;
+    CdkRectangle allocation;
 
     ctk_widget_get_allocation (CTK_WIDGET (area), &allocation);
     allocation.x = 0;
@@ -431,12 +431,12 @@ clear_exposed_input_region (FooScrollArea *area,
 }
 
 static void
-setup_background_cr (GdkWindow *window,
+setup_background_cr (CdkWindow *window,
 		     cairo_t   *cr,
 		     int        x_offset,
 		     int        y_offset)
 {
-    GdkWindow *parent = cdk_window_get_parent (window);
+    CdkWindow *parent = cdk_window_get_parent (window);
     cairo_pattern_t *bg_pattern;
 
     bg_pattern = cdk_window_get_background_pattern (window);
@@ -508,7 +508,7 @@ foo_scroll_area_draw (CtkWidget *widget,
 
 void
 foo_scroll_area_get_viewport (FooScrollArea *scroll_area,
-			      GdkRectangle  *viewport)
+			      CdkRectangle  *viewport)
 {
     g_return_if_fail (FOO_IS_SCROLL_AREA (scroll_area));
 
@@ -526,12 +526,12 @@ process_event (FooScrollArea	       *scroll_area,
 
 static void
 emit_viewport_changed (FooScrollArea *scroll_area,
-		       GdkRectangle  *new_viewport,
-		       GdkRectangle  *old_viewport)
+		       CdkRectangle  *new_viewport,
+		       CdkRectangle  *old_viewport)
 {
-    GdkDisplay *display;
-    GdkSeat *seat;
-    GdkDevice *pointer;
+    CdkDisplay *display;
+    CdkSeat *seat;
+    CdkDevice *pointer;
 
     int px, py;
     g_signal_emit (scroll_area, signals[VIEWPORT_CHANGED], 0,
@@ -600,9 +600,9 @@ static void
 foo_scroll_area_realize (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
-    GdkWindowAttr attributes;
+    CdkWindowAttr attributes;
     CtkAllocation widget_allocation;
-    GdkWindow *window;
+    CdkWindow *window;
     gint attributes_mask;
     cairo_t *cr;
 
@@ -718,8 +718,8 @@ foo_scroll_area_size_allocate (CtkWidget     *widget,
 			       CtkAllocation *allocation)
 {
     FooScrollArea *scroll_area = FOO_SCROLL_AREA (widget);
-    GdkRectangle new_viewport;
-    GdkRectangle old_viewport;
+    CdkRectangle new_viewport;
+    CdkRectangle old_viewport;
     cairo_region_t *old_allocation;
     cairo_region_t *invalid;
     CtkAllocation widget_allocation;
@@ -852,7 +852,7 @@ static void
 process_cdk_event (FooScrollArea *scroll_area,
 		   int		  x,
 		   int	          y,
-		   GdkEvent      *event)
+		   CdkEvent      *event)
 {
     FooScrollAreaEventType input_type;
 
@@ -870,33 +870,33 @@ process_cdk_event (FooScrollArea *scroll_area,
 
 static gboolean
 foo_scroll_area_button_press (CtkWidget *widget,
-			      GdkEventButton *event)
+			      CdkEventButton *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (CdkEvent *)event);
 
     return TRUE;
 }
 
 static gboolean
 foo_scroll_area_button_release (CtkWidget *widget,
-				GdkEventButton *event)
+				CdkEventButton *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (CdkEvent *)event);
 
     return FALSE;
 }
 
 static gboolean
 foo_scroll_area_motion (CtkWidget *widget,
-			GdkEventMotion *event)
+			CdkEventMotion *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (CdkEvent *)event);
     return TRUE;
 }
 
@@ -980,9 +980,9 @@ foo_scroll_area_scroll (FooScrollArea *area,
 			gint dx,
 			gint dy)
 {
-    GdkRectangle allocation;
-    GdkRectangle src_area;
-    GdkRectangle move_area;
+    CdkRectangle allocation;
+    CdkRectangle src_area;
+    CdkRectangle move_area;
     cairo_region_t *invalid_region;
 
     ctk_widget_get_allocation (CTK_WIDGET (area), &allocation);
@@ -1041,7 +1041,7 @@ foo_scrollbar_adjustment_changed (CtkAdjustment *adj,
     CtkWidget *widget = CTK_WIDGET (scroll_area);
     gint dx = 0;
     gint dy = 0;
-    GdkRectangle old_viewport, new_viewport;
+    CdkRectangle old_viewport, new_viewport;
 
     get_viewport (scroll_area, &old_viewport);
 
@@ -1278,7 +1278,7 @@ foo_scroll_area_invalidate_rect (FooScrollArea *scroll_area,
 				 int	        width,
 				 int	        height)
 {
-    GdkRectangle rect = { x, y, width, height };
+    CdkRectangle rect = { x, y, width, height };
     cairo_region_t *region;
 
     g_return_if_fail (FOO_IS_SCROLL_AREA (scroll_area));
@@ -1338,7 +1338,7 @@ foo_scroll_area_set_viewport_pos (FooScrollArea  *scroll_area,
 }
 
 static gboolean
-rect_contains (const GdkRectangle *rect, int x, int y)
+rect_contains (const CdkRectangle *rect, int x, int y)
 {
     return (x >= rect->x		&&
 	    y >= rect->y		&&
@@ -1362,7 +1362,7 @@ stop_scrolling (FooScrollArea *area)
 static gboolean
 scroll_idle (gpointer data)
 {
-    GdkRectangle viewport, new_viewport;
+    CdkRectangle viewport, new_viewport;
     FooScrollArea *area = data;
     AutoScrollInfo *info = area->priv->auto_scroll_info;
     int new_x, new_y;
@@ -1419,7 +1419,7 @@ void
 foo_scroll_area_auto_scroll (FooScrollArea *scroll_area,
 			     FooScrollAreaEvent *event)
 {
-    GdkRectangle viewport;
+    CdkRectangle viewport;
 
     get_viewport (scroll_area, &viewport);
 

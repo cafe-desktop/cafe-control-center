@@ -269,7 +269,7 @@ wm_unsupported ()
 }
 
 static void
-wm_changed_callback (GdkScreen *screen,
+wm_changed_callback (CdkScreen *screen,
                      void      *data)
 {
     const char *current_wm;
@@ -314,7 +314,7 @@ main (int argc, char **argv)
 {
     GError     *error = NULL;
     CtkBuilder *builder;
-    GdkScreen  *screen;
+    CdkScreen  *screen;
     gchar      *str;
     const char *current_wm;
     int i;

@@ -74,7 +74,7 @@ typedef struct _AppShellData
 
 	CtkWidget *filter_section;
 	gchar *filter_string;
-	GdkCursor *busy_cursor;
+	CdkCursor *busy_cursor;
 
 	CtkWidget *category_layout;
 	GList *categories_list;

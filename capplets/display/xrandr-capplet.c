@@ -156,8 +156,8 @@ on_screen_changed (CafeRRScreen *scr,
 
 static void
 on_viewport_changed (FooScrollArea *scroll_area,
-		     GdkRectangle  *old_viewport,
-		     GdkRectangle  *new_viewport)
+		     CdkRectangle  *old_viewport,
+		     CdkRectangle  *new_viewport)
 {
     foo_scroll_area_set_size (scroll_area,
 			      new_viewport->width,
@@ -475,7 +475,7 @@ static void
 rebuild_current_monitor_label (App *app)
 {
 	char *str, *tmp;
-	GdkRGBA color;
+	CdkRGBA color;
 	gboolean use_color;
 
 	if (app->current_output)
@@ -501,7 +501,7 @@ rebuild_current_monitor_label (App *app)
 
 	if (use_color)
 	{
-	    GdkRGBA black = { 0, 0, 0, 1.0 };
+	    CdkRGBA black = { 0, 0, 0, 1.0 };
 
 	    ctk_widget_override_background_color (app->current_monitor_event_box, ctk_widget_get_state_flags (app->current_monitor_event_box), &color);
 
@@ -1101,7 +1101,7 @@ compute_scale (App *app)
     int available_w, available_h;
     int total_w, total_h;
     int n_monitors;
-    GdkRectangle viewport;
+    CdkRectangle viewport;
     GList *connected_outputs;
 
     foo_scroll_area_get_viewport (FOO_SCROLL_AREA (app->area), &viewport);
@@ -1348,7 +1348,7 @@ done:
 }
 
 static void
-get_output_rect (CafeRROutputInfo *output, GdkRectangle *rect)
+get_output_rect (CafeRROutputInfo *output, CdkRectangle *rect)
 {
     cafe_rr_output_info_get_geometry (output, &rect->x, &rect->y, &rect->width, &rect->height);
     get_geometry (output, &rect->width, &rect->height); // accounts for rotation
@@ -1358,7 +1358,7 @@ static gboolean
 output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config)
 {
     int i;
-    GdkRectangle output_rect;
+    CdkRectangle output_rect;
     CafeRROutputInfo **outputs;
 
     get_output_rect (output, &output_rect);
@@ -1368,7 +1368,7 @@ output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config)
     {
 	if (outputs[i] != output && cafe_rr_output_info_is_connected (outputs[i]))
 	{
-	    GdkRectangle other_rect;
+	    CdkRectangle other_rect;
 
 	    get_output_rect (outputs[i], &other_rect);
 	    if (cdk_rectangle_intersect (&output_rect, &other_rect, NULL))
@@ -1458,10 +1458,10 @@ compare_snaps (gconstpointer v1, gconstpointer v2)
  * window's cursor to its default).
  */
 static void
-set_cursor (CtkWidget *widget, GdkCursorType type)
+set_cursor (CtkWidget *widget, CdkCursorType type)
 {
-	GdkCursor *cursor;
-	GdkWindow *window;
+	CdkCursor *cursor;
+	CdkWindow *window;
 
 	if (type == GDK_BLANK_CURSOR)
 	    cursor = NULL;
@@ -1645,11 +1645,11 @@ static void
 paint_background (FooScrollArea *area,
 		  cairo_t       *cr)
 {
-    GdkRectangle viewport;
+    CdkRectangle viewport;
     CtkWidget *widget;
     CtkStyleContext *widget_style;
-    GdkRGBA *base_color = NULL;
-    GdkRGBA dark_color;
+    CdkRGBA *base_color = NULL;
+    CdkRGBA dark_color;
 
     widget = CTK_WIDGET (area);
 
@@ -1699,8 +1699,8 @@ paint_output (App *app, cairo_t *cr, int i)
     CafeRROutputInfo *output = g_list_nth_data (connected_outputs, i);
     PangoLayout *layout = get_display_name (app, output);
     PangoRectangle ink_extent, log_extent;
-    GdkRectangle viewport;
-    GdkRGBA output_color;
+    CdkRectangle viewport;
+    CdkRGBA output_color;
     double r, g, b;
     double available_w;
     double factor;
@@ -1934,7 +1934,7 @@ check_required_virtual_size (App *app)
 }
 
 static void
-begin_version2_apply_configuration (App *app, GdkWindow *parent_window, guint32 timestamp)
+begin_version2_apply_configuration (App *app, CdkWindow *parent_window, guint32 timestamp)
 {
     XID parent_window_xid;
     GError *error = NULL;
@@ -2209,9 +2209,9 @@ get_nearest_output (CafeRRConfig *configuration, int x, int y)
  * Logic stolen from cdk_screen_get_monitor_at_window().
  */
 static CafeRROutputInfo *
-get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
+get_output_for_window (CafeRRConfig *configuration, CdkWindow *window)
 {
-    GdkRectangle win_rect;
+    CdkRectangle win_rect;
     int i;
     int largest_area;
     int largest_index;
@@ -2226,7 +2226,7 @@ get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
     outputs = cafe_rr_config_get_outputs (configuration);
     for (i = 0; outputs[i] != NULL; i++)
     {
-	GdkRectangle output_rect, intersection;
+	CdkRectangle output_rect, intersection;
 
 	cafe_rr_output_info_get_geometry (outputs[i], &output_rect.x, &output_rect.y, &output_rect.width, &output_rect.height);
 
@@ -2270,7 +2270,7 @@ select_current_output_from_dialog_position (App *app)
  * monitor on which the dialog is being shown.
  */
 static gboolean
-dialog_map_event_cb (CtkWidget *widget, GdkEventAny *event, gpointer data)
+dialog_map_event_cb (CtkWidget *widget, CdkEventAny *event, gpointer data)
 {
     App *app = data;
 

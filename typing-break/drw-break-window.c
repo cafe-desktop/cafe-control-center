@@ -74,7 +74,7 @@ static gboolean     label_draw_event_cb            (CtkLabel            *label,
 						    cairo_t             *cr,
 						    gpointer             user_data);
 static void         label_size_allocate_cb         (CtkLabel            *label,
-						    GdkRectangle        *allocation,
+						    CdkRectangle        *allocation,
 						    gpointer             user_data);
 
 G_DEFINE_TYPE_WITH_PRIVATE (DrwBreakWindow, drw_break_window, CTK_TYPE_WINDOW)
@@ -120,9 +120,9 @@ drw_break_window_init (DrwBreakWindow *window)
 	gboolean               allow_postpone;
 
 	gint                   root_monitor = 0;
-	GdkScreen             *screen = NULL;
-	GdkDisplay            *display;
-	GdkRectangle           monitor;
+	CdkScreen             *screen = NULL;
+	CdkDisplay            *display;
+	CdkRectangle           monitor;
 	gint                   right_padding;
 	gint                   bottom_padding;
 	gint                   scale;
@@ -424,11 +424,11 @@ postpone_entry_activate_cb (CtkWidget      *entry,
 }
 
 static gboolean
-grab_on_window (GdkWindow *window,
+grab_on_window (CdkWindow *window,
 		guint32    activate_time)
 {
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	display = cdk_window_get_display (window);
 	seat = cdk_display_get_default_seat (display);
@@ -460,7 +460,7 @@ postpone_cancel_cb (DrwBreakWindow *window)
 
 static gboolean
 postpone_entry_key_press_event_cb (CtkEntry       *entry,
-				   GdkEventKey    *event,
+				   CdkEventKey    *event,
 				   DrwBreakWindow *window)
 {
 	DrwBreakWindowPrivate *priv;
@@ -606,7 +606,7 @@ label_draw_event_cb (CtkLabel *label,
 
 static void
 label_size_allocate_cb (CtkLabel     *label,
-			GdkRectangle *allocation,
+			CdkRectangle *allocation,
 			gpointer      user_data)
 {
 	allocation->width += 1;

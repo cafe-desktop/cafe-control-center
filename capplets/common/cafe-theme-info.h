@@ -85,7 +85,7 @@ struct _CafeThemeCursorInfo {
 	gboolean hidden;
 
 	GArray* sizes;
-	GdkPixbuf* thumbnail;
+	CdkPixbuf* thumbnail;
 };
 
 typedef struct _CafeThemeMetaInfo CafeThemeMetaInfo;
@@ -184,7 +184,7 @@ void                cafe_theme_info_register_theme_change (ThemeChangedCallback 
 							    gpointer             data);
 
 gboolean            cafe_theme_color_scheme_parse         (const gchar         *scheme,
-							    GdkRGBA             *colors);
+							    CdkRGBA             *colors);
 gboolean            cafe_theme_color_scheme_equal         (const gchar         *s1,
 							    const gchar         *s2);
 
