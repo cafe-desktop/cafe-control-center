@@ -206,11 +206,11 @@ void cafe_wp_item_free (CafeWPItem * item) {
   g_free (item);
 }
 
-static CdkPixbuf *
-add_slideshow_frame (CdkPixbuf *pixbuf)
+static GdkPixbuf *
+add_slideshow_frame (GdkPixbuf *pixbuf)
 {
-  CdkPixbuf *sheet, *sheet2;
-  CdkPixbuf *tmp;
+  GdkPixbuf *sheet, *sheet2;
+  GdkPixbuf *tmp;
   gint w, h;
 
   w = gdk_pixbuf_get_width (pixbuf);
@@ -234,12 +234,12 @@ add_slideshow_frame (CdkPixbuf *pixbuf)
   return tmp;
 }
 
-CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 					       CafeDesktopThumbnailFactory * thumbs,
                                                int width,
                                                int height,
                                                gint frame) {
-  CdkPixbuf *pixbuf = NULL;
+  GdkPixbuf *pixbuf = NULL;
 
   set_bg_properties (item);
 
@@ -250,7 +250,7 @@ CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 
   if (pixbuf && cafe_bg_changes_with_time (item->bg))
     {
-      CdkPixbuf *tmp;
+      GdkPixbuf *tmp;
 
       tmp = add_slideshow_frame (pixbuf);
       g_object_unref (pixbuf);
@@ -263,7 +263,7 @@ CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
 }
 
 
-CdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem * item,
+GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem * item,
 					 CafeDesktopThumbnailFactory * thumbs,
                                          gint width,
                                          gint height) {

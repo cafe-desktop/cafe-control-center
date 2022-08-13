@@ -24,9 +24,9 @@
 #include <ctk/ctk.h>
 #include "drw-utils.h"
 
-static CdkPixbuf *
-create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
-		    CdkPixbuf    *src_pixbuf,
+static GdkPixbuf *
+create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
+		    GdkPixbuf    *src_pixbuf,
 		    CdkRectangle *field_geom,
 		    guint         alpha,
 		    CdkColor     *bg_color)
@@ -116,7 +116,7 @@ static void
 set_pixmap_background (CtkWidget *window)
 {
 	CdkScreen    *screen;
-	CdkPixbuf    *tmp_pixbuf, *pixbuf, *tile_pixbuf;
+	GdkPixbuf    *tmp_pixbuf, *pixbuf, *tile_pixbuf;
 	CdkRectangle  rect;
 	CdkColor      color;
 	gint          width, height, scale;

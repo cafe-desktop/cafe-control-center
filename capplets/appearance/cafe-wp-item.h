@@ -66,11 +66,11 @@ CafeWPItem * cafe_wp_item_new (const gchar *filename,
 				 CafeDesktopThumbnailFactory *thumbnails);
 
 void cafe_wp_item_free (CafeWPItem *item);
-CdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem *item,
+GdkPixbuf * cafe_wp_item_get_thumbnail (CafeWPItem *item,
 					 CafeDesktopThumbnailFactory *thumbs,
                                          gint width,
                                          gint height);
-CdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem *item,
+GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem *item,
                                                CafeDesktopThumbnailFactory *thumbs,
                                                gint width,
                                                gint height,

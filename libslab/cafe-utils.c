@@ -27,7 +27,7 @@ load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 
 	if (g_path_is_absolute (id))
 	{
-		CdkPixbuf *pixbuf;
+		GdkPixbuf *pixbuf;
 
 		pixbuf = gdk_pixbuf_new_from_file_at_size (id, width * scale_factor, height * scale_factor, NULL);
 

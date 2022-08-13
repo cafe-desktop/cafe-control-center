@@ -51,7 +51,7 @@ typedef struct {
 	CtkWidget	*enable_fingerprint_button;
 	CtkWidget	*disable_fingerprint_button;
 	CtkWidget   	*image_chooser;
-	CdkPixbuf       *image;
+	GdkPixbuf       *image;
 #if HAVE_ACCOUNTSSERVICE
 	ActUser         *user;
 #endif
@@ -131,8 +131,8 @@ about_me_update_photo (CafeAboutMe *me)
 	gsize 	       length;
 
 	if (me->image_changed && me->have_image) {
-		CdkPixbufLoader *loader = gdk_pixbuf_loader_new ();
-		CdkPixbuf *pixbuf = NULL, *scaled = NULL;
+		GdkPixbufLoader *loader = gdk_pixbuf_loader_new ();
+		GdkPixbuf *pixbuf = NULL, *scaled = NULL;
 		int height, width;
 		gboolean do_scale = FALSE;
 		float scale = 1.0;
@@ -232,7 +232,7 @@ about_me_update_preview (CtkFileChooser *chooser,
 
 	if (uri) {
 		CtkWidget *image;
-		CdkPixbuf *pixbuf = NULL;
+		GdkPixbuf *pixbuf = NULL;
 		GFile *file;
 		GFileInfo *file_info;
 

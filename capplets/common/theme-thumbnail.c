@@ -90,7 +90,7 @@ static int pipe_from_factory_fd[2];
 #define CROMA_THUMBNAIL_HEIGHT  60
 
 
-static void pixbuf_apply_mask_region(CdkPixbuf* pixbuf, cairo_region_t* region)
+static void pixbuf_apply_mask_region(GdkPixbuf* pixbuf, cairo_region_t* region)
 {
   gint nchannels, rowstride, w, h;
   guchar *pixels, *p;
@@ -122,11 +122,11 @@ static void pixbuf_apply_mask_region(CdkPixbuf* pixbuf, cairo_region_t* region)
 
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_folder_icon (char *icon_theme_name)
 {
   CtkIconTheme *icon_theme;
-  CdkPixbuf *folder_icon = NULL;
+  GdkPixbuf *folder_icon = NULL;
   CtkIconInfo *folder_icon_info;
   gchar *example_icon_name;
   const gchar *icon_names[5];
@@ -165,7 +165,7 @@ create_folder_icon (char *icon_theme_name)
   return folder_icon;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   CtkWidget *window;
@@ -181,7 +181,7 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   CtkAllocation vbox_allocation;
   MetaFrameFlags flags;
   MetaTheme *theme;
-  CdkPixbuf *pixbuf, *icon;
+  GdkPixbuf *pixbuf, *icon;
   int icon_width, icon_height;
   cairo_region_t *region;
 
@@ -280,14 +280,14 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   return pixbuf;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   CtkSettings *settings;
   CtkWidget *window, *vbox, *box, *image_button, *checkbox, *radio;
   CtkRequisition requisition;
   CtkAllocation allocation;
-  CdkPixbuf *pixbuf, *retval;
+  GdkPixbuf *pixbuf, *retval;
   gint width, height;
 
   settings = ctk_settings_get_default ();
@@ -350,7 +350,7 @@ create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   return retval;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   CtkWidget *window, *preview, *dummy;
@@ -358,7 +358,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   MetaTheme *theme;
   CtkRequisition requisition;
   CtkAllocation allocation;
-  CdkPixbuf *pixbuf, *retval;
+  GdkPixbuf *pixbuf, *retval;
   cairo_region_t *region;
 
   theme = meta_theme_load ((char *) theme_thumbnail_data->wm_theme_name->data, NULL);
@@ -421,7 +421,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   return retval;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_icon_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 {
   return create_folder_icon ((char *) theme_thumbnail_data->icon_theme_name->data);
@@ -571,7 +571,7 @@ message_from_capplet (GIOChannel   *source,
 
       if (theme_thumbnail_data->status == WRITING_PIXBUF_DATA)
       {
-        CdkPixbuf *pixbuf = NULL;
+        GdkPixbuf *pixbuf = NULL;
         gint i, rowstride;
         guchar *pixels;
         gint width, height;
@@ -707,7 +707,7 @@ message_from_child (GIOChannel   *source,
 
       if (async_data.thumbnail_width >= 0 && async_data.data->len == async_data.thumbnail_width * async_data.thumbnail_height * 4)
       {
-        CdkPixbuf *pixbuf = NULL;
+        GdkPixbuf *pixbuf = NULL;
 
         if (async_data.thumbnail_width > 0) {
           gchar *pixels;
@@ -831,12 +831,12 @@ send_thumbnail_request (gchar *thumbnail_type,
   }
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 read_pixbuf (void)
 {
   gint bytes_read, i, j = 0;
   gint size[2];
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
   gint rowstride;
   guchar *pixels;
 
@@ -886,7 +886,7 @@ eof:
   return NULL;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 generate_theme_thumbnail (gchar *thumbnail_type,
                           gchar *ctk_theme_name,
                           gchar *ctk_color_scheme,
@@ -907,7 +907,7 @@ generate_theme_thumbnail (gchar *thumbnail_type,
   return read_pixbuf ();
 }
 
-CdkPixbuf *
+GdkPixbuf *
 generate_meta_theme_thumbnail (CafeThemeMetaInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_META,
@@ -918,7 +918,7 @@ generate_meta_theme_thumbnail (CafeThemeMetaInfo *theme_info)
                                    theme_info->application_font);
 }
 
-CdkPixbuf *
+GdkPixbuf *
 generate_ctk_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   gchar *scheme;
@@ -934,7 +934,7 @@ generate_ctk_theme_thumbnail (CafeThemeInfo *theme_info)
   g_free (scheme);
 }
 
-CdkPixbuf *
+GdkPixbuf *
 generate_croma_theme_thumbnail (CafeThemeInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_CROMA,
@@ -945,7 +945,7 @@ generate_croma_theme_thumbnail (CafeThemeInfo *theme_info)
                                    NULL);
 }
 
-CdkPixbuf *
+GdkPixbuf *
 generate_icon_theme_thumbnail (CafeThemeIconInfo *theme_info)
 {
   return generate_theme_thumbnail (THUMBNAIL_TYPE_ICON,
