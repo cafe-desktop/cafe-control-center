@@ -713,7 +713,7 @@ message_from_child (GIOChannel   *source,
           gchar *pixels;
           gint i, rowstride;
 
-          pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, async_data.thumbnail_width, async_data.thumbnail_height);
+          pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, async_data.thumbnail_width, async_data.thumbnail_height);
           pixels = (gchar *) gdk_pixbuf_get_pixels (pixbuf);
           rowstride = gdk_pixbuf_get_rowstride (pixbuf);
 
@@ -852,7 +852,7 @@ read_pixbuf (void)
   if (size[0] <= 0 || size[1] <= 0)
     return NULL;
 
-  pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, size[0], size[1]);
+  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, size[0], size[1]);
   rowstride = gdk_pixbuf_get_rowstride (pixbuf);
   pixels = gdk_pixbuf_get_pixels (pixbuf);
 

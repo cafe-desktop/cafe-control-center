@@ -216,13 +216,13 @@ add_slideshow_frame (GdkPixbuf *pixbuf)
   w = gdk_pixbuf_get_width (pixbuf);
   h = gdk_pixbuf_get_height (pixbuf);
 
-  sheet = gdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, w, h);
+  sheet = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
   gdk_pixbuf_fill (sheet, 0x00000000);
   sheet2 = gdk_pixbuf_new_subpixbuf (sheet, 1, 1, w - 2, h - 2);
   gdk_pixbuf_fill (sheet2, 0xffffffff);
   g_object_unref (sheet2);
 
-  tmp = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
+  tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
 
   gdk_pixbuf_fill (tmp, 0x00000000);
   gdk_pixbuf_composite (sheet, tmp, 6, 6, w, h, 6.0, 6.0, 1.0, 1.0, CDK_INTERP_NEAREST, 255);
