@@ -41,7 +41,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 	use_simple = (dest_pixbuf == NULL);
 
 	if (dest_pixbuf == NULL)
-		dest_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
+		dest_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
 					      FALSE, 8,
 					      field_geom->width, field_geom->height);
 

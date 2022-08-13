@@ -1062,7 +1062,7 @@ create_button_images (AppearanceData  *data)
   h = gdk_pixbuf_get_height (pb);
 
   for (i = 0; i < 3; i++) {
-    pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
+    pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
     gdk_pixbuf_fill (pixbuf, 0);
     if (i > 0)
       gdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, CDK_INTERP_NEAREST, 255);
