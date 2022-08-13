@@ -50,7 +50,7 @@ struct _FontViewModelPrivate {
     FT_Library library;
 
     GList *monitors;
-    CdkPixbuf *fallback_icon;
+    GdkPixbuf *fallback_icon;
     GCancellable *cancellable;
 };
 
@@ -135,7 +135,7 @@ typedef struct {
     gchar *font_path;
     gint face_index;
     gchar *uri;
-    CdkPixbuf *pixbuf;
+    GdkPixbuf *pixbuf;
     CtkTreeIter iter;
 } ThumbInfoData;
 
@@ -168,14 +168,14 @@ one_thumbnail_done (gpointer user_data)
     return FALSE;
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 create_thumbnail (ThumbInfoData *thumb_info)
 {
     GFile *file = thumb_info->font_file;
     CafeDesktopThumbnailFactory *factory;
     guint64 mtime;
 
-    CdkPixbuf *pixbuf = NULL;
+    GdkPixbuf *pixbuf = NULL;
     GFileInfo *info = NULL;
 
     info = g_file_query_info (file, ATTRIBUTES_FOR_CREATING_THUMBNAIL,
@@ -540,12 +540,12 @@ create_file_monitors (FontViewModel *self)
     FcStrListDone (str_list);
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_fallback_icon (void)
 {
     CtkIconTheme *icon_theme;
     CtkIconInfo *icon_info;
-    CdkPixbuf *pix;
+    GdkPixbuf *pix;
     GIcon *icon = NULL;
 
     icon_theme = ctk_icon_theme_get_default ();

@@ -498,10 +498,10 @@ add_default_cursor_theme ()
   add_theme_to_hash_by_name (cursor_theme_hash_by_name, theme_info);
 }
 
-static CdkPixbuf *
+static GdkPixbuf *
 gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 {
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
 #define BUF_SIZE sizeof(guint32) * cursor->width * cursor->height
   guchar *buf = g_malloc0 (BUF_SIZE);
   guchar *it;
@@ -526,7 +526,7 @@ gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
                         CDK_COLORSPACE_RGB, TRUE, 8,
                         cursor->width, cursor->height,
                         cursor->width * 4,
-                        (CdkPixbufDestroyNotify) g_free,
+                        (GdkPixbufDestroyNotify) g_free,
                         NULL);
 
   if (!pixbuf)
@@ -550,7 +550,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
   if (get_file_type (cursors_uri) == G_FILE_TYPE_DIRECTORY) {
     GArray *sizes;
     XcursorImage *cursor;
-    CdkPixbuf *thumbnail = NULL;
+    GdkPixbuf *thumbnail = NULL;
     gchar *name;
     gint i;
 

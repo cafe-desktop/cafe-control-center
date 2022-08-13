@@ -35,13 +35,13 @@ G_BEGIN_DECLS
 typedef struct TimezoneMap
 {
     CtkWidget parent_instance;
-    CdkPixbuf *orig_background;
-    CdkPixbuf *orig_background_dim;
-    CdkPixbuf *orig_color_map;
+    GdkPixbuf *orig_background;
+    GdkPixbuf *orig_background_dim;
+    GdkPixbuf *orig_color_map;
 
-    CdkPixbuf *background;
-    CdkPixbuf *color_map;
-    CdkPixbuf *pin;
+    GdkPixbuf *background;
+    GdkPixbuf *color_map;
+    GdkPixbuf *pin;
 
     guchar *visible_map_pixels;
     gint visible_map_rowstride;

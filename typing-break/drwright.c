@@ -104,7 +104,7 @@ struct _DrWright {
 	cairo_surface_t *red_bar;
 	cairo_surface_t *green_bar;
 	cairo_surface_t *disabled_bar;
-	CdkPixbuf       *composite_bar;
+	GdkPixbuf       *composite_bar;
 #endif /* HAVE_APP_INDICATOR */
 
 	CtkWidget      *warn_dialog;
@@ -179,7 +179,7 @@ update_app_indicator (DrWright *dr)
 static void
 set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 {
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0,
 					      cairo_image_surface_get_width (surface),
@@ -193,8 +193,8 @@ set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 static void
 update_icon (DrWright *dr)
 {
-	CdkPixbuf *pixbuf;
-	CdkPixbuf *tmp_pixbuf;
+	GdkPixbuf *pixbuf;
+	GdkPixbuf *tmp_pixbuf;
 	gint       width, height;
 	gfloat     r;
 	gint       offset;
@@ -778,7 +778,7 @@ init_app_indicator (DrWright *dr)
 static void
 init_tray_icon (DrWright *dr)
 {
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	pixbuf = gdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
 					      cairo_image_surface_get_width (dr->neutral_bar),

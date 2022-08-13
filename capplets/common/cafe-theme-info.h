@@ -85,7 +85,7 @@ struct _CafeThemeCursorInfo {
 	gboolean hidden;
 
 	GArray* sizes;
-	CdkPixbuf* thumbnail;
+	GdkPixbuf* thumbnail;
 };
 
 typedef struct _CafeThemeMetaInfo CafeThemeMetaInfo;

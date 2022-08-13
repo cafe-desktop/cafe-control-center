@@ -116,7 +116,7 @@ static void on_item_changed (CafeBG *bg, AppearanceData *data) {
   path = ctk_tree_row_reference_get_path (item->rowref);
 
   if (ctk_tree_model_get_iter (model, &iter, path)) {
-    CdkPixbuf *pixbuf;
+    GdkPixbuf *pixbuf;
 
     g_signal_handlers_block_by_func (bg, G_CALLBACK (on_item_changed), data);
 
@@ -140,7 +140,7 @@ wp_props_load_wallpaper (gchar *key,
 {
   CtkTreeIter iter;
   CtkTreePath *path;
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
 
   if (item->deleted == TRUE)
     return;
@@ -299,7 +299,7 @@ wp_scale_type_changed (CtkComboBox *combobox,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
 
@@ -329,7 +329,7 @@ wp_shade_type_changed (CtkWidget *combobox,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
 
   item = get_selected_item (data, &iter);
 
@@ -815,7 +815,7 @@ wp_update_preview (CtkFileChooser *chooser,
 
   if (uri)
   {
-    CdkPixbuf *pixbuf = NULL;
+    GdkPixbuf *pixbuf = NULL;
     const gchar *mime_type = NULL;
     GFile *file;
     GFileInfo *file_info;
@@ -863,7 +863,7 @@ reload_item (CtkTreeModel *model,
              AppearanceData *data)
 {
   CafeWPItem *item;
-  CdkPixbuf *pixbuf;
+  GdkPixbuf *pixbuf;
 
   ctk_tree_model_get (model, iter, 1, &item, -1);
 
@@ -1032,7 +1032,7 @@ wp_select_after_realize (CtkWidget *widget,
   select_item (data, item, TRUE);
 }
 
-static CdkPixbuf *buttons[3];
+static GdkPixbuf *buttons[3];
 
 static void
 create_button_images (AppearanceData  *data)
@@ -1040,7 +1040,7 @@ create_button_images (AppearanceData  *data)
   CtkWidget *widget = (CtkWidget*)data->wp_view;
   CtkStyle *style = ctk_widget_get_style (widget);
   CtkIconSet *icon_set;
-  CdkPixbuf *pixbuf, *pb, *pb2;
+  GdkPixbuf *pixbuf, *pb, *pb2;
   gint i, w, h;
 
   icon_set = ctk_style_lookup_icon_set (style, "ctk-media-play");
@@ -1083,7 +1083,7 @@ next_frame (AppearanceData  *data,
 {
   CafeWPItem *item;
   CtkTreeIter iter;
-  CdkPixbuf *pixbuf, *pb;
+  GdkPixbuf *pixbuf, *pb;
   gint frame;
 
   pixbuf = NULL;
