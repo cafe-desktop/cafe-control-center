@@ -259,7 +259,7 @@ update_icon (DrWright *dr)
 			      0,
 			      1.0,
 			      1.0,
-			      CDK_INTERP_BILINEAR,
+			      GDK_INTERP_BILINEAR,
 			      255);
 
 	if (set_pixbuf) {

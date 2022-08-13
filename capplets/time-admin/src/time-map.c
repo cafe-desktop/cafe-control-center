@@ -171,7 +171,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     map->background = gdk_pixbuf_scale_simple (pixbuf,
                                                allocation->width,
                                                allocation->height,
-                                               CDK_INTERP_BILINEAR);
+                                               GDK_INTERP_BILINEAR);
 
     if (map->color_map)
         g_object_unref (map->color_map);
@@ -179,7 +179,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     map->color_map = gdk_pixbuf_scale_simple (map->orig_color_map,
                                               allocation->width,
                                               allocation->height,
-                                              CDK_INTERP_BILINEAR);
+                                              GDK_INTERP_BILINEAR);
 
     map->visible_map_pixels = gdk_pixbuf_get_pixels (map->color_map);
     map->visible_map_rowstride = gdk_pixbuf_get_rowstride (map->color_map);
@@ -365,7 +365,7 @@ cc_timezone_map_draw (CtkWidget *widget,
         g_autoptr(GdkPixbuf) hilight = NULL;
 
         hilight = gdk_pixbuf_scale_simple (orig_hilight, alloc.width,
-                                           alloc.height, CDK_INTERP_BILINEAR);
+                                           alloc.height, GDK_INTERP_BILINEAR);
         cdk_cairo_set_source_pixbuf (cr, hilight, 0, 0);
 
         cairo_paint (cr);

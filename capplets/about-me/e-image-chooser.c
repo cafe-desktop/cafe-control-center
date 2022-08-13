@@ -251,7 +251,7 @@ set_image_from_data (EImageChooser *chooser,
 		} else {
 			scaled = gdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
-							  CDK_INTERP_BILINEAR);
+							  GDK_INTERP_BILINEAR);
 
 			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), scaled);
 			g_object_unref (scaled);
