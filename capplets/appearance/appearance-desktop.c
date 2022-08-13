@@ -1065,9 +1065,9 @@ create_button_images (AppearanceData  *data)
     pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
     gdk_pixbuf_fill (pixbuf, 0);
     if (i > 0)
-      gdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, CDK_INTERP_NEAREST, 255);
+      gdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, GDK_INTERP_NEAREST, 255);
     if (i < 2)
-      gdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, CDK_INTERP_NEAREST, 255);
+      gdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, GDK_INTERP_NEAREST, 255);
 
     buttons[i] = pixbuf;
   }
