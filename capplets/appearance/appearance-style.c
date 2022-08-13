@@ -894,7 +894,7 @@ prepare_list (AppearanceData *data, CtkWidget *list, ThemeType type, GCallback c
       return;
   }
 
-  store = ctk_list_store_new (NUM_COLS, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+  store = ctk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   for (l = themes; l; l = g_list_next (l))
   {
