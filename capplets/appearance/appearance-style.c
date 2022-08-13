@@ -992,9 +992,9 @@ style_init (AppearanceData *data)
   gchar *label;
   gint i;
 
-  data->ctk_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/ctk-theme-thumbnailing.png", NULL);
-  data->window_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
-  data->icon_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
+  data->ctk_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/ctk-theme-thumbnailing.png", NULL);
+  data->window_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
+  data->icon_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
   data->style_message_area = NULL;
   data->style_message_label = NULL;
   data->style_install_button = NULL;

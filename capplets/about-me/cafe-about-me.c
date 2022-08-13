@@ -107,7 +107,7 @@ about_me_load_photo (CafeAboutMe *me)
 		file = g_build_filename (g_get_home_dir (), ".face", NULL);
 	}
 
-	me->image = cdk_pixbuf_new_from_file(file, &error);
+	me->image = gdk_pixbuf_new_from_file(file, &error);
 
 	if (me->image != NULL) {
 		e_image_chooser_set_from_file (E_IMAGE_CHOOSER (me->image_chooser), file);
@@ -131,7 +131,7 @@ about_me_update_photo (CafeAboutMe *me)
 	gsize 	       length;
 
 	if (me->image_changed && me->have_image) {
-		CdkPixbufLoader *loader = cdk_pixbuf_loader_new ();
+		CdkPixbufLoader *loader = gdk_pixbuf_loader_new ();
 		CdkPixbuf *pixbuf = NULL, *scaled = NULL;
 		int height, width;
 		gboolean do_scale = FALSE;
@@ -143,18 +143,18 @@ about_me_update_photo (CafeAboutMe *me)
 		/* Before updating the image in EDS scale it to a reasonable size
 		   so that the user doesn't get an application that does not respond
 		   or that takes 100% CPU */
-		cdk_pixbuf_loader_write (loader, data, length, NULL);
-		cdk_pixbuf_loader_close (loader, NULL);
+		gdk_pixbuf_loader_write (loader, data, length, NULL);
+		gdk_pixbuf_loader_close (loader, NULL);
 
-		pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
+		pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
 
 		if (pixbuf)
 			g_object_ref (pixbuf);
 
 		g_object_unref (loader);
 
-		height = cdk_pixbuf_get_height (pixbuf);
-		width = cdk_pixbuf_get_width (pixbuf);
+		height = gdk_pixbuf_get_height (pixbuf);
+		width = gdk_pixbuf_get_width (pixbuf);
 
 		if (width > MAX_WIDTH) {
 			scalex = (float)MAX_WIDTH/width;
@@ -176,8 +176,8 @@ about_me_update_photo (CafeAboutMe *me)
 			char *scaled_data = NULL;
 			gsize scaled_length;
 
-			scaled = cdk_pixbuf_scale_simple (pixbuf, width*scale, height*scale, CDK_INTERP_BILINEAR);
-			cdk_pixbuf_save_to_buffer (scaled, &scaled_data, &scaled_length, "png", NULL,
+			scaled = gdk_pixbuf_scale_simple (pixbuf, width*scale, height*scale, CDK_INTERP_BILINEAR);
+			gdk_pixbuf_save_to_buffer (scaled, &scaled_data, &scaled_length, "png", NULL,
 						   "compression", "9", NULL);
 
 			g_free (data);
