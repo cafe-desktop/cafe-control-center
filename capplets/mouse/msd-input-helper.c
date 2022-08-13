@@ -33,7 +33,7 @@ supports_xinput_devices (void)
 {
         gint op_code, event, error;
 
-        return XQueryExtension (GDK_DISPLAY_XDISPLAY (cdk_display_get_default ()),
+        return XQueryExtension (CDK_DISPLAY_XDISPLAY (cdk_display_get_default ()),
                                 "XInputExtension",
                                 &op_code,
                                 &event,
@@ -51,12 +51,12 @@ device_has_property (XDevice    *device,
         unsigned char *data;
 
         display = cdk_display_get_default ();
-        prop = XInternAtom (GDK_DISPLAY_XDISPLAY (display), property_name, True);
+        prop = XInternAtom (CDK_DISPLAY_XDISPLAY (display), property_name, True);
         if (!prop)
                 return FALSE;
 
         cdk_x11_display_error_trap_push (display);
-        if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (display), device, prop, 0, 1, False,
+        if ((XGetDeviceProperty (CDK_DISPLAY_XDISPLAY (display), device, prop, 0, 1, False,
                                 XA_INTEGER, &realtype, &realformat, &nitems,
                                 &bytes_after, &data) == Success) && (realtype != None)) {
                 cdk_x11_display_error_trap_pop_ignored (display);
@@ -75,11 +75,11 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
         XDevice *device;
 
         display = cdk_display_get_default ();
-        if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (display), XI_TOUCHPAD, True))
+        if (deviceinfo->type != XInternAtom (CDK_DISPLAY_XDISPLAY (display), XI_TOUCHPAD, True))
                 return NULL;
 
         cdk_x11_display_error_trap_push (display);
-        device = XOpenDevice (GDK_DISPLAY_XDISPLAY (display), deviceinfo->id);
+        device = XOpenDevice (CDK_DISPLAY_XDISPLAY (display), deviceinfo->id);
         if (cdk_x11_display_error_trap_pop (display) || (device == NULL))
                 return NULL;
 
@@ -88,7 +88,7 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
                 return device;
         }
 
-        XCloseDevice (GDK_DISPLAY_XDISPLAY (display), device);
+        XCloseDevice (CDK_DISPLAY_XDISPLAY (display), device);
         return NULL;
 }
 
@@ -105,7 +105,7 @@ touchpad_is_present (void)
 
         retval = FALSE;
 
-        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (cdk_display_get_default ()), &n_devices);
+        device_info = XListInputDevices (CDK_DISPLAY_XDISPLAY (cdk_display_get_default ()), &n_devices);
         if (device_info == NULL)
                 return FALSE;
 

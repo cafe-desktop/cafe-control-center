@@ -243,7 +243,7 @@ get_current_wm (CdkScreen *screen)
         const char *name;
         GList *tmp_list;
 
-        g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
+        g_return_val_if_fail (CDK_IS_SCREEN (screen), NULL);
 
         name = cdk_x11_screen_get_window_manager_name (screen);
 

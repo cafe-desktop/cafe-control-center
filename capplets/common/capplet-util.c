@@ -199,15 +199,15 @@ capplet_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, C
         return FALSE;
 
     switch (event->direction) {
-    case GDK_SCROLL_RIGHT:
-    case GDK_SCROLL_DOWN:
+    case CDK_SCROLL_RIGHT:
+    case CDK_SCROLL_DOWN:
         ctk_notebook_next_page (notebook);
         break;
-    case GDK_SCROLL_LEFT:
-    case GDK_SCROLL_UP:
+    case CDK_SCROLL_LEFT:
+    case CDK_SCROLL_UP:
         ctk_notebook_prev_page (notebook);
         break;
-    case GDK_SCROLL_SMOOTH:
+    case CDK_SCROLL_SMOOTH:
         switch (ctk_notebook_get_tab_pos (notebook)) {
             case CTK_POS_LEFT:
             case CTK_POS_RIGHT:

@@ -360,7 +360,7 @@ egg_accelerator_parse_virtual (const gchar            *accelerator,
 	    }
 	  else if (keycode != NULL)
 	    {
-	      *keycode = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY(cdk_display_get_default()), keyval);
+	      *keycode = XKeysymToKeycode (CDK_DISPLAY_XDISPLAY(cdk_display_get_default()), keyval);
 	      if (*keycode == 0)
 	 	bad_keyval = TRUE;
 	    }
@@ -386,7 +386,7 @@ egg_accelerator_parse_virtual (const gchar            *accelerator,
  *
  * Converts an accelerator keyval and modifier mask
  * into a string parseable by egg_accelerator_parse_virtual().
- * For example, if you pass in #GDK_q and #EGG_VIRTUAL_CONTROL_MASK,
+ * For example, if you pass in #CDK_q and #EGG_VIRTUAL_CONTROL_MASK,
  * this function returns "&lt;Control&gt;q".
  *
  * The caller of this function must free the returned string.
@@ -424,7 +424,7 @@ gchar* egg_virtual_accelerator_name (guint accelerator_key, guint keycode, EggVi
  * Converts an accelerator keyval and modifier mask
  * into a (possibly translated) string that can be displayed to
  * a user.
- * For example, if you pass in #GDK_q and #EGG_VIRTUAL_CONTROL_MASK,
+ * For example, if you pass in #CDK_q and #EGG_VIRTUAL_CONTROL_MASK,
  * and you use a German locale, this function returns "Strg+Q".
  *
  * The caller of this function must free the returned string.
@@ -458,7 +458,7 @@ void egg_keymap_resolve_virtual_modifiers (CdkKeymap* keymap, EggVirtualModifier
 	const EggModmap* modmap;
 
 	g_return_if_fail (concrete_mods != NULL);
-	g_return_if_fail (keymap == NULL || GDK_IS_KEYMAP (keymap));
+	g_return_if_fail (keymap == NULL || CDK_IS_KEYMAP (keymap));
 
 	modmap = egg_keymap_get_modmap(keymap);
 
@@ -486,7 +486,7 @@ egg_keymap_virtualize_modifiers (CdkKeymap              *keymap,
   const EggModmap *modmap;
 
   g_return_if_fail (virtual_mods != NULL);
-  g_return_if_fail (keymap == NULL || GDK_IS_KEYMAP (keymap));
+  g_return_if_fail (keymap == NULL || CDK_IS_KEYMAP (keymap));
 
   modmap = egg_keymap_get_modmap (keymap);
 
@@ -561,20 +561,20 @@ reload_modmap (CdkKeymap *keymap,
       mask = 0;
       for (j = 0; j < n_entries; ++j)
         {
-          if (keyvals[j] == GDK_KEY_Num_Lock)
+          if (keyvals[j] == CDK_KEY_Num_Lock)
             mask |= EGG_VIRTUAL_NUM_LOCK_MASK;
-          else if (keyvals[j] == GDK_KEY_Scroll_Lock)
+          else if (keyvals[j] == CDK_KEY_Scroll_Lock)
             mask |= EGG_VIRTUAL_SCROLL_LOCK_MASK;
-          else if (keyvals[j] == GDK_KEY_Meta_L ||
-                   keyvals[j] == GDK_KEY_Meta_R)
+          else if (keyvals[j] == CDK_KEY_Meta_L ||
+                   keyvals[j] == CDK_KEY_Meta_R)
             mask |= EGG_VIRTUAL_META_MASK;
-          else if (keyvals[j] == GDK_KEY_Hyper_L ||
-                   keyvals[j] == GDK_KEY_Hyper_R)
+          else if (keyvals[j] == CDK_KEY_Hyper_L ||
+                   keyvals[j] == CDK_KEY_Hyper_R)
             mask |= EGG_VIRTUAL_HYPER_MASK;
-          else if (keyvals[j] == GDK_KEY_Super_L ||
-                   keyvals[j] == GDK_KEY_Super_R)
+          else if (keyvals[j] == CDK_KEY_Super_L ||
+                   keyvals[j] == CDK_KEY_Super_R)
             mask |= EGG_VIRTUAL_SUPER_MASK;
-          else if (keyvals[j] == GDK_KEY_Mode_switch)
+          else if (keyvals[j] == CDK_KEY_Mode_switch)
             mask |= EGG_VIRTUAL_MODE_SWITCH_MASK;
         }
 
@@ -610,7 +610,7 @@ egg_keymap_get_modmap (CdkKeymap *keymap)
     keymap = cdk_keymap_get_for_display (cdk_display_get_default ());
 
   /* This is all a hack, much simpler when we can just
-   * modify GDK directly.
+   * modify CDK directly.
    */
 
   modmap = g_object_get_data (G_OBJECT (keymap), "egg-modmap");

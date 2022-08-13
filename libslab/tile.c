@@ -277,8 +277,8 @@ tile_setup (Tile * tile)
 
 	if (tile->uri)
 	{
-		ctk_drag_source_set (CTK_WIDGET (tile), GDK_BUTTON1_MASK, NULL, 0,
-			GDK_ACTION_COPY | GDK_ACTION_MOVE);
+		ctk_drag_source_set (CTK_WIDGET (tile), CDK_BUTTON1_MASK, NULL, 0,
+			CDK_ACTION_COPY | CDK_ACTION_MOVE);
 
 		ctk_drag_source_add_uri_targets (CTK_WIDGET (tile));
 	}
@@ -394,8 +394,8 @@ tile_button_release (CtkWidget * widget, CdkEventButton * event)
 		if (CTK_IS_MENU (tile->context_menu))
 		    ctk_menu_popup_at_widget (CTK_MENU (tile->context_menu),
 		                              widget,
-		                              GDK_GRAVITY_SOUTH_WEST,
-		                              GDK_GRAVITY_NORTH_WEST,
+		                              CDK_GRAVITY_SOUTH_WEST,
+		                              CDK_GRAVITY_NORTH_WEST,
 		                              (const CdkEvent*) event);
 
 		break;
@@ -412,7 +412,7 @@ tile_key_release (CtkWidget * widget, CdkEventKey * event)
 {
 	TileEvent *tile_event;
 
-	if (event->keyval == GDK_KEY_Return)
+	if (event->keyval == CDK_KEY_Return)
 	{
 		tile_event = g_new0 (TileEvent, 1);
 		tile_event->type = TILE_EVENT_ACTIVATED_KEYBOARD;
@@ -435,8 +435,8 @@ tile_popup_menu (CtkWidget * widget)
 	{
 		ctk_menu_popup_at_widget (CTK_MENU (tile->context_menu),
 		                          widget,
-		                          GDK_GRAVITY_SOUTH_WEST,
-		                          GDK_GRAVITY_NORTH_WEST,
+		                          CDK_GRAVITY_SOUTH_WEST,
+		                          CDK_GRAVITY_NORTH_WEST,
 		                          NULL);
 
 		return TRUE;
@@ -480,7 +480,7 @@ tile_tile_action_triggered (Tile * tile, TileEvent * event, TileAction * action)
 void
 tile_trigger_action (Tile * tile, TileAction * action)
 {
-	tile_trigger_action_with_time (tile, action, GDK_CURRENT_TIME);
+	tile_trigger_action_with_time (tile, action, CDK_CURRENT_TIME);
 }
 
 void

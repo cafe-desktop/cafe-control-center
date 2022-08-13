@@ -176,7 +176,7 @@ about_me_update_photo (CafeAboutMe *me)
 			char *scaled_data = NULL;
 			gsize scaled_length;
 
-			scaled = cdk_pixbuf_scale_simple (pixbuf, width*scale, height*scale, GDK_INTERP_BILINEAR);
+			scaled = cdk_pixbuf_scale_simple (pixbuf, width*scale, height*scale, CDK_INTERP_BILINEAR);
 			cdk_pixbuf_save_to_buffer (scaled, &scaled_data, &scaled_length, "png", NULL,
 						   "compression", "9", NULL);
 

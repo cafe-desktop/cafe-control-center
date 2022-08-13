@@ -435,12 +435,12 @@ grab_on_window (CdkWindow *window,
 
 	return (cdk_seat_grab (seat,
 	                       window,
-	                       GDK_SEAT_CAPABILITY_ALL,
+	                       CDK_SEAT_CAPABILITY_ALL,
 	                       TRUE,
 	                       NULL,
 	                       NULL,
 	                       NULL,
-	                       NULL) == GDK_GRAB_SUCCESS);
+	                       NULL) == CDK_GRAB_SUCCESS);
 }
 
 static gboolean
@@ -467,7 +467,7 @@ postpone_entry_key_press_event_cb (CtkEntry       *entry,
 
 	priv = window->priv;
 
-	if (event->keyval == GDK_KEY_Escape) {
+	if (event->keyval == CDK_KEY_Escape) {
 		if (priv->postpone_timeout_id) {
 			g_source_remove (priv->postpone_timeout_id);
 		}

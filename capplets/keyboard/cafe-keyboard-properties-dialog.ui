@@ -137,7 +137,7 @@
           <object class="CtkBox" id="vbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
             <property name="border_width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">12</property>
@@ -888,7 +888,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="tooltip_text" translatable="yes">View and edit keyboard layout options</property>
                             <property name="use_underline">True</property>
                           </object>
@@ -942,7 +942,7 @@ default settings</property>
                   <object class="CtkBox" id="vbox77">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="border_width">12</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">18</property>
@@ -950,19 +950,19 @@ default settings</property>
                       <object class="CtkBox" id="vbox78">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="CtkBox" id="hbox39">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <child>
                               <object class="CtkBox" id="vbox79">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -971,7 +971,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1007,14 +1007,14 @@ default settings</property>
                       <object class="CtkBox" id="vbox80">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="CtkLabel" id="label73">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">Sticky Keys</property>
                             <attributes>
@@ -1031,12 +1031,12 @@ default settings</property>
                           <object class="CtkBox" id="hbox40">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <child>
                               <object class="CtkLabel" id="label74">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="label">    </property>
                               </object>
                               <packing>
@@ -1049,7 +1049,7 @@ default settings</property>
                               <object class="CtkBox" id="vbox81">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -1058,7 +1058,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1075,7 +1075,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1092,7 +1092,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1128,14 +1128,14 @@ default settings</property>
                       <object class="CtkBox" id="vbox82">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="CtkLabel" id="label75">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">Slow Keys</property>
                             <attributes>
@@ -1152,12 +1152,12 @@ default settings</property>
                           <object class="CtkBox" id="hbox41">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <child>
                               <object class="CtkLabel" id="label76">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="label">    </property>
                               </object>
                               <packing>
@@ -1170,7 +1170,7 @@ default settings</property>
                               <object class="CtkBox" id="vbox83">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -1179,7 +1179,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1309,14 +1309,14 @@ default settings</property>
                       <object class="CtkBox" id="vbox84">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="CtkLabel" id="label77">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="label" translatable="yes">Bounce Keys</property>
                             <attributes>
@@ -1333,12 +1333,12 @@ default settings</property>
                           <object class="CtkBox" id="hbox43">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <child>
                               <object class="CtkLabel" id="label78">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="label">    </property>
                               </object>
                               <packing>
@@ -1351,7 +1351,7 @@ default settings</property>
                               <object class="CtkBox" id="vbox85">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -1360,7 +1360,7 @@ default settings</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
@@ -1490,7 +1490,7 @@ default settings</property>
                       <object class="CtkButtonBox" id="hbuttonbox7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="layout_style">end</property>
                         <child>
                           <object class="CtkButton" id="notifications_button">
@@ -1498,7 +1498,7 @@ default settings</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="use_underline">True</property>
                           </object>
                           <packing>
@@ -1523,7 +1523,7 @@ default settings</property>
                   <object class="CtkLabel" id="label6">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Accessibility</property>
                   </object>
                   <packing>
@@ -1535,14 +1535,14 @@ default settings</property>
                   <object class="CtkBox" id="vbox89">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="border_width">12</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkBox" id="vbox90">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
@@ -1551,7 +1551,7 @@ default settings</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1566,12 +1566,12 @@ default settings</property>
                           <object class="CtkBox" id="hbox46">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <child>
                               <object class="CtkLabel" id="label80">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="label">    </property>
                               </object>
                               <packing>
@@ -1584,7 +1584,7 @@ default settings</property>
                               <object class="CtkBox" id="vbox91">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -1819,7 +1819,7 @@ default settings</property>
                   <object class="CtkLabel" id="label8">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Mouse Keys</property>
                   </object>
                   <packing>

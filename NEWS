@@ -272,10 +272,10 @@
   * avoid deprecated cdk_screen_get_width/height
   * libslab: drop unneeded libslab_cafe_desktop_item_open_help function
   * libslab : drop uneeded support for gnome-main-menu
-  * typing-break: avoid deprecated GDK pointer and keyboard types
+  * typing-break: avoid deprecated CDK pointer and keyboard types
   * libslab: don't use deprecated ctk_show_uri
   * display scrollarea: avoid deprecated ctk_adjustment_changed
-  * keybindings eggcellrendererkey: avoid deprecated GDK pointer and keyboard types
+  * keybindings eggcellrendererkey: avoid deprecated CDK pointer and keyboard types
   * display scrollarea: fix a -Wuninitialized build warning
   * display scrollarea: avoid deprecated cdk_window_get_pointer
   * po: don't list non-existent files in POTFILES.skip

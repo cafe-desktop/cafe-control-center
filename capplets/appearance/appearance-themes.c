@@ -1003,7 +1003,7 @@ void themes_init(AppearanceData* data)
   data->theme_error_icon = NULL;
   data->theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/theme-thumbnailing.png", NULL);
   data->theme_store = theme_store =
-      ctk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+      ctk_list_store_new (NUM_COLS, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   /* set up theme list */
   theme_list = cafe_theme_meta_info_find_all ();
@@ -1093,7 +1093,7 @@ void themes_init(AppearanceData* data)
   w = appearance_capplet_get_widget (data, "theme_vbox");
   ctk_drag_dest_set (w, CTK_DEST_DEFAULT_ALL,
 		     drop_types, G_N_ELEMENTS (drop_types),
-		     GDK_ACTION_COPY | GDK_ACTION_LINK | GDK_ACTION_MOVE);
+		     CDK_ACTION_COPY | CDK_ACTION_LINK | CDK_ACTION_MOVE);
   g_signal_connect (w, "drag-data-received", (GCallback) theme_drag_data_received_cb, data);
   if (is_locked_down ())
     ctk_widget_set_sensitive (w, FALSE);

@@ -1162,22 +1162,22 @@ static gboolean cb_check_for_uniqueness(CtkTreeModel* model, CtkTreePath* path, 
 
 static const guint forbidden_keyvals[] = {
     /* Navigation keys */
-    GDK_KEY_Home,
-    GDK_KEY_Left,
-    GDK_KEY_Up,
-    GDK_KEY_Right,
-    GDK_KEY_Down,
-    GDK_KEY_Page_Up,
-    GDK_KEY_Page_Down,
-    GDK_KEY_End,
-    GDK_KEY_Tab,
+    CDK_KEY_Home,
+    CDK_KEY_Left,
+    CDK_KEY_Up,
+    CDK_KEY_Right,
+    CDK_KEY_Down,
+    CDK_KEY_Page_Up,
+    CDK_KEY_Page_Down,
+    CDK_KEY_End,
+    CDK_KEY_Tab,
 
     /* Return */
-    GDK_KEY_KP_Enter,
-    GDK_KEY_Return,
+    CDK_KEY_KP_Enter,
+    CDK_KEY_Return,
 
-    GDK_KEY_space,
-    GDK_KEY_Mode_switch
+    CDK_KEY_space,
+    CDK_KEY_Mode_switch
 };
 
 static gboolean keyval_is_forbidden(guint keyval)
@@ -1255,17 +1255,17 @@ static void accel_edited_callback(CtkCellRendererText* cell, const char* path_st
     /* Check for unmodified keys */
     if (tmp_key.mask == 0 && tmp_key.keycode != 0)
     {
-        if ((tmp_key.keyval >= GDK_KEY_a && tmp_key.keyval <= GDK_KEY_z)
-            || (tmp_key.keyval >= GDK_KEY_A && tmp_key.keyval <= GDK_KEY_Z)
-            || (tmp_key.keyval >= GDK_KEY_0 && tmp_key.keyval <= GDK_KEY_9)
-            || (tmp_key.keyval >= GDK_KEY_kana_fullstop && tmp_key.keyval <= GDK_KEY_semivoicedsound)
-            || (tmp_key.keyval >= GDK_KEY_Arabic_comma && tmp_key.keyval <= GDK_KEY_Arabic_sukun)
-            || (tmp_key.keyval >= GDK_KEY_Serbian_dje && tmp_key.keyval <= GDK_KEY_Cyrillic_HARDSIGN)
-            || (tmp_key.keyval >= GDK_KEY_Greek_ALPHAaccent && tmp_key.keyval <= GDK_KEY_Greek_omega)
-            || (tmp_key.keyval >= GDK_KEY_hebrew_doublelowline && tmp_key.keyval <= GDK_KEY_hebrew_taf)
-            || (tmp_key.keyval >= GDK_KEY_Thai_kokai && tmp_key.keyval <= GDK_KEY_Thai_lekkao)
-            || (tmp_key.keyval >= GDK_KEY_Hangul && tmp_key.keyval <= GDK_KEY_Hangul_Special)
-            || (tmp_key.keyval >= GDK_KEY_Hangul_Kiyeog && tmp_key.keyval <= GDK_KEY_Hangul_J_YeorinHieuh)
+        if ((tmp_key.keyval >= CDK_KEY_a && tmp_key.keyval <= CDK_KEY_z)
+            || (tmp_key.keyval >= CDK_KEY_A && tmp_key.keyval <= CDK_KEY_Z)
+            || (tmp_key.keyval >= CDK_KEY_0 && tmp_key.keyval <= CDK_KEY_9)
+            || (tmp_key.keyval >= CDK_KEY_kana_fullstop && tmp_key.keyval <= CDK_KEY_semivoicedsound)
+            || (tmp_key.keyval >= CDK_KEY_Arabic_comma && tmp_key.keyval <= CDK_KEY_Arabic_sukun)
+            || (tmp_key.keyval >= CDK_KEY_Serbian_dje && tmp_key.keyval <= CDK_KEY_Cyrillic_HARDSIGN)
+            || (tmp_key.keyval >= CDK_KEY_Greek_ALPHAaccent && tmp_key.keyval <= CDK_KEY_Greek_omega)
+            || (tmp_key.keyval >= CDK_KEY_hebrew_doublelowline && tmp_key.keyval <= CDK_KEY_hebrew_taf)
+            || (tmp_key.keyval >= CDK_KEY_Thai_kokai && tmp_key.keyval <= CDK_KEY_Thai_lekkao)
+            || (tmp_key.keyval >= CDK_KEY_Hangul && tmp_key.keyval <= CDK_KEY_Hangul_Special)
+            || (tmp_key.keyval >= CDK_KEY_Hangul_Kiyeog && tmp_key.keyval <= CDK_KEY_Hangul_J_YeorinHieuh)
             || keyval_is_forbidden (tmp_key.keyval))
         {
 
@@ -1722,7 +1722,7 @@ start_editing_cb (CtkTreeView    *tree_view,
   CtkTreeViewColumn *column;
 
   if ((event->window != ctk_tree_view_get_bin_window (tree_view)) ||
-      (event->type != GDK_2BUTTON_PRESS))
+      (event->type != CDK_2BUTTON_PRESS))
     return FALSE;
 
   if (ctk_tree_view_get_path_at_pos (tree_view,

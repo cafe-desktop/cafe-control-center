@@ -75,7 +75,7 @@ drw_selection_find_existing (DrwSelection *drw_selection)
 	Display *xdisplay;
 
 	display = cdk_display_get_default ();
-	xdisplay = GDK_DISPLAY_XDISPLAY(display);
+	xdisplay = CDK_DISPLAY_XDISPLAY(display);
 
 	cdk_x11_display_error_trap_push (display);
 	old = XGetSelectionOwner (xdisplay,
@@ -113,7 +113,7 @@ drw_selection_claim (DrwSelection *drw_selection)
 
 	if (ctk_selection_owner_set (drw_selection->invisible,
 				     cdk_atom_intern (SELECTION_NAME, FALSE),
-				     GDK_CURRENT_TIME)) {
+				     CDK_CURRENT_TIME)) {
 		return TRUE;
 	} else {
 		drw_selection_reset (drw_selection);
@@ -124,7 +124,7 @@ drw_selection_claim (DrwSelection *drw_selection)
 static void
 drw_selection_negotiate (DrwSelection *drw_selection)
 {
-	Display *xdisplay = GDK_DISPLAY_XDISPLAY(cdk_display_get_default());
+	Display *xdisplay = CDK_DISPLAY_XDISPLAY(cdk_display_get_default());
 	gboolean found = FALSE;
 
 	/* We don't need both the XGrabServer() and the loop here;
@@ -161,10 +161,10 @@ drw_selection_filter (CdkXEvent *xevent,
 		drw_selection_reset (drw_selection);
 		drw_selection_negotiate (drw_selection);
 
-		return GDK_FILTER_REMOVE;
+		return CDK_FILTER_REMOVE;
 	}
 
-	return GDK_FILTER_CONTINUE;
+	return CDK_FILTER_CONTINUE;
 }
 
 DrwSelection *

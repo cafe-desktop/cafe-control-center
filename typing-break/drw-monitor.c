@@ -146,7 +146,7 @@ drw_monitor_timeout (DrwMonitor *monitor)
 
 	priv = monitor->priv;
 
-	if (XScreenSaverQueryInfo (GDK_DISPLAY_XDISPLAY(cdk_display_get_default()), DefaultRootWindow (GDK_DISPLAY_XDISPLAY(cdk_display_get_default())), priv->ss_info) != 0) {
+	if (XScreenSaverQueryInfo (CDK_DISPLAY_XDISPLAY(cdk_display_get_default()), DefaultRootWindow (CDK_DISPLAY_XDISPLAY(cdk_display_get_default())), priv->ss_info) != 0) {
 		if (priv->ss_info->idle < priv->last_idle) {
  			now = time (NULL);
 
@@ -172,7 +172,7 @@ drw_monitor_setup (DrwMonitor *monitor)
 
 	priv = monitor->priv;
 
-	if (!XScreenSaverQueryExtension (GDK_DISPLAY_XDISPLAY(cdk_display_get_default()), &event_base, &error_base)) {
+	if (!XScreenSaverQueryExtension (CDK_DISPLAY_XDISPLAY(cdk_display_get_default()), &event_base, &error_base)) {
 		return FALSE;
 	}
 

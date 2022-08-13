@@ -626,7 +626,7 @@ icon_view_release_cb (CtkWidget *widget,
     GFile *file;
 
     /* eat double/triple click events */
-    if (event->type != GDK_BUTTON_RELEASE)
+    if (event->type != CDK_BUTTON_RELEASE)
         return TRUE;
 
     path = ctk_icon_view_get_path_at_pos (CTK_ICON_VIEW (widget),

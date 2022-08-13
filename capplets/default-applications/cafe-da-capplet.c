@@ -788,7 +788,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	ctk_window_set_icon_name(CTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
 
         CtkNotebook* nb = CTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
-        ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+        ctk_widget_add_events (CTK_WIDGET (nb), CDK_SCROLL_MASK);
         g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                           CTK_WINDOW (capplet->window));
