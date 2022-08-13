@@ -163,7 +163,7 @@ set_pixmap_background (CtkWidget *window)
 			      0,
 			      scale,
 			      scale,
-			      CDK_INTERP_NEAREST,
+			      GDK_INTERP_NEAREST,
 			      225);
 
 	g_object_unref (tile_pixbuf);
