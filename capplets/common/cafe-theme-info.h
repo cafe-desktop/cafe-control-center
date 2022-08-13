@@ -26,7 +26,7 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <ctk/ctk.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <cdk/cdk.h>
 
 typedef enum {
