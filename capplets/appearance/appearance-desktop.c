@@ -1253,7 +1253,7 @@ desktop_init (AppearanceData *data,
                            G_CALLBACK (wp_color2_changed),
                            data);
 
-  data->wp_model = CTK_TREE_MODEL (ctk_list_store_new (2, CDK_TYPE_PIXBUF,
+  data->wp_model = CTK_TREE_MODEL (ctk_list_store_new (2, GDK_TYPE_PIXBUF,
                                                        G_TYPE_POINTER));
 
   data->wp_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "wp_view"));
