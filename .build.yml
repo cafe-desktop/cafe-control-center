@@ -24,7 +24,6 @@ requires:
     - libdbus-glib-1-dev
     - libdconf-dev
     - libglib2.0-dev
-    - libctk-3-dev
     - libgtop2-dev
     - libpango1.0-dev
     - librsvg2-bin
