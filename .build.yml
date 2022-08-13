@@ -19,7 +19,7 @@ requires:
     - gobject-introspection
     - ctk-doc-tools
     - intltool
-    - libcanberra-ctk3-dev
+    - libcanberra-gtk3-dev
     - libdbus-1-dev
     - libdbus-glib-1-dev
     - libdconf-dev

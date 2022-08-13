@@ -30,7 +30,7 @@
 #include <gio/gio.h>
 
 #ifdef HAVE_CANBERRA_CTK
-#include <canberra-ctk.h>
+#include <canberra-gtk.h>
 #endif
 
 #include "drwright.h"
