@@ -37,11 +37,11 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 	gdouble  colorv;
 	gint     pwidth, pheight;
 
-	need_composite = (alpha < 255 || cdk_pixbuf_get_has_alpha (src_pixbuf));
+	need_composite = (alpha < 255 || gdk_pixbuf_get_has_alpha (src_pixbuf));
 	use_simple = (dest_pixbuf == NULL);
 
 	if (dest_pixbuf == NULL)
-		dest_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
+		dest_pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB,
 					      FALSE, 8,
 					      field_geom->width, field_geom->height);
 
@@ -52,13 +52,13 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 	else
 		colorv = 0;
 
-	pwidth = cdk_pixbuf_get_width (src_pixbuf);
-	pheight = cdk_pixbuf_get_height (src_pixbuf);
+	pwidth = gdk_pixbuf_get_width (src_pixbuf);
+	pheight = gdk_pixbuf_get_height (src_pixbuf);
 
 	for (cy = 0; cy < field_geom->height; cy += pheight) {
 		for (cx = 0; cx < field_geom->width; cx += pwidth) {
 			if (need_composite && !use_simple)
-				cdk_pixbuf_composite (src_pixbuf, dest_pixbuf,
+				gdk_pixbuf_composite (src_pixbuf, dest_pixbuf,
 						      cx, cy,
 						      MIN (pwidth, field_geom->width - cx),
 						      MIN (pheight, field_geom->height - cy),
@@ -67,7 +67,7 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 						      CDK_INTERP_BILINEAR,
 						      alpha);
 			else if (need_composite && use_simple)
-				cdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
+				gdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
 							    cx, cy,
 							    MIN (pwidth, field_geom->width - cx),
 							    MIN (pheight, field_geom->height - cy),
@@ -78,7 +78,7 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 							    65536, 65536, 65536,
 							    colorv, colorv);
 			else
-				cdk_pixbuf_copy_area (src_pixbuf,
+				gdk_pixbuf_copy_area (src_pixbuf,
 						      0, 0,
 						      MIN (pwidth, field_geom->width - cx),
 						      MIN (pheight, field_geom->height - cy),
@@ -129,12 +129,12 @@ set_pixmap_background (CtkWidget *window)
 	width = WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale;
 	height = HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale;
 
-	tmp_pixbuf = cdk_pixbuf_get_from_window (cdk_screen_get_root_window (screen),
+	tmp_pixbuf = gdk_pixbuf_get_from_window (cdk_screen_get_root_window (screen),
 						 0,
 						 0,
 						 width, height);
 
-	pixbuf = cdk_pixbuf_new_from_file (IMAGEDIR "/ocean-stripes.png", NULL);
+	pixbuf = gdk_pixbuf_new_from_file (IMAGEDIR "/ocean-stripes.png", NULL);
 
 	rect.x = 0;
 	rect.y = 0;
@@ -153,7 +153,7 @@ set_pixmap_background (CtkWidget *window)
 
 	g_object_unref (pixbuf);
 
-	cdk_pixbuf_composite (tile_pixbuf,
+	gdk_pixbuf_composite (tile_pixbuf,
 			      tmp_pixbuf,
 			      0,
 			      0,

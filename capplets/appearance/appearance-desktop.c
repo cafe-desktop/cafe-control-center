@@ -1058,16 +1058,16 @@ create_button_images (AppearanceData  *data)
                                   CTK_ICON_SIZE_MENU,
                                   widget,
                                   NULL);
-  w = cdk_pixbuf_get_width (pb);
-  h = cdk_pixbuf_get_height (pb);
+  w = gdk_pixbuf_get_width (pb);
+  h = gdk_pixbuf_get_height (pb);
 
   for (i = 0; i < 3; i++) {
-    pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
-    cdk_pixbuf_fill (pixbuf, 0);
+    pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
+    gdk_pixbuf_fill (pixbuf, 0);
     if (i > 0)
-      cdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, CDK_INTERP_NEAREST, 255);
+      gdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, CDK_INTERP_NEAREST, 255);
     if (i < 2)
-      cdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, CDK_INTERP_NEAREST, 255);
+      gdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, CDK_INTERP_NEAREST, 255);
 
     buttons[i] = pixbuf;
   }

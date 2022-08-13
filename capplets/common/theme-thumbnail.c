@@ -98,17 +98,17 @@ static void pixbuf_apply_mask_region(CdkPixbuf* pixbuf, cairo_region_t* region)
   g_return_if_fail (pixbuf);
   g_return_if_fail (region);
 
-  nchannels = cdk_pixbuf_get_n_channels (pixbuf);
-  rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-  pixels = cdk_pixbuf_get_pixels (pixbuf);
+  nchannels = gdk_pixbuf_get_n_channels (pixbuf);
+  rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+  pixels = gdk_pixbuf_get_pixels (pixbuf);
 
 
   /* we need an alpha channel ... */
-  if (!cdk_pixbuf_get_has_alpha (pixbuf) || nchannels != 4)
+  if (!gdk_pixbuf_get_has_alpha (pixbuf) || nchannels != 4)
     return;
 
-  for (w = 0; w < cdk_pixbuf_get_width (pixbuf); ++w)
-    for (h = 0; h < cdk_pixbuf_get_height (pixbuf); ++h)
+  for (w = 0; w < gdk_pixbuf_get_width (pixbuf); ++w)
+    for (h = 0; h < gdk_pixbuf_get_height (pixbuf); ++h)
     {
       if (!cairo_region_contains_point (region, w, h))
       {
@@ -198,8 +198,8 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 
   /* Represent the icon theme */
   icon = create_folder_icon ((char *) theme_thumbnail_data->icon_theme_name->data);
-  icon_width = cdk_pixbuf_get_width (icon);
-  icon_height = cdk_pixbuf_get_height (icon);
+  icon_width = gdk_pixbuf_get_width (icon);
+  icon_height = gdk_pixbuf_get_height (icon);
 
   /* Create a fake window */
   flags = META_FRAME_ALLOWS_DELETE |
@@ -261,7 +261,7 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   ctk_widget_get_allocation (vbox, &vbox_allocation);
 
   /* Add the icon theme to the pixbuf */
-  cdk_pixbuf_composite (icon, pixbuf,
+  gdk_pixbuf_composite (icon, pixbuf,
                         vbox_allocation.x + vbox_allocation.width - icon_width - 5,
                         vbox_allocation.y + vbox_allocation.height - icon_height - 5,
                         icon_width, icon_height,
@@ -340,7 +340,7 @@ create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
 
   pixbuf = ctk_offscreen_window_get_pixbuf (CTK_OFFSCREEN_WINDOW (window));
 
-  retval = cdk_pixbuf_scale_simple (pixbuf,
+  retval = gdk_pixbuf_scale_simple (pixbuf,
                                     CTK_THUMBNAIL_SIZE,
                                     (int) CTK_THUMBNAIL_SIZE * (((double) height) / ((double) width)),
                                     CDK_INTERP_BILINEAR);
@@ -409,7 +409,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   cairo_region_destroy (region);
 
 
-  retval = cdk_pixbuf_scale_simple (pixbuf,
+  retval = gdk_pixbuf_scale_simple (pixbuf,
                                     CROMA_THUMBNAIL_WIDTH,
                                     CROMA_THUMBNAIL_HEIGHT,
                                     CDK_INTERP_BILINEAR);
@@ -592,10 +592,10 @@ message_from_capplet (GIOChannel   *source,
           width = height = rowstride = 0;
           pixels = NULL;
         } else {
-          width = cdk_pixbuf_get_width (pixbuf);
-          height = cdk_pixbuf_get_height (pixbuf);
-          rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-          pixels = cdk_pixbuf_get_pixels (pixbuf);
+          width = gdk_pixbuf_get_width (pixbuf);
+          height = gdk_pixbuf_get_height (pixbuf);
+          rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+          pixels = gdk_pixbuf_get_pixels (pixbuf);
         }
 
         /* Write the pixbuf's size */
@@ -608,7 +608,7 @@ message_from_capplet (GIOChannel   *source,
 
         for (i = 0; i < height; i++)
         {
-          if (write (pipe_from_factory_fd[1], pixels + rowstride * i, width * cdk_pixbuf_get_n_channels (pixbuf)) == -1)
+          if (write (pipe_from_factory_fd[1], pixels + rowstride * i, width * gdk_pixbuf_get_n_channels (pixbuf)) == -1)
             perror ("write error");
         }
 
@@ -713,9 +713,9 @@ message_from_child (GIOChannel   *source,
           gchar *pixels;
           gint i, rowstride;
 
-          pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, async_data.thumbnail_width, async_data.thumbnail_height);
-          pixels = (gchar *) cdk_pixbuf_get_pixels (pixbuf);
-          rowstride = cdk_pixbuf_get_rowstride (pixbuf);
+          pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, async_data.thumbnail_width, async_data.thumbnail_height);
+          pixels = (gchar *) gdk_pixbuf_get_pixels (pixbuf);
+          rowstride = gdk_pixbuf_get_rowstride (pixbuf);
 
           for (i = 0; i < async_data.thumbnail_height; ++i)
             memcpy (pixels + rowstride * i, async_data.data->data + 4 * async_data.thumbnail_width * i, async_data.thumbnail_width * 4);
@@ -852,9 +852,9 @@ read_pixbuf (void)
   if (size[0] <= 0 || size[1] <= 0)
     return NULL;
 
-  pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, size[0], size[1]);
-  rowstride = cdk_pixbuf_get_rowstride (pixbuf);
-  pixels = cdk_pixbuf_get_pixels (pixbuf);
+  pixbuf = gdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, size[0], size[1]);
+  rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+  pixels = gdk_pixbuf_get_pixels (pixbuf);
 
   for (i = 0; i < size[1]; i++)
   {
@@ -862,7 +862,7 @@ read_pixbuf (void)
 
     do
     {
-      bytes_read = read (pipe_from_factory_fd[0], pixels + rowstride * i + j, size[0] * cdk_pixbuf_get_n_channels (pixbuf) - j);
+      bytes_read = read (pipe_from_factory_fd[0], pixels + rowstride * i + j, size[0] * gdk_pixbuf_get_n_channels (pixbuf) - j);
 
       if (bytes_read > 0)
         j += bytes_read;
@@ -872,7 +872,7 @@ read_pixbuf (void)
         goto eof;
       }
     }
-    while (j < size[0] * cdk_pixbuf_get_n_channels (pixbuf));
+    while (j < size[0] * gdk_pixbuf_get_n_channels (pixbuf));
   }
 
   return pixbuf;

@@ -181,7 +181,7 @@ set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 {
 	CdkPixbuf *pixbuf;
 
-	pixbuf = cdk_pixbuf_get_from_surface (surface, 0, 0,
+	pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0,
 					      cairo_image_surface_get_width (surface),
 					      cairo_image_surface_get_height (surface));
 
@@ -208,7 +208,7 @@ update_icon (DrWright *dr)
 	width = cairo_image_surface_get_width (dr->neutral_bar);
 	height = cairo_image_surface_get_height (dr->neutral_bar);
 
-	tmp_pixbuf = cdk_pixbuf_get_from_surface (dr->neutral_bar,
+	tmp_pixbuf = gdk_pixbuf_get_from_surface (dr->neutral_bar,
 						  0, 0,
 						  width, height);
 
@@ -236,20 +236,20 @@ update_icon (DrWright *dr)
 
 	switch (dr->state) {
 	case STATE_WARN:
-		pixbuf = cdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
+		pixbuf = gdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
 		set_pixbuf = FALSE;
 		break;
 
 	case STATE_BREAK_SETUP:
 	case STATE_BREAK:
-		pixbuf = cdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
+		pixbuf = gdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
 		break;
 
 	default:
-		pixbuf = cdk_pixbuf_get_from_surface (dr->green_bar, 0, 0, width, height);
+		pixbuf = gdk_pixbuf_get_from_surface (dr->green_bar, 0, 0, width, height);
 	}
 
-	cdk_pixbuf_composite (pixbuf,
+	gdk_pixbuf_composite (pixbuf,
 			      tmp_pixbuf,
 			      0,
 			      offset,
@@ -780,7 +780,7 @@ init_tray_icon (DrWright *dr)
 {
 	CdkPixbuf *pixbuf;
 
-	pixbuf = cdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
+	pixbuf = gdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
 					      cairo_image_surface_get_width (dr->neutral_bar),
 					      cairo_image_surface_get_height (dr->neutral_bar));
 
