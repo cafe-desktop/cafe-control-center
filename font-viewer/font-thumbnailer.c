@@ -30,8 +30,8 @@
 #include <math.h>
 #include FT_FREETYPE_H
 
-#include <gdk/gdk.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk/cdk.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
@@ -293,7 +293,7 @@ main (int argc,
                      PADDING_HORIZONTAL - text_extents.x_bearing + (thumb_size - scale * text_extents.width) / 2.0,
                      PADDING_VERTICAL - text_extents.y_bearing + (thumb_size - scale * text_extents.height) / 2.0);
 
-    gdk_cairo_set_source_rgba (cr, &black);
+    cdk_cairo_set_source_rgba (cr, &black);
     cairo_show_text (cr, str);
     cairo_destroy (cr);
 

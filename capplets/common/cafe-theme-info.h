@@ -26,8 +26,8 @@
 #include <glib.h>
 #include <gio/gio.h>
 #include <ctk/ctk.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
-#include <gdk/gdk.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <cdk/cdk.h>
 
 typedef enum {
 	CAFE_THEME_TYPE_METATHEME,

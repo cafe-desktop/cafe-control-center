@@ -464,7 +464,7 @@ because we can't do anything this expensive once per second.
 Detailed notes (but most of the patch should be rewritten):
 
 
-=== FIXME in gdkscreen-x11.c in get_width_mm()
+=== FIXME in cdkscreen-x11.c in get_width_mm()
 
 /* monitor pixel width / screen pixel width * screen_physical width */
 
@@ -485,7 +485,7 @@ vs. 1.1 vs 1.2 check.
 For now it just requires 1.2.
 
 Actually, this might be fine because the only place where we make use
-of a 1.1 library is in the _gdk_x11_screen_size_changed() function,
+of a 1.1 library is in the _cdk_x11_screen_size_changed() function,
 but there we have a fallback that just updates the variables in the
 Screen struct itself.
 
@@ -514,9 +514,9 @@ So, only defining HAVE_RANDR if we detect 1.2 should be ok.
 New API so far:
 
 (* monitors_changed) signal
-gdk_screen_get_monitor_width_mm()
-gdk_screen_get_monitor_height_mm()
-gdk_screen_get_monitor_name() => Note this is the output (eg. "DVI-0")
+cdk_screen_get_monitor_width_mm()
+cdk_screen_get_monitor_height_mm()
+cdk_screen_get_monitor_name() => Note this is the output (eg. "DVI-0")
 
 We should probably also have
 get_manufacturer()
@@ -667,7 +667,7 @@ CTK+ patch is in now.
 );
 
   Might be worthwhile to factor this out into a
-  gdk_screen_get_output_info (screen, monitor_num)
+  cdk_screen_get_output_info (screen, monitor_num)
   helper function ?
 
 Instead of cutting and pasting all over creation
@@ -692,7 +692,7 @@ Should be (maj > 1) || (maj == 1 && min >= 2)
 
   You should call XRRSelectInput() at the same place where you are
   calling XSelectInput() right now. The right place to handle the
-  XRandr events is the huge switch in gdkevents-x11.c:gdk_event_translate
+  XRandr events is the huge switch in cdkevents-x11.c:cdk_event_translate
   Check out how other extension events are handled there, like
   XKB, or XFixes.
 

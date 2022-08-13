@@ -31,7 +31,7 @@
 #include <libcafe-desktop/cafe-rr.h>
 #include <libcafe-desktop/cafe-rr-config.h>
 #include <libcafe-desktop/cafe-rr-labeler.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <X11/Xlib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
@@ -1371,7 +1371,7 @@ output_overlaps (CafeRROutputInfo *output, CafeRRConfig *config)
 	    GdkRectangle other_rect;
 
 	    get_output_rect (outputs[i], &other_rect);
-	    if (gdk_rectangle_intersect (&output_rect, &other_rect, NULL))
+	    if (cdk_rectangle_intersect (&output_rect, &other_rect, NULL))
 		return TRUE;
 	}
     }
@@ -1466,12 +1466,12 @@ set_cursor (CtkWidget *widget, GdkCursorType type)
 	if (type == GDK_BLANK_CURSOR)
 	    cursor = NULL;
 	else
-	    cursor = gdk_cursor_new_for_display (ctk_widget_get_display (widget), type);
+	    cursor = cdk_cursor_new_for_display (ctk_widget_get_display (widget), type);
 
 	window = ctk_widget_get_window (widget);
 
 	if (window)
-	    gdk_window_set_cursor (window, cursor);
+	    cdk_window_set_cursor (window, cursor);
 
 	if (cursor)
 	    g_object_unref (cursor);
@@ -1664,8 +1664,8 @@ paint_background (FooScrollArea *area,
                            CTK_STYLE_PROPERTY_BACKGROUND_COLOR, &base_color,
                            NULL);
     ctk_style_context_restore (widget_style);
-    gdk_cairo_set_source_rgba(cr, base_color);
-    gdk_rgba_free (base_color);
+    cdk_cairo_set_source_rgba(cr, base_color);
+    cdk_rgba_free (base_color);
 
     cairo_rectangle (cr,
 		     viewport.x, viewport.y,
@@ -1681,7 +1681,7 @@ paint_background (FooScrollArea *area,
                                            ctk_style_context_get_state (widget_style),
                                            &dark_color);
     ctk_style_context_restore (widget_style);
-    gdk_cairo_set_source_rgba (cr, &dark_color);
+    cdk_cairo_set_source_rgba (cr, &dark_color);
 
     cairo_stroke (cr);
 }
@@ -2008,7 +2008,7 @@ ensure_current_configuration_is_saved (void)
          * that there *will* be a backup file in the end.
          */
 
-        rr_screen = cafe_rr_screen_new (gdk_screen_get_default (), NULL); /* NULL-GError */
+        rr_screen = cafe_rr_screen_new (cdk_screen_get_default (), NULL); /* NULL-GError */
         if (!rr_screen)
                 return;
 
@@ -2206,7 +2206,7 @@ get_nearest_output (CafeRRConfig *configuration, int x, int y)
 }
 
 /* Gets the output that contains the largest intersection with the window.
- * Logic stolen from gdk_screen_get_monitor_at_window().
+ * Logic stolen from cdk_screen_get_monitor_at_window().
  */
 static CafeRROutputInfo *
 get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
@@ -2217,8 +2217,8 @@ get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
     int largest_index;
     CafeRROutputInfo **outputs;
 
-    gdk_window_get_geometry (window, &win_rect.x, &win_rect.y, &win_rect.width, &win_rect.height);
-    gdk_window_get_origin (window, &win_rect.x, &win_rect.y);
+    cdk_window_get_geometry (window, &win_rect.x, &win_rect.y, &win_rect.width, &win_rect.height);
+    cdk_window_get_origin (window, &win_rect.x, &win_rect.y);
 
     largest_area = 0;
     largest_index = -1;
@@ -2230,7 +2230,7 @@ get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
 
 	cafe_rr_output_info_get_geometry (outputs[i], &output_rect.x, &output_rect.y, &output_rect.width, &output_rect.height);
 
-	if (cafe_rr_output_info_is_connected (outputs[i]) && gdk_rectangle_intersect (&win_rect, &output_rect, &intersection))
+	if (cafe_rr_output_info_is_connected (outputs[i]) && cdk_rectangle_intersect (&win_rect, &output_rect, &intersection))
 	{
 	    int area;
 
@@ -2386,7 +2386,7 @@ run_application (App *app)
 	return;
     }
 
-    app->screen = cafe_rr_screen_new (gdk_screen_get_default (), &error);
+    app->screen = cafe_rr_screen_new (cdk_screen_get_default (), &error);
     g_signal_connect (app->screen, "changed", G_CALLBACK (on_screen_changed), app);
     if (!app->screen)
     {

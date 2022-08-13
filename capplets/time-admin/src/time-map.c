@@ -130,7 +130,7 @@ cc_timezone_map_get_preferred_width (CtkWidget *widget,
     TimezoneMap *map = TIMEZONEMAP (widget);
     gint size;
 
-    size = gdk_pixbuf_get_width (map->orig_background);
+    size = cdk_pixbuf_get_width (map->orig_background);
 
     if (minimum != NULL)
         *minimum = size;
@@ -146,7 +146,7 @@ cc_timezone_map_get_preferred_height (CtkWidget *widget,
     TimezoneMap *map = TIMEZONEMAP (widget);
     gint size;
 
-    size = gdk_pixbuf_get_height (map->orig_background);
+    size = cdk_pixbuf_get_height (map->orig_background);
 
     if (minimum != NULL)
         *minimum = size;
@@ -168,7 +168,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     else
         pixbuf = map->orig_background;
 
-    map->background = gdk_pixbuf_scale_simple (pixbuf,
+    map->background = cdk_pixbuf_scale_simple (pixbuf,
                                                allocation->width,
                                                allocation->height,
                                                GDK_INTERP_BILINEAR);
@@ -176,13 +176,13 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     if (map->color_map)
         g_object_unref (map->color_map);
 
-    map->color_map = gdk_pixbuf_scale_simple (map->orig_color_map,
+    map->color_map = cdk_pixbuf_scale_simple (map->orig_color_map,
                                               allocation->width,
                                               allocation->height,
                                               GDK_INTERP_BILINEAR);
 
-    map->visible_map_pixels = gdk_pixbuf_get_pixels (map->color_map);
-    map->visible_map_rowstride = gdk_pixbuf_get_rowstride (map->color_map);
+    map->visible_map_pixels = cdk_pixbuf_get_pixels (map->color_map);
+    map->visible_map_rowstride = cdk_pixbuf_get_rowstride (map->color_map);
     CTK_WIDGET_CLASS (timezone_map_parent_class)->size_allocate (widget,
                                                                  allocation);
 }
@@ -207,10 +207,10 @@ cc_timezone_map_realize (CtkWidget *widget)
     attr.event_mask = ctk_widget_get_events (widget)
                                  | GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK;
 
-    window = gdk_window_new (ctk_widget_get_parent_window (widget), &attr,
+    window = cdk_window_new (ctk_widget_get_parent_window (widget), &attr,
                              GDK_WA_X | GDK_WA_Y);
 
-    gdk_window_set_user_data (window, widget);
+    cdk_window_set_user_data (window, widget);
     ctk_widget_set_window (widget, window);
 }
 static gdouble
@@ -336,7 +336,7 @@ cc_timezone_map_draw (CtkWidget *widget,
     ctk_widget_get_allocation (widget, &alloc);
 
     /* paint background */
-    gdk_cairo_set_source_pixbuf (cr, map->background, 0, 0);
+    cdk_cairo_set_source_pixbuf (cr, map->background, 0, 0);
     cairo_paint (cr);
 
     /* paint hilight */
@@ -353,7 +353,7 @@ cc_timezone_map_draw (CtkWidget *widget,
                                "%g", map->selected_offset));
     }
 
-    orig_hilight = gdk_pixbuf_new_from_file (file, &err);
+    orig_hilight = cdk_pixbuf_new_from_file (file, &err);
 
     if (!orig_hilight)
     {
@@ -364,9 +364,9 @@ cc_timezone_map_draw (CtkWidget *widget,
     {
         g_autoptr(GdkPixbuf) hilight = NULL;
 
-        hilight = gdk_pixbuf_scale_simple (orig_hilight, alloc.width,
+        hilight = cdk_pixbuf_scale_simple (orig_hilight, alloc.width,
                                            alloc.height, GDK_INTERP_BILINEAR);
-        gdk_cairo_set_source_pixbuf (cr, hilight, 0, 0);
+        cdk_cairo_set_source_pixbuf (cr, hilight, 0, 0);
 
         cairo_paint (cr);
     }
@@ -382,7 +382,7 @@ cc_timezone_map_draw (CtkWidget *widget,
         draw_text_bubble (cr, widget, pointx, pointy);
         if (map->pin)
         {
-            gdk_cairo_set_source_pixbuf (cr, map->pin,
+            cdk_cairo_set_source_pixbuf (cr, map->pin,
                                          pointx - PIN_HOT_POINT_X,
                                          pointy - PIN_HOT_POINT_Y);
             cairo_paint (cr);
@@ -404,11 +404,11 @@ update_cursor (CtkWidget *widget)
     {
         GdkDisplay *display;
         display = ctk_widget_get_display (widget);
-        cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
+        cursor = cdk_cursor_new_for_display (display, GDK_HAND2);
     }
 
     window = ctk_widget_get_window (widget);
-    gdk_window_set_cursor (window, cursor);
+    cdk_window_set_cursor (window, cursor);
 }
 
 static void
@@ -551,14 +551,14 @@ timezone_map_init (TimezoneMap *map)
 {
     GError *err = NULL;
 
-    map->orig_background = gdk_pixbuf_new_from_file (TIMPZONEDIR"bg.png",&err);
+    map->orig_background = cdk_pixbuf_new_from_file (TIMPZONEDIR"bg.png",&err);
     if (!map->orig_background)
     {
         g_warning ("Could not load background image: %s",
                    (err) ? err->message : "Unknown error");
         g_clear_error (&err);
     }
-    map->orig_background_dim = gdk_pixbuf_new_from_file(TIMPZONEDIR"bg_dim.png",&err);
+    map->orig_background_dim = cdk_pixbuf_new_from_file(TIMPZONEDIR"bg_dim.png",&err);
     if (!map->orig_background_dim)
     {
         g_warning ("Could not load background image: %s",
@@ -566,7 +566,7 @@ timezone_map_init (TimezoneMap *map)
         g_clear_error (&err);
     }
 
-    map->orig_color_map = gdk_pixbuf_new_from_file (TIMPZONEDIR"cc.png",&err);
+    map->orig_color_map = cdk_pixbuf_new_from_file (TIMPZONEDIR"cc.png",&err);
     if (!map->orig_color_map)
     {
         g_warning ("Could not load background image: %s",
@@ -574,7 +574,7 @@ timezone_map_init (TimezoneMap *map)
         g_clear_error (&err);
     }
 
-    map->pin = gdk_pixbuf_new_from_file (TIMPZONEDIR"pin.png",&err);
+    map->pin = cdk_pixbuf_new_from_file (TIMPZONEDIR"pin.png",&err);
     if (!map->pin)
     {
         g_warning ("Could not load pin icon: %s",

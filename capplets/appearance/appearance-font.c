@@ -27,7 +27,7 @@
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <glib/gstdio.h>
 
 #include "capplet-util.h"
@@ -424,12 +424,12 @@ get_dpi_from_x_server (void)
   GdkScreen  *screen;
   double dpi;
 
-  screen = gdk_screen_get_default ();
+  screen = cdk_screen_get_default ();
 
   if (screen) {
     double width_dpi, height_dpi;
 
-    Screen *xscreen = gdk_x11_screen_get_xscreen (screen);
+    Screen *xscreen = cdk_x11_screen_get_xscreen (screen);
 
     width_dpi = dpi_from_pixels_and_mm (WidthOfScreen (xscreen), WidthMMOfScreen (xscreen));
     height_dpi = dpi_from_pixels_and_mm (HeightOfScreen (xscreen), HeightMMOfScreen (xscreen));
@@ -458,8 +458,8 @@ dpi_load (GSettings     *settings,
   gint scale;
   gdouble dpi;
 
-  screen = gdk_screen_get_default ();
-  scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+  screen = cdk_screen_get_default ();
+  scale = cdk_window_get_scale_factor (cdk_screen_get_root_window (screen));
   dpi = g_settings_get_double (settings, FONT_DPI_KEY);
 
   if (dpi == 0)
@@ -519,8 +519,8 @@ dpi_value_changed (CtkSpinButton  *spinner,
     gint scale;
     gdouble new_dpi;
 
-    screen = gdk_screen_get_default ();
-    scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+    screen = cdk_screen_get_default ();
+    scale = cdk_window_get_scale_factor (cdk_screen_get_root_window (screen));
     new_dpi = ctk_spin_button_get_value (spinner) / (double)scale;
 
     g_settings_set_double (data->font_settings, FONT_DPI_KEY, new_dpi);
@@ -673,7 +673,7 @@ cb_show_details (CtkWidget *button,
     g_signal_connect (data->font_settings, "changed::" FONT_DPI_KEY, G_CALLBACK (dpi_changed), data);
 
     /* Update font DPI when window scaling factor is changed */
-    g_signal_connect (gdk_screen_get_default (), "monitors-changed", G_CALLBACK (monitors_changed), data);
+    g_signal_connect (cdk_screen_get_default (), "monitors-changed", G_CALLBACK (monitors_changed), data);
 
     setup_font_sample (appearance_capplet_get_widget (data, "antialias_none_sample"),      ANTIALIAS_NONE,      HINT_SLIGHT);
     setup_font_sample (appearance_capplet_get_widget (data, "antialias_grayscale_sample"), ANTIALIAS_GRAYSCALE, HINT_SLIGHT);

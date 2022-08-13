@@ -30,8 +30,8 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 
 #include <sys/types.h>
 #include <dirent.h>
@@ -245,7 +245,7 @@ get_current_wm (GdkScreen *screen)
 
         g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
 
-        name = gdk_x11_screen_get_window_manager_name (screen);
+        name = cdk_x11_screen_get_window_manager_name (screen);
 
         current_wm = NULL;
 
@@ -309,7 +309,7 @@ cafe_wm_manager_spawn_config_tool_for_current (GdkScreen  *screen,
         } else {
                 const char *name;
 
-                name = gdk_x11_screen_get_window_manager_name (screen);
+                name = cdk_x11_screen_get_window_manager_name (screen);
 
                 g_set_error (error,
                              G_SPAWN_ERROR,

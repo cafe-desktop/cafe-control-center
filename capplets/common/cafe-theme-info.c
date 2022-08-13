@@ -32,7 +32,7 @@
 #include <glib/gi18n.h>
 #include <gmodule.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <gio/gio.h>
 #include <string.h>
 #include <libcafe-desktop/cafe-desktop-item.h>
@@ -499,7 +499,7 @@ add_default_cursor_theme ()
 }
 
 static GdkPixbuf *
-gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
+cdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 {
   GdkPixbuf *pixbuf;
 #define BUF_SIZE sizeof(guint32) * cursor->width * cursor->height
@@ -522,7 +522,7 @@ gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 #endif
   }
 
-  pixbuf = gdk_pixbuf_new_from_data ((const guchar *) buf,
+  pixbuf = cdk_pixbuf_new_from_data ((const guchar *) buf,
                         GDK_COLORSPACE_RGB, TRUE, 8,
                         cursor->width, cursor->height,
                         cursor->width * 4,
@@ -566,7 +566,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
           g_array_append_val (sizes, filter_sizes[i]);
 
           if (thumbnail == NULL && i >= 1)
-            thumbnail = gdk_pixbuf_from_xcursor_image (cursor);
+            thumbnail = cdk_pixbuf_from_xcursor_image (cursor);
         }
 
         XcursorImageDestroy (cursor);
@@ -584,7 +584,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
         cursor = XcursorLibraryLoadImage ("left_ptr", name,
                                           g_array_index (sizes, gint, 0));
         if (cursor) {
-          thumbnail = gdk_pixbuf_from_xcursor_image (cursor);
+          thumbnail = cdk_pixbuf_from_xcursor_image (cursor);
           XcursorImageDestroy (cursor);
         }
       }
@@ -1719,21 +1719,21 @@ cafe_theme_color_scheme_parse (const gchar *scheme, GdkRGBA *colors)
       g_strstrip (color_scheme_pair[1]);
 
       if (!strcmp ("fg_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_FG], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_FG], color_scheme_pair[1]);
       else if (!strcmp ("bg_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_BG], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_BG], color_scheme_pair[1]);
       else if (!strcmp ("text_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_TEXT], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_TEXT], color_scheme_pair[1]);
       else if (!strcmp ("base_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_BASE], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_BASE], color_scheme_pair[1]);
       else if (!strcmp ("selected_fg_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_SELECTED_FG], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_SELECTED_FG], color_scheme_pair[1]);
       else if (!strcmp ("selected_bg_color", color_scheme_pair[0]))
-        gdk_rgba_parse ( &colors[COLOR_SELECTED_BG], color_scheme_pair[1]);
+        cdk_rgba_parse ( &colors[COLOR_SELECTED_BG], color_scheme_pair[1]);
       else if (!strcmp ("tooltip_fg_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_TOOLTIP_FG], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_TOOLTIP_FG], color_scheme_pair[1]);
       else if (!strcmp ("tooltip_bg_color", color_scheme_pair[0]))
-        gdk_rgba_parse (&colors[COLOR_TOOLTIP_BG], color_scheme_pair[1]);
+        cdk_rgba_parse (&colors[COLOR_TOOLTIP_BG], color_scheme_pair[1]);
     }
 
     g_strfreev (color_scheme_pair);
@@ -1755,7 +1755,7 @@ cafe_theme_color_scheme_equal (const gchar *s1, const gchar *s2)
     return FALSE;
 
   for (i = 0; i < NUM_SYMBOLIC_COLORS; ++i) {
-    if (!gdk_rgba_equal (&c1[i], &c2[i]))
+    if (!cdk_rgba_equal (&c1[i], &c2[i]))
       return FALSE;
   }
 

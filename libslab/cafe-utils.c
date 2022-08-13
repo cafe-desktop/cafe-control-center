@@ -29,13 +29,13 @@ load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 	{
 		GdkPixbuf *pixbuf;
 
-		pixbuf = gdk_pixbuf_new_from_file_at_size (id, width * scale_factor, height * scale_factor, NULL);
+		pixbuf = cdk_pixbuf_new_from_file_at_size (id, width * scale_factor, height * scale_factor, NULL);
 
 		icon_exists = (pixbuf != NULL);
 
 		if (icon_exists)
 		{
-			surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, scale_factor, NULL);
+			surface = cdk_cairo_surface_create_from_pixbuf (pixbuf, scale_factor, NULL);
 			ctk_image_set_from_surface (image, surface);
 
 			cairo_surface_destroy (surface);

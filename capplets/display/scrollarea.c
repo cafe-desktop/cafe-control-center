@@ -16,7 +16,7 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include <gdk/gdkprivate.h> /* For GDK_PARENT_RELATIVE_BG */
+#include <cdk/cdkprivate.h> /* For GDK_PARENT_RELATIVE_BG */
 #include "scrollarea.h"
 #include "foo-marshal.h"
 
@@ -148,7 +148,7 @@ foo_scroll_area_map (CtkWidget *widget)
     CTK_WIDGET_CLASS (parent_class)->map (widget);
 
     if (area->priv->input_window)
-	gdk_window_show (area->priv->input_window);
+	cdk_window_show (area->priv->input_window);
 }
 
 static void
@@ -157,7 +157,7 @@ foo_scroll_area_unmap (CtkWidget *widget)
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
     if (area->priv->input_window)
-	gdk_window_hide (area->priv->input_window);
+	cdk_window_hide (area->priv->input_window);
 
     CTK_WIDGET_CLASS (parent_class)->unmap (widget);
 }
@@ -436,15 +436,15 @@ setup_background_cr (GdkWindow *window,
 		     int        x_offset,
 		     int        y_offset)
 {
-    GdkWindow *parent = gdk_window_get_parent (window);
+    GdkWindow *parent = cdk_window_get_parent (window);
     cairo_pattern_t *bg_pattern;
 
-    bg_pattern = gdk_window_get_background_pattern (window);
+    bg_pattern = cdk_window_get_background_pattern (window);
     if (bg_pattern == NULL && parent)
     {
       gint window_x, window_y;
 
-      gdk_window_get_position (window, &window_x, &window_y);
+      cdk_window_get_position (window, &window_x, &window_y);
       setup_background_cr (parent, cr, x_offset + window_x, y_offset + window_y);
     }
     else if (bg_pattern)
@@ -540,10 +540,10 @@ emit_viewport_changed (FooScrollArea *scroll_area,
     if (scroll_area->priv->input_window == NULL)
 	return;
 
-    display = gdk_window_get_display (scroll_area->priv->input_window);
-    seat = gdk_display_get_default_seat (display);
-    pointer = gdk_seat_get_pointer (seat);
-    gdk_window_get_device_position (scroll_area->priv->input_window,
+    display = cdk_window_get_display (scroll_area->priv->input_window);
+    seat = cdk_display_get_default_seat (display);
+    pointer = cdk_seat_get_pointer (seat);
+    cdk_window_get_device_position (scroll_area->priv->input_window,
                                     pointer,
                                     &px,
                                     &py,
@@ -631,14 +631,14 @@ foo_scroll_area_realize (CtkWidget *widget)
     ctk_widget_set_window (widget, window);
     g_object_ref (window);
 
-    area->priv->input_window = gdk_window_new (window,
+    area->priv->input_window = cdk_window_new (window,
 					       &attributes, attributes_mask);
-    cr = gdk_cairo_create (ctk_widget_get_window (widget));
+    cr = cdk_cairo_create (ctk_widget_get_window (widget));
     area->priv->surface = cairo_surface_create_similar (cairo_get_target (cr), CAIRO_CONTENT_COLOR,
 							widget_allocation.width, widget_allocation.height);
     cairo_destroy (cr);
 
-    gdk_window_set_user_data (area->priv->input_window, area);
+    cdk_window_set_user_data (area->priv->input_window, area);
 
     ctk_widget_style_attach (widget);
 }
@@ -650,8 +650,8 @@ foo_scroll_area_unrealize (CtkWidget *widget)
 
     if (area->priv->input_window)
     {
-	gdk_window_set_user_data (area->priv->input_window, NULL);
-	gdk_window_destroy (area->priv->input_window);
+	cdk_window_set_user_data (area->priv->input_window, NULL);
+	cdk_window_destroy (area->priv->input_window);
 	area->priv->input_window = NULL;
     }
 
@@ -668,7 +668,7 @@ create_new_surface (CtkWidget *widget,
 
     ctk_widget_get_allocation (widget, &widget_allocation);
 
-    cr = gdk_cairo_create (ctk_widget_get_window (widget));
+    cr = cdk_cairo_create (ctk_widget_get_window (widget));
     new = cairo_surface_create_similar (cairo_get_target (cr),
 					CAIRO_CONTENT_COLOR,
 					widget_allocation.width,
@@ -744,7 +744,7 @@ foo_scroll_area_size_allocate (CtkWidget     *widget,
     {
 	cairo_surface_t *new_surface;
 
-	gdk_window_move_resize (scroll_area->priv->input_window,
+	cdk_window_move_resize (scroll_area->priv->input_window,
 				allocation->x, allocation->y,
 				allocation->width, allocation->height);
 
@@ -814,7 +814,7 @@ process_event (FooScrollArea	       *scroll_area,
 		cairo_t *cr;
 		gboolean inside;
 
-		cr = gdk_cairo_create (ctk_widget_get_window (widget));
+		cr = cdk_cairo_create (ctk_widget_get_window (widget));
 		cairo_set_fill_rule (cr, path->fill_rule);
 		cairo_set_line_width (cr, path->line_width);
 		cairo_append_path (cr, path->path);
@@ -849,7 +849,7 @@ process_event (FooScrollArea	       *scroll_area,
 }
 
 static void
-process_gdk_event (FooScrollArea *scroll_area,
+process_cdk_event (FooScrollArea *scroll_area,
 		   int		  x,
 		   int	          y,
 		   GdkEvent      *event)
@@ -874,7 +874,7 @@ foo_scroll_area_button_press (CtkWidget *widget,
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_gdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
 
     return TRUE;
 }
@@ -885,7 +885,7 @@ foo_scroll_area_button_release (CtkWidget *widget,
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_gdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
 
     return FALSE;
 }
@@ -896,7 +896,7 @@ foo_scroll_area_motion (CtkWidget *widget,
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    process_gdk_event (area, event->x, event->y, (GdkEvent *)event);
+    process_cdk_event (area, event->x, event->y, (GdkEvent *)event);
     return TRUE;
 }
 
@@ -995,7 +995,7 @@ foo_scroll_area_scroll (FooScrollArea *area,
 
     invalid_region = cairo_region_create_rectangle (&allocation);
 
-    if (gdk_rectangle_intersect (&allocation, &src_area, &move_area))
+    if (cdk_rectangle_intersect (&allocation, &src_area, &move_area))
     {
 	cairo_region_t *move_region;
 	cairo_t *cr;
@@ -1006,12 +1006,12 @@ foo_scroll_area_scroll (FooScrollArea *area,
 	* 1) Clip so the group size is small.
 	* 2) Call push_group() which creates a temporary pixmap as a workaround
 	*/
-	gdk_cairo_rectangle (cr, &move_area);
+	cdk_cairo_rectangle (cr, &move_area);
 	cairo_clip (cr);
 	cairo_push_group (cr);
 
 	cairo_set_source_surface (cr, area->priv->surface, dx, dy);
-	gdk_cairo_rectangle (cr, &move_area);
+	cdk_cairo_rectangle (cr, &move_area);
 	cairo_fill (cr);
 
 	cairo_pop_group_to_source (cr);
@@ -1264,7 +1264,7 @@ foo_scroll_area_invalidate_region (FooScrollArea *area,
     {
 	canvas_to_window (area, region);
 
-	gdk_window_invalidate_region (ctk_widget_get_window (widget),
+	cdk_window_invalidate_region (ctk_widget_get_window (widget),
 	                              region, TRUE);
 
 	window_to_canvas (area, region);

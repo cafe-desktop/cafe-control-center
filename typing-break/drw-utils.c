@@ -19,8 +19,8 @@
  */
 
 #include <config.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctk.h>
 #include "drw-utils.h"
 
@@ -37,11 +37,11 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 	gdouble  colorv;
 	gint     pwidth, pheight;
 
-	need_composite = (alpha < 255 || gdk_pixbuf_get_has_alpha (src_pixbuf));
+	need_composite = (alpha < 255 || cdk_pixbuf_get_has_alpha (src_pixbuf));
 	use_simple = (dest_pixbuf == NULL);
 
 	if (dest_pixbuf == NULL)
-		dest_pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
+		dest_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
 					      FALSE, 8,
 					      field_geom->width, field_geom->height);
 
@@ -52,13 +52,13 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 	else
 		colorv = 0;
 
-	pwidth = gdk_pixbuf_get_width (src_pixbuf);
-	pheight = gdk_pixbuf_get_height (src_pixbuf);
+	pwidth = cdk_pixbuf_get_width (src_pixbuf);
+	pheight = cdk_pixbuf_get_height (src_pixbuf);
 
 	for (cy = 0; cy < field_geom->height; cy += pheight) {
 		for (cx = 0; cx < field_geom->width; cx += pwidth) {
 			if (need_composite && !use_simple)
-				gdk_pixbuf_composite (src_pixbuf, dest_pixbuf,
+				cdk_pixbuf_composite (src_pixbuf, dest_pixbuf,
 						      cx, cy,
 						      MIN (pwidth, field_geom->width - cx),
 						      MIN (pheight, field_geom->height - cy),
@@ -67,7 +67,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 						      GDK_INTERP_BILINEAR,
 						      alpha);
 			else if (need_composite && use_simple)
-				gdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
+				cdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
 							    cx, cy,
 							    MIN (pwidth, field_geom->width - cx),
 							    MIN (pheight, field_geom->height - cy),
@@ -78,7 +78,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 							    65536, 65536, 65536,
 							    colorv, colorv);
 			else
-				gdk_pixbuf_copy_area (src_pixbuf,
+				cdk_pixbuf_copy_area (src_pixbuf,
 						      0, 0,
 						      MIN (pwidth, field_geom->width - cx),
 						      MIN (pheight, field_geom->height - cy),
@@ -126,15 +126,15 @@ set_pixmap_background (CtkWidget *window)
 
 	screen = ctk_widget_get_screen (window);
 	scale = ctk_widget_get_scale_factor (window);
-	width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
-	height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
+	width = WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale;
+	height = HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale;
 
-	tmp_pixbuf = gdk_pixbuf_get_from_window (gdk_screen_get_root_window (screen),
+	tmp_pixbuf = cdk_pixbuf_get_from_window (cdk_screen_get_root_window (screen),
 						 0,
 						 0,
 						 width, height);
 
-	pixbuf = gdk_pixbuf_new_from_file (IMAGEDIR "/ocean-stripes.png", NULL);
+	pixbuf = cdk_pixbuf_new_from_file (IMAGEDIR "/ocean-stripes.png", NULL);
 
 	rect.x = 0;
 	rect.y = 0;
@@ -153,7 +153,7 @@ set_pixmap_background (CtkWidget *window)
 
 	g_object_unref (pixbuf);
 
-	gdk_pixbuf_composite (tile_pixbuf,
+	cdk_pixbuf_composite (tile_pixbuf,
 			      tmp_pixbuf,
 			      0,
 			      0,
@@ -168,8 +168,8 @@ set_pixmap_background (CtkWidget *window)
 
 	g_object_unref (tile_pixbuf);
 
-	cr = gdk_cairo_create (ctk_widget_get_window (window));
-	gdk_cairo_set_source_pixbuf (cr, tmp_pixbuf, 0, 0);
+	cr = cdk_cairo_create (ctk_widget_get_window (window));
+	cdk_cairo_set_source_pixbuf (cr, tmp_pixbuf, 0, 0);
 	cairo_paint (cr);
 
 	g_object_unref (tmp_pixbuf);
@@ -184,7 +184,7 @@ drw_setup_background (CtkWidget *window)
 	gboolean      is_composited;
 
 	screen = ctk_widget_get_screen (window);
-	is_composited = gdk_screen_is_composited (screen);
+	is_composited = cdk_screen_is_composited (screen);
 
 	if (is_composited) {
 		g_signal_connect (window, "draw", G_CALLBACK (window_draw_event), window);

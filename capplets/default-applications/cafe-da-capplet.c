@@ -670,7 +670,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	capplet->mobility_startup_checkbutton = get_widget("mobility_start_checkbutton");
 
 	g_signal_connect(capplet->window, "screen-changed", G_CALLBACK(screen_changed_cb), capplet);
-	screen_changed_cb(capplet->window, gdk_screen_get_default(), capplet);
+	screen_changed_cb(capplet->window, cdk_screen_get_default(), capplet);
 
 	/* Lists of default applications */
 	capplet->web_browsers = g_app_info_get_all_for_type("x-scheme-handler/http");

@@ -1,8 +1,8 @@
 #include <config.h>
 #include <libintl.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkx.h>
+#include <cdk/cdkkeysyms.h>
 #include "eggcellrendererkeys.h"
 #include "eggaccelerators.h"
 
@@ -317,7 +317,7 @@ static gboolean is_modifier(guint keycode)
 	XModifierKeymap* mod_keymap;
 	gboolean retval = FALSE;
 
-	mod_keymap = XGetModifierMapping(gdk_x11_display_get_xdisplay(gdk_display_get_default()));
+	mod_keymap = XGetModifierMapping(cdk_x11_display_get_xdisplay(cdk_display_get_default()));
 
 	map_size = 8 * mod_keymap->max_keypermod;
 	i = 0;
@@ -391,14 +391,14 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 	cleared = FALSE;
 
 	consumed_modifiers = 0;
-	gdk_keymap_translate_keyboard_state (gdk_keymap_get_for_display (gdk_display_get_default ()),
+	cdk_keymap_translate_keyboard_state (cdk_keymap_get_for_display (cdk_display_get_default ()),
 		event->hardware_keycode,
 		event->state,
 		event->group,
 		NULL, NULL, NULL, &consumed_modifiers);
 
 	upper = event->keyval;
-	accel_keyval = gdk_keyval_to_lower(upper);
+	accel_keyval = cdk_keyval_to_lower(upper);
 
 	if (accel_keyval == GDK_KEY_ISO_Left_Tab)
 	{
@@ -411,7 +411,7 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 		consumed_modifiers &= ~(GDK_SHIFT_MASK);
 	}
 
-	egg_keymap_resolve_virtual_modifiers (gdk_keymap_get_for_display (gdk_display_get_default ()),
+	egg_keymap_resolve_virtual_modifiers (cdk_keymap_get_for_display (cdk_display_get_default ()),
 		EGG_VIRTUAL_NUM_LOCK_MASK |
 		EGG_VIRTUAL_SCROLL_LOCK_MASK |
 		EGG_VIRTUAL_LOCK_MASK,
@@ -465,9 +465,9 @@ static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* d
 	out:
 
 	display = ctk_widget_get_display (widget);
-	seat = gdk_display_get_default_seat (display);
+	seat = cdk_display_get_default_seat (display);
 
-	gdk_seat_ungrab (seat);
+	cdk_seat_ungrab (seat);
 
 	path = g_strdup(g_object_get_data(G_OBJECT(keys->edit_widget), EGG_CELL_RENDERER_TEXT_PATH));
 
@@ -496,9 +496,9 @@ static void ungrab_stuff(CtkWidget* widget, gpointer data)
 	GdkSeat *seat;
 
 	display = ctk_widget_get_display (widget);
-	seat = gdk_display_get_default_seat (display);
+	seat = cdk_display_get_default_seat (display);
 
-	gdk_seat_ungrab (seat);
+	cdk_seat_ungrab (seat);
 
 	g_signal_handlers_disconnect_by_func(G_OBJECT(keys->grab_widget), G_CALLBACK(grab_key_callback), data);
 }
@@ -557,7 +557,7 @@ override_background_color (CtkWidget *widget,
   provider = ctk_css_provider_new ();
 
   css = g_strdup_printf ("* { background-color: %s;}",
-                         gdk_rgba_to_string (rgba));
+                         cdk_rgba_to_string (rgba));
   ctk_css_provider_load_from_data (provider, css, -1, NULL);
   g_free (css);
 
@@ -577,7 +577,7 @@ override_color (CtkWidget *widget,
   provider = ctk_css_provider_new ();
 
   css = g_strdup_printf ("* { color: %s;}",
-                         gdk_rgba_to_string (rgba));
+                         cdk_rgba_to_string (rgba));
   ctk_css_provider_load_from_data (provider, css, -1, NULL);
   g_free (css);
 
@@ -618,9 +618,9 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
   g_return_val_if_fail (ctk_widget_get_window (widget) != NULL, NULL);
 
   display = ctk_widget_get_display (widget);
-  seat = gdk_display_get_default_seat (display);
+  seat = cdk_display_get_default_seat (display);
 
-  if (gdk_seat_grab (seat,
+  if (cdk_seat_grab (seat,
                      ctk_widget_get_window (widget),
                      GDK_SEAT_CAPABILITY_ALL,
                      FALSE,
@@ -649,7 +649,7 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
                          CTK_STYLE_PROPERTY_BACKGROUND_COLOR,
                          &c, NULL);
   box_color = *c;
-  gdk_rgba_free (c);
+  cdk_rgba_free (c);
 
   override_background_color (eventbox, &box_color);
 

@@ -493,7 +493,7 @@ sushi_font_widget_draw (CtkWidget *drawing_area,
   ctk_style_context_get_color (context, state, &color);
   ctk_style_context_get_padding (context, state, &padding);
 
-  gdk_cairo_set_source_rgba (cr, &color);
+  cdk_cairo_set_source_rgba (cr, &color);
 
   sizes = build_sizes_table (face, &n_sizes, &alpha_size, &title_size);
 

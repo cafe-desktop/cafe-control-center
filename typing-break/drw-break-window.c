@@ -25,8 +25,8 @@
 #include <math.h>
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkx.h>
+#include <cdk/cdkkeysyms.h>
 #include <gio/gio.h>
 
 #ifdef HAVE_CANBERRA_CTK
@@ -142,22 +142,22 @@ drw_break_window_init (DrwBreakWindow *window)
 	ctk_window_fullscreen (CTK_WINDOW (window));
 	ctk_window_set_modal (CTK_WINDOW (window), TRUE);
 
-	screen = gdk_screen_get_default ();
-	display = gdk_screen_get_display (screen);
+	screen = cdk_screen_get_default ();
+	display = cdk_screen_get_display (screen);
 	scale = ctk_widget_get_scale_factor (CTK_WIDGET (window));
 
-	gdk_monitor_get_geometry (gdk_display_get_monitor (display, root_monitor), &monitor);
+	cdk_monitor_get_geometry (cdk_display_get_monitor (display, root_monitor), &monitor);
 
 	ctk_window_set_default_size (CTK_WINDOW (window),
-				     WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
-				     HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
+				     WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale,
+				     HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale);
 
 	ctk_window_set_decorated (CTK_WINDOW (window), FALSE);
 	ctk_widget_set_app_paintable (CTK_WIDGET (window), TRUE);
 	drw_setup_background (CTK_WIDGET (window));
 
-	right_padding = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale - monitor.width - monitor.x;
-	bottom_padding = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale - monitor.height - monitor.y;
+	right_padding = WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale - monitor.width - monitor.x;
+	bottom_padding = HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale - monitor.height - monitor.y;
 
 	outer_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 	ctk_widget_set_hexpand (outer_vbox, TRUE);
@@ -430,10 +430,10 @@ grab_on_window (GdkWindow *window,
 	GdkDisplay *display;
 	GdkSeat *seat;
 
-	display = gdk_window_get_display (window);
-	seat = gdk_display_get_default_seat (display);
+	display = cdk_window_get_display (window);
+	seat = cdk_display_get_default_seat (display);
 
-	return (gdk_seat_grab (seat,
+	return (cdk_seat_grab (seat,
 	                       window,
 	                       GDK_SEAT_CAPABILITY_ALL,
 	                       TRUE,

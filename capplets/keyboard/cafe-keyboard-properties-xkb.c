@@ -26,7 +26,7 @@
 #endif
 
 #include <string.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 
@@ -169,7 +169,7 @@ setup_xkb_tabs (CtkBuilder * dialog)
 	xkb_general_settings = g_settings_new (XKB_GENERAL_SCHEMA);
 	xkb_kbd_settings = g_settings_new (XKB_KBD_SCHEMA);
 
-	engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(gdk_display_get_default()));
+	engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(cdk_display_get_default()));
 	config_registry = xkl_config_registry_get_instance (engine);
 
 	cafekbd_desktop_config_init (&desktop_config, engine);

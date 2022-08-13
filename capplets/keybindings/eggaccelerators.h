@@ -22,7 +22,7 @@
 #define __EGG_ACCELERATORS_H__
 
 #include <ctk/ctk.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 
 #ifdef __cplusplus
 extern "C" {

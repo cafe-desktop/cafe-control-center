@@ -297,13 +297,13 @@ static void cafe_wp_xml_load_xml(AppearanceData* data, const char* filename)
 				wp->artist = g_strdup ("(none)");
 			}
 
-			gdk_rgba_parse(&color1, pcolor);
-			gdk_rgba_parse(&color2, scolor);
+			cdk_rgba_parse(&color1, pcolor);
+			cdk_rgba_parse(&color2, scolor);
 			g_free(pcolor);
 			g_free(scolor);
 
-			wp->pcolor = gdk_rgba_copy(&color1);
-			wp->scolor = gdk_rgba_copy(&color2);
+			wp->pcolor = cdk_rgba_copy(&color1);
+			wp->scolor = cdk_rgba_copy(&color2);
 
 			if ((wp->filename != NULL && g_file_test (wp->filename, G_FILE_TEST_EXISTS)) || !strcmp (wp->filename, "(none)"))
 			{
@@ -502,8 +502,8 @@ void cafe_wp_xml_save_list(AppearanceData* data)
 			filename = g_filename_to_utf8(wpitem->filename, -1, NULL, NULL, NULL);
 		}
 
-		pcolor = gdk_rgba_to_string(wpitem->pcolor);
-		scolor = gdk_rgba_to_string(wpitem->scolor);
+		pcolor = cdk_rgba_to_string(wpitem->pcolor);
+		scolor = cdk_rgba_to_string(wpitem->scolor);
 
 		scale = wp_item_option_to_string(wpitem->options);
 		shade = wp_item_shading_to_string(wpitem->shade_type);
