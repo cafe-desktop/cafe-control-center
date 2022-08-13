@@ -54,7 +54,7 @@ static void sample_draw(GtkWidget* darea, cairo_t* cr)
 	GtkAllocation allocation;
 	int x, y, w, h;
 
-	gtk_widget_get_allocation (darea, &allocation);
+	ctk_widget_get_allocation (darea, &allocation);
 	x = allocation.width;
 	y = allocation.height;
 	w = cairo_image_surface_get_width (surface);
@@ -153,7 +153,7 @@ static void setup_font_sample(GtkWidget* darea, Antialiasing antialiasing, Hinti
 	cairo_t *cr;
 	int width, height;
 
-	context = gtk_widget_get_pango_context (darea);
+	context = ctk_widget_get_pango_context (darea);
 	set_fontoptions (context, antialiasing, hinting);
 	layout = pango_layout_new (context);
 
@@ -177,7 +177,7 @@ static void setup_font_sample(GtkWidget* darea, Antialiasing antialiasing, Hinti
 
 	g_object_set_data_full(G_OBJECT(darea), "sample-surface", surface, (GDestroyNotify) cairo_surface_destroy);
 
-	gtk_widget_set_size_request (GTK_WIDGET(darea), width + 2, height + 2);
+	ctk_widget_set_size_request (GTK_WIDGET(darea), width + 2, height + 2);
 	g_signal_connect(darea, "draw", G_CALLBACK(sample_draw), NULL);
 }
 
@@ -212,7 +212,7 @@ font_render_load (GSettings *settings)
     FontPair *pair = tmp_list->data;
 
     if (antialiasing == pair->antialiasing && hinting == pair->hinting) {
-      gtk_toggle_button_set_active (pair->radio, TRUE);
+      ctk_toggle_button_set_active (pair->radio, TRUE);
       inconsistent = FALSE;
       break;
     }
@@ -221,7 +221,7 @@ font_render_load (GSettings *settings)
   for (tmp_list = font_pairs; tmp_list; tmp_list = tmp_list->next) {
     FontPair *pair = tmp_list->data;
 
-    gtk_toggle_button_set_inconsistent (pair->radio, inconsistent);
+    ctk_toggle_button_set_inconsistent (pair->radio, inconsistent);
   }
 
   in_change = FALSE;
@@ -273,7 +273,7 @@ setup_font_pair (GtkWidget    *radio,
 static void
 croma_titlebar_load_sensitivity (AppearanceData *data)
 {
-  gtk_widget_set_sensitive (appearance_capplet_get_widget (data, "window_title_font"),
+  ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "window_title_font"),
 			    !g_settings_get_boolean (data->croma_settings,
 						    WINDOW_TITLE_USES_SYSTEM_KEY));
 }
@@ -316,7 +316,7 @@ enum_group_load (EnumGroup *group)
     EnumItem *item = tmp_list->data;
 
     if (val == item->value)
-      gtk_toggle_button_set_active (item->widget, TRUE);
+      ctk_toggle_button_set_active (item->widget, TRUE);
   }
 
   in_change = FALSE;
@@ -469,7 +469,7 @@ dpi_load (GSettings     *settings,
   dpi = CLAMP(dpi, DPI_LOW_REASONABLE_VALUE, DPI_HIGH_REASONABLE_VALUE);
 
   in_change = TRUE;
-  gtk_spin_button_set_value (spinner, dpi);
+  ctk_spin_button_set_value (spinner, dpi);
   in_change = FALSE;
 }
 
@@ -488,8 +488,8 @@ dpi_changed (GSettings      *settings,
 
   dpi_load (settings, GTK_SPIN_BUTTON (spinner));
 
-  gtk_switch_set_state (GTK_SWITCH (toggle), dpi == 0);
-  gtk_widget_set_sensitive (spinner, dpi != 0);
+  ctk_switch_set_state (GTK_SWITCH (toggle), dpi == 0);
+  ctk_widget_set_sensitive (spinner, dpi != 0);
 }
 
 static void
@@ -521,14 +521,14 @@ dpi_value_changed (GtkSpinButton  *spinner,
 
     screen = gdk_screen_get_default ();
     scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
-    new_dpi = gtk_spin_button_get_value (spinner) / (double)scale;
+    new_dpi = ctk_spin_button_get_value (spinner) / (double)scale;
 
     g_settings_set_double (data->font_settings, FONT_DPI_KEY, new_dpi);
 
     dpi_load (data->font_settings, spinner);
 
     toggle = appearance_capplet_get_widget (data, "dpi_reset_switch");
-    gtk_switch_set_active (GTK_SWITCH (toggle), FALSE);
+    ctk_switch_set_active (GTK_SWITCH (toggle), FALSE);
   }
 }
 
@@ -545,8 +545,8 @@ dpi_value_reset (GtkSwitch      *toggle,
   else
     dpi_value_changed (GTK_SPIN_BUTTON (spinner), data);
 
-  gtk_switch_set_state(toggle, state);
-  gtk_widget_set_sensitive (spinner, !state);
+  ctk_switch_set_state(toggle, state);
+  ctk_widget_set_sensitive (spinner, !state);
 
   return TRUE;
 }
@@ -558,7 +558,7 @@ cb_details_response (GtkDialog *dialog, gint response_id)
     capplet_help (GTK_WINDOW (dialog),
 		  "goscustdesk-38");
   } else
-    gtk_widget_hide (GTK_WIDGET (dialog));
+    ctk_widget_hide (GTK_WIDGET (dialog));
 }
 
 static void install_new_font (const gchar *filepath)
@@ -609,7 +609,7 @@ cb_add_new_font (GtkWidget *button,
     GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
     gint res;
 
-    dialog = gtk_file_chooser_dialog_new (_("Select Font"),
+    dialog = ctk_file_chooser_dialog_new (_("Select Font"),
             GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")),
             action,
             _("_Cancel"),
@@ -618,20 +618,20 @@ cb_add_new_font (GtkWidget *button,
             GTK_RESPONSE_ACCEPT,
             NULL);
     chooser = GTK_FILE_CHOOSER (dialog);
-    filter = gtk_file_filter_new ();
-    gtk_file_filter_set_name (filter, _("Fonts"));
-    gtk_file_filter_add_mime_type (filter, "font/ttf");
-    gtk_file_chooser_add_filter (chooser, filter);
+    filter = ctk_file_filter_new ();
+    ctk_file_filter_set_name (filter, _("Fonts"));
+    ctk_file_filter_add_mime_type (filter, "font/ttf");
+    ctk_file_chooser_add_filter (chooser, filter);
 
-    res = gtk_dialog_run (GTK_DIALOG (dialog));
+    res = ctk_dialog_run (GTK_DIALOG (dialog));
     if (res == GTK_RESPONSE_ACCEPT)
     {
         char *filename;
-        filename = gtk_file_chooser_get_filename (chooser);
+        filename = ctk_file_chooser_get_filename (chooser);
         install_new_font (filename);
         g_free (filename);
     }
-    gtk_widget_destroy (dialog);
+    ctk_widget_destroy (dialog);
 }
 
 static void
@@ -647,7 +647,7 @@ cb_show_details (GtkWidget *button,
 
     data->font_details = appearance_capplet_get_widget (data, "render_details");
 
-    gtk_window_set_transient_for (GTK_WINDOW (data->font_details),
+    ctk_window_set_transient_for (GTK_WINDOW (data->font_details),
                                   GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
 
     spinner = appearance_capplet_get_widget (data, "dpi_spinner");
@@ -655,14 +655,14 @@ cb_show_details (GtkWidget *button,
 
     /* Set initial state for widgets */
     dpi = g_settings_get_double (data->font_settings, FONT_DPI_KEY);
-    gtk_switch_set_active (GTK_SWITCH (toggle), dpi == 0);
-    gtk_widget_set_sensitive (GTK_WIDGET (spinner), dpi != 0);
+    ctk_switch_set_active (GTK_SWITCH (toggle), dpi == 0);
+    ctk_widget_set_sensitive (GTK_WIDGET (spinner), dpi != 0);
 
     /* pick a sensible maximum dpi */
-    adjustment = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spinner));
-    gtk_adjustment_set_lower (adjustment, DPI_LOW_REASONABLE_VALUE);
-    gtk_adjustment_set_upper (adjustment, DPI_HIGH_REASONABLE_VALUE);
-    gtk_adjustment_set_step_increment (adjustment, 1);
+    adjustment = ctk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spinner));
+    ctk_adjustment_set_lower (adjustment, DPI_LOW_REASONABLE_VALUE);
+    ctk_adjustment_set_upper (adjustment, DPI_HIGH_REASONABLE_VALUE);
+    ctk_adjustment_set_step_increment (adjustment, 1);
 
     dpi_load (data->font_settings, GTK_SPIN_BUTTON (spinner));
     g_signal_connect (spinner, "value-changed",
@@ -700,13 +700,13 @@ cb_show_details (GtkWidget *button,
                                NULL);
     data->font_groups = g_slist_prepend (data->font_groups, group);
 
-    gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_rgb_image")),
+    ctk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_rgb_image")),
                              CAFECC_PIXMAP_DIR "/subpixel-rgb.png");
-    gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_bgr_image")),
+    ctk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_bgr_image")),
                              CAFECC_PIXMAP_DIR "/subpixel-bgr.png");
-    gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vrgb_image")),
+    ctk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vrgb_image")),
                              CAFECC_PIXMAP_DIR "/subpixel-vrgb.png");
-    gtk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vbgr_image")),
+    ctk_image_set_from_file (GTK_IMAGE (appearance_capplet_get_widget (data, "subpixel_vbgr_image")),
                              CAFECC_PIXMAP_DIR "/subpixel-vbgr.png");
 
     group = enum_group_create (data->font_settings, FONT_RGBA_ORDER_KEY,
@@ -722,10 +722,10 @@ cb_show_details (GtkWidget *button,
 		      G_CALLBACK (cb_details_response), NULL);
     g_signal_connect (G_OBJECT (data->font_details),
 		      "delete_event",
-		      G_CALLBACK (gtk_true), NULL);
+		      G_CALLBACK (ctk_true), NULL);
   }
 
-  gtk_window_present (GTK_WINDOW (data->font_details));
+  ctk_window_present (GTK_WINDOW (data->font_details));
 }
 
 void font_init(AppearanceData* data)
@@ -758,7 +758,7 @@ void font_init(AppearanceData* data)
 				 "font-name",
 				 G_SETTINGS_BIND_DEFAULT);
 	else
-		gtk_widget_set_sensitive (widget, FALSE);
+		ctk_widget_set_sensitive (widget, FALSE);
 
 	widget = appearance_capplet_get_widget (data, "window_title_font");
 	g_settings_bind (data->croma_settings,

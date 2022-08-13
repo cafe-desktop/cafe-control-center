@@ -51,16 +51,16 @@ slab_section_set_title_color (GtkWidget * widget)
 	switch (SLAB_SECTION (widget)->style)
 	{
 	case Style1:
-		gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-			&gtk_widget_get_style (widget)->bg[GTK_STATE_SELECTED]);
+		ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+			&ctk_widget_get_style (widget)->bg[GTK_STATE_SELECTED]);
 		break;
 	case Style2:
 		if (SLAB_SECTION (widget)->selected)
-			gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-				&gtk_widget_get_style (widget)->dark[GTK_STATE_SELECTED]);
+			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+				&ctk_widget_get_style (widget)->dark[GTK_STATE_SELECTED]);
 		else
-			gtk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
-				&gtk_widget_get_style (widget)->text[GTK_STATE_INSENSITIVE]);
+			ctk_widget_modify_fg (SLAB_SECTION (widget)->title, GTK_STATE_NORMAL,
+				&ctk_widget_get_style (widget)->text[GTK_STATE_INSENSITIVE]);
 		break;
 	default:
 		g_assert_not_reached ();
@@ -122,39 +122,39 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	gchar * widget_theming_name;
 
 	section = g_object_new (SLAB_SECTION_TYPE, NULL);
-	gtk_orientable_set_orientation (GTK_ORIENTABLE (section), GTK_ORIENTATION_VERTICAL);
-	gtk_box_set_homogeneous (GTK_BOX (section), FALSE);
-	gtk_box_set_spacing (GTK_BOX (section), 0);
+	ctk_orientable_set_orientation (GTK_ORIENTABLE (section), GTK_ORIENTATION_VERTICAL);
+	ctk_box_set_homogeneous (GTK_BOX (section), FALSE);
+	ctk_box_set_spacing (GTK_BOX (section), 0);
 	section->style = style;
 	section->selected = FALSE;
 
-	section->childbox = GTK_BOX (gtk_box_new (GTK_ORIENTATION_VERTICAL, 10));
+	section->childbox = GTK_BOX (ctk_box_new (GTK_ORIENTATION_VERTICAL, 10));
 	switch (style)
 	{
 	case Style1:
 		widget_theming_name = "slab_section_style1";
 		break;
 	case Style2:
-		gtk_widget_set_margin_top (GTK_WIDGET (section->childbox), SLAB_TOP_PADDING);
-		gtk_widget_set_margin_bottom (GTK_WIDGET (section->childbox), SLAB_BOTTOM_PADDING);
-		gtk_widget_set_margin_start (GTK_WIDGET (section->childbox), SLAB_LEFT_PADDING);
-		gtk_widget_set_margin_end (GTK_WIDGET (section->childbox), 0);
+		ctk_widget_set_margin_top (GTK_WIDGET (section->childbox), SLAB_TOP_PADDING);
+		ctk_widget_set_margin_bottom (GTK_WIDGET (section->childbox), SLAB_BOTTOM_PADDING);
+		ctk_widget_set_margin_start (GTK_WIDGET (section->childbox), SLAB_LEFT_PADDING);
+		ctk_widget_set_margin_end (GTK_WIDGET (section->childbox), 0);
 		widget_theming_name = "slab_section_style2";
 		break;
 	default:
 		g_assert_not_reached ();
 	}
-	gtk_box_pack_start (GTK_BOX (section), GTK_WIDGET (section->childbox), TRUE, TRUE, 0);
+	ctk_box_pack_start (GTK_BOX (section), GTK_WIDGET (section->childbox), TRUE, TRUE, 0);
 
-	section->title = gtk_label_new (title_markup);
-	gtk_label_set_use_markup (GTK_LABEL (section->title), TRUE);
-	gtk_label_set_xalign (GTK_LABEL (section->title), 0.0);
+	section->title = ctk_label_new (title_markup);
+	ctk_label_set_use_markup (GTK_LABEL (section->title), TRUE);
+	ctk_label_set_xalign (GTK_LABEL (section->title), 0.0);
 
-	gtk_widget_set_name (GTK_WIDGET (section), widget_theming_name);
+	ctk_widget_set_name (GTK_WIDGET (section), widget_theming_name);
 	g_signal_connect (G_OBJECT (section), "style-set", G_CALLBACK (slab_section_style_set),
 		NULL);
 
-	gtk_box_pack_start (section->childbox, section->title, FALSE, FALSE, 0);
+	ctk_box_pack_start (section->childbox, section->title, FALSE, FALSE, 0);
 
 	return GTK_WIDGET (section);
 }
@@ -178,7 +178,7 @@ slab_section_set_title (SlabSection * section, const gchar * title)
 {
 	gchar *markup = g_strdup_printf ("<span size=\"large\">%s</span>", title);
 
-	gtk_label_set_markup (GTK_LABEL (section->title), markup);
+	ctk_label_set_markup (GTK_LABEL (section->title), markup);
 
 	g_free (markup);
 }
@@ -188,5 +188,5 @@ slab_section_set_contents (SlabSection * section, GtkWidget * contents)
 {
 	section->contents = contents;
 
-	gtk_box_pack_start (section->childbox, contents, FALSE, FALSE, 0);
+	ctk_box_pack_start (section->childbox, contents, FALSE, FALSE, 0);
 }

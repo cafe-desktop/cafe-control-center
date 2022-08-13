@@ -22,7 +22,7 @@ Author: Robert Buj
 
 -->
 <interface>
-  <requires lib="gtk+" version="3.22"/>
+  <requires lib="ctk+" version="3.22"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name time-admin.ui -->
   <!-- interface-description CAFE time-admin dialog -->
@@ -150,7 +150,7 @@ Author: Robert Buj
                         </child>
                         <child>
                           <object class="GtkButton" id="button1">
-                            <property name="label">gtk-edit</property>
+                            <property name="label">ctk-edit</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>

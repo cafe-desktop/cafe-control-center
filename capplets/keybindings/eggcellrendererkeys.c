@@ -1,6 +1,6 @@
 #include <config.h>
 #include <libintl.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 #include <gdk/gdkkeysyms.h>
 #include "eggcellrendererkeys.h"
@@ -351,9 +351,9 @@ egg_cell_renderer_keys_get_size(GtkCellRenderer    *cell,
   GtkRequisition requisition;
 
   if (keys->sizing_label == NULL)
-    keys->sizing_label = gtk_label_new (TOOLTIP_TEXT);
+    keys->sizing_label = ctk_label_new (TOOLTIP_TEXT);
 
-  gtk_widget_get_preferred_size (keys->sizing_label, &requisition, NULL);
+  ctk_widget_get_preferred_size (keys->sizing_label, &requisition, NULL);
   (* GTK_CELL_RENDERER_CLASS (parent_class)->get_size) (cell, widget, cell_area, x_offset, y_offset, width, height);
   /* FIXME: need to take the cell_area et al. into account */
   if (width)
@@ -453,7 +453,7 @@ static gboolean grab_key_callback(GtkWidget* widget, GdkEventKey* event, void* d
 
 	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_GTK)
 	{
-		if (!gtk_accelerator_valid (accel_keyval, accel_mods))
+		if (!ctk_accelerator_valid (accel_keyval, accel_mods))
 		{
 			accel_keyval = 0;
 			accel_mods = 0;
@@ -464,15 +464,15 @@ static gboolean grab_key_callback(GtkWidget* widget, GdkEventKey* event, void* d
 
 	out:
 
-	display = gtk_widget_get_display (widget);
+	display = ctk_widget_get_display (widget);
 	seat = gdk_display_get_default_seat (display);
 
 	gdk_seat_ungrab (seat);
 
 	path = g_strdup(g_object_get_data(G_OBJECT(keys->edit_widget), EGG_CELL_RENDERER_TEXT_PATH));
 
-	gtk_cell_editable_editing_done(GTK_CELL_EDITABLE(keys->edit_widget));
-	gtk_cell_editable_remove_widget(GTK_CELL_EDITABLE(keys->edit_widget));
+	ctk_cell_editable_editing_done(GTK_CELL_EDITABLE(keys->edit_widget));
+	ctk_cell_editable_remove_widget(GTK_CELL_EDITABLE(keys->edit_widget));
 	keys->edit_widget = NULL;
 	keys->grab_widget = NULL;
 
@@ -495,7 +495,7 @@ static void ungrab_stuff(GtkWidget* widget, gpointer data)
 	GdkDisplay *display;
 	GdkSeat *seat;
 
-	display = gtk_widget_get_display (widget);
+	display = ctk_widget_get_display (widget);
 	seat = gdk_display_get_default_seat (display);
 
 	gdk_seat_ungrab (seat);
@@ -554,14 +554,14 @@ override_background_color (GtkWidget *widget,
   gchar          *css;
   GtkCssProvider *provider;
 
-  provider = gtk_css_provider_new ();
+  provider = ctk_css_provider_new ();
 
   css = g_strdup_printf ("* { background-color: %s;}",
                          gdk_rgba_to_string (rgba));
-  gtk_css_provider_load_from_data (provider, css, -1, NULL);
+  ctk_css_provider_load_from_data (provider, css, -1, NULL);
   g_free (css);
 
-  gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
+  ctk_style_context_add_provider (ctk_widget_get_style_context (widget),
                                   GTK_STYLE_PROVIDER (provider),
                                   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   g_object_unref (provider);
@@ -574,14 +574,14 @@ override_color (GtkWidget *widget,
   gchar          *css;
   GtkCssProvider *provider;
 
-  provider = gtk_css_provider_new ();
+  provider = ctk_css_provider_new ();
 
   css = g_strdup_printf ("* { color: %s;}",
                          gdk_rgba_to_string (rgba));
-  gtk_css_provider_load_from_data (provider, css, -1, NULL);
+  ctk_css_provider_load_from_data (provider, css, -1, NULL);
   g_free (css);
 
-  gtk_style_context_add_provider (gtk_widget_get_style_context (widget),
+  ctk_style_context_add_provider (ctk_widget_get_style_context (widget),
                                   GTK_STYLE_PROVIDER (provider),
                                   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   g_object_unref (provider);
@@ -615,13 +615,13 @@ egg_cell_renderer_keys_start_editing (GtkCellRenderer      *cell,
   g_object_get_property (G_OBJECT (celltext), "editable", &celltext_editable);
   if (g_value_get_boolean (&celltext_editable) == FALSE)
     return NULL;
-  g_return_val_if_fail (gtk_widget_get_window (widget) != NULL, NULL);
+  g_return_val_if_fail (ctk_widget_get_window (widget) != NULL, NULL);
 
-  display = gtk_widget_get_display (widget);
+  display = ctk_widget_get_display (widget);
   seat = gdk_display_get_default_seat (display);
 
   if (gdk_seat_grab (seat,
-                     gtk_widget_get_window (widget),
+                     ctk_widget_get_window (widget),
                      GDK_SEAT_CAPABILITY_ALL,
                      FALSE,
                      NULL,
@@ -642,10 +642,10 @@ egg_cell_renderer_keys_start_editing (GtkCellRenderer      *cell,
   g_object_add_weak_pointer (G_OBJECT (keys->edit_widget),
                              (void**) &keys->edit_widget);
 
-  label = gtk_label_new (NULL);
-  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+  label = ctk_label_new (NULL);
+  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
 
-  gtk_style_context_get (gtk_widget_get_style_context (widget), GTK_STATE_INSENSITIVE,
+  ctk_style_context_get (ctk_widget_get_style_context (widget), GTK_STATE_INSENSITIVE,
                          GTK_STYLE_PROPERTY_BACKGROUND_COLOR,
                          &c, NULL);
   box_color = *c;
@@ -653,21 +653,21 @@ egg_cell_renderer_keys_start_editing (GtkCellRenderer      *cell,
 
   override_background_color (eventbox, &box_color);
 
-  gtk_style_context_get_color (gtk_widget_get_style_context (widget),
+  ctk_style_context_get_color (ctk_widget_get_style_context (widget),
                                GTK_STATE_INSENSITIVE,
                                &label_color);
 
   override_color (label, &label_color);
 
-  gtk_label_set_text (GTK_LABEL (label),
+  ctk_label_set_text (GTK_LABEL (label),
 		  TOOLTIP_TEXT);
 
-  gtk_container_add (GTK_CONTAINER (eventbox), label);
+  ctk_container_add (GTK_CONTAINER (eventbox), label);
 
   g_object_set_data_full (G_OBJECT (keys->edit_widget), EGG_CELL_RENDERER_TEXT_PATH,
                           g_strdup (path), g_free);
 
-  gtk_widget_show_all (keys->edit_widget);
+  ctk_widget_show_all (keys->edit_widget);
 
   g_signal_connect (G_OBJECT (keys->edit_widget), "unrealize",
                     G_CALLBACK (ungrab_stuff), keys);

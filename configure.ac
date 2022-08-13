@@ -74,7 +74,7 @@ APPINDICATOR_REQUIRED=0.0.13
 
 ENGINES_FOLDER="theming-engines"
 
-PKG_CHECK_MODULES(LIBCANBERRA_GTK, libcanberra-gtk3, [
+PKG_CHECK_MODULES(LIBCANBERRA_GTK, libcanberra-ctk3, [
     CANBERRA_GTK=1
     AC_SUBST(LIBCANBERRA_GTK_CFLAGS)
     AC_SUBST(LIBCANBERRA_GTK_LIBS)
@@ -122,7 +122,7 @@ dnl Check that we meet the  dependencies
 dnl ==============================================
 
 PKG_CHECK_MODULES(GMODULE,gmodule-2.0,[GMODULE_ADD="gmodule-2.0"],[GMODULE_ADD=""])
-COMMON_MODULES="gtk+-3.0 >= $GTK_REQUIRED dnl
+COMMON_MODULES="ctk+-3.0 >= $GTK_REQUIRED dnl
  $GMODULE_ADD dnl
  glib-2.0 >= $GLIB_REQUIRED dnl
  gthread-2.0 dnl
@@ -139,7 +139,7 @@ PKG_CHECK_MODULES(POLKIT, polkit-gobject-1)
 PKG_CHECK_MODULES(CAFE_DESKTOP, cafe-desktop-2.0 >= $CAFE_DESKTOP_REQUIRED)
 PKG_CHECK_MODULES(DEFAULT_APPLICATIONS_CAPPLET, libxml-2.0)
 PKG_CHECK_MODULES(CROMA, libcroma-private >= $CROMA_REQUIRED)
-PKG_CHECK_MODULES(TYPING, $GMODULE_ADD glib-2.0 >= $GLIB_REQUIRED gio-2.0 gtk+-3.0 >= $GTK_REQUIRED)
+PKG_CHECK_MODULES(TYPING, $GMODULE_ADD glib-2.0 >= $GLIB_REQUIRED gio-2.0 ctk+-3.0 >= $GTK_REQUIRED)
 PKG_CHECK_MODULES(GSD_DBUS, cafe-settings-daemon >= $MSD_REQUIRED)
 PKG_CHECK_MODULES(GIO, gio-2.0)
 
@@ -147,9 +147,9 @@ PKG_CHECK_MODULES([DCONF], [dconf >= 0.13.4])
 AC_SUBST(DCONF_CFLAGS)
 AC_SUBST(DCONF_LIBS)
 
-gtk_lib_dir=`$PKG_CONFIG --variable libdir gtk+-3.0`
-gtk_binary_version=`$PKG_CONFIG --variable gtk_binary_version gtk+-3.0`
-GTK_ENGINE_DIR="$gtk_lib_dir/gtk-3.0/$gtk_binary_version/$ENGINES_FOLDER"
+ctk_lib_dir=`$PKG_CONFIG --variable libdir ctk+-3.0`
+ctk_binary_version=`$PKG_CONFIG --variable ctk_binary_version ctk+-3.0`
+GTK_ENGINE_DIR="$ctk_lib_dir/ctk-3.0/$ctk_binary_version/$ENGINES_FOLDER"
 AC_SUBST(GTK_ENGINE_DIR)
 
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED $GMODULE_ADD)

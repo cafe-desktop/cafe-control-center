@@ -27,7 +27,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 
 #ifdef HAVE_APP_INDICATOR
@@ -185,7 +185,7 @@ set_status_icon (GtkStatusIcon *icon, cairo_surface_t *surface)
 					      cairo_image_surface_get_width (surface),
 					      cairo_image_surface_get_height (surface));
 
-	gtk_status_icon_set_from_pixbuf (icon, pixbuf);
+	ctk_status_icon_set_from_pixbuf (icon, pixbuf);
 
 	g_object_unref (pixbuf);
 }
@@ -263,7 +263,7 @@ update_icon (DrWright *dr)
 			      255);
 
 	if (set_pixbuf) {
-		gtk_status_icon_set_from_pixbuf (dr->icon,
+		ctk_status_icon_set_from_pixbuf (dr->icon,
 						 tmp_pixbuf);
 	}
 
@@ -290,7 +290,7 @@ blink_timeout_cb (DrWright *dr)
 	}
 
 	if (dr->blink_on || timeout == 0) {
-		gtk_status_icon_set_from_pixbuf (dr->icon, dr->composite_bar);
+		ctk_status_icon_set_from_pixbuf (dr->icon, dr->composite_bar);
 	} else {
 		set_status_icon (dr->icon, dr->neutral_bar);
 	}
@@ -318,7 +318,7 @@ start_blinking (DrWright *dr)
 		blink_timeout_cb (dr);
 	}
 
-	/*gtk_widget_show (GTK_WIDGET (dr->icon));*/
+	/*ctk_widget_show (GTK_WIDGET (dr->icon));*/
 #endif /* HAVE_APP_INDICATOR */
 }
 
@@ -331,7 +331,7 @@ stop_blinking (DrWright *dr)
 		dr->blink_timeout_id = 0;
 	}
 
-	/*gtk_widget_hide (GTK_WIDGET (dr->icon));*/
+	/*ctk_widget_hide (GTK_WIDGET (dr->icon));*/
 #endif /* HAVE_APP_INDICATOR */
 }
 
@@ -367,7 +367,7 @@ break_window_map_event_cb (GtkWidget *widget,
 			   GdkEvent  *event,
 			   DrWright  *dr)
 {
-	grab_keyboard_on_window (gtk_widget_get_window (dr->break_window), gtk_get_current_event_time ());
+	grab_keyboard_on_window (ctk_widget_get_window (dr->break_window), ctk_get_current_event_time ());
 
         return FALSE;
 }
@@ -396,7 +396,7 @@ maybe_change_state (DrWright *dr)
 	switch (dr->state) {
 	case STATE_START:
 		if (dr->break_window) {
-			gtk_widget_destroy (dr->break_window);
+			ctk_widget_destroy (dr->break_window);
 			dr->break_window = NULL;
 		}
 
@@ -469,7 +469,7 @@ maybe_change_state (DrWright *dr)
 
 		dr->secondary_break_windows = create_secondary_break_windows ();
 
-		gtk_widget_show (dr->break_window);
+		ctk_widget_show (dr->break_window);
 
 		dr->save_last_time = elapsed_time;
 		dr->state = STATE_BREAK;
@@ -493,7 +493,7 @@ maybe_change_state (DrWright *dr)
 	case STATE_BREAK_DONE:
 		dr->state = STATE_START;
 		if (dr->break_window) {
-			gtk_widget_destroy (dr->break_window);
+			ctk_widget_destroy (dr->break_window);
 			dr->break_window = NULL;
 		}
 		break;
@@ -524,7 +524,7 @@ update_status (DrWright *dr)
 		app_indicator_set_status (dr->indicator,
 					  APP_INDICATOR_STATUS_PASSIVE);
 #else
-		gtk_status_icon_set_tooltip_text (dr->icon,
+		ctk_status_icon_set_tooltip_text (dr->icon,
 						  _("Disabled"));
 #endif /* HAVE_APP_INDICATOR */
 		return TRUE;
@@ -549,10 +549,10 @@ update_status (DrWright *dr)
 	}
 
 #ifdef HAVE_APP_INDICATOR
-	item = gtk_ui_manager_get_widget (dr->ui_manager, "/Pop/TakeABreak");
-	gtk_menu_item_set_label (GTK_MENU_ITEM (item), str);
+	item = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop/TakeABreak");
+	ctk_menu_item_set_label (GTK_MENU_ITEM (item), str);
 #else
-	gtk_status_icon_set_tooltip_text (dr->icon, str);
+	ctk_status_icon_set_tooltip_text (dr->icon, str);
 #endif /* HAVE_APP_INDICATOR */
 
 	g_free (str);
@@ -599,9 +599,9 @@ gsettings_notify_cb (GSettings *settings,
 		dr->enabled = g_settings_get_boolean (settings, key);
 		dr->state = STATE_START;
 
-		item = gtk_ui_manager_get_widget (dr->ui_manager,
+		item = ctk_ui_manager_get_widget (dr->ui_manager,
 						  "/Pop/TakeABreak");
-		gtk_widget_set_sensitive (item, dr->enabled);
+		ctk_widget_set_sensitive (item, dr->enabled);
 
 		update_status (dr);
 	}
@@ -625,22 +625,22 @@ popup_preferences_cb (GtkAction *action, DrWright *dr)
 	GError    *error = NULL;
 	GtkWidget *menu;
 
-	menu = gtk_ui_manager_get_widget (dr->ui_manager, "/Pop");
-	screen = gtk_widget_get_screen (menu);
+	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
+	screen = ctk_widget_get_screen (menu);
 
 	if (!cafe_gdk_spawn_command_line_on_screen (screen, "cafe-keyboard-properties --typing-break", &error)) {
 		GtkWidget *error_dialog;
 
-		error_dialog = gtk_message_dialog_new (NULL, 0,
+		error_dialog = ctk_message_dialog_new (NULL, 0,
 						       GTK_MESSAGE_ERROR,
 						       GTK_BUTTONS_CLOSE,
 						       _("Unable to bring up the typing break properties dialog with the following error: %s"),
 						       error->message);
 		g_signal_connect (error_dialog,
 				  "response",
-				  G_CALLBACK (gtk_widget_destroy), NULL);
-		gtk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
-		gtk_widget_show (error_dialog);
+				  G_CALLBACK (ctk_widget_destroy), NULL);
+		ctk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
+		ctk_widget_show (error_dialog);
 
 		g_error_free (error);
 	}
@@ -659,7 +659,7 @@ popup_about_cb (GtkAction *action, DrWright *dr)
 	for (i = 0; authors [i]; i++)
 		authors [i] = _(authors [i]);
 
-	gtk_show_about_dialog (NULL,
+	ctk_show_about_dialog (NULL,
 			       "authors", authors,
 			       "comments",  _("A computer break reminder."),
 			       "logo-icon-name", "cafe-typing-monitor",
@@ -677,15 +677,15 @@ popup_menu_cb (GtkWidget *widget,
 {
 	GtkWidget *menu;
 
-	menu = gtk_ui_manager_get_widget (dr->ui_manager, "/Pop");
+	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 
-	gtk_menu_popup (GTK_MENU (menu),
+	ctk_menu_popup (GTK_MENU (menu),
 			NULL,
 			NULL,
-			gtk_status_icon_position_menu,
+			ctk_status_icon_position_menu,
 			dr->icon,
 			0,
-			gtk_get_current_event_time ());
+			ctk_get_current_event_time ());
 }
 #endif /* HAVE_APP_INDICATOR */
 
@@ -693,7 +693,7 @@ static void
 break_window_done_cb (GtkWidget *window,
 		      DrWright  *dr)
 {
-	gtk_widget_destroy (dr->break_window);
+	ctk_widget_destroy (dr->break_window);
 
 	dr->state = STATE_BREAK_DONE_SETUP;
 	dr->break_window = NULL;
@@ -708,7 +708,7 @@ break_window_postpone_cb (GtkWidget *window,
 {
 	gint elapsed_time;
 
-	gtk_widget_destroy (dr->break_window);
+	ctk_widget_destroy (dr->break_window);
 
 	dr->state = STATE_RUNNING;
 	dr->break_window = NULL;
@@ -741,7 +741,7 @@ break_window_destroy_cb (GtkWidget *window,
 	GList *l;
 
 	for (l = dr->secondary_break_windows; l; l = l->next) {
-		gtk_widget_destroy (l->data);
+		ctk_widget_destroy (l->data);
 	}
 
 	g_list_free (dr->secondary_break_windows);
@@ -767,7 +767,7 @@ init_app_indicator (DrWright *dr)
 					  APP_INDICATOR_STATUS_PASSIVE);
 	}
 
-	indicator_menu = gtk_ui_manager_get_widget (dr->ui_manager, "/Pop");
+	indicator_menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 	app_indicator_set_menu (dr->indicator, GTK_MENU (indicator_menu));
 	app_indicator_set_attention_icon (dr->indicator, TYPING_MONITOR_ATTENTION_ICON);
 
@@ -784,7 +784,7 @@ init_tray_icon (DrWright *dr)
 					      cairo_image_surface_get_width (dr->neutral_bar),
 					      cairo_image_surface_get_height (dr->neutral_bar));
 
-	dr->icon = gtk_status_icon_new_from_pixbuf (pixbuf);
+	dr->icon = ctk_status_icon_new_from_pixbuf (pixbuf);
 	g_object_unref (pixbuf);
 
 	update_status (dr);
@@ -813,21 +813,21 @@ create_secondary_break_windows (void)
 	if (screen != gdk_screen_get_default ()) {
 		/* Handled by DrwBreakWindow. */
 
-		window = gtk_window_new (GTK_WINDOW_POPUP);
+		window = ctk_window_new (GTK_WINDOW_POPUP);
 
 		windows = g_list_prepend (windows, window);
-		scale = gtk_widget_get_scale_factor (GTK_WIDGET (window));
+		scale = ctk_widget_get_scale_factor (GTK_WIDGET (window));
 
-		gtk_window_set_screen (GTK_WINDOW (window), screen);
+		ctk_window_set_screen (GTK_WINDOW (window), screen);
 
-		gtk_window_set_default_size (GTK_WINDOW (window),
+		ctk_window_set_default_size (GTK_WINDOW (window),
 					     WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
 					     HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
 
-		gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+		ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
 		drw_setup_background (GTK_WIDGET (window));
-		gtk_window_stick (GTK_WINDOW (window));
-		gtk_widget_show (window);
+		ctk_window_stick (GTK_WINDOW (window));
+		ctk_widget_show (window);
 	}
 
 	return windows;
@@ -869,16 +869,16 @@ drwright_new (void)
 		setup_debug_values (dr);
 	}
 
-	dr->ui_manager = gtk_ui_manager_new ();
+	dr->ui_manager = ctk_ui_manager_new ();
 
-	action_group = gtk_action_group_new ("MenuActions");
-	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group, actions, G_N_ELEMENTS (actions), dr);
-	gtk_ui_manager_insert_action_group (dr->ui_manager, action_group, 0);
-	gtk_ui_manager_add_ui_from_string (dr->ui_manager, ui_description, -1, NULL);
+	action_group = ctk_action_group_new ("MenuActions");
+	ctk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions (action_group, actions, G_N_ELEMENTS (actions), dr);
+	ctk_ui_manager_insert_action_group (dr->ui_manager, action_group, 0);
+	ctk_ui_manager_add_ui_from_string (dr->ui_manager, ui_description, -1, NULL);
 
-	item = gtk_ui_manager_get_widget (dr->ui_manager, "/Pop/TakeABreak");
-	gtk_widget_set_sensitive (item, dr->enabled);
+	item = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop/TakeABreak");
+	ctk_widget_set_sensitive (item, dr->enabled);
 
 	dr->timer = drw_timer_new ();
 	dr->idle_timer = drw_timer_new ();

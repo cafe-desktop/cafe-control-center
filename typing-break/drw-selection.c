@@ -22,7 +22,7 @@
  */
 
 #include <config.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 
 #include "drw-selection.h"
@@ -51,7 +51,7 @@ drw_selection_reset (DrwSelection *drw_selection)
 	}
 
 	if (drw_selection->invisible) {
-		gtk_widget_destroy (drw_selection->invisible);
+		ctk_widget_destroy (drw_selection->invisible);
 		drw_selection->invisible = NULL;
 	}
 }
@@ -106,12 +106,12 @@ drw_selection_find_existing (DrwSelection *drw_selection)
 static gboolean
 drw_selection_claim (DrwSelection *drw_selection)
 {
-	drw_selection->invisible = gtk_invisible_new ();
+	drw_selection->invisible = ctk_invisible_new ();
 	g_signal_connect (drw_selection->invisible, "selection-clear-event",
 			  G_CALLBACK (drw_selection_clear), drw_selection);
 
 
-	if (gtk_selection_owner_set (drw_selection->invisible,
+	if (ctk_selection_owner_set (drw_selection->invisible,
 				     gdk_atom_intern (SELECTION_NAME, FALSE),
 				     GDK_CURRENT_TIME)) {
 		return TRUE;

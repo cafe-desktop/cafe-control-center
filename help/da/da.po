@@ -2855,8 +2855,8 @@ msgstr "Naviger til mappen dit tema er installeret i."
 
 #. (itstool) path: listitem/para
 #: C/config-themes.xml:38
-msgid "Open the gtkrc file which contains the specifications of your theme."
-msgstr "Åbn gtkrc-filen som indeholder specifikationerne for dit tema."
+msgid "Open the ctkrc file which contains the specifications of your theme."
+msgstr "Åbn ctkrc-filen som indeholder specifikationerne for dit tema."
 
 #. (itstool) path: sect2/para
 #: C/config-themes.xml:24

@@ -25,7 +25,7 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "e-image-chooser.h"
 
@@ -187,13 +187,13 @@ e_image_chooser_init (EImageChooser *chooser)
 
 	priv = e_image_chooser_get_instance_private (chooser);
 
-	priv->image = gtk_image_new ();
+	priv->image = ctk_image_new ();
 	priv->scaleable = TRUE;
 
-	gtk_box_set_homogeneous (GTK_BOX (chooser), FALSE);
-	gtk_box_pack_start (GTK_BOX (chooser), priv->image, TRUE, TRUE, 0);
+	ctk_box_set_homogeneous (GTK_BOX (chooser), FALSE);
+	ctk_box_pack_start (GTK_BOX (chooser), priv->image, TRUE, TRUE, 0);
 
-	gtk_drag_dest_set (priv->image, 0, image_drag_types, num_image_drag_types, GDK_ACTION_COPY);
+	ctk_drag_dest_set (priv->image, 0, image_drag_types, num_image_drag_types, GDK_ACTION_COPY);
 	g_signal_connect (priv->image,
 			  "drag_motion", G_CALLBACK (image_drag_motion_cb), chooser);
 	g_signal_connect (priv->image,
@@ -201,7 +201,7 @@ e_image_chooser_init (EImageChooser *chooser)
 	g_signal_connect (priv->image,
 			  "drag_data_received", G_CALLBACK (image_drag_data_received_cb), chooser);
 
-	gtk_widget_show_all (priv->image);
+	ctk_widget_show_all (priv->image);
 
 	/* we default to being editable */
 	priv->editable = TRUE;
@@ -247,13 +247,13 @@ set_image_from_data (EImageChooser *chooser,
 	if (pixbuf) {
 		GdkPixbuf *scaled;
 		if (priv->scaleable) {
-			gtk_image_set_from_pixbuf (GTK_IMAGE (priv->image), pixbuf);
+			ctk_image_set_from_pixbuf (GTK_IMAGE (priv->image), pixbuf);
 		} else {
 			scaled = gdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
 							  GDK_INTERP_BILINEAR);
 
-			gtk_image_set_from_pixbuf (GTK_IMAGE (priv->image), scaled);
+			ctk_image_set_from_pixbuf (GTK_IMAGE (priv->image), scaled);
 			g_object_unref (scaled);
 		}
 
@@ -324,7 +324,7 @@ image_drag_drop_cb (GtkWidget *widget,
 		possible_type = gdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
 		if (!strcmp (possible_type, URI_LIST_TYPE)) {
 			g_free (possible_type);
-			gtk_drag_get_data (widget, context,
+			ctk_drag_get_data (widget, context,
 					   GDK_POINTER_TO_ATOM (p->data),
 					   time);
 			return TRUE;
@@ -346,10 +346,10 @@ image_drag_data_received_cb (GtkWidget *widget,
 	char *target_type;
 	gboolean handled = FALSE;
 
-	target_type = gdk_atom_name (gtk_selection_data_get_target (selection_data));
+	target_type = gdk_atom_name (ctk_selection_data_get_target (selection_data));
 
 	if (!strcmp (target_type, URI_LIST_TYPE)) {
-		const char *data = (const char *) gtk_selection_data_get_data (selection_data);
+		const char *data = (const char *) ctk_selection_data_get_data (selection_data);
 		char *uri;
 		GFile *file;
 		GInputStream *istream;
@@ -403,7 +403,7 @@ image_drag_data_received_cb (GtkWidget *widget,
 		g_free (uri);
 	}
 
-	gtk_drag_finish (context, handled, FALSE, time);
+	ctk_drag_finish (context, handled, FALSE, time);
 }
 
 gboolean

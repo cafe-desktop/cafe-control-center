@@ -114,7 +114,7 @@ xkb_options_expander_highlight (void)
 		    g_strconcat (counter >
 				 0 ? "<span weight=\"bold\">" : "<span>",
 				 utf_group_name, "</span>", NULL);
-		gtk_expander_set_label (GTK_EXPANDER (current_expander),
+		ctk_expander_set_label (GTK_EXPANDER (current_expander),
 					titlemarkup);
 		g_free (titlemarkup);
 	}
@@ -188,9 +188,9 @@ option_focused_cb (GtkWidget * widget, GdkEventFocus * event,
 	GtkAllocation alloc;
 	GtkAdjustment *adj;
 
-	gtk_widget_get_allocation (widget, &alloc);
-	adj = gtk_scrolled_window_get_vadjustment (win);
-	gtk_adjustment_clamp_page (adj, alloc.y,
+	ctk_widget_get_allocation (widget, &alloc);
+	adj = ctk_scrolled_window_get_vadjustment (win);
+	ctk_adjustment_clamp_page (adj, alloc.y,
 				   alloc.y + alloc.height);
 
 	return FALSE;
@@ -202,7 +202,7 @@ option_toggled_cb (GtkWidget * checkbutton, gpointer data)
 {
 	gpointer optionID =
 	    g_object_get_data (G_OBJECT (checkbutton), OPTION_ID_PROP);
-	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (checkbutton)))
+	if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (checkbutton)))
 		xkb_options_select (optionID);
 	else
 		xkb_options_deselect (optionID);
@@ -225,7 +225,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 
 	if (current_multi_select)
 		option_check =
-		    gtk_check_button_new_with_label (utf_option_name);
+		    ctk_check_button_new_with_label (utf_option_name);
 	else {
 		if (current_radio_group == NULL) {
 			/* The first radio in a group is to be "Default", meaning none of
@@ -233,9 +233,9 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 			   This is a HIG-compliant alternative to allowing no
 			   selection in the group. */
 			option_check =
-			    gtk_radio_button_new_with_label
+			    ctk_radio_button_new_with_label
 			    (current_radio_group, _("Default"));
-			gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+			ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON
 						      (option_check),
 						      TRUE);
 			/* Make option name underscore -
@@ -247,7 +247,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 			    g_slist_append (option_checks_list,
 					    option_check);
 			current_radio_group =
-			    gtk_radio_button_get_group (GTK_RADIO_BUTTON
+			    ctk_radio_button_get_group (GTK_RADIO_BUTTON
 							(option_check));
 			current_none_radio = option_check;
 
@@ -256,10 +256,10 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 					  WID ("options_scroll"));
 		}
 		option_check =
-		    gtk_radio_button_new_with_label (current_radio_group,
+		    ctk_radio_button_new_with_label (current_radio_group,
 						     utf_option_name);
 		current_radio_group =
-		    gtk_radio_button_get_group (GTK_RADIO_BUTTON
+		    ctk_radio_button_get_group (GTK_RADIO_BUTTON
 						(option_check));
 		g_object_set_data (G_OBJECT (option_check), "NoneRadio",
 				   current_none_radio);
@@ -267,7 +267,7 @@ xkb_options_add_option (XklConfigRegistry * config_registry,
 
 	initial_state = xkb_options_is_selected (full_option_name);
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (option_check),
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (option_check),
 				      initial_state);
 
 	g_object_set_data_full (G_OBJECT (option_check), OPTION_ID_PROP,
@@ -316,8 +316,8 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 	gchar *titlemarkup =
 	    g_strconcat ("<span>", utf_group_name, "</span>", NULL);
 
-	current_expander = gtk_expander_new (titlemarkup);
-	gtk_expander_set_use_markup (GTK_EXPANDER (current_expander),
+	current_expander = ctk_expander_new (titlemarkup);
+	ctk_expander_set_use_markup (GTK_EXPANDER (current_expander),
 				     TRUE);
 	g_object_set_data_full (G_OBJECT (current_expander),
 				"utfGroupName", utf_group_name, g_free);
@@ -325,15 +325,15 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 				g_strdup (config_item->name), g_free);
 
 	g_free (titlemarkup);
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_widget_set_halign (vbox, GTK_ALIGN_FILL);
-	gtk_widget_set_valign (vbox, GTK_ALIGN_START);
-	gtk_widget_set_hexpand (vbox, TRUE);
-	gtk_widget_set_vexpand (vbox, TRUE);
-	gtk_widget_set_margin_top (vbox, 6);
-	gtk_widget_set_margin_bottom (vbox, 12);
-	gtk_widget_set_margin_start (vbox, 12);
-	gtk_container_add (GTK_CONTAINER (current_expander), vbox);
+	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_set_halign (vbox, GTK_ALIGN_FILL);
+	ctk_widget_set_valign (vbox, GTK_ALIGN_START);
+	ctk_widget_set_hexpand (vbox, TRUE);
+	ctk_widget_set_vexpand (vbox, TRUE);
+	ctk_widget_set_margin_top (vbox, 6);
+	ctk_widget_set_margin_bottom (vbox, 12);
+	ctk_widget_set_margin_start (vbox, 12);
+	ctk_container_add (GTK_CONTAINER (current_expander), vbox);
 
 	current_multi_select = (gboolean) allow_multiple_selection;
 	current_radio_group = NULL;
@@ -352,7 +352,7 @@ xkb_options_add_group (XklConfigRegistry * config_registry,
 			  (GCompareFunc) xkb_option_checks_compare);
 	while (option_checks_list) {
 		option_check = GTK_WIDGET (option_checks_list->data);
-		gtk_box_pack_start (GTK_BOX (vbox), option_check, TRUE, TRUE, 0);
+		ctk_box_pack_start (GTK_BOX (vbox), option_check, TRUE, TRUE, 0);
 		option_checks_list = option_checks_list->next;
 	}
 	/* free it */
@@ -409,12 +409,12 @@ xkb_options_load_options (GtkBuilder * dialog)
 			   expanders_list);
 	while (expanders_list) {
 		expander = GTK_WIDGET (expanders_list->data);
-		gtk_box_pack_start (GTK_BOX (opts_vbox), expander, FALSE,
+		ctk_box_pack_start (GTK_BOX (opts_vbox), expander, FALSE,
 				    FALSE, 0);
 		expanders_list = expanders_list->next;
 	}
 
-	gtk_widget_show_all (opts_vbox);
+	ctk_widget_show_all (opts_vbox);
 }
 
 static void
@@ -434,7 +434,7 @@ chooser_response_cb (GtkDialog * dialog, gint response, gpointer data)
 					   EXPANDERS_PROP, NULL);
 			g_slist_free (expanders_list);
 
-			gtk_widget_destroy (GTK_WIDGET (dialog));
+			ctk_widget_destroy (GTK_WIDGET (dialog));
 			chooser_dialog = NULL;
 		}
 		break;
@@ -447,13 +447,13 @@ xkb_options_popup_dialog (GtkBuilder * dialog)
 {
 	GtkWidget *chooser;
 
-	chooser_dialog = gtk_builder_new ();
-	gtk_builder_add_from_resource (chooser_dialog,
+	chooser_dialog = ctk_builder_new ();
+	ctk_builder_add_from_resource (chooser_dialog,
 	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-options-dialog.ui",
 	                               NULL);
 
 	chooser = CWID ("xkb_options_dialog");
-	gtk_window_set_transient_for (GTK_WINDOW (chooser),
+	ctk_window_set_transient_for (GTK_WINDOW (chooser),
 				      GTK_WINDOW (WID
 						  ("keyboard_dialog")));
 	xkb_options_load_options (chooser_dialog);
@@ -461,7 +461,7 @@ xkb_options_popup_dialog (GtkBuilder * dialog)
 	g_signal_connect (chooser, "response",
 			  G_CALLBACK (chooser_response_cb), dialog);
 
-	gtk_dialog_run (GTK_DIALOG (chooser));
+	ctk_dialog_run (GTK_DIALOG (chooser));
 }
 
 /* Update selected option counters for a group-bound expander */

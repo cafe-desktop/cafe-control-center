@@ -31,13 +31,13 @@
 #include <dirent.h>
 #include <glib/gi18n.h>
 #include <gmodule.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 #include <gio/gio.h>
 #include <string.h>
 #include <libcafe-desktop/cafe-desktop-item.h>
 #include "cafe-theme-info.h"
-#include "gtkrc-utils.h"
+#include "ctkrc-utils.h"
 
 #include <X11/Xcursor/Xcursor.h>
 
@@ -75,7 +75,7 @@ typedef struct _ThemeCallbackData {
 
 typedef struct {
 	GFileMonitor* common_theme_dir_handle;
-	GFileMonitor* gtk2_dir_handle;
+	GFileMonitor* ctk2_dir_handle;
 	GFileMonitor* keybinding_dir_handle;
 	GFileMonitor* croma_dir_handle;
 	gint priority;
@@ -338,18 +338,18 @@ CafeThemeMetaInfo* cafe_theme_read_meta_theme(GFile* meta_theme_uri)
 		cafe_theme_meta_info_free(meta_theme_info);
 		return NULL;
 	}
-	meta_theme_info->gtk_theme_name = g_strdup(str);
+	meta_theme_info->ctk_theme_name = g_strdup(str);
 
 	str = cafe_desktop_item_get_string(meta_theme_ditem, GTK_COLOR_SCHEME_KEY);
 
 	if (str == NULL || str[0] == '\0')
-		scheme = gtkrc_get_color_scheme_for_theme(meta_theme_info->gtk_theme_name);
+		scheme = ctkrc_get_color_scheme_for_theme(meta_theme_info->ctk_theme_name);
 	else
 		scheme = g_strdup(str);
 
 	if (scheme != NULL)
 	{
-		meta_theme_info->gtk_color_scheme = scheme;
+		meta_theme_info->ctk_color_scheme = scheme;
 
 		for (; *scheme != '\0'; scheme++)
 			if (*scheme == ',')
@@ -655,7 +655,7 @@ handle_change_signal (gpointer             data,
     type_str = "cursor";
   else if (theme->type == CAFE_THEME_TYPE_REGULAR) {
     if (element_type & CAFE_THEME_GTK_2)
-      element_str = "gtk-2";
+      element_str = "ctk-2";
     else if (element_type & CAFE_THEME_GTK_2_KEYBINDING)
       element_str = "keybinding";
     else if (element_type & CAFE_THEME_CROMA)
@@ -685,7 +685,7 @@ handle_change_signal (gpointer             data,
 #endif
 }
 
-/* index_uri should point to the gtkrc file that was modified */
+/* index_uri should point to the ctkrc file that was modified */
 static void
 update_theme_index (GFile            *index_uri,
                     CafeThemeElement key_element,
@@ -715,7 +715,7 @@ update_theme_index (GFile            *index_uri,
       theme_info->readable_name = g_strdup (theme_info->name);
       theme_info->priority = priority;
       if (key_element & CAFE_THEME_GTK_2)
-        theme_info->has_gtk = TRUE;
+        theme_info->has_ctk = TRUE;
       else if (key_element & CAFE_THEME_GTK_2_KEYBINDING)
         theme_info->has_keybinding = TRUE;
       else if (key_element & CAFE_THEME_CROMA)
@@ -729,8 +729,8 @@ update_theme_index (GFile            *index_uri,
     gboolean theme_used_to_exist = FALSE;
 
     if (key_element & CAFE_THEME_GTK_2) {
-      theme_used_to_exist = theme_info->has_gtk;
-      theme_info->has_gtk = theme_exists;
+      theme_used_to_exist = theme_info->has_ctk;
+      theme_info->has_ctk = theme_exists;
     } else if (key_element & CAFE_THEME_GTK_2_KEYBINDING) {
       theme_used_to_exist = theme_info->has_keybinding;
       theme_info->has_keybinding = theme_exists;
@@ -739,7 +739,7 @@ update_theme_index (GFile            *index_uri,
       theme_info->has_croma = theme_exists;
     }
 
-    if (!theme_info->has_croma && !theme_info->has_keybinding && !theme_info->has_gtk) {
+    if (!theme_info->has_croma && !theme_info->has_keybinding && !theme_info->has_ctk) {
       g_hash_table_remove (theme_hash_by_uri, common_theme_dir);
       remove_theme_from_hash_by_name (theme_hash_by_name, theme_info);
     }
@@ -752,7 +752,7 @@ update_theme_index (GFile            *index_uri,
       handle_change_signal (theme_info, CAFE_THEME_CHANGE_DELETED, key_element);
     }
 
-    if (!theme_info->has_croma && !theme_info->has_keybinding && !theme_info->has_gtk) {
+    if (!theme_info->has_croma && !theme_info->has_keybinding && !theme_info->has_ctk) {
       cafe_theme_info_free (theme_info);
     }
   }
@@ -763,10 +763,10 @@ update_theme_index (GFile            *index_uri,
 }
 
 static void
-update_gtk2_index (GFile *gtk2_index_uri,
+update_ctk2_index (GFile *ctk2_index_uri,
                    gint   priority)
 {
-  update_theme_index (gtk2_index_uri, CAFE_THEME_GTK_2, priority);
+  update_theme_index (ctk2_index_uri, CAFE_THEME_GTK_2, priority);
 }
 
 static void
@@ -892,7 +892,7 @@ update_cursor_theme_index (GFile *cursor_theme_index_uri,
 }
 
 static void
-gtk2_dir_changed (GFileMonitor              *monitor,
+ctk2_dir_changed (GFileMonitor              *monitor,
                   GFile                     *file,
                   GFile                     *other_file,
                   GFileMonitorEvent          event_type,
@@ -902,9 +902,9 @@ gtk2_dir_changed (GFileMonitor              *monitor,
 
   affected_file = g_file_get_basename (file);
 
-  /* The only file we care about is gtkrc */
-  if (!strcmp (affected_file, "gtkrc")) {
-    update_gtk2_index (file, monitor_data->priority);
+  /* The only file we care about is ctkrc */
+  if (!strcmp (affected_file, "ctkrc")) {
+    update_ctk2_index (file, monitor_data->priority);
   }
 
   g_free (affected_file);
@@ -921,8 +921,8 @@ keybinding_dir_changed (GFileMonitor              *monitor,
 
   affected_file = g_file_get_basename (file);
 
-  /* The only file we care about is gtkrc */
-  if (!strcmp (affected_file, "gtkrc")) {
+  /* The only file we care about is ctkrc */
+  if (!strcmp (affected_file, "ctkrc")) {
     update_keybinding_index (file, monitor_data->priority);
   }
 
@@ -1024,25 +1024,25 @@ add_common_theme_dir_monitor (GFile                      *theme_dir_uri,
   monitor_data->common_theme_dir_handle = monitor;
 
 
-  /* gtk-2 theme subdir */
-  subdir = g_file_get_child (theme_dir_uri, "gtk-2.0");
-  uri = g_file_get_child (subdir, "gtkrc");
+  /* ctk-2 theme subdir */
+  subdir = g_file_get_child (theme_dir_uri, "ctk-2.0");
+  uri = g_file_get_child (subdir, "ctkrc");
   if (g_file_query_exists (uri, NULL)) {
-    update_gtk2_index (uri, monitor_data->priority);
+    update_ctk2_index (uri, monitor_data->priority);
   }
   g_object_unref (uri);
 
   monitor = g_file_monitor_directory (subdir, G_FILE_MONITOR_NONE, NULL, NULL);
   if (monitor != NULL) {
     g_signal_connect (monitor, "changed",
-                      (GCallback) gtk2_dir_changed, monitor_data);
+                      (GCallback) ctk2_dir_changed, monitor_data);
   }
-  monitor_data->gtk2_dir_handle = monitor;
+  monitor_data->ctk2_dir_handle = monitor;
   g_object_unref (subdir);
 
   /* keybinding theme subdir */
-  subdir = g_file_get_child (theme_dir_uri, "gtk-2.0-key");
-  uri = g_file_get_child (subdir, "gtkrc");
+  subdir = g_file_get_child (theme_dir_uri, "ctk-2.0-key");
+  uri = g_file_get_child (subdir, "ctkrc");
   if (g_file_query_exists (uri, NULL)) {
     update_keybinding_index (uri, monitor_data->priority);
   }
@@ -1111,7 +1111,7 @@ static void
 remove_common_theme_dir_monitor (CommonThemeDirMonitorData *monitor_data)
 {
   g_file_monitor_cancel (monitor_data->common_theme_dir_handle);
-  g_file_monitor_cancel (monitor_data->gtk2_dir_handle);
+  g_file_monitor_cancel (monitor_data->ctk2_dir_handle);
   g_file_monitor_cancel (monitor_data->keybinding_dir_handle);
   g_file_monitor_cancel (monitor_data->croma_dir_handle);
 }
@@ -1333,7 +1333,7 @@ cafe_theme_info_find_by_type_helper (gpointer key,
     CafeThemeInfo *theme_info = list->data;
 
     if ((elements & CAFE_THEME_CROMA && theme_info->has_croma) ||
-        (elements & CAFE_THEME_GTK_2 && theme_info->has_gtk) ||
+        (elements & CAFE_THEME_GTK_2 && theme_info->has_ctk) ||
         (elements & CAFE_THEME_GTK_2_KEYBINDING && theme_info->has_keybinding)) {
       hash_data->list = g_list_prepend (hash_data->list, theme_info);
       return;
@@ -1366,25 +1366,25 @@ static void cafe_theme_info_find_all_helper(const gchar* key, GList* list, GList
 	}
 }
 
-gchar* gtk_theme_info_missing_engine(const gchar* gtk_theme, gboolean name_only)
+gchar* ctk_theme_info_missing_engine(const gchar* ctk_theme, gboolean name_only)
 {
 	gchar* engine = NULL;
-	gchar* gtkrc;
+	gchar* ctkrc;
 
-	gtkrc = gtkrc_find_named(gtk_theme);
+	ctkrc = ctkrc_find_named(ctk_theme);
 
-	if (gtkrc)
+	if (ctkrc)
 	{
 		GSList* engines = NULL;
 		GSList* l;
 
-    	gtkrc_get_details(gtkrc, &engines, NULL);
+    	ctkrc_get_details(ctkrc, &engines, NULL);
 
-   		g_free(gtkrc);
+   		g_free(ctkrc);
 
 		for (l = engines; l; l = l->next)
 		{
-			/* This code do not work on distros with more of one gtk theme
+			/* This code do not work on distros with more of one ctk theme
 			 * engine path. Like debian. But yes on others like Archlinux.
 			 * Example, debian use:
 			 * /usr/lib/i386-linux-gnu/2.10.0/engines/
@@ -1552,8 +1552,8 @@ void cafe_theme_meta_info_free(CafeThemeMetaInfo* meta_theme_info)
 	g_free (meta_theme_info->cursor_theme_name);
 	g_free (meta_theme_info->desktop_font);
 	g_free (meta_theme_info->documents_font);
-	g_free (meta_theme_info->gtk_color_scheme);
-	g_free (meta_theme_info->gtk_theme_name);
+	g_free (meta_theme_info->ctk_color_scheme);
+	g_free (meta_theme_info->ctk_theme_name);
 	g_free (meta_theme_info->icon_file);
 	g_free (meta_theme_info->icon_theme_name);
 	g_free (meta_theme_info->croma_theme_name);
@@ -1572,13 +1572,13 @@ gboolean cafe_theme_meta_info_validate(const CafeThemeMetaInfo* info, GError** e
 
 	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-	theme = cafe_theme_info_find (info->gtk_theme_name);
+	theme = cafe_theme_info_find (info->ctk_theme_name);
 
-	if (!theme || !theme->has_gtk)
+	if (!theme || !theme->has_ctk)
 	{
 		g_set_error (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE,
 			_("This theme will not look as intended because the required GTK+ theme '%s' is not installed."),
-			info->gtk_theme_name);
+			info->ctk_theme_name);
 		return FALSE;
 	}
 
@@ -1640,10 +1640,10 @@ cafe_theme_meta_info_compare (CafeThemeMetaInfo *a,
   cmp = safe_strcmp (a->icon_file, b->icon_file);
   if (cmp != 0) return cmp;
 
-  cmp = safe_strcmp (a->gtk_theme_name, b->gtk_theme_name);
+  cmp = safe_strcmp (a->ctk_theme_name, b->ctk_theme_name);
   if (cmp != 0) return cmp;
 
-  cmp = safe_strcmp (a->gtk_color_scheme, b->gtk_color_scheme);
+  cmp = safe_strcmp (a->ctk_color_scheme, b->ctk_color_scheme);
   if (cmp != 0) return cmp;
 
   cmp = safe_strcmp (a->croma_theme_name, b->croma_theme_name);
@@ -1815,7 +1815,7 @@ cafe_theme_init ()
   g_object_unref (top_theme_dir);
 
   /* icon theme search path */
-  gtk_icon_theme_get_search_path (gtk_icon_theme_get_default (), &search_path, &n);
+  ctk_icon_theme_get_search_path (ctk_icon_theme_get_default (), &search_path, &n);
   for (i = 0; i < n; ++i) {
     top_theme_dir = g_file_new_for_path (search_path[i]);
     add_top_icon_theme_dir_monitor (top_theme_dir, i, NULL);

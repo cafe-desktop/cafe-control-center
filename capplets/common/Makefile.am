@@ -34,8 +34,8 @@ libcommon_la_SOURCES = \
 	cafe-theme-apply.h 		\
 	cafe-theme-info.c		\
 	cafe-theme-info.h		\
-	gtkrc-utils.c			\
-	gtkrc-utils.h			\
+	ctkrc-utils.c			\
+	ctkrc-utils.h			\
 	theme-thumbnail.c		\
 	theme-thumbnail.h		\
 	wm-common.c			\

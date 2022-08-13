@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.20.0 -->
 <interface>
-  <requires lib="gtk+" version="3.14"/>
+  <requires lib="ctk+" version="3.14"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keyboard-properties-a11y-notifications.ui -->
   <!-- interface-description a11y keyboard notifications dialog window -->
@@ -30,7 +30,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button11">
-                <property name="label">gtk-help</property>
+                <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -45,7 +45,7 @@
             </child>
             <child>
               <object class="GtkButton" id="button12">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

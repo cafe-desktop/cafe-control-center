@@ -22,7 +22,7 @@ Author: Wolfgang Ulbrich
 
 -->
 <interface>
-  <requires lib="gtk+" version="3.14"/>
+  <requires lib="ctk+" version="3.14"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-appearance-properties -->
   <!-- interface-description appearance properties dialog window -->
@@ -59,7 +59,7 @@ Author: Wolfgang Ulbrich
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="theme_help_button">
-                <property name="label">gtk-help</property>
+                <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -74,7 +74,7 @@ Author: Wolfgang Ulbrich
             </child>
             <child>
               <object class="GtkButton" id="theme_close_button">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -110,7 +110,7 @@ Author: Wolfgang Ulbrich
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkBox" id="gtk_themes_vbox">
+                  <object class="GtkBox" id="ctk_themes_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -125,7 +125,7 @@ Author: Wolfgang Ulbrich
                         <property name="hscrollbar_policy">never</property>
                         <property name="shadow_type">in</property>
                         <child>
-                          <object class="GtkTreeView" id="gtk_themes_list">
+                          <object class="GtkTreeView" id="ctk_themes_list">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -157,8 +157,8 @@ Author: Wolfgang Ulbrich
                     <property name="spacing">6</property>
                     <property name="layout_style">end</property>
                     <child>
-                      <object class="GtkButton" id="gtk_themes_delete">
-                        <property name="label">gtk-delete</property>
+                      <object class="GtkButton" id="ctk_themes_delete">
+                        <property name="label">ctk-delete</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
@@ -209,7 +209,7 @@ Author: Wolfgang Ulbrich
                       <object class="GtkImage" id="image2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="stock">gtk-dialog-info</property>
+                        <property name="stock">ctk-dialog-info</property>
                         <property name="icon_size">5</property>
                       </object>
                       <packing>
@@ -523,7 +523,7 @@ Author: Wolfgang Ulbrich
                     <property name="layout_style">end</property>
                     <child>
                       <object class="GtkButton" id="window_themes_delete">
-                        <property name="label">gtk-delete</property>
+                        <property name="label">ctk-delete</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
@@ -604,7 +604,7 @@ Author: Wolfgang Ulbrich
                     <property name="layout_style">end</property>
                     <child>
                       <object class="GtkButton" id="icon_themes_delete">
-                        <property name="label">gtk-delete</property>
+                        <property name="label">ctk-delete</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
@@ -761,7 +761,7 @@ Author: Wolfgang Ulbrich
                         <property name="layout_style">end</property>
                         <child>
                           <object class="GtkButton" id="cursor_themes_delete">
-                            <property name="label">gtk-delete</property>
+                            <property name="label">ctk-delete</property>
                             <property name="visible">True</property>
                             <property name="sensitive">False</property>
                             <property name="can_focus">True</property>
@@ -844,7 +844,7 @@ Author: Wolfgang Ulbrich
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button3">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -1458,7 +1458,7 @@ Author: Wolfgang Ulbrich
                               <object class="GtkImage" id="subpixel_rgb_image">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="stock">gtk-missing-image</property>
+                                <property name="stock">ctk-missing-image</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1498,7 +1498,7 @@ Author: Wolfgang Ulbrich
                               <object class="GtkImage" id="subpixel_bgr_image">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="stock">gtk-missing-image</property>
+                                <property name="stock">ctk-missing-image</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1538,7 +1538,7 @@ Author: Wolfgang Ulbrich
                               <object class="GtkImage" id="subpixel_vbgr_image">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="stock">gtk-missing-image</property>
+                                <property name="stock">ctk-missing-image</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1578,7 +1578,7 @@ Author: Wolfgang Ulbrich
                               <object class="GtkImage" id="subpixel_vrgb_image">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="stock">gtk-missing-image</property>
+                                <property name="stock">ctk-missing-image</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1647,7 +1647,7 @@ Author: Wolfgang Ulbrich
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="save_dialog_cancel_button">
-                <property name="label">gtk-cancel</property>
+                <property name="label">ctk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -1662,7 +1662,7 @@ Author: Wolfgang Ulbrich
             </child>
             <child>
               <object class="GtkButton" id="save_dialog_save_button">
-                <property name="label">gtk-save</property>
+                <property name="label">ctk-save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -1888,7 +1888,7 @@ Author: Wolfgang Ulbrich
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="help_button">
-                <property name="label">gtk-help</property>
+                <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -1904,7 +1904,7 @@ Author: Wolfgang Ulbrich
             </child>
             <child>
               <object class="GtkButton" id="close_button">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -1990,7 +1990,7 @@ Author: Wolfgang Ulbrich
                     <property name="layout_style">end</property>
                     <child>
                       <object class="GtkButton" id="theme_delete">
-                        <property name="label">gtk-delete</property>
+                        <property name="label">ctk-delete</property>
                         <property name="visible">True</property>
                         <property name="sensitive">False</property>
                         <property name="can_focus">True</property>
@@ -2341,7 +2341,7 @@ Author: Wolfgang Ulbrich
                         <property name="layout_style">end</property>
                         <child>
                           <object class="GtkButton" id="wp_rem_button">
-                            <property name="label">gtk-remove</property>
+                            <property name="label">ctk-remove</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
@@ -3149,7 +3149,7 @@ Author: Wolfgang Ulbrich
                                         <property name="can_focus">False</property>
                                         <child>
                                           <object class="GtkImageMenuItem" id="menu_item_1">
-                                            <property name="label">gtk-new</property>
+                                            <property name="label">ctk-new</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3158,7 +3158,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="menu_item_2">
-                                            <property name="label">gtk-open</property>
+                                            <property name="label">ctk-open</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3167,7 +3167,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="menu_item_3">
-                                            <property name="label">gtk-save</property>
+                                            <property name="label">ctk-save</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3182,7 +3182,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="menu_item_4">
-                                            <property name="label">gtk-print</property>
+                                            <property name="label">ctk-print</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3197,7 +3197,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="menu_item_5">
-                                            <property name="label">gtk-quit</property>
+                                            <property name="label">ctk-quit</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3219,7 +3219,7 @@ Author: Wolfgang Ulbrich
                                         <property name="can_focus">False</property>
                                         <child>
                                           <object class="GtkImageMenuItem" id="cut">
-                                            <property name="label">gtk-cut</property>
+                                            <property name="label">ctk-cut</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3228,7 +3228,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="copy">
-                                            <property name="label">gtk-copy</property>
+                                            <property name="label">ctk-copy</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3237,7 +3237,7 @@ Author: Wolfgang Ulbrich
                                         </child>
                                         <child>
                                           <object class="GtkImageMenuItem" id="paste">
-                                            <property name="label">gtk-paste</property>
+                                            <property name="label">ctk-paste</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
                                             <property name="use_underline">True</property>
@@ -3269,7 +3269,7 @@ Author: Wolfgang Ulbrich
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="is_important">True</property>
-                                        <property name="stock_id">gtk-new</property>
+                                        <property name="stock_id">ctk-new</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -3280,7 +3280,7 @@ Author: Wolfgang Ulbrich
                                       <object class="GtkToolButton" id="button4">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="stock_id">gtk-open</property>
+                                        <property name="stock_id">ctk-open</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -3291,7 +3291,7 @@ Author: Wolfgang Ulbrich
                                       <object class="GtkToolButton" id="save_button">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="stock_id">gtk-save</property>
+                                        <property name="stock_id">ctk-save</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>

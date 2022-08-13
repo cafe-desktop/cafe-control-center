@@ -17,7 +17,7 @@
  * 02110-1301, USA.
  */
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void set_fingerprint_label (GtkWidget *enable,
 			    GtkWidget *disable);

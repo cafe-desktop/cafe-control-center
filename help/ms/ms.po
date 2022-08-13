@@ -2871,8 +2871,8 @@ msgstr "Navigasi ke direktori yang mengandungi tema yang hendak dipasangkan."
 
 #. (itstool) path: listitem/para
 #: C/config-themes.xml:38
-msgid "Open the gtkrc file which contains the specifications of your theme."
-msgstr "Buka fail gtktc yang mana mengandungi spesifikasi tema anda."
+msgid "Open the ctkrc file which contains the specifications of your theme."
+msgstr "Buka fail ctktc yang mana mengandungi spesifikasi tema anda."
 
 #. (itstool) path: sect2/para
 #: C/config-themes.xml:24

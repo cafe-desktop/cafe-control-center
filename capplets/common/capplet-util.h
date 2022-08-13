@@ -25,14 +25,14 @@
 #define __CAPPLET_UTIL_H
 
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib/gi18n.h>
 
 /* Macros to make certain repetitive tasks a bit easier */
 
 /* Retrieve a widget from the UI object */
 
-#define WID(s) GTK_WIDGET (gtk_builder_get_object (dialog, s))
+#define WID(s) GTK_WIDGET (ctk_builder_get_object (dialog, s))
 
 /* Some miscellaneous functions useful to all capplets */
 

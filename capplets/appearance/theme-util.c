@@ -64,14 +64,14 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   GFile *dir;
   gboolean del_empty_parent;
 
-  dialog = (GtkDialog *) gtk_message_dialog_new (NULL,
+  dialog = (GtkDialog *) ctk_message_dialog_new (NULL,
 						 GTK_DIALOG_MODAL,
 						 GTK_MESSAGE_QUESTION,
 						 GTK_BUTTONS_CANCEL,
 						 _("Would you like to delete this theme?"));
-  gtk_dialog_add_button (dialog, "gtk-delete", GTK_RESPONSE_ACCEPT);
-  response = gtk_dialog_run (dialog);
-  gtk_widget_destroy (GTK_WIDGET (dialog));
+  ctk_dialog_add_button (dialog, "ctk-delete", GTK_RESPONSE_ACCEPT);
+  response = ctk_dialog_run (dialog);
+  ctk_widget_destroy (GTK_WIDGET (dialog));
   if (response != GTK_RESPONSE_ACCEPT)
     return FALSE;
 
@@ -82,7 +82,7 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   switch (type) {
     case THEME_TYPE_GTK:
       theme = (CafeThemeCommonInfo *) cafe_theme_info_find (name);
-      theme_dir = g_build_filename (theme->path, "gtk-2.0", NULL);
+      theme_dir = g_build_filename (theme->path, "ctk-2.0", NULL);
       break;
 
     case THEME_TYPE_ICON:
@@ -115,13 +115,13 @@ gboolean theme_delete (const gchar *name, ThemeType type)
   g_free (theme_dir);
 
   if (!capplet_file_delete_recursive (dir, NULL)) {
-    GtkWidget *info_dialog = gtk_message_dialog_new (NULL,
+    GtkWidget *info_dialog = ctk_message_dialog_new (NULL,
 						     GTK_DIALOG_MODAL,
 						     GTK_MESSAGE_ERROR,
 						     GTK_BUTTONS_OK,
 						     _("Theme cannot be deleted"));
-    gtk_dialog_run (GTK_DIALOG (info_dialog));
-    gtk_widget_destroy (info_dialog);
+    ctk_dialog_run (GTK_DIALOG (info_dialog));
+    ctk_widget_destroy (info_dialog);
     rc = FALSE;
   } else {
     if (del_empty_parent) {
@@ -142,12 +142,12 @@ gboolean theme_model_iter_last (GtkTreeModel *model, GtkTreeIter *iter)
   GtkTreeIter walk, prev;
   gboolean valid;
 
-  valid = gtk_tree_model_get_iter_first (model, &walk);
+  valid = ctk_tree_model_get_iter_first (model, &walk);
 
   if (valid) {
     do {
       prev = walk;
-      valid = gtk_tree_model_iter_next (model, &walk);
+      valid = ctk_tree_model_iter_next (model, &walk);
     } while (valid);
 
     *iter = prev;
@@ -165,10 +165,10 @@ gboolean theme_find_in_model (GtkTreeModel *model, const gchar *name, GtkTreeIte
   if (!name)
     return FALSE;
 
-  for (valid = gtk_tree_model_get_iter_first (model, &walk); valid;
-       valid = gtk_tree_model_iter_next (model, &walk))
+  for (valid = ctk_tree_model_get_iter_first (model, &walk); valid;
+       valid = ctk_tree_model_iter_next (model, &walk))
   {
-    gtk_tree_model_get (model, &walk, COL_NAME, &test, -1);
+    ctk_tree_model_get (model, &walk, COL_NAME, &test, -1);
 
     if (test) {
       gint cmp = strcmp (test, name);
@@ -275,15 +275,15 @@ void theme_install_file(GtkWindow* parent, const gchar* path)
                                     &error);
 
   if (variant == NULL) {
-    GtkWidget* dialog = gtk_message_dialog_new(NULL,
+    GtkWidget* dialog = ctk_message_dialog_new(NULL,
                                                GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_OK,
                                                _("Could not install theme engine"));
-    gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
+    ctk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
 
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(dialog);
+    ctk_dialog_run(GTK_DIALOG(dialog));
+    ctk_widget_destroy(dialog);
     g_error_free(error);
   } else {
     g_variant_unref (variant);

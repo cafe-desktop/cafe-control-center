@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.22.0 -->
 <interface>
-  <requires lib="gtk+" version="3.22"/>
+  <requires lib="ctk+" version="3.22"/>
   <object class="GtkImage" id="apply_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">gtk-apply</property>
+    <property name="icon_name">ctk-apply</property>
   </object>
   <object class="GtkImage" id="help_button_img">
     <property name="visible">True</property>

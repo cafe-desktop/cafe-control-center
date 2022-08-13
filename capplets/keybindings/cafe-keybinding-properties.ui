@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.20.0 -->
 <interface>
-  <requires lib="gtk+" version="3.14"/>
+  <requires lib="ctk+" version="3.14"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-keybinding-dialog.ui -->
   <!-- interface-description dialo window for changing keybindings -->
@@ -24,7 +24,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="cancelbutton1">
-                <property name="label">gtk-cancel</property>
+                <property name="label">ctk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -38,7 +38,7 @@
             </child>
             <child>
               <object class="GtkButton" id="okbutton1">
-                <property name="label">gtk-apply</property>
+                <property name="label">ctk-apply</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -207,7 +207,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="helpbutton1">
-                <property name="label">gtk-help</property>
+                <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -222,7 +222,7 @@
             </child>
             <child>
               <object class="GtkButton" id="add-button">
-                <property name="label">gtk-add</property>
+                <property name="label">ctk-add</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -237,7 +237,7 @@
             </child>
             <child>
               <object class="GtkButton" id="remove-button">
-                <property name="label">gtk-remove</property>
+                <property name="label">ctk-remove</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
@@ -253,7 +253,7 @@
             </child>
             <child>
               <object class="GtkButton" id="button1">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -322,7 +322,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="valign">start</property>
-                        <property name="stock">gtk-dialog-info</property>
+                        <property name="stock">ctk-dialog-info</property>
                         <property name="icon_size">6</property>
                       </object>
                       <packing>

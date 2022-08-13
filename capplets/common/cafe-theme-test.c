@@ -1,5 +1,5 @@
 #include <config.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <string.h>
 #include "cafe-theme-info.h"
 
@@ -8,7 +8,7 @@ main (int argc, char *argv[])
 {
   GList *themes, *list;
 
-  gtk_init (&argc, &argv);
+  ctk_init (&argc, &argv);
   cafe_theme_init ();
 
   themes = cafe_theme_meta_info_find_all ();
@@ -70,8 +70,8 @@ main (int argc, char *argv[])
     {
       gchar *str;
 
-      g_print ("No gtk-2 themes were found.  The following directories were tested:\n");
-      str = gtk_rc_get_theme_dir ();
+      g_print ("No ctk-2 themes were found.  The following directories were tested:\n");
+      str = ctk_rc_get_theme_dir ();
       g_print ("\t%s\n", str);
       g_free (str);
       str = g_build_filename (g_get_home_dir (), ".themes", NULL);
@@ -80,7 +80,7 @@ main (int argc, char *argv[])
     }
   else
     {
-      g_print ("%d gtk-2 themes were found:\n", g_list_length (themes));
+      g_print ("%d ctk-2 themes were found:\n", g_list_length (themes));
       for (list = themes; list; list = list->next)
 	{
 	  CafeThemeInfo *theme_info;

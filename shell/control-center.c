@@ -21,7 +21,7 @@
 #include "config.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <libslab/slab.h>
 
@@ -127,7 +127,7 @@ activate (GtkApplication *app)
 	GSList* actions;
 	gboolean hidden = FALSE;
 
-	list = gtk_application_get_windows (app);
+	list = ctk_application_get_windows (app);
 
 	AppShellData* app_data = appshelldata_new("cafecc.menu", GTK_ICON_SIZE_DND, FALSE, TRUE, 0);
 
@@ -138,12 +138,12 @@ activate (GtkApplication *app)
 
 	if (list)
 	{
-		gtk_window_present (GTK_WINDOW (list->data));
+		ctk_window_present (GTK_WINDOW (list->data));
 	}
 	else
 	{
 		create_main_window(app_data, "MyControlCenter", _("Control Center"), "preferences-desktop", 975, 600, hidden);
-		gtk_application_add_window (app, GTK_WINDOW(app_data->main_app));
+		ctk_application_add_window (app, GTK_WINDOW(app_data->main_app));
 	}
 }
 
@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
 	gboolean hidden = FALSE;
 	GtkApplication *app;
 	gint retval;
-	app = gtk_application_new ("org.cafe.cafe-control-center.shell", 0);
+	app = ctk_application_new ("org.cafe.cafe-control-center.shell", 0);
 	GError* error;
 	GOptionEntry options[] = {
 		{"hide", 0, 0, G_OPTION_ARG_NONE, &hidden, N_("Hide on start (useful to preload the shell)"), NULL},
@@ -173,7 +173,7 @@ int main(int argc, char* argv[])
 
 	error = NULL;
 
-	if (!gtk_init_with_args(&argc, &argv, NULL, options, GETTEXT_PACKAGE, &error))
+	if (!ctk_init_with_args(&argc, &argv, NULL, options, GETTEXT_PACKAGE, &error))
 	{
 		g_printerr("%s\n", error->message);
 		g_error_free(error);

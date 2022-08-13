@@ -91,7 +91,7 @@ draw_string (SushiFontWidget *self,
   GtkTextDirection text_dir;
   gint pos_x;
 
-  text_dir = gtk_widget_get_direction (GTK_WIDGET (self));
+  text_dir = ctk_widget_get_direction (GTK_WIDGET (self));
 
   cairo_font_extents (cr, &font_extents);
   cairo_text_extents (cr, text, &extents);
@@ -102,7 +102,7 @@ draw_string (SushiFontWidget *self,
   if (text_dir == GTK_TEXT_DIR_LTR)
     pos_x = padding.left;
   else {
-    pos_x = gtk_widget_get_allocated_width (GTK_WIDGET (self)) -
+    pos_x = ctk_widget_get_allocated_width (GTK_WIDGET (self)) -
       extents.x_advance - padding.right;
   }
 
@@ -358,9 +358,9 @@ sushi_font_widget_size_request (GtkWidget *drawing_area,
   surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
                                         SURFACE_SIZE, SURFACE_SIZE);
   cr = cairo_create (surface);
-  context = gtk_widget_get_style_context (drawing_area);
-  state = gtk_style_context_get_state (context);
-  gtk_style_context_get_padding (context, state, &padding);
+  context = ctk_widget_get_style_context (drawing_area);
+  state = ctk_style_context_get_state (context);
+  ctk_style_context_get_padding (context, state, &padding);
 
   sizes = build_sizes_table (face, &n_sizes, &alpha_size, &title_size);
 
@@ -481,17 +481,17 @@ sushi_font_widget_draw (GtkWidget *drawing_area,
   if (face == NULL)
     goto end;
 
-  context = gtk_widget_get_style_context (drawing_area);
-  state = gtk_style_context_get_state (context);
+  context = ctk_widget_get_style_context (drawing_area);
+  state = ctk_style_context_get_state (context);
 
-  allocated_width = gtk_widget_get_allocated_width (drawing_area);
-  allocated_height = gtk_widget_get_allocated_height (drawing_area);
+  allocated_width = ctk_widget_get_allocated_width (drawing_area);
+  allocated_height = ctk_widget_get_allocated_height (drawing_area);
 
-  gtk_render_background (context, cr,
+  ctk_render_background (context, cr,
                          0, 0, allocated_width, allocated_height);
 
-  gtk_style_context_get_color (context, state, &color);
-  gtk_style_context_get_padding (context, state, &padding);
+  ctk_style_context_get_color (context, state, &color);
+  ctk_style_context_get_padding (context, state, &padding);
 
   gdk_cairo_set_source_rgba (cr, &color);
 
@@ -567,7 +567,7 @@ font_face_async_ready_cb (GObject *object,
 
   build_strings_for_face (self);
 
-  gtk_widget_queue_resize (GTK_WIDGET (self));
+  ctk_widget_queue_resize (GTK_WIDGET (self));
   g_signal_emit (self, signals[LOADED], 0);
 }
 
@@ -594,7 +594,7 @@ sushi_font_widget_init (SushiFontWidget *self)
   if (err != FT_Err_Ok)
     g_error ("Unable to initialize FreeType");
 
-  gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (self)),
+  ctk_style_context_add_class (ctk_widget_get_style_context (GTK_WIDGET (self)),
                                GTK_STYLE_CLASS_VIEW);
 }
 

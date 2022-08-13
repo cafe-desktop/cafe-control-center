@@ -20,7 +20,7 @@
 
 #include "double-click-detector.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "libslab-utils.h"
 
@@ -37,9 +37,9 @@ double_click_detector_init (DoubleClickDetector * detector)
 	GtkSettings *settings;
 	gint click_interval;
 
-	settings = gtk_settings_get_default ();
+	settings = ctk_settings_get_default ();
 
-	g_object_get (G_OBJECT (settings), "gtk-double-click-time", &click_interval, NULL);
+	g_object_get (G_OBJECT (settings), "ctk-double-click-time", &click_interval, NULL);
 
 	detector->double_click_time = (guint32) click_interval;
 	detector->last_click_time = 0;

@@ -478,7 +478,7 @@ RandR unless 1.2 is available, another is to conditionalize the code.
 
 The most sane thing is probably to just require 1.2.
 
-On the other hand, installing a newer gtk+ on a system with older X is
+On the other hand, installing a newer ctk+ on a system with older X is
 probably not that unusual, so maybe it's better to do the full 1.0,
 vs. 1.1 vs 1.2 check.
 

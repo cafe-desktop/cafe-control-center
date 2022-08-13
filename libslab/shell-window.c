@@ -20,7 +20,7 @@
 
 #include "shell-window.h"
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 
 #include "app-resizer.h"
@@ -52,11 +52,11 @@ shell_window_new (AppShellData * app_data)
 {
 	ShellWindow *window = g_object_new (SHELL_WINDOW_TYPE, NULL);
 
-	gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-	gtk_frame_set_shadow_type(GTK_FRAME(window), GTK_SHADOW_NONE);
+	ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+	ctk_frame_set_shadow_type(GTK_FRAME(window), GTK_SHADOW_NONE);
 
-	window->_hbox = GTK_BOX (gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0));
-	gtk_container_add (GTK_CONTAINER (window), GTK_WIDGET (window->_hbox));
+	window->_hbox = GTK_BOX (ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0));
+	ctk_container_add (GTK_CONTAINER (window), GTK_WIDGET (window->_hbox));
 
 	g_signal_connect (G_OBJECT (window), "draw", G_CALLBACK (shell_window_paint_window),
 		NULL);
@@ -93,7 +93,7 @@ shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisiti
 	gint height;
 	GtkRequisition child_requisiton;
 
-	gtk_widget_get_preferred_size (GTK_WIDGET (APP_RESIZER (app_data->category_layout)->child), &child_requisiton, NULL);
+	ctk_widget_get_preferred_size (GTK_WIDGET (APP_RESIZER (app_data->category_layout)->child), &child_requisiton, NULL);
 
 	requisition->width += child_requisiton.width;
 
@@ -111,19 +111,19 @@ shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisiti
 void
 shell_window_set_contents (ShellWindow * shell, GtkWidget * left_pane, GtkWidget * right_pane)
 {
-	shell->_left_pane = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	gtk_widget_set_margin_top (GTK_WIDGET (shell->_left_pane), 15);
-	gtk_widget_set_margin_bottom (GTK_WIDGET (shell->_left_pane), 15);
-	gtk_widget_set_margin_start (GTK_WIDGET (shell->_left_pane), 15);
-	gtk_widget_set_margin_end (GTK_WIDGET (shell->_left_pane), 15);
+	shell->_left_pane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	ctk_widget_set_margin_top (GTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_bottom (GTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_start (GTK_WIDGET (shell->_left_pane), 15);
+	ctk_widget_set_margin_end (GTK_WIDGET (shell->_left_pane), 15);
 
-	shell->_right_pane = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	shell->_right_pane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
-	gtk_box_pack_start (shell->_hbox, shell->_left_pane, FALSE, FALSE, 0);
-	gtk_box_pack_start (shell->_hbox, shell->_right_pane, TRUE, TRUE, 0);	/* this one takes any extra space */
+	ctk_box_pack_start (shell->_hbox, shell->_left_pane, FALSE, FALSE, 0);
+	ctk_box_pack_start (shell->_hbox, shell->_right_pane, TRUE, TRUE, 0);	/* this one takes any extra space */
 
-	gtk_container_add (GTK_CONTAINER (shell->_left_pane), left_pane);
-	gtk_container_add (GTK_CONTAINER (shell->_right_pane), right_pane);
+	ctk_container_add (GTK_CONTAINER (shell->_left_pane), left_pane);
+	ctk_container_add (GTK_CONTAINER (shell->_right_pane), right_pane);
 }
 
 gboolean
@@ -134,13 +134,13 @@ shell_window_paint_window (GtkWidget * widget, cairo_t * cr, gpointer data)
 
 	left_pane = SHELL_WINDOW (widget)->_left_pane;
 
-	gtk_widget_get_allocation (left_pane, &allocation);
+	ctk_widget_get_allocation (left_pane, &allocation);
 
 	/* draw left pane background */
-	gtk_paint_flat_box (
-		gtk_widget_get_style (widget),
+	ctk_paint_flat_box (
+		ctk_widget_get_style (widget),
 		cr,
-		gtk_widget_get_state (widget),
+		ctk_widget_get_state (widget),
 		GTK_SHADOW_NONE,
 		widget,
 		"",

@@ -22,7 +22,7 @@
 #define __APP_RESIZER_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "app-shell.h"
 

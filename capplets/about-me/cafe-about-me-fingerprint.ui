@@ -22,7 +22,7 @@ Author: Wolfgang Ulbrich
 
 -->
 <interface>
-  <requires lib="gtk+" version="3.22"/>
+  <requires lib="ctk+" version="3.22"/>
   <!-- interface-license-type gplv2 -->
   <!-- interface-name cafe-about-me-fingerprint -->
   <!-- interface-description about me fingerprint dialog window -->
@@ -244,7 +244,7 @@ Author: Wolfgang Ulbrich
               <object class="GtkImage" id="image1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-no</property>
+                <property name="icon_name">ctk-no</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -257,7 +257,7 @@ Author: Wolfgang Ulbrich
               <object class="GtkImage" id="image2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-no</property>
+                <property name="icon_name">ctk-no</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -270,7 +270,7 @@ Author: Wolfgang Ulbrich
               <object class="GtkImage" id="image3">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-no</property>
+                <property name="icon_name">ctk-no</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -283,7 +283,7 @@ Author: Wolfgang Ulbrich
               <object class="GtkImage" id="image4">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-no</property>
+                <property name="icon_name">ctk-no</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -296,7 +296,7 @@ Author: Wolfgang Ulbrich
               <object class="GtkImage" id="image5">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-no</property>
+                <property name="icon_name">ctk-no</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>

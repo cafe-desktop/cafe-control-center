@@ -24,7 +24,7 @@
 #include <string.h>
 #include <gdk/gdkx.h>
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 enum {
 	EGG_MODMAP_ENTRY_SHIFT   = 0,
@@ -395,24 +395,24 @@ gchar* egg_virtual_accelerator_name (guint accelerator_key, guint keycode, EggVi
 {
 	/* Acá esta el problema...
 	 * */
-	gchar* gtk_name;
+	gchar* ctk_name;
 	GdkModifierType gdkmods = 0;
 
 	egg_keymap_resolve_virtual_modifiers(NULL, accelerator_mods, &gdkmods);
 
-	/* en la funcion gtk_accelerator_name, desde la modificacion del 16 de sep
+	/* en la funcion ctk_accelerator_name, desde la modificacion del 16 de sep
 	 * del 2011 en GTK+, la tecla <Control> es tomada como <Primary> (?) */
-	gtk_name = gtk_accelerator_name(accelerator_key, gdkmods);
+	ctk_name = ctk_accelerator_name(accelerator_key, gdkmods);
 
 	if (!accelerator_key)
 	{
 		gchar *name;
-		name = g_strdup_printf ("%s0x%02x", gtk_name, keycode);
-		g_free (gtk_name);
+		name = g_strdup_printf ("%s0x%02x", ctk_name, keycode);
+		g_free (ctk_name);
 		return name;
 	}
 
-	return gtk_name;
+	return ctk_name;
 }
 
 /**
@@ -434,21 +434,21 @@ egg_virtual_accelerator_label (guint                  accelerator_key,
 			       guint		      keycode,
 			       EggVirtualModifierType accelerator_mods)
 {
-	gchar *gtk_label;
+	gchar *ctk_label;
 	GdkModifierType gdkmods = 0;
 
 	egg_keymap_resolve_virtual_modifiers (NULL, accelerator_mods, &gdkmods);
-	gtk_label = gtk_accelerator_get_label (accelerator_key, gdkmods);
+	ctk_label = ctk_accelerator_get_label (accelerator_key, gdkmods);
 
 	if (!accelerator_key)
 	{
 		gchar *label;
-		label = g_strdup_printf ("%s0x%02x", gtk_label, keycode);
-		g_free (gtk_label);
+		label = g_strdup_printf ("%s0x%02x", ctk_label, keycode);
+		g_free (ctk_label);
 		return label;
 	}
 
-	return gtk_label;
+	return ctk_label;
 }
 
 void egg_keymap_resolve_virtual_modifiers (GdkKeymap* keymap, EggVirtualModifierType virtual_mods, GdkModifierType* concrete_mods)

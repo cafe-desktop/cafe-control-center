@@ -2376,7 +2376,7 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/config-themes.xml:38
-msgid "Open the gtkrc file which contains the specifications of your theme."
+msgid "Open the ctkrc file which contains the specifications of your theme."
 msgstr ""
 
 #. (itstool) path: sect2/para

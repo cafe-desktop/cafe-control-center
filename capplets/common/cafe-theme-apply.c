@@ -25,11 +25,11 @@
 #include <gio/gio.h>
 #include <libcafe-desktop/cafe-gsettings.h>
 #include "cafe-theme-apply.h"
-#include "gtkrc-utils.h"
+#include "ctkrc-utils.h"
 
 #define INTERFACE_SCHEMA        "org.cafe.interface"
-#define GTK_THEME_KEY           "gtk-theme"
-#define COLOR_SCHEME_KEY        "gtk-color-scheme"
+#define GTK_THEME_KEY           "ctk-theme"
+#define COLOR_SCHEME_KEY        "ctk-color-scheme"
 #define ICON_THEME_KEY          "icon-theme"
 #define FONT_KEY                "font-name"
 
@@ -64,27 +64,27 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
       notification_settings = g_settings_new (NOTIFICATION_SCHEMA);
     }
 
-  /* Set the gtk+ key */
+  /* Set the ctk+ key */
   old_key = g_settings_get_string (interface_settings, GTK_THEME_KEY);
-  if (compare (old_key, meta_theme_info->gtk_theme_name))
+  if (compare (old_key, meta_theme_info->ctk_theme_name))
     {
-      g_settings_set_string (interface_settings, GTK_THEME_KEY, meta_theme_info->gtk_theme_name);
+      g_settings_set_string (interface_settings, GTK_THEME_KEY, meta_theme_info->ctk_theme_name);
     }
   g_free (old_key);
 
   /* Set the color scheme key */
   old_key = g_settings_get_string (interface_settings, COLOR_SCHEME_KEY);
-  if (compare (old_key, meta_theme_info->gtk_color_scheme))
+  if (compare (old_key, meta_theme_info->ctk_color_scheme))
     {
       /* only save the color scheme if it differs from the default
-         scheme for the selected gtk theme */
-      gchar *newval, *gtkcols;
+         scheme for the selected ctk theme */
+      gchar *newval, *ctkcols;
 
-      newval = meta_theme_info->gtk_color_scheme;
-      gtkcols = gtkrc_get_color_scheme_for_theme (meta_theme_info->gtk_theme_name);
+      newval = meta_theme_info->ctk_color_scheme;
+      ctkcols = ctkrc_get_color_scheme_for_theme (meta_theme_info->ctk_theme_name);
 
       if (newval == NULL || !strcmp (newval, "") ||
-          cafe_theme_color_scheme_equal (newval, gtkcols))
+          cafe_theme_color_scheme_equal (newval, ctkcols))
         {
           g_settings_reset (interface_settings, COLOR_SCHEME_KEY);
         }
@@ -92,7 +92,7 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
         {
           g_settings_set_string (interface_settings, COLOR_SCHEME_KEY, newval);
         }
-      g_free (gtkcols);
+      g_free (ctkcols);
     }
   g_free (old_key);
 

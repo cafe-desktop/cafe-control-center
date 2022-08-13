@@ -163,7 +163,7 @@ cc_timezone_map_size_allocate (GtkWidget     *widget,
     if (map->background)
         g_object_unref (map->background);
 
-    if (!gtk_widget_is_sensitive (widget))
+    if (!ctk_widget_is_sensitive (widget))
         pixbuf = map->orig_background_dim;
     else
         pixbuf = map->orig_background;
@@ -194,9 +194,9 @@ cc_timezone_map_realize (GtkWidget *widget)
     GtkAllocation allocation;
     GdkWindow *window;
 
-    gtk_widget_get_allocation (widget, &allocation);
+    ctk_widget_get_allocation (widget, &allocation);
 
-    gtk_widget_set_realized (widget, TRUE);
+    ctk_widget_set_realized (widget, TRUE);
 
     attr.window_type = GDK_WINDOW_CHILD;
     attr.wclass = GDK_INPUT_OUTPUT;
@@ -204,14 +204,14 @@ cc_timezone_map_realize (GtkWidget *widget)
     attr.height = allocation.height;
     attr.x = allocation.x;
     attr.y = allocation.y;
-    attr.event_mask = gtk_widget_get_events (widget)
+    attr.event_mask = ctk_widget_get_events (widget)
                                  | GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK;
 
-    window = gdk_window_new (gtk_widget_get_parent_window (widget), &attr,
+    window = gdk_window_new (ctk_widget_get_parent_window (widget), &attr,
                              GDK_WA_X | GDK_WA_Y);
 
     gdk_window_set_user_data (window, widget);
-    gtk_widget_set_window (widget, window);
+    ctk_widget_set_window (widget, window);
 }
 static gdouble
 convert_longitude_to_x (gdouble longitude, gint map_width)
@@ -274,8 +274,8 @@ draw_text_bubble (cairo_t *cr,
     if (!map->bubble_text)
         return;
 
-    gtk_widget_get_allocation (widget, &alloc);
-    layout = gtk_widget_create_pango_layout (widget, NULL);
+    ctk_widget_get_allocation (widget, &alloc);
+    layout = ctk_widget_create_pango_layout (widget, NULL);
     /* Layout the text */
     pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);
     pango_layout_set_spacing (layout, 3);
@@ -333,14 +333,14 @@ cc_timezone_map_draw (GtkWidget *widget,
     gdouble pointx, pointy;
     char buf[16];
 
-    gtk_widget_get_allocation (widget, &alloc);
+    ctk_widget_get_allocation (widget, &alloc);
 
     /* paint background */
     gdk_cairo_set_source_pixbuf (cr, map->background, 0, 0);
     cairo_paint (cr);
 
     /* paint hilight */
-    if (gtk_widget_is_sensitive (widget))
+    if (ctk_widget_is_sensitive (widget))
     {
         file = g_strdup_printf (TIMPZONEDIR"timezone_%s.png",
                                 g_ascii_formatd (buf, sizeof (buf),
@@ -397,17 +397,17 @@ update_cursor (GtkWidget *widget)
     GdkWindow *window;
     g_autoptr(GdkCursor) cursor = NULL;
 
-    if (!gtk_widget_get_realized (widget))
+    if (!ctk_widget_get_realized (widget))
         return;
 
-    if (gtk_widget_is_sensitive (widget))
+    if (ctk_widget_is_sensitive (widget))
     {
         GdkDisplay *display;
-        display = gtk_widget_get_display (widget);
+        display = ctk_widget_get_display (widget);
         cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
     }
 
-    window = gtk_widget_get_window (widget);
+    window = ctk_widget_get_window (widget);
     gdk_window_set_cursor (window, cursor);
 }
 
@@ -484,13 +484,13 @@ button_press_event (TimezoneMap    *map,
         }
     }
 
-    gtk_widget_queue_draw (GTK_WIDGET (map));
+    ctk_widget_queue_draw (GTK_WIDGET (map));
 
   /* work out the co-ordinates */
 
     array = tz_get_locations (map->tzdb);
 
-    gtk_widget_get_allocation (GTK_WIDGET (map), &alloc);
+    ctk_widget_get_allocation (GTK_WIDGET (map), &alloc);
     width = alloc.width;
     height = alloc.height;
 
@@ -616,7 +616,7 @@ gboolean timezone_map_set_timezone (TimezoneMap *map,
     }
 
     if (ret)
-        gtk_widget_queue_draw (GTK_WIDGET (map));
+        ctk_widget_queue_draw (GTK_WIDGET (map));
 
     return ret;
 }
@@ -629,7 +629,7 @@ void timezone_map_set_bubble_text (TimezoneMap *map,
 {
     g_free (map->bubble_text);
     map->bubble_text = g_strdup (text);
-    gtk_widget_queue_draw (GTK_WIDGET (map));
+    ctk_widget_queue_draw (GTK_WIDGET (map));
 }
 
 TimezoneMap * timezone_map_new (void)

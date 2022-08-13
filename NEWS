@@ -76,7 +76,7 @@
   * remove lightdm-settings support
   * launch lightdm-settings if installed
   * use current running DM preferences program
-  * support lightdm-gtk-greeter-settings as login preferences program
+  * support lightdm-ctk-greeter-settings as login preferences program
   * replace Tab with space
   * drop libXxf86 dependency
   * Use python3 for gla11y
@@ -143,11 +143,11 @@
 
   * Translations update
   * Initialize travis support
-  * eggcellrendererkeys: avoid deprecated 'gtk_widget_modify_bg/fg'
+  * eggcellrendererkeys: avoid deprecated 'ctk_widget_modify_bg/fg'
   * Update MCC help
   * default-applications: Use more common icon names for Office documents
   * cafe-display-properties: Migrate from dbus-glib to GDBus
-  * Fix the runtime warning about gtk_widget_destroy.
+  * Fix the runtime warning about ctk_widget_destroy.
   * Fixed number of cols error after reload menus.
   * Fixed crash when install/remove application.
   * capplets/mouse: .svg files instead .png in doubleclick artwork
@@ -168,7 +168,7 @@
   * tx: update translation sources
   * update hint for mouse double-click
   * keybindings: double click instead one click to edit keyboard shortcuts
-  * cafe-keybinding-properties: avoid deprecated 'gtk_widget_ensure_style'
+  * cafe-keybinding-properties: avoid deprecated 'ctk_widget_ensure_style'
   * added search option for cafe-font-viewer
   * Load avatar-default as default image
   * for accounts service support
@@ -193,7 +193,7 @@
   * display-capplet.ui: replace deprecations
   * libslab: code clean up
   * wm-common: replace deprecated gdk_error_trap functions
-  * libslab: replace deprecated gtk_menu_popup
+  * libslab: replace deprecated ctk_menu_popup
   * msd-input-helper: replace deprecated gdk_error_trap functions
   * mouse: replace deprecated gdk_error_trap functions
 
@@ -262,7 +262,7 @@
   * man: fix title of cafe-window-properties page
   * man: fix titles of cafe-typing-monitor and cafe-thumbnail-font pages
   * Fixes font dpi with "org.cafe.desktop.font-rendering.dpi" by default
-  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
 
 ### cafe-control-center 1.19.1
 
@@ -273,17 +273,17 @@
   * libslab: drop unneeded libslab_cafe_desktop_item_open_help function
   * libslab : drop uneeded support for gnome-main-menu
   * typing-break: avoid deprecated GDK pointer and keyboard types
-  * libslab: don't use deprecated gtk_show_uri
-  * display scrollarea: avoid deprecated gtk_adjustment_changed
+  * libslab: don't use deprecated ctk_show_uri
+  * display scrollarea: avoid deprecated ctk_adjustment_changed
   * keybindings eggcellrendererkey: avoid deprecated GDK pointer and keyboard types
   * display scrollarea: fix a -Wuninitialized build warning
   * display scrollarea: avoid deprecated gdk_window_get_pointer
   * po: don't list non-existent files in POTFILES.skip
   * avoid deprecated gdk_screen_make_display_name
   * avoid deprecated gdk_display_get_screen and gdk_display_get_n_screens
-  * capplet-util: don't use deprecated gtk_show_uri
+  * capplet-util: don't use deprecated ctk_show_uri
   * typing-break: avoid deprecated GtkMisc
-  * typing-break: avoid deprecated gtk_alignment_new ()
+  * typing-break: avoid deprecated ctk_alignment_new ()
   * mouse: fix a build warning
   * mouse: warn about enabling multi-finger emulation
 
@@ -293,14 +293,14 @@
   * libslab: make ThemedIcon use style_updated instead of style_set
   * libslab: correct icon loading code
   * libslab nameplate-tile: replace GtkAlignment with a GtkBox
-  * libslab tile.c: replace deprecated gtk_widget_set_state ()
+  * libslab tile.c: replace deprecated ctk_widget_set_state ()
   * libslab shellwindow: replace GtkAlignment with a GtkBox
   * libslab slab-section: avoid deprecated GtkAlignment
-  * libslab app-shell: avoid deprecated gtk_alignment_new ()
+  * libslab app-shell: avoid deprecated ctk_alignment_new ()
   * app-resizer: fix a build warning
   * Restore Polish translation credits from GNOME
   * libslab searchbar: remove deprecated ussage of GtkAlignment
-  * libslab nameplate-tile: avoid deprecated gtk_button_set_focus_on_click ()
+  * libslab nameplate-tile: avoid deprecated ctk_button_set_focus_on_click ()
   * libslab nameplate-tile: remove one deprecated ussage of GtkAlignment
   * libslab: don't use deprecated gdk_app_launch_context_new ()
   * about-me-password UI: set max_width_chars for description-label
@@ -325,7 +325,7 @@
     generating release announcements easier
   * Build: require libcafekbd, libcafe-desktop, croma, m-s-d >= 1.17
   * Build: require XCursor and XInput unconditionally
-  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-ctk
     build option
   * Port from libunique to GtkApplication
   * Rework font-viewer: add font browsing mode, support for TTC fonts,

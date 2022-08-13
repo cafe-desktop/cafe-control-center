@@ -1,7 +1,7 @@
 #ifndef CAFE_WINDOW_MANAGER_LIST_H
 #define CAFE_WINDOW_MANAGER_LIST_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "cafe-window-manager.h"
 

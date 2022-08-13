@@ -21,7 +21,7 @@
 #ifndef __NLD_SEARCH_BAR_H__
 #define __NLD_SEARCH_BAR_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

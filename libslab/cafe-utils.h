@@ -21,7 +21,7 @@
 #ifndef __CAFE_UTILS_H__
 #define __CAFE_UTILS_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #ifdef __cplusplus
 extern "C" {

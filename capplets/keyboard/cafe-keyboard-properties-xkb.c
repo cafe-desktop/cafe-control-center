@@ -77,10 +77,10 @@ set_model_text (GtkWidget * picker, gchar * value)
 		char *d;
 
 		d = xci_desc_to_utf8 (ci);
-		gtk_button_set_label (GTK_BUTTON (picker), d);
+		ctk_button_set_label (GTK_BUTTON (picker), d);
 		g_free (d);
 	} else {
-		gtk_button_set_label (GTK_BUTTON (picker), _("Unknown"));
+		ctk_button_set_label (GTK_BUTTON (picker), _("Unknown"));
 	}
 	g_object_unref (G_OBJECT (ci));
 	g_free (model);
@@ -145,7 +145,7 @@ chk_separate_group_per_window_toggled (GSettings * settings,
 				       gchar * key,
 				       GtkBuilder * dialog)
 {
-	gtk_widget_set_sensitive (WID ("chk_new_windows_inherit_layout"),
+	ctk_widget_set_sensitive (WID ("chk_new_windows_inherit_layout"),
 				  g_settings_get_boolean (settings, key));
 }
 
@@ -154,7 +154,7 @@ chk_new_windows_inherit_layout_toggled (GtkWidget *
 					chk_new_windows_inherit_layout,
 					GtkBuilder * dialog)
 {
-	xkb_save_default_group (gtk_toggle_button_get_active
+	xkb_save_default_group (ctk_toggle_button_get_active
 				(GTK_TOGGLE_BUTTON
 				 (chk_new_windows_inherit_layout)) ? -1 :
 				0);
@@ -196,17 +196,17 @@ setup_xkb_tabs (GtkBuilder * dialog)
 #ifdef HAVE_X11_EXTENSIONS_XKB_H
 	if (strcmp (xkl_engine_get_backend_name (engine), "XKB"))
 #endif
-		gtk_widget_hide (WID ("xkb_layouts_print"));
+		ctk_widget_hide (WID ("xkb_layouts_print"));
 
 	xkb_layouts_prepare_selected_tree (dialog);
 	xkb_layouts_fill_selected_tree (dialog);
 
-	gtk_widget_set_sensitive (chk_new_windows_inherit_layout,
-				  gtk_toggle_button_get_active
+	ctk_widget_set_sensitive (chk_new_windows_inherit_layout,
+				  ctk_toggle_button_get_active
 				  (GTK_TOGGLE_BUTTON
 				   (WID
 				    ("chk_separate_group_per_window"))));
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON
 				      (chk_new_windows_inherit_layout),
 				      xkb_get_default_group () < 0);
 
@@ -250,7 +250,7 @@ enable_disable_restoring (GtkBuilder * dialog)
 	enable = !cafekbd_keyboard_config_equals (&gswic, &initial_config);
 
 	cafekbd_keyboard_config_term (&gswic);
-	gtk_widget_set_sensitive (WID ("xkb_reset_to_defaults"), enable);
+	ctk_widget_set_sensitive (WID ("xkb_reset_to_defaults"), enable);
 }
 
 void

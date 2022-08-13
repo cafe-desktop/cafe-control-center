@@ -28,20 +28,20 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 #include <fcntl.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #define INCLUDE_SYMBOL ((gpointer) 1)
 #define ENGINE_SYMBOL ((gpointer) 2)
 #define COLOR_SCHEME_SYMBOL ((gpointer) 3)
 
-gchar* gtkrc_find_named(const gchar* name)
+gchar* ctkrc_find_named(const gchar* name)
 {
-	/* find the gtkrc of the named theme
-	 * taken from gtkrc.c (gtk_rc_parse_named)
+	/* find the ctkrc of the named theme
+	 * taken from ctkrc.c (ctk_rc_parse_named)
 	 */
 	gchar* path = NULL;
 	const gchar* home_dir;
-	const gchar* subpath = "gtk-2.0" G_DIR_SEPARATOR_S "gtkrc";
+	const gchar* subpath = "ctk-2.0" G_DIR_SEPARATOR_S "ctkrc";
 
 	/* First look in the users home directory
 	*/
@@ -79,7 +79,7 @@ gchar* gtkrc_find_named(const gchar* name)
 
 }
 
-void gtkrc_get_details(gchar* filename, GSList** engines, GSList** symbolic_colors)
+void ctkrc_get_details(gchar* filename, GSList** engines, GSList** symbolic_colors)
 {
 	gint file = -1;
 	GSList* files = NULL;
@@ -106,7 +106,7 @@ void gtkrc_get_details(gchar* filename, GSList** engines, GSList** symbolic_colo
 
 		if (g_slist_find_custom (read_files, filename, (GCompareFunc) strcmp))
 		{
-			g_warning ("Recursion in the gtkrc detected!");
+			g_warning ("Recursion in the ctkrc detected!");
 			g_free (filename);
 			continue; /* skip this file since we've done it before... */
 		}
@@ -177,20 +177,20 @@ void gtkrc_get_details(gchar* filename, GSList** engines, GSList** symbolic_colo
 
 
 gchar *
-gtkrc_get_color_scheme (const gchar *gtkrc_file)
+ctkrc_get_color_scheme (const gchar *ctkrc_file)
 {
 	gint file = -1;
 	gchar *result = NULL;
 	GSList *files = NULL;
 	GSList *read_files = NULL;
 	GTokenType token;
-	GScanner *scanner = gtk_rc_scanner_new ();
+	GScanner *scanner = ctk_rc_scanner_new ();
 
 	g_scanner_scope_add_symbol (scanner, 0, "include", INCLUDE_SYMBOL);
-	g_scanner_scope_add_symbol (scanner, 0, "gtk_color_scheme", COLOR_SCHEME_SYMBOL);
-	g_scanner_scope_add_symbol (scanner, 0, "gtk-color-scheme", COLOR_SCHEME_SYMBOL);
+	g_scanner_scope_add_symbol (scanner, 0, "ctk_color_scheme", COLOR_SCHEME_SYMBOL);
+	g_scanner_scope_add_symbol (scanner, 0, "ctk-color-scheme", COLOR_SCHEME_SYMBOL);
 
-	files = g_slist_prepend (files, g_strdup (gtkrc_file));
+	files = g_slist_prepend (files, g_strdup (ctkrc_file));
 	while (files != NULL)
 	{
 		gchar *filename = files->data;
@@ -201,7 +201,7 @@ gtkrc_get_color_scheme (const gchar *gtkrc_file)
 
 		if (g_slist_find_custom (read_files, filename, (GCompareFunc) strcmp))
 		{
-			g_warning ("Recursion in the gtkrc detected!");
+			g_warning ("Recursion in the ctkrc detected!");
 			g_free (filename);
 			continue; /* skip this file since we've done it before... */
 		}
@@ -242,18 +242,18 @@ gtkrc_get_color_scheme (const gchar *gtkrc_file)
 	return result;
 }
 
-gchar* gtkrc_get_color_scheme_for_theme(const gchar* theme_name)
+gchar* ctkrc_get_color_scheme_for_theme(const gchar* theme_name)
 {
-	/* try to find the color scheme from the gtkrc */
-	gchar* gtkrc_file;
+	/* try to find the color scheme from the ctkrc */
+	gchar* ctkrc_file;
 	gchar* scheme = NULL;
 
-	gtkrc_file = gtkrc_find_named(theme_name);
+	ctkrc_file = ctkrc_find_named(theme_name);
 
-	if (gtkrc_file)
+	if (ctkrc_file)
 	{
-		scheme = gtkrc_get_color_scheme(gtkrc_file);
-		g_free(gtkrc_file);
+		scheme = ctkrc_get_color_scheme(ctkrc_file);
+		g_free(ctkrc_file);
 	}
 
 	return scheme;

@@ -21,7 +21,7 @@
 #ifndef _E_IMAGE_CHOOSER_H_
 #define _E_IMAGE_CHOOSER_H_
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 G_BEGIN_DECLS
 

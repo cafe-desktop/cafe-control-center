@@ -201,7 +201,7 @@ void cafe_wp_item_free (CafeWPItem * item) {
   if (item->bg)
     g_object_unref (item->bg);
 
-  gtk_tree_row_reference_free (item->rowref);
+  ctk_tree_row_reference_free (item->rowref);
 
   g_free (item);
 }

@@ -28,7 +28,7 @@
 #include <gio/gio.h>
 #include "capplet-util.h"
 
-#define NWID(s) GTK_WIDGET (gtk_builder_get_object (notifications_dialog, s))
+#define NWID(s) GTK_WIDGET (ctk_builder_get_object (notifications_dialog, s))
 
 #define A11Y_SCHEMA "org.cafe.accessibility-keyboard"
 #define CROMA_SCHEMA "org.cafe.Croma.general"
@@ -46,42 +46,42 @@ enum
 static void
 stickykeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 {
-	gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
+	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
-	gtk_widget_set_sensitive (WID ("stickykeys_latch_to_lock"), active);
-	gtk_widget_set_sensitive (WID ("stickykeys_two_key_off"), active);
+	ctk_widget_set_sensitive (WID ("stickykeys_latch_to_lock"), active);
+	ctk_widget_set_sensitive (WID ("stickykeys_two_key_off"), active);
 	if (notifications_dialog)
-		gtk_widget_set_sensitive (NWID ("stickykeys_notifications_box"), active);
+		ctk_widget_set_sensitive (NWID ("stickykeys_notifications_box"), active);
 }
 
 static void
 slowkeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 {
-	gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
+	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
-	gtk_widget_set_sensitive (WID ("slowkeys_delay_box"), active);
+	ctk_widget_set_sensitive (WID ("slowkeys_delay_box"), active);
 	if (notifications_dialog)
-		gtk_widget_set_sensitive (NWID ("slowkeys_notifications_box"), active);
+		ctk_widget_set_sensitive (NWID ("slowkeys_notifications_box"), active);
 }
 
 static void
 bouncekeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 {
-	gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
+	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
-	gtk_widget_set_sensitive (WID ("bouncekeys_delay_box"), active);
+	ctk_widget_set_sensitive (WID ("bouncekeys_delay_box"), active);
 	if (notifications_dialog)
-		gtk_widget_set_sensitive (NWID ("bouncekeys_notifications_box"), active);
+		ctk_widget_set_sensitive (NWID ("bouncekeys_notifications_box"), active);
 }
 
 static void
 visual_bell_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 {
-	gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
+	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
 
 	if (notifications_dialog) {
-		gtk_widget_set_sensitive (NWID ("visual_bell_titlebar"), active);
-		gtk_widget_set_sensitive (NWID ("visual_bell_fullscreen"), active);
+		ctk_widget_set_sensitive (NWID ("visual_bell_titlebar"), active);
+		ctk_widget_set_sensitive (NWID ("visual_bell_fullscreen"), active);
 	}
 }
 
@@ -91,11 +91,11 @@ bell_flash_gsettings_changed (GSettings *settings, gchar *key, GtkBuilder *dialo
 	int bell_flash_type = g_settings_get_enum (settings, key);
 	if (bell_flash_type == VISUAL_BELL_TYPE_FULLSCREEN)
 	{
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_fullscreen")), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_fullscreen")), TRUE);
 	}
 	else if (bell_flash_type == VISUAL_BELL_TYPE_FRAME_FLASH)
 	{
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_titlebar")), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_titlebar")), TRUE);
 	}
 }
 
@@ -107,9 +107,9 @@ bell_flash_radio_changed (GtkWidget *widget, GtkBuilder *builder)
 	int old_bell_flash_type = g_settings_get_enum (croma_settings, "visual-bell-type");
 	int new_bell_flash_type = VISUAL_BELL_TYPE_INVALID;
 
-	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_fullscreen"))))
+	if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_fullscreen"))))
 		new_bell_flash_type = VISUAL_BELL_TYPE_FULLSCREEN;
-	else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_titlebar"))))
+	else if (ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (NWID ("visual_bell_titlebar"))))
 		new_bell_flash_type = VISUAL_BELL_TYPE_FRAME_FLASH;
 
 	if (old_bell_flash_type != new_bell_flash_type)
@@ -126,7 +126,7 @@ a11y_notifications_dialog_response_cb (GtkWidget *w, gint response)
 		              "prefs-keyboard#goscustdesk-TBL-86");
 	}
 	else {
-		gtk_widget_destroy (w);
+		ctk_widget_destroy (w);
 	}
 }
 static void
@@ -134,8 +134,8 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 {
 	GtkWidget *w;
 
-	notifications_dialog = gtk_builder_new ();
-	gtk_builder_add_from_resource (notifications_dialog,
+	notifications_dialog = ctk_builder_new ();
+	ctk_builder_add_from_resource (notifications_dialog,
 	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-a11y-notifications.ui",
 	                               NULL);
 
@@ -184,12 +184,12 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 					  notifications_dialog);
 
 	w = NWID ("a11y_notifications_dialog");
-	gtk_window_set_transient_for (GTK_WINDOW (w),
+	ctk_window_set_transient_for (GTK_WINDOW (w),
 	                              GTK_WINDOW (WID ("keyboard_dialog")));
 	g_signal_connect (w, "response",
 			  G_CALLBACK (a11y_notifications_dialog_response_cb), NULL);
 
-	gtk_dialog_run (GTK_DIALOG (w));
+	ctk_dialog_run (GTK_DIALOG (w));
 
 	g_object_unref (croma_settings);
 	g_object_unref (notifications_dialog);
@@ -199,8 +199,8 @@ notifications_button_clicked_cb (GtkWidget *button, GtkBuilder *dialog)
 static void
 mousekeys_enable_toggled_cb (GtkWidget *w, GtkBuilder *dialog)
 {
-	gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
-	gtk_widget_set_sensitive (WID ("mousekeys_table"), active);
+	gboolean active = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (w));
+	ctk_widget_set_sensitive (WID ("mousekeys_table"), active);
 }
 
 void
@@ -266,12 +266,12 @@ setup_a11y_tabs (GtkBuilder *dialog)
 
 	g_settings_bind (a11y_settings,
 					 "slowkeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "bouncekeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
@@ -293,38 +293,38 @@ setup_a11y_tabs (GtkBuilder *dialog)
 
 	g_settings_bind (a11y_settings,
 					 "slowkeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "bouncekeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "slowkeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("slowkeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "bouncekeys-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("bouncekeys_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 
 	g_settings_bind (a11y_settings,
 					 "mousekeys-accel-time",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_accel_time_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_accel_time_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "mousekeys-max-speed",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_max_speed_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_max_speed_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (a11y_settings,
 					 "mousekeys-init-delay",
-					 gtk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_init_delay_slide"))),
+					 ctk_range_get_adjustment (GTK_RANGE (WID ("mousekeys_init_delay_slide"))),
 					 "value",
 					 G_SETTINGS_BIND_DEFAULT);
 }

@@ -22,7 +22,7 @@
 #define __APP_SHELL_H__
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #define CAFEMENU_I_KNOW_THIS_IS_UNSTABLE
 #include <cafemenu-tree.h>

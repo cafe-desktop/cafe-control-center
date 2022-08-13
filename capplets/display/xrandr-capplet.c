@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "scrollarea.h"
 #define CAFE_DESKTOP_USE_UNSTABLE_API
 #include <libcafe-desktop/cafe-desktop-utils.h>
@@ -101,17 +101,17 @@ error_message (App *app, const char *primary_text, const char *secondary_text)
 {
     GtkWidget *dialog;
 
-    dialog = gtk_message_dialog_new ((app && app->dialog) ? GTK_WINDOW (app->dialog) : NULL,
+    dialog = ctk_message_dialog_new ((app && app->dialog) ? GTK_WINDOW (app->dialog) : NULL,
 				     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
 				     GTK_MESSAGE_ERROR,
 				     GTK_BUTTONS_CLOSE,
 				     "%s", primary_text);
 
     if (secondary_text)
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", secondary_text);
+	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", secondary_text);
 
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
+    ctk_dialog_run (GTK_DIALOG (dialog));
+    ctk_widget_destroy (dialog);
 }
 
 static gboolean
@@ -184,10 +184,10 @@ static void
 clear_combo (GtkWidget *widget)
 {
     GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = gtk_combo_box_get_model (box);
+    GtkTreeModel *model = ctk_combo_box_get_model (box);
     GtkListStore *store = GTK_LIST_STORE (model);
 
-    gtk_list_store_clear (store);
+    ctk_list_store_clear (store);
 }
 
 typedef struct
@@ -206,7 +206,7 @@ foreach (GtkTreeModel *model,
     ForeachInfo *info = data;
     char *text = NULL;
 
-    gtk_tree_model_get (model, iter, 0, &text, -1);
+    ctk_tree_model_get (model, iter, 0, &text, -1);
 
     g_assert (text != NULL);
 
@@ -228,18 +228,18 @@ add_key (GtkWidget *widget,
 {
     ForeachInfo info;
     GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = gtk_combo_box_get_model (box);
+    GtkTreeModel *model = ctk_combo_box_get_model (box);
     GtkListStore *store = GTK_LIST_STORE (model);
 
     info.text = text;
     info.found = FALSE;
 
-    gtk_tree_model_foreach (model, foreach, &info);
+    ctk_tree_model_foreach (model, foreach, &info);
 
     if (!info.found)
     {
 	GtkTreeIter iter;
-	gtk_list_store_insert_with_values (store, &iter, -1,
+	ctk_list_store_insert_with_values (store, &iter, -1,
                                            0, text,
                                            1, width,
                                            2, height,
@@ -255,18 +255,18 @@ static gboolean
 combo_select (GtkWidget *widget, const char *text)
 {
     GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkTreeModel *model = gtk_combo_box_get_model (box);
+    GtkTreeModel *model = ctk_combo_box_get_model (box);
     ForeachInfo info;
 
     info.text = text;
     info.found = FALSE;
 
-    gtk_tree_model_foreach (model, foreach, &info);
+    ctk_tree_model_foreach (model, foreach, &info);
 
     if (!info.found)
 	return FALSE;
 
-    gtk_combo_box_set_active_iter (box, &info.iter);
+    ctk_combo_box_set_active_iter (box, &info.iter);
     return TRUE;
 }
 
@@ -314,7 +314,7 @@ rebuild_rotation_combo (App *app)
 
     clear_combo (app->rotation_combo);
 
-    gtk_widget_set_sensitive (app->rotation_combo,
+    ctk_widget_set_sensitive (app->rotation_combo,
                               app->current_output && cafe_rr_output_info_is_active (app->current_output));
 
     if (!app->current_output)
@@ -360,7 +360,7 @@ rebuild_rate_combo (App *app)
 
     clear_combo (app->refresh_combo);
 
-    gtk_widget_set_sensitive (
+    ctk_widget_set_sensitive (
 	app->refresh_combo, app->current_output && cafe_rr_output_info_is_active (app->current_output));
 
     if (!app->current_output
@@ -465,8 +465,8 @@ rebuild_mirror_screens (App *app)
     /* If mirror_is_active, then it *must* be possible to turn mirroring off */
     mirror_is_supported = mirror_is_active || mirror_screens_is_supported (app);
 
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->clone_checkbox), mirror_is_active);
-    gtk_widget_set_sensitive (app->clone_checkbox, mirror_is_supported);
+    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->clone_checkbox), mirror_is_active);
+    ctk_widget_set_sensitive (app->clone_checkbox, mirror_is_supported);
 
     g_signal_handlers_unblock_by_func (app->clone_checkbox, G_CALLBACK (on_clone_changed), app);
 }
@@ -496,23 +496,23 @@ rebuild_current_monitor_label (App *app)
 	    use_color = FALSE;
 	}
 
-	gtk_label_set_markup (GTK_LABEL (app->current_monitor_label), str);
+	ctk_label_set_markup (GTK_LABEL (app->current_monitor_label), str);
 	g_free (str);
 
 	if (use_color)
 	{
 	    GdkRGBA black = { 0, 0, 0, 1.0 };
 
-	    gtk_widget_override_background_color (app->current_monitor_event_box, gtk_widget_get_state_flags (app->current_monitor_event_box), &color);
+	    ctk_widget_override_background_color (app->current_monitor_event_box, ctk_widget_get_state_flags (app->current_monitor_event_box), &color);
 
 	    /* Make the label explicitly black.  We don't want it to follow the
 	     * theme's colors, since the label is always shown against a light
 	     * pastel background.  See bgo#556050
 	     */
-	    gtk_widget_override_color (app->current_monitor_label, gtk_widget_get_state_flags (app->current_monitor_label), &black);
+	    ctk_widget_override_color (app->current_monitor_label, ctk_widget_get_state_flags (app->current_monitor_label), &black);
 	}
 
-	gtk_event_box_set_visible_window (GTK_EVENT_BOX (app->current_monitor_event_box), use_color);
+	ctk_event_box_set_visible_window (GTK_EVENT_BOX (app->current_monitor_event_box), use_color);
 }
 
 static void
@@ -540,11 +540,11 @@ rebuild_on_off_radios (App *app)
 	off_active = !on_active;
     }
 
-    gtk_widget_set_sensitive (app->monitor_on_radio, sensitive);
-    gtk_widget_set_sensitive (app->monitor_off_radio, sensitive);
+    ctk_widget_set_sensitive (app->monitor_on_radio, sensitive);
+    ctk_widget_set_sensitive (app->monitor_off_radio, sensitive);
 
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_on_radio), on_active);
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_off_radio), off_active);
+    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_on_radio), on_active);
+    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_off_radio), off_active);
 
     g_signal_handlers_unblock_by_func (app->monitor_on_radio, G_CALLBACK (monitor_on_off_toggled_cb), app);
     g_signal_handlers_unblock_by_func (app->monitor_off_radio, G_CALLBACK (monitor_on_off_toggled_cb), app);
@@ -593,7 +593,7 @@ rebuild_resolution_combo (App *app)
 	|| !app->current_output
 	|| !cafe_rr_output_info_is_active (app->current_output))
     {
-	gtk_widget_set_sensitive (app->resolution_combo, FALSE);
+	ctk_widget_set_sensitive (app->resolution_combo, FALSE);
 	return;
     }
 
@@ -602,7 +602,7 @@ rebuild_resolution_combo (App *app)
     cafe_rr_output_info_get_geometry (app->current_output, NULL, NULL, &output_width, &output_height);
     g_assert (output_width != 0 && output_height != 0);
 
-    gtk_widget_set_sensitive (app->resolution_combo, TRUE);
+    ctk_widget_set_sensitive (app->resolution_combo, TRUE);
 
     for (i = 0; modes[i] != NULL; ++i)
     {
@@ -655,9 +655,9 @@ rebuild_gui (App *app)
 #if 0
     g_debug ("sensitive: %d, on: %d", sensitive, cafe_rr_output_info_is_active (app->current_output));
 #endif
-    gtk_widget_set_sensitive (app->panel_checkbox, sensitive);
+    ctk_widget_set_sensitive (app->panel_checkbox, sensitive);
 
-    gtk_widget_set_sensitive (app->primary_button, app->current_output && !cafe_rr_output_info_get_primary(app->current_output));
+    ctk_widget_set_sensitive (app->primary_button, app->current_output && !cafe_rr_output_info_get_primary(app->current_output));
 
     app->ignore_gui_changes = FALSE;
 }
@@ -670,7 +670,7 @@ get_mode (GtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation 
     GtkComboBox *box = GTK_COMBO_BOX (widget);
     int dummy;
 
-    if (!gtk_combo_box_get_active_iter (box, &iter))
+    if (!ctk_combo_box_get_active_iter (box, &iter))
 	return FALSE;
 
     if (!width)
@@ -685,8 +685,8 @@ get_mode (GtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation 
     if (!rot)
 	rot = (CafeRRRotation *)&dummy;
 
-    model = gtk_combo_box_get_model (box);
-    gtk_tree_model_get (model, &iter,
+    model = ctk_combo_box_get_model (box);
+    ctk_tree_model_get (model, &iter,
 			1, width,
 			2, height,
 			3, freq,
@@ -762,7 +762,7 @@ monitor_on_off_toggled_cb (GtkToggleButton *toggle, gpointer data)
     if (!app->current_output)
 	return;
 
-    if (!gtk_toggle_button_get_active (toggle))
+    if (!ctk_toggle_button_get_active (toggle))
 	return;
 
     if (GTK_WIDGET (toggle) == app->monitor_on_radio)
@@ -981,7 +981,7 @@ on_clone_changed (GtkWidget *box, gpointer data)
 {
     App *app = data;
 
-    cafe_rr_config_set_clone (app->current_configuration, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (app->clone_checkbox)));
+    cafe_rr_config_set_clone (app->current_configuration, ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (app->clone_checkbox)));
 
     if (cafe_rr_config_get_clone (app->current_configuration))
     {
@@ -1466,9 +1466,9 @@ set_cursor (GtkWidget *widget, GdkCursorType type)
 	if (type == GDK_BLANK_CURSOR)
 	    cursor = NULL;
 	else
-	    cursor = gdk_cursor_new_for_display (gtk_widget_get_display (widget), type);
+	    cursor = gdk_cursor_new_for_display (ctk_widget_get_display (widget), type);
 
-	window = gtk_widget_get_window (widget);
+	window = ctk_widget_get_window (widget);
 
 	if (window)
 	    gdk_window_set_cursor (window, cursor);
@@ -1487,7 +1487,7 @@ set_monitors_tooltip (App *app, gboolean is_dragging)
     else
 	text = _("Select a monitor to change its properties; drag it to rearrange its placement.");
 
-    gtk_widget_set_tooltip_text (app->area, text);
+    ctk_widget_set_tooltip_text (app->area, text);
 }
 
 static void
@@ -1634,7 +1634,7 @@ get_display_name (App *app,
     else {
         text = g_strdup_printf ("<b>%s</b>\n<small>%s</small>", cafe_rr_output_info_get_display_name (output), cafe_rr_output_info_get_name (output));
     }
-    layout = gtk_widget_create_pango_layout (GTK_WIDGET (app->area), text);
+    layout = ctk_widget_create_pango_layout (GTK_WIDGET (app->area), text);
     pango_layout_set_markup (layout, text, -1);
     g_free (text);
     pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);
@@ -1655,15 +1655,15 @@ paint_background (FooScrollArea *area,
 
     foo_scroll_area_get_viewport (area, &viewport);
 
-    widget_style = gtk_widget_get_style_context (widget);
+    widget_style = ctk_widget_get_style_context (widget);
 
-    gtk_style_context_save (widget_style);
-    gtk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
-    gtk_style_context_get (widget_style,
-                           gtk_style_context_get_state (widget_style),
+    ctk_style_context_save (widget_style);
+    ctk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
+    ctk_style_context_get (widget_style,
+                           ctk_style_context_get_state (widget_style),
                            GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &base_color,
                            NULL);
-    gtk_style_context_restore (widget_style);
+    ctk_style_context_restore (widget_style);
     gdk_cairo_set_source_rgba(cr, base_color);
     gdk_rgba_free (base_color);
 
@@ -1675,12 +1675,12 @@ paint_background (FooScrollArea *area,
 
     foo_scroll_area_add_input_from_fill (area, cr, on_canvas_event, NULL);
 
-    gtk_style_context_save (widget_style);
-    gtk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
-    cafe_desktop_gtk_style_get_dark_color (widget_style,
-                                           gtk_style_context_get_state (widget_style),
+    ctk_style_context_save (widget_style);
+    ctk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
+    cafe_desktop_ctk_style_get_dark_color (widget_style,
+                                           ctk_style_context_get_state (widget_style),
                                            &dark_color);
-    gtk_style_context_restore (widget_style);
+    ctk_style_context_restore (widget_style);
     gdk_cairo_set_source_rgba (cr, &dark_color);
 
     cairo_stroke (cr);
@@ -1850,7 +1850,7 @@ static void
 make_text_combo (GtkWidget *widget, int sort_column)
 {
     GtkComboBox *box = GTK_COMBO_BOX (widget);
-    GtkListStore *store = gtk_list_store_new (
+    GtkListStore *store = ctk_list_store_new (
 	6,
 	G_TYPE_STRING,		/* Text */
 	G_TYPE_INT,		/* Width */
@@ -1861,19 +1861,19 @@ make_text_combo (GtkWidget *widget, int sort_column)
 
     GtkCellRenderer *cell;
 
-    gtk_cell_layout_clear (GTK_CELL_LAYOUT (widget));
+    ctk_cell_layout_clear (GTK_CELL_LAYOUT (widget));
 
-    gtk_combo_box_set_model (box, GTK_TREE_MODEL (store));
+    ctk_combo_box_set_model (box, GTK_TREE_MODEL (store));
 
-    cell = gtk_cell_renderer_text_new ();
-    gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (box), cell, TRUE);
-    gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (box), cell,
+    cell = ctk_cell_renderer_text_new ();
+    ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (box), cell, TRUE);
+    ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (box), cell,
 				    "text", 0,
 				    NULL);
 
     if (sort_column != -1)
     {
-	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
+	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
 					      sort_column,
 					      GTK_SORT_DESCENDING);
     }
@@ -2059,7 +2059,7 @@ apply_configuration_returned_cb (GObject *source_object,
     g_object_unref (app->connection);
     app->connection = NULL;
 
-    gtk_widget_set_sensitive (app->dialog, TRUE);
+    ctk_widget_set_sensitive (app->dialog, TRUE);
 }
 
 static gboolean
@@ -2104,9 +2104,9 @@ apply (App *app)
         return;
     }
 
-    gtk_widget_set_sensitive (app->dialog, FALSE);
+    ctk_widget_set_sensitive (app->dialog, FALSE);
 
-    begin_version2_apply_configuration (app, gtk_widget_get_window (app->dialog), app->apply_button_clicked_timestamp);
+    begin_version2_apply_configuration (app, ctk_widget_get_window (app->dialog), app->apply_button_clicked_timestamp);
 }
 
 static void
@@ -2139,7 +2139,7 @@ set_primary (GtkWidget *widget, gpointer data)
         cafe_rr_output_info_set_primary (outputs[i], outputs[i] == app->current_output);
     }
 
-    gtk_widget_set_sensitive (app->primary_button, !cafe_rr_output_info_get_primary(app->current_output));
+    ctk_widget_set_sensitive (app->primary_button, !cafe_rr_output_info_get_primary(app->current_output));
 }
 
 #define MSD_XRANDR_SCHEMA                 "org.cafe.SettingsDaemon.plugins.xrandr"
@@ -2153,7 +2153,7 @@ on_show_icon_toggled (GtkWidget *widget, gpointer data)
     App *app = data;
 
     g_settings_set_boolean (app->settings, SHOW_ICON_KEY,
-			   gtk_toggle_button_get_active (tb));
+			   ctk_toggle_button_get_active (tb));
 }
 
 static CafeRROutputInfo *
@@ -2257,8 +2257,8 @@ get_output_for_window (CafeRRConfig *configuration, GdkWindow *window)
 static void
 select_current_output_from_dialog_position (App *app)
 {
-    if (gtk_widget_get_realized (app->dialog))
-	app->current_output = get_output_for_window (app->current_configuration, gtk_widget_get_window (app->dialog));
+    if (ctk_widget_get_realized (app->dialog))
+	app->current_output = get_output_for_window (app->current_configuration, ctk_widget_get_window (app->dialog));
     else
 	app->current_output = NULL;
 
@@ -2284,11 +2284,11 @@ apply_button_clicked_cb (GtkButton *button, gpointer data)
     App *app = data;
 
     /* We simply store the timestamp at which the Apply button was clicked.
-     * We'll just wait for the dialog to return from gtk_dialog_run(), and
+     * We'll just wait for the dialog to return from ctk_dialog_run(), and
      * *then* use the timestamp when applying the RANDR configuration.
      */
 
-    app->apply_button_clicked_timestamp = gtk_get_current_event_time ();
+    app->apply_button_clicked_timestamp = ctk_get_current_event_time ();
 }
 
 static void
@@ -2296,16 +2296,16 @@ success_dialog_for_make_default (App *app)
 {
     GtkWidget *dialog;
 
-    dialog = gtk_message_dialog_new (GTK_WINDOW (app->dialog),
+    dialog = ctk_message_dialog_new (GTK_WINDOW (app->dialog),
 				     GTK_DIALOG_MODAL,
 				     GTK_MESSAGE_INFO,
 				     GTK_BUTTONS_OK,
 				     _("The monitor configuration has been saved"));
-    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+    ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 					      _("This configuration will be used the next time someone logs in."));
 
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_destroy (dialog);
+    ctk_dialog_run (GTK_DIALOG (dialog));
+    ctk_widget_destroy (dialog);
 }
 
 static void
@@ -2364,9 +2364,9 @@ make_default (App *app)
 }
 
 static GtkWidget*
-_gtk_builder_get_widget (GtkBuilder *builder, const gchar *name)
+_ctk_builder_get_widget (GtkBuilder *builder, const gchar *name)
 {
-    return GTK_WIDGET (gtk_builder_get_object (builder, name));
+    return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
 static void
@@ -2376,9 +2376,9 @@ run_application (App *app)
     GtkWidget *align;
     GError *error = NULL;
 
-    builder = gtk_builder_new ();
+    builder = ctk_builder_new ();
 
-    if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/display/display-capplet.ui", &error) == 0)
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/display/display-capplet.ui", &error) == 0)
     {
 	g_warning ("Could not parse UI definition: %s", error->message);
 	g_error_free (error);
@@ -2398,61 +2398,61 @@ run_application (App *app)
 
     app->settings = g_settings_new (MSD_XRANDR_SCHEMA);
 
-    app->dialog = _gtk_builder_get_widget (builder, "dialog");
+    app->dialog = _ctk_builder_get_widget (builder, "dialog");
     g_signal_connect_after (app->dialog, "map-event",
 			    G_CALLBACK (dialog_map_event_cb), app);
 
-    gtk_window_set_default_icon_name ("preferences-desktop-display");
-    gtk_window_set_icon_name (GTK_WINDOW (app->dialog),
+    ctk_window_set_default_icon_name ("preferences-desktop-display");
+    ctk_window_set_icon_name (GTK_WINDOW (app->dialog),
 			      "preferences-desktop-display");
 
-    app->current_monitor_event_box = _gtk_builder_get_widget (builder,
+    app->current_monitor_event_box = _ctk_builder_get_widget (builder,
     						   "current_monitor_event_box");
-    app->current_monitor_label = _gtk_builder_get_widget (builder,
+    app->current_monitor_label = _ctk_builder_get_widget (builder,
     						       "current_monitor_label");
 
-    app->monitor_on_radio = _gtk_builder_get_widget (builder,
+    app->monitor_on_radio = _ctk_builder_get_widget (builder,
     						     "monitor_on_radio");
-    app->monitor_off_radio = _gtk_builder_get_widget (builder,
+    app->monitor_off_radio = _ctk_builder_get_widget (builder,
     						      "monitor_off_radio");
     g_signal_connect (app->monitor_on_radio, "toggled",
 		      G_CALLBACK (monitor_on_off_toggled_cb), app);
     g_signal_connect (app->monitor_off_radio, "toggled",
 		      G_CALLBACK (monitor_on_off_toggled_cb), app);
 
-    app->resolution_combo = _gtk_builder_get_widget (builder,
+    app->resolution_combo = _ctk_builder_get_widget (builder,
     						     "resolution_combo");
     g_signal_connect (app->resolution_combo, "changed",
 		      G_CALLBACK (on_resolution_changed), app);
 
-    app->refresh_combo = _gtk_builder_get_widget (builder, "refresh_combo");
+    app->refresh_combo = _ctk_builder_get_widget (builder, "refresh_combo");
     g_signal_connect (app->refresh_combo, "changed",
 		      G_CALLBACK (on_rate_changed), app);
 
-    app->rotation_combo = _gtk_builder_get_widget (builder, "rotation_combo");
+    app->rotation_combo = _ctk_builder_get_widget (builder, "rotation_combo");
     g_signal_connect (app->rotation_combo, "changed",
 		      G_CALLBACK (on_rotation_changed), app);
 
-    app->clone_checkbox = _gtk_builder_get_widget (builder, "clone_checkbox");
+    app->clone_checkbox = _ctk_builder_get_widget (builder, "clone_checkbox");
     g_signal_connect (app->clone_checkbox, "toggled",
 		      G_CALLBACK (on_clone_changed), app);
 
-    g_signal_connect (_gtk_builder_get_widget (builder, "detect_displays_button"),
+    g_signal_connect (_ctk_builder_get_widget (builder, "detect_displays_button"),
 		      "clicked", G_CALLBACK (on_detect_displays), app);
 
-    app->primary_button = _gtk_builder_get_widget (builder, "primary_button");
+    app->primary_button = _ctk_builder_get_widget (builder, "primary_button");
 
     g_signal_connect (app->primary_button, "clicked", G_CALLBACK (set_primary), app);
 
-    app->show_icon_checkbox = _gtk_builder_get_widget (builder,
+    app->show_icon_checkbox = _ctk_builder_get_widget (builder,
 						      "show_notification_icon");
 
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->show_icon_checkbox),
+    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->show_icon_checkbox),
 				  g_settings_get_boolean (app->settings, SHOW_ICON_KEY));
 
     g_signal_connect (app->show_icon_checkbox, "toggled", G_CALLBACK (on_show_icon_toggled), app);
 
-    app->panel_checkbox = _gtk_builder_get_widget (builder, "panel_checkbox");
+    app->panel_checkbox = _ctk_builder_get_widget (builder, "panel_checkbox");
 
     make_text_combo (app->resolution_combo, 4);
     make_text_combo (app->refresh_combo, 3);
@@ -2469,17 +2469,17 @@ run_application (App *app)
 
     /* FIXME: this should be computed dynamically */
     foo_scroll_area_set_min_size (FOO_SCROLL_AREA (app->area), -1, 200);
-    gtk_widget_show (app->area);
+    ctk_widget_show (app->area);
     g_signal_connect (app->area, "paint",
 		      G_CALLBACK (on_area_paint), app);
     g_signal_connect (app->area, "viewport_changed",
 		      G_CALLBACK (on_viewport_changed), app);
 
-    align = _gtk_builder_get_widget (builder, "align");
+    align = _ctk_builder_get_widget (builder, "align");
 
-    gtk_container_add (GTK_CONTAINER (align), app->area);
+    ctk_container_add (GTK_CONTAINER (align), app->area);
 
-    app->apply_button = _gtk_builder_get_widget (builder, "apply_button");
+    app->apply_button = _ctk_builder_get_widget (builder, "apply_button");
     g_signal_connect (app->apply_button, "clicked",
 		      G_CALLBACK (apply_button_clicked_cb), app);
 
@@ -2488,7 +2488,7 @@ run_application (App *app)
     g_object_unref (builder);
 
 restart:
-    switch (gtk_dialog_run (GTK_DIALOG (app->dialog)))
+    switch (ctk_dialog_run (GTK_DIALOG (app->dialog)))
     {
     default:
 	/* Fall Through */
@@ -2500,9 +2500,9 @@ restart:
 	break;
 
     case GTK_RESPONSE_HELP:
-        gtk_show_uri_on_window (GTK_DIALOG (app->dialog),
+        ctk_show_uri_on_window (GTK_DIALOG (app->dialog),
                                 "help:cafe-user-guide/goscustdesk-70",
-                                gtk_get_current_event_time (),
+                                ctk_get_current_event_time (),
                                 &error);
         if (error)
         {
@@ -2523,7 +2523,7 @@ restart:
 	break;
     }
 
-    gtk_widget_destroy (app->dialog);
+    ctk_widget_destroy (app->dialog);
     g_object_unref (app->screen);
     g_object_unref (app->settings);
 }

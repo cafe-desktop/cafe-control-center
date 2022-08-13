@@ -122,14 +122,14 @@ themed_icon_set_property (GObject * g_obj, guint prop_id, const GValue * value,
 	case PROP_ICON_ID:
 		icon->id = g_strdup (g_value_get_string (value));
 
-/*			gtk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
+/*			ctk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
 
 		break;
 
 	case PROP_ICON_SIZE:
 		icon->size = g_value_get_enum (value);
 
-/*			gtk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
+/*			ctk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
 
 		break;
 

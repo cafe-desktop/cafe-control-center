@@ -29,7 +29,7 @@
 #define __SUSHI_FONT_WIDGET_H__
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <cairo/cairo-ft.h>
 
 G_BEGIN_DECLS

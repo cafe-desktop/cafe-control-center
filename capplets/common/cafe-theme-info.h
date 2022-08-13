@@ -25,7 +25,7 @@
 
 #include <glib.h>
 #include <gio/gio.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gdk/gdk.h>
 
@@ -70,7 +70,7 @@ struct _CafeThemeInfo
 	gint priority;
 	gboolean hidden;
 
-	guint has_gtk : 1;
+	guint has_ctk : 1;
 	guint has_keybinding : 1;
 	guint has_croma : 1;
 };
@@ -100,8 +100,8 @@ struct _CafeThemeMetaInfo {
 	gchar* comment;
 	gchar* icon_file;
 
-	gchar* gtk_theme_name;
-	gchar* gtk_color_scheme;
+	gchar* ctk_theme_name;
+	gchar* ctk_color_scheme;
 	gchar* croma_theme_name;
 	gchar* icon_theme_name;
 	gchar* notification_theme_name;
@@ -148,7 +148,7 @@ void                cafe_theme_info_free                  (CafeThemeInfo     *th
 CafeThemeInfo     *cafe_theme_info_find                  (const gchar        *theme_name);
 GList              *cafe_theme_info_find_by_type          (guint               elements);
 GQuark              cafe_theme_info_error_quark           (void);
-gchar              *gtk_theme_info_missing_engine          (const gchar *gtk_theme,
+gchar              *ctk_theme_info_missing_engine          (const gchar *ctk_theme,
                                                             gboolean nameOnly);
 
 /* Icon Themes */

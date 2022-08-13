@@ -21,7 +21,7 @@
 #include "config.h"
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <libcafe-desktop/cafe-desktop-thumbnail.h>
 
@@ -42,9 +42,9 @@
 #define GTK_FONT_KEY                 "font-name"
 #define MONOSPACE_FONT_KEY           "monospace-font-name"
 #define DOCUMENT_FONT_KEY            "document-font-name"
-#define GTK_THEME_KEY                "gtk-theme"
+#define GTK_THEME_KEY                "ctk-theme"
 #define ICON_THEME_KEY               "icon-theme"
-#define COLOR_SCHEME_KEY             "gtk-color-scheme"
+#define COLOR_SCHEME_KEY             "ctk-color-scheme"
 #define ACCEL_CHANGE_KEY             "can-change-accels"
 #define MENU_ICONS_KEY               "menus-have-icons"
 #define BUTTON_ICONS_KEY             "buttons-have-icons"
@@ -128,7 +128,7 @@ typedef struct {
 	gchar* revert_monospace_font;
 
 	/* style */
-	GdkPixbuf* gtk_theme_icon;
+	GdkPixbuf* ctk_theme_icon;
 	GdkPixbuf* window_theme_icon;
 	GdkPixbuf* icon_theme_icon;
 	GtkWidget* style_message_area;
@@ -136,4 +136,4 @@ typedef struct {
 	GtkWidget* style_install_button;
 } AppearanceData;
 
-#define appearance_capplet_get_widget(x, y) (GtkWidget*) gtk_builder_get_object(x->ui, y)
+#define appearance_capplet_get_widget(x, y) (GtkWidget*) ctk_builder_get_object(x->ui, y)

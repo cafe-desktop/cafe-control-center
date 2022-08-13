@@ -6,7 +6,7 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <gdk/gdkx.h>
 #include <X11/Xatom.h>
@@ -94,18 +94,18 @@ static GtkWidget *custom_shortcut_dialog = NULL;
 static GtkWidget *custom_shortcut_name_entry = NULL;
 static GtkWidget *custom_shortcut_command_entry = NULL;
 
-static GtkWidget* _gtk_builder_get_widget(GtkBuilder* builder, const gchar* name)
+static GtkWidget* _ctk_builder_get_widget(GtkBuilder* builder, const gchar* name)
 {
-    return GTK_WIDGET (gtk_builder_get_object (builder, name));
+    return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
 static GtkBuilder *
 create_builder (void)
 {
-  GtkBuilder *builder = gtk_builder_new();
+  GtkBuilder *builder = ctk_builder_new();
   GError *error = NULL;
 
-  if (gtk_builder_add_from_resource (builder, "/org/cafe/mcc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
+  if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
     g_warning ("Could not load UI: %s", error->message);
     g_error_free (error);
     g_object_unref (builder);
@@ -167,7 +167,7 @@ accel_set_func (GtkTreeViewColumn *tree_column,
 {
   KeyEntry *key_entry;
 
-  gtk_tree_model_get (model, iter,
+  ctk_tree_model_get (model, iter,
                       KEYENTRY_COLUMN, &key_entry,
                       -1);
 
@@ -204,7 +204,7 @@ description_set_func (GtkTreeViewColumn *tree_column,
 {
   KeyEntry *key_entry;
 
-  gtk_tree_model_get (model, iter,
+  ctk_tree_model_get (model, iter,
                       KEYENTRY_COLUMN, &key_entry,
                       -1);
 
@@ -229,13 +229,13 @@ keybinding_key_changed_foreach (GtkTreeModel *model,
   KeyEntry *tmp_key_entry;
 
   key_entry = (KeyEntry *)user_data;
-  gtk_tree_model_get (key_entry->model, iter,
+  ctk_tree_model_get (key_entry->model, iter,
               KEYENTRY_COLUMN, &tmp_key_entry,
               -1);
 
   if (key_entry == tmp_key_entry)
     {
-      gtk_tree_model_row_changed (key_entry->model, path, iter);
+      ctk_tree_model_row_changed (key_entry->model, path, iter);
       return TRUE;
     }
   return FALSE;
@@ -254,7 +254,7 @@ keybinding_key_changed (GSettings *settings,
   key_entry->editable = g_settings_is_writable (settings, key);
 
   /* update the model */
-  gtk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
+  ctk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
 }
 
 static void
@@ -273,7 +273,7 @@ keybinding_description_changed (GSettings *settings,
   key_entry->desc_editable = g_settings_is_writable (settings, key);
 
   /* update the model */
-  gtk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
+  ctk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
 }
 
 static void
@@ -291,7 +291,7 @@ keybinding_command_changed (GSettings *settings,
   g_free (key_value);
 
   /* update the model */
-  gtk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
+  ctk_tree_model_foreach (key_entry->model, keybinding_key_changed_foreach, key_entry);
 }
 
 static int
@@ -305,12 +305,12 @@ keyentry_sort_func (GtkTreeModel *model,
   int retval;
 
   key_entry_a = NULL;
-  gtk_tree_model_get (model, a,
+  ctk_tree_model_get (model, a,
                       KEYENTRY_COLUMN, &key_entry_a,
                       -1);
 
   key_entry_b = NULL;
-  gtk_tree_model_get (model, b,
+  ctk_tree_model_get (model, b,
                       KEYENTRY_COLUMN, &key_entry_b,
                       -1);
 
@@ -360,20 +360,20 @@ clear_old_model (GtkBuilder *builder)
   GtkWidget *actions_swindow;
   GtkTreeModel *model;
 
-  tree_view = _gtk_builder_get_widget (builder, "shortcut_treeview");
-  model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
+  tree_view = _ctk_builder_get_widget (builder, "shortcut_treeview");
+  model = ctk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
 
   if (model == NULL)
     {
       /* create a new model */
-      model = (GtkTreeModel *) gtk_tree_store_new (N_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER);
+      model = (GtkTreeModel *) ctk_tree_store_new (N_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER);
 
-      gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
+      ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (model),
                                        KEYENTRY_COLUMN,
                                        keyentry_sort_func,
                                        NULL, NULL);
 
-      gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), model);
+      ctk_tree_view_set_model (GTK_TREE_VIEW (tree_view), model);
 
       g_object_unref (model);
     }
@@ -384,11 +384,11 @@ clear_old_model (GtkBuilder *builder)
       GtkTreeIter iter;
       KeyEntry *key_entry;
 
-      for (valid = gtk_tree_model_get_iter_first (model, &iter);
+      for (valid = ctk_tree_model_get_iter_first (model, &iter);
            valid;
-           valid = gtk_tree_model_iter_next (model, &iter))
+           valid = ctk_tree_model_iter_next (model, &iter))
         {
-          gtk_tree_model_get (model, &iter,
+          ctk_tree_model_get (model, &iter,
                               KEYENTRY_COLUMN, &key_entry,
                               -1);
 
@@ -412,13 +412,13 @@ clear_old_model (GtkBuilder *builder)
             }
         }
 
-      gtk_tree_store_clear (GTK_TREE_STORE (model));
+      ctk_tree_store_clear (GTK_TREE_STORE (model));
     }
 
-  actions_swindow = _gtk_builder_get_widget (builder, "actions_swindow");
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (actions_swindow),
+  actions_swindow = _ctk_builder_get_widget (builder, "actions_swindow");
+  ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (actions_swindow),
                   GTK_POLICY_NEVER, GTK_POLICY_NEVER);
-  gtk_widget_set_size_request (actions_swindow, -1, -1);
+  ctk_widget_set_size_request (actions_swindow, -1, -1);
 }
 
 typedef struct {
@@ -435,7 +435,7 @@ static gboolean key_match(GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* i
     gchar *element_schema = NULL;
     gchar *element_path = NULL;
 
-    gtk_tree_model_get(model, iter,
+    ctk_tree_model_get(model, iter,
         KEYENTRY_COLUMN, &element,
         -1);
 
@@ -464,7 +464,7 @@ static gboolean key_is_already_shown(GtkTreeModel* model, const KeyListEntry* en
     data.schema = entry->schema;
     data.path = entry->gsettings_path;
     data.found = FALSE;
-    gtk_tree_model_foreach(model, key_match, &data);
+    ctk_tree_model_foreach(model, key_match, &data);
 
     return data.found;
 }
@@ -531,13 +531,13 @@ ensure_scrollbar (GtkBuilder *builder, int i)
   if (i == MAX_ELEMENTS_BEFORE_SCROLLING)
     {
       GtkRequisition rectangle;
-      GObject *actions_swindow = gtk_builder_get_object (builder,
+      GObject *actions_swindow = ctk_builder_get_object (builder,
                                                          "actions_swindow");
-      GtkWidget *treeview = _gtk_builder_get_widget (builder,
+      GtkWidget *treeview = _ctk_builder_get_widget (builder,
                                                      "shortcut_treeview");
-      gtk_widget_get_preferred_size (treeview, &rectangle, NULL);
-      gtk_widget_set_size_request (treeview, -1, rectangle.height);
-      gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (actions_swindow),
+      ctk_widget_get_preferred_size (treeview, &rectangle, NULL);
+      ctk_widget_set_size_request (treeview, -1, rectangle.height);
+      ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (actions_swindow),
                       GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
     }
 }
@@ -549,22 +549,22 @@ find_section (GtkTreeModel *model,
 {
   gboolean success;
 
-  success = gtk_tree_model_get_iter_first (model, iter);
+  success = ctk_tree_model_get_iter_first (model, iter);
   while (success)
     {
       char *description = NULL;
 
-      gtk_tree_model_get (model, iter,
+      ctk_tree_model_get (model, iter,
               DESCRIPTION_COLUMN, &description,
               -1);
 
       if (g_strcmp0 (description, title) == 0)
         return;
-      success = gtk_tree_model_iter_next (model, iter);
+      success = ctk_tree_model_iter_next (model, iter);
     }
 
-    gtk_tree_store_append (GTK_TREE_STORE (model), iter, NULL);
-    gtk_tree_store_set (GTK_TREE_STORE (model), iter,
+    ctk_tree_store_append (GTK_TREE_STORE (model), iter, NULL);
+    ctk_tree_store_set (GTK_TREE_STORE (model), iter,
                         DESCRIPTION_COLUMN, title,
                         -1);
 }
@@ -580,14 +580,14 @@ append_keys_to_tree (GtkBuilder         *builder,
   GtkTreeModel *model;
   gint i, j;
 
-  model = gtk_tree_view_get_model (GTK_TREE_VIEW (gtk_builder_get_object (builder, "shortcut_treeview")));
+  model = ctk_tree_view_get_model (GTK_TREE_VIEW (ctk_builder_get_object (builder, "shortcut_treeview")));
 
   /* Try to find a section parent iter, if it already exists */
   find_section (model, &iter, title);
   parent_iter = iter;
 
   i = 0;
-  gtk_tree_model_foreach (model, count_rows_foreach, &i);
+  ctk_tree_model_foreach (model, count_rows_foreach, &i);
 
   /* If the header we just added is the MAX_ELEMENTS_BEFORE_SCROLLING th,
    * then we need to scroll now */
@@ -705,22 +705,22 @@ append_keys_to_tree (GtkBuilder         *builder,
       ensure_scrollbar (builder, i);
 
       ++i;
-      gtk_tree_store_append (GTK_TREE_STORE (model), &iter, &parent_iter);
+      ctk_tree_store_append (GTK_TREE_STORE (model), &iter, &parent_iter);
       /* we use the DESCRIPTION_COLUMN only for the section headers */
-      gtk_tree_store_set (GTK_TREE_STORE (model), &iter,
+      ctk_tree_store_set (GTK_TREE_STORE (model), &iter,
               KEYENTRY_COLUMN, key_entry,
               -1);
-      gtk_tree_view_expand_all (GTK_TREE_VIEW (gtk_builder_get_object (builder, "shortcut_treeview")));
+      ctk_tree_view_expand_all (GTK_TREE_VIEW (ctk_builder_get_object (builder, "shortcut_treeview")));
     }
 
   /* Don't show an empty section */
-  if (gtk_tree_model_iter_n_children (model, &parent_iter) == 0)
-    gtk_tree_store_remove (GTK_TREE_STORE (model), &parent_iter);
+  if (ctk_tree_model_iter_n_children (model, &parent_iter) == 0)
+    ctk_tree_store_remove (GTK_TREE_STORE (model), &parent_iter);
 
   if (i == 0)
-      gtk_widget_hide (_gtk_builder_get_widget (builder, "shortcuts_vbox"));
+      ctk_widget_hide (_ctk_builder_get_widget (builder, "shortcuts_vbox"));
   else
-      gtk_widget_show (_gtk_builder_get_widget (builder, "shortcuts_vbox"));
+      ctk_widget_show (_ctk_builder_get_widget (builder, "shortcuts_vbox"));
 }
 
 static void
@@ -1104,7 +1104,7 @@ static gboolean cb_check_for_uniqueness(GtkTreeModel* model, GtkTreePath* path, 
 {
     KeyEntry* element;
 
-    gtk_tree_model_get (new_key->model, iter,
+    ctk_tree_model_get (new_key->model, iter,
         KEYENTRY_COLUMN, &element,
         -1);
 
@@ -1199,33 +1199,33 @@ static void show_error(GtkWindow* parent, GError* err)
 {
   GtkWidget *dialog;
 
-  dialog = gtk_message_dialog_new (parent,
+  dialog = ctk_message_dialog_new (parent,
                    GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL,
                    GTK_MESSAGE_WARNING,
                    GTK_BUTTONS_OK,
                    _("Error saving the new shortcut"));
 
-  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+  ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
                                             "%s", err->message);
-  gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_destroy (dialog);
+  ctk_dialog_run (GTK_DIALOG (dialog));
+  ctk_widget_destroy (dialog);
 }
 
 static void accel_edited_callback(GtkCellRendererText* cell, const char* path_string, guint keyval, EggVirtualModifierType mask, guint keycode, gpointer data)
 {
     GtkTreeView* view = (GtkTreeView*) data;
     GtkTreeModel* model;
-    GtkTreePath* path = gtk_tree_path_new_from_string (path_string);
+    GtkTreePath* path = ctk_tree_path_new_from_string (path_string);
     GtkTreeIter iter;
     KeyEntry* key_entry, tmp_key;
     char* str;
 
     block_accels = FALSE;
 
-    model = gtk_tree_view_get_model (view);
-    gtk_tree_model_get_iter (model, &iter, path);
-    gtk_tree_path_free (path);
-    gtk_tree_model_get (model, &iter,
+    model = ctk_tree_view_get_model (view);
+    ctk_tree_model_get_iter (model, &iter, path);
+    ctk_tree_path_free (path);
+    ctk_tree_model_get (model, &iter,
                         KEYENTRY_COLUMN, &key_entry,
                         -1);
 
@@ -1249,7 +1249,7 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
 
     if (keyval != 0 || keycode != 0) /* any number of keys can be disabled */
     {
-        gtk_tree_model_foreach(model, (GtkTreeModelForeachFunc) cb_check_for_uniqueness, &tmp_key);
+        ctk_tree_model_foreach(model, (GtkTreeModelForeachFunc) cb_check_for_uniqueness, &tmp_key);
     }
 
     /* Check for unmodified keys */
@@ -1274,8 +1274,8 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
 
             name = binding_name (keyval, keycode, mask, TRUE);
 
-            dialog = gtk_message_dialog_new (
-                GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (view))),
+            dialog = ctk_message_dialog_new (
+                GTK_WINDOW (ctk_widget_get_toplevel (GTK_WIDGET (view))),
                 GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL,
                 GTK_MESSAGE_WARNING,
                 GTK_BUTTONS_CANCEL,
@@ -1284,8 +1284,8 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
                 name);
 
             g_free (name);
-            gtk_dialog_run (GTK_DIALOG (dialog));
-            gtk_widget_destroy (dialog);
+            ctk_dialog_run (GTK_DIALOG (dialog));
+            ctk_widget_destroy (dialog);
 
             /* set it back to its previous value. */
             egg_cell_renderer_keys_set_accelerator(
@@ -1306,8 +1306,8 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
 
         name = binding_name(keyval, keycode, mask, TRUE);
 
-        dialog = gtk_message_dialog_new(
-            GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(view))),
+        dialog = ctk_message_dialog_new(
+            GTK_WINDOW(ctk_widget_get_toplevel(GTK_WIDGET(view))),
             GTK_DIALOG_DESTROY_WITH_PARENT | GTK_DIALOG_MODAL,
             GTK_MESSAGE_WARNING,
             GTK_BUTTONS_CANCEL,
@@ -1316,19 +1316,19 @@ static void accel_edited_callback(GtkCellRendererText* cell, const char* path_st
             tmp_key.description ? tmp_key.description : tmp_key.gsettings_key);
             g_free (name);
 
-        gtk_message_dialog_format_secondary_text (
+        ctk_message_dialog_format_secondary_text (
             GTK_MESSAGE_DIALOG (dialog),
             _("If you reassign the shortcut to \"%s\", the \"%s\" shortcut "
             "will be disabled."),
             key_entry->description ? key_entry->description : key_entry->gsettings_key,
             tmp_key.description ? tmp_key.description : tmp_key.gsettings_key);
 
-        gtk_dialog_add_button(GTK_DIALOG (dialog), _("_Reassign"), GTK_RESPONSE_ACCEPT);
+        ctk_dialog_add_button(GTK_DIALOG (dialog), _("_Reassign"), GTK_RESPONSE_ACCEPT);
 
-        gtk_dialog_set_default_response(GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+        ctk_dialog_set_default_response(GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 
-        response = gtk_dialog_run (GTK_DIALOG (dialog));
-        gtk_widget_destroy (dialog);
+        response = ctk_dialog_run (GTK_DIALOG (dialog));
+        ctk_widget_destroy (dialog);
 
         if (response == GTK_RESPONSE_ACCEPT)
         {
@@ -1369,17 +1369,17 @@ accel_cleared_callback (GtkCellRendererText *cell,
             gpointer             data)
 {
   GtkTreeView *view = (GtkTreeView *) data;
-  GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
+  GtkTreePath *path = ctk_tree_path_new_from_string (path_string);
   KeyEntry *key_entry;
   GtkTreeIter iter;
   GtkTreeModel *model;
 
   block_accels = FALSE;
 
-  model = gtk_tree_view_get_model (view);
-  gtk_tree_model_get_iter (model, &iter, path);
-  gtk_tree_path_free (path);
-  gtk_tree_model_get (model, &iter,
+  model = ctk_tree_view_get_model (view);
+  ctk_tree_model_get_iter (model, &iter, path);
+  ctk_tree_path_free (path);
+  ctk_tree_model_get (model, &iter,
               KEYENTRY_COLUMN, &key_entry,
               -1);
 
@@ -1401,15 +1401,15 @@ description_edited_callback (GtkCellRendererText *renderer,
 {
   GtkTreeView *view = GTK_TREE_VIEW (user_data);
   GtkTreeModel *model;
-  GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
+  GtkTreePath *path = ctk_tree_path_new_from_string (path_string);
   GtkTreeIter iter;
   KeyEntry *key_entry;
 
-  model = gtk_tree_view_get_model (view);
-  gtk_tree_model_get_iter (model, &iter, path);
-  gtk_tree_path_free (path);
+  model = ctk_tree_view_get_model (view);
+  ctk_tree_model_get_iter (model, &iter, path);
+  ctk_tree_path_free (path);
 
-  gtk_tree_model_get (model, &iter,
+  ctk_tree_model_get (model, &iter,
               KEYENTRY_COLUMN, &key_entry,
               -1);
 
@@ -1432,12 +1432,12 @@ typedef struct
 static gboolean
 real_start_editing_cb (IdleData *idle_data)
 {
-  gtk_widget_grab_focus (GTK_WIDGET (idle_data->tree_view));
-  gtk_tree_view_set_cursor (idle_data->tree_view,
+  ctk_widget_grab_focus (GTK_WIDGET (idle_data->tree_view));
+  ctk_tree_view_set_cursor (idle_data->tree_view,
                 idle_data->path,
                 idle_data->column,
                 TRUE);
-  gtk_tree_path_free (idle_data->path);
+  ctk_tree_path_free (idle_data->path);
   g_free (idle_data);
   return FALSE;
 }
@@ -1449,21 +1449,21 @@ edit_custom_shortcut (KeyEntry *key)
   const gchar *text;
   gboolean ret;
 
-  gtk_entry_set_text (GTK_ENTRY (custom_shortcut_name_entry), key->description ? key->description : "");
-  gtk_widget_set_sensitive (custom_shortcut_name_entry, key->desc_editable);
-  gtk_widget_grab_focus (custom_shortcut_name_entry);
-  gtk_entry_set_text (GTK_ENTRY (custom_shortcut_command_entry), key->command ? key->command : "");
-  gtk_widget_set_sensitive (custom_shortcut_command_entry, key->cmd_editable);
+  ctk_entry_set_text (GTK_ENTRY (custom_shortcut_name_entry), key->description ? key->description : "");
+  ctk_widget_set_sensitive (custom_shortcut_name_entry, key->desc_editable);
+  ctk_widget_grab_focus (custom_shortcut_name_entry);
+  ctk_entry_set_text (GTK_ENTRY (custom_shortcut_command_entry), key->command ? key->command : "");
+  ctk_widget_set_sensitive (custom_shortcut_command_entry, key->cmd_editable);
 
-  gtk_window_present (GTK_WINDOW (custom_shortcut_dialog));
-  result = gtk_dialog_run (GTK_DIALOG (custom_shortcut_dialog));
+  ctk_window_present (GTK_WINDOW (custom_shortcut_dialog));
+  result = ctk_dialog_run (GTK_DIALOG (custom_shortcut_dialog));
   switch (result)
     {
     case GTK_RESPONSE_OK:
-      text = gtk_entry_get_text (GTK_ENTRY (custom_shortcut_name_entry));
+      text = ctk_entry_get_text (GTK_ENTRY (custom_shortcut_name_entry));
       g_free (key->description);
       key->description = g_strdup (text);
-      text = gtk_entry_get_text (GTK_ENTRY (custom_shortcut_command_entry));
+      text = ctk_entry_get_text (GTK_ENTRY (custom_shortcut_command_entry));
       g_free (key->command);
       key->command = g_strdup (text);
       ret = TRUE;
@@ -1473,7 +1473,7 @@ edit_custom_shortcut (KeyEntry *key)
       break;
     }
 
-  gtk_widget_hide (custom_shortcut_dialog);
+  ctk_widget_hide (custom_shortcut_dialog);
 
   return ret;
 }
@@ -1484,7 +1484,7 @@ remove_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
   GtkTreeIter parent;
   KeyEntry *key;
 
-  gtk_tree_model_get (model, iter,
+  ctk_tree_model_get (model, iter,
                       KEYENTRY_COLUMN, &key,
                       -1);
 
@@ -1509,10 +1509,10 @@ remove_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
   g_free (key->cmd_gsettings_key);
   g_free (key);
 
-  gtk_tree_model_iter_parent (model, &parent, iter);
-  gtk_tree_store_remove (GTK_TREE_STORE (model), iter);
-  if (!gtk_tree_model_iter_has_child (model, &parent))
-    gtk_tree_store_remove (GTK_TREE_STORE (model), &parent);
+  ctk_tree_model_iter_parent (model, &parent, iter);
+  ctk_tree_store_remove (GTK_TREE_STORE (model), iter);
+  if (!ctk_tree_model_iter_has_child (model, &parent))
+    ctk_tree_store_remove (GTK_TREE_STORE (model), &parent);
 
   return TRUE;
 }
@@ -1522,7 +1522,7 @@ update_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
 {
   KeyEntry *key;
 
-  gtk_tree_model_get (model, iter,
+  ctk_tree_model_get (model, iter,
                       KEYENTRY_COLUMN, &key,
                       -1);
 
@@ -1533,7 +1533,7 @@ update_custom_shortcut (GtkTreeModel *model, GtkTreeIter *iter)
     }
   else
     {
-      gtk_tree_store_set (GTK_TREE_STORE (model), iter,
+      ctk_tree_store_set (GTK_TREE_STORE (model), iter,
               KEYENTRY_COLUMN, key, -1);
       if (key->description != NULL)
         g_settings_set_string (key->settings, key->desc_gsettings_key, key->description);
@@ -1601,7 +1601,7 @@ add_custom_shortcut (GtkTreeView  *tree_view,
   dir = find_free_gsettings_path (&error);
   if (dir == NULL)
     {
-      show_error (GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tree_view))), error);
+      show_error (GTK_WINDOW (ctk_widget_get_toplevel (GTK_WIDGET (tree_view))), error);
 
       g_error_free (error);
       return;
@@ -1625,8 +1625,8 @@ add_custom_shortcut (GtkTreeView  *tree_view,
     {
       find_section (model, &iter, _("Custom Shortcuts"));
       parent_iter = iter;
-      gtk_tree_store_append (GTK_TREE_STORE (model), &iter, &parent_iter);
-      gtk_tree_store_set (GTK_TREE_STORE (model), &iter, KEYENTRY_COLUMN, key_entry, -1);
+      ctk_tree_store_append (GTK_TREE_STORE (model), &iter, &parent_iter);
+      ctk_tree_store_set (GTK_TREE_STORE (model), &iter, KEYENTRY_COLUMN, key_entry, -1);
 
       /* store in gsettings */
       key_entry->settings = g_settings_new_with_path (CUSTOM_KEYBINDING_SCHEMA, key_entry->gsettings_path);
@@ -1649,10 +1649,10 @@ add_custom_shortcut (GtkTreeView  *tree_view,
                                                     key_entry);
 
       /* make the new shortcut visible */
-      path = gtk_tree_model_get_path (model, &iter);
-      gtk_tree_view_expand_to_path (tree_view, path);
-      gtk_tree_view_scroll_to_cell (tree_view, path, NULL, FALSE, 0, 0);
-      gtk_tree_path_free (path);
+      path = ctk_tree_model_get_path (model, &iter);
+      ctk_tree_view_expand_to_path (tree_view, path);
+      ctk_tree_view_scroll_to_cell (tree_view, path, NULL, FALSE, 0, 0);
+      ctk_tree_path_free (path);
     }
   else
     {
@@ -1676,39 +1676,39 @@ start_editing_kb_cb (GtkTreeView *treeview,
       GtkTreeIter iter;
       KeyEntry *key;
 
-      model = gtk_tree_view_get_model (treeview);
-      gtk_tree_model_get_iter (model, &iter, path);
-      gtk_tree_model_get (model, &iter,
+      model = ctk_tree_view_get_model (treeview);
+      ctk_tree_model_get_iter (model, &iter, path);
+      ctk_tree_model_get (model, &iter,
                           KEYENTRY_COLUMN, &key,
                          -1);
 
       if (key == NULL)
         {
       /* This is a section heading - expand or collapse */
-      if (gtk_tree_view_row_expanded (treeview, path))
-        gtk_tree_view_collapse_row (treeview, path);
+      if (ctk_tree_view_row_expanded (treeview, path))
+        ctk_tree_view_collapse_row (treeview, path);
       else
-        gtk_tree_view_expand_row (treeview, path, FALSE);
+        ctk_tree_view_expand_row (treeview, path, FALSE);
           return;
     }
 
       /* if only the accel can be edited on the selected row
        * always select the accel column */
       if (key->desc_editable &&
-          column == gtk_tree_view_get_column (treeview, 0))
+          column == ctk_tree_view_get_column (treeview, 0))
         {
-          gtk_widget_grab_focus (GTK_WIDGET (treeview));
-          gtk_tree_view_set_cursor (treeview, path,
-                                    gtk_tree_view_get_column (treeview, 0),
+          ctk_widget_grab_focus (GTK_WIDGET (treeview));
+          ctk_tree_view_set_cursor (treeview, path,
+                                    ctk_tree_view_get_column (treeview, 0),
                                     FALSE);
           update_custom_shortcut (model, &iter);
         }
       else
         {
-          gtk_widget_grab_focus (GTK_WIDGET (treeview));
-          gtk_tree_view_set_cursor (treeview,
+          ctk_widget_grab_focus (GTK_WIDGET (treeview));
+          ctk_tree_view_set_cursor (treeview,
                                     path,
-                                    gtk_tree_view_get_column (treeview, 1),
+                                    ctk_tree_view_get_column (treeview, 1),
                                     TRUE);
         }
 }
@@ -1721,11 +1721,11 @@ start_editing_cb (GtkTreeView    *tree_view,
   GtkTreePath *path;
   GtkTreeViewColumn *column;
 
-  if ((event->window != gtk_tree_view_get_bin_window (tree_view)) ||
+  if ((event->window != ctk_tree_view_get_bin_window (tree_view)) ||
       (event->type != GDK_2BUTTON_PRESS))
     return FALSE;
 
-  if (gtk_tree_view_get_path_at_pos (tree_view,
+  if (ctk_tree_view_get_path_at_pos (tree_view,
                      (gint) event->x,
                      (gint) event->y,
                      &path, &column,
@@ -1736,26 +1736,26 @@ start_editing_cb (GtkTreeView    *tree_view,
       GtkTreeIter iter;
       KeyEntry *key;
 
-      if (gtk_tree_path_get_depth (path) == 1)
+      if (ctk_tree_path_get_depth (path) == 1)
     {
-      gtk_tree_path_free (path);
+      ctk_tree_path_free (path);
       return FALSE;
     }
 
-      model = gtk_tree_view_get_model (tree_view);
-      gtk_tree_model_get_iter (model, &iter, path);
-      gtk_tree_model_get (model, &iter,
+      model = ctk_tree_view_get_model (tree_view);
+      ctk_tree_model_get_iter (model, &iter, path);
+      ctk_tree_model_get (model, &iter,
                           KEYENTRY_COLUMN, &key,
                          -1);
 
       /* if only the accel can be edited on the selected row
        * always select the accel column */
       if (key->desc_editable &&
-          column == gtk_tree_view_get_column (tree_view, 0))
+          column == ctk_tree_view_get_column (tree_view, 0))
         {
-          gtk_widget_grab_focus (GTK_WIDGET (tree_view));
-          gtk_tree_view_set_cursor (tree_view, path,
-                                    gtk_tree_view_get_column (tree_view, 0),
+          ctk_widget_grab_focus (GTK_WIDGET (tree_view));
+          ctk_tree_view_set_cursor (tree_view, path,
+                                    ctk_tree_view_get_column (tree_view, 0),
                                     FALSE);
           update_custom_shortcut (model, &iter);
         }
@@ -1765,7 +1765,7 @@ start_editing_cb (GtkTreeView    *tree_view,
           idle_data->tree_view = tree_view;
           idle_data->path = path;
           idle_data->column = key->desc_editable ? column :
-                              gtk_tree_view_get_column (tree_view, 1);
+                              ctk_tree_view_get_column (tree_view, 1);
           g_idle_add ((GSourceFunc) real_start_editing_cb, idle_data);
           block_accels = TRUE;
         }
@@ -1781,7 +1781,7 @@ static gboolean maybe_block_accels(GtkWidget* widget, GdkEventKey* event, gpoint
 {
     if (block_accels)
     {
-        return gtk_window_propagate_key_event(GTK_WINDOW(widget), event);
+        return ctk_window_propagate_key_event(GTK_WINDOW(widget), event);
     }
 
     return FALSE;
@@ -1796,9 +1796,9 @@ cb_dialog_response (GtkWidget *widget, gint response_id, gpointer data)
   GtkTreeSelection *selection;
   GtkTreeIter iter;
 
-  treeview = GTK_TREE_VIEW (gtk_builder_get_object (builder,
+  treeview = GTK_TREE_VIEW (ctk_builder_get_object (builder,
                                                     "shortcut_treeview"));
-  model = gtk_tree_view_get_model (treeview);
+  model = ctk_tree_view_get_model (treeview);
 
   if (response_id == GTK_RESPONSE_HELP)
     {
@@ -1811,8 +1811,8 @@ cb_dialog_response (GtkWidget *widget, gint response_id, gpointer data)
     }
   else if (response_id == RESPONSE_REMOVE)
     {
-      selection = gtk_tree_view_get_selection (treeview);
-      if (gtk_tree_selection_get_selected (selection, NULL, &iter))
+      selection = ctk_tree_view_get_selection (treeview);
+      if (ctk_tree_selection_get_selected (selection, NULL, &iter))
         {
           remove_custom_shortcut (model, &iter);
         }
@@ -1820,7 +1820,7 @@ cb_dialog_response (GtkWidget *widget, gint response_id, gpointer data)
   else
     {
       clear_old_model (builder);
-      gtk_main_quit ();
+      ctk_main_quit ();
     }
 }
 
@@ -1834,14 +1834,14 @@ selection_changed (GtkTreeSelection *selection, gpointer data)
   gboolean can_remove;
 
   can_remove = FALSE;
-  if (gtk_tree_selection_get_selected (selection, &model, &iter))
+  if (ctk_tree_selection_get_selected (selection, &model, &iter))
     {
-      gtk_tree_model_get (model, &iter, KEYENTRY_COLUMN, &key, -1);
+      ctk_tree_model_get (model, &iter, KEYENTRY_COLUMN, &key, -1);
       if (key && key->command != NULL && key->editable)
     can_remove = TRUE;
     }
 
-  gtk_widget_set_sensitive (button, can_remove);
+  ctk_widget_set_sensitive (button, can_remove);
 }
 
 static void
@@ -1852,20 +1852,20 @@ cb_app_dialog_response (GtkWidget *dialog, gint response_id, gpointer data)
       GAppInfo *info;
       const gchar *custom_name;
 
-      info = gtk_app_chooser_get_app_info (GTK_APP_CHOOSER (dialog));
+      info = ctk_app_chooser_get_app_info (GTK_APP_CHOOSER (dialog));
 
-      gtk_entry_set_text (GTK_ENTRY (custom_shortcut_command_entry),
+      ctk_entry_set_text (GTK_ENTRY (custom_shortcut_command_entry),
                           g_app_info_get_executable (info));
       /* if name isn't set yet, use the associated one */
-      custom_name = gtk_entry_get_text (GTK_ENTRY (custom_shortcut_name_entry));
+      custom_name = ctk_entry_get_text (GTK_ENTRY (custom_shortcut_name_entry));
       if (! custom_name || custom_name[0] == '\0')
-        gtk_entry_set_text (GTK_ENTRY (custom_shortcut_name_entry),
+        ctk_entry_set_text (GTK_ENTRY (custom_shortcut_name_entry),
                             g_app_info_get_display_name (info));
 
       g_object_unref (info);
     }
 
-  gtk_widget_hide (dialog);
+  ctk_widget_hide (dialog);
 }
 
 static void
@@ -1878,7 +1878,7 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
   GtkTreeSelection *selection;
   GtkWidget *button;
 
-  treeview = GTK_TREE_VIEW (gtk_builder_get_object (builder,
+  treeview = GTK_TREE_VIEW (ctk_builder_get_object (builder,
                                                     "shortcut_treeview"));
 
   g_signal_connect (treeview, "button_press_event",
@@ -1886,21 +1886,21 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
   g_signal_connect (treeview, "row-activated",
             G_CALLBACK (start_editing_kb_cb), NULL);
 
-  renderer = gtk_cell_renderer_text_new ();
+  renderer = ctk_cell_renderer_text_new ();
 
   g_signal_connect (renderer, "edited",
                     G_CALLBACK (description_edited_callback),
                     treeview);
 
-  column = gtk_tree_view_column_new_with_attributes (_("Action"),
+  column = ctk_tree_view_column_new_with_attributes (_("Action"),
                              renderer,
                              "text", DESCRIPTION_COLUMN,
                              NULL);
-  gtk_tree_view_column_set_cell_data_func (column, renderer, description_set_func, NULL, NULL);
-  gtk_tree_view_column_set_resizable (column, FALSE);
+  ctk_tree_view_column_set_cell_data_func (column, renderer, description_set_func, NULL, NULL);
+  ctk_tree_view_column_set_resizable (column, FALSE);
 
-  gtk_tree_view_append_column (treeview, column);
-  gtk_tree_view_column_set_sort_column_id (column, DESCRIPTION_COLUMN);
+  ctk_tree_view_append_column (treeview, column);
+  ctk_tree_view_column_set_sort_column_id (column, DESCRIPTION_COLUMN);
 
   renderer = (GtkCellRenderer *) g_object_new (EGG_TYPE_CELL_RENDERER_KEYS,
                            "accel_mode", EGG_CELL_RENDERER_KEYS_MODE_X,
@@ -1914,12 +1914,12 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
                     G_CALLBACK (accel_cleared_callback),
                     treeview);
 
-  column = gtk_tree_view_column_new_with_attributes (_("Shortcut"), renderer, NULL);
-  gtk_tree_view_column_set_cell_data_func (column, renderer, accel_set_func, NULL, NULL);
-  gtk_tree_view_column_set_resizable (column, FALSE);
+  column = ctk_tree_view_column_new_with_attributes (_("Shortcut"), renderer, NULL);
+  ctk_tree_view_column_set_cell_data_func (column, renderer, accel_set_func, NULL, NULL);
+  ctk_tree_view_column_set_resizable (column, FALSE);
 
-  gtk_tree_view_append_column (treeview, column);
-  gtk_tree_view_column_set_sort_column_id (column, KEYENTRY_COLUMN);
+  ctk_tree_view_append_column (treeview, column);
+  ctk_tree_view_column_set_sort_column_id (column, KEYENTRY_COLUMN);
 
   g_signal_connect (croma_settings,
                     "changed::num-workspaces",
@@ -1929,41 +1929,41 @@ setup_dialog (GtkBuilder *builder, GSettings *croma_settings)
   /* set up the dialog */
   reload_key_entries (builder);
 
-  widget = _gtk_builder_get_widget (builder, "cafe-keybinding-dialog");
-  gtk_window_set_default_size (GTK_WINDOW (widget), 400, 500);
-  widget = _gtk_builder_get_widget (builder, "label-suggest");
-  gtk_label_set_line_wrap (GTK_LABEL (widget), TRUE);
-  gtk_label_set_max_width_chars (GTK_LABEL (widget), 60);
+  widget = _ctk_builder_get_widget (builder, "cafe-keybinding-dialog");
+  ctk_window_set_default_size (GTK_WINDOW (widget), 400, 500);
+  widget = _ctk_builder_get_widget (builder, "label-suggest");
+  ctk_label_set_line_wrap (GTK_LABEL (widget), TRUE);
+  ctk_label_set_max_width_chars (GTK_LABEL (widget), 60);
 
-  widget = _gtk_builder_get_widget (builder, "cafe-keybinding-dialog");
+  widget = _ctk_builder_get_widget (builder, "cafe-keybinding-dialog");
   capplet_set_icon (widget, "preferences-desktop-keyboard-shortcuts");
-  gtk_widget_show (widget);
+  ctk_widget_show (widget);
 
   g_signal_connect (widget, "key_press_event", G_CALLBACK (maybe_block_accels), NULL);
   g_signal_connect (widget, "response", G_CALLBACK (cb_dialog_response), builder);
 
-  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (treeview));
+  selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (treeview));
   g_signal_connect (selection, "changed",
                     G_CALLBACK (selection_changed),
-            _gtk_builder_get_widget (builder, "remove-button"));
+            _ctk_builder_get_widget (builder, "remove-button"));
 
   /* setup the custom shortcut dialog */
-  custom_shortcut_dialog = _gtk_builder_get_widget (builder,
+  custom_shortcut_dialog = _ctk_builder_get_widget (builder,
                                                     "custom-shortcut-dialog");
-  custom_shortcut_name_entry = _gtk_builder_get_widget (builder,
+  custom_shortcut_name_entry = _ctk_builder_get_widget (builder,
                                                         "custom-shortcut-name-entry");
-  custom_shortcut_command_entry = _gtk_builder_get_widget (builder,
+  custom_shortcut_command_entry = _ctk_builder_get_widget (builder,
                                                            "custom-shortcut-command-entry");
-  gtk_dialog_set_default_response (GTK_DIALOG (custom_shortcut_dialog),
+  ctk_dialog_set_default_response (GTK_DIALOG (custom_shortcut_dialog),
                    GTK_RESPONSE_OK);
-  gtk_window_set_transient_for (GTK_WINDOW (custom_shortcut_dialog),
+  ctk_window_set_transient_for (GTK_WINDOW (custom_shortcut_dialog),
                                 GTK_WINDOW (widget));
-  button = _gtk_builder_get_widget (builder, "custom-shortcut-command-button");
-  widget = _gtk_builder_get_widget (builder, "custom-shortcut-application-dialog");
-  g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_dialog_run), widget);
+  button = _ctk_builder_get_widget (builder, "custom-shortcut-command-button");
+  widget = _ctk_builder_get_widget (builder, "custom-shortcut-application-dialog");
+  g_signal_connect_swapped (button, "clicked", G_CALLBACK (ctk_dialog_run), widget);
   g_signal_connect (widget, "response", G_CALLBACK (cb_app_dialog_response), NULL);
-  widget = gtk_app_chooser_dialog_get_widget (GTK_APP_CHOOSER_DIALOG (widget));
-  gtk_app_chooser_widget_set_show_all (GTK_APP_CHOOSER_WIDGET (widget), TRUE);
+  widget = ctk_app_chooser_dialog_get_widget (GTK_APP_CHOOSER_DIALOG (widget));
+  ctk_app_chooser_widget_set_show_all (GTK_APP_CHOOSER_WIDGET (widget), TRUE);
 }
 
 static void
@@ -1993,7 +1993,7 @@ main (int argc, char *argv[])
 
   setup_dialog (builder, croma_settings);
 
-  gtk_main ();
+  ctk_main ();
 
   g_object_unref (croma_settings);
   g_object_unref (builder);
