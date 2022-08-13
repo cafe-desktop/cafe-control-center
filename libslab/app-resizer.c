@@ -293,7 +293,7 @@ app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_d
 	CtkAllocation widget_allocation;
 	ctk_widget_get_allocation (widget, &widget_allocation);
 
-	gdk_cairo_set_source_color (cr, ctk_widget_get_style (widget)->base);
+	cdk_cairo_set_source_color (cr, ctk_widget_get_style (widget)->base);
 	cairo_set_line_width(cr, 1);
 
 	cairo_rectangle(cr, widget_allocation.x, widget_allocation.y, widget_allocation.width, widget_allocation.height);
@@ -307,7 +307,7 @@ app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_d
 
 		ctk_widget_get_allocation (selected_widget, &selected_widget_allocation);
 
-		gdk_cairo_set_source_color (cr, ctk_widget_get_style (selected_widget)->light);
+		cdk_cairo_set_source_color (cr, ctk_widget_get_style (selected_widget)->light);
 		cairo_set_line_width(cr, 1);
 
 		cairo_rectangle(cr, selected_widget_allocation.x, selected_widget_allocation.y, selected_widget_allocation.width, selected_widget_allocation.height);

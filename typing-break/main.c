@@ -23,7 +23,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctk.h>
 
 #include "drw-selection.h"
@@ -35,13 +35,13 @@ gboolean debug = FALSE;
 static gboolean
 have_tray (void)
 {
-	Screen *xscreen = DefaultScreenOfDisplay (gdk_x11_display_get_xdisplay(gdk_display_get_default()));
+	Screen *xscreen = DefaultScreenOfDisplay (cdk_x11_display_get_xdisplay(cdk_display_get_default()));
 	Atom    selection_atom;
 	char   *selection_atom_name;
 
 	selection_atom_name = g_strdup_printf ("_NET_SYSTEM_TRAY_S%d",
 					       XScreenNumberOfScreen (xscreen));
-	selection_atom = gdk_x11_get_xatom_by_name (selection_atom_name);
+	selection_atom = cdk_x11_get_xatom_by_name (selection_atom_name);
 	g_free (selection_atom_name);
 
 	if (XGetSelectionOwner (DisplayOfScreen (xscreen), selection_atom)) {

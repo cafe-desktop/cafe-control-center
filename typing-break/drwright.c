@@ -24,9 +24,9 @@
 #include <string.h>
 #include <math.h>
 #include <glib/gi18n.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
+#include <cdk/cdkkeysyms.h>
 #include <ctk/ctk.h>
 #include <gio/gio.h>
 
@@ -181,7 +181,7 @@ set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 {
 	GdkPixbuf *pixbuf;
 
-	pixbuf = gdk_pixbuf_get_from_surface (surface, 0, 0,
+	pixbuf = cdk_pixbuf_get_from_surface (surface, 0, 0,
 					      cairo_image_surface_get_width (surface),
 					      cairo_image_surface_get_height (surface));
 
@@ -208,7 +208,7 @@ update_icon (DrWright *dr)
 	width = cairo_image_surface_get_width (dr->neutral_bar);
 	height = cairo_image_surface_get_height (dr->neutral_bar);
 
-	tmp_pixbuf = gdk_pixbuf_get_from_surface (dr->neutral_bar,
+	tmp_pixbuf = cdk_pixbuf_get_from_surface (dr->neutral_bar,
 						  0, 0,
 						  width, height);
 
@@ -236,20 +236,20 @@ update_icon (DrWright *dr)
 
 	switch (dr->state) {
 	case STATE_WARN:
-		pixbuf = gdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
+		pixbuf = cdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
 		set_pixbuf = FALSE;
 		break;
 
 	case STATE_BREAK_SETUP:
 	case STATE_BREAK:
-		pixbuf = gdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
+		pixbuf = cdk_pixbuf_get_from_surface (dr->red_bar, 0, 0, width, height);
 		break;
 
 	default:
-		pixbuf = gdk_pixbuf_get_from_surface (dr->green_bar, 0, 0, width, height);
+		pixbuf = cdk_pixbuf_get_from_surface (dr->green_bar, 0, 0, width, height);
 	}
 
-	gdk_pixbuf_composite (pixbuf,
+	cdk_pixbuf_composite (pixbuf,
 			      tmp_pixbuf,
 			      0,
 			      offset,
@@ -343,10 +343,10 @@ grab_keyboard_on_window (GdkWindow *window,
 	GdkSeat *seat;
 	GdkGrabStatus status;
 
-	display = gdk_window_get_display (window);
-	seat = gdk_display_get_default_seat (display);
+	display = cdk_window_get_display (window);
+	seat = cdk_display_get_default_seat (display);
 
-	status = gdk_seat_grab (seat,
+	status = cdk_seat_grab (seat,
 	                        window,
 	                        GDK_SEAT_CAPABILITY_KEYBOARD,
 	                        TRUE,
@@ -628,7 +628,7 @@ popup_preferences_cb (CtkAction *action, DrWright *dr)
 	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 	screen = ctk_widget_get_screen (menu);
 
-	if (!cafe_gdk_spawn_command_line_on_screen (screen, "cafe-keyboard-properties --typing-break", &error)) {
+	if (!cafe_cdk_spawn_command_line_on_screen (screen, "cafe-keyboard-properties --typing-break", &error)) {
 		CtkWidget *error_dialog;
 
 		error_dialog = ctk_message_dialog_new (NULL, 0,
@@ -780,7 +780,7 @@ init_tray_icon (DrWright *dr)
 {
 	GdkPixbuf *pixbuf;
 
-	pixbuf = gdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
+	pixbuf = cdk_pixbuf_get_from_surface (dr->neutral_bar, 0, 0,
 					      cairo_image_surface_get_width (dr->neutral_bar),
 					      cairo_image_surface_get_height (dr->neutral_bar));
 
@@ -806,11 +806,11 @@ create_secondary_break_windows (void)
 	GList      *windows = NULL;
 	gint        scale;
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 
-	screen = gdk_display_get_default_screen (display);
+	screen = cdk_display_get_default_screen (display);
 
-	if (screen != gdk_screen_get_default ()) {
+	if (screen != cdk_screen_get_default ()) {
 		/* Handled by DrwBreakWindow. */
 
 		window = ctk_window_new (CTK_WINDOW_POPUP);
@@ -821,8 +821,8 @@ create_secondary_break_windows (void)
 		ctk_window_set_screen (CTK_WINDOW (window), screen);
 
 		ctk_window_set_default_size (CTK_WINDOW (window),
-					     WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
-					     HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
+					     WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale,
+					     HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / scale);
 
 		ctk_widget_set_app_paintable (CTK_WIDGET (window), TRUE);
 		drw_setup_background (CTK_WIDGET (window));

@@ -230,16 +230,16 @@ set_image_from_data (EImageChooser *chooser,
 		     char *data, int length)
 {
 	gboolean rv = FALSE;
-	GdkPixbufLoader *loader = gdk_pixbuf_loader_new ();
+	GdkPixbufLoader *loader = cdk_pixbuf_loader_new ();
 	GdkPixbuf *pixbuf;
 	EImageChooserPrivate *priv;
 
 	priv = e_image_chooser_get_instance_private (chooser);
 
-	gdk_pixbuf_loader_write (loader, (guchar *) data, length, NULL);
-	gdk_pixbuf_loader_close (loader, NULL);
+	cdk_pixbuf_loader_write (loader, (guchar *) data, length, NULL);
+	cdk_pixbuf_loader_close (loader, NULL);
 
-	pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+	pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
 	if (pixbuf)
 		g_object_ref (pixbuf);
 	g_object_unref (loader);
@@ -249,7 +249,7 @@ set_image_from_data (EImageChooser *chooser,
 		if (priv->scaleable) {
 			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), pixbuf);
 		} else {
-			scaled = gdk_pixbuf_scale_simple (pixbuf,
+			scaled = cdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
 							  GDK_INTERP_BILINEAR);
 
@@ -285,13 +285,13 @@ image_drag_motion_cb (CtkWidget *widget,
 	if (!priv->editable)
 		return FALSE;
 
-	for (p = gdk_drag_context_list_targets (context); p; p = p->next) {
+	for (p = cdk_drag_context_list_targets (context); p; p = p->next) {
 		char *possible_type;
 
-		possible_type = gdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
+		possible_type = cdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
 		if (!strcmp (possible_type, URI_LIST_TYPE)) {
 			g_free (possible_type);
-			gdk_drag_status (context, GDK_ACTION_COPY, time);
+			cdk_drag_status (context, GDK_ACTION_COPY, time);
 			return TRUE;
 		}
 
@@ -314,14 +314,14 @@ image_drag_drop_cb (CtkWidget *widget,
 	if (!priv->editable)
 		return FALSE;
 
-	if (gdk_drag_context_list_targets (context) == NULL) {
+	if (cdk_drag_context_list_targets (context) == NULL) {
 		return FALSE;
 	}
 
-	for (p = gdk_drag_context_list_targets (context); p; p = p->next) {
+	for (p = cdk_drag_context_list_targets (context); p; p = p->next) {
 		char *possible_type;
 
-		possible_type = gdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
+		possible_type = cdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
 		if (!strcmp (possible_type, URI_LIST_TYPE)) {
 			g_free (possible_type);
 			ctk_drag_get_data (widget, context,
@@ -346,7 +346,7 @@ image_drag_data_received_cb (CtkWidget *widget,
 	char *target_type;
 	gboolean handled = FALSE;
 
-	target_type = gdk_atom_name (ctk_selection_data_get_target (selection_data));
+	target_type = cdk_atom_name (ctk_selection_data_get_target (selection_data));
 
 	if (!strcmp (target_type, URI_LIST_TYPE)) {
 		const char *data = (const char *) ctk_selection_data_get_data (selection_data);

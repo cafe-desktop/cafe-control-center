@@ -164,7 +164,7 @@
   * keybindings: Add a key binding to toggle the microphone's mute status
   * keybindings: Add some key bindings to control volume quietly
   * Account for NULL error when we see G_IO_STATUS_EOF
-  * typing-break: replace deprecated gdk_error_trap functions
+  * typing-break: replace deprecated cdk_error_trap functions
   * tx: update translation sources
   * update hint for mouse double-click
   * keybindings: double click instead one click to edit keyboard shortcuts
@@ -189,13 +189,13 @@
   * require cafe-desktop-1.21.1
   * typing-break: Make images larger and load as surface
   * Mouse: include a toggle to enable or disable middlemouse paste
-  * capplets/keybindings: avoid deprecated 'gdk_keymap_get_default'
+  * capplets/keybindings: avoid deprecated 'cdk_keymap_get_default'
   * display-capplet.ui: replace deprecations
   * libslab: code clean up
-  * wm-common: replace deprecated gdk_error_trap functions
+  * wm-common: replace deprecated cdk_error_trap functions
   * libslab: replace deprecated ctk_menu_popup
-  * msd-input-helper: replace deprecated gdk_error_trap functions
-  * mouse: replace deprecated gdk_error_trap functions
+  * msd-input-helper: replace deprecated cdk_error_trap functions
+  * mouse: replace deprecated cdk_error_trap functions
 
 ### cafe-control-center 1.21.0
 
@@ -262,14 +262,14 @@
   * man: fix title of cafe-window-properties page
   * man: fix titles of cafe-typing-monitor and cafe-thumbnail-font pages
   * Fixes font dpi with "org.cafe.desktop.font-rendering.dpi" by default
-  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated cdk_screen_get_monitor... functions:
 
 ### cafe-control-center 1.19.1
 
   * Translations update
-  * libslab: avoid deprecated gdk_screen_width/height
-  * appearance-font.c: avoid deprecated gdk_screen_get_width/height_mm
-  * avoid deprecated gdk_screen_get_width/height
+  * libslab: avoid deprecated cdk_screen_width/height
+  * appearance-font.c: avoid deprecated cdk_screen_get_width/height_mm
+  * avoid deprecated cdk_screen_get_width/height
   * libslab: drop unneeded libslab_cafe_desktop_item_open_help function
   * libslab : drop uneeded support for gnome-main-menu
   * typing-break: avoid deprecated GDK pointer and keyboard types
@@ -277,10 +277,10 @@
   * display scrollarea: avoid deprecated ctk_adjustment_changed
   * keybindings eggcellrendererkey: avoid deprecated GDK pointer and keyboard types
   * display scrollarea: fix a -Wuninitialized build warning
-  * display scrollarea: avoid deprecated gdk_window_get_pointer
+  * display scrollarea: avoid deprecated cdk_window_get_pointer
   * po: don't list non-existent files in POTFILES.skip
-  * avoid deprecated gdk_screen_make_display_name
-  * avoid deprecated gdk_display_get_screen and gdk_display_get_n_screens
+  * avoid deprecated cdk_screen_make_display_name
+  * avoid deprecated cdk_display_get_screen and cdk_display_get_n_screens
   * capplet-util: don't use deprecated ctk_show_uri
   * typing-break: avoid deprecated CtkMisc
   * typing-break: avoid deprecated ctk_alignment_new ()
@@ -302,7 +302,7 @@
   * libslab searchbar: remove deprecated ussage of CtkAlignment
   * libslab nameplate-tile: avoid deprecated ctk_button_set_focus_on_click ()
   * libslab nameplate-tile: remove one deprecated ussage of CtkAlignment
-  * libslab: don't use deprecated gdk_app_launch_context_new ()
+  * libslab: don't use deprecated cdk_app_launch_context_new ()
   * about-me-password UI: set max_width_chars for description-label
   * eel-alert-dialog: replace some CtkStock items
   * keybindings: fix a couple of build warnings

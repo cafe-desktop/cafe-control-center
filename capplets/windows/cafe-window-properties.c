@@ -33,7 +33,7 @@
 #include <glib/gi18n.h>
 #include <string.h>
 
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "cafe-metacity-support.h"
 #include "wm-common.h"
@@ -274,7 +274,7 @@ wm_changed_callback (GdkScreen *screen,
 {
     const char *current_wm;
 
-    current_wm = gdk_x11_screen_get_window_manager_name (screen);
+    current_wm = cdk_x11_screen_get_window_manager_name (screen);
 
     ctk_widget_set_sensitive (dialog_win, g_strcmp0 (current_wm, WM_COMMON_CROMA) == 0);
 }
@@ -321,8 +321,8 @@ main (int argc, char **argv)
 
     capplet_init (NULL, &argc, &argv);
 
-    screen = gdk_display_get_default_screen (gdk_display_get_default ());
-    current_wm = gdk_x11_screen_get_window_manager_name (screen);
+    screen = cdk_display_get_default_screen (cdk_display_get_default ());
+    current_wm = cdk_x11_screen_get_window_manager_name (screen);
 
     if (g_strcmp0 (current_wm, WM_COMMON_METACITY) == 0) {
         cafe_metacity_config_tool ();
@@ -473,7 +473,7 @@ main (int argc, char **argv)
 
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 static void
 fill_radio (CtkRadioButton     *group,
@@ -499,16 +499,16 @@ reload_mouse_modifiers (void)
     int min_keycode, max_keycode;
     int mod_meta, mod_super, mod_hyper;
 
-    XDisplayKeycodes (gdk_x11_display_get_xdisplay(gdk_display_get_default()),
+    XDisplayKeycodes (cdk_x11_display_get_xdisplay(cdk_display_get_default()),
                       &min_keycode,
                       &max_keycode);
 
-    keymap = XGetKeyboardMapping (gdk_x11_display_get_xdisplay(gdk_display_get_default()),
+    keymap = XGetKeyboardMapping (cdk_x11_display_get_xdisplay(cdk_display_get_default()),
                                   min_keycode,
                                   max_keycode - min_keycode,
                                   &keysyms_per_keycode);
 
-    modmap = XGetModifierMapping (gdk_x11_display_get_xdisplay(gdk_display_get_default()));
+    modmap = XGetModifierMapping (cdk_x11_display_get_xdisplay(cdk_display_get_default()));
 
     have_super = FALSE;
     have_meta = FALSE;

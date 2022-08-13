@@ -23,7 +23,7 @@
 
 #include <config.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "drw-selection.h"
 
@@ -44,7 +44,7 @@ static void
 drw_selection_reset (DrwSelection *drw_selection)
 {
 	if (drw_selection->owner_window) {
-		gdk_window_remove_filter (drw_selection->owner_window,
+		cdk_window_remove_filter (drw_selection->owner_window,
 					  drw_selection_filter, drw_selection);
 		g_object_unref (drw_selection->owner_window);
 		drw_selection->owner_window = NULL;
@@ -74,20 +74,20 @@ drw_selection_find_existing (DrwSelection *drw_selection)
 	Window old;
 	Display *xdisplay;
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 	xdisplay = GDK_DISPLAY_XDISPLAY(display);
 
-	gdk_x11_display_error_trap_push (display);
+	cdk_x11_display_error_trap_push (display);
 	old = XGetSelectionOwner (xdisplay,
-				  gdk_x11_get_xatom_by_name (SELECTION_NAME));
+				  cdk_x11_get_xatom_by_name (SELECTION_NAME));
 	if (old) {
 		XSelectInput (xdisplay, old, StructureNotifyMask);
-		drw_selection->owner_window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), old);
+		drw_selection->owner_window = cdk_x11_window_foreign_new_for_display (cdk_display_get_default (), old);
 	}
 	XSync (xdisplay, False);
 
-	if (gdk_x11_display_error_trap_pop (display) == 0 && drw_selection->owner_window) {
-		gdk_window_add_filter (drw_selection->owner_window,
+	if (cdk_x11_display_error_trap_pop (display) == 0 && drw_selection->owner_window) {
+		cdk_window_add_filter (drw_selection->owner_window,
 				       drw_selection_filter, drw_selection);
 
 		XUngrabServer (xdisplay);
@@ -112,7 +112,7 @@ drw_selection_claim (DrwSelection *drw_selection)
 
 
 	if (ctk_selection_owner_set (drw_selection->invisible,
-				     gdk_atom_intern (SELECTION_NAME, FALSE),
+				     cdk_atom_intern (SELECTION_NAME, FALSE),
 				     GDK_CURRENT_TIME)) {
 		return TRUE;
 	} else {
@@ -124,7 +124,7 @@ drw_selection_claim (DrwSelection *drw_selection)
 static void
 drw_selection_negotiate (DrwSelection *drw_selection)
 {
-	Display *xdisplay = GDK_DISPLAY_XDISPLAY(gdk_display_get_default());
+	Display *xdisplay = GDK_DISPLAY_XDISPLAY(cdk_display_get_default());
 	gboolean found = FALSE;
 
 	/* We don't need both the XGrabServer() and the loop here;

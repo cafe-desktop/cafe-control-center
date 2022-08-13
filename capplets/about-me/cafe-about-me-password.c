@@ -28,7 +28,7 @@
 #endif
 
 /* Are all of these needed? */
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <pwd.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -679,11 +679,11 @@ passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 	toplevel = WID ("change-password");
 	display = ctk_widget_get_display (toplevel);
 	if (busy) {
-		cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
+		cursor = cdk_cursor_new_for_display (display, GDK_WATCH);
 	}
 
-	gdk_window_set_cursor (ctk_widget_get_window (toplevel), cursor);
-	gdk_display_flush (display);
+	cdk_window_set_cursor (ctk_widget_get_window (toplevel), cursor);
+	cdk_display_flush (display);
 
 	if (busy) {
 		g_object_unref (cursor);

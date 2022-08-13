@@ -8,10 +8,10 @@
 #include <string.h>
 #include <ctk/ctk.h>
 #include <gio/gio.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <X11/Xatom.h>
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 
 #include "wm-common.h"
 #include "capplet-util.h"

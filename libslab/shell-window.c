@@ -21,7 +21,7 @@
 #include "shell-window.h"
 
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "app-resizer.h"
 
@@ -104,7 +104,7 @@ shell_window_handle_size_request (CtkWidget * widget, CtkRequisition * requisiti
 	if (height > requisition->height)
 	{
 		requisition->height =
-			MIN (((gfloat) HeightOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ())) * SIZING_HEIGHT_PERCENT), height);
+			MIN (((gfloat) HeightOfScreen (cdk_x11_screen_get_xscreen (cdk_screen_get_default ())) * SIZING_HEIGHT_PERCENT), height);
 	}
 }
 

@@ -20,7 +20,7 @@
 
 #include "tile.h"
 
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <string.h>
 
 #include "double-click-detector.h"

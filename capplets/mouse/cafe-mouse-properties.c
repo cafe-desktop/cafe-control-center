@@ -28,7 +28,7 @@
 #include <glib/gi18n.h>
 #include <string.h>
 #include <gio/gio.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <math.h>
 
 #include "capplet-util.h"
@@ -186,7 +186,7 @@ synaptics_check_capabilities (CtkBuilder *dialog)
 	unsigned long nitems, bytes_after;
 	unsigned char *data;
 
-	display = gdk_display_get_default ();
+	display = cdk_display_get_default ();
 	prop = XInternAtom (GDK_DISPLAY_XDISPLAY(display), "Synaptics Capabilities", True);
 	if (!prop)
 		return;
@@ -196,13 +196,13 @@ synaptics_check_capabilities (CtkBuilder *dialog)
 		if (devicelist[i].use != IsXExtensionPointer)
 			continue;
 
-		gdk_x11_display_error_trap_push (display);
+		cdk_x11_display_error_trap_push (display);
 		XDevice *device = XOpenDevice (GDK_DISPLAY_XDISPLAY(display),
 					       devicelist[i].id);
-		if (gdk_x11_display_error_trap_pop (display))
+		if (cdk_x11_display_error_trap_pop (display))
 			continue;
 
-		gdk_x11_display_error_trap_push (display);
+		cdk_x11_display_error_trap_push (display);
 		if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY(display), device, prop, 0, 2, False,
 					 XA_INTEGER, &realtype, &realformat, &nitems,
 					 &bytes_after, &data) == Success) && (realtype != None)) {
@@ -216,7 +216,7 @@ synaptics_check_capabilities (CtkBuilder *dialog)
 			XFree (data);
 		}
 
-		gdk_x11_display_error_trap_pop_ignored (display);
+		cdk_x11_display_error_trap_pop_ignored (display);
 
 		XCloseDevice (GDK_DISPLAY_XDISPLAY(display), device);
 	}

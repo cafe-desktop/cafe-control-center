@@ -211,9 +211,9 @@ wp_add_images (AppearanceData *data,
   window = ctk_widget_get_window (w);
 
   item = NULL;
-  cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+  cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
                                        GDK_WATCH);
-  gdk_window_set_cursor (window, cursor);
+  cdk_window_set_cursor (window, cursor);
   g_object_unref (cursor);
 
   while (images != NULL)
@@ -225,7 +225,7 @@ wp_add_images (AppearanceData *data,
     g_free (uri);
   }
 
-  gdk_window_set_cursor (window, NULL);
+  cdk_window_set_cursor (window, NULL);
 
   if (item != NULL)
   {
@@ -371,8 +371,8 @@ wp_color_changed (AppearanceData *data,
   {
     gchar *pcolor, *scolor;
 
-    pcolor = gdk_rgba_to_string (item->pcolor);
-    scolor = gdk_rgba_to_string (item->scolor);
+    pcolor = cdk_rgba_to_string (item->pcolor);
+    scolor = cdk_rgba_to_string (item->scolor);
     g_settings_delay (data->wp_settings);
     g_settings_set_string (data->wp_settings, WP_PCOLOR_KEY, pcolor);
     g_settings_set_string (data->wp_settings, WP_SCOLOR_KEY, scolor);
@@ -500,7 +500,7 @@ wp_color1_changed (GSettings *settings,
 
   colorhex = g_settings_get_string (settings, key);
 
-  gdk_rgba_parse (&color, colorhex);
+  cdk_rgba_parse (&color, colorhex);
 
   ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_pcpicker), &color);
 
@@ -521,7 +521,7 @@ wp_color2_changed (GSettings *settings,
 
   colorhex = g_settings_get_string (settings, key);
 
-  gdk_rgba_parse (&color, colorhex);
+  cdk_rgba_parse (&color, colorhex);
 
   ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_scpicker), &color);
 
@@ -563,8 +563,8 @@ wp_props_wp_set (AppearanceData *data, CafeWPItem *item)
 
   g_settings_set_enum (data->wp_settings, WP_SHADING_KEY, item->shade_type);
 
-  pcolor = gdk_rgba_to_string (item->pcolor);
-  scolor = gdk_rgba_to_string (item->scolor);
+  pcolor = cdk_rgba_to_string (item->pcolor);
+  scolor = cdk_rgba_to_string (item->scolor);
   g_settings_set_string (data->wp_settings, WP_PCOLOR_KEY, pcolor);
   g_settings_set_string (data->wp_settings, WP_SCOLOR_KEY, scolor);
   g_free (pcolor);
@@ -706,9 +706,9 @@ wp_drag_received (CtkWidget *widget,
       w = appearance_capplet_get_widget (data, "appearance_window");
       window = ctk_widget_get_window (w);
 
-      cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+      cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
              GDK_WATCH);
-      gdk_window_set_cursor (window, cursor);
+      cdk_window_set_cursor (window, cursor);
       g_object_unref (cursor);
 
       for (uri = uris; *uri; ++uri)
@@ -721,7 +721,7 @@ wp_drag_received (CtkWidget *widget,
       }
 
       wp_add_images (data, realuris);
-      gdk_window_set_cursor (window, NULL);
+      cdk_window_set_cursor (window, NULL);
 
       g_strfreev (uris);
     }
@@ -886,8 +886,8 @@ get_monitor_aspect_ratio_for_widget (CtkWidget *widget)
   GdkMonitor *monitor;
   GdkRectangle rect;
 
-  monitor = gdk_display_get_monitor_at_window (ctk_widget_get_display (widget), ctk_widget_get_window (widget));
-  gdk_monitor_get_geometry (monitor, &rect);
+  monitor = cdk_display_get_monitor_at_window (ctk_widget_get_display (widget), ctk_widget_get_window (widget));
+  cdk_monitor_get_geometry (monitor, &rect);
 
   aspect = rect.height / (gdouble)rect.width;
 
@@ -1058,16 +1058,16 @@ create_button_images (AppearanceData  *data)
                                   CTK_ICON_SIZE_MENU,
                                   widget,
                                   NULL);
-  w = gdk_pixbuf_get_width (pb);
-  h = gdk_pixbuf_get_height (pb);
+  w = cdk_pixbuf_get_width (pb);
+  h = cdk_pixbuf_get_height (pb);
 
   for (i = 0; i < 3; i++) {
-    pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
-    gdk_pixbuf_fill (pixbuf, 0);
+    pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
+    cdk_pixbuf_fill (pixbuf, 0);
     if (i > 0)
-      gdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, GDK_INTERP_NEAREST, 255);
+      cdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, GDK_INTERP_NEAREST, 255);
     if (i < 2)
-      gdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, GDK_INTERP_NEAREST, 255);
+      cdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, GDK_INTERP_NEAREST, 255);
 
     buttons[i] = pixbuf;
   }

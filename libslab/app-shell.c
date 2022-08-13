@@ -25,8 +25,8 @@
 #include <libcafe-desktop/cafe-desktop-item.h>
 #include <gio/gio.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkx.h>
+#include <cdk/cdkkeysyms.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <string.h>
@@ -266,9 +266,9 @@ layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar *
 	right_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 
 	num_cols = SIZING_SCREEN_WIDTH_LARGE_NUMCOLS;
-	if (WidthOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ())) <= SIZING_SCREEN_WIDTH_LARGE)
+	if (WidthOfScreen (cdk_x11_screen_get_xscreen (cdk_screen_get_default ())) <= SIZING_SCREEN_WIDTH_LARGE)
 	{
-		if (WidthOfScreen (gdk_x11_screen_get_xscreen (gdk_screen_get_default ())) <= SIZING_SCREEN_WIDTH_MEDIUM)
+		if (WidthOfScreen (cdk_x11_screen_get_xscreen (cdk_screen_get_default ())) <= SIZING_SCREEN_WIDTH_MEDIUM)
 			num_cols = SIZING_SCREEN_WIDTH_SMALL_NUMCOLS;
 		else
 			num_cols = SIZING_SCREEN_WIDTH_MEDIUM_NUMCOLS;
@@ -348,7 +348,7 @@ relayout_shell_partial (gpointer user_data)
 	populate_groups_section (app_data);
 
 	ctk_widget_show_all (app_data->category_layout);
-	gdk_window_set_cursor (ctk_widget_get_window (app_data->shell), NULL);
+	cdk_window_set_cursor (ctk_widget_get_window (app_data->shell), NULL);
 
 	app_data->stop_incremental_relayout = TRUE;
 	return FALSE;
@@ -564,11 +564,11 @@ handle_filter_changed_delayed (gpointer user_data)
 	   we do the work incrementally in an idle loop I don't know how else besides hiding to not show
 	   incremental updates
 	 */
-	/* gdk_window_freeze_updates(app_data->category_layout->window); */
+	/* cdk_window_freeze_updates(app_data->category_layout->window); */
 	ctk_widget_hide (app_data->category_layout);
 	app_data->busy_cursor =
-		gdk_cursor_new_for_display (ctk_widget_get_display (app_data->shell), GDK_WATCH);
-	gdk_window_set_cursor (ctk_widget_get_window (app_data->shell), app_data->busy_cursor);
+		cdk_cursor_new_for_display (ctk_widget_get_display (app_data->shell), GDK_WATCH);
+	cdk_window_set_cursor (ctk_widget_get_window (app_data->shell), app_data->busy_cursor);
 	g_object_unref (app_data->busy_cursor);
 
 	set_state (app_data, NULL);

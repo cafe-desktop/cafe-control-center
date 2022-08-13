@@ -20,8 +20,8 @@
 
 #include "config.h"
 
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkx.h>
 
 #include <sys/types.h>
 #include <X11/Xatom.h>
@@ -33,7 +33,7 @@ supports_xinput_devices (void)
 {
         gint op_code, event, error;
 
-        return XQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+        return XQueryExtension (GDK_DISPLAY_XDISPLAY (cdk_display_get_default ()),
                                 "XInputExtension",
                                 &op_code,
                                 &event,
@@ -50,21 +50,21 @@ device_has_property (XDevice    *device,
         unsigned long nitems, bytes_after;
         unsigned char *data;
 
-        display = gdk_display_get_default ();
+        display = cdk_display_get_default ();
         prop = XInternAtom (GDK_DISPLAY_XDISPLAY (display), property_name, True);
         if (!prop)
                 return FALSE;
 
-        gdk_x11_display_error_trap_push (display);
+        cdk_x11_display_error_trap_push (display);
         if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY (display), device, prop, 0, 1, False,
                                 XA_INTEGER, &realtype, &realformat, &nitems,
                                 &bytes_after, &data) == Success) && (realtype != None)) {
-                gdk_x11_display_error_trap_pop_ignored (display);
+                cdk_x11_display_error_trap_pop_ignored (display);
                 XFree (data);
                 return TRUE;
         }
 
-        gdk_x11_display_error_trap_pop_ignored (display);
+        cdk_x11_display_error_trap_pop_ignored (display);
         return FALSE;
 }
 
@@ -74,13 +74,13 @@ device_is_touchpad (XDeviceInfo *deviceinfo)
         GdkDisplay *display;
         XDevice *device;
 
-        display = gdk_display_get_default ();
+        display = cdk_display_get_default ();
         if (deviceinfo->type != XInternAtom (GDK_DISPLAY_XDISPLAY (display), XI_TOUCHPAD, True))
                 return NULL;
 
-        gdk_x11_display_error_trap_push (display);
+        cdk_x11_display_error_trap_push (display);
         device = XOpenDevice (GDK_DISPLAY_XDISPLAY (display), deviceinfo->id);
-        if (gdk_x11_display_error_trap_pop (display) || (device == NULL))
+        if (cdk_x11_display_error_trap_pop (display) || (device == NULL))
                 return NULL;
 
         if (device_has_property (device, "libinput Tapping Enabled") ||
@@ -105,7 +105,7 @@ touchpad_is_present (void)
 
         retval = FALSE;
 
-        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &n_devices);
+        device_info = XListInputDevices (GDK_DISPLAY_XDISPLAY (cdk_display_get_default ()), &n_devices);
         if (device_info == NULL)
                 return FALSE;
 

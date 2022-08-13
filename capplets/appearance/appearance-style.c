@@ -348,7 +348,7 @@ color_button_clicked_cb (CtkWidget *colorbutton, AppearanceData *data)
     widget = appearance_capplet_get_widget (data, symbolic_names[i]);
     ctk_color_chooser_get_rgba (CTK_COLOR_CHOOSER (widget), &color);
 
-    colstr = gdk_rgba_to_string (&color);
+    colstr = cdk_rgba_to_string (&color);
     g_string_append_printf (scheme, "%s:%s\n", symbolic_names[i], colstr);
     g_free (colstr);
   }
@@ -992,9 +992,9 @@ style_init (AppearanceData *data)
   gchar *label;
   gint i;
 
-  data->ctk_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/ctk-theme-thumbnailing.png", NULL);
-  data->window_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
-  data->icon_theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
+  data->ctk_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/ctk-theme-thumbnailing.png", NULL);
+  data->window_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/window-theme-thumbnailing.png", NULL);
+  data->icon_theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/icon-theme-thumbnailing.png", NULL);
   data->style_message_area = NULL;
   data->style_message_label = NULL;
   data->style_install_button = NULL;

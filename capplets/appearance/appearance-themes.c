@@ -131,7 +131,7 @@ static GdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, Appear
 
 	if (thumb_filename != NULL)
 	{
-		thumb = gdk_pixbuf_new_from_file(thumb_filename, NULL);
+		thumb = cdk_pixbuf_new_from_file(thumb_filename, NULL);
 		g_free(thumb_filename);
 	}
 
@@ -1001,7 +1001,7 @@ void themes_init(AppearanceData* data)
   data->theme_message_area = NULL;
   data->theme_info_icon = NULL;
   data->theme_error_icon = NULL;
-  data->theme_icon = gdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/theme-thumbnailing.png", NULL);
+  data->theme_icon = cdk_pixbuf_new_from_file (CAFECC_PIXMAP_DIR "/theme-thumbnailing.png", NULL);
   data->theme_store = theme_store =
       ctk_list_store_new (NUM_COLS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 

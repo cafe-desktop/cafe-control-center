@@ -129,26 +129,26 @@ void cafe_wp_item_update (CafeWPItem *item) {
 
   s = g_settings_get_string (settings, WP_PCOLOR_KEY);
   if (s != NULL) {
-    gdk_rgba_parse (&color1, s);
+    cdk_rgba_parse (&color1, s);
     g_free (s);
   }
 
   s = g_settings_get_string (settings, WP_SCOLOR_KEY);
   if (s != NULL) {
-    gdk_rgba_parse (&color2, s);
+    cdk_rgba_parse (&color2, s);
     g_free (s);
   }
 
   g_object_unref (settings);
 
   if (item->pcolor != NULL)
-    gdk_rgba_free (item->pcolor);
+    cdk_rgba_free (item->pcolor);
 
   if (item->scolor != NULL)
-    gdk_rgba_free (item->scolor);
+    cdk_rgba_free (item->scolor);
 
-  item->pcolor = gdk_rgba_copy (&color1);
-  item->scolor = gdk_rgba_copy (&color2);
+  item->pcolor = cdk_rgba_copy (&color1);
+  item->scolor = cdk_rgba_copy (&color2);
 }
 
 CafeWPItem * cafe_wp_item_new (const gchar * filename,
@@ -192,10 +192,10 @@ void cafe_wp_item_free (CafeWPItem * item) {
   g_free (item->description);
 
   if (item->pcolor != NULL)
-    gdk_rgba_free (item->pcolor);
+    cdk_rgba_free (item->pcolor);
 
   if (item->scolor != NULL)
-    gdk_rgba_free (item->scolor);
+    cdk_rgba_free (item->scolor);
 
   cafe_wp_info_free (item->fileinfo);
   if (item->bg)
@@ -213,21 +213,21 @@ add_slideshow_frame (GdkPixbuf *pixbuf)
   GdkPixbuf *tmp;
   gint w, h;
 
-  w = gdk_pixbuf_get_width (pixbuf);
-  h = gdk_pixbuf_get_height (pixbuf);
+  w = cdk_pixbuf_get_width (pixbuf);
+  h = cdk_pixbuf_get_height (pixbuf);
 
-  sheet = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
-  gdk_pixbuf_fill (sheet, 0x00000000);
-  sheet2 = gdk_pixbuf_new_subpixbuf (sheet, 1, 1, w - 2, h - 2);
-  gdk_pixbuf_fill (sheet2, 0xffffffff);
+  sheet = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+  cdk_pixbuf_fill (sheet, 0x00000000);
+  sheet2 = cdk_pixbuf_new_subpixbuf (sheet, 1, 1, w - 2, h - 2);
+  cdk_pixbuf_fill (sheet2, 0xffffffff);
   g_object_unref (sheet2);
 
-  tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
+  tmp = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
 
-  gdk_pixbuf_fill (tmp, 0x00000000);
-  gdk_pixbuf_composite (sheet, tmp, 6, 6, w, h, 6.0, 6.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
-  gdk_pixbuf_composite (sheet, tmp, 3, 3, w, h, 3.0, 3.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
-  gdk_pixbuf_composite (pixbuf, tmp, 0, 0, w, h, 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_fill (tmp, 0x00000000);
+  cdk_pixbuf_composite (sheet, tmp, 6, 6, w, h, 6.0, 6.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_composite (sheet, tmp, 3, 3, w, h, 3.0, 3.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_composite (pixbuf, tmp, 0, 0, w, h, 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
 
   g_object_unref (sheet);
 
@@ -244,9 +244,9 @@ GdkPixbuf * cafe_wp_item_get_frame_thumbnail (CafeWPItem * item,
   set_bg_properties (item);
 
   if (frame != -1)
-    pixbuf = cafe_bg_create_frame_thumbnail (item->bg, thumbs, gdk_screen_get_default (), width, height, frame);
+    pixbuf = cafe_bg_create_frame_thumbnail (item->bg, thumbs, cdk_screen_get_default (), width, height, frame);
   else
-    pixbuf = cafe_bg_create_thumbnail (item->bg, thumbs, gdk_screen_get_default(), width, height);
+    pixbuf = cafe_bg_create_thumbnail (item->bg, thumbs, cdk_screen_get_default(), width, height);
 
   if (pixbuf && cafe_bg_changes_with_time (item->bg))
     {
