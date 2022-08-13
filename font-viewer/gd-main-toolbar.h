@@ -56,19 +56,19 @@ typedef struct _GdMainToolbarPrivate GdMainToolbarPrivate;
 
 struct _GdMainToolbar
 {
-  GtkToolbar parent;
+  CtkToolbar parent;
 
   GdMainToolbarPrivate *priv;
 };
 
 struct _GdMainToolbarClass
 {
-  GtkToolbarClass parent_class;
+  CtkToolbarClass parent_class;
 };
 
 GType gd_main_toolbar_get_type (void) G_GNUC_CONST;
 
-GtkWidget     *gd_main_toolbar_new (void);
+CtkWidget     *gd_main_toolbar_new (void);
 
 void        gd_main_toolbar_set_labels (GdMainToolbar *self,
                                         const gchar *primary,
@@ -77,28 +77,28 @@ void        gd_main_toolbar_set_labels (GdMainToolbar *self,
 void        gd_main_toolbar_set_labels_menu (GdMainToolbar *self,
                                              GMenuModel    *menu);
 
-GtkWidget * gd_main_toolbar_add_mode (GdMainToolbar *self,
+CtkWidget * gd_main_toolbar_add_mode (GdMainToolbar *self,
                                       const gchar *label);
 
 void        gd_main_toolbar_clear (GdMainToolbar *self);
 
-GtkWidget * gd_main_toolbar_add_button (GdMainToolbar *self,
+CtkWidget * gd_main_toolbar_add_button (GdMainToolbar *self,
                                         const gchar *icon_name,
                                         const gchar *label,
                                         gboolean pack_start);
 
-GtkWidget * gd_main_toolbar_add_toggle (GdMainToolbar *self,
+CtkWidget * gd_main_toolbar_add_toggle (GdMainToolbar *self,
                                         const gchar *icon_name,
                                         const gchar *label,
                                         gboolean pack_start);
 
-GtkWidget * gd_main_toolbar_add_menu (GdMainToolbar *self,
+CtkWidget * gd_main_toolbar_add_menu (GdMainToolbar *self,
                                       const gchar *icon_name,
                                       const gchar *label,
                                       gboolean pack_start);
 
 void        gd_main_toolbar_add_widget (GdMainToolbar *self,
-                                        GtkWidget *widget,
+                                        CtkWidget *widget,
                                         gboolean pack_start);
 
 gboolean    gd_main_toolbar_get_show_modes (GdMainToolbar *self);

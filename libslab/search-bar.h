@@ -36,19 +36,19 @@ extern "C" {
 
 typedef struct
 {
-	GtkBox parent;
+	CtkBox parent;
 } NldSearchBar;
 
 typedef struct
 {
-	GtkBoxClass parent_class;
+	CtkBoxClass parent_class;
 
 	void (*search) (NldSearchBar *, const char *text);
 } NldSearchBarClass;
 
 GType nld_search_bar_get_type (void);
 
-GtkWidget *nld_search_bar_new (void);
+CtkWidget *nld_search_bar_new (void);
 
 void nld_search_bar_clear (NldSearchBar * search_bar);
 gboolean nld_search_bar_has_focus (NldSearchBar * search_bar);

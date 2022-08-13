@@ -42,24 +42,24 @@ typedef struct _ShellWindowClass ShellWindowClass;
 
 struct _ShellWindow
 {
-	GtkFrame frame;
+	CtkFrame frame;
 
-	GtkBox *_hbox;
-	GtkWidget *_left_pane;
-	GtkWidget *_right_pane;
+	CtkBox *_hbox;
+	CtkWidget *_left_pane;
+	CtkWidget *_right_pane;
 
 	gulong resize_handler_id;
 };
 
 struct _ShellWindowClass
 {
-	GtkFrameClass parent_class;
+	CtkFrameClass parent_class;
 };
 
 GType shell_window_get_type (void);
-GtkWidget *shell_window_new (AppShellData * app_data);
-void shell_window_set_contents (ShellWindow * window, GtkWidget * left_pane,
-	GtkWidget * right_pane);
+CtkWidget *shell_window_new (AppShellData * app_data);
+void shell_window_set_contents (ShellWindow * window, CtkWidget * left_pane,
+	CtkWidget * right_pane);
 void shell_window_clear_resize_handler (ShellWindow * win);
 
 #ifdef __cplusplus

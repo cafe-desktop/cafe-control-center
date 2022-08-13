@@ -22,7 +22,7 @@
 
 G_DEFINE_TYPE_WITH_CODE (FooScrollArea, foo_scroll_area, GTK_TYPE_CONTAINER, G_IMPLEMENT_INTERFACE (GTK_TYPE_SCROLLABLE, NULL));
 
-static GtkWidgetClass *parent_class;
+static CtkWidgetClass *parent_class;
 
 typedef struct BackingStore BackingStore;
 
@@ -71,11 +71,11 @@ struct FooScrollAreaPrivate
     int				width;
     int				height;
 
-    GtkAdjustment	       *hadj;
-    GtkAdjustment	       *vadj;
+    CtkAdjustment	       *hadj;
+    CtkAdjustment	       *vadj;
 
-    GtkScrollablePolicy hscroll_policy;
-    GtkScrollablePolicy vscroll_policy;
+    CtkScrollablePolicy hscroll_policy;
+    CtkScrollablePolicy vscroll_policy;
 
     int			        x_offset;
     int				y_offset;
@@ -115,33 +115,33 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-static void foo_scroll_area_get_preferred_width (GtkWidget *widget,
+static void foo_scroll_area_get_preferred_width (CtkWidget *widget,
 						 gint *minimum,
 						 gint *natural);
-static void foo_scroll_area_get_preferred_height (GtkWidget *widget,
+static void foo_scroll_area_get_preferred_height (CtkWidget *widget,
 						 gint *minimum,
 						 gint *natural);
-static gboolean foo_scroll_area_draw (GtkWidget *widget,
+static gboolean foo_scroll_area_draw (CtkWidget *widget,
 				      cairo_t *cr);
-static void foo_scroll_area_size_allocate (GtkWidget *widget,
-					   GtkAllocation *allocation);
+static void foo_scroll_area_size_allocate (CtkWidget *widget,
+					   CtkAllocation *allocation);
 static void foo_scroll_area_set_hadjustment (FooScrollArea *scroll_area,
-					     GtkAdjustment *hadjustment);
+					     CtkAdjustment *hadjustment);
 static void foo_scroll_area_set_vadjustment (FooScrollArea *scroll_area,
-					     GtkAdjustment *vadjustment);
-static void foo_scroll_area_realize (GtkWidget *widget);
-static void foo_scroll_area_unrealize (GtkWidget *widget);
-static void foo_scroll_area_map (GtkWidget *widget);
-static void foo_scroll_area_unmap (GtkWidget *widget);
-static gboolean foo_scroll_area_button_press (GtkWidget *widget,
+					     CtkAdjustment *vadjustment);
+static void foo_scroll_area_realize (CtkWidget *widget);
+static void foo_scroll_area_unrealize (CtkWidget *widget);
+static void foo_scroll_area_map (CtkWidget *widget);
+static void foo_scroll_area_unmap (CtkWidget *widget);
+static gboolean foo_scroll_area_button_press (CtkWidget *widget,
 					      GdkEventButton *event);
-static gboolean foo_scroll_area_button_release (GtkWidget *widget,
+static gboolean foo_scroll_area_button_release (CtkWidget *widget,
 						GdkEventButton *event);
-static gboolean foo_scroll_area_motion (GtkWidget *widget,
+static gboolean foo_scroll_area_motion (CtkWidget *widget,
 					GdkEventMotion *event);
 
 static void
-foo_scroll_area_map (GtkWidget *widget)
+foo_scroll_area_map (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
@@ -152,7 +152,7 @@ foo_scroll_area_map (GtkWidget *widget)
 }
 
 static void
-foo_scroll_area_unmap (GtkWidget *widget)
+foo_scroll_area_unmap (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
@@ -233,7 +233,7 @@ static void
 foo_scroll_area_class_init (FooScrollAreaClass *class)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (class);
-    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
+    CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
 
     object_class->finalize = foo_scroll_area_finalize;
     object_class->set_property = foo_scroll_area_set_property;
@@ -285,7 +285,7 @@ foo_scroll_area_class_init (FooScrollAreaClass *class)
 		      G_TYPE_POINTER);
 }
 
-static GtkAdjustment *
+static CtkAdjustment *
 new_adjustment (void)
 {
     return GTK_ADJUSTMENT (ctk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
@@ -294,7 +294,7 @@ new_adjustment (void)
 static void
 foo_scroll_area_init (FooScrollArea *scroll_area)
 {
-    GtkWidget *widget;
+    CtkWidget *widget;
 
     widget = GTK_WIDGET (scroll_area);
 
@@ -379,8 +379,8 @@ static void
 get_viewport (FooScrollArea *scroll_area,
 	      GdkRectangle  *viewport)
 {
-    GtkAllocation allocation;
-    GtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkAllocation allocation;
+    CtkWidget *widget = GTK_WIDGET (scroll_area);
 
     ctk_widget_get_allocation (widget, &allocation);
 
@@ -456,7 +456,7 @@ setup_background_cr (GdkWindow *window,
 }
 
 static void
-initialize_background (GtkWidget *widget,
+initialize_background (CtkWidget *widget,
 		       cairo_t   *cr)
 {
     setup_background_cr (ctk_widget_get_window (widget), cr, 0, 0);
@@ -465,13 +465,13 @@ initialize_background (GtkWidget *widget,
 }
 
 static gboolean
-foo_scroll_area_draw (GtkWidget *widget,
+foo_scroll_area_draw (CtkWidget *widget,
                       cairo_t *widget_cr)
 {
     FooScrollArea *scroll_area = FOO_SCROLL_AREA (widget);
     cairo_t *cr;
     cairo_region_t *region;
-    GtkAllocation widget_allocation;
+    CtkAllocation widget_allocation;
 
     /* Setup input areas */
     clear_exposed_input_region (scroll_area, scroll_area->priv->update_region);
@@ -553,7 +553,7 @@ emit_viewport_changed (FooScrollArea *scroll_area,
 }
 
 static void
-clamp_adjustment (GtkAdjustment *adj)
+clamp_adjustment (CtkAdjustment *adj)
 {
     if (ctk_adjustment_get_upper (adj) >= ctk_adjustment_get_page_size (adj))
 	ctk_adjustment_set_value (adj, CLAMP (ctk_adjustment_get_value (adj), 0.0,
@@ -566,10 +566,10 @@ clamp_adjustment (GtkAdjustment *adj)
 static gboolean
 set_adjustment_values (FooScrollArea *scroll_area)
 {
-    GtkAllocation allocation;
+    CtkAllocation allocation;
 
-    GtkAdjustment *hadj = scroll_area->priv->hadj;
-    GtkAdjustment *vadj = scroll_area->priv->vadj;
+    CtkAdjustment *hadj = scroll_area->priv->hadj;
+    CtkAdjustment *vadj = scroll_area->priv->vadj;
 
     /* Horizontal */
     ctk_widget_get_allocation (GTK_WIDGET (scroll_area), &allocation);
@@ -597,11 +597,11 @@ set_adjustment_values (FooScrollArea *scroll_area)
 }
 
 static void
-foo_scroll_area_realize (GtkWidget *widget)
+foo_scroll_area_realize (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
     GdkWindowAttr attributes;
-    GtkAllocation widget_allocation;
+    CtkAllocation widget_allocation;
     GdkWindow *window;
     gint attributes_mask;
     cairo_t *cr;
@@ -644,7 +644,7 @@ foo_scroll_area_realize (GtkWidget *widget)
 }
 
 static void
-foo_scroll_area_unrealize (GtkWidget *widget)
+foo_scroll_area_unrealize (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
@@ -659,10 +659,10 @@ foo_scroll_area_unrealize (GtkWidget *widget)
 }
 
 static cairo_surface_t *
-create_new_surface (GtkWidget *widget,
+create_new_surface (CtkWidget *widget,
                     cairo_surface_t *old)
 {
-    GtkAllocation widget_allocation;
+    CtkAllocation widget_allocation;
     cairo_t *cr;
     cairo_surface_t *new;
 
@@ -714,15 +714,15 @@ _cairo_region_xor (cairo_region_t *dst, const cairo_region_t *src)
 }
 
 static void
-foo_scroll_area_size_allocate (GtkWidget     *widget,
-			       GtkAllocation *allocation)
+foo_scroll_area_size_allocate (CtkWidget     *widget,
+			       CtkAllocation *allocation)
 {
     FooScrollArea *scroll_area = FOO_SCROLL_AREA (widget);
     GdkRectangle new_viewport;
     GdkRectangle old_viewport;
     cairo_region_t *old_allocation;
     cairo_region_t *invalid;
-    GtkAllocation widget_allocation;
+    CtkAllocation widget_allocation;
 
     get_viewport (scroll_area, &old_viewport);
 
@@ -787,7 +787,7 @@ process_event (FooScrollArea	       *scroll_area,
 	       int			x,
 	       int			y)
 {
-    GtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = GTK_WIDGET (scroll_area);
     int i;
 
     allocation_to_canvas (scroll_area, &x, &y);
@@ -869,7 +869,7 @@ process_gdk_event (FooScrollArea *scroll_area,
 }
 
 static gboolean
-foo_scroll_area_button_press (GtkWidget *widget,
+foo_scroll_area_button_press (CtkWidget *widget,
 			      GdkEventButton *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
@@ -880,7 +880,7 @@ foo_scroll_area_button_press (GtkWidget *widget,
 }
 
 static gboolean
-foo_scroll_area_button_release (GtkWidget *widget,
+foo_scroll_area_button_release (CtkWidget *widget,
 				GdkEventButton *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
@@ -891,7 +891,7 @@ foo_scroll_area_button_release (GtkWidget *widget,
 }
 
 static gboolean
-foo_scroll_area_motion (GtkWidget *widget,
+foo_scroll_area_motion (CtkWidget *widget,
 			GdkEventMotion *event)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
@@ -946,7 +946,7 @@ foo_scroll_area_set_size (FooScrollArea	       *scroll_area,
 }
 
 static void
-foo_scroll_area_get_preferred_width (GtkWidget *widget,
+foo_scroll_area_get_preferred_width (CtkWidget *widget,
                                      gint      *minimum,
                                      gint      *natural)
 {
@@ -961,7 +961,7 @@ foo_scroll_area_get_preferred_width (GtkWidget *widget,
 }
 
 static void
-foo_scroll_area_get_preferred_height (GtkWidget *widget,
+foo_scroll_area_get_preferred_height (CtkWidget *widget,
                                       gint      *minimum,
                                       gint      *natural)
 {
@@ -1035,10 +1035,10 @@ foo_scroll_area_scroll (FooScrollArea *area,
 }
 
 static void
-foo_scrollbar_adjustment_changed (GtkAdjustment *adj,
+foo_scrollbar_adjustment_changed (CtkAdjustment *adj,
 				  FooScrollArea *scroll_area)
 {
-    GtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = GTK_WIDGET (scroll_area);
     gint dx = 0;
     gint dy = 0;
     GdkRectangle old_viewport, new_viewport;
@@ -1075,8 +1075,8 @@ foo_scrollbar_adjustment_changed (GtkAdjustment *adj,
 
 static void
 set_one_adjustment (FooScrollArea *scroll_area,
-		    GtkAdjustment *adjustment,
-		    GtkAdjustment **location)
+		    CtkAdjustment *adjustment,
+		    CtkAdjustment **location)
 {
     g_return_if_fail (location != NULL);
 
@@ -1107,7 +1107,7 @@ set_one_adjustment (FooScrollArea *scroll_area,
 
 static void
 foo_scroll_area_set_hadjustment (FooScrollArea *scroll_area,
-				 GtkAdjustment *hadjustment)
+				 CtkAdjustment *hadjustment)
 {
     set_one_adjustment (scroll_area, hadjustment, &scroll_area->priv->hadj);
 
@@ -1116,7 +1116,7 @@ foo_scroll_area_set_hadjustment (FooScrollArea *scroll_area,
 
 static void
 foo_scroll_area_set_vadjustment (FooScrollArea *scroll_area,
-				 GtkAdjustment *vadjustment)
+				 CtkAdjustment *vadjustment)
 {
     set_one_adjustment (scroll_area, vadjustment, &scroll_area->priv->vadj);
 
@@ -1212,8 +1212,8 @@ foo_scroll_area_add_input_from_stroke (FooScrollArea           *scroll_area,
 void
 foo_scroll_area_invalidate (FooScrollArea *scroll_area)
 {
-    GtkAllocation allocation;
-    GtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkAllocation allocation;
+    CtkWidget *widget = GTK_WIDGET (scroll_area);
 
     ctk_widget_get_allocation (widget, &allocation);
     foo_scroll_area_invalidate_rect (scroll_area,
@@ -1226,8 +1226,8 @@ static void
 canvas_to_window (FooScrollArea *area,
 		  cairo_region_t *region)
 {
-    GtkAllocation allocation;
-    GtkWidget *widget = GTK_WIDGET (area);
+    CtkAllocation allocation;
+    CtkWidget *widget = GTK_WIDGET (area);
 
     ctk_widget_get_allocation (widget, &allocation);
     cairo_region_translate (region,
@@ -1239,8 +1239,8 @@ static void
 window_to_canvas (FooScrollArea *area,
 		  cairo_region_t *region)
 {
-    GtkAllocation allocation;
-    GtkWidget *widget = GTK_WIDGET (area);
+    CtkAllocation allocation;
+    CtkWidget *widget = GTK_WIDGET (area);
 
     ctk_widget_get_allocation (widget, &allocation);
     cairo_region_translate (region,
@@ -1252,7 +1252,7 @@ void
 foo_scroll_area_invalidate_region (FooScrollArea *area,
 				   cairo_region_t     *region)
 {
-    GtkWidget *widget;
+    CtkWidget *widget;
 
     g_return_if_fail (FOO_IS_SCROLL_AREA (area));
 

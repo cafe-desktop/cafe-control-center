@@ -1,16 +1,16 @@
 <sect1 id="config-theme">
-  <title>Gtk+ Theme Selector</title>
+  <title>Ctk+ Theme Selector</title>
   <para>
     The <application>Cafe</application> environment is run by
-    <application>Gtk+</application>.  <application>Gtk+</application>
+    <application>Ctk+</application>.  <application>Ctk+</application>
     allows most elements in your desktop to be themed to the look you
-    want.  The <application>Gtk+ Theme Selector</application> lets you
+    want.  The <application>Ctk+ Theme Selector</application> lets you
     select the theme to use.
   </para>
   <sect2 id="config-theme-setting">
     <title>Setting Your Theme</title>
     <para>
-      The top of the <application>Gtk+ Theme Selector</application>
+      The top of the <application>Ctk+ Theme Selector</application>
       has a list of installed themes.  Simply click on a theme and
       your changes will be made.
     </para>

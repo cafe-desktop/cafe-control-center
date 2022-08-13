@@ -44,7 +44,7 @@ typedef void (*LayoutIterFunc) (XklConfigRegistry * config,
 				ConfigItemProcessFunc func, gpointer data);
 
 typedef struct {
-	GtkListStore *list_store;
+	CtkListStore *list_store;
 	const gchar *lang_id;
 } AddVariantData;
 
@@ -58,7 +58,7 @@ static void
 
 
 
-xkb_layout_chooser_available_layouts_fill (GtkBuilder * chooser_dialog,
+xkb_layout_chooser_available_layouts_fill (CtkBuilder * chooser_dialog,
 					   const gchar cblid[],
 					   const gchar cbvid[],
 					   LayoutIterFunc layout_iterator,
@@ -76,7 +76,7 @@ static void
 
 
 
-xkb_layout_chooser_available_language_variants_fill (GtkBuilder *
+xkb_layout_chooser_available_language_variants_fill (CtkBuilder *
 						     chooser_dialog);
 
 static void
@@ -89,7 +89,7 @@ static void
 
 
 
-xkb_layout_chooser_available_country_variants_fill (GtkBuilder *
+xkb_layout_chooser_available_country_variants_fill (CtkBuilder *
 						    chooser_dialog);
 
 static void
@@ -102,7 +102,7 @@ static void
 					 (parent_config_item->name,
 					  config_item->name)) :
 	    xci_desc_to_utf8 (parent_config_item);
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	const gchar *xkb_id =
 	    config_item ?
 	    cafekbd_keyboard_config_merge_items (parent_config_item->name,
@@ -148,7 +148,7 @@ xkb_layout_chooser_add_language_to_available_languages (XklConfigRegistry *
 							config_registry,
 							XklConfigItem *
 							config_item,
-							GtkListStore *
+							CtkListStore *
 							list_store)
 {
 	ctk_list_store_insert_with_values (list_store, NULL, -1,
@@ -165,7 +165,7 @@ xkb_layout_chooser_add_country_to_available_countries (XklConfigRegistry *
 						       config_registry,
 						       XklConfigItem *
 						       config_item,
-						       GtkListStore *
+						       CtkListStore *
 						       list_store)
 {
 	ctk_list_store_insert_with_values (list_store, NULL, -1,
@@ -178,14 +178,14 @@ xkb_layout_chooser_add_country_to_available_countries (XklConfigRegistry *
 }
 
 static void
-xkb_layout_chooser_enable_disable_buttons (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_enable_disable_buttons (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *cbv =
+	CtkWidget *cbv =
 	    CWID (ctk_notebook_get_current_page
 		  (GTK_NOTEBOOK (CWID ("choosers_nb"))) ?
 		  "xkb_language_variants_available" :
 		  "xkb_country_variants_available");
-	GtkTreeIter viter;
+	CtkTreeIter viter;
 	gboolean enable_ok =
 	    ctk_combo_box_get_active_iter (GTK_COMBO_BOX (cbv),
 					   &viter);
@@ -198,14 +198,14 @@ xkb_layout_chooser_enable_disable_buttons (GtkBuilder * chooser_dialog)
 }
 
 static void
-xkb_layout_chooser_available_variant_changed (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_available_variant_changed (CtkBuilder * chooser_dialog)
 {
 	xkb_layout_preview_update (chooser_dialog);
 	xkb_layout_chooser_enable_disable_buttons (chooser_dialog);
 }
 
 static void
-xkb_layout_chooser_available_language_changed (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_available_language_changed (CtkBuilder * chooser_dialog)
 {
 	xkb_layout_chooser_available_language_variants_fill
 	    (chooser_dialog);
@@ -213,7 +213,7 @@ xkb_layout_chooser_available_language_changed (GtkBuilder * chooser_dialog)
 }
 
 static void
-xkb_layout_chooser_available_country_changed (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_available_country_changed (CtkBuilder * chooser_dialog)
 {
 	xkb_layout_chooser_available_country_variants_fill
 	    (chooser_dialog);
@@ -221,28 +221,28 @@ xkb_layout_chooser_available_country_changed (GtkBuilder * chooser_dialog)
 }
 
 static void
-xkb_layout_chooser_page_changed (GtkWidget * notebook, GtkWidget * page,
+xkb_layout_chooser_page_changed (CtkWidget * notebook, CtkWidget * page,
 				 gint page_num,
-				 GtkBuilder * chooser_dialog)
+				 CtkBuilder * chooser_dialog)
 {
 	xkb_layout_chooser_available_variant_changed (chooser_dialog);
 }
 
 static void
-xkb_layout_chooser_available_language_variants_fill (GtkBuilder *
+xkb_layout_chooser_available_language_variants_fill (CtkBuilder *
 						     chooser_dialog)
 {
-	GtkWidget *cbl = CWID ("xkb_languages_available");
-	GtkWidget *cbv = CWID ("xkb_language_variants_available");
-	GtkListStore *list_store;
-	GtkTreeIter liter;
+	CtkWidget *cbl = CWID ("xkb_languages_available");
+	CtkWidget *cbv = CWID ("xkb_language_variants_available");
+	CtkListStore *list_store;
+	CtkTreeIter liter;
 
 	list_store = ctk_list_store_new
 	    (4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
 	     G_TYPE_STRING);
 
 	if (ctk_combo_box_get_active_iter (GTK_COMBO_BOX (cbl), &liter)) {
-		GtkTreeModel *lm =
+		CtkTreeModel *lm =
 		    ctk_combo_box_get_model (GTK_COMBO_BOX (cbl));
 		gchar *lang_id;
 		AddVariantData data = { list_store, 0 };
@@ -272,20 +272,20 @@ xkb_layout_chooser_available_language_variants_fill (GtkBuilder *
 }
 
 static void
-xkb_layout_chooser_available_country_variants_fill (GtkBuilder *
+xkb_layout_chooser_available_country_variants_fill (CtkBuilder *
 						    chooser_dialog)
 {
-	GtkWidget *cbl = CWID ("xkb_countries_available");
-	GtkWidget *cbv = CWID ("xkb_country_variants_available");
-	GtkListStore *list_store;
-	GtkTreeIter liter;
+	CtkWidget *cbl = CWID ("xkb_countries_available");
+	CtkWidget *cbv = CWID ("xkb_country_variants_available");
+	CtkListStore *list_store;
+	CtkTreeIter liter;
 
 	list_store = ctk_list_store_new
 	    (4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
 	     G_TYPE_STRING);
 
 	if (ctk_combo_box_get_active_iter (GTK_COMBO_BOX (cbl), &liter)) {
-		GtkTreeModel *lm =
+		CtkTreeModel *lm =
 		    ctk_combo_box_get_model (GTK_COMBO_BOX (cbl));
 		gchar *country_id;
 		AddVariantData data = { list_store, 0 };
@@ -314,7 +314,7 @@ xkb_layout_chooser_available_country_variants_fill (GtkBuilder *
 }
 
 static void
-xkb_layout_chooser_available_layouts_fill (GtkBuilder *
+xkb_layout_chooser_available_layouts_fill (CtkBuilder *
 					   chooser_dialog,
 					   const gchar cblid[],
 					   const gchar cbvid[],
@@ -323,10 +323,10 @@ xkb_layout_chooser_available_layouts_fill (GtkBuilder *
 					   layout_handler,
 					   GCallback combo_changed_notify)
 {
-	GtkWidget *cbl = CWID (cblid);
-	GtkWidget *cbev = CWID (cbvid);
-	GtkCellRenderer *renderer;
-	GtkListStore *list_store;
+	CtkWidget *cbl = CWID (cblid);
+	CtkWidget *cbev = CWID (cbvid);
+	CtkCellRenderer *renderer;
+	CtkListStore *list_store;
 
 	list_store = ctk_list_store_new
 	    (4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
@@ -414,10 +414,10 @@ xkl_layout_chooser_add_default_switcher_if_necessary (GSList *
 }
 
 static void
-xkb_layout_chooser_print (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_print (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *chooser = CWID ("xkb_layout_chooser");
-	GtkWidget *kbdraw =
+	CtkWidget *chooser = CWID ("xkb_layout_chooser");
+	CtkWidget *kbdraw =
 	    GTK_WIDGET (g_object_get_data (G_OBJECT (chooser), "kbdraw"));
 	const char *id =
 	    xkb_layout_chooser_get_selected_id (chooser_dialog);
@@ -431,8 +431,8 @@ xkb_layout_chooser_print (GtkBuilder * chooser_dialog)
 }
 
 static void
-xkb_layout_chooser_response (GtkDialog * dialog,
-			     gint response, GtkBuilder * chooser_dialog)
+xkb_layout_chooser_response (CtkDialog * dialog,
+			     gint response, CtkBuilder * chooser_dialog)
 {
 	GdkRectangle rect;
 
@@ -469,19 +469,19 @@ xkb_layout_chooser_response (GtkDialog * dialog,
 }
 
 void
-xkb_layout_choose (GtkBuilder * dialog)
+xkb_layout_choose (CtkBuilder * dialog)
 {
-	GtkBuilder *chooser_dialog;
+	CtkBuilder *chooser_dialog;
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,
 				       "/org/cafe/mcc/keyboard/cafe-keyboard-properties-layout-chooser.ui",
 				       NULL);
-	GtkWidget *chooser = CWID ("xkb_layout_chooser");
-	GtkWidget *lang_chooser = CWID ("xkb_languages_available");
-	GtkWidget *notebook = CWID ("choosers_nb");
-	GtkWidget *kbdraw = NULL;
-	GtkWidget *toplevel = NULL;
+	CtkWidget *chooser = CWID ("xkb_layout_chooser");
+	CtkWidget *lang_chooser = CWID ("xkb_languages_available");
+	CtkWidget *notebook = CWID ("choosers_nb");
+	CtkWidget *kbdraw = NULL;
+	CtkWidget *toplevel = NULL;
 
 	ctk_window_set_transient_for (GTK_WINDOW (chooser),
 				      GTK_WINDOW (WID
@@ -572,15 +572,15 @@ xkb_layout_choose (GtkBuilder * dialog)
 }
 
 gchar *
-xkb_layout_chooser_get_selected_id (GtkBuilder * chooser_dialog)
+xkb_layout_chooser_get_selected_id (CtkBuilder * chooser_dialog)
 {
-	GtkWidget *cbv =
+	CtkWidget *cbv =
 	    CWID (ctk_notebook_get_current_page
 		  (GTK_NOTEBOOK (CWID ("choosers_nb"))) ?
 		  "xkb_language_variants_available" :
 		  "xkb_country_variants_available");
-	GtkTreeModel *vm = ctk_combo_box_get_model (GTK_COMBO_BOX (cbv));
-	GtkTreeIter viter;
+	CtkTreeModel *vm = ctk_combo_box_get_model (GTK_COMBO_BOX (cbv));
+	CtkTreeIter viter;
 	gchar *v_id;
 
 	if (!ctk_combo_box_get_active_iter (GTK_COMBO_BOX (cbv), &viter))

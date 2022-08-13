@@ -23,7 +23,7 @@
 
 #include <ctk/ctk.h>
 
-void drw_setup_background (GtkWidget *window);
+void drw_setup_background (CtkWidget *window);
 
 
 #endif /* __DRW_UTILS_H__ */

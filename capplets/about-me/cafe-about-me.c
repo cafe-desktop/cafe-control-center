@@ -47,17 +47,17 @@
 
 typedef struct {
 
-	GtkBuilder 	*dialog;
-	GtkWidget	*enable_fingerprint_button;
-	GtkWidget	*disable_fingerprint_button;
-	GtkWidget   	*image_chooser;
+	CtkBuilder 	*dialog;
+	CtkWidget	*enable_fingerprint_button;
+	CtkWidget	*disable_fingerprint_button;
+	CtkWidget   	*image_chooser;
 	GdkPixbuf       *image;
 #if HAVE_ACCOUNTSSERVICE
 	ActUser         *user;
 #endif
 
 	GdkScreen    	*screen;
-	GtkIconTheme 	*theme;
+	CtkIconTheme 	*theme;
 	CafeDesktopThumbnailFactory *thumbs;
 
 	gboolean      	 have_image;
@@ -223,7 +223,7 @@ about_me_load_info (CafeAboutMe *me)
 }
 
 static void
-about_me_update_preview (GtkFileChooser *chooser,
+about_me_update_preview (CtkFileChooser *chooser,
 			 CafeAboutMe   *me)
 {
 	gchar *uri;
@@ -231,7 +231,7 @@ about_me_update_preview (GtkFileChooser *chooser,
 	uri = ctk_file_chooser_get_preview_uri (chooser);
 
 	if (uri) {
-		GtkWidget *image;
+		CtkWidget *image;
 		GdkPixbuf *pixbuf = NULL;
 		GFile *file;
 		GFileInfo *file_info;
@@ -278,15 +278,15 @@ about_me_update_preview (GtkFileChooser *chooser,
 }
 
 static void
-about_me_image_clicked_cb (GtkWidget *button, CafeAboutMe *me)
+about_me_image_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 {
-	GtkFileChooser *chooser_dialog;
+	CtkFileChooser *chooser_dialog;
 	gint response;
-	GtkBuilder *dialog;
-	GtkWidget  *image;
+	CtkBuilder *dialog;
+	CtkWidget  *image;
 	const gchar *chooser_dir = DATADIR"/pixmaps/faces";
 	const gchar *pics_dir;
-	GtkFileFilter *filter;
+	CtkFileFilter *filter;
 
 	dialog = me->dialog;
 
@@ -352,7 +352,7 @@ about_me_image_clicked_cb (GtkWidget *button, CafeAboutMe *me)
 }
 
 static void
-about_me_image_changed_cb (GtkWidget *widget, CafeAboutMe *me)
+about_me_image_changed_cb (CtkWidget *widget, CafeAboutMe *me)
 {
 	me->have_image = TRUE;
 	me->image_changed = TRUE;
@@ -362,10 +362,10 @@ about_me_image_changed_cb (GtkWidget *widget, CafeAboutMe *me)
 /* About Me Dialog Callbacks */
 
 static void
-about_me_icon_theme_changed (GtkWindow    *window,
-			     GtkIconTheme *theme)
+about_me_icon_theme_changed (CtkWindow    *window,
+			     CtkIconTheme *theme)
 {
-	GtkIconInfo *icon;
+	CtkIconInfo *icon;
 
 	icon = ctk_icon_theme_lookup_icon (me->theme, "avatar-default", 80, 0);
 	if (icon != NULL) {
@@ -383,7 +383,7 @@ about_me_icon_theme_changed (GtkWindow    *window,
 }
 
 static void
-about_me_button_clicked_cb (GtkDialog *dialog, gint response_id, CafeAboutMe *me)
+about_me_button_clicked_cb (CtkDialog *dialog, gint response_id, CafeAboutMe *me)
 {
 	if (me->commit_timeout_id) {
 		g_source_remove (me->commit_timeout_id);
@@ -394,16 +394,16 @@ about_me_button_clicked_cb (GtkDialog *dialog, gint response_id, CafeAboutMe *me
 }
 
 static void
-about_me_passwd_clicked_cb (GtkWidget *button, CafeAboutMe *me)
+about_me_passwd_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 {
-	GtkBuilder *dialog;
+	CtkBuilder *dialog;
 
 	dialog = me->dialog;
 	cafe_about_me_password (GTK_WINDOW (WID ("about-me-dialog")));
 }
 
 static void
-about_me_fingerprint_button_clicked_cb (GtkWidget *button, CafeAboutMe *me)
+about_me_fingerprint_button_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 {
 	fingerprint_button_clicked (me->dialog,
 				    me->enable_fingerprint_button,
@@ -425,10 +425,10 @@ static void on_user_is_loaded_changed (ActUser *user, GParamSpec *pspec, CafeAbo
 static gint
 about_me_setup_dialog (void)
 {
-	GtkWidget    *widget;
-	GtkWidget    *main_dialog;
-	GtkIconInfo  *icon;
-	GtkBuilder   *dialog;
+	CtkWidget    *widget;
+	CtkWidget    *main_dialog;
+	CtkIconInfo  *icon;
+	CtkBuilder   *dialog;
 	GError       *error = NULL;
 	gchar        *str;
 #if HAVE_ACCOUNTSSERVICE

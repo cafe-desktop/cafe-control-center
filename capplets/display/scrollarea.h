@@ -50,18 +50,18 @@ typedef void (* FooScrollAreaEventFunc) (FooScrollArea      *area,
 
 struct FooScrollArea
 {
-    GtkContainer parent_instance;
+    CtkContainer parent_instance;
 
     FooScrollAreaPrivate *priv;
 };
 
 struct FooScrollAreaClass
 {
-    GtkContainerClass parent_class;
+    CtkContainerClass parent_class;
 
     void (*set_scroll_adjustments) (FooScrollArea *scroll_area,
-				    GtkAdjustment *hadjustment,
-				    GtkAdjustment *vadjustment);
+				    CtkAdjustment *hadjustment,
+				    CtkAdjustment *vadjustment);
 
     void (*viewport_changed) (FooScrollArea *scroll_area,
 			      GdkRectangle  *old_viewport,

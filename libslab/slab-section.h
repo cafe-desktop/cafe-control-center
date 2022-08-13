@@ -47,26 +47,26 @@ typedef enum
 
 typedef struct
 {
-	GtkBox parent_vbox;
+	CtkBox parent_vbox;
 
-	GtkWidget *title;
-	GtkWidget *contents;
+	CtkWidget *title;
+	CtkWidget *contents;
 	SlabStyle style;
 	gulong expose_handler_id;
-	GtkBox *childbox;
+	CtkBox *childbox;
 	gboolean selected;
 } SlabSection;
 
 typedef struct
 {
-	GtkBoxClass parent_class;
+	CtkBoxClass parent_class;
 } SlabSectionClass;
 
 GType slab_section_get_type (void);
-GtkWidget *slab_section_new (const gchar * title, SlabStyle style);
-GtkWidget *slab_section_new_with_markup (const gchar * title_markup, SlabStyle style);
+CtkWidget *slab_section_new (const gchar * title, SlabStyle style);
+CtkWidget *slab_section_new_with_markup (const gchar * title_markup, SlabStyle style);
 void slab_section_set_title (SlabSection * section, const gchar * title);
-void slab_section_set_contents (SlabSection * section, GtkWidget * contents);
+void slab_section_set_contents (SlabSection * section, CtkWidget * contents);
 void slab_section_set_selected (SlabSection * section, gboolean selected);
 
 #ifdef __cplusplus

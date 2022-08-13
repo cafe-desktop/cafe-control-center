@@ -50,12 +50,12 @@ static GSettings * keyboard_settings = NULL;
 static GSettings * interface_settings = NULL;
 static GSettings * typing_break_settings = NULL;
 
-static GtkBuilder *
+static CtkBuilder *
 create_dialog (void)
 {
-	GtkBuilder *dialog;
-	GtkSizeGroup *size_group;
-	GtkWidget *image;
+	CtkBuilder *dialog;
+	CtkSizeGroup *size_group;
+	CtkWidget *image;
 	GError *error = NULL;
 
 	dialog = ctk_builder_new ();
@@ -94,7 +94,7 @@ create_dialog (void)
 }
 
 static void
-dialog_response (GtkWidget * widget,
+dialog_response (CtkWidget * widget,
 		 gint response_id, guint data)
 {
 	if (response_id == GTK_RESPONSE_HELP)
@@ -104,7 +104,7 @@ dialog_response (GtkWidget * widget,
 }
 
 static void
-setup_dialog (GtkBuilder * dialog)
+setup_dialog (CtkBuilder * dialog)
 {
 	gchar *monitor;
 
@@ -179,7 +179,7 @@ setup_dialog (GtkBuilder * dialog)
 
 	} else {
 		/* don't show the typing break tab if the daemon is not available */
-		GtkNotebook *nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
+		CtkNotebook *nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
 		gint tb_page = ctk_notebook_page_num (nb, WID ("break_enabled_toggle"));
 		ctk_notebook_remove_page (nb, tb_page);
 	}
@@ -194,7 +194,7 @@ setup_dialog (GtkBuilder * dialog)
 int
 main (int argc, char **argv)
 {
-	GtkBuilder *dialog;
+	CtkBuilder *dialog;
 	GOptionContext *context;
 
 	static gboolean apply_only = FALSE;
@@ -243,7 +243,7 @@ main (int argc, char **argv)
 
 	setup_dialog (dialog);
 
-        GtkNotebook* nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
+        CtkNotebook* nb = GTK_NOTEBOOK (WID ("keyboard_notebook"));
         ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),

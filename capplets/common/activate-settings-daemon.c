@@ -10,7 +10,7 @@
 
 static void popup_error_message (void)
 {
-  GtkWidget *dialog;
+  CtkWidget *dialog;
 
   dialog = ctk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_WARNING,
 				   GTK_BUTTONS_OK, _("Unable to start the settings manager 'cafe-settings-daemon'.\n"

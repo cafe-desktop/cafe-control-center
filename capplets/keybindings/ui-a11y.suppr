@@ -1,3 +1,3 @@
-cafe-keybinding-properties.ui://GtkTreeView[@id='shortcut_treeview'] no-labelled-by
-cafe-keybinding-properties.ui://GtkImage[@id='image1'] no-labelled-by
-cafe-keybinding-properties.ui://GtkLabel[@id='label-suggest'] orphan-label
+cafe-keybinding-properties.ui://CtkTreeView[@id='shortcut_treeview'] no-labelled-by
+cafe-keybinding-properties.ui://CtkImage[@id='image1'] no-labelled-by
+cafe-keybinding-properties.ui://CtkLabel[@id='label-suggest'] orphan-label

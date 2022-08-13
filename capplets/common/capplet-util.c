@@ -37,10 +37,10 @@
 #include "capplet-util.h"
 
 static void
-capplet_error_dialog (GtkWindow *parent, char const *msg, GError *err)
+capplet_error_dialog (CtkWindow *parent, char const *msg, GError *err)
 {
 	if (err != NULL) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (GTK_WINDOW (parent),
 			GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -67,7 +67,7 @@ capplet_error_dialog (GtkWindow *parent, char const *msg, GError *err)
  * Havoc happy way.
  **/
 void
-capplet_help (GtkWindow *parent, char const *section)
+capplet_help (CtkWindow *parent, char const *section)
 {
 	GError *error = NULL;
 	char *uri;
@@ -95,7 +95,7 @@ capplet_help (GtkWindow *parent, char const *section)
  * that caused several bugs.
  **/
 void
-capplet_set_icon (GtkWidget *window, char const *icon_file_name)
+capplet_set_icon (CtkWidget *window, char const *icon_file_name)
 {
 	/* Make sure that every window gets an icon */
 	ctk_window_set_default_icon_name (icon_file_name);
@@ -171,10 +171,10 @@ capplet_file_delete_recursive (GFile *file, GError **error)
 }
 
 gboolean
-capplet_dialog_page_scroll_event_cb (GtkWidget *widget, GdkEventScroll *event, GtkWindow *window)
+capplet_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow *window)
 {
-    GtkNotebook *notebook = GTK_NOTEBOOK (widget);
-    GtkWidget *child, *event_widget, *action_widget;
+    CtkNotebook *notebook = GTK_NOTEBOOK (widget);
+    CtkWidget *child, *event_widget, *action_widget;
 
     child = ctk_notebook_get_nth_page (notebook, ctk_notebook_get_current_page (notebook));
     if (child == NULL)

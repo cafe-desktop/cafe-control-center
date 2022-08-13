@@ -34,7 +34,7 @@ double_click_detector_class_init (DoubleClickDetectorClass * detector_class)
 static void
 double_click_detector_init (DoubleClickDetector * detector)
 {
-	GtkSettings *settings;
+	CtkSettings *settings;
 	gint click_interval;
 
 	settings = ctk_settings_get_default ();

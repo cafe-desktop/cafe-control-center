@@ -45,19 +45,19 @@ typedef enum {
 
 struct _FileTransferDialog
 {
-	GtkDialog dialog;
+	CtkDialog dialog;
 
 	FileTransferDialogPrivate *priv;
 };
 
 struct _FileTransferDialogClass
 {
-	GtkDialogClass parent_class;
+	CtkDialogClass parent_class;
 };
 
 GType	       file_transfer_dialog_get_type (void);
-GtkWidget*     file_transfer_dialog_new (void);
-GtkWidget*     file_transfer_dialog_new_with_parent (GtkWindow *parent);
+CtkWidget*     file_transfer_dialog_new (void);
+CtkWidget*     file_transfer_dialog_new_with_parent (CtkWindow *parent);
 
 void	       file_transfer_dialog_copy_async (FileTransferDialog *dlg,
 						GList *source_files,

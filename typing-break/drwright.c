@@ -69,12 +69,12 @@ typedef enum {
 
 struct _DrWright {
 	/* Widgets. */
-	GtkWidget       *break_window;
+	CtkWidget       *break_window;
 	GList           *secondary_break_windows;
 
 	DrwMonitor      *monitor;
 
-	GtkUIManager    *ui_manager;
+	CtkUIManager    *ui_manager;
 
 	DrwState         state;
 	DrwTimer        *timer;
@@ -98,7 +98,7 @@ struct _DrWright {
 
 	gboolean         blink_on;
 
-	GtkStatusIcon   *icon;
+	CtkStatusIcon   *icon;
 
 	cairo_surface_t *neutral_bar;
 	cairo_surface_t *red_bar;
@@ -107,7 +107,7 @@ struct _DrWright {
 	GdkPixbuf       *composite_bar;
 #endif /* HAVE_APP_INDICATOR */
 
-	GtkWidget      *warn_dialog;
+	CtkWidget      *warn_dialog;
 };
 
 static void     activity_detected_cb           (DrwMonitor     *monitor,
@@ -115,17 +115,17 @@ static void     activity_detected_cb           (DrwMonitor     *monitor,
 static gboolean maybe_change_state             (DrWright       *drwright);
 static gint     get_time_left                  (DrWright       *drwright);
 static gboolean update_status                  (DrWright       *drwright);
-static void     break_window_done_cb           (GtkWidget      *window,
+static void     break_window_done_cb           (CtkWidget      *window,
 						DrWright       *dr);
-static void     break_window_postpone_cb       (GtkWidget      *window,
+static void     break_window_postpone_cb       (CtkWidget      *window,
 						DrWright       *dr);
-static void     break_window_destroy_cb        (GtkWidget      *window,
+static void     break_window_destroy_cb        (CtkWidget      *window,
 						DrWright       *dr);
-static void     popup_break_cb                 (GtkAction      *action,
+static void     popup_break_cb                 (CtkAction      *action,
 						DrWright       *dr);
-static void     popup_preferences_cb           (GtkAction      *action,
+static void     popup_preferences_cb           (CtkAction      *action,
 						DrWright       *dr);
-static void     popup_about_cb                 (GtkAction      *action,
+static void     popup_about_cb                 (CtkAction      *action,
 						DrWright       *dr);
 #ifdef HAVE_APP_INDICATOR
 static void     init_app_indicator             (DrWright       *dr);
@@ -134,7 +134,7 @@ static void     init_tray_icon                 (DrWright       *dr);
 #endif /* HAVE_APP_INDICATOR */
 static GList *  create_secondary_break_windows (void);
 
-static const GtkActionEntry actions[] = {
+static const CtkActionEntry actions[] = {
   {"Preferences", "preferences-desktop", N_("_Preferences"), NULL, NULL, G_CALLBACK (popup_preferences_cb)},
   {"About", "help-about", N_("_About"), NULL, NULL, G_CALLBACK (popup_about_cb)},
   {"TakeABreak", NULL, N_("_Take a Break"), NULL, NULL, G_CALLBACK (popup_break_cb)}
@@ -177,7 +177,7 @@ update_app_indicator (DrWright *dr)
 #else
 
 static void
-set_status_icon (GtkStatusIcon *icon, cairo_surface_t *surface)
+set_status_icon (CtkStatusIcon *icon, cairo_surface_t *surface)
 {
 	GdkPixbuf *pixbuf;
 
@@ -363,7 +363,7 @@ grab_keyboard_on_window (GdkWindow *window,
 }
 
 static gboolean
-break_window_map_event_cb (GtkWidget *widget,
+break_window_map_event_cb (CtkWidget *widget,
 			   GdkEvent  *event,
 			   DrWright  *dr)
 {
@@ -516,7 +516,7 @@ update_status (DrWright *dr)
 	gint       min;
 	gchar     *str;
 #ifdef HAVE_APP_INDICATOR
-	GtkWidget *item;
+	CtkWidget *item;
 #endif /* HAVE_APP_INDICATOR */
 
 	if (!dr->enabled) {
@@ -583,7 +583,7 @@ gsettings_notify_cb (GSettings *settings,
 		 gpointer     user_data)
 {
 	DrWright  *dr = user_data;
-	GtkWidget *item;
+	CtkWidget *item;
 
 	if (!strcmp (key, "type-time")) {
 		dr->type_time = 60 * g_settings_get_int (settings, key);
@@ -610,7 +610,7 @@ gsettings_notify_cb (GSettings *settings,
 }
 
 static void
-popup_break_cb (GtkAction *action, DrWright *dr)
+popup_break_cb (CtkAction *action, DrWright *dr)
 {
 	if (dr->enabled) {
 		dr->state = STATE_BREAK_SETUP;
@@ -619,17 +619,17 @@ popup_break_cb (GtkAction *action, DrWright *dr)
 }
 
 static void
-popup_preferences_cb (GtkAction *action, DrWright *dr)
+popup_preferences_cb (CtkAction *action, DrWright *dr)
 {
 	GdkScreen *screen;
 	GError    *error = NULL;
-	GtkWidget *menu;
+	CtkWidget *menu;
 
 	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 	screen = ctk_widget_get_screen (menu);
 
 	if (!cafe_gdk_spawn_command_line_on_screen (screen, "cafe-keyboard-properties --typing-break", &error)) {
-		GtkWidget *error_dialog;
+		CtkWidget *error_dialog;
 
 		error_dialog = ctk_message_dialog_new (NULL, 0,
 						       GTK_MESSAGE_ERROR,
@@ -647,7 +647,7 @@ popup_preferences_cb (GtkAction *action, DrWright *dr)
 }
 
 static void
-popup_about_cb (GtkAction *action, DrWright *dr)
+popup_about_cb (CtkAction *action, DrWright *dr)
 {
 	gint   i;
 	gchar *authors[] = {
@@ -670,12 +670,12 @@ popup_about_cb (GtkAction *action, DrWright *dr)
 
 #ifndef HAVE_APP_INDICATOR
 static void
-popup_menu_cb (GtkWidget *widget,
+popup_menu_cb (CtkWidget *widget,
 	       guint      button,
 	       guint      activate_time,
 	       DrWright  *dr)
 {
-	GtkWidget *menu;
+	CtkWidget *menu;
 
 	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 
@@ -690,7 +690,7 @@ popup_menu_cb (GtkWidget *widget,
 #endif /* HAVE_APP_INDICATOR */
 
 static void
-break_window_done_cb (GtkWidget *window,
+break_window_done_cb (CtkWidget *window,
 		      DrWright  *dr)
 {
 	ctk_widget_destroy (dr->break_window);
@@ -703,7 +703,7 @@ break_window_done_cb (GtkWidget *window,
 }
 
 static void
-break_window_postpone_cb (GtkWidget *window,
+break_window_postpone_cb (CtkWidget *window,
 			  DrWright  *dr)
 {
 	gint elapsed_time;
@@ -735,7 +735,7 @@ break_window_postpone_cb (GtkWidget *window,
 }
 
 static void
-break_window_destroy_cb (GtkWidget *window,
+break_window_destroy_cb (CtkWidget *window,
 			 DrWright  *dr)
 {
 	GList *l;
@@ -752,7 +752,7 @@ break_window_destroy_cb (GtkWidget *window,
 static void
 init_app_indicator (DrWright *dr)
 {
-	GtkWidget *indicator_menu;
+	CtkWidget *indicator_menu;
 
 	dr->indicator =
 		app_indicator_new_with_path ("typing-break-indicator",
@@ -802,7 +802,7 @@ create_secondary_break_windows (void)
 {
 	GdkDisplay *display;
 	GdkScreen  *screen;
-	GtkWidget  *window;
+	CtkWidget  *window;
 	GList      *windows = NULL;
 	gint        scale;
 
@@ -837,9 +837,9 @@ DrWright *
 drwright_new (void)
 {
 	DrWright  *dr;
-	GtkWidget *item;
+	CtkWidget *item;
 	GSettings *settings;
-	GtkActionGroup *action_group;
+	CtkActionGroup *action_group;
 
 	static const char ui_description[] =
 	  "<ui>"

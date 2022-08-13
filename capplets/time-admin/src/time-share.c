@@ -27,7 +27,7 @@ int ErrorMessage (const char *Title,
                   const char *Msg)
 {
     int nRet;
-    GtkWidget *dialog;
+    CtkWidget *dialog;
 
     dialog = ctk_message_dialog_new (NULL,
                                      GTK_DIALOG_MODAL,
@@ -44,7 +44,7 @@ int ErrorMessage (const char *Title,
     return nRet;
 }
 
-void SetTooltip(GtkWidget *box, gboolean mode)
+void SetTooltip(CtkWidget *box, gboolean mode)
 {
     gchar *text = mode ? NULL : _("Network time synchronization has been set up. Manual time/date setting is disabled.");
     ctk_widget_set_tooltip_text (box, text);

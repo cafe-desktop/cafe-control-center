@@ -40,17 +40,17 @@ typedef struct _DrwBreakWindowClass    DrwBreakWindowClass;
 typedef struct _DrwBreakWindowPrivate  DrwBreakWindowPrivate;
 
 struct _DrwBreakWindow {
-        GtkWindow              parent;
+        CtkWindow              parent;
 
         DrwBreakWindowPrivate *priv;
 };
 
 struct _DrwBreakWindowClass {
-        GtkWindowClass parent_class;
+        CtkWindowClass parent_class;
 };
 
 GType       drw_break_window_get_type (void) G_GNUC_CONST;
-GtkWidget * drw_break_window_new      (void);
+CtkWidget * drw_break_window_new      (void);
 
 #ifdef __cplusplus
 }

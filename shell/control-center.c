@@ -121,7 +121,7 @@ void handle_static_action_clicked(Tile* tile, TileEvent* event, gpointer data)
 }
 
 static void
-activate (GtkApplication *app)
+activate (CtkApplication *app)
 {
 	GList *list;
 	GSList* actions;
@@ -156,7 +156,7 @@ quit (GApplication *app)
 int main(int argc, char* argv[])
 {
 	gboolean hidden = FALSE;
-	GtkApplication *app;
+	CtkApplication *app;
 	gint retval;
 	app = ctk_application_new ("org.cafe.cafe-control-center.shell", 0);
 	GError* error;

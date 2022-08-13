@@ -75,7 +75,7 @@ static GSettings *touchpad_settings = NULL;
 struct test_data_t
 {
 	gint *timeout_id;
-	GtkWidget *image;
+	CtkWidget *image;
 };
 
 /* Timeout for the double click test */
@@ -95,7 +95,7 @@ test_maybe_timeout (struct test_data_t *data)
 /* Callback issued when the user clicks the double click testing area. */
 
 static gboolean
-event_box_button_press_event (GtkWidget   *widget,
+event_box_button_press_event (CtkWidget   *widget,
 			      GdkEventButton *event,
 			      gpointer user_data)
 {
@@ -104,7 +104,7 @@ event_box_button_press_event (GtkWidget   *widget,
 	static gint                test_on_timeout_id     = 0;
 	static gint                test_maybe_timeout_id  = 0;
 	static guint32             double_click_timestamp = 0;
-	GtkWidget                 *image;
+	CtkWidget                 *image;
 
 	if (event->type != GDK_BUTTON_PRESS)
 		return FALSE;
@@ -160,15 +160,15 @@ event_box_button_press_event (GtkWidget   *widget,
 }
 
 static void
-orientation_radio_button_release_event (GtkWidget   *widget,
+orientation_radio_button_release_event (CtkWidget   *widget,
 				        GdkEventButton *event)
 {
 	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
 }
 
 static void
-orientation_radio_button_toggled (GtkToggleButton *togglebutton,
-				        GtkBuilder *dialog)
+orientation_radio_button_toggled (CtkToggleButton *togglebutton,
+				        CtkBuilder *dialog)
 {
 	gboolean left_handed;
 	left_handed = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (WID ("left_handed_radio")));
@@ -176,7 +176,7 @@ orientation_radio_button_toggled (GtkToggleButton *togglebutton,
 }
 
 static void
-synaptics_check_capabilities (GtkBuilder *dialog)
+synaptics_check_capabilities (CtkBuilder *dialog)
 {
 	GdkDisplay *display;
 	int numdevices, i;
@@ -224,18 +224,18 @@ synaptics_check_capabilities (GtkBuilder *dialog)
 }
 
 static void
-accel_profile_combobox_changed_callback (GtkWidget *combobox, void *data)
+accel_profile_combobox_changed_callback (CtkWidget *combobox, void *data)
 {
 	AccelProfile value = ctk_combo_box_get_active (GTK_COMBO_BOX (combobox));
 	g_settings_set_enum (mouse_settings, (const gchar *) "accel-profile", value);
 }
 
 static void
-comboxbox_changed (GtkWidget *combobox, GtkBuilder *dialog, const char *key)
+comboxbox_changed (CtkWidget *combobox, CtkBuilder *dialog, const char *key)
 {
 	gint value = ctk_combo_box_get_active (GTK_COMBO_BOX (combobox));
 	gint value2, value3;
-	GtkLabel *warn = GTK_LABEL (WID ("multi_finger_warning"));
+	CtkLabel *warn = GTK_LABEL (WID ("multi_finger_warning"));
 
 	g_settings_set_int (touchpad_settings, (const gchar *) key, value);
 
@@ -246,22 +246,22 @@ comboxbox_changed (GtkWidget *combobox, GtkBuilder *dialog, const char *key)
 }
 
 static void
-comboxbox_two_finger_changed_callback (GtkWidget *combobox, void *data)
+comboxbox_two_finger_changed_callback (CtkWidget *combobox, void *data)
 {
 	comboxbox_changed (combobox, GTK_BUILDER (data), "two-finger-click");
 }
 
 static void
-comboxbox_three_finger_changed_callback (GtkWidget *combobox, void *data)
+comboxbox_three_finger_changed_callback (CtkWidget *combobox, void *data)
 {
 	comboxbox_changed (combobox, GTK_BUILDER (data), "three-finger-click");
 }
 
 /* Set up the property editors in the dialog. */
 static void
-setup_dialog (GtkBuilder *dialog)
+setup_dialog (CtkBuilder *dialog)
 {
-	GtkRadioButton    *radio;
+	CtkRadioButton    *radio;
 
 	/* Orientation radio buttons */
 	radio = GTK_RADIO_BUTTON (WID ("left_handed_radio"));
@@ -346,8 +346,8 @@ setup_dialog (GtkBuilder *dialog)
 
 		char * emulation_values[] = { _("Disabled"), _("Left button"), _("Middle button"), _("Right button") };
 
-		GtkWidget *two_click_comboxbox = ctk_combo_box_text_new ();
-		GtkWidget *three_click_comboxbox = ctk_combo_box_text_new ();
+		CtkWidget *two_click_comboxbox = ctk_combo_box_text_new ();
+		CtkWidget *three_click_comboxbox = ctk_combo_box_text_new ();
 		ctk_box_pack_start (GTK_BOX (WID ("hbox_two_finger_click")), two_click_comboxbox, FALSE, FALSE, 6);
 		ctk_box_pack_start (GTK_BOX (WID ("hbox_three_finger_click")), three_click_comboxbox, FALSE, FALSE, 6);
 		int i;
@@ -378,11 +378,11 @@ setup_dialog (GtkBuilder *dialog)
 
 /* Construct the dialog */
 
-static GtkBuilder *
+static CtkBuilder *
 create_dialog (void)
 {
-	GtkBuilder   *dialog;
-	GtkSizeGroup *size_group;
+	CtkBuilder   *dialog;
+	CtkSizeGroup *size_group;
 	GError       *error = NULL;
 
 	dialog = ctk_builder_new ();
@@ -417,7 +417,7 @@ create_dialog (void)
 /* Callback issued when a button is clicked on the dialog */
 
 static void
-dialog_response_cb (GtkDialog *dialog, gint response_id, gpointer data)
+dialog_response_cb (CtkDialog *dialog, gint response_id, gpointer data)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 		capplet_help (GTK_WINDOW (dialog),
@@ -429,8 +429,8 @@ dialog_response_cb (GtkDialog *dialog, gint response_id, gpointer data)
 int
 main (int argc, char **argv)
 {
-	GtkBuilder     *dialog;
-	GtkWidget      *dialog_win, *w;
+	CtkBuilder     *dialog;
+	CtkWidget      *dialog_win, *w;
 	gchar *start_page = NULL;
 
 	GOptionContext *context;
@@ -463,7 +463,7 @@ main (int argc, char **argv)
 		g_signal_connect (dialog_win, "response",
 				  G_CALLBACK (dialog_response_cb), NULL);
 
-                GtkNotebook* nb = GTK_NOTEBOOK (WID ("prefs_widget"));
+                CtkNotebook* nb = GTK_NOTEBOOK (WID ("prefs_widget"));
                 ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
                 g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                                   G_CALLBACK (capplet_dialog_page_scroll_event_cb),

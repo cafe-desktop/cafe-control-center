@@ -23,8 +23,8 @@
 #include "app-shell.h"
 #include "app-resizer.h"
 
-static void app_resizer_size_allocate (GtkWidget * resizer, GtkAllocation * allocation);
-static gboolean app_resizer_paint_window (GtkWidget * widget, cairo_t * cr, AppShellData * app_data);
+static void app_resizer_size_allocate (CtkWidget * resizer, CtkAllocation * allocation);
+static gboolean app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_data);
 
 G_DEFINE_TYPE (AppResizer, app_resizer, GTK_TYPE_LAYOUT);
 
@@ -32,7 +32,7 @@ G_DEFINE_TYPE (AppResizer, app_resizer, GTK_TYPE_LAYOUT);
 static void
 app_resizer_class_init (AppResizerClass * klass)
 {
-	GtkWidgetClass *widget_class;
+	CtkWidgetClass *widget_class;
 
 	widget_class = GTK_WIDGET_CLASS (klass);
 	widget_class->size_allocate = app_resizer_size_allocate;
@@ -46,14 +46,14 @@ app_resizer_init (AppResizer * window)
 }
 
 void
-remove_container_entries (GtkContainer * widget)
+remove_container_entries (CtkContainer * widget)
 {
 	GList *children, *l;
 
 	children = ctk_container_get_children (widget);
 	for (l = children; l; l = l->next)
 	{
-		GtkWidget *child = GTK_WIDGET (l->data);
+		CtkWidget *child = GTK_WIDGET (l->data);
 		ctk_container_remove (GTK_CONTAINER (widget), GTK_WIDGET (child));
 	}
 
@@ -62,7 +62,7 @@ remove_container_entries (GtkContainer * widget)
 }
 
 static void
-resize_table (GtkTable * table, gint columns, GList * launcher_list)
+resize_table (CtkTable * table, gint columns, GList * launcher_list)
 {
 	float rows, remainder;
 
@@ -77,14 +77,14 @@ resize_table (GtkTable * table, gint columns, GList * launcher_list)
 }
 
 static void
-relayout_table (GtkTable * table, GList * element_list)
+relayout_table (CtkTable * table, GList * element_list)
 {
 	guint maxcols, maxrows;
 	ctk_table_get_size (GTK_TABLE (table), &maxrows, &maxcols);
 	gint row = 0, col = 0;
 	do
 	{
-		GtkWidget *element = GTK_WIDGET (element_list->data);
+		CtkWidget *element = GTK_WIDGET (element_list->data);
 		ctk_table_attach (table, element, col, col + 1, row, row + 1, GTK_EXPAND | GTK_FILL,
 			GTK_EXPAND | GTK_FILL, 0, 0);
 		col++;
@@ -98,7 +98,7 @@ relayout_table (GtkTable * table, GList * element_list)
 }
 
 void
-app_resizer_layout_table_default (AppResizer * widget, GtkTable * table, GList * element_list)
+app_resizer_layout_table_default (AppResizer * widget, CtkTable * table, GList * element_list)
 {
 	resize_table (table, widget->cur_num_cols, element_list);
 	relayout_table (table, element_list);
@@ -107,7 +107,7 @@ app_resizer_layout_table_default (AppResizer * widget, GtkTable * table, GList *
 static void
 relayout_tables (AppResizer * widget, gint num_cols)
 {
-	GtkTable *table;
+	CtkTable *table;
 	GList *table_list, *launcher_list;
 
 	for (table_list = widget->cached_tables_list; table_list != NULL;
@@ -131,9 +131,9 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 
 		if (resizer->cached_element_width == -1)
 		{
-			GtkTable *table = GTK_TABLE (resizer->cached_tables_list->data);
+			CtkTable *table = GTK_TABLE (resizer->cached_tables_list->data);
 			GList *children = ctk_container_get_children (GTK_CONTAINER (table));
-			GtkWidget *table_element = GTK_WIDGET (children->data);
+			CtkWidget *table_element = GTK_WIDGET (children->data);
 			gint natural_width;
 			g_list_free (children);
 
@@ -176,12 +176,12 @@ app_resizer_set_table_cache (AppResizer * widget, GList * cache_list)
 }
 
 static void
-app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
+app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 {
 	AppResizer *resizer = APP_RESIZER (widget);
-	GtkWidget *child = GTK_WIDGET (APP_RESIZER (resizer)->child);
-	GtkAllocation widget_allocation;
-	GtkRequisition child_requisition;
+	CtkWidget *child = GTK_WIDGET (APP_RESIZER (resizer)->child);
+	CtkAllocation widget_allocation;
+	CtkRequisition child_requisition;
 
 	static gboolean first_time = TRUE;
 	gint new_num_cols;
@@ -204,7 +204,7 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 
 	if (!resizer->cached_tables_list)	/* if everthing is currently filtered out - just return */
 	{
-		GtkAllocation child_allocation;
+		CtkAllocation child_allocation;
 
 		if (GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
 			(*GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
@@ -220,7 +220,7 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 			child_allocation.height);
 		return;
 	}
-	GtkRequisition other_requisiton;
+	CtkRequisition other_requisiton;
 	ctk_widget_get_preferred_size (GTK_WIDGET (resizer->cached_tables_list->data), &other_requisiton, NULL);
 
 	useable_area =
@@ -231,7 +231,7 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 		resizer->cur_num_cols);
 	if (resizer->cur_num_cols != new_num_cols)
 	{
-		GtkRequisition req;
+		CtkRequisition req;
 
 		/* Have to do this so that it requests, and thus gets allocated, new amount */
 		ctk_widget_get_preferred_size (child, &req, NULL);
@@ -246,8 +246,8 @@ app_resizer_size_allocate (GtkWidget * widget, GtkAllocation * allocation)
 		widget_allocation.height);
 }
 
-GtkWidget *
-app_resizer_new (GtkBox * child, gint initial_num_columns, gboolean homogeneous,
+CtkWidget *
+app_resizer_new (CtkBox * child, gint initial_num_columns, gboolean homogeneous,
 	AppShellData * app_data)
 {
 	AppResizer *widget;
@@ -270,9 +270,9 @@ app_resizer_new (GtkBox * child, gint initial_num_columns, gboolean homogeneous,
 }
 
 void
-app_resizer_set_vadjustment_value (GtkWidget * widget, gdouble value)
+app_resizer_set_vadjustment_value (CtkWidget * widget, gdouble value)
 {
-	GtkAdjustment *adjust;
+	CtkAdjustment *adjust;
 
 	adjust = ctk_scrollable_get_vadjustment (GTK_SCROLLABLE (widget));
 
@@ -286,11 +286,11 @@ app_resizer_set_vadjustment_value (GtkWidget * widget, gdouble value)
 }
 
 static gboolean
-app_resizer_paint_window (GtkWidget * widget, cairo_t * cr, AppShellData * app_data)
+app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_data)
 {
 	cairo_save(cr);
 
-	GtkAllocation widget_allocation;
+	CtkAllocation widget_allocation;
 	ctk_widget_get_allocation (widget, &widget_allocation);
 
 	gdk_cairo_set_source_color (cr, ctk_widget_get_style (widget)->base);
@@ -302,8 +302,8 @@ app_resizer_paint_window (GtkWidget * widget, cairo_t * cr, AppShellData * app_d
 
 	if (app_data->selected_group)
 	{
-		GtkWidget *selected_widget = GTK_WIDGET (app_data->selected_group);
-		GtkAllocation selected_widget_allocation;
+		CtkWidget *selected_widget = GTK_WIDGET (app_data->selected_group);
+		CtkAllocation selected_widget_allocation;
 
 		ctk_widget_get_allocation (selected_widget, &selected_widget_allocation);
 

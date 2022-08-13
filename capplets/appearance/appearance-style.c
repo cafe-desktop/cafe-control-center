@@ -54,9 +54,9 @@ static const gchar *symbolic_names[NUM_SYMBOLIC_COLORS] = {
 };
 
 static gchar *
-find_string_in_model (GtkTreeModel *model, const gchar *value, gint column)
+find_string_in_model (CtkTreeModel *model, const gchar *value, gint column)
 {
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   gboolean valid;
   gchar *path = NULL, *test;
 
@@ -85,9 +85,9 @@ find_string_in_model (GtkTreeModel *model, const gchar *value, gint column)
 }
 
 static void
-treeview_gsettings_changed_callback (GSettings *settings, gchar *key, GtkTreeView *list)
+treeview_gsettings_changed_callback (GSettings *settings, gchar *key, CtkTreeView *list)
 {
-  GtkTreeModel *store;
+  CtkTreeModel *store;
   gchar *curr_value;
   gchar *path;
 
@@ -102,8 +102,8 @@ treeview_gsettings_changed_callback (GSettings *settings, gchar *key, GtkTreeVie
    */
   if (!path)
   {
-    GtkListStore *list_store;
-    GtkTreeIter iter, sort_iter;
+    CtkListStore *list_store;
+    CtkTreeIter iter, sort_iter;
     ThemeConvData *conv;
 
     list_store = GTK_LIST_STORE (ctk_tree_model_sort_get_model (GTK_TREE_MODEL_SORT (store)));
@@ -122,21 +122,21 @@ treeview_gsettings_changed_callback (GSettings *settings, gchar *key, GtkTreeVie
     create_thumbnail (curr_value, conv->thumbnail, conv->data);
   }
   /* select the new gsettings theme in treeview */
-  GtkTreeSelection *selection = ctk_tree_view_get_selection (list);
-  GtkTreePath *treepath = ctk_tree_path_new_from_string (path);
+  CtkTreeSelection *selection = ctk_tree_view_get_selection (list);
+  CtkTreePath *treepath = ctk_tree_path_new_from_string (path);
   ctk_tree_selection_select_path (selection, treepath);
   ctk_tree_view_scroll_to_cell (list, treepath, NULL, FALSE, 0, 0);
   ctk_tree_path_free (treepath);
 }
 
 static void
-treeview_selection_changed_callback (GtkTreeSelection *selection, guint data)
+treeview_selection_changed_callback (CtkTreeSelection *selection, guint data)
 {
   GSettings *settings;
   gchar *key;
-  GtkTreeIter iter;
-  GtkTreeModel *model;
-  GtkTreeView *list;
+  CtkTreeIter iter;
+  CtkTreeModel *model;
+  CtkTreeView *list;
 
   list = ctk_tree_selection_get_tree_view (selection);
 
@@ -155,9 +155,9 @@ treeview_selection_changed_callback (GtkTreeSelection *selection, guint data)
 }
 
 static gint
-cursor_theme_sort_func (GtkTreeModel *model,
-                        GtkTreeIter *a,
-                        GtkTreeIter *b,
+cursor_theme_sort_func (CtkTreeModel *model,
+                        CtkTreeIter *a,
+                        CtkTreeIter *b,
                         gpointer user_data)
 {
   gchar *a_label = NULL;
@@ -184,11 +184,11 @@ cursor_theme_sort_func (GtkTreeModel *model,
 }
 
 static void
-style_message_area_response_cb (GtkWidget *w,
+style_message_area_response_cb (CtkWidget *w,
                                 gint response_id,
                                 AppearanceData *data)
 {
-  GtkSettings *settings = ctk_settings_get_default ();
+  CtkSettings *settings = ctk_settings_get_default ();
   gchar *theme;
   gchar *engine_path;
 
@@ -206,7 +206,7 @@ style_message_area_response_cb (GtkWidget *w,
 
 static void update_message_area(AppearanceData* data)
 {
-	GtkSettings* settings = ctk_settings_get_default();
+	CtkSettings* settings = ctk_settings_get_default();
 	gchar* theme = NULL;
 	gchar* engine;
 
@@ -216,10 +216,10 @@ static void update_message_area(AppearanceData* data)
 
 	if (data->style_message_area == NULL)
 	{
-		GtkWidget* hbox;
-		GtkWidget* parent;
-		GtkWidget* icon;
-		GtkWidget* content;
+		CtkWidget* hbox;
+		CtkWidget* parent;
+		CtkWidget* icon;
+		CtkWidget* content;
 
 		if (engine == NULL)
 		{
@@ -258,7 +258,7 @@ static void
 update_color_buttons_from_string (const gchar *color_scheme, AppearanceData *data)
 {
   GdkRGBA colors[NUM_SYMBOLIC_COLORS];
-  GtkWidget *widget;
+  CtkWidget *widget;
   gint i;
 
   if (!cafe_theme_color_scheme_parse (color_scheme, colors))
@@ -272,7 +272,7 @@ update_color_buttons_from_string (const gchar *color_scheme, AppearanceData *dat
 }
 
 static void
-update_color_buttons_from_settings (GtkSettings *settings,
+update_color_buttons_from_settings (CtkSettings *settings,
                                     AppearanceData *data)
 {
   gchar *scheme, *setting;
@@ -297,7 +297,7 @@ color_scheme_changed (GObject    *settings,
 }
 
 static void
-check_color_schemes_enabled (GtkSettings *settings,
+check_color_schemes_enabled (CtkSettings *settings,
                              AppearanceData *data)
 {
   gchar *theme = NULL;
@@ -335,9 +335,9 @@ check_color_schemes_enabled (GtkSettings *settings,
 }
 
 static void
-color_button_clicked_cb (GtkWidget *colorbutton, AppearanceData *data)
+color_button_clicked_cb (CtkWidget *colorbutton, AppearanceData *data)
 {
-  GtkWidget *widget;
+  CtkWidget *widget;
   GdkRGBA color;
   GString *scheme = g_string_new (NULL);
   gchar *colstr;
@@ -368,14 +368,14 @@ color_button_clicked_cb (GtkWidget *colorbutton, AppearanceData *data)
 }
 
 static void
-color_scheme_defaults_button_clicked_cb (GtkWidget *button, AppearanceData *data)
+color_scheme_defaults_button_clicked_cb (CtkWidget *button, AppearanceData *data)
 {
   g_settings_reset (data->interface_settings, COLOR_SCHEME_KEY);
   ctk_widget_set_sensitive (appearance_capplet_get_widget (data, "color_scheme_defaults_button"), FALSE);
 }
 
 static void
-style_response_cb (GtkDialog *dialog, gint response_id)
+style_response_cb (CtkDialog *dialog, gint response_id)
 {
   if (response_id == GTK_RESPONSE_HELP) {
     capplet_help (GTK_WINDOW (dialog), "goscustdesk-61");
@@ -389,7 +389,7 @@ ctk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 {
   CafeThemeInfo *theme = NULL;
   gchar *name;
-  GtkSettings *ctksettings = ctk_settings_get_default ();
+  CtkSettings *ctksettings = ctk_settings_get_default ();
 
   name = g_settings_get_string (settings, key);
   if (name) {
@@ -397,7 +397,7 @@ ctk_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 
     theme = cafe_theme_info_find (name);
 
-    /* Manually update GtkSettings to new ctk+ theme.
+    /* Manually update CtkSettings to new ctk+ theme.
      * This will eventually happen anyway, but we need the
      * info for the color scheme updates already. */
     g_object_get (ctksettings, "ctk-theme-name", &current, NULL);
@@ -458,7 +458,7 @@ cursor_size_changed_cb (int size, AppearanceData *data)
 }
 
 static void
-cursor_size_scale_value_changed_cb (GtkRange *range, AppearanceData *data)
+cursor_size_scale_value_changed_cb (CtkRange *range, AppearanceData *data)
 {
   CafeThemeCursorInfo *theme;
   gchar *name;
@@ -482,10 +482,10 @@ static void
 update_cursor_size_scale (CafeThemeCursorInfo *theme,
                           AppearanceData *data)
 {
-  GtkWidget *cursor_size_scale;
-  GtkWidget *cursor_size_label;
-  GtkWidget *cursor_size_small_label;
-  GtkWidget *cursor_size_large_label;
+  CtkWidget *cursor_size_scale;
+  CtkWidget *cursor_size_label;
+  CtkWidget *cursor_size_small_label;
+  CtkWidget *cursor_size_large_label;
   gboolean sensitive;
   gint size, gsettings_size;
 
@@ -503,9 +503,9 @@ update_cursor_size_scale (CafeThemeCursorInfo *theme,
   gsettings_size = g_settings_get_int (data->mouse_settings, CURSOR_SIZE_KEY);
 
   if (sensitive) {
-    GtkAdjustment *adjustment;
+    CtkAdjustment *adjustment;
     gint i, index;
-    GtkRange *range = GTK_RANGE (cursor_size_scale);
+    CtkRange *range = GTK_RANGE (cursor_size_scale);
 
     adjustment = ctk_range_get_adjustment (range);
     g_object_set (adjustment, "upper", (gdouble) theme->sizes->len - 1, NULL);
@@ -573,10 +573,10 @@ cursor_theme_changed (GSettings *settings, gchar *key, AppearanceData *data)
 static void
 generic_theme_delete (const gchar *tv_name, ThemeType type, AppearanceData *data)
 {
-  GtkTreeView *treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
-  GtkTreeSelection *selection = ctk_tree_view_get_selection (treeview);
-  GtkTreeModel *model;
-  GtkTreeIter iter;
+  CtkTreeView *treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
+  CtkTreeSelection *selection = ctk_tree_view_get_selection (treeview);
+  CtkTreeModel *model;
+  CtkTreeIter iter;
 
   if (ctk_tree_selection_get_selected (selection, &model, &iter)) {
     gchar *name;
@@ -585,8 +585,8 @@ generic_theme_delete (const gchar *tv_name, ThemeType type, AppearanceData *data
 
     if (name != NULL && theme_delete (name, type)) {
       /* remove theme from the model, too */
-      GtkTreeIter child;
-      GtkTreePath *path;
+      CtkTreeIter child;
+      CtkTreePath *path;
 
       path = ctk_tree_model_get_path (model, &iter);
       ctk_tree_model_sort_convert_iter_to_child_iter (
@@ -608,25 +608,25 @@ generic_theme_delete (const gchar *tv_name, ThemeType type, AppearanceData *data
 }
 
 static void
-ctk_theme_delete_cb (GtkWidget *button, AppearanceData *data)
+ctk_theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
   generic_theme_delete ("ctk_themes_list", THEME_TYPE_GTK, data);
 }
 
 static void
-window_theme_delete_cb (GtkWidget *button, AppearanceData *data)
+window_theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
   generic_theme_delete ("window_themes_list", THEME_TYPE_WINDOW, data);
 }
 
 static void
-icon_theme_delete_cb (GtkWidget *button, AppearanceData *data)
+icon_theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
   generic_theme_delete ("icon_themes_list", THEME_TYPE_ICON, data);
 }
 
 static void
-cursor_theme_delete_cb (GtkWidget *button, AppearanceData *data)
+cursor_theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
   generic_theme_delete ("cursor_themes_list", THEME_TYPE_CURSOR, data);
 }
@@ -638,8 +638,8 @@ add_to_treeview (const gchar *tv_name,
 		 GdkPixbuf *theme_thumbnail,
 		 AppearanceData *data)
 {
-  GtkTreeView *treeview;
-  GtkListStore *model;
+  CtkTreeView *treeview;
+  CtkListStore *model;
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
@@ -658,9 +658,9 @@ remove_from_treeview (const gchar *tv_name,
 		      const gchar *theme_name,
 		      AppearanceData *data)
 {
-  GtkTreeView *treeview;
-  GtkListStore *model;
-  GtkTreeIter iter;
+  CtkTreeView *treeview;
+  CtkListStore *model;
+  CtkTreeIter iter;
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
@@ -677,9 +677,9 @@ update_in_treeview (const gchar *tv_name,
 		    const gchar *theme_label,
 		    AppearanceData *data)
 {
-  GtkTreeView *treeview;
-  GtkListStore *model;
-  GtkTreeIter iter;
+  CtkTreeView *treeview;
+  CtkListStore *model;
+  CtkTreeIter iter;
 
   treeview = GTK_TREE_VIEW (appearance_capplet_get_widget (data, tv_name));
   model = GTK_LIST_STORE (
@@ -700,9 +700,9 @@ update_thumbnail_in_treeview (const gchar *tv_name,
 		    GdkPixbuf *theme_thumbnail,
 		    AppearanceData *data)
 {
-  GtkTreeView *treeview;
-  GtkListStore *model;
-  GtkTreeIter iter;
+  CtkTreeView *treeview;
+  CtkListStore *model;
+  CtkTreeIter iter;
 
   if (theme_thumbnail == NULL)
     return;
@@ -837,13 +837,13 @@ changed_on_disk_cb (CafeThemeCommonInfo *theme,
 }
 
 static void
-prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback callback)
+prepare_list (AppearanceData *data, CtkWidget *list, ThemeType type, GCallback callback)
 {
-  GtkListStore *store;
+  CtkListStore *store;
   GList *l, *themes = NULL;
-  GtkCellRenderer *renderer;
-  GtkTreeViewColumn *column;
-  GtkTreeModel *sort_model;
+  CtkCellRenderer *renderer;
+  CtkTreeViewColumn *column;
+  CtkTreeModel *sort_model;
   GdkPixbuf *thumbnail;
   const gchar *key;
   ThumbnailGenFunc generator;
@@ -899,7 +899,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   for (l = themes; l; l = g_list_next (l))
   {
     CafeThemeCommonInfo *theme = (CafeThemeCommonInfo *) l->data;
-    GtkTreeIter i;
+    CtkTreeIter i;
 
     if (type == THEME_TYPE_CURSOR) {
       thumbnail = ((CafeThemeCursorInfo *) theme)->thumbnail;
@@ -926,7 +926,7 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
 
   if (type == THEME_TYPE_CURSOR)
     ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (sort_model), COL_LABEL,
-                                     (GtkTreeIterCompareFunc) cursor_theme_sort_func,
+                                     (CtkTreeIterCompareFunc) cursor_theme_sort_func,
                                      NULL, NULL);
 
   ctk_tree_view_set_model (GTK_TREE_VIEW (list), GTK_TREE_MODEL (sort_model));
@@ -956,14 +956,14 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
   g_object_set_data_full (G_OBJECT (list), GSETTINGS_KEY, g_strdup(key), g_free);
 
   /* select in treeview the theme set in gsettings */
-  GtkTreeModel *treemodel;
+  CtkTreeModel *treemodel;
   treemodel = ctk_tree_view_get_model (GTK_TREE_VIEW (list));
   gchar *theme = g_settings_get_string (settings, key);
   gchar *path = find_string_in_model (treemodel, theme, COL_NAME);
   if (path)
   {
-    GtkTreeSelection *selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (list));
-    GtkTreePath *treepath = ctk_tree_path_new_from_string (path);
+    CtkTreeSelection *selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (list));
+    CtkTreePath *treepath = ctk_tree_path_new_from_string (path);
     ctk_tree_selection_select_path (selection, treepath);
     ctk_tree_view_scroll_to_cell (GTK_TREE_VIEW (list), treepath, NULL, FALSE, 0, 0);
     ctk_tree_path_free (treepath);
@@ -987,8 +987,8 @@ prepare_list (AppearanceData *data, GtkWidget *list, ThemeType type, GCallback c
 void
 style_init (AppearanceData *data)
 {
-  GtkSettings *settings;
-  GtkWidget *w;
+  CtkSettings *settings;
+  CtkWidget *w;
   gchar *label;
   gint i;
 
@@ -1013,7 +1013,7 @@ style_init (AppearanceData *data)
   icon_theme_changed (data->interface_settings, ICON_THEME_KEY, data);
   cursor_theme_changed (data->mouse_settings, CURSOR_THEME_KEY, data);
 
-  GtkNotebook *style_nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "notebook2"));
+  CtkNotebook *style_nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "notebook2"));
   ctk_notebook_remove_page (style_nb, 1);
 
   w = appearance_capplet_get_widget (data, "color_scheme_message_hbox");

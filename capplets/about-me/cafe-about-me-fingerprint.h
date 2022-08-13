@@ -19,9 +19,9 @@
 
 #include <ctk/ctk.h>
 
-void set_fingerprint_label (GtkWidget *enable,
-			    GtkWidget *disable);
-void fingerprint_button_clicked (GtkBuilder *dialog,
-				 GtkWidget *enable,
-				 GtkWidget *disable);
+void set_fingerprint_label (CtkWidget *enable,
+			    CtkWidget *disable);
+void fingerprint_button_clicked (CtkBuilder *dialog,
+				 CtkWidget *enable,
+				 CtkWidget *disable);
 

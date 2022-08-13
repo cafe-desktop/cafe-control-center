@@ -44,10 +44,10 @@ static void application_tile_finalize     (GObject *);
 
 static void application_tile_setup (ApplicationTile *);
 
-static GtkWidget *create_header    (const gchar *);
-static GtkWidget *create_subheader (const gchar *);
+static CtkWidget *create_header    (const gchar *);
+static CtkWidget *create_subheader (const gchar *);
 
-static void header_size_allocate_cb (GtkWidget *, GtkAllocation *, gpointer);
+static void header_size_allocate_cb (CtkWidget *, CtkAllocation *, gpointer);
 
 static void start_trigger     (Tile *, TileEvent *, TileAction *);
 static void help_trigger      (Tile *, TileEvent *, TileAction *);
@@ -70,7 +70,7 @@ typedef struct {
 
 	gchar       *image_id;
 	gboolean     image_is_broken;
-	GtkIconSize  image_size;
+	CtkIconSize  image_size;
 
 	gboolean show_generic_name;
 	StartupStatus startup_status;
@@ -113,15 +113,15 @@ application_tile_class_init (ApplicationTileClass *app_tile_class)
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 }
 
-GtkWidget *
+CtkWidget *
 application_tile_new (const gchar *desktop_item_id)
 {
 	return application_tile_new_full (desktop_item_id, GTK_ICON_SIZE_DND, TRUE);
 }
 
-GtkWidget *
+CtkWidget *
 application_tile_new_full (const gchar *desktop_item_id,
-	GtkIconSize image_size, gboolean show_generic_name)
+	CtkIconSize image_size, gboolean show_generic_name)
 {
 	ApplicationTile        *this;
 	ApplicationTilePrivate *priv;
@@ -254,16 +254,16 @@ application_tile_setup (ApplicationTile *this)
 {
 	ApplicationTilePrivate *priv = application_tile_get_instance_private (this);
 
-	GtkWidget *image;
-	GtkWidget *header;
-	GtkWidget *subheader;
-	GtkMenu   *context_menu;
+	CtkWidget *image;
+	CtkWidget *header;
+	CtkWidget *subheader;
+	CtkMenu   *context_menu;
 	AtkObject *accessible;
 
 	TileAction  **actions;
 	TileAction   *action;
-	GtkWidget    *menu_item;
-	GtkContainer *menu_ctnr;
+	CtkWidget    *menu_item;
+	CtkContainer *menu_ctnr;
 
 	gchar *name;
 	gchar *desc;
@@ -400,10 +400,10 @@ application_tile_setup (ApplicationTile *this)
 	g_key_file_unref (keyfile);
 }
 
-static GtkWidget *
+static CtkWidget *
 create_header (const gchar *name)
 {
-	GtkWidget *header;
+	CtkWidget *header;
 
 
 	header = ctk_label_new (name);
@@ -419,10 +419,10 @@ create_header (const gchar *name)
 	return header;
 }
 
-static GtkWidget *
+static CtkWidget *
 create_subheader (const gchar *desc)
 {
-	GtkWidget *subheader;
+	CtkWidget *subheader;
 
 
 	subheader = ctk_label_new (desc);
@@ -606,7 +606,7 @@ update_user_list_menu_item (ApplicationTile *this)
 	ApplicationTilePrivate *priv = application_tile_get_instance_private (this);
 
 	TileAction *action;
-	GtkWidget  *item;
+	CtkWidget  *item;
 
 
 	if (priv->agent_status == BOOKMARK_STORE_ABSENT) {
@@ -732,7 +732,7 @@ update_startup_menu_item (ApplicationTile *this)
 }
 
 static void
-header_size_allocate_cb (GtkWidget *widget, GtkAllocation *alloc, gpointer user_data)
+header_size_allocate_cb (CtkWidget *widget, CtkAllocation *alloc, gpointer user_data)
 {
 	ctk_widget_set_size_request (widget, alloc->width, -1);
 }

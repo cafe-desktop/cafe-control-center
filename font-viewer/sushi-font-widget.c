@@ -82,13 +82,13 @@ static const gchar punctuation_text_stock[] = "0123456789.:,;(*!?')";
 static void
 draw_string (SushiFontWidget *self,
              cairo_t *cr,
-             GtkBorder padding,
+             CtkBorder padding,
 	     const gchar *text,
 	     gint *pos_y)
 {
   cairo_font_extents_t font_extents;
   cairo_text_extents_t extents;
-  GtkTextDirection text_dir;
+  CtkTextDirection text_dir;
   gint pos_x;
 
   text_dir = ctk_widget_get_direction (GTK_WIDGET (self));
@@ -322,7 +322,7 @@ build_sizes_table (FT_Face face,
 }
 
 static void
-sushi_font_widget_size_request (GtkWidget *drawing_area,
+sushi_font_widget_size_request (CtkWidget *drawing_area,
                                 gint *width,
                                 gint *height,
                                 gint *min_height)
@@ -337,9 +337,9 @@ sushi_font_widget_size_request (GtkWidget *drawing_area,
   cairo_t *cr;
   cairo_surface_t *surface;
   FT_Face face = priv->face;
-  GtkStyleContext *context;
-  GtkStateFlags state;
-  GtkBorder padding;
+  CtkStyleContext *context;
+  CtkStateFlags state;
+  CtkBorder padding;
 
   if (face == NULL) {
     if (width != NULL)
@@ -439,7 +439,7 @@ sushi_font_widget_size_request (GtkWidget *drawing_area,
 }
 
 static void
-sushi_font_widget_get_preferred_width (GtkWidget *drawing_area,
+sushi_font_widget_get_preferred_width (CtkWidget *drawing_area,
                                        gint *minimum_width,
                                        gint *natural_width)
 {
@@ -451,7 +451,7 @@ sushi_font_widget_get_preferred_width (GtkWidget *drawing_area,
 }
 
 static void
-sushi_font_widget_get_preferred_height (GtkWidget *drawing_area,
+sushi_font_widget_get_preferred_height (CtkWidget *drawing_area,
                                         gint *minimum_height,
                                         gint *natural_height)
 {
@@ -464,7 +464,7 @@ sushi_font_widget_get_preferred_height (GtkWidget *drawing_area,
 }
 
 static gboolean
-sushi_font_widget_draw (GtkWidget *drawing_area,
+sushi_font_widget_draw (CtkWidget *drawing_area,
                         cairo_t *cr)
 {
   SushiFontWidget *self = SUSHI_FONT_WIDGET (drawing_area);
@@ -472,10 +472,10 @@ sushi_font_widget_draw (GtkWidget *drawing_area,
   gint *sizes = NULL, n_sizes, alpha_size, title_size, pos_y = 0, i;
   cairo_font_face_t *font;
   FT_Face face = priv->face;
-  GtkStyleContext *context;
+  CtkStyleContext *context;
   GdkRGBA color;
-  GtkBorder padding;
-  GtkStateFlags state;
+  CtkBorder padding;
+  CtkStateFlags state;
   gint allocated_width, allocated_height;
 
   if (face == NULL)
@@ -678,7 +678,7 @@ static void
 sushi_font_widget_class_init (SushiFontWidgetClass *klass)
 {
   GObjectClass *oclass = G_OBJECT_CLASS (klass);
-  GtkWidgetClass *wclass = GTK_WIDGET_CLASS (klass);
+  CtkWidgetClass *wclass = GTK_WIDGET_CLASS (klass);
 
   oclass->finalize = sushi_font_widget_finalize;
   oclass->set_property = sushi_font_widget_set_property;

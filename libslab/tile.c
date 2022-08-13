@@ -42,19 +42,19 @@ static GObject *tile_constructor (GType, guint, GObjectConstructParam *);
 
 static void tile_setup (Tile *);
 
-static void tile_enter (GtkButton * widget);
-static void tile_leave (GtkButton * widget);
-static void tile_clicked (GtkButton *widget);
+static void tile_enter (CtkButton * widget);
+static void tile_leave (CtkButton * widget);
+static void tile_clicked (CtkButton *widget);
 
-static gboolean tile_focus_in (GtkWidget *, GdkEventFocus *);
-static gboolean tile_focus_out (GtkWidget *, GdkEventFocus *);
-static gboolean tile_draw (GtkWidget *, cairo_t *);
-static gboolean tile_button_release (GtkWidget *, GdkEventButton *);
-static gboolean tile_key_release (GtkWidget *, GdkEventKey *);
-static gboolean tile_popup_menu (GtkWidget *);
+static gboolean tile_focus_in (CtkWidget *, GdkEventFocus *);
+static gboolean tile_focus_out (CtkWidget *, GdkEventFocus *);
+static gboolean tile_draw (CtkWidget *, cairo_t *);
+static gboolean tile_button_release (CtkWidget *, GdkEventButton *);
+static gboolean tile_key_release (CtkWidget *, GdkEventKey *);
+static gboolean tile_popup_menu (CtkWidget *);
 
-static void tile_drag_begin (GtkWidget *, GdkDragContext *);
-static void tile_drag_data_get (GtkWidget *, GdkDragContext *, GtkSelectionData *, guint,
+static void tile_drag_begin (CtkWidget *, GdkDragContext *);
+static void tile_drag_data_get (CtkWidget *, GdkDragContext *, CtkSelectionData *, guint,
 guint);
 
 static void tile_tile_action_triggered (Tile *, TileEvent *, TileAction *);
@@ -84,8 +84,8 @@ static void
 tile_class_init (TileClass * this_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (this_class);
-	GtkButtonClass *button_class = GTK_BUTTON_CLASS (this_class);
+	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (this_class);
+	CtkButtonClass *button_class = GTK_BUTTON_CLASS (this_class);
 
 	g_obj_class->constructor = tile_constructor;
 	g_obj_class->get_property = tile_get_property;
@@ -202,7 +202,7 @@ tile_dispose (GObject * g_object)
 		}
 	}
 
-	/* free the GtkMenu object */
+	/* free the CtkMenu object */
 	if (tile->context_menu != NULL) {
 		ctk_widget_destroy (GTK_WIDGET (tile->context_menu));
 		tile->context_menu = NULL;
@@ -236,7 +236,7 @@ static void
 tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamSpec * param_spec)
 {
 	Tile *tile;
-	GtkMenu *menu;
+	CtkMenu *menu;
 
 	if (!IS_TILE (g_obj))
 		return;
@@ -285,7 +285,7 @@ tile_setup (Tile * tile)
 }
 
 static void
-tile_enter (GtkButton * widget)
+tile_enter (CtkButton * widget)
 {
 	ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_ENTERED, TRUE);
 
@@ -293,7 +293,7 @@ tile_enter (GtkButton * widget)
 }
 
 static void
-tile_leave (GtkButton * widget)
+tile_leave (CtkButton * widget)
 {
 	if (ctk_widget_has_focus (GTK_WIDGET (widget)))
 		ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_FOCUSED, TRUE);
@@ -304,7 +304,7 @@ tile_leave (GtkButton * widget)
 }
 
 static void
-tile_clicked (GtkButton * widget)
+tile_clicked (CtkButton * widget)
 {
 	TileEvent *tile_event;
 
@@ -319,7 +319,7 @@ tile_clicked (GtkButton * widget)
 }
 
 static gboolean
-tile_focus_in (GtkWidget * widget, GdkEventFocus * event)
+tile_focus_in (CtkWidget * widget, GdkEventFocus * event)
 {
 	ctk_widget_set_state_flags (widget, TILE_STATE_FOCUSED, TRUE);
 
@@ -327,7 +327,7 @@ tile_focus_in (GtkWidget * widget, GdkEventFocus * event)
 }
 
 static gboolean
-tile_focus_out (GtkWidget * widget, GdkEventFocus * event)
+tile_focus_out (CtkWidget * widget, GdkEventFocus * event)
 {
 	if (TILE (widget)->entered)
 		ctk_widget_set_state_flags (widget, TILE_STATE_ENTERED, TRUE);
@@ -338,7 +338,7 @@ tile_focus_out (GtkWidget * widget, GdkEventFocus * event)
 }
 
 static gboolean
-tile_draw (GtkWidget * widget, cairo_t * cr)
+tile_draw (CtkWidget * widget, cairo_t * cr)
 {
 	/* FIXME: there ought to be a better way to prevent the focus from being rendered. */
 
@@ -357,7 +357,7 @@ tile_draw (GtkWidget * widget, cairo_t * cr)
 }
 
 static gboolean
-tile_button_release (GtkWidget * widget, GdkEventButton * event)
+tile_button_release (CtkWidget * widget, GdkEventButton * event)
 {
 	Tile *tile = TILE (widget);
 	TilePrivate *priv = tile_get_instance_private (tile);
@@ -408,7 +408,7 @@ tile_button_release (GtkWidget * widget, GdkEventButton * event)
 }
 
 static gboolean
-tile_key_release (GtkWidget * widget, GdkEventKey * event)
+tile_key_release (CtkWidget * widget, GdkEventKey * event)
 {
 	TileEvent *tile_event;
 
@@ -427,7 +427,7 @@ tile_key_release (GtkWidget * widget, GdkEventKey * event)
 }
 
 static gboolean
-tile_popup_menu (GtkWidget * widget)
+tile_popup_menu (CtkWidget * widget)
 {
 	Tile *tile = TILE (widget);
 
@@ -447,7 +447,7 @@ tile_popup_menu (GtkWidget * widget)
 }
 
 static void
-tile_drag_begin (GtkWidget * widget, GdkDragContext * context)
+tile_drag_begin (CtkWidget * widget, GdkDragContext * context)
 {
 	TilePrivate *priv;
 
@@ -456,7 +456,7 @@ tile_drag_begin (GtkWidget * widget, GdkDragContext * context)
 }
 
 static void
-tile_drag_data_get (GtkWidget * widget, GdkDragContext * context, GtkSelectionData * data,
+tile_drag_data_get (CtkWidget * widget, GdkDragContext * context, CtkSelectionData * data,
 	guint info, guint time)
 {
 	gchar *uris[2];

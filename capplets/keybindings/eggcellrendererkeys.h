@@ -46,20 +46,20 @@ typedef enum
 
 struct _EggCellRendererKeys
 {
-  GtkCellRendererText parent;
+  CtkCellRendererText parent;
   guint accel_key;
   guint keycode;
   EggVirtualModifierType accel_mask;
-  GtkWidget *edit_widget;
-  GtkWidget *grab_widget;
+  CtkWidget *edit_widget;
+  CtkWidget *grab_widget;
   guint edit_key;
-  GtkWidget *sizing_label;
+  CtkWidget *sizing_label;
   EggCellRendererKeysMode accel_mode;
 };
 
 struct _EggCellRendererKeysClass
 {
-  GtkCellRendererTextClass parent_class;
+  CtkCellRendererTextClass parent_class;
 
   void (* accel_edited) (EggCellRendererKeys    *keys,
 			 const char             *path_string,
@@ -72,7 +72,7 @@ struct _EggCellRendererKeysClass
 };
 
 GType            egg_cell_renderer_keys_get_type        (void);
-GtkCellRenderer *egg_cell_renderer_keys_new             (void);
+CtkCellRenderer *egg_cell_renderer_keys_new             (void);
 
 void             egg_cell_renderer_keys_set_accelerator (EggCellRendererKeys     *keys,
 							 guint                    keyval,

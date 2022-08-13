@@ -22,7 +22,7 @@
 #ifndef THEME_INSTALLER_H
 #define THEME_INSTALLER_H
 
-void cafe_theme_install (GFile *file, GtkWindow *parent);
-void cafe_theme_installer_run (GtkWindow *parent);
+void cafe_theme_install (GFile *file, CtkWindow *parent);
+void cafe_theme_installer_run (CtkWindow *parent);
 
 #endif /* THEME_INSTALLER_H */

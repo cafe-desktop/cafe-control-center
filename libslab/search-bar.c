@@ -27,9 +27,9 @@
 
 typedef struct
 {
-	GtkWidget *hbox;
-	GtkEntry *entry;
-	GtkWidget *button;
+	CtkWidget *hbox;
+	CtkEntry *entry;
+	CtkWidget *button;
 
 	int search_timeout;
 	guint timeout_id;
@@ -39,8 +39,8 @@ typedef struct
 
 static void nld_search_bar_finalize (GObject *);
 
-static gboolean nld_search_bar_focus (GtkWidget *, GtkDirectionType);
-static void nld_search_bar_grab_focus (GtkWidget *);
+static gboolean nld_search_bar_focus (CtkWidget *, CtkDirectionType);
+static void nld_search_bar_grab_focus (CtkWidget *);
 
 enum
 {
@@ -53,12 +53,12 @@ static guint signals[LAST_SIGNAL] = { 0 };
 G_DEFINE_TYPE_WITH_PRIVATE (NldSearchBar, nld_search_bar, GTK_TYPE_BOX)
 
 static void emit_search (NldSearchBar * search_bar);
-static void emit_search_callback (GtkWidget * widget, gpointer search_bar);
+static void emit_search_callback (CtkWidget * widget, gpointer search_bar);
 
 static void nld_search_bar_class_init (NldSearchBarClass * nld_search_bar_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (nld_search_bar_class);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (nld_search_bar_class);
+	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (nld_search_bar_class);
 
 	object_class->finalize = nld_search_bar_finalize;
 	widget_class->focus = nld_search_bar_focus;
@@ -74,7 +74,7 @@ static void
 nld_search_bar_init (NldSearchBar * search_bar)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
-	GtkWidget *entry;
+	CtkWidget *entry;
 
 	ctk_widget_set_can_focus (GTK_WIDGET (search_bar), TRUE);
 	ctk_orientable_set_orientation (GTK_ORIENTABLE (search_bar), GTK_ORIENTATION_VERTICAL);
@@ -106,7 +106,7 @@ nld_search_bar_finalize (GObject * object)
 }
 
 static gboolean
-nld_search_bar_focus (GtkWidget * widget, GtkDirectionType dir)
+nld_search_bar_focus (CtkWidget * widget, CtkDirectionType dir)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (NLD_SEARCH_BAR(widget));
 
@@ -122,14 +122,14 @@ nld_search_bar_has_focus (NldSearchBar * search_bar)
 }
 
 static void
-nld_search_bar_grab_focus (GtkWidget * widget)
+nld_search_bar_grab_focus (CtkWidget * widget)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (NLD_SEARCH_BAR(widget));
 
 	ctk_widget_grab_focus (GTK_WIDGET (priv->entry));
 }
 
-GtkWidget *
+CtkWidget *
 nld_search_bar_new (void)
 {
 	return g_object_new (NLD_TYPE_SEARCH_BAR, NULL);
@@ -164,7 +164,7 @@ emit_search (NldSearchBar * search_bar)
 }
 
 static void
-emit_search_callback (GtkWidget * widget, gpointer search_bar)
+emit_search_callback (CtkWidget * widget, gpointer search_bar)
 {
 	emit_search (search_bar);
 }
@@ -180,7 +180,7 @@ search_timeout (gpointer search_bar)
 }
 
 static void
-entry_changed (GtkWidget * entry, gpointer search_bar)
+entry_changed (CtkWidget * entry, gpointer search_bar)
 {
 	NldSearchBarPrivate *priv = nld_search_bar_get_instance_private (search_bar);
 

@@ -46,7 +46,7 @@ slab_section_finalize (GObject * obj)
 }
 
 static void
-slab_section_set_title_color (GtkWidget * widget)
+slab_section_set_title_color (CtkWidget * widget)
 {
 	switch (SLAB_SECTION (widget)->style)
 	{
@@ -68,7 +68,7 @@ slab_section_set_title_color (GtkWidget * widget)
 }
 
 static void
-slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user_data)
+slab_section_style_set (CtkWidget * widget, CtkStyle * prev_style, gpointer user_data)
 {
 	static gboolean recursively_entered = FALSE;
 	if (!recursively_entered)
@@ -83,7 +83,7 @@ slab_section_style_set (GtkWidget * widget, GtkStyle * prev_style, gpointer user
 
 /*
 gboolean
-slab_section_expose_event (GtkWidget * widget, GdkEventExpose * event, gpointer data)
+slab_section_expose_event (CtkWidget * widget, GdkEventExpose * event, gpointer data)
 {
 	gdk_draw_rectangle (widget->window, widget->style->light_gc[GTK_STATE_SELECTED], TRUE,
 		widget->allocation.x, widget->allocation.y,
@@ -115,7 +115,7 @@ slab_section_set_selected (SlabSection * section, gboolean selected)
 	slab_section_set_title_color (GTK_WIDGET (section));
 }
 
-GtkWidget *
+CtkWidget *
 slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 {
 	SlabSection *section;
@@ -159,10 +159,10 @@ slab_section_new_with_markup (const gchar * title_markup, SlabStyle style)
 	return GTK_WIDGET (section);
 }
 
-GtkWidget *
+CtkWidget *
 slab_section_new (const gchar * title, SlabStyle style)
 {
-	GtkWidget *section;
+	CtkWidget *section;
 	gchar *markup;
 
 	markup = g_strdup_printf ("<span size=\"large\" weight=\"bold\">%s</span>", title);
@@ -184,7 +184,7 @@ slab_section_set_title (SlabSection * section, const gchar * title)
 }
 
 void
-slab_section_set_contents (SlabSection * section, GtkWidget * contents)
+slab_section_set_contents (SlabSection * section, CtkWidget * contents)
 {
 	section->contents = contents;
 

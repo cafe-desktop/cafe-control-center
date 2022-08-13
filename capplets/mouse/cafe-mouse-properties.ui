@@ -28,79 +28,79 @@ Author: Wolfgang Ulbrich
   <!-- interface-description mouse properties dialog window -->
   <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
-  <object class="GtkAdjustment" id="adjustment1">
+  <object class="CtkAdjustment" id="adjustment1">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">6</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment11">
+  <object class="CtkAdjustment" id="adjustment11">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">6</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment2">
+  <object class="CtkAdjustment" id="adjustment2">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">1</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment22">
+  <object class="CtkAdjustment" id="adjustment22">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">1</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment3">
+  <object class="CtkAdjustment" id="adjustment3">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">1</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment4">
+  <object class="CtkAdjustment" id="adjustment4">
     <property name="lower">100</property>
     <property name="upper">1000</property>
     <property name="value">400</property>
     <property name="step_increment">100</property>
     <property name="page_increment">100</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment5">
+  <object class="CtkAdjustment" id="adjustment5">
     <property name="lower">0.5</property>
     <property name="upper">3</property>
     <property name="value">1.2</property>
     <property name="step_increment">0.10000000000000001</property>
     <property name="page_increment">0.10000000000000001</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment6">
+  <object class="CtkAdjustment" id="adjustment6">
     <property name="lower">0.20000000000000001</property>
     <property name="upper">3</property>
     <property name="value">1.2</property>
     <property name="step_increment">0.10000000000000001</property>
     <property name="page_increment">0.10000000000000001</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment7">
+  <object class="CtkAdjustment" id="adjustment7">
     <property name="upper">30</property>
     <property name="value">15</property>
     <property name="step_increment">1</property>
     <property name="page_increment">1</property>
   </object>
-  <object class="GtkImage" id="help_button_img">
+  <object class="CtkImage" id="help_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">help-browser</property>
   </object>
-  <object class="GtkImage" id="window_close_button_img">
+  <object class="CtkImage" id="window_close_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="mouse_properties_dialog">
+  <object class="CtkDialog" id="mouse_properties_dialog">
     <property name="name">mouse-properties</property>
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -109,18 +109,18 @@ Author: Wolfgang Ulbrich
     <property name="default_height">550</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
+      <object class="CtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
+          <object class="CtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="helpbutton1">
+              <object class="CtkButton" id="helpbutton1">
                 <property name="label" translatable="yes">_Help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -136,7 +136,7 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="closebutton1">
+              <object class="CtkButton" id="closebutton1">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -160,12 +160,12 @@ Author: Wolfgang Ulbrich
           </packing>
         </child>
         <child>
-          <object class="GtkNotebook" id="prefs_widget">
+          <object class="CtkNotebook" id="prefs_widget">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="border_width">5</property>
             <child>
-              <object class="GtkBox" id="general_vbox">
+              <object class="CtkBox" id="general_vbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -173,13 +173,13 @@ Author: Wolfgang Ulbrich
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
                 <child>
-                  <object class="GtkBox" id="orientation_vbox">
+                  <object class="CtkBox" id="orientation_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label27">
+                      <object class="CtkLabel" id="label27">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -196,21 +196,21 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment1">
+                      <object class="CtkAlignment" id="alignment1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkBox" id="vbox29">
+                          <object class="CtkBox" id="vbox29">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkRadioButton" id="right_handed_radio">
+                              <object class="CtkRadioButton" id="right_handed_radio">
                                 <property name="label" translatable="yes">_Right-handed</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
@@ -228,7 +228,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkRadioButton" id="left_handed_radio">
+                              <object class="CtkRadioButton" id="left_handed_radio">
                                 <property name="label" translatable="yes">_Left-handed</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
@@ -263,13 +263,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="locate_pointer_vbox">
+                  <object class="CtkBox" id="locate_pointer_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label5">
+                      <object class="CtkLabel" id="label5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -286,14 +286,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment4">
+                      <object class="CtkAlignment" id="alignment4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="locate_pointer_toggle">
+                          <object class="CtkCheckButton" id="locate_pointer_toggle">
                             <property name="label" translatable="yes">Sh_ow position of pointer when the Control key is pressed</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -312,13 +312,13 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment19">
+                      <object class="CtkAlignment" id="alignment19">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="middle_button_emulation_toggle">
+                          <object class="CtkCheckButton" id="middle_button_emulation_toggle">
                             <property name="label" translatable="yes">Emulate middle button through simultaneous left and right click</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -338,13 +338,13 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment20">
+                      <object class="CtkAlignment" id="alignment20">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="middle_button_paste_toggle">
+                          <object class="CtkCheckButton" id="middle_button_paste_toggle">
                             <property name="label" translatable="yes">Enable middlemouse paste</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -371,13 +371,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="pointer_speed_vbox">
+                  <object class="CtkBox" id="pointer_speed_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label29">
+                      <object class="CtkLabel" id="label29">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -394,20 +394,20 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment5">
+                      <object class="CtkAlignment" id="alignment5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkGrid" id="table2">
+                          <object class="CtkGrid" id="table2">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="row_spacing">6</property>
                             <property name="column_spacing">12</property>
                             <child>
-                              <object class="GtkLabel" id="acceleration_label">
+                              <object class="CtkLabel" id="acceleration_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">_Acceleration:</property>
@@ -422,14 +422,14 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox1">
+                              <object class="CtkBox" id="hbox1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkLabel" id="acceleration_slow_label">
+                                  <object class="CtkLabel" id="acceleration_slow_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="slow acceleration">Slow</property>
@@ -447,7 +447,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkScale" id="accel_scale">
+                                  <object class="CtkScale" id="accel_scale">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="adjustment">adjustment1</property>
@@ -461,7 +461,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="acceleration_fast_label">
+                                  <object class="CtkLabel" id="acceleration_fast_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="fast acceleration">Fast</property>
@@ -485,14 +485,14 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox3">
+                              <object class="CtkBox" id="hbox3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkLabel" id="sensitivity_low_label">
+                                  <object class="CtkLabel" id="sensitivity_low_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="low sensitivity">Low</property>
@@ -510,7 +510,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkScale" id="sensitivity_scale">
+                                  <object class="CtkScale" id="sensitivity_scale">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="adjustment">adjustment2</property>
@@ -524,7 +524,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="sensitivity_high_label">
+                                  <object class="CtkLabel" id="sensitivity_high_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="high sensitivity">High</property>
@@ -548,7 +548,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="sensitivity_label">
+                              <object class="CtkLabel" id="sensitivity_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">_Sensitivity:</property>
@@ -563,7 +563,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="mouse_accel_profile_label">
+                              <object class="CtkLabel" id="mouse_accel_profile_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">Acceleration _Profile:</property>
@@ -578,7 +578,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkComboBoxText" id="mouse_accel_profile">
+                              <object class="CtkComboBoxText" id="mouse_accel_profile">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
@@ -610,13 +610,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="dnd_vbox">
+                  <object class="CtkBox" id="dnd_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label8">
+                      <object class="CtkLabel" id="label8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -633,26 +633,26 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment6">
+                      <object class="CtkAlignment" id="alignment6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkBox" id="vbox7">
+                          <object class="CtkBox" id="vbox7">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">12</property>
                             <child>
-                              <object class="GtkBox" id="cursor_hbox2">
+                              <object class="CtkBox" id="cursor_hbox2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="spacing">12</property>
                                 <child>
-                                  <object class="GtkLabel" id="threshold_label">
+                                  <object class="CtkLabel" id="threshold_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">Thr_eshold:</property>
@@ -668,12 +668,12 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkBox" id="hbox9">
+                                  <object class="CtkBox" id="hbox9">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="spacing">6</property>
                                     <child>
-                                      <object class="GtkLabel" id="threshold_small_label">
+                                      <object class="CtkLabel" id="threshold_small_label">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes" comments="small threshold">Small</property>
@@ -691,7 +691,7 @@ Author: Wolfgang Ulbrich
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkScale" id="drag_threshold_scale">
+                                      <object class="CtkScale" id="drag_threshold_scale">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="adjustment">adjustment3</property>
@@ -710,7 +710,7 @@ Author: Wolfgang Ulbrich
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="threshold_large_label">
+                                      <object class="CtkLabel" id="threshold_large_label">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes" comments="large threshold">Large</property>
@@ -757,13 +757,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="double_click_timeout_vbox">
+                  <object class="CtkBox" id="double_click_timeout_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label31">
+                      <object class="CtkLabel" id="label31">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -780,26 +780,26 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment7">
+                      <object class="CtkAlignment" id="alignment7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkBox" id="vbox32">
+                          <object class="CtkBox" id="vbox32">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">12</property>
                             <child>
-                              <object class="GtkBox" id="cursor_hbox4">
+                              <object class="CtkBox" id="cursor_hbox4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="spacing">12</property>
                                 <child>
-                                  <object class="GtkLabel" id="timeout_label">
+                                  <object class="CtkLabel" id="timeout_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">_Timeout:</property>
@@ -815,12 +815,12 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkBox" id="hbox21">
+                                  <object class="CtkBox" id="hbox21">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="spacing">6</property>
                                     <child>
-                                      <object class="GtkLabel" id="timeout_short_label">
+                                      <object class="CtkLabel" id="timeout_short_label">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes">Short</property>
@@ -837,7 +837,7 @@ Author: Wolfgang Ulbrich
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkScale" id="delay_scale">
+                                      <object class="CtkScale" id="delay_scale">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="adjustment">adjustment4</property>
@@ -855,7 +855,7 @@ Author: Wolfgang Ulbrich
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="timeout_long_label">
+                                      <object class="CtkLabel" id="timeout_long_label">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="label" translatable="yes">Long</property>
@@ -886,13 +886,13 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox22">
+                              <object class="CtkBox" id="hbox22">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="spacing">12</property>
                                 <child>
-                                  <object class="GtkLabel" id="label33">
+                                  <object class="CtkLabel" id="label33">
                                     <property name="width_request">180</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
@@ -911,13 +911,13 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkEventBox" id="double_click_eventbox">
+                                  <object class="CtkEventBox" id="double_click_eventbox">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="visible_window">False</property>
                                     <child>
-                                      <object class="GtkImage" id="double_click_image">
+                                      <object class="CtkImage" id="double_click_image">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -957,7 +957,7 @@ Author: Wolfgang Ulbrich
               </object>
             </child>
             <child type="tab">
-              <object class="GtkLabel" id="label1">
+              <object class="CtkLabel" id="label1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Mouse</property>
@@ -968,7 +968,7 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="vbox3">
+              <object class="CtkBox" id="vbox3">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -976,7 +976,7 @@ Author: Wolfgang Ulbrich
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
                 <child>
-                  <object class="GtkCheckButton" id="touchpad_enable">
+                  <object class="CtkCheckButton" id="touchpad_enable">
                     <property name="label" translatable="yes">Enable _touchpad</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -993,13 +993,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="vbox_touchpad_general">
+                  <object class="CtkBox" id="vbox_touchpad_general">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label18">
+                      <object class="CtkLabel" id="label18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1017,14 +1017,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment10">
+                      <object class="CtkAlignment" id="alignment10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="disable_w_typing_toggle">
+                          <object class="CtkCheckButton" id="disable_w_typing_toggle">
                             <property name="label" translatable="yes">Disable touchpad _while typing</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1044,14 +1044,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment11">
+                      <object class="CtkAlignment" id="alignment11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="tap_to_click_toggle">
+                          <object class="CtkCheckButton" id="tap_to_click_toggle">
                             <property name="label" translatable="yes">Enable _mouse clicks with touchpad</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1071,20 +1071,20 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment12">
+                      <object class="CtkAlignment" id="alignment12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkGrid" id="table1">
+                          <object class="CtkGrid" id="table1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="row_spacing">3</property>
                             <property name="column_spacing">3</property>
                             <child>
-                              <object class="GtkLabel" id="label6">
+                              <object class="CtkLabel" id="label6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
@@ -1096,7 +1096,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox_three_finger_click">
+                              <object class="CtkBox" id="hbox_three_finger_click">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="hexpand">True</property>
@@ -1110,7 +1110,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox_two_finger_click">
+                              <object class="CtkBox" id="hbox_two_finger_click">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="hexpand">True</property>
@@ -1124,7 +1124,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="label9">
+                              <object class="CtkLabel" id="label9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">start</property>
@@ -1145,7 +1145,7 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="multi_finger_warning">
+                      <object class="CtkLabel" id="multi_finger_warning">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
@@ -1171,13 +1171,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="vbox_touchpad_scrolling">
+                  <object class="CtkBox" id="vbox_touchpad_scrolling">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label34">
+                      <object class="CtkLabel" id="label34">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1195,14 +1195,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment13">
+                      <object class="CtkAlignment" id="alignment13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="vert_edge_scroll_toggle">
+                          <object class="CtkCheckButton" id="vert_edge_scroll_toggle">
                             <property name="label" translatable="yes">_Vertical edge scrolling</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1221,14 +1221,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment14">
+                      <object class="CtkAlignment" id="alignment14">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="horiz_edge_scroll_toggle">
+                          <object class="CtkCheckButton" id="horiz_edge_scroll_toggle">
                             <property name="label" translatable="yes">H_orizontal edge scrolling</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1247,14 +1247,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment15">
+                      <object class="CtkAlignment" id="alignment15">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="vert_twofinger_scroll_toggle">
+                          <object class="CtkCheckButton" id="vert_twofinger_scroll_toggle">
                             <property name="label" translatable="yes">V_ertical two-finger scrolling</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1273,14 +1273,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment16">
+                      <object class="CtkAlignment" id="alignment16">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="horiz_twofinger_scroll_toggle">
+                          <object class="CtkCheckButton" id="horiz_twofinger_scroll_toggle">
                             <property name="label" translatable="yes">Hor_izontal two-finger scrolling</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1299,14 +1299,14 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment17">
+                      <object class="CtkAlignment" id="alignment17">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkCheckButton" id="natural_scroll_toggle">
+                          <object class="CtkCheckButton" id="natural_scroll_toggle">
                             <property name="label" translatable="yes">Enable _natural scrolling</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1332,13 +1332,13 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="vbox_touchpad_pointer_speed">
+                  <object class="CtkBox" id="vbox_touchpad_pointer_speed">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label40">
+                      <object class="CtkLabel" id="label40">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1355,20 +1355,20 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkAlignment" id="alignment18">
+                      <object class="CtkAlignment" id="alignment18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
-                          <object class="GtkGrid" id="table3">
+                          <object class="CtkGrid" id="table3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="row_spacing">6</property>
                             <property name="column_spacing">12</property>
                             <child>
-                              <object class="GtkLabel" id="touchpad_acceleration_label">
+                              <object class="CtkLabel" id="touchpad_acceleration_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">_Acceleration:</property>
@@ -1383,14 +1383,14 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox30">
+                              <object class="CtkBox" id="hbox30">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkLabel" id="touchpad_acceleration_slow_label">
+                                  <object class="CtkLabel" id="touchpad_acceleration_slow_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="slow acceleration">Slow</property>
@@ -1408,7 +1408,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkScale" id="touchpad_accel_scale">
+                                  <object class="CtkScale" id="touchpad_accel_scale">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="adjustment">adjustment11</property>
@@ -1422,7 +1422,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="touchpad_acceleration_fast_label">
+                                  <object class="CtkLabel" id="touchpad_acceleration_fast_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="fast acceleration">Fast</property>
@@ -1446,14 +1446,14 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="hbox31">
+                              <object class="CtkBox" id="hbox31">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkLabel" id="touchpad_sensitivity_low_label">
+                                  <object class="CtkLabel" id="touchpad_sensitivity_low_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="low sensitivity">Low</property>
@@ -1471,7 +1471,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkScale" id="touchpad_sensitivity_scale">
+                                  <object class="CtkScale" id="touchpad_sensitivity_scale">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="adjustment">adjustment22</property>
@@ -1485,7 +1485,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="touchpad_sensitivity_high_label">
+                                  <object class="CtkLabel" id="touchpad_sensitivity_high_label">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="high sensitivity">High</property>
@@ -1509,7 +1509,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="touchpad_sensitivity_label">
+                              <object class="CtkLabel" id="touchpad_sensitivity_label">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">_Sensitivity:</property>
@@ -1545,7 +1545,7 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child type="tab">
-              <object class="GtkLabel" id="label4">
+              <object class="CtkLabel" id="label4">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Touchpad</property>

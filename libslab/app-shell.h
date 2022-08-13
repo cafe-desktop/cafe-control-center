@@ -57,31 +57,31 @@ typedef struct
 
 typedef struct _AppShellData
 {
-	GtkWidget *main_app;
+	CtkWidget *main_app;
 	gint main_app_window_x;
 	gint main_app_window_y;
 	gboolean main_app_window_shown_once;
 
-	GtkWidget *shell;
-	GtkWidget *groups_section;
+	CtkWidget *shell;
+	CtkWidget *groups_section;
 
-	GtkWidget *actions_section;
+	CtkWidget *actions_section;
 	/*
 		NULL      - if the available actions depend on the current tile selected
 		NON-NULL  - a list of AppAction that are always shown
 	*/
 	GSList *static_actions;
 
-	GtkWidget *filter_section;
+	CtkWidget *filter_section;
 	gchar *filter_string;
 	GdkCursor *busy_cursor;
 
-	GtkWidget *category_layout;
+	CtkWidget *category_layout;
 	GList *categories_list;
 	GList *cached_tables_list;	/* list of currently showing (not filtered out) tables */
 	Tile *last_clicked_launcher;
 	SlabSection *selected_group;
-	GtkIconSize icon_size;
+	CtkIconSize icon_size;
 	const gchar *menu_name;
 	NewAppConfig *new_apps;
 	CafeMenuTree *tree;
@@ -91,8 +91,8 @@ typedef struct _AppShellData
 	gboolean stop_incremental_relayout;
 	GList *incremental_relayout_cat_list;
 	gboolean filtered_out_everything;
-	GtkWidget *filtered_out_everything_widget;
-	GtkLabel *filtered_out_everything_widget_label;
+	CtkWidget *filtered_out_everything_widget;
+	CtkLabel *filtered_out_everything_widget_label;
 
 	gboolean show_tile_generic_name;
 	gboolean exit_on_close;
@@ -126,7 +126,7 @@ void generate_categories (AppShellData * app_data);
 
 /* If new_apps_max_items is 0 then the new applications category is not created */
 AppShellData *appshelldata_new (const gchar * menu_name,
-	GtkIconSize icon_size, gboolean show_tile_generic_name, gboolean exit_on_close, gint new_apps_max_items);
+	CtkIconSize icon_size, gboolean show_tile_generic_name, gboolean exit_on_close, gint new_apps_max_items);
 
 void layout_shell (AppShellData * app_data, const gchar * filter_title, const gchar * groups_title,
 	const gchar * actions_title, GSList * actions,

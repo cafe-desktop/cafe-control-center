@@ -54,8 +54,8 @@ guint file_transfer_dialog_signals[LAST_SIGNAL] = {0, };
 
 struct _FileTransferDialogPrivate
 {
-	GtkWidget *progress;
-	GtkWidget *status;
+	CtkWidget *progress;
+	CtkWidget *status;
 	guint nth;
 	guint total;
 	GCancellable *cancellable;
@@ -64,7 +64,7 @@ struct _FileTransferDialogPrivate
 typedef struct _FileTransferJob
 {
 	FileTransferDialog *dialog;
-	GtkDialog *overwrite_dialog;
+	CtkDialog *overwrite_dialog;
 	GSList *source_files;
 	GSList *target_files;
 	FileTransferDialogOptions options;
@@ -80,7 +80,7 @@ typedef struct {
 	goffset current_bytes;
 	goffset total_bytes;
 	gint response;
-	GtkDialog *overwrite_dialog;
+	CtkDialog *overwrite_dialog;
 } FileTransferData;
 
 G_DEFINE_TYPE_WITH_PRIVATE (FileTransferDialog, file_transfer_dialog, GTK_TYPE_DIALOG)
@@ -100,7 +100,7 @@ file_transfer_dialog_update_num_files (FileTransferDialog *dlg)
 }
 
 static void
-file_transfer_dialog_response (GtkDialog *dlg, gint response_id)
+file_transfer_dialog_response (CtkDialog *dlg, gint response_id)
 {
 	FileTransferDialog *dialog = FILE_TRANSFER_DIALOG (dlg);
 
@@ -130,7 +130,7 @@ file_transfer_dialog_set_prop (GObject *object, guint prop_id, const GValue *val
 	gchar *str2;
 	gchar *base;
 	gchar *escaped;
-	GtkWindow *parent;
+	CtkWindow *parent;
 	guint n;
 
 	switch (prop_id)
@@ -285,11 +285,11 @@ file_transfer_dialog_class_init (FileTransferDialogClass *klass)
 static void
 file_transfer_dialog_init (FileTransferDialog *dlg)
 {
-	GtkWidget *vbox;
-	GtkWidget *hbox;
-	GtkWidget *progress_vbox;
+	CtkWidget *vbox;
+	CtkWidget *hbox;
+	CtkWidget *progress_vbox;
 	char      *markup;
-	GtkWidget *content_area;
+	CtkWidget *content_area;
 
 	content_area = ctk_dialog_get_content_area (GTK_DIALOG (dlg));
 	dlg->priv = file_transfer_dialog_get_instance_private (dlg);
@@ -332,15 +332,15 @@ file_transfer_dialog_init (FileTransferDialog *dlg)
 	ctk_widget_show_all (content_area);
 }
 
-GtkWidget*
+CtkWidget*
 file_transfer_dialog_new (void)
 {
 	return GTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
 					 NULL));
 }
 
-GtkWidget*
-file_transfer_dialog_new_with_parent (GtkWindow *parent)
+CtkWidget*
+file_transfer_dialog_new_with_parent (CtkWindow *parent)
 {
 	return GTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
 					 "parent", parent, NULL));
@@ -418,13 +418,13 @@ static gboolean
 file_transfer_dialog_overwrite (gpointer user_data)
 {
 	FileTransferData *data = user_data;
-	GtkDialog *dialog;
+	CtkDialog *dialog;
 
 	dialog = data->overwrite_dialog;
 
 	if (dialog != NULL) {
 	} else {
-		GtkWidget *button;
+		CtkWidget *button;
 
 		dialog = GTK_DIALOG (ctk_message_dialog_new (GTK_WINDOW (data->dialog),
 							     GTK_DIALOG_MODAL, GTK_MESSAGE_QUESTION,

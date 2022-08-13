@@ -80,9 +80,9 @@ enum {
 #define SOCKS_PROXY_HOST_KEY      "host"
 #define SOCKS_PROXY_PORT_KEY      "port"
 
-static GtkWidget *details_dialog = NULL;
+static CtkWidget *details_dialog = NULL;
 static GSList *ignore_hosts = NULL;
-static GtkTreeModel *model = NULL;
+static CtkTreeModel *model = NULL;
 
 static GSettings *proxy_settings = NULL;
 static GSettings *http_proxy_settings = NULL;
@@ -90,20 +90,20 @@ static GSettings *https_proxy_settings = NULL;
 static GSettings *ftp_proxy_settings = NULL;
 static GSettings *socks_proxy_settings = NULL;
 
-static GtkTreeModel *
+static CtkTreeModel *
 create_listmodel(void)
 {
-	GtkListStore *store;
+	CtkListStore *store;
 
 	store = ctk_list_store_new(1, G_TYPE_STRING);
 
 	return GTK_TREE_MODEL(store);
 }
 
-static GtkTreeModel *
-populate_listmodel(GtkListStore *store, GSList *list)
+static CtkTreeModel *
+populate_listmodel(CtkListStore *store, GSList *list)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	GSList *pointer;
 
 	ctk_list_store_clear(store);
@@ -119,10 +119,10 @@ populate_listmodel(GtkListStore *store, GSList *list)
 	return GTK_TREE_MODEL(store);
 }
 
-static GtkWidget *
-config_treeview(GtkTreeView *tree, GtkTreeModel *model)
+static CtkWidget *
+config_treeview(CtkTreeView *tree, CtkTreeModel *model)
 {
-	GtkCellRenderer *renderer;
+	CtkCellRenderer *renderer;
 
 	renderer = ctk_cell_renderer_text_new();
 	ctk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tree),
@@ -134,8 +134,8 @@ config_treeview(GtkTreeView *tree, GtkTreeModel *model)
 	return GTK_WIDGET(tree);
 }
 
-static GtkWidget*
-_ctk_builder_get_widget (GtkBuilder *builder, const gchar *name)
+static CtkWidget*
+_ctk_builder_get_widget (CtkBuilder *builder, const gchar *name)
 {
 	return GTK_WIDGET (ctk_builder_get_object (builder, name));
 }
@@ -171,9 +171,9 @@ save_ignore_hosts_to_gsettings (void)
 }
 
 static void
-cb_add_url (GtkButton *button, gpointer data)
+cb_add_url (CtkButton *button, gpointer data)
 {
-	GtkBuilder *builder = GTK_BUILDER (data);
+	CtkBuilder *builder = GTK_BUILDER (data);
 
 	const gchar *entry_text = ctk_entry_get_text (GTK_ENTRY (ctk_builder_get_object (builder, "entry_url")));
 	if (entry_text == NULL || strlen (entry_text) == 0) {
@@ -189,11 +189,11 @@ cb_add_url (GtkButton *button, gpointer data)
 }
 
 static void
-cb_remove_url (GtkButton *button, gpointer data)
+cb_remove_url (CtkButton *button, gpointer data)
 {
-	GtkBuilder *builder = GTK_BUILDER (data);
-	GtkTreeSelection *selection;
-	GtkTreeIter       iter;
+	CtkBuilder *builder = GTK_BUILDER (data);
+	CtkTreeSelection *selection;
+	CtkTreeIter       iter;
 
 	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (ctk_builder_get_object (builder, "treeview_ignore_host")));
 	if (ctk_tree_selection_get_selected(selection, &model, &iter))
@@ -223,7 +223,7 @@ cb_remove_url (GtkButton *button, gpointer data)
 }
 
 static void
-cb_dialog_response (GtkDialog *dialog, gint response_id)
+cb_dialog_response (CtkDialog *dialog, gint response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 		capplet_help (GTK_WINDOW (dialog),
@@ -240,7 +240,7 @@ cb_dialog_response (GtkDialog *dialog, gint response_id)
 }
 
 static void
-cb_details_dialog_response (GtkDialog *dialog, gint response_id)
+cb_details_dialog_response (CtkDialog *dialog, gint response_id)
 {
 	if (response_id == GTK_RESPONSE_HELP)
 		capplet_help (GTK_WINDOW (dialog),
@@ -252,20 +252,20 @@ cb_details_dialog_response (GtkDialog *dialog, gint response_id)
 }
 
 static void
-cb_use_auth_toggled (GtkToggleButton *toggle,
-		     GtkWidget *table)
+cb_use_auth_toggled (CtkToggleButton *toggle,
+		     CtkWidget *table)
 {
 	ctk_widget_set_sensitive (table, ctk_toggle_button_get_active (toggle));
 }
 
 static void
-cb_http_details_button_clicked (GtkWidget *button,
-			        GtkWidget *parent)
+cb_http_details_button_clicked (CtkWidget *button,
+			        CtkWidget *parent)
 {
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 	gchar *builder_widgets[] = { "details_dialog", NULL };
 	GError *error = NULL;
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	if (details_dialog != NULL) {
 		ctk_window_present (GTK_WINDOW (details_dialog));
@@ -313,7 +313,7 @@ cb_http_details_button_clicked (GtkWidget *button,
 static void
 proxy_mode_gsettings_changed (GSettings *settings,
 				   gchar *key,
-				   GtkBuilder *builder)
+				   CtkBuilder *builder)
 {
 	int mode;
 	mode = g_settings_get_enum (settings, PROXY_MODE_KEY);
@@ -330,8 +330,8 @@ proxy_mode_gsettings_changed (GSettings *settings,
 }
 
 static void
-proxy_mode_radiobutton_clicked_cb (GtkWidget *widget,
-				   GtkBuilder *builder)
+proxy_mode_radiobutton_clicked_cb (CtkWidget *widget,
+				   CtkBuilder *builder)
 {
 	GSList *mode_group;
 	int mode;
@@ -355,7 +355,7 @@ proxy_mode_radiobutton_clicked_cb (GtkWidget *widget,
 }
 
 static void
-connect_sensitivity_signals (GtkBuilder *builder, GSList *mode_group)
+connect_sensitivity_signals (CtkBuilder *builder, GSList *mode_group)
 {
 	for (; mode_group != NULL; mode_group = mode_group->next)
 	{
@@ -377,7 +377,7 @@ cb_ignore_hosts_gsettings_changed (GSettings *settings, gchar *key, gpointer use
 }
 
 static void
-setup_dialog (GtkBuilder *builder)
+setup_dialog (CtkBuilder *builder)
 {
 	GSList *mode_group;
 
@@ -452,12 +452,12 @@ setup_dialog (GtkBuilder *builder)
 int
 main (int argc, char **argv)
 {
-	GtkBuilder  *builder;
+	CtkBuilder  *builder;
 	GError *error = NULL;
 	gchar *builder_widgets[] = {"network_dialog", "adjustment1",
 				    "adjustment2", "adjustment3", "adjustment4",
 				    "delete_button_img", NULL};
-	GtkWidget   *widget;
+	CtkWidget   *widget;
 
 	capplet_init (NULL, &argc, &argv);
 
@@ -480,7 +480,7 @@ main (int argc, char **argv)
 	setup_dialog (builder);
 	widget = _ctk_builder_get_widget (builder, "network_dialog");
 
-        GtkNotebook* nb = GTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
+        CtkNotebook* nb = GTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
         ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
         g_signal_connect (GTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),

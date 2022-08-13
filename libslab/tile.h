@@ -68,10 +68,10 @@ typedef enum
 
 struct _Tile
 {
-	GtkButton ctk_button;
+	CtkButton ctk_button;
 
 	gchar *uri;
-	GtkMenu *context_menu;
+	CtkMenu *context_menu;
 	gboolean entered;
 	gboolean enabled;
 
@@ -83,7 +83,7 @@ struct _Tile
 
 struct _TileClass
 {
-	GtkButtonClass ctk_button_class;
+	CtkButtonClass ctk_button_class;
 
 	void (*tile_activated) (Tile *, TileEvent *);
 	void (*tile_action_triggered) (Tile *, TileEvent *, TileAction *);
@@ -96,7 +96,7 @@ struct _TileAction
 	Tile *tile;
 
 	TileActionFunc func;
-	GtkMenuItem *menu_item;
+	CtkMenuItem *menu_item;
 
 	guint32 flags;
 };
@@ -122,7 +122,7 @@ TileAction *tile_action_new (Tile * tile, TileActionFunc func, const gchar * men
 	guint32 flags);
 
 void tile_action_set_menu_item_label (TileAction * action, const gchar * markup);
-GtkMenuItem *tile_action_get_menu_item (TileAction * action);
+CtkMenuItem *tile_action_get_menu_item (TileAction * action);
 
 #ifdef __cplusplus
 }

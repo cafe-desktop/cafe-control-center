@@ -25,10 +25,10 @@
 
 #include "app-resizer.h"
 
-static void shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisition,
+static void shell_window_handle_size_request (CtkWidget * widget, CtkRequisition * requisition,
 	AppShellData * data);
 
-gboolean shell_window_paint_window (GtkWidget * widget, cairo_t * cr, gpointer data);
+gboolean shell_window_paint_window (CtkWidget * widget, cairo_t * cr, gpointer data);
 
 #define SHELL_WINDOW_BORDER_WIDTH 6
 
@@ -47,7 +47,7 @@ shell_window_init (ShellWindow * window)
 	window->_right_pane = NULL;
 }
 
-GtkWidget *
+CtkWidget *
 shell_window_new (AppShellData * app_data)
 {
 	ShellWindow *window = g_object_new (SHELL_WINDOW_TYPE, NULL);
@@ -87,11 +87,11 @@ shell_window_clear_resize_handler (ShellWindow * win)
    we unhook this function
 */
 static void
-shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisition,
+shell_window_handle_size_request (CtkWidget * widget, CtkRequisition * requisition,
 	AppShellData * app_data)
 {
 	gint height;
-	GtkRequisition child_requisiton;
+	CtkRequisition child_requisiton;
 
 	ctk_widget_get_preferred_size (GTK_WIDGET (APP_RESIZER (app_data->category_layout)->child), &child_requisiton, NULL);
 
@@ -109,7 +109,7 @@ shell_window_handle_size_request (GtkWidget * widget, GtkRequisition * requisiti
 }
 
 void
-shell_window_set_contents (ShellWindow * shell, GtkWidget * left_pane, GtkWidget * right_pane)
+shell_window_set_contents (ShellWindow * shell, CtkWidget * left_pane, CtkWidget * right_pane)
 {
 	shell->_left_pane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	ctk_widget_set_margin_top (GTK_WIDGET (shell->_left_pane), 15);
@@ -127,10 +127,10 @@ shell_window_set_contents (ShellWindow * shell, GtkWidget * left_pane, GtkWidget
 }
 
 gboolean
-shell_window_paint_window (GtkWidget * widget, cairo_t * cr, gpointer data)
+shell_window_paint_window (CtkWidget * widget, cairo_t * cr, gpointer data)
 {
-	GtkWidget *left_pane;
-	GtkAllocation allocation;
+	CtkWidget *left_pane;
+	CtkAllocation allocation;
 
 	left_pane = SHELL_WINDOW (widget)->_left_pane;
 

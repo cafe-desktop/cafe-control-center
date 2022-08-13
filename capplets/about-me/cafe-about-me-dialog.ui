@@ -28,29 +28,29 @@ Author: Wolfgang Ulbrich
   <!-- interface-description about me dialog window -->
   <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
-  <object class="GtkImage" id="window_close_button_img">
+  <object class="CtkImage" id="window_close_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="about-me-dialog">
+  <object class="CtkDialog" id="about-me-dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">About Me</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox2">
+      <object class="CtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
+          <object class="CtkButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="closebutton1">
+              <object class="CtkButton" id="closebutton1">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -74,24 +74,24 @@ Author: Wolfgang Ulbrich
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="vbox55">
+          <object class="CtkBox" id="vbox55">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkBox" id="hbox58">
+              <object class="CtkBox" id="hbox58">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="spacing">48</property>
                 <child>
-                  <object class="GtkBox" id="hbox59">
+                  <object class="CtkBox" id="hbox59">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
-                      <object class="GtkButton" id="button-image">
+                      <object class="CtkButton" id="button-image">
                         <property name="width_request">100</property>
                         <property name="height_request">100</property>
                         <property name="visible">True</property>
@@ -109,7 +109,7 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="fullname">
+                      <object class="CtkLabel" id="fullname">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
@@ -129,18 +129,18 @@ Author: Wolfgang Ulbrich
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="buttons_vbox">
+                  <object class="CtkBox" id="buttons_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
-                      <object class="GtkBox" id="hbox60">
+                      <object class="CtkBox" id="hbox60">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkLabel" id="label1012">
+                          <object class="CtkLabel" id="label1012">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="valign">start</property>
@@ -153,7 +153,7 @@ Author: Wolfgang Ulbrich
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="login">
+                          <object class="CtkLabel" id="login">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="valign">start</property>
@@ -172,7 +172,7 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="password">
+                      <object class="CtkButton" id="password">
                         <property name="label" translatable="yes">Change Passwo_rd...</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -186,7 +186,7 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="enable_fingerprint_button">
+                      <object class="CtkButton" id="enable_fingerprint_button">
                         <property name="label" translatable="yes">Enable _Fingerprint Login...</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -199,7 +199,7 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="disable_fingerprint_button">
+                      <object class="CtkButton" id="disable_fingerprint_button">
                         <property name="label" translatable="yes">Disable _Fingerprint Login...</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>

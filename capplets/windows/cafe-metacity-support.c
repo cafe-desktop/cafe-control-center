@@ -30,9 +30,9 @@ void
 cafe_metacity_config_tool ()
 {
     GSettings *settings;
-    GtkDialog *dialog;
-    GtkWidget *vbox;
-    GtkWidget *widget;
+    CtkDialog *dialog;
+    CtkWidget *vbox;
+    CtkWidget *widget;
     gchar *str;
 
     settings = g_settings_new (METACITY_SCHEMA);

@@ -23,13 +23,13 @@
 static void             egg_cell_renderer_keys_finalize      (GObject             *object);
 static void             egg_cell_renderer_keys_init          (EggCellRendererKeys *cell_keys);
 static void             egg_cell_renderer_keys_class_init    (EggCellRendererKeysClass *cell_keys_class);
-static GtkCellEditable *egg_cell_renderer_keys_start_editing (GtkCellRenderer          *cell,
+static CtkCellEditable *egg_cell_renderer_keys_start_editing (CtkCellRenderer          *cell,
 							      GdkEvent                 *event,
-							      GtkWidget                *widget,
+							      CtkWidget                *widget,
 							      const gchar              *path,
 							      const GdkRectangle       *background_area,
 							      const GdkRectangle       *cell_area,
-							      GtkCellRendererState      flags);
+							      CtkCellRendererState      flags);
 
 
 static void egg_cell_renderer_keys_get_property (GObject         *object,
@@ -40,8 +40,8 @@ static void egg_cell_renderer_keys_set_property (GObject         *object,
 						 guint            param_id,
 						 const GValue    *value,
 						 GParamSpec      *pspec);
-static void egg_cell_renderer_keys_get_size	(GtkCellRenderer    *cell,
-						 GtkWidget          *widget,
+static void egg_cell_renderer_keys_get_size	(CtkCellRenderer    *cell,
+						 CtkWidget          *widget,
 						 const GdkRectangle *cell_area,
 						 gint               *x_offset,
 						 gint               *y_offset,
@@ -58,7 +58,7 @@ enum {
   PROP_ACCEL_MODE
 };
 
-static GtkCellRendererTextClass* parent_class = NULL;
+static CtkCellRendererTextClass* parent_class = NULL;
 
 GType egg_cell_renderer_keys_get_type(void)
 {
@@ -133,7 +133,7 @@ static void
 egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
 {
   GObjectClass *object_class;
-  GtkCellRendererClass *cell_renderer_class;
+  CtkCellRendererClass *cell_renderer_class;
 
   object_class = G_OBJECT_CLASS (cell_keys_class);
   cell_renderer_class = GTK_CELL_RENDERER_CLASS (cell_keys_class);
@@ -214,7 +214,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
 }
 
 
-GtkCellRenderer* egg_cell_renderer_keys_new(void)
+CtkCellRenderer* egg_cell_renderer_keys_new(void)
 {
 	return GTK_CELL_RENDERER(g_object_new(EGG_TYPE_CELL_RENDERER_KEYS, NULL));
 }
@@ -339,8 +339,8 @@ static gboolean is_modifier(guint keycode)
 }
 
 static void
-egg_cell_renderer_keys_get_size(GtkCellRenderer    *cell,
-				 GtkWidget          *widget,
+egg_cell_renderer_keys_get_size(CtkCellRenderer    *cell,
+				 CtkWidget          *widget,
 				 const GdkRectangle *cell_area,
 				 gint               *x_offset,
 				 gint               *y_offset,
@@ -348,7 +348,7 @@ egg_cell_renderer_keys_get_size(GtkCellRenderer    *cell,
 				 gint               *height)
 {
   EggCellRendererKeys *keys = (EggCellRendererKeys *) cell;
-  GtkRequisition requisition;
+  CtkRequisition requisition;
 
   if (keys->sizing_label == NULL)
     keys->sizing_label = ctk_label_new (TOOLTIP_TEXT);
@@ -366,7 +366,7 @@ egg_cell_renderer_keys_get_size(GtkCellRenderer    *cell,
  * GTK mode) and a removed key.
  */
 
-static gboolean grab_key_callback(GtkWidget* widget, GdkEventKey* event, void* data)
+static gboolean grab_key_callback(CtkWidget* widget, GdkEventKey* event, void* data)
 {
 	GdkModifierType accel_mods = 0;
 	guint accel_keyval;
@@ -489,7 +489,7 @@ static gboolean grab_key_callback(GtkWidget* widget, GdkEventKey* event, void* d
 	return TRUE;
 }
 
-static void ungrab_stuff(GtkWidget* widget, gpointer data)
+static void ungrab_stuff(CtkWidget* widget, gpointer data)
 {
 	EggCellRendererKeys* keys = EGG_CELL_RENDERER_KEYS(data);
 	GdkDisplay *display;
@@ -503,12 +503,12 @@ static void ungrab_stuff(GtkWidget* widget, gpointer data)
 	g_signal_handlers_disconnect_by_func(G_OBJECT(keys->grab_widget), G_CALLBACK(grab_key_callback), data);
 }
 
-static void pointless_eventbox_start_editing(GtkCellEditable* cell_editable, GdkEvent* event)
+static void pointless_eventbox_start_editing(CtkCellEditable* cell_editable, GdkEvent* event)
 {
 	/* do nothing, because we are pointless */
 }
 
-static void pointless_eventbox_cell_editable_init(GtkCellEditableIface* iface)
+static void pointless_eventbox_cell_editable_init(CtkCellEditableIface* iface)
 {
 	iface->start_editing = pointless_eventbox_start_editing;
 }
@@ -522,13 +522,13 @@ pointless_eventbox_subclass_get_type (void)
     {
       static const GTypeInfo eventbox_info =
       {
-        sizeof (GtkEventBoxClass),
+        sizeof (CtkEventBoxClass),
 	NULL,		/* base_init */
 	NULL,		/* base_finalize */
         NULL,
 	NULL,		/* class_finalize */
 	NULL,		/* class_data */
-        sizeof (GtkEventBox),
+        sizeof (CtkEventBox),
 	0,              /* n_preallocs */
         (GInstanceInitFunc) NULL,
       };
@@ -548,11 +548,11 @@ pointless_eventbox_subclass_get_type (void)
 }
 
 static void
-override_background_color (GtkWidget *widget,
+override_background_color (CtkWidget *widget,
                            GdkRGBA   *rgba)
 {
   gchar          *css;
-  GtkCssProvider *provider;
+  CtkCssProvider *provider;
 
   provider = ctk_css_provider_new ();
 
@@ -568,11 +568,11 @@ override_background_color (GtkWidget *widget,
 }
 
 static void
-override_color (GtkWidget *widget,
+override_color (CtkWidget *widget,
                 GdkRGBA   *rgba)
 {
   gchar          *css;
-  GtkCssProvider *provider;
+  CtkCssProvider *provider;
 
   provider = ctk_css_provider_new ();
 
@@ -587,21 +587,21 @@ override_color (GtkWidget *widget,
   g_object_unref (provider);
 }
 
-static GtkCellEditable *
-egg_cell_renderer_keys_start_editing (GtkCellRenderer      *cell,
+static CtkCellEditable *
+egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
 				      GdkEvent             *event,
-				      GtkWidget            *widget,
+				      CtkWidget            *widget,
 				      const gchar          *path,
 				      const GdkRectangle   *background_area,
 				      const GdkRectangle   *cell_area,
-				      GtkCellRendererState  flags)
+				      CtkCellRendererState  flags)
 {
-  GtkCellRendererText *celltext;
+  CtkCellRendererText *celltext;
   EggCellRendererKeys *keys;
   GdkDisplay *display;
   GdkSeat *seat;
-  GtkWidget *label;
-  GtkWidget *eventbox;
+  CtkWidget *label;
+  CtkWidget *eventbox;
   GValue celltext_editable = {0};
   GdkRGBA box_color;
   GdkRGBA label_color;

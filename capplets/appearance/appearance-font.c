@@ -48,10 +48,10 @@
 
 static gboolean in_change = FALSE;
 
-static void sample_draw(GtkWidget* darea, cairo_t* cr)
+static void sample_draw(CtkWidget* darea, cairo_t* cr)
 {
 	cairo_surface_t* surface = g_object_get_data(G_OBJECT(darea), "sample-surface");
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	int x, y, w, h;
 
 	ctk_widget_get_allocation (darea, &allocation);
@@ -140,7 +140,7 @@ static void set_fontoptions(PangoContext *context, Antialiasing antialiasing, Hi
 	cairo_font_options_destroy (opt);
 }
 
-static void setup_font_sample(GtkWidget* darea, Antialiasing antialiasing, Hinting hinting)
+static void setup_font_sample(CtkWidget* darea, Antialiasing antialiasing, Hinting hinting)
 {
 	const char *str = "<span font=\"18\" style=\"normal\">abcfgop AO </span>"
 					  "<span font=\"20\" style=\"italic\">abcfgop</span>";
@@ -190,7 +190,7 @@ static void setup_font_sample(GtkWidget* darea, Antialiasing antialiasing, Hinti
 typedef struct {
   Antialiasing antialiasing;
   Hinting hinting;
-  GtkToggleButton *radio;
+  CtkToggleButton *radio;
 } FontPair;
 
 static GSList *font_pairs = NULL;
@@ -236,7 +236,7 @@ font_render_changed (GSettings *settings,
 }
 
 static void
-font_radio_toggled (GtkToggleButton *toggle_button,
+font_radio_toggled (CtkToggleButton *toggle_button,
 		    FontPair        *pair)
 {
   if (!in_change) {
@@ -252,8 +252,8 @@ font_radio_toggled (GtkToggleButton *toggle_button,
 }
 
 static void
-setup_font_pair (GtkWidget    *radio,
-		 GtkWidget    *darea,
+setup_font_pair (CtkWidget    *radio,
+		 CtkWidget    *darea,
 		 Antialiasing  antialiasing,
 		 Hinting       hinting)
 {
@@ -300,7 +300,7 @@ typedef struct
 typedef struct
 {
   EnumGroup *group;
-  GtkToggleButton *widget;
+  CtkToggleButton *widget;
   int value;
 } EnumItem;
 
@@ -331,7 +331,7 @@ enum_group_changed (GSettings *settings,
 }
 
 static void
-enum_item_toggled (GtkToggleButton *toggle_button,
+enum_item_toggled (CtkToggleButton *toggle_button,
 		   EnumItem        *item)
 {
   EnumGroup *group = item->group;
@@ -347,11 +347,11 @@ enum_item_toggled (GtkToggleButton *toggle_button,
 static EnumGroup *
 enum_group_create (GSettings           *settings,
 		   const gchar         *settings_key,
-		   GtkWidget           *first_widget,
+		   CtkWidget           *first_widget,
 		   ...)
 {
   EnumGroup *group;
-  GtkWidget *widget;
+  CtkWidget *widget;
   va_list args;
 
   group = g_new (EnumGroup, 1);
@@ -376,7 +376,7 @@ enum_group_create (GSettings           *settings,
 
     group->items = g_slist_prepend (group->items, item);
 
-    widget = va_arg (args, GtkWidget *);
+    widget = va_arg (args, CtkWidget *);
   }
 
   va_end (args);
@@ -452,7 +452,7 @@ get_dpi_from_x_server (void)
  */
 static void
 dpi_load (GSettings     *settings,
-	  GtkSpinButton *spinner)
+	  CtkSpinButton *spinner)
 {
   GdkScreen *screen;
   gint scale;
@@ -478,8 +478,8 @@ dpi_changed (GSettings      *settings,
 	     gchar          *key,
 	     AppearanceData *data)
 {
-  GtkWidget *spinner;
-  GtkWidget *toggle;
+  CtkWidget *spinner;
+  CtkWidget *toggle;
   gdouble dpi;
 
   dpi = g_settings_get_double (data->font_settings, FONT_DPI_KEY);
@@ -496,13 +496,13 @@ static void
 monitors_changed (GdkScreen      *screen,
 		  AppearanceData *data)
 {
-  GtkWidget *widget;
+  CtkWidget *widget;
   widget = appearance_capplet_get_widget (data, "dpi_spinner");
   dpi_load (data->font_settings, GTK_SPIN_BUTTON (widget));
 }
 
 static void
-dpi_value_changed (GtkSpinButton  *spinner,
+dpi_value_changed (CtkSpinButton  *spinner,
 		   AppearanceData *data)
 {
   /* Like any time when using a spin button with GSettings, there is
@@ -515,7 +515,7 @@ dpi_value_changed (GtkSpinButton  *spinner,
    */
   if (!in_change) {
     GdkScreen *screen;
-    GtkWidget *toggle;
+    CtkWidget *toggle;
     gint scale;
     gdouble new_dpi;
 
@@ -533,11 +533,11 @@ dpi_value_changed (GtkSpinButton  *spinner,
 }
 
 static gboolean
-dpi_value_reset (GtkSwitch      *toggle,
+dpi_value_reset (CtkSwitch      *toggle,
 		 gboolean        state,
 		 AppearanceData *data)
 {
-  GtkWidget *spinner;
+  CtkWidget *spinner;
   spinner = appearance_capplet_get_widget (data, "dpi_spinner");
 
   if (state)
@@ -552,7 +552,7 @@ dpi_value_reset (GtkSwitch      *toggle,
 }
 
 static void
-cb_details_response (GtkDialog *dialog, gint response_id)
+cb_details_response (CtkDialog *dialog, gint response_id)
 {
   if (response_id == GTK_RESPONSE_HELP) {
     capplet_help (GTK_WINDOW (dialog),
@@ -600,13 +600,13 @@ static void install_new_font (const gchar *filepath)
 }
 
 static void
-cb_add_new_font (GtkWidget *button,
+cb_add_new_font (CtkWidget *button,
                  AppearanceData *data)
 {
-    GtkWidget *dialog;
-    GtkFileFilter *filter;
-    GtkFileChooser *chooser;
-    GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
+    CtkWidget *dialog;
+    CtkFileFilter *filter;
+    CtkFileChooser *chooser;
+    CtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
     gint res;
 
     dialog = ctk_file_chooser_dialog_new (_("Select Font"),
@@ -635,13 +635,13 @@ cb_add_new_font (GtkWidget *button,
 }
 
 static void
-cb_show_details (GtkWidget *button,
+cb_show_details (CtkWidget *button,
 		 AppearanceData *data)
 {
   if (!data->font_details) {
-    GtkAdjustment *adjustment;
-    GtkWidget *spinner;
-    GtkWidget *toggle;
+    CtkAdjustment *adjustment;
+    CtkWidget *spinner;
+    CtkWidget *toggle;
     EnumGroup *group;
     gdouble dpi;
 
@@ -730,7 +730,7 @@ cb_show_details (GtkWidget *button,
 
 void font_init(AppearanceData* data)
 {
-	GtkWidget* widget;
+	CtkWidget* widget;
 
 	data->font_details = NULL;
 	data->font_groups = NULL;

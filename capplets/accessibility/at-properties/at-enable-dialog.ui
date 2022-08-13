@@ -28,42 +28,42 @@ Author: Wolfgang Ulbrich
   <!-- interface-description enable at dialog window -->
   <!-- interface-copyright CAFE Developers -->
   <!-- interface-authors Wolfgang Ulbrich -->
-  <object class="GtkImage" id="close_logout_button_img">
+  <object class="CtkImage" id="close_logout_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">application-exit</property>
   </object>
-  <object class="GtkImage" id="help_button_image">
+  <object class="CtkImage" id="help_button_image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">help-browser</property>
   </object>
-  <object class="GtkImage" id="keyboard_button_img">
+  <object class="CtkImage" id="keyboard_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">go-jump</property>
   </object>
-  <object class="GtkImage" id="login_button_img">
+  <object class="CtkImage" id="login_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">go-jump</property>
   </object>
-  <object class="GtkImage" id="mouse_button_img">
+  <object class="CtkImage" id="mouse_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">go-jump</property>
   </object>
-  <object class="GtkImage" id="pref_button_img">
+  <object class="CtkImage" id="pref_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">go-jump</property>
   </object>
-  <object class="GtkImage" id="window_close_button_img">
+  <object class="CtkImage" id="window_close_button_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="at_properties_dialog">
+  <object class="CtkDialog" id="at_properties_dialog">
     <property name="name">at-properties-dialog</property>
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
@@ -71,18 +71,18 @@ Author: Wolfgang Ulbrich
     <property name="resizable">False</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
+      <object class="CtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
+          <object class="CtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="at_help_button">
+              <object class="CtkButton" id="at_help_button">
                 <property name="label" translatable="yes">_Help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -98,7 +98,7 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="at_close_logout_button">
+              <object class="CtkButton" id="at_close_logout_button">
                 <property name="label" translatable="yes">Close and _Log Out</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
@@ -115,7 +115,7 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="at_close_button">
+              <object class="CtkButton" id="at_close_button">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -140,25 +140,25 @@ Author: Wolfgang Ulbrich
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="vbox1">
+          <object class="CtkBox" id="vbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="orientation">vertical</property>
             <property name="spacing">18</property>
             <child>
-              <object class="GtkBox" id="at_support_frame">
+              <object class="CtkBox" id="at_support_frame">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkBox" id="vbox2">
+                  <object class="CtkBox" id="vbox2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
-                      <object class="GtkLabel" id="label4">
+                      <object class="CtkLabel" id="label4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
@@ -174,12 +174,12 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="hbox2">
+                      <object class="CtkBox" id="hbox2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkImage" id="at_enable_image">
+                          <object class="CtkImage" id="at_enable_image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="valign">start</property>
@@ -191,14 +191,14 @@ Author: Wolfgang Ulbrich
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="vbox3">
+                          <object class="CtkBox" id="vbox3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="hexpand">True</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkButton" id="at_pref_button">
+                              <object class="CtkButton" id="at_pref_button">
                                 <property name="label" translatable="yes">_Preferred Applications</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
@@ -218,7 +218,7 @@ Author: Wolfgang Ulbrich
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkCheckButton" id="at_enable_toggle">
+                              <object class="CtkCheckButton" id="at_enable_toggle">
                                 <property name="label" translatable="yes">_Enable assistive technologies</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
@@ -266,18 +266,18 @@ Author: Wolfgang Ulbrich
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="at_applications_frame">
+              <object class="CtkBox" id="at_applications_frame">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkBox" id="vbox7">
+                  <object class="CtkBox" id="vbox7">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
-                      <object class="GtkLabel" id="pref_label">
+                      <object class="CtkLabel" id="pref_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
@@ -293,12 +293,12 @@ Author: Wolfgang Ulbrich
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="hbox3">
+                      <object class="CtkBox" id="hbox3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkImage" id="at_applications_image">
+                          <object class="CtkImage" id="at_applications_image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="valign">start</property>
@@ -310,18 +310,18 @@ Author: Wolfgang Ulbrich
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="vbox5">
+                          <object class="CtkBox" id="vbox5">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkBox" id="vbox8">
+                              <object class="CtkBox" id="vbox8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkButton" id="keyboard_button">
+                                  <object class="CtkButton" id="keyboard_button">
                                     <property name="label" translatable="yes">_Keyboard Accessibility</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
@@ -342,7 +342,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="mouse_button">
+                                  <object class="CtkButton" id="mouse_button">
                                     <property name="label" translatable="yes">_Mouse Accessibility</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
@@ -363,7 +363,7 @@ Author: Wolfgang Ulbrich
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkButton" id="login_button">
+                                  <object class="CtkButton" id="login_button">
                                     <property name="label" translatable="yes">Accessible Lo_gin</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>

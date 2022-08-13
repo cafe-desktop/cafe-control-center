@@ -7,7 +7,7 @@
   <!-- interface-description a11y keyboard notifications dialog window -->
   <!-- interface-copyright CAFE Developer -->
   <!-- interface-authors Wolfgang Ulbrich -->
-  <object class="GtkDialog" id="a11y_notifications_dialog">
+  <object class="CtkDialog" id="a11y_notifications_dialog">
     <property name="name">a11y-notifications-dialog</property>
     <property name="can_focus">False</property>
     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -16,20 +16,20 @@
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox7">
+      <object class="CtkBox" id="dialog-vbox7">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area7">
+          <object class="CtkButtonBox" id="dialog-action_area7">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="button11">
+              <object class="CtkButton" id="button11">
                 <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -44,7 +44,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button12">
+              <object class="CtkButton" id="button12">
                 <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -67,7 +67,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="vbox46">
+          <object class="CtkBox" id="vbox46">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -75,14 +75,14 @@
             <property name="orientation">vertical</property>
             <property name="spacing">18</property>
             <child>
-              <object class="GtkBox" id="vbox47">
+              <object class="CtkBox" id="vbox47">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label33">
+                  <object class="CtkLabel" id="label33">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -99,12 +99,12 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="hbox15">
+                  <object class="CtkBox" id="hbox15">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
-                      <object class="GtkLabel" id="label40">
+                      <object class="CtkLabel" id="label40">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -117,14 +117,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="vbox48">
+                      <object class="CtkBox" id="vbox48">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkCheckButton" id="feature_state_change_beep">
+                          <object class="CtkCheckButton" id="feature_state_change_beep">
                             <property name="label" translatable="yes">Beep when _accessibility features are turned on or off</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -141,7 +141,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="togglekeys_enable">
+                          <object class="CtkCheckButton" id="togglekeys_enable">
                             <property name="label" translatable="yes">Beep when a _toggle key is pressed</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -179,14 +179,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="stickykeys_notifications_box">
+              <object class="CtkBox" id="stickykeys_notifications_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label47">
+                  <object class="CtkLabel" id="label47">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -203,12 +203,12 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="hbox17">
+                  <object class="CtkBox" id="hbox17">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
-                      <object class="GtkLabel" id="label50">
+                      <object class="CtkLabel" id="label50">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -221,14 +221,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="vbox50">
+                      <object class="CtkBox" id="vbox50">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkCheckButton" id="stickykeys_modifier_beep">
+                          <object class="CtkCheckButton" id="stickykeys_modifier_beep">
                             <property name="label" translatable="yes">Beep when a _modifier key is pressed</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -266,13 +266,13 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="system_bell_box">
+              <object class="CtkBox" id="system_bell_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label500">
+                  <object class="CtkLabel" id="label500">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
@@ -288,11 +288,11 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="hbox99">
+                  <object class="CtkBox" id="hbox99">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkLabel" id="label99">
+                      <object class="CtkLabel" id="label99">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label">    </property>
@@ -304,13 +304,13 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="vbox99">
+                      <object class="CtkBox" id="vbox99">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkCheckButton" id="visual_bell_enable">
+                          <object class="CtkCheckButton" id="visual_bell_enable">
                             <property name="label" translatable="yes">Show _visual feedback for the alert sound</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -326,11 +326,11 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="hbox3">
+                          <object class="CtkBox" id="hbox3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel" id="label98">
+                              <object class="CtkLabel" id="label98">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label">    </property>
@@ -342,13 +342,13 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="vbox98">
+                              <object class="CtkBox" id="vbox98">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkRadioButton" id="visual_bell_titlebar">
+                                  <object class="CtkRadioButton" id="visual_bell_titlebar">
                                     <property name="label" translatable="yes">Flash _window titlebar</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
@@ -365,7 +365,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkRadioButton" id="visual_bell_fullscreen">
+                                  <object class="CtkRadioButton" id="visual_bell_fullscreen">
                                     <property name="label" translatable="yes">Flash entire _screen</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
@@ -418,14 +418,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="slowkeys_notifications_box">
+              <object class="CtkBox" id="slowkeys_notifications_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label51">
+                  <object class="CtkLabel" id="label51">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -442,12 +442,12 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="hbox18">
+                  <object class="CtkBox" id="hbox18">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
-                      <object class="GtkLabel" id="label53">
+                      <object class="CtkLabel" id="label53">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -460,14 +460,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="vbox52">
+                      <object class="CtkBox" id="vbox52">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkCheckButton" id="slowkeys_beep_press">
+                          <object class="CtkCheckButton" id="slowkeys_beep_press">
                             <property name="label" translatable="yes">Beep when a key is pr_essed</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -484,7 +484,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="slowkeys_beep_accept">
+                          <object class="CtkCheckButton" id="slowkeys_beep_accept">
                             <property name="label" translatable="yes">Beep when key is _accepted</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -501,7 +501,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="slowkeys_beep_reject">
+                          <object class="CtkCheckButton" id="slowkeys_beep_reject">
                             <property name="label" translatable="yes">Beep when key is _rejected</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -539,14 +539,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="bouncekeys_notifications_box">
+              <object class="CtkBox" id="bouncekeys_notifications_box">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkLabel" id="label54">
+                  <object class="CtkLabel" id="label54">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -563,12 +563,12 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="hbox22">
+                  <object class="CtkBox" id="hbox22">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <child>
-                      <object class="GtkLabel" id="label55">
+                      <object class="CtkLabel" id="label55">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -581,14 +581,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox" id="vbox54">
+                      <object class="CtkBox" id="vbox54">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
-                          <object class="GtkCheckButton" id="bouncekeys_beep_reject">
+                          <object class="CtkCheckButton" id="bouncekeys_beep_reject">
                             <property name="label" translatable="yes">Beep when a key is reje_cted</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
