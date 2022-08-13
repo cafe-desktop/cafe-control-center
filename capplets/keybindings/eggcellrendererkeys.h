@@ -40,7 +40,7 @@ typedef struct _EggCellRendererKeysClass EggCellRendererKeysClass;
 
 typedef enum
 {
-  EGG_CELL_RENDERER_KEYS_MODE_GTK,
+  EGG_CELL_RENDERER_KEYS_MODE_CTK,
   EGG_CELL_RENDERER_KEYS_MODE_X
 } EggCellRendererKeysMode;
 
@@ -90,4 +90,4 @@ void             egg_cell_renderer_keys_set_accel_mode  (EggCellRendererKeys    
 #endif
 
 
-#endif /* __GTK_CELL_RENDERER_KEYS_H__ */
+#endif /* __CTK_CELL_RENDERER_KEYS_H__ */

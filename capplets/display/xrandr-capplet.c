@@ -101,16 +101,16 @@ error_message (App *app, const char *primary_text, const char *secondary_text)
 {
     CtkWidget *dialog;
 
-    dialog = ctk_message_dialog_new ((app && app->dialog) ? GTK_WINDOW (app->dialog) : NULL,
-				     GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-				     GTK_MESSAGE_ERROR,
-				     GTK_BUTTONS_CLOSE,
+    dialog = ctk_message_dialog_new ((app && app->dialog) ? CTK_WINDOW (app->dialog) : NULL,
+				     CTK_DIALOG_MODAL | CTK_DIALOG_DESTROY_WITH_PARENT,
+				     CTK_MESSAGE_ERROR,
+				     CTK_BUTTONS_CLOSE,
 				     "%s", primary_text);
 
     if (secondary_text)
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", secondary_text);
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog), "%s", secondary_text);
 
-    ctk_dialog_run (GTK_DIALOG (dialog));
+    ctk_dialog_run (CTK_DIALOG (dialog));
     ctk_widget_destroy (dialog);
 }
 
@@ -183,9 +183,9 @@ layout_set_font (PangoLayout *layout, const char *font)
 static void
 clear_combo (CtkWidget *widget)
 {
-    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkComboBox *box = CTK_COMBO_BOX (widget);
     CtkTreeModel *model = ctk_combo_box_get_model (box);
-    CtkListStore *store = GTK_LIST_STORE (model);
+    CtkListStore *store = CTK_LIST_STORE (model);
 
     ctk_list_store_clear (store);
 }
@@ -227,9 +227,9 @@ add_key (CtkWidget *widget,
 	 CafeRRRotation rotation)
 {
     ForeachInfo info;
-    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkComboBox *box = CTK_COMBO_BOX (widget);
     CtkTreeModel *model = ctk_combo_box_get_model (box);
-    CtkListStore *store = GTK_LIST_STORE (model);
+    CtkListStore *store = CTK_LIST_STORE (model);
 
     info.text = text;
     info.found = FALSE;
@@ -254,7 +254,7 @@ add_key (CtkWidget *widget,
 static gboolean
 combo_select (CtkWidget *widget, const char *text)
 {
-    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkComboBox *box = CTK_COMBO_BOX (widget);
     CtkTreeModel *model = ctk_combo_box_get_model (box);
     ForeachInfo info;
 
@@ -465,7 +465,7 @@ rebuild_mirror_screens (App *app)
     /* If mirror_is_active, then it *must* be possible to turn mirroring off */
     mirror_is_supported = mirror_is_active || mirror_screens_is_supported (app);
 
-    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->clone_checkbox), mirror_is_active);
+    ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (app->clone_checkbox), mirror_is_active);
     ctk_widget_set_sensitive (app->clone_checkbox, mirror_is_supported);
 
     g_signal_handlers_unblock_by_func (app->clone_checkbox, G_CALLBACK (on_clone_changed), app);
@@ -496,7 +496,7 @@ rebuild_current_monitor_label (App *app)
 	    use_color = FALSE;
 	}
 
-	ctk_label_set_markup (GTK_LABEL (app->current_monitor_label), str);
+	ctk_label_set_markup (CTK_LABEL (app->current_monitor_label), str);
 	g_free (str);
 
 	if (use_color)
@@ -512,7 +512,7 @@ rebuild_current_monitor_label (App *app)
 	    ctk_widget_override_color (app->current_monitor_label, ctk_widget_get_state_flags (app->current_monitor_label), &black);
 	}
 
-	ctk_event_box_set_visible_window (GTK_EVENT_BOX (app->current_monitor_event_box), use_color);
+	ctk_event_box_set_visible_window (CTK_EVENT_BOX (app->current_monitor_event_box), use_color);
 }
 
 static void
@@ -543,8 +543,8 @@ rebuild_on_off_radios (App *app)
     ctk_widget_set_sensitive (app->monitor_on_radio, sensitive);
     ctk_widget_set_sensitive (app->monitor_off_radio, sensitive);
 
-    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_on_radio), on_active);
-    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->monitor_off_radio), off_active);
+    ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (app->monitor_on_radio), on_active);
+    ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (app->monitor_off_radio), off_active);
 
     g_signal_handlers_unblock_by_func (app->monitor_on_radio, G_CALLBACK (monitor_on_off_toggled_cb), app);
     g_signal_handlers_unblock_by_func (app->monitor_off_radio, G_CALLBACK (monitor_on_off_toggled_cb), app);
@@ -667,7 +667,7 @@ get_mode (CtkWidget *widget, int *width, int *height, int *freq, CafeRRRotation 
 {
     CtkTreeIter iter;
     CtkTreeModel *model;
-    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkComboBox *box = CTK_COMBO_BOX (widget);
     int dummy;
 
     if (!ctk_combo_box_get_active_iter (box, &iter))
@@ -765,9 +765,9 @@ monitor_on_off_toggled_cb (CtkToggleButton *toggle, gpointer data)
     if (!ctk_toggle_button_get_active (toggle))
 	return;
 
-    if (GTK_WIDGET (toggle) == app->monitor_on_radio)
+    if (CTK_WIDGET (toggle) == app->monitor_on_radio)
 	is_on = TRUE;
-    else if (GTK_WIDGET (toggle) == app->monitor_off_radio)
+    else if (CTK_WIDGET (toggle) == app->monitor_off_radio)
 	is_on = FALSE;
     else
     {
@@ -981,7 +981,7 @@ on_clone_changed (CtkWidget *box, gpointer data)
 {
     App *app = data;
 
-    cafe_rr_config_set_clone (app->current_configuration, ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (app->clone_checkbox)));
+    cafe_rr_config_set_clone (app->current_configuration, ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (app->clone_checkbox)));
 
     if (cafe_rr_config_get_clone (app->current_configuration))
     {
@@ -1503,7 +1503,7 @@ on_output_event (FooScrollArea *area,
      * exits the outputs' area.
      */
     if (!cafe_rr_config_get_clone (app->current_configuration) && get_n_connected (app) > 1)
-	set_cursor (GTK_WIDGET (area), GDK_FLEUR);
+	set_cursor (CTK_WIDGET (area), GDK_FLEUR);
 
     if (event->type == FOO_BUTTON_PRESS)
     {
@@ -1613,7 +1613,7 @@ on_canvas_event (FooScrollArea *area,
      * on_output_event() for where we set the cursor to the movement cursor if
      * it is over one of the outputs.
      */
-    set_cursor (GTK_WIDGET (area), GDK_BLANK_CURSOR);
+    set_cursor (CTK_WIDGET (area), GDK_BLANK_CURSOR);
 }
 
 static PangoLayout *
@@ -1634,7 +1634,7 @@ get_display_name (App *app,
     else {
         text = g_strdup_printf ("<b>%s</b>\n<small>%s</small>", cafe_rr_output_info_get_display_name (output), cafe_rr_output_info_get_name (output));
     }
-    layout = ctk_widget_create_pango_layout (GTK_WIDGET (app->area), text);
+    layout = ctk_widget_create_pango_layout (CTK_WIDGET (app->area), text);
     pango_layout_set_markup (layout, text, -1);
     g_free (text);
     pango_layout_set_alignment (layout, PANGO_ALIGN_CENTER);
@@ -1651,17 +1651,17 @@ paint_background (FooScrollArea *area,
     GdkRGBA *base_color = NULL;
     GdkRGBA dark_color;
 
-    widget = GTK_WIDGET (area);
+    widget = CTK_WIDGET (area);
 
     foo_scroll_area_get_viewport (area, &viewport);
 
     widget_style = ctk_widget_get_style_context (widget);
 
     ctk_style_context_save (widget_style);
-    ctk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
+    ctk_style_context_set_state (widget_style, CTK_STATE_FLAG_SELECTED);
     ctk_style_context_get (widget_style,
                            ctk_style_context_get_state (widget_style),
-                           GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &base_color,
+                           CTK_STYLE_PROPERTY_BACKGROUND_COLOR, &base_color,
                            NULL);
     ctk_style_context_restore (widget_style);
     gdk_cairo_set_source_rgba(cr, base_color);
@@ -1676,7 +1676,7 @@ paint_background (FooScrollArea *area,
     foo_scroll_area_add_input_from_fill (area, cr, on_canvas_event, NULL);
 
     ctk_style_context_save (widget_style);
-    ctk_style_context_set_state (widget_style, GTK_STATE_FLAG_SELECTED);
+    ctk_style_context_set_state (widget_style, CTK_STATE_FLAG_SELECTED);
     cafe_desktop_ctk_style_get_dark_color (widget_style,
                                            ctk_style_context_get_state (widget_style),
                                            &dark_color);
@@ -1849,7 +1849,7 @@ on_area_paint (FooScrollArea *area,
 static void
 make_text_combo (CtkWidget *widget, int sort_column)
 {
-    CtkComboBox *box = GTK_COMBO_BOX (widget);
+    CtkComboBox *box = CTK_COMBO_BOX (widget);
     CtkListStore *store = ctk_list_store_new (
 	6,
 	G_TYPE_STRING,		/* Text */
@@ -1861,21 +1861,21 @@ make_text_combo (CtkWidget *widget, int sort_column)
 
     CtkCellRenderer *cell;
 
-    ctk_cell_layout_clear (GTK_CELL_LAYOUT (widget));
+    ctk_cell_layout_clear (CTK_CELL_LAYOUT (widget));
 
-    ctk_combo_box_set_model (box, GTK_TREE_MODEL (store));
+    ctk_combo_box_set_model (box, CTK_TREE_MODEL (store));
 
     cell = ctk_cell_renderer_text_new ();
-    ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (box), cell, TRUE);
-    ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (box), cell,
+    ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (box), cell, TRUE);
+    ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (box), cell,
 				    "text", 0,
 				    NULL);
 
     if (sort_column != -1)
     {
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (store),
 					      sort_column,
-					      GTK_SORT_DESCENDING);
+					      CTK_SORT_DESCENDING);
     }
 }
 
@@ -2149,7 +2149,7 @@ set_primary (CtkWidget *widget, gpointer data)
 static void
 on_show_icon_toggled (CtkWidget *widget, gpointer data)
 {
-    CtkToggleButton *tb = GTK_TOGGLE_BUTTON (widget);
+    CtkToggleButton *tb = CTK_TOGGLE_BUTTON (widget);
     App *app = data;
 
     g_settings_set_boolean (app->settings, SHOW_ICON_KEY,
@@ -2296,15 +2296,15 @@ success_dialog_for_make_default (App *app)
 {
     CtkWidget *dialog;
 
-    dialog = ctk_message_dialog_new (GTK_WINDOW (app->dialog),
-				     GTK_DIALOG_MODAL,
-				     GTK_MESSAGE_INFO,
-				     GTK_BUTTONS_OK,
+    dialog = ctk_message_dialog_new (CTK_WINDOW (app->dialog),
+				     CTK_DIALOG_MODAL,
+				     CTK_MESSAGE_INFO,
+				     CTK_BUTTONS_OK,
 				     _("The monitor configuration has been saved"));
-    ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+    ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 					      _("This configuration will be used the next time someone logs in."));
 
-    ctk_dialog_run (GTK_DIALOG (dialog));
+    ctk_dialog_run (CTK_DIALOG (dialog));
     ctk_widget_destroy (dialog);
 }
 
@@ -2366,7 +2366,7 @@ make_default (App *app)
 static CtkWidget*
 _ctk_builder_get_widget (CtkBuilder *builder, const gchar *name)
 {
-    return GTK_WIDGET (ctk_builder_get_object (builder, name));
+    return CTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
 static void
@@ -2403,7 +2403,7 @@ run_application (App *app)
 			    G_CALLBACK (dialog_map_event_cb), app);
 
     ctk_window_set_default_icon_name ("preferences-desktop-display");
-    ctk_window_set_icon_name (GTK_WINDOW (app->dialog),
+    ctk_window_set_icon_name (CTK_WINDOW (app->dialog),
 			      "preferences-desktop-display");
 
     app->current_monitor_event_box = _ctk_builder_get_widget (builder,
@@ -2447,7 +2447,7 @@ run_application (App *app)
     app->show_icon_checkbox = _ctk_builder_get_widget (builder,
 						      "show_notification_icon");
 
-    ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (app->show_icon_checkbox),
+    ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (app->show_icon_checkbox),
 				  g_settings_get_boolean (app->settings, SHOW_ICON_KEY));
 
     g_signal_connect (app->show_icon_checkbox, "toggled", G_CALLBACK (on_show_icon_toggled), app);
@@ -2477,7 +2477,7 @@ run_application (App *app)
 
     align = _ctk_builder_get_widget (builder, "align");
 
-    ctk_container_add (GTK_CONTAINER (align), app->area);
+    ctk_container_add (CTK_CONTAINER (align), app->area);
 
     app->apply_button = _ctk_builder_get_widget (builder, "apply_button");
     g_signal_connect (app->apply_button, "clicked",
@@ -2488,19 +2488,19 @@ run_application (App *app)
     g_object_unref (builder);
 
 restart:
-    switch (ctk_dialog_run (GTK_DIALOG (app->dialog)))
+    switch (ctk_dialog_run (CTK_DIALOG (app->dialog)))
     {
     default:
 	/* Fall Through */
-    case GTK_RESPONSE_DELETE_EVENT:
-    case GTK_RESPONSE_CLOSE:
+    case CTK_RESPONSE_DELETE_EVENT:
+    case CTK_RESPONSE_CLOSE:
 #if 0
 	g_debug ("Close");
 #endif
 	break;
 
-    case GTK_RESPONSE_HELP:
-        ctk_show_uri_on_window (GTK_DIALOG (app->dialog),
+    case CTK_RESPONSE_HELP:
+        ctk_show_uri_on_window (CTK_DIALOG (app->dialog),
                                 "help:cafe-user-guide/goscustdesk-70",
                                 ctk_get_current_event_time (),
                                 &error);
@@ -2512,7 +2512,7 @@ restart:
 	goto restart;
 	break;
 
-    case GTK_RESPONSE_APPLY:
+    case CTK_RESPONSE_APPLY:
 	apply (app);
 	goto restart;
 	break;

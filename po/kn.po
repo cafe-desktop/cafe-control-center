@@ -1388,10 +1388,10 @@ msgstr "ಎಲ್ಲವನ್ನೂ ತಿದ್ದಿಬರೆ(_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ಈ ಪರಿಸರವಿನ್ಯಾಸವು ಅಂದುಕೊಂಡಂತೆ ಕಾಣಿಸುವುದಿಲ್ಲ ಏಕೆಂದರೆ ಅಗತ್ಯವಿರುವ GTK+ "
+"ಈ ಪರಿಸರವಿನ್ಯಾಸವು ಅಂದುಕೊಂಡಂತೆ ಕಾಣಿಸುವುದಿಲ್ಲ ಏಕೆಂದರೆ ಅಗತ್ಯವಿರುವ CTK+ "
 "ಪರಿಸರವಿನ್ಯಾಸ '%s' ಅನ್ನು ಅನುಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ."
 
 #: capplets/common/cafe-theme-info.c:1588

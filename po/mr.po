@@ -1386,10 +1386,10 @@ msgstr "सर्व पुन्हा खोडून लिहा (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"आवश्यक GTK+ सुत्रयोजना '%s' प्रतिष्ठापीत नसल्यामुळे ही सुत्रयोजना "
+"आवश्यक CTK+ सुत्रयोजना '%s' प्रतिष्ठापीत नसल्यामुळे ही सुत्रयोजना "
 "ठरविल्यानुरूप दिसणार नाही."
 
 #: capplets/common/cafe-theme-info.c:1588

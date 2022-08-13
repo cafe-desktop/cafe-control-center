@@ -47,7 +47,7 @@ enum
     LAST_SIGNAL
 };
 
-G_DEFINE_TYPE (TimezoneMap, timezone_map, GTK_TYPE_WIDGET)
+G_DEFINE_TYPE (TimezoneMap, timezone_map, CTK_TYPE_WIDGET)
 static guint signals[LAST_SIGNAL];
 static TimezoneMapOffset color_codes[] =
 {
@@ -183,7 +183,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
 
     map->visible_map_pixels = gdk_pixbuf_get_pixels (map->color_map);
     map->visible_map_rowstride = gdk_pixbuf_get_rowstride (map->color_map);
-    GTK_WIDGET_CLASS (timezone_map_parent_class)->size_allocate (widget,
+    CTK_WIDGET_CLASS (timezone_map_parent_class)->size_allocate (widget,
                                                                  allocation);
 }
 
@@ -417,8 +417,8 @@ cc_timezone_map_state_flags_changed (CtkWidget     *widget,
 {
     update_cursor (widget);
 
-    if (GTK_WIDGET_CLASS (timezone_map_parent_class)->state_flags_changed)
-        GTK_WIDGET_CLASS (timezone_map_parent_class)->state_flags_changed (widget, prev_state);
+    if (CTK_WIDGET_CLASS (timezone_map_parent_class)->state_flags_changed)
+        CTK_WIDGET_CLASS (timezone_map_parent_class)->state_flags_changed (widget, prev_state);
 }
 static gint sort_locations (TzLocation *a,
                             TzLocation *b)
@@ -484,13 +484,13 @@ button_press_event (TimezoneMap    *map,
         }
     }
 
-    ctk_widget_queue_draw (GTK_WIDGET (map));
+    ctk_widget_queue_draw (CTK_WIDGET (map));
 
   /* work out the co-ordinates */
 
     array = tz_get_locations (map->tzdb);
 
-    ctk_widget_get_allocation (GTK_WIDGET (map), &alloc);
+    ctk_widget_get_allocation (CTK_WIDGET (map), &alloc);
     width = alloc.width;
     height = alloc.height;
 
@@ -522,7 +522,7 @@ static void
 timezone_map_class_init (TimezoneMapClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
-    CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+    CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
 
     object_class->dispose = cc_timezone_map_dispose;
     object_class->finalize = timezone_map_finalize;
@@ -616,7 +616,7 @@ gboolean timezone_map_set_timezone (TimezoneMap *map,
     }
 
     if (ret)
-        ctk_widget_queue_draw (GTK_WIDGET (map));
+        ctk_widget_queue_draw (CTK_WIDGET (map));
 
     return ret;
 }
@@ -629,7 +629,7 @@ void timezone_map_set_bubble_text (TimezoneMap *map,
 {
     g_free (map->bubble_text);
     map->bubble_text = g_strdup (text);
-    ctk_widget_queue_draw (GTK_WIDGET (map));
+    ctk_widget_queue_draw (CTK_WIDGET (map));
 }
 
 TimezoneMap * timezone_map_new (void)

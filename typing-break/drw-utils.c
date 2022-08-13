@@ -98,7 +98,7 @@ window_draw_event   (CtkWidget      *widget,
 	int              width;
 	int              height;
 
-	ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
+	ctk_window_get_size (CTK_WINDOW (widget), &width, &height);
 
 	cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
 	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);

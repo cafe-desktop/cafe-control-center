@@ -1380,10 +1380,10 @@ msgstr "అన్నిటిని తిరిగివ్రాయి (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ఈ థీమ్ అనుకొన్నట్లు కనిపించదు యెంచేతంటే అవసరమైన GTK+ థీమ్ '%s' సంస్థాపించి "
+"ఈ థీమ్ అనుకొన్నట్లు కనిపించదు యెంచేతంటే అవసరమైన CTK+ థీమ్ '%s' సంస్థాపించి "
 "లేదు."
 
 #: capplets/common/cafe-theme-info.c:1588

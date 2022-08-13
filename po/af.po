@@ -1355,11 +1355,11 @@ msgstr "Oorskryf _almal"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
 "Hierdie tema sal nie lyk soos dit bedoel is nie omdat die benodigde "
-"GTK+-tema '%s' nie geïnstalleer is nie."
+"CTK+-tema '%s' nie geïnstalleer is nie."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

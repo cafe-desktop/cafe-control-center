@@ -82,7 +82,7 @@ libslab_get_current_screen (void)
 	event = ctk_get_current_event ();
 	if (event) {
 		if (event->any.window)
-			screen = ctk_window_get_screen (GTK_WINDOW (event->any.window));
+			screen = ctk_window_get_screen (CTK_WINDOW (event->any.window));
 
 		gdk_event_free (event);
 	}

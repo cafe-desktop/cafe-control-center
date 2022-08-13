@@ -29,7 +29,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gio/gio.h>
 
-#ifdef HAVE_CANBERRA_GTK
+#ifdef HAVE_CANBERRA_CTK
 #include <canberra-ctk.h>
 #endif
 
@@ -77,7 +77,7 @@ static void         label_size_allocate_cb         (CtkLabel            *label,
 						    GdkRectangle        *allocation,
 						    gpointer             user_data);
 
-G_DEFINE_TYPE_WITH_PRIVATE (DrwBreakWindow, drw_break_window, GTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (DrwBreakWindow, drw_break_window, CTK_TYPE_WINDOW)
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
@@ -138,28 +138,28 @@ drw_break_window_init (DrwBreakWindow *window)
 	allow_postpone = g_settings_get_boolean (settings, "allow-postpone");
 	g_object_unref (settings);
 
-	ctk_window_set_keep_above (GTK_WINDOW (window), TRUE);
-	ctk_window_fullscreen (GTK_WINDOW (window));
-	ctk_window_set_modal (GTK_WINDOW (window), TRUE);
+	ctk_window_set_keep_above (CTK_WINDOW (window), TRUE);
+	ctk_window_fullscreen (CTK_WINDOW (window));
+	ctk_window_set_modal (CTK_WINDOW (window), TRUE);
 
 	screen = gdk_screen_get_default ();
 	display = gdk_screen_get_display (screen);
-	scale = ctk_widget_get_scale_factor (GTK_WIDGET (window));
+	scale = ctk_widget_get_scale_factor (CTK_WIDGET (window));
 
 	gdk_monitor_get_geometry (gdk_display_get_monitor (display, root_monitor), &monitor);
 
-	ctk_window_set_default_size (GTK_WINDOW (window),
+	ctk_window_set_default_size (CTK_WINDOW (window),
 				     WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
 				     HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
 
-	ctk_window_set_decorated (GTK_WINDOW (window), FALSE);
-	ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-	drw_setup_background (GTK_WIDGET (window));
+	ctk_window_set_decorated (CTK_WINDOW (window), FALSE);
+	ctk_widget_set_app_paintable (CTK_WIDGET (window), TRUE);
+	drw_setup_background (CTK_WIDGET (window));
 
 	right_padding = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale - monitor.width - monitor.x;
 	bottom_padding = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale - monitor.height - monitor.y;
 
-	outer_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	outer_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 	ctk_widget_set_hexpand (outer_vbox, TRUE);
 	ctk_widget_set_vexpand (outer_vbox, TRUE);
 	ctk_widget_set_margin_top (outer_vbox, monitor.y);
@@ -168,13 +168,13 @@ drw_break_window_init (DrwBreakWindow *window)
 	ctk_widget_set_margin_end (outer_vbox, right_padding);
 	ctk_widget_show (outer_vbox);
 
-	ctk_container_add (GTK_CONTAINER (window), outer_vbox);
+	ctk_container_add (CTK_CONTAINER (window), outer_vbox);
 
 	if (allow_postpone) {
-		button_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+		button_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
 		ctk_widget_show (button_box);
 
-		ctk_container_set_border_width (GTK_CONTAINER (button_box), 12);
+		ctk_container_set_border_width (CTK_CONTAINER (button_box), 12);
 
 		priv->postpone_button = ctk_button_new_with_mnemonic (_("_Postpone Break"));
 		ctk_widget_show (priv->postpone_button);
@@ -194,32 +194,32 @@ drw_break_window_init (DrwBreakWindow *window)
 				  G_CALLBACK (postpone_clicked_cb),
 				  window);
 
-		ctk_box_pack_end (GTK_BOX (button_box), priv->postpone_button, FALSE, TRUE, 0);
+		ctk_box_pack_end (CTK_BOX (button_box), priv->postpone_button, FALSE, TRUE, 0);
 
 		priv->postpone_entry = ctk_entry_new ();
-		ctk_entry_set_has_frame (GTK_ENTRY (priv->postpone_entry), FALSE);
+		ctk_entry_set_has_frame (CTK_ENTRY (priv->postpone_entry), FALSE);
 
-		ctk_box_pack_end (GTK_BOX (button_box), priv->postpone_entry, FALSE, TRUE, 4);
+		ctk_box_pack_end (CTK_BOX (button_box), priv->postpone_entry, FALSE, TRUE, 4);
 
-		ctk_box_pack_end (GTK_BOX (outer_vbox), button_box, FALSE, TRUE, 0);
+		ctk_box_pack_end (CTK_BOX (outer_vbox), button_box, FALSE, TRUE, 0);
 	}
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	ctk_widget_set_halign (vbox, GTK_ALIGN_CENTER);
-	ctk_widget_set_valign (vbox, GTK_ALIGN_CENTER);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+	ctk_widget_set_halign (vbox, CTK_ALIGN_CENTER);
+	ctk_widget_set_valign (vbox, CTK_ALIGN_CENTER);
 	ctk_widget_show (vbox);
 
-	ctk_box_pack_start (GTK_BOX (outer_vbox), vbox, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (outer_vbox), vbox, TRUE, TRUE, 0);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
 	ctk_widget_show (hbox);
-	ctk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), hbox, TRUE, FALSE, 0);
 
-	priv->image = ctk_image_new_from_icon_name ("process-stop", GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_halign (priv->image, GTK_ALIGN_END);
-	ctk_widget_set_valign (priv->image, GTK_ALIGN_CENTER);
+	priv->image = ctk_image_new_from_icon_name ("process-stop", CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_halign (priv->image, CTK_ALIGN_END);
+	ctk_widget_set_valign (priv->image, CTK_ALIGN_CENTER);
 	ctk_widget_show (priv->image);
-	ctk_box_pack_start (GTK_BOX (hbox), priv->image, TRUE, TRUE, 8);
+	ctk_box_pack_start (CTK_BOX (hbox), priv->image, TRUE, TRUE, 8);
 
 	priv->break_label = ctk_label_new (NULL);
 	ctk_widget_show (priv->break_label);
@@ -236,15 +236,15 @@ drw_break_window_init (DrwBreakWindow *window)
 
 	str = g_strdup_printf ("<span size=\"xx-large\" foreground=\"white\"><b>%s</b></span>",
 			       _("Take a break!"));
-	ctk_label_set_markup (GTK_LABEL (priv->break_label), str);
+	ctk_label_set_markup (CTK_LABEL (priv->break_label), str);
 	g_free (str);
 
-	ctk_box_pack_start (GTK_BOX (hbox), priv->break_label, FALSE, FALSE, 12);
+	ctk_box_pack_start (CTK_BOX (hbox), priv->break_label, FALSE, FALSE, 12);
 
 
 	priv->clock_label = ctk_label_new (NULL);
 	ctk_widget_show (priv->clock_label);
-	ctk_box_pack_start (GTK_BOX (vbox), priv->clock_label, TRUE, TRUE, 8);
+	ctk_box_pack_start (CTK_BOX (vbox), priv->clock_label, TRUE, TRUE, 8);
 
 	g_signal_connect (priv->clock_label,
 			  "draw",
@@ -256,7 +256,7 @@ drw_break_window_init (DrwBreakWindow *window)
 				G_CALLBACK (label_size_allocate_cb),
 				NULL);
 
-	ctk_window_stick (GTK_WINDOW (window));
+	ctk_window_stick (CTK_WINDOW (window));
 
 	priv->timer = drw_timer_new ();
 
@@ -266,7 +266,7 @@ drw_break_window_init (DrwBreakWindow *window)
 	priv->clock_timeout_id = g_timeout_add (1000,
 						(GSourceFunc) clock_timeout_cb,
 						window);
-#ifdef HAVE_CANBERRA_GTK
+#ifdef HAVE_CANBERRA_CTK
 	ca_context_play (ca_ctk_context_get (), 0, CA_PROP_EVENT_ID, "desktop-screen-lock", NULL);
 #endif
 }
@@ -336,13 +336,13 @@ drw_break_window_new (void)
 	GObject *object;
 
 	object = g_object_new (DRW_TYPE_BREAK_WINDOW,
-			       "type", GTK_WINDOW_POPUP,
+			       "type", CTK_WINDOW_POPUP,
 			       "skip-taskbar-hint", TRUE,
 			       "skip-pager-hint", TRUE,
 			       "focus-on-map", TRUE,
 			       NULL);
 
-	return GTK_WIDGET (object);
+	return CTK_WIDGET (object);
 }
 
 static gboolean
@@ -380,7 +380,7 @@ clock_timeout_cb (DrwBreakWindow *window)
 		 */
 		priv->clock_timeout_id = 0;
 
-#ifdef HAVE_CANBERRA_GTK
+#ifdef HAVE_CANBERRA_CTK
 		ca_context_play (ca_ctk_context_get (), 0, CA_PROP_EVENT_ID, "alarm-clock-elapsed", NULL);
 #endif
 		g_signal_emit (window, signals[DONE], 0, NULL);
@@ -394,7 +394,7 @@ clock_timeout_cb (DrwBreakWindow *window)
 	txt = g_strdup_printf ("<span size=\"25000\" foreground=\"white\"><b>%d:%02d</b></span>",
 			       minutes,
 			       seconds);
-	ctk_label_set_markup (GTK_LABEL (priv->clock_label), txt);
+	ctk_label_set_markup (CTK_LABEL (priv->clock_label), txt);
 	g_free (txt);
 
 	return TRUE;
@@ -408,7 +408,7 @@ postpone_entry_activate_cb (CtkWidget      *entry,
 	gchar *phrase;
 	GSettings *settings = g_settings_new (TYPING_BREAK_SCHEMA);
 
-	str = ctk_entry_get_text (GTK_ENTRY (entry));
+	str = ctk_entry_get_text (CTK_ENTRY (entry));
 
 	phrase = g_settings_get_string (settings, "unlock-phrase");
 	g_object_unref (settings);
@@ -420,7 +420,7 @@ postpone_entry_activate_cb (CtkWidget      *entry,
 	}
 
 	g_free (phrase);
-	ctk_entry_set_text (GTK_ENTRY (entry), "");
+	ctk_entry_set_text (CTK_ENTRY (entry), "");
 }
 
 static gboolean
@@ -450,7 +450,7 @@ postpone_cancel_cb (DrwBreakWindow *window)
 
 	priv = window->priv;
 
-	ctk_entry_set_text (GTK_ENTRY (priv->postpone_entry), "");
+	ctk_entry_set_text (CTK_ENTRY (priv->postpone_entry), "");
 	ctk_widget_hide (priv->postpone_entry);
 
 	priv->postpone_timeout_id = 0;
@@ -538,11 +538,11 @@ get_layout_location (CtkLabel *label,
 	gint           margin_start, margin_end, margin_top, margin_bottom;
 	gint           scale;
 
-	widget = GTK_WIDGET (label);
+	widget = CTK_WIDGET (label);
 
 	scale = ctk_widget_get_scale_factor (widget);
-	xalign = ctk_label_get_xalign (GTK_LABEL (label));
-	yalign = ctk_label_get_yalign (GTK_LABEL (label));
+	xalign = ctk_label_get_xalign (CTK_LABEL (label));
+	yalign = ctk_label_get_yalign (CTK_LABEL (label));
 	margin_start = ctk_widget_get_margin_start (widget);
 	margin_end = ctk_widget_get_margin_end (widget);
 	margin_top = ctk_widget_get_margin_top (widget);
@@ -558,7 +558,7 @@ get_layout_location (CtkLabel *label,
 	widget_requisition.width /= scale;
 	widget_requisition.height /= scale;
 
-	if (ctk_widget_get_direction (widget) != GTK_TEXT_DIR_LTR)
+	if (ctk_widget_get_direction (widget) != CTK_TEXT_DIR_LTR)
 		xalign = 1.0 - xalign;
 
 	x = floor (widget_allocation.x + (int)xpad
@@ -588,7 +588,7 @@ label_draw_event_cb (CtkLabel *label,
 
 	get_layout_location (label, &x, &y);
 
-	widget = GTK_WIDGET (label);
+	widget = CTK_WIDGET (label);
 
 	pango_cairo_show_layout (cr, ctk_label_get_layout (label));
 

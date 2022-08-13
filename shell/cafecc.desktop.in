@@ -8,7 +8,7 @@ Exec=cafe-control-center
 Terminal=false
 Type=Application
 StartupNotify=false
-Categories=GTK;Settings;
+Categories=CTK;Settings;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=CAFE;control;center;configuration;tool;desktop;preferences;
 OnlyShowIn=CAFE;

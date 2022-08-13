@@ -266,12 +266,12 @@ about_me_update_preview (CtkFileChooser *chooser,
 		image = ctk_file_chooser_get_preview_widget (chooser);
 
 		if (pixbuf != NULL) {
-			ctk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
+			ctk_image_set_from_pixbuf (CTK_IMAGE (image), pixbuf);
 			g_object_unref (pixbuf);
 		} else {
-			ctk_image_set_from_icon_name (GTK_IMAGE (image),
+			ctk_image_set_from_icon_name (CTK_IMAGE (image),
 						  "dialog-question",
-						  GTK_ICON_SIZE_DIALOG);
+						  CTK_ICON_SIZE_DIALOG);
 		}
 	}
 	ctk_file_chooser_set_preview_widget_active (chooser, TRUE);
@@ -290,15 +290,15 @@ about_me_image_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 
 	dialog = me->dialog;
 
-	chooser_dialog = GTK_FILE_CHOOSER (
-			 ctk_file_chooser_dialog_new (_("Select Image"), GTK_WINDOW (WID ("about-me-dialog")),
-							GTK_FILE_CHOOSER_ACTION_OPEN,
-							_("No Image"), GTK_RESPONSE_NO,
-							"ctk-cancel", GTK_RESPONSE_CANCEL,
-							"ctk-open", GTK_RESPONSE_ACCEPT,
+	chooser_dialog = CTK_FILE_CHOOSER (
+			 ctk_file_chooser_dialog_new (_("Select Image"), CTK_WINDOW (WID ("about-me-dialog")),
+							CTK_FILE_CHOOSER_ACTION_OPEN,
+							_("No Image"), CTK_RESPONSE_NO,
+							"ctk-cancel", CTK_RESPONSE_CANCEL,
+							"ctk-open", CTK_RESPONSE_ACCEPT,
 							NULL));
-	ctk_window_set_modal (GTK_WINDOW (chooser_dialog), TRUE);
-	ctk_dialog_set_default_response (GTK_DIALOG (chooser_dialog), GTK_RESPONSE_ACCEPT);
+	ctk_window_set_modal (CTK_WINDOW (chooser_dialog), TRUE);
+	ctk_dialog_set_default_response (CTK_DIALOG (chooser_dialog), CTK_RESPONSE_ACCEPT);
 
 	ctk_file_chooser_add_shortcut_folder (chooser_dialog, chooser_dir, NULL);
 	pics_dir = g_get_user_special_dir (G_USER_DIRECTORY_PICTURES);
@@ -329,9 +329,9 @@ about_me_image_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 	ctk_file_filter_add_pattern(filter, "*");
 	ctk_file_chooser_add_filter (chooser_dialog, filter);
 
-	response = ctk_dialog_run (GTK_DIALOG (chooser_dialog));
+	response = ctk_dialog_run (CTK_DIALOG (chooser_dialog));
 
-	if (response == GTK_RESPONSE_ACCEPT) {
+	if (response == CTK_RESPONSE_ACCEPT) {
 		gchar* filename;
 
 		filename = ctk_file_chooser_get_filename (chooser_dialog);
@@ -341,14 +341,14 @@ about_me_image_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 		e_image_chooser_set_from_file (E_IMAGE_CHOOSER (me->image_chooser), filename);
 		g_free (filename);
 		about_me_update_photo (me);
-	} else if (response == GTK_RESPONSE_NO) {
+	} else if (response == CTK_RESPONSE_NO) {
 		me->have_image = FALSE;
 		me->image_changed = TRUE;
 		e_image_chooser_set_from_file (E_IMAGE_CHOOSER (me->image_chooser), me->person);
 		about_me_update_photo (me);
 	}
 
-	ctk_widget_destroy (GTK_WIDGET (chooser_dialog));
+	ctk_widget_destroy (CTK_WIDGET (chooser_dialog));
 }
 
 static void
@@ -399,7 +399,7 @@ about_me_passwd_clicked_cb (CtkWidget *button, CafeAboutMe *me)
 	CtkBuilder *dialog;
 
 	dialog = me->dialog;
-	cafe_about_me_password (GTK_WINDOW (WID ("about-me-dialog")));
+	cafe_about_me_password (CTK_WINDOW (WID ("about-me-dialog")));
 }
 
 static void
@@ -446,7 +446,7 @@ about_me_setup_dialog (void)
         }
 
 	me->image_chooser = e_image_chooser_new_with_size (MAX_WIDTH, MAX_HEIGHT);
-	ctk_container_add (GTK_CONTAINER (WID ("button-image")), me->image_chooser);
+	ctk_container_add (CTK_CONTAINER (WID ("button-image")), me->image_chooser);
 
 	if (dialog == NULL) {
 		about_me_destroy ();
@@ -460,11 +460,11 @@ about_me_setup_dialog (void)
 	g_signal_connect (main_dialog, "response",
 			  G_CALLBACK (about_me_button_clicked_cb), me);
 
-	ctk_window_set_resizable (GTK_WINDOW (main_dialog), FALSE);
+	ctk_window_set_resizable (CTK_WINDOW (main_dialog), FALSE);
 	capplet_set_icon (main_dialog, "user-info");
 
 	/* Setup theme details */
-	me->screen = ctk_window_get_screen (GTK_WINDOW (main_dialog));
+	me->screen = ctk_window_get_screen (CTK_WINDOW (main_dialog));
 	me->theme = ctk_icon_theme_get_for_screen (me->screen);
 
 	icon = ctk_icon_theme_lookup_icon (me->theme, "avatar-default", 80, 0);
@@ -492,14 +492,14 @@ about_me_setup_dialog (void)
 	widget = WID ("fullname");
 	str = g_strdup_printf ("<b><span size=\"xx-large\">%s</span></b>", me->username);
 
-	ctk_label_set_markup (GTK_LABEL (widget), str);
+	ctk_label_set_markup (CTK_LABEL (widget), str);
 	g_free (str);
 
 	widget = WID ("login");
-	ctk_label_set_text (GTK_LABEL (widget), me->login);
+	ctk_label_set_text (CTK_LABEL (widget), me->login);
 
 	str = g_strdup_printf (_("About %s"), me->username);
-	ctk_window_set_title (GTK_WINDOW (main_dialog), str);
+	ctk_window_set_title (CTK_WINDOW (main_dialog), str);
 	g_free (str);
 
 	widget = WID ("password");

@@ -1376,9 +1376,9 @@ msgstr "ھەممىنى قاپلا(_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
-msgstr "زۆرۈر GTK+ تېمىسى '%s' قاچىلانمىغاچقا، بۇ تېما كۈتكەندەك كۆرۈنمەيدۇ."
+msgstr "زۆرۈر CTK+ تېمىسى '%s' قاچىلانمىغاچقا، بۇ تېما كۈتكەندەك كۆرۈنمەيدۇ."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

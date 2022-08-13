@@ -80,8 +80,8 @@ main_window_response (CtkWidget *widget,
                       gint response_id,
                       AppearanceData *data)
 {
-  if (response_id == GTK_RESPONSE_CLOSE ||
-      response_id == GTK_RESPONSE_DELETE_EVENT)
+  if (response_id == CTK_RESPONSE_CLOSE ||
+      response_id == CTK_RESPONSE_DELETE_EVENT)
   {
     ctk_main_quit ();
 
@@ -104,30 +104,30 @@ main_window_response (CtkWidget *widget,
     g_object_unref (data->font_settings);
     g_object_unref (data->ui);
   }
-  else if (response_id == GTK_RESPONSE_HELP)
+  else if (response_id == CTK_RESPONSE_HELP)
   {
       CtkNotebook *nb;
       gint pindex;
 
-      nb = GTK_NOTEBOOK (appearance_capplet_get_widget (data, "main_notebook"));
+      nb = CTK_NOTEBOOK (appearance_capplet_get_widget (data, "main_notebook"));
       pindex = ctk_notebook_get_current_page (nb);
 
       switch (pindex)
       {
         case 0: /* theme */
-          capplet_help (GTK_WINDOW (widget), "goscustdesk-12");
+          capplet_help (CTK_WINDOW (widget), "goscustdesk-12");
           break;
         case 1: /* background */
-          capplet_help (GTK_WINDOW (widget), "goscustdesk-7");
+          capplet_help (CTK_WINDOW (widget), "goscustdesk-7");
           break;
         case 2: /* fonts */
-          capplet_help (GTK_WINDOW (widget), "goscustdesk-38");
+          capplet_help (CTK_WINDOW (widget), "goscustdesk-38");
           break;
         case 3: /* interface */
-          capplet_help (GTK_WINDOW (widget), "goscustuserinter-2");
+          capplet_help (CTK_WINDOW (widget), "goscustuserinter-2");
           break;
         default:
-          capplet_help (GTK_WINDOW (widget), "prefs-look-and-feel");
+          capplet_help (CTK_WINDOW (widget), "prefs-look-and-feel");
           break;
        }
   }
@@ -191,7 +191,7 @@ main (int argc, char **argv)
 
   /* prepare the main window */
   w = appearance_capplet_get_widget (data, "appearance_window");
-  context = ctk_widget_get_style_context (GTK_WIDGET (w));
+  context = ctk_widget_get_style_context (CTK_WIDGET (w));
   ctk_style_context_add_class (context, "appearance-window");
 
   capplet_set_icon (w, "preferences-desktop-theme");
@@ -204,11 +204,11 @@ main (int argc, char **argv)
   if (wallpaper_files && !install_filename && !start_page)
     start_page = g_strdup ("background");
 
-  CtkNotebook* nb = GTK_NOTEBOOK(appearance_capplet_get_widget (data, "main_notebook"));
-  ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
-  g_signal_connect (GTK_WIDGET (nb), "scroll-event",
+  CtkNotebook* nb = CTK_NOTEBOOK(appearance_capplet_get_widget (data, "main_notebook"));
+  ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+  g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                     G_CALLBACK (capplet_dialog_page_scroll_event_cb),
-                    GTK_WINDOW (w));
+                    CTK_WINDOW (w));
 
   if (start_page != NULL) {
     gchar *page_name;
@@ -230,7 +230,7 @@ main (int argc, char **argv)
   if (install_filename != NULL) {
     GFile *inst = g_file_new_for_commandline_arg (install_filename);
     g_free (install_filename);
-    cafe_theme_install (inst, GTK_WINDOW (w));
+    cafe_theme_install (inst, CTK_WINDOW (w));
     g_object_unref (inst);
   }
 

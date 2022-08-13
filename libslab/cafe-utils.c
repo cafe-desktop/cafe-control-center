@@ -20,7 +20,7 @@ load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 		return FALSE;
 
 	id = g_strdup (image_id);
-	scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (image));
+	scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (image));
 
 	ctk_icon_size_lookup (size, &width, &height);
 	ctk_image_set_pixel_size (image, width);
@@ -54,9 +54,9 @@ load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 
 			id[strlen (id) - 4] = '\0';
 
-		if (ctk_widget_has_screen (GTK_WIDGET (image)))
+		if (ctk_widget_has_screen (CTK_WIDGET (image)))
 			icon_theme =
-				ctk_icon_theme_get_for_screen (ctk_widget_get_screen (GTK_WIDGET
+				ctk_icon_theme_get_for_screen (ctk_widget_get_screen (CTK_WIDGET
 					(image)));
 		else
 			icon_theme = ctk_icon_theme_get_default ();
@@ -64,7 +64,7 @@ load_image_by_id (CtkImage *image, CtkIconSize size, const gchar *image_id)
 		surface = ctk_icon_theme_load_surface (icon_theme, id,
 		                                       width, scale_factor,
 		                                       NULL,
-		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
+		                                       CTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 		icon_exists = (surface != NULL);
 		if (icon_exists) {

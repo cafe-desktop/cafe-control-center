@@ -41,7 +41,7 @@ static const CtkTargetEntry drop_types[] = {
 };
 
 static const CtkTargetEntry drag_types[] = {
-	{"text/uri-list", GTK_TARGET_OTHER_WIDGET, TARGET_URI_LIST}
+	{"text/uri-list", CTK_TARGET_OTHER_WIDGET, TARGET_URI_LIST}
 };
 
 
@@ -125,7 +125,7 @@ static void on_item_changed (CafeBG *bg, AppearanceData *data) {
                                           data->thumb_width,
                                           data->thumb_height);
     if (pixbuf) {
-      ctk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
+      ctk_list_store_set (CTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
       g_object_unref (pixbuf);
     }
 
@@ -145,14 +145,14 @@ wp_props_load_wallpaper (gchar *key,
   if (item->deleted == TRUE)
     return;
 
-  ctk_list_store_append (GTK_LIST_STORE (data->wp_model), &iter);
+  ctk_list_store_append (CTK_LIST_STORE (data->wp_model), &iter);
 
   pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
   cafe_wp_item_update_description (item);
 
-  ctk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter,
+  ctk_list_store_set (CTK_LIST_STORE (data->wp_model), &iter,
                       0, pixbuf,
                       1, item,
                       -1);
@@ -240,7 +240,7 @@ wp_option_menu_set (AppearanceData *data,
 {
   if (shade_type)
   {
-    ctk_combo_box_set_active (GTK_COMBO_BOX (data->wp_color_menu),
+    ctk_combo_box_set_active (CTK_COMBO_BOX (data->wp_color_menu),
                               value);
 
     if (value == CAFE_BG_COLOR_SOLID)
@@ -250,7 +250,7 @@ wp_option_menu_set (AppearanceData *data,
   }
   else
   {
-    ctk_combo_box_set_active (GTK_COMBO_BOX (data->wp_style_menu),
+    ctk_combo_box_set_active (CTK_COMBO_BOX (data->wp_style_menu),
                               value);
   }
 }
@@ -306,12 +306,12 @@ wp_scale_type_changed (CtkComboBox *combobox,
   if (item == NULL)
     return;
 
-  item->options = ctk_combo_box_get_active (GTK_COMBO_BOX (data->wp_style_menu));
+  item->options = ctk_combo_box_get_active (CTK_COMBO_BOX (data->wp_style_menu));
 
   pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
-  ctk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
+  ctk_list_store_set (CTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
   if (pixbuf != NULL)
     g_object_unref (pixbuf);
 
@@ -336,12 +336,12 @@ wp_shade_type_changed (CtkWidget *combobox,
   if (item == NULL)
     return;
 
-  item->shade_type = ctk_combo_box_get_active (GTK_COMBO_BOX (data->wp_color_menu));
+  item->shade_type = ctk_combo_box_get_active (CTK_COMBO_BOX (data->wp_color_menu));
 
   pixbuf = cafe_wp_item_get_thumbnail (item, data->thumb_factory,
                                         data->thumb_width,
                                         data->thumb_height);
-  ctk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
+  ctk_list_store_set (CTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
   if (pixbuf != NULL)
     g_object_unref (pixbuf);
 
@@ -364,8 +364,8 @@ wp_color_changed (AppearanceData *data,
   if (item == NULL)
     return;
 
-  ctk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (data->wp_pcpicker), item->pcolor);
-  ctk_color_chooser_get_rgba (GTK_COLOR_CHOOSER (data->wp_scpicker), item->scolor);
+  ctk_color_chooser_get_rgba (CTK_COLOR_CHOOSER (data->wp_pcpicker), item->pcolor);
+  ctk_color_chooser_get_rgba (CTK_COLOR_CHOOSER (data->wp_scpicker), item->scolor);
 
   if (update)
   {
@@ -405,7 +405,7 @@ wp_remove_wallpaper (CtkWidget *widget,
   {
     item->deleted = TRUE;
 
-    if (ctk_list_store_remove (GTK_LIST_STORE (data->wp_model), &iter))
+    if (ctk_list_store_remove (CTK_LIST_STORE (data->wp_model), &iter))
       path = ctk_tree_model_get_path (data->wp_model, &iter);
     else
       path = ctk_tree_path_new_first ();
@@ -502,7 +502,7 @@ wp_color1_changed (GSettings *settings,
 
   gdk_rgba_parse (&color, colorhex);
 
-  ctk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (data->wp_pcpicker), &color);
+  ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_pcpicker), &color);
 
   wp_color_changed (data, FALSE);
 
@@ -523,7 +523,7 @@ wp_color2_changed (GSettings *settings,
 
   gdk_rgba_parse (&color, colorhex);
 
-  ctk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (data->wp_scpicker), &color);
+  ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_scpicker), &color);
 
   wp_color_changed (data, FALSE);
 
@@ -592,9 +592,9 @@ wp_props_wp_selected (CtkTreeSelection *selection,
 
     wp_option_menu_set (data, item->shade_type, TRUE);
 
-    ctk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (data->wp_pcpicker),
+    ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_pcpicker),
                                 item->pcolor);
-    ctk_color_chooser_set_rgba (GTK_COLOR_CHOOSER (data->wp_scpicker),
+    ctk_color_chooser_set_rgba (CTK_COLOR_CHOOSER (data->wp_scpicker),
                                 item->scolor);
 
     wp_props_wp_set (data, item);
@@ -611,17 +611,17 @@ wp_create_filechooser (AppearanceData *data)
   const char *start_dir, *pictures = NULL;
   CtkFileFilter *filter;
 
-  data->wp_filesel = GTK_FILE_CHOOSER (
+  data->wp_filesel = CTK_FILE_CHOOSER (
                      ctk_file_chooser_dialog_new (_("Add Wallpaper"),
-                     GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")),
-                     GTK_FILE_CHOOSER_ACTION_OPEN,
+                     CTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")),
+                     CTK_FILE_CHOOSER_ACTION_OPEN,
                      "ctk-cancel",
-                     GTK_RESPONSE_CANCEL,
+                     CTK_RESPONSE_CANCEL,
                      "ctk-open",
-                     GTK_RESPONSE_OK,
+                     CTK_RESPONSE_OK,
                      NULL));
 
-  ctk_dialog_set_default_response (GTK_DIALOG (data->wp_filesel), GTK_RESPONSE_OK);
+  ctk_dialog_set_default_response (CTK_DIALOG (data->wp_filesel), CTK_RESPONSE_OK);
   ctk_file_chooser_set_select_multiple (data->wp_filesel, TRUE);
   ctk_file_chooser_set_use_preview_label (data->wp_filesel, FALSE);
 
@@ -670,14 +670,14 @@ wp_file_open_dialog (CtkWidget *widget,
   if (!data->wp_filesel)
     wp_create_filechooser (data);
 
-  switch (ctk_dialog_run (GTK_DIALOG (data->wp_filesel)))
+  switch (ctk_dialog_run (CTK_DIALOG (data->wp_filesel)))
   {
-  case GTK_RESPONSE_OK:
+  case CTK_RESPONSE_OK:
     files = ctk_file_chooser_get_filenames (data->wp_filesel);
     wp_add_images (data, files);
-  case GTK_RESPONSE_CANCEL:
+  case CTK_RESPONSE_CANCEL:
   default:
-    ctk_widget_hide (GTK_WIDGET (data->wp_filesel));
+    ctk_widget_hide (CTK_WIDGET (data->wp_filesel));
     break;
   }
 }
@@ -842,14 +842,14 @@ wp_update_preview (CtkFileChooser *chooser,
 
     if (pixbuf != NULL)
     {
-      ctk_image_set_from_pixbuf (GTK_IMAGE (data->wp_image), pixbuf);
+      ctk_image_set_from_pixbuf (CTK_IMAGE (data->wp_image), pixbuf);
       g_object_unref (pixbuf);
     }
     else
     {
-      ctk_image_set_from_icon_name (GTK_IMAGE (data->wp_image),
+      ctk_image_set_from_icon_name (CTK_IMAGE (data->wp_image),
                                     "dialog-question",
-                                    GTK_ICON_SIZE_DIALOG);
+                                    CTK_ICON_SIZE_DIALOG);
     }
   }
 
@@ -872,7 +872,7 @@ reload_item (CtkTreeModel *model,
                                         data->thumb_width,
                                         data->thumb_height);
   if (pixbuf) {
-    ctk_list_store_set (GTK_LIST_STORE (data->wp_model), iter, 0, pixbuf, -1);
+    ctk_list_store_set (CTK_LIST_STORE (data->wp_model), iter, 0, pixbuf, -1);
     g_object_unref (pixbuf);
   }
 
@@ -901,7 +901,7 @@ compute_thumbnail_sizes (AppearanceData *data)
 {
   gdouble aspect;
 
-  aspect = get_monitor_aspect_ratio_for_widget (GTK_WIDGET (data->wp_view));
+  aspect = get_monitor_aspect_ratio_for_widget (CTK_WIDGET (data->wp_view));
   if (aspect > 1) {
     /* portrait */
     data->thumb_width = LIST_IMAGE_SIZE / aspect;
@@ -1046,16 +1046,16 @@ create_button_images (AppearanceData  *data)
   icon_set = ctk_style_lookup_icon_set (style, "ctk-media-play");
   pb = ctk_icon_set_render_icon (icon_set,
                                  style,
-                                 GTK_TEXT_DIR_RTL,
-                                 GTK_STATE_NORMAL,
-                                 GTK_ICON_SIZE_MENU,
+                                 CTK_TEXT_DIR_RTL,
+                                 CTK_STATE_NORMAL,
+                                 CTK_ICON_SIZE_MENU,
                                  widget,
                                  NULL);
   pb2 = ctk_icon_set_render_icon (icon_set,
                                   style,
-                                  GTK_TEXT_DIR_LTR,
-                                  GTK_STATE_NORMAL,
-                                  GTK_ICON_SIZE_MENU,
+                                  CTK_TEXT_DIR_LTR,
+                                  CTK_STATE_NORMAL,
+                                  CTK_ICON_SIZE_MENU,
                                   widget,
                                   NULL);
   w = gdk_pixbuf_get_width (pb);
@@ -1098,7 +1098,7 @@ next_frame (AppearanceData  *data,
                                                 data->thumb_height,
                                                 frame);
   if (pixbuf) {
-    ctk_list_store_set (GTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
+    ctk_list_store_set (CTK_LIST_STORE (data->wp_model), &iter, 0, pixbuf, -1);
     g_object_unref (pixbuf);
     data->frame = frame;
   }
@@ -1133,14 +1133,14 @@ wp_button_press_cb (CtkWidget      *widget,
   if (event->type != GDK_BUTTON_PRESS)
     return FALSE;
 
-  if (ctk_icon_view_get_item_at_pos (GTK_ICON_VIEW (widget),
+  if (ctk_icon_view_get_item_at_pos (CTK_ICON_VIEW (widget),
                                      button_event->x, button_event->y,
                                      NULL, &cell)) {
     if (g_object_get_data (G_OBJECT (cell), "buttons")) {
       gint w, h;
       CtkCellRenderer *cell2 = NULL;
-      ctk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
-      if (ctk_icon_view_get_item_at_pos (GTK_ICON_VIEW (widget),
+      ctk_icon_size_lookup (CTK_ICON_SIZE_MENU, &w, &h);
+      if (ctk_icon_view_get_item_at_pos (CTK_ICON_VIEW (widget),
                                          button_event->x + w, button_event->y,
                                          NULL, &cell2) && cell == cell2)
         next_frame (data, cell, -1);
@@ -1162,7 +1162,7 @@ wp_selected_changed_cb (CtkIconView    *view,
 
   data->frame = -1;
 
-  cells = ctk_cell_layout_get_cells (GTK_CELL_LAYOUT (data->wp_view));
+  cells = ctk_cell_layout_get_cells (CTK_CELL_LAYOUT (data->wp_view));
   for (l = cells; l; l = l->next) {
     cr = l->data;
     if (g_object_get_data (G_OBJECT (cr), "buttons"))
@@ -1185,7 +1185,7 @@ buttons_cell_data_func (CtkCellLayout   *layout,
 
   path = ctk_tree_model_get_path (model, iter);
 
-  if (ctk_icon_view_path_is_selected (GTK_ICON_VIEW (layout), path)) {
+  if (ctk_icon_view_path_is_selected (CTK_ICON_VIEW (layout), path)) {
     item = get_selected_item (data, NULL);
     visible = cafe_bg_changes_with_time (item->bg);
   }
@@ -1223,7 +1223,7 @@ desktop_init (AppearanceData *data,
   w = appearance_capplet_get_widget (data, "more_backgrounds_linkbutton");
   url = g_settings_get_string (data->settings, MORE_BACKGROUNDS_URL_KEY);
   if (url != NULL && url[0] != '\0') {
-    ctk_link_button_set_uri (GTK_LINK_BUTTON (w), url);
+    ctk_link_button_set_uri (CTK_LINK_BUTTON (w), url);
     ctk_widget_show (w);
   } else {
     ctk_widget_hide (w);
@@ -1253,35 +1253,35 @@ desktop_init (AppearanceData *data,
                            G_CALLBACK (wp_color2_changed),
                            data);
 
-  data->wp_model = GTK_TREE_MODEL (ctk_list_store_new (2, GDK_TYPE_PIXBUF,
+  data->wp_model = CTK_TREE_MODEL (ctk_list_store_new (2, GDK_TYPE_PIXBUF,
                                                        G_TYPE_POINTER));
 
-  data->wp_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "wp_view"));
-  ctk_icon_view_set_model (data->wp_view, GTK_TREE_MODEL (data->wp_model));
+  data->wp_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "wp_view"));
+  ctk_icon_view_set_model (data->wp_view, CTK_TREE_MODEL (data->wp_model));
 
   g_signal_connect_after (data->wp_view, "realize",
                           (GCallback) wp_select_after_realize, data);
 
-  ctk_cell_layout_clear (GTK_CELL_LAYOUT (data->wp_view));
+  ctk_cell_layout_clear (CTK_CELL_LAYOUT (data->wp_view));
 
   cr = ctk_cell_renderer_pixbuf_new ();
   g_object_set (cr, "xpad", 5, "ypad", 5, NULL);
 
-  ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (data->wp_view), cr, TRUE);
-  ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (data->wp_view), cr,
+  ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (data->wp_view), cr, TRUE);
+  ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (data->wp_view), cr,
                                   "pixbuf", 0,
                                   NULL);
 
   cr = ctk_cell_renderer_pixbuf_new ();
   create_button_images (data);
   g_object_set (cr,
-                "mode", GTK_CELL_RENDERER_MODE_ACTIVATABLE,
+                "mode", CTK_CELL_RENDERER_MODE_ACTIVATABLE,
                 "pixbuf", buttons[0],
                 NULL);
   g_object_set_data (G_OBJECT (cr), "buttons", GINT_TO_POINTER (TRUE));
 
-  ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (data->wp_view), cr, FALSE);
-  ctk_cell_layout_set_cell_data_func (GTK_CELL_LAYOUT (data->wp_view), cr,
+  ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (data->wp_view), cr, FALSE);
+  ctk_cell_layout_set_cell_data_func (CTK_CELL_LAYOUT (data->wp_view), cr,
                                       buttons_cell_data_func, data, NULL);
   g_signal_connect (data->wp_view, "selection-changed",
                     (GCallback) wp_selected_changed_cb, data);
@@ -1290,19 +1290,19 @@ desktop_init (AppearanceData *data,
 
   data->frame = -1;
 
-  ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (data->wp_model), 1,
+  ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (data->wp_model), 1,
                                    (CtkTreeIterCompareFunc) wp_list_sort,
                                    data, NULL);
 
-  ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (data->wp_model),
-                                        1, GTK_SORT_ASCENDING);
+  ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (data->wp_model),
+                                        1, CTK_SORT_ASCENDING);
 
-  ctk_drag_dest_set (GTK_WIDGET (data->wp_view), GTK_DEST_DEFAULT_ALL, drop_types,
+  ctk_drag_dest_set (CTK_WIDGET (data->wp_view), CTK_DEST_DEFAULT_ALL, drop_types,
                      G_N_ELEMENTS (drop_types), GDK_ACTION_COPY | GDK_ACTION_MOVE);
   g_signal_connect (data->wp_view, "drag_data_received",
                     (GCallback) wp_drag_received, data);
 
-  ctk_drag_source_set (GTK_WIDGET (data->wp_view), GDK_BUTTON1_MASK,
+  ctk_drag_source_set (CTK_WIDGET (data->wp_view), GDK_BUTTON1_MASK,
                        drag_types, G_N_ELEMENTS (drag_types), GDK_ACTION_COPY);
   g_signal_connect (data->wp_view, "drag-data-get",
 		    (GCallback) wp_drag_get_data, data);
@@ -1328,8 +1328,8 @@ desktop_init (AppearanceData *data,
                     (GCallback) wp_scolor_changed, data);
 
   add_button = appearance_capplet_get_widget (data, "wp_add_button");
-  ctk_button_set_image (GTK_BUTTON (add_button),
-                        ctk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON));
+  ctk_button_set_image (CTK_BUTTON (add_button),
+                        ctk_image_new_from_icon_name ("list-add", CTK_ICON_SIZE_BUTTON));
 
   g_signal_connect (add_button, "clicked",
                     (GCallback) wp_file_open_dialog, data);
@@ -1338,11 +1338,11 @@ desktop_init (AppearanceData *data,
 
   g_signal_connect (data->wp_rem_button, "clicked",
                     (GCallback) wp_remove_wallpaper, data);
-  data->screen_monitors_handler = g_signal_connect (ctk_widget_get_screen (GTK_WIDGET (data->wp_view)),
+  data->screen_monitors_handler = g_signal_connect (ctk_widget_get_screen (CTK_WIDGET (data->wp_view)),
                                                     "monitors-changed",
                                                     G_CALLBACK (screen_monitors_changed),
                                                     data);
-  data->screen_size_handler = g_signal_connect (ctk_widget_get_screen (GTK_WIDGET (data->wp_view)),
+  data->screen_size_handler = g_signal_connect (ctk_widget_get_screen (CTK_WIDGET (data->wp_view)),
                                                     "size-changed",
                                                     G_CALLBACK (screen_monitors_changed),
                                                     data);
@@ -1351,7 +1351,7 @@ desktop_init (AppearanceData *data,
                     (GCallback) wp_props_wp_selected, data);
   g_signal_connect (data->wp_view, "query-tooltip",
                     (GCallback) wp_view_tooltip_cb, data);
-  ctk_widget_set_has_tooltip (GTK_WIDGET (data->wp_view), TRUE);
+  ctk_widget_set_has_tooltip (CTK_WIDGET (data->wp_view), TRUE);
 
   wp_set_sensitivities (data);
 
@@ -1366,12 +1366,12 @@ desktop_shutdown (AppearanceData *data)
   cafe_wp_xml_save_list (data);
 
   if (data->screen_monitors_handler > 0) {
-    g_signal_handler_disconnect (ctk_widget_get_screen (GTK_WIDGET (data->wp_view)),
+    g_signal_handler_disconnect (ctk_widget_get_screen (CTK_WIDGET (data->wp_view)),
                                  data->screen_monitors_handler);
     data->screen_monitors_handler = 0;
   }
   if (data->screen_size_handler > 0) {
-    g_signal_handler_disconnect (ctk_widget_get_screen (GTK_WIDGET (data->wp_view)),
+    g_signal_handler_disconnect (ctk_widget_get_screen (CTK_WIDGET (data->wp_view)),
                                  data->screen_size_handler);
     data->screen_size_handler = 0;
   }

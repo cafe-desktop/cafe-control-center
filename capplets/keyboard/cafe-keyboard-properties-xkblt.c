@@ -63,7 +63,7 @@ static gint
 find_selected_layout_idx (CtkBuilder * dialog)
 {
 	CtkTreeSelection *selection =
-	    ctk_tree_view_get_selection (GTK_TREE_VIEW
+	    ctk_tree_view_get_selection (CTK_TREE_VIEW
 					 (WID ("xkb_layouts_selected")));
 	CtkTreeIter selected_iter;
 	CtkTreeModel *model;
@@ -135,12 +135,12 @@ xkb_layouts_enable_disable_buttons (CtkBuilder * dialog)
 	CtkWidget *move_down_layout_btn = WID ("xkb_layouts_move_down");
 
 	CtkTreeSelection *s_selection =
-	    ctk_tree_view_get_selection (GTK_TREE_VIEW
+	    ctk_tree_view_get_selection (CTK_TREE_VIEW
 					 (selected_layouts_tree));
 	const int n_selected_selected_layouts =
 	    ctk_tree_selection_count_selected_rows (s_selection);
 	CtkTreeModel *selected_layouts_model = ctk_tree_view_get_model
-	    (GTK_TREE_VIEW (selected_layouts_tree));
+	    (CTK_TREE_VIEW (selected_layouts_tree));
 	const int n_selected_layouts =
 	    ctk_tree_model_iter_n_children (selected_layouts_model,
 					    NULL);
@@ -201,7 +201,7 @@ xkb_layouts_dnd_data_received (CtkWidget * widget, GdkDragContext * dc,
 	layouts_list = g_slist_delete_link (layouts_list, node2Remove);
 
 	if (!ctk_tree_view_get_dest_row_at_pos
-	    (GTK_TREE_VIEW (tree_view), x, y, &path, &pos)) {
+	    (CTK_TREE_VIEW (tree_view), x, y, &path, &pos)) {
 		/* Move to the very end */
 		layouts_list =
 		    g_slist_append (layouts_list, g_strdup (id));
@@ -231,10 +231,10 @@ xkb_layouts_prepare_selected_tree (CtkBuilder * dialog)
 	CtkWidget *tree_view = WID ("xkb_layouts_selected");
 	CtkTreeSelection *selection;
 	CtkTargetEntry self_drag_target =
-	    { "xkb_layouts_selected", GTK_TARGET_SAME_WIDGET, 0 };
+	    { "xkb_layouts_selected", CTK_TARGET_SAME_WIDGET, 0 };
 	CtkTreeViewColumn *desc_column;
 
-	text_renderer = GTK_CELL_RENDERER (ctk_cell_renderer_text_new ());
+	text_renderer = CTK_CELL_RENDERER (ctk_cell_renderer_text_new ());
 
 	desc_column =
 	    ctk_tree_view_column_new_with_attributes (_("Layout"),
@@ -245,17 +245,17 @@ xkb_layouts_prepare_selected_tree (CtkBuilder * dialog)
 						      SEL_LAYOUT_TREE_COL_ENABLED,
 						      NULL);
 	selection =
-	    ctk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+	    ctk_tree_view_get_selection (CTK_TREE_VIEW (tree_view));
 
-	ctk_tree_view_set_model (GTK_TREE_VIEW (tree_view),
-				 GTK_TREE_MODEL (list_store));
+	ctk_tree_view_set_model (CTK_TREE_VIEW (tree_view),
+				 CTK_TREE_MODEL (list_store));
 
 	ctk_tree_view_column_set_sizing (desc_column,
-					 GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+					 CTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	ctk_tree_view_column_set_resizable (desc_column, TRUE);
 	ctk_tree_view_column_set_expand (desc_column, TRUE);
 
-	ctk_tree_view_append_column (GTK_TREE_VIEW (tree_view),
+	ctk_tree_view_append_column (CTK_TREE_VIEW (tree_view),
 				     desc_column);
 
 	g_signal_connect_swapped (G_OBJECT (selection), "changed",
@@ -268,7 +268,7 @@ xkb_layouts_prepare_selected_tree (CtkBuilder * dialog)
 	ctk_drag_source_set (tree_view, GDK_BUTTON1_MASK,
 			     &self_drag_target, 1, GDK_ACTION_MOVE);
 	ctk_drag_source_set_icon_name (tree_view, "input-keyboard");
-	ctk_drag_dest_set (tree_view, GTK_DEST_DEFAULT_ALL,
+	ctk_drag_dest_set (tree_view, CTK_DEST_DEFAULT_ALL,
 			   &self_drag_target, 1, GDK_ACTION_MOVE);
 
 	g_signal_connect (G_OBJECT (tree_view), "drag_data_get",
@@ -294,8 +294,8 @@ xkb_layouts_fill_selected_tree (CtkBuilder * dialog)
 	GSList *layouts = xkb_layouts_get_selected_list ();
 	GSList *cur_layout;
 	CtkListStore *list_store =
-	    GTK_LIST_STORE (ctk_tree_view_get_model
-			    (GTK_TREE_VIEW
+	    CTK_LIST_STORE (ctk_tree_view_get_model
+			    (CTK_TREE_VIEW
 			     (WID ("xkb_layouts_selected"))));
 	int counter = 0;
 
@@ -327,7 +327,7 @@ xkb_layouts_fill_selected_tree (CtkBuilder * dialog)
 
 	if (idx2select != -1) {
 		CtkTreeSelection *selection =
-		    ctk_tree_view_get_selection ((GTK_TREE_VIEW
+		    ctk_tree_view_get_selection ((CTK_TREE_VIEW
 						  (WID
 						   ("xkb_layouts_selected"))));
 		CtkTreePath *path =

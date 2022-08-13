@@ -1370,10 +1370,10 @@ msgstr "Mbishkruaj gjithçk_a"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Tema nuk do të shfaqet sikurse parashikuar pasi tema e kërkuar GTK+ '%s' nuk"
+"Tema nuk do të shfaqet sikurse parashikuar pasi tema e kërkuar CTK+ '%s' nuk"
 " është instaluar."
 
 #: capplets/common/cafe-theme-info.c:1588

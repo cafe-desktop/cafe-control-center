@@ -1392,10 +1392,10 @@ msgstr "Overskriv _alle"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Denne drakten vil ikke se ut som tiltenkt fordi GTK+-drakten «%s» ikke er "
+"Denne drakten vil ikke se ut som tiltenkt fordi CTK+-drakten «%s» ikke er "
 "installert."
 
 #: capplets/common/cafe-theme-info.c:1588

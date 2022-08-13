@@ -1359,9 +1359,9 @@ msgstr "모두 덮어 쓰기(_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
-msgstr "필요한 '%s' GTK+ 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습니다."
+msgstr "필요한 '%s' CTK+ 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습니다."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

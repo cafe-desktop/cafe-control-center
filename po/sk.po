@@ -1397,10 +1397,10 @@ msgstr "N_ahradiť všetky"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Táto téma nebude vyzerať ako bolo plánované, pretože chýba požadovaná GTK+ "
+"Táto téma nebude vyzerať ako bolo plánované, pretože chýba požadovaná CTK+ "
 "téma „%s“"
 
 #: capplets/common/cafe-theme-info.c:1588

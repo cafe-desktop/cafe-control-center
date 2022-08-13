@@ -97,7 +97,7 @@ create_listmodel(void)
 
 	store = ctk_list_store_new(1, G_TYPE_STRING);
 
-	return GTK_TREE_MODEL(store);
+	return CTK_TREE_MODEL(store);
 }
 
 static CtkTreeModel *
@@ -116,7 +116,7 @@ populate_listmodel(CtkListStore *store, GSList *list)
 		pointer = g_slist_next(pointer);
 	}
 
-	return GTK_TREE_MODEL(store);
+	return CTK_TREE_MODEL(store);
 }
 
 static CtkWidget *
@@ -125,19 +125,19 @@ config_treeview(CtkTreeView *tree, CtkTreeModel *model)
 	CtkCellRenderer *renderer;
 
 	renderer = ctk_cell_renderer_text_new();
-	ctk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tree),
+	ctk_tree_view_insert_column_with_attributes(CTK_TREE_VIEW(tree),
 												-1, "Hosts", renderer,
 												"text", 0, NULL);
 
-	ctk_tree_view_set_model(GTK_TREE_VIEW(tree), model);
+	ctk_tree_view_set_model(CTK_TREE_VIEW(tree), model);
 
-	return GTK_WIDGET(tree);
+	return CTK_WIDGET(tree);
 }
 
 static CtkWidget*
 _ctk_builder_get_widget (CtkBuilder *builder, const gchar *name)
 {
-	return GTK_WIDGET (ctk_builder_get_object (builder, name));
+	return CTK_WIDGET (ctk_builder_get_object (builder, name));
 }
 
 static void
@@ -173,16 +173,16 @@ save_ignore_hosts_to_gsettings (void)
 static void
 cb_add_url (CtkButton *button, gpointer data)
 {
-	CtkBuilder *builder = GTK_BUILDER (data);
+	CtkBuilder *builder = CTK_BUILDER (data);
 
-	const gchar *entry_text = ctk_entry_get_text (GTK_ENTRY (ctk_builder_get_object (builder, "entry_url")));
+	const gchar *entry_text = ctk_entry_get_text (CTK_ENTRY (ctk_builder_get_object (builder, "entry_url")));
 	if (entry_text == NULL || strlen (entry_text) == 0) {
 		return;
 	}
 
 	ignore_hosts = g_slist_append(ignore_hosts, g_strdup (entry_text));
-	populate_listmodel(GTK_LIST_STORE(model), ignore_hosts);
-	ctk_entry_set_text(GTK_ENTRY (ctk_builder_get_object (builder,
+	populate_listmodel(CTK_LIST_STORE(model), ignore_hosts);
+	ctk_entry_set_text(CTK_ENTRY (ctk_builder_get_object (builder,
 							     "entry_url")), "");
 
 	save_ignore_hosts_to_gsettings ();
@@ -191,11 +191,11 @@ cb_add_url (CtkButton *button, gpointer data)
 static void
 cb_remove_url (CtkButton *button, gpointer data)
 {
-	CtkBuilder *builder = GTK_BUILDER (data);
+	CtkBuilder *builder = CTK_BUILDER (data);
 	CtkTreeSelection *selection;
 	CtkTreeIter       iter;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (ctk_builder_get_object (builder, "treeview_ignore_host")));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (ctk_builder_get_object (builder, "treeview_ignore_host")));
 	if (ctk_tree_selection_get_selected(selection, &model, &iter))
 	{
 		gchar *url;
@@ -216,7 +216,7 @@ cb_remove_url (CtkButton *button, gpointer data)
 		}
 
 		g_free(url);
-		populate_listmodel(GTK_LIST_STORE(model), ignore_hosts);
+		populate_listmodel(CTK_LIST_STORE(model), ignore_hosts);
 
 		save_ignore_hosts_to_gsettings ();
 	}
@@ -225,10 +225,10 @@ cb_remove_url (CtkButton *button, gpointer data)
 static void
 cb_dialog_response (CtkDialog *dialog, gint response_id)
 {
-	if (response_id == GTK_RESPONSE_HELP)
-		capplet_help (GTK_WINDOW (dialog),
+	if (response_id == CTK_RESPONSE_HELP)
+		capplet_help (CTK_WINDOW (dialog),
 			"goscustdesk-50");
-	else if (response_id == GTK_RESPONSE_CLOSE || response_id == GTK_RESPONSE_DELETE_EVENT)
+	else if (response_id == CTK_RESPONSE_CLOSE || response_id == CTK_RESPONSE_DELETE_EVENT)
 	{
 		if (ignore_hosts) {
 			g_slist_foreach (ignore_hosts, (GFunc) g_free, NULL);
@@ -242,11 +242,11 @@ cb_dialog_response (CtkDialog *dialog, gint response_id)
 static void
 cb_details_dialog_response (CtkDialog *dialog, gint response_id)
 {
-	if (response_id == GTK_RESPONSE_HELP)
-		capplet_help (GTK_WINDOW (dialog),
+	if (response_id == CTK_RESPONSE_HELP)
+		capplet_help (CTK_WINDOW (dialog),
 			      "goscustdesk-50");
 	else {
-		ctk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (CTK_WIDGET (dialog));
 		details_dialog = NULL;
 	}
 }
@@ -268,7 +268,7 @@ cb_http_details_button_clicked (CtkWidget *button,
 	CtkWidget *widget;
 
 	if (details_dialog != NULL) {
-		ctk_window_present (GTK_WINDOW (details_dialog));
+		ctk_window_present (CTK_WINDOW (details_dialog));
 		ctk_widget_grab_focus (details_dialog);
 		return;
 	}
@@ -285,7 +285,7 @@ cb_http_details_button_clicked (CtkWidget *button,
 	details_dialog = widget = _ctk_builder_get_widget (builder,
 							   "details_dialog");
 
-	ctk_window_set_transient_for (GTK_WINDOW (widget), GTK_WINDOW (parent));
+	ctk_window_set_transient_for (CTK_WINDOW (widget), CTK_WINDOW (parent));
 
 	g_signal_connect (ctk_builder_get_object (builder, "use_auth_checkbutton"),
 			  "toggled",
@@ -318,11 +318,11 @@ proxy_mode_gsettings_changed (GSettings *settings,
 	int mode;
 	mode = g_settings_get_enum (settings, PROXY_MODE_KEY);
 	if (mode == G_DESKTOP_PROXY_MODE_NONE)
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "none_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "none_radiobutton")), TRUE);
 	else if (mode == G_DESKTOP_PROXY_MODE_AUTO)
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "auto_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "auto_radiobutton")), TRUE);
 	else if (mode == G_DESKTOP_PROXY_MODE_MANUAL)
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "manual_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (ctk_builder_get_object(builder, "manual_radiobutton")), TRUE);
 	ctk_widget_set_sensitive (_ctk_builder_get_widget (builder, "manual_box"),
 				  mode == G_DESKTOP_PROXY_MODE_MANUAL);
 	ctk_widget_set_sensitive (_ctk_builder_get_widget (builder, "auto_box"),
@@ -337,11 +337,11 @@ proxy_mode_radiobutton_clicked_cb (CtkWidget *widget,
 	int mode;
 	int old_mode;
 
-	if (!ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON(widget)))
+	if (!ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON(widget)))
 		return;
 
 	mode_group = g_slist_copy (ctk_radio_button_get_group
-		(GTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton"))));
+		(CTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton"))));
 	mode_group = g_slist_reverse (mode_group);
 	mode = g_slist_index (mode_group, widget);
 	g_slist_free (mode_group);
@@ -373,7 +373,7 @@ cb_ignore_hosts_gsettings_changed (GSettings *settings, gchar *key, gpointer use
 
 	read_ignore_hosts_from_gsettings ();
 
-	populate_listmodel (GTK_LIST_STORE (model), ignore_hosts);
+	populate_listmodel (CTK_LIST_STORE (model), ignore_hosts);
 }
 
 static void
@@ -386,7 +386,7 @@ setup_dialog (CtkBuilder *builder)
 
 	/* Mode */
 	proxy_mode_gsettings_changed (proxy_settings, PROXY_MODE_KEY, builder);
-	mode_group = ctk_radio_button_get_group (GTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton")));
+	mode_group = ctk_radio_button_get_group (CTK_RADIO_BUTTON (ctk_builder_get_object (builder, "none_radiobutton")));
 	connect_sensitivity_signals (builder, mode_group);
 	g_signal_connect (proxy_settings, "changed::" PROXY_MODE_KEY,
 					  G_CALLBACK (proxy_mode_gsettings_changed), builder);
@@ -438,8 +438,8 @@ setup_dialog (CtkBuilder *builder)
 	read_ignore_hosts_from_gsettings ();
 
 	model = create_listmodel();
-	populate_listmodel(GTK_LIST_STORE(model), ignore_hosts);
-	config_treeview(GTK_TREE_VIEW(ctk_builder_get_object (builder, "treeview_ignore_host")), model);
+	populate_listmodel(CTK_LIST_STORE(model), ignore_hosts);
+	config_treeview(CTK_TREE_VIEW(ctk_builder_get_object (builder, "treeview_ignore_host")), model);
 
 	g_signal_connect (ctk_builder_get_object (builder, "button_add_url"),
 			  "clicked", G_CALLBACK (cb_add_url), builder);
@@ -480,11 +480,11 @@ main (int argc, char **argv)
 	setup_dialog (builder);
 	widget = _ctk_builder_get_widget (builder, "network_dialog");
 
-        CtkNotebook* nb = GTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
-        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
-        g_signal_connect (GTK_WIDGET (nb), "scroll-event",
+        CtkNotebook* nb = CTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
+        ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+        g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
-                          GTK_WINDOW (widget));
+                          CTK_WINDOW (widget));
 
 	capplet_set_icon (widget, "network-server");
 	ctk_widget_show_all (widget);

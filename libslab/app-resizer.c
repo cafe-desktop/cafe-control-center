@@ -26,7 +26,7 @@
 static void app_resizer_size_allocate (CtkWidget * resizer, CtkAllocation * allocation);
 static gboolean app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_data);
 
-G_DEFINE_TYPE (AppResizer, app_resizer, GTK_TYPE_LAYOUT);
+G_DEFINE_TYPE (AppResizer, app_resizer, CTK_TYPE_LAYOUT);
 
 
 static void
@@ -34,15 +34,15 @@ app_resizer_class_init (AppResizerClass * klass)
 {
 	CtkWidgetClass *widget_class;
 
-	widget_class = GTK_WIDGET_CLASS (klass);
+	widget_class = CTK_WIDGET_CLASS (klass);
 	widget_class->size_allocate = app_resizer_size_allocate;
 }
 
 static void
 app_resizer_init (AppResizer * window)
 {
-    ctk_style_context_add_class (ctk_widget_get_style_context (GTK_WIDGET (window)),
-                                 GTK_STYLE_CLASS_VIEW);
+    ctk_style_context_add_class (ctk_widget_get_style_context (CTK_WIDGET (window)),
+                                 CTK_STYLE_CLASS_VIEW);
 }
 
 void
@@ -53,8 +53,8 @@ remove_container_entries (CtkContainer * widget)
 	children = ctk_container_get_children (widget);
 	for (l = children; l; l = l->next)
 	{
-		CtkWidget *child = GTK_WIDGET (l->data);
-		ctk_container_remove (GTK_CONTAINER (widget), GTK_WIDGET (child));
+		CtkWidget *child = CTK_WIDGET (l->data);
+		ctk_container_remove (CTK_CONTAINER (widget), CTK_WIDGET (child));
 	}
 
 	if (children)
@@ -66,7 +66,7 @@ resize_table (CtkTable * table, gint columns, GList * launcher_list)
 {
 	float rows, remainder;
 
-	remove_container_entries (GTK_CONTAINER (table));
+	remove_container_entries (CTK_CONTAINER (table));
 
 	rows = ((float) g_list_length (launcher_list)) / (float) columns;
 	remainder = rows - ((int) rows);
@@ -80,13 +80,13 @@ static void
 relayout_table (CtkTable * table, GList * element_list)
 {
 	guint maxcols, maxrows;
-	ctk_table_get_size (GTK_TABLE (table), &maxrows, &maxcols);
+	ctk_table_get_size (CTK_TABLE (table), &maxrows, &maxcols);
 	gint row = 0, col = 0;
 	do
 	{
-		CtkWidget *element = GTK_WIDGET (element_list->data);
-		ctk_table_attach (table, element, col, col + 1, row, row + 1, GTK_EXPAND | GTK_FILL,
-			GTK_EXPAND | GTK_FILL, 0, 0);
+		CtkWidget *element = CTK_WIDGET (element_list->data);
+		ctk_table_attach (table, element, col, col + 1, row, row + 1, CTK_EXPAND | CTK_FILL,
+			CTK_EXPAND | CTK_FILL, 0, 0);
 		col++;
 		if (col == maxcols)
 		{
@@ -113,8 +113,8 @@ relayout_tables (AppResizer * widget, gint num_cols)
 	for (table_list = widget->cached_tables_list; table_list != NULL;
 		table_list = g_list_next (table_list))
 	{
-		table = GTK_TABLE (table_list->data);
-		launcher_list = ctk_container_get_children (GTK_CONTAINER (table));
+		table = CTK_TABLE (table_list->data);
+		launcher_list = ctk_container_get_children (CTK_CONTAINER (table));
 		launcher_list = g_list_reverse (launcher_list);	/* Fixme - ugly hack because table stores prepend */
 		resize_table (table, num_cols, launcher_list);
 		relayout_table (table, launcher_list);
@@ -131,9 +131,9 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 
 		if (resizer->cached_element_width == -1)
 		{
-			CtkTable *table = GTK_TABLE (resizer->cached_tables_list->data);
-			GList *children = ctk_container_get_children (GTK_CONTAINER (table));
-			CtkWidget *table_element = GTK_WIDGET (children->data);
+			CtkTable *table = CTK_TABLE (resizer->cached_tables_list->data);
+			GList *children = ctk_container_get_children (CTK_CONTAINER (table));
+			CtkWidget *table_element = CTK_WIDGET (children->data);
 			gint natural_width;
 			g_list_free (children);
 
@@ -179,7 +179,7 @@ static void
 app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 {
 	AppResizer *resizer = APP_RESIZER (widget);
-	CtkWidget *child = GTK_WIDGET (APP_RESIZER (resizer)->child);
+	CtkWidget *child = CTK_WIDGET (APP_RESIZER (resizer)->child);
 	CtkAllocation widget_allocation;
 	CtkRequisition child_requisition;
 
@@ -190,12 +190,12 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 	if (first_time)
 	{
 		/* we are letting the first show be the "natural" size of the child widget so do nothing. */
-		if (GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
-			(*GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
+		if (CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
+			(*CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
 
 		first_time = FALSE;
 		ctk_widget_get_allocation (child, &widget_allocation);
-		ctk_layout_set_size (GTK_LAYOUT (resizer), widget_allocation.width,
+		ctk_layout_set_size (CTK_LAYOUT (resizer), widget_allocation.width,
 			widget_allocation.height);
 		return;
 	}
@@ -206,8 +206,8 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 	{
 		CtkAllocation child_allocation;
 
-		if (GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
-			(*GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
+		if (CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
+			(*CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
 
 		/* We want the message to center itself and only scroll if it's bigger than the available real size. */
 		child_allocation.x = 0;
@@ -216,12 +216,12 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 		child_allocation.height = MAX (allocation->height, child_requisition.height);
 
 		ctk_widget_size_allocate (child, &child_allocation);
-		ctk_layout_set_size (GTK_LAYOUT (resizer), child_allocation.width,
+		ctk_layout_set_size (CTK_LAYOUT (resizer), child_allocation.width,
 			child_allocation.height);
 		return;
 	}
 	CtkRequisition other_requisiton;
-	ctk_widget_get_preferred_size (GTK_WIDGET (resizer->cached_tables_list->data), &other_requisiton, NULL);
+	ctk_widget_get_preferred_size (CTK_WIDGET (resizer->cached_tables_list->data), &other_requisiton, NULL);
 
 	useable_area =
 		allocation->width - (child_requisition.width -
@@ -239,10 +239,10 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 		resizer->cur_num_cols = new_num_cols;
 	}
 
-	if (GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
-		(*GTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
+	if (CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate)
+		(*CTK_WIDGET_CLASS (app_resizer_parent_class)->size_allocate) (widget, allocation);
 	ctk_widget_get_allocation (child, &widget_allocation);
-	ctk_layout_set_size (GTK_LAYOUT (resizer), widget_allocation.width,
+	ctk_layout_set_size (CTK_LAYOUT (resizer), widget_allocation.width,
 		widget_allocation.height);
 }
 
@@ -263,10 +263,10 @@ app_resizer_new (CtkBox * child, gint initial_num_columns, gboolean homogeneous,
 
 	g_signal_connect (G_OBJECT (widget), "draw", G_CALLBACK (app_resizer_paint_window), app_data);
 
-	ctk_container_add (GTK_CONTAINER (widget), GTK_WIDGET (child));
+	ctk_container_add (CTK_CONTAINER (widget), CTK_WIDGET (child));
 	widget->child = child;
 
-	return GTK_WIDGET (widget);
+	return CTK_WIDGET (widget);
 }
 
 void
@@ -274,7 +274,7 @@ app_resizer_set_vadjustment_value (CtkWidget * widget, gdouble value)
 {
 	CtkAdjustment *adjust;
 
-	adjust = ctk_scrollable_get_vadjustment (GTK_SCROLLABLE (widget));
+	adjust = ctk_scrollable_get_vadjustment (CTK_SCROLLABLE (widget));
 
 	gdouble upper = ctk_adjustment_get_upper (adjust);
 	gdouble page_size = ctk_adjustment_get_page_size (adjust);
@@ -302,7 +302,7 @@ app_resizer_paint_window (CtkWidget * widget, cairo_t * cr, AppShellData * app_d
 
 	if (app_data->selected_group)
 	{
-		CtkWidget *selected_widget = GTK_WIDGET (app_data->selected_group);
+		CtkWidget *selected_widget = CTK_WIDGET (app_data->selected_group);
 		CtkAllocation selected_widget_allocation;
 
 		ctk_widget_get_allocation (selected_widget, &selected_widget_allocation);

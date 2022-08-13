@@ -46,7 +46,7 @@ tile_action_finalize (GObject * g_object)
 {
 	TileAction *action = TILE_ACTION (g_object);
 	if (action->menu_item)
-		ctk_widget_destroy (GTK_WIDGET (action->menu_item));
+		ctk_widget_destroy (CTK_WIDGET (action->menu_item));
 
 	(*G_OBJECT_CLASS (tile_action_parent_class)->finalize) (g_object);
 }
@@ -76,17 +76,17 @@ tile_action_set_menu_item_label (TileAction * this, const gchar * markup)
 
 	if (this->menu_item)
 	{
-		label = ctk_bin_get_child (GTK_BIN (this->menu_item));
-		ctk_label_set_markup (GTK_LABEL (label), markup);
+		label = ctk_bin_get_child (CTK_BIN (this->menu_item));
+		ctk_label_set_markup (CTK_LABEL (label), markup);
 	}
 	else
 	{
 		label = ctk_label_new (markup);
-		ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
-		ctk_label_set_xalign (GTK_LABEL (label), 0.0);
+		ctk_label_set_use_markup (CTK_LABEL (label), TRUE);
+		ctk_label_set_xalign (CTK_LABEL (label), 0.0);
 
-		this->menu_item = GTK_MENU_ITEM (ctk_menu_item_new ());
-		ctk_container_add (GTK_CONTAINER (this->menu_item), label);
+		this->menu_item = CTK_MENU_ITEM (ctk_menu_item_new ());
+		ctk_container_add (CTK_CONTAINER (this->menu_item), label);
 
 		g_signal_connect (G_OBJECT (this->menu_item), "activate",
 			G_CALLBACK (tile_action_menu_item_activate_cb), this);

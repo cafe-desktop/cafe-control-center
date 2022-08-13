@@ -1392,10 +1392,10 @@ msgstr "ସମସ୍ତଙ୍କୁ ନବଲିଖନ କରନ୍ତୁ (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ଏହି ପ୍ରସଙ୍ଗଟି ଆଶାକରାଯାଉଥିବା ପରି ଲାଗୁନାହିଁ କାରଣ ଆବଶ୍ୟକୀୟ GTK+ ପ୍ରସଙ୍ଗ '%s' ଟି"
+"ଏହି ପ୍ରସଙ୍ଗଟି ଆଶାକରାଯାଉଥିବା ପରି ଲାଗୁନାହିଁ କାରଣ ଆବଶ୍ୟକୀୟ CTK+ ପ୍ରସଙ୍ଗ '%s' ଟି"
 " ସ୍ଥାପିତ ହୋଇନାହିଁ।"
 
 #: capplets/common/cafe-theme-info.c:1588

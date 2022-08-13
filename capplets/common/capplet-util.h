@@ -32,7 +32,7 @@
 
 /* Retrieve a widget from the UI object */
 
-#define WID(s) GTK_WIDGET (ctk_builder_get_object (dialog, s))
+#define WID(s) CTK_WIDGET (ctk_builder_get_object (dialog, s))
 
 /* Some miscellaneous functions useful to all capplets */
 

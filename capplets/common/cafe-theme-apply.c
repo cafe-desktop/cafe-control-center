@@ -28,7 +28,7 @@
 #include "ctkrc-utils.h"
 
 #define INTERFACE_SCHEMA        "org.cafe.interface"
-#define GTK_THEME_KEY           "ctk-theme"
+#define CTK_THEME_KEY           "ctk-theme"
 #define COLOR_SCHEME_KEY        "ctk-color-scheme"
 #define ICON_THEME_KEY          "icon-theme"
 #define FONT_KEY                "font-name"
@@ -65,10 +65,10 @@ cafe_meta_theme_set (CafeThemeMetaInfo *meta_theme_info)
     }
 
   /* Set the ctk+ key */
-  old_key = g_settings_get_string (interface_settings, GTK_THEME_KEY);
+  old_key = g_settings_get_string (interface_settings, CTK_THEME_KEY);
   if (compare (old_key, meta_theme_info->ctk_theme_name))
     {
-      g_settings_set_string (interface_settings, GTK_THEME_KEY, meta_theme_info->ctk_theme_name);
+      g_settings_set_string (interface_settings, CTK_THEME_KEY, meta_theme_info->ctk_theme_name);
     }
   g_free (old_key);
 

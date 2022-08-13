@@ -43,7 +43,7 @@
 #define CALC_TEMPLATE_FILE_NAME   "empty.ots"
 #define WRITER_TEMPLATE_FILE_NAME "empty.ott"
 
-#define GTK_BOOKMARKS_FILE "bookmarks"
+#define CTK_BOOKMARKS_FILE "bookmarks"
 
 #define TYPE_IS_RECENT(type) ((type) == BOOKMARK_STORE_RECENT_APPS || (type) == BOOKMARK_STORE_RECENT_DOCS)
 
@@ -507,7 +507,7 @@ bookmark_agent_new (BookmarkStoreType type)
 			priv->load_store = load_places_store;
 
 			priv->ctk_store_path = g_build_filename (g_get_user_config_dir (),
-                                                     "ctk-3.0", GTK_BOOKMARKS_FILE, NULL);
+                                                     "ctk-3.0", CTK_BOOKMARKS_FILE, NULL);
 			ctk_store_file = g_file_new_for_path (priv->ctk_store_path);
 			priv->ctk_store_monitor = g_file_monitor_file (ctk_store_file,
 								       0, NULL, NULL);

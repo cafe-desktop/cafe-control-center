@@ -1399,10 +1399,10 @@ msgstr "Supr_ascrie tot"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Această temă nu va arăta precum se dorește deoarece tema GTK+ „%s” necesară "
+"Această temă nu va arăta precum se dorește deoarece tema CTK+ „%s” necesară "
 "nu este instalată."
 
 #: capplets/common/cafe-theme-info.c:1588

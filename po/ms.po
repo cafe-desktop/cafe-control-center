@@ -1388,10 +1388,10 @@ msgstr "Tulis Ganti Semu_a"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Tema ini tidak akan kelihatan seperti dikehendaki kerana tema GTK+ '%s' "
+"Tema ini tidak akan kelihatan seperti dikehendaki kerana tema CTK+ '%s' "
 "tidak dipasang."
 
 #: capplets/common/cafe-theme-info.c:1588

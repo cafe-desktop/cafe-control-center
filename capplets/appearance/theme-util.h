@@ -26,7 +26,7 @@ enum {
 };
 
 typedef enum {
-	THEME_TYPE_GTK,
+	THEME_TYPE_CTK,
 	THEME_TYPE_WINDOW,
 	THEME_TYPE_ICON,
 	THEME_TYPE_META,

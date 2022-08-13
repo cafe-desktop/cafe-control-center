@@ -83,7 +83,7 @@ static time_t theme_get_mtime(const char* name)
 static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, AppearanceData* data, gboolean cache)
 {
 	CtkTreeIter iter;
-	CtkTreeModel* model = GTK_TREE_MODEL(data->theme_store);
+	CtkTreeModel* model = CTK_TREE_MODEL(data->theme_store);
 
 	/* find item in model and update thumbnail */
 	if (!pixbuf)
@@ -174,7 +174,7 @@ static void theme_changed_on_disk_cb(CafeThemeCommonInfo* theme, CafeThemeChange
 		{
 			CtkTreeIter iter;
 
-			if (theme_find_in_model(GTK_TREE_MODEL(data->theme_store), meta->name, &iter))
+			if (theme_find_in_model(CTK_TREE_MODEL(data->theme_store), meta->name, &iter))
 			{
 				ctk_list_store_remove(data->theme_store, &iter);
 			}
@@ -205,7 +205,7 @@ theme_load_from_gsettings (AppearanceData *data)
 
   theme = cafe_theme_meta_info_new ();
 
-  theme->ctk_theme_name = g_settings_get_string (data->interface_settings, GTK_THEME_KEY);
+  theme->ctk_theme_name = g_settings_get_string (data->interface_settings, CTK_THEME_KEY);
   if (theme->ctk_theme_name == NULL)
     theme->ctk_theme_name = g_strdup ("Menta");
 
@@ -239,7 +239,7 @@ theme_load_from_gsettings (AppearanceData *data)
   if (theme->cursor_theme_name == NULL)
     theme->cursor_theme_name = g_strdup ("default");
 
-  theme->application_font = g_settings_get_string (data->interface_settings, GTK_FONT_KEY);
+  theme->application_font = g_settings_get_string (data->interface_settings, CTK_FONT_KEY);
 
   return theme;
 }
@@ -342,7 +342,7 @@ static void
 theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data)
 {
   CafeThemeMetaInfo *custom = data->theme_custom;
-  CtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  CtkIconView *icon_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
   CtkTreeModel *model;
   CtkTreeIter iter;
   CtkTreePath *path;
@@ -377,7 +377,7 @@ theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data
     if (info->application_font)
       custom->application_font = g_strdup (info->application_font);
     else
-      custom->application_font = g_strdup (GTK_FONT_DEFAULT_VALUE);
+      custom->application_font = g_strdup (CTK_FONT_DEFAULT_VALUE);
   }
 
   /* select the custom theme */
@@ -391,7 +391,7 @@ theme_set_custom_from_theme (const CafeThemeMetaInfo *info, AppearanceData *data
         COL_THUMBNAIL, data->theme_icon,
         -1);
     ctk_tree_model_sort_convert_child_iter_to_iter (
-        GTK_TREE_MODEL_SORT (model), &iter, &child);
+        CTK_TREE_MODEL_SORT (model), &iter, &child);
   }
 
   path = ctk_tree_model_get_path (model, &iter);
@@ -428,7 +428,7 @@ theme_message_area_response_cb (CtkWidget *w,
   gchar *tmpfont;
   gchar *engine_path;
 
-  theme = theme_get_selected (GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list")), data);
+  theme = theme_get_selected (CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list")), data);
   if (!theme)
     return;
 
@@ -440,7 +440,7 @@ theme_message_area_response_cb (CtkWidget *w,
 
     case RESPONSE_REVERT_FONT:
       if (data->revert_application_font != NULL) {
-        g_settings_set_string (data->interface_settings, GTK_FONT_KEY, data->revert_application_font);
+        g_settings_set_string (data->interface_settings, CTK_FONT_KEY, data->revert_application_font);
         g_free (data->revert_application_font);
         data->revert_application_font = NULL;
       }
@@ -472,7 +472,7 @@ theme_message_area_response_cb (CtkWidget *w,
 
     case RESPONSE_APPLY_FONT:
       if (theme->application_font) {
-        tmpfont = g_settings_get_string (data->interface_settings, GTK_FONT_KEY);
+        tmpfont = g_settings_get_string (data->interface_settings, CTK_FONT_KEY);
         if (tmpfont != NULL) {
           g_free (data->revert_application_font);
 
@@ -482,7 +482,7 @@ theme_message_area_response_cb (CtkWidget *w,
           } else
             data->revert_application_font = tmpfont;
         }
-        g_settings_set_string (data->interface_settings, GTK_FONT_KEY, theme->application_font);
+        g_settings_set_string (data->interface_settings, CTK_FONT_KEY, theme->application_font);
       }
 
       if (theme->documents_font) {
@@ -546,7 +546,7 @@ theme_message_area_response_cb (CtkWidget *w,
       engine_path = ctk_theme_info_missing_engine(theme->ctk_theme_name, FALSE);
 
       if (engine_path != NULL) {
-        theme_install_file(GTK_WINDOW(ctk_widget_get_toplevel(data->install_button)), engine_path);
+        theme_install_file(CTK_WINDOW(ctk_widget_get_toplevel(data->install_button)), engine_path);
         g_free (engine_path);
       }
 
@@ -567,7 +567,7 @@ theme_message_area_update (AppearanceData *data)
   gchar *font;
   GError *error = NULL;
 
-  theme = theme_get_selected (GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list")), data);
+  theme = theme_get_selected (CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list")), data);
 
   if (!theme) {
     if (data->theme_message_area != NULL)
@@ -588,7 +588,7 @@ theme_message_area_update (AppearanceData *data)
     }
 
     if (theme->application_font) {
-      font = g_settings_get_string (data->interface_settings, GTK_FONT_KEY);
+      font = g_settings_get_string (data->interface_settings, CTK_FONT_KEY);
       show_apply_font =
           (!font || strcmp (theme->application_font, font) != 0);
       g_free (font);
@@ -642,43 +642,43 @@ theme_message_area_update (AppearanceData *data)
                       (GCallback) theme_message_area_response_cb, data);
 
     data->apply_background_button = ctk_info_bar_add_button (
-        GTK_INFO_BAR (data->theme_message_area),
+        CTK_INFO_BAR (data->theme_message_area),
         _("Apply Background"),
         RESPONSE_APPLY_BG);
     data->apply_font_button = ctk_info_bar_add_button (
-        GTK_INFO_BAR (data->theme_message_area),
+        CTK_INFO_BAR (data->theme_message_area),
         _("Apply Font"),
         RESPONSE_APPLY_FONT);
     data->revert_font_button = ctk_info_bar_add_button (
-        GTK_INFO_BAR (data->theme_message_area),
+        CTK_INFO_BAR (data->theme_message_area),
         _("Revert Font"),
         RESPONSE_REVERT_FONT);
     data->install_button = ctk_info_bar_add_button (
-        GTK_INFO_BAR (data->theme_message_area),
+        CTK_INFO_BAR (data->theme_message_area),
         _("Install"),
         RESPONSE_INSTALL_ENGINE);
 
     data->theme_message_label = ctk_label_new (NULL);
     ctk_widget_show (data->theme_message_label);
-    ctk_label_set_line_wrap (GTK_LABEL (data->theme_message_label), TRUE);
-    ctk_label_set_xalign (GTK_LABEL (data->theme_message_label), 0.0);
+    ctk_label_set_line_wrap (CTK_LABEL (data->theme_message_label), TRUE);
+    ctk_label_set_xalign (CTK_LABEL (data->theme_message_label), 0.0);
 
-    hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 9);
+    hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 9);
     ctk_widget_show (hbox);
-    data->theme_info_icon = ctk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DIALOG);
-    data->theme_error_icon = ctk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
-    ctk_widget_set_halign (data->theme_info_icon, GTK_ALIGN_CENTER);
-    ctk_widget_set_valign (data->theme_info_icon, GTK_ALIGN_START);
-    ctk_widget_set_halign (data->theme_error_icon, GTK_ALIGN_CENTER);
-    ctk_widget_set_valign (data->theme_error_icon, GTK_ALIGN_START);
-    ctk_box_pack_start (GTK_BOX (hbox), data->theme_info_icon, FALSE, FALSE, 0);
-    ctk_box_pack_start (GTK_BOX (hbox), data->theme_error_icon, FALSE, FALSE, 0);
-    ctk_box_pack_start (GTK_BOX (hbox), data->theme_message_label, TRUE, TRUE, 0);
-    content = ctk_info_bar_get_content_area (GTK_INFO_BAR (data->theme_message_area));
-    ctk_container_add (GTK_CONTAINER (content), hbox);
+    data->theme_info_icon = ctk_image_new_from_icon_name ("dialog-information", CTK_ICON_SIZE_DIALOG);
+    data->theme_error_icon = ctk_image_new_from_icon_name ("dialog-warning", CTK_ICON_SIZE_DIALOG);
+    ctk_widget_set_halign (data->theme_info_icon, CTK_ALIGN_CENTER);
+    ctk_widget_set_valign (data->theme_info_icon, CTK_ALIGN_START);
+    ctk_widget_set_halign (data->theme_error_icon, CTK_ALIGN_CENTER);
+    ctk_widget_set_valign (data->theme_error_icon, CTK_ALIGN_START);
+    ctk_box_pack_start (CTK_BOX (hbox), data->theme_info_icon, FALSE, FALSE, 0);
+    ctk_box_pack_start (CTK_BOX (hbox), data->theme_error_icon, FALSE, FALSE, 0);
+    ctk_box_pack_start (CTK_BOX (hbox), data->theme_message_label, TRUE, TRUE, 0);
+    content = ctk_info_bar_get_content_area (CTK_INFO_BAR (data->theme_message_area));
+    ctk_container_add (CTK_CONTAINER (content), hbox);
 
     parent = appearance_capplet_get_widget (data, "theme_list_vbox");
-    ctk_box_pack_start (GTK_BOX (parent), data->theme_message_area, FALSE, FALSE, 0);
+    ctk_box_pack_start (CTK_BOX (parent), data->theme_message_area, FALSE, FALSE, 0);
   }
 
   if (show_error)
@@ -716,7 +716,7 @@ theme_message_area_update (AppearanceData *data)
     ctk_widget_hide (data->revert_font_button);
 
   if (show_error
-      && g_error_matches (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE)
+      && g_error_matches (error, CAFE_THEME_ERROR, CAFE_THEME_ERROR_CTK_ENGINE_NOT_AVAILABLE)
       && packagekit_available ())
     ctk_widget_show (data->install_button);
   else
@@ -737,7 +737,7 @@ theme_message_area_update (AppearanceData *data)
     ctk_widget_hide (data->theme_message_area);
   }
 
-  ctk_label_set_text (GTK_LABEL (data->theme_message_label), message);
+  ctk_label_set_text (CTK_LABEL (data->theme_message_label), message);
   g_clear_error (&error);
 }
 
@@ -748,14 +748,14 @@ theme_selection_changed_cb (CtkWidget *icon_view, AppearanceData *data)
   CafeThemeMetaInfo *theme = NULL;
   gboolean is_custom = FALSE;
 
-  selection = ctk_icon_view_get_selected_items (GTK_ICON_VIEW (icon_view));
+  selection = ctk_icon_view_get_selected_items (CTK_ICON_VIEW (icon_view));
 
   if (selection) {
     CtkTreeModel *model;
     CtkTreeIter iter;
     gchar *name;
 
-    model = ctk_icon_view_get_model (GTK_ICON_VIEW (icon_view));
+    model = ctk_icon_view_get_model (CTK_ICON_VIEW (icon_view));
     ctk_tree_model_get_iter (model, &iter, selection->data);
     ctk_tree_model_get (model, &iter, COL_NAME, &name, -1);
 
@@ -788,7 +788,7 @@ theme_custom_cb (CtkWidget *button, AppearanceData *data)
 
   w = appearance_capplet_get_widget (data, "theme_details");
   parent = appearance_capplet_get_widget (data, "appearance_window");
-  ctk_window_set_transient_for (GTK_WINDOW (w), GTK_WINDOW (parent));
+  ctk_window_set_transient_for (CTK_WINDOW (w), CTK_WINDOW (parent));
   ctk_widget_show_all (w);
 }
 
@@ -802,13 +802,13 @@ static void
 theme_install_cb (CtkWidget *button, AppearanceData *data)
 {
   cafe_theme_installer_run (
-      GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
+      CTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
 }
 
 static void
 theme_delete_cb (CtkWidget *button, AppearanceData *data)
 {
-  CtkIconView *icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  CtkIconView *icon_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
   GList *selected = ctk_icon_view_get_selected_items (icon_view);
 
   if (selected) {
@@ -832,7 +832,7 @@ theme_delete_cb (CtkWidget *button, AppearanceData *data)
 
       ctk_tree_model_get_iter (model, &iter, path);
       ctk_tree_model_sort_convert_iter_to_child_iter (
-          GTK_TREE_MODEL_SORT (model), &child, &iter);
+          CTK_TREE_MODEL_SORT (model), &child, &iter);
       ctk_list_store_remove (data->theme_store, &child);
     }
 
@@ -854,7 +854,7 @@ theme_details_changed_cb (AppearanceData *data)
   gsettings_theme = theme_load_from_gsettings (data);
 
   /* check if it's our currently selected theme */
-  icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  icon_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
   selected = theme_get_selected (icon_view, data);
 
   if (!selected || !(done = theme_is_equal (selected, gsettings_theme))) {
@@ -964,7 +964,7 @@ theme_drag_data_received_cb (CtkWidget *widget,
     GFile *f = g_file_new_for_uri (uris[0]);
 
     cafe_theme_install (f,
-        GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
+        CTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
     g_object_unref (f);
   }
 
@@ -1044,13 +1044,13 @@ void themes_init(AppearanceData* data)
   g_list_foreach (theme_list, (GFunc) theme_thumbnail_generate, data);
   g_list_free (theme_list);
 
-  icon_view = GTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
+  icon_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list"));
 
   renderer = ctk_cell_renderer_pixbuf_new ();
   g_object_set (renderer, "xpad", 5, "ypad", 5,
                           "xalign", 0.5, "yalign", 1.0, NULL);
-  ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (icon_view), renderer, FALSE);
-  ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (icon_view), renderer,
+  ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (icon_view), renderer, FALSE);
+  ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (icon_view), renderer,
                                   "pixbuf", COL_THUMBNAIL, NULL);
 
   renderer = ctk_cell_renderer_text_new ();
@@ -1060,38 +1060,38 @@ void themes_init(AppearanceData* data)
                           "width", ctk_icon_view_get_item_width (icon_view),
                           "xalign", 0.5, "yalign", 0.0, NULL);
 
-  ctk_cell_layout_pack_end (GTK_CELL_LAYOUT (icon_view), renderer, FALSE);
-  ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (icon_view), renderer,
+  ctk_cell_layout_pack_end (CTK_CELL_LAYOUT (icon_view), renderer, FALSE);
+  ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (icon_view), renderer,
                                   "markup", COL_LABEL, NULL);
 
-  sort_model = ctk_tree_model_sort_new_with_model (GTK_TREE_MODEL (theme_store));
-  ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (sort_model), COL_LABEL, theme_store_sort_func, NULL, NULL);
-  ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (sort_model), COL_LABEL, GTK_SORT_ASCENDING);
-  ctk_icon_view_set_model (icon_view, GTK_TREE_MODEL (sort_model));
+  sort_model = ctk_tree_model_sort_new_with_model (CTK_TREE_MODEL (theme_store));
+  ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (sort_model), COL_LABEL, theme_store_sort_func, NULL, NULL);
+  ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (sort_model), COL_LABEL, CTK_SORT_ASCENDING);
+  ctk_icon_view_set_model (icon_view, CTK_TREE_MODEL (sort_model));
 
   g_signal_connect (icon_view, "selection-changed", (GCallback) theme_selection_changed_cb, data);
   g_signal_connect_after (icon_view, "realize", (GCallback) theme_select_name, meta_theme->name);
 
   w = appearance_capplet_get_widget (data, "theme_install");
-  ctk_button_set_image (GTK_BUTTON (w),
-                        ctk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON));
+  ctk_button_set_image (CTK_BUTTON (w),
+                        ctk_image_new_from_icon_name ("document-open", CTK_ICON_SIZE_BUTTON));
   g_signal_connect (w, "clicked", (GCallback) theme_install_cb, data);
 
   w = appearance_capplet_get_widget (data, "theme_save");
-  ctk_button_set_image (GTK_BUTTON (w),
-                        ctk_image_new_from_icon_name ("document-save-as", GTK_ICON_SIZE_BUTTON));
+  ctk_button_set_image (CTK_BUTTON (w),
+                        ctk_image_new_from_icon_name ("document-save-as", CTK_ICON_SIZE_BUTTON));
   g_signal_connect (w, "clicked", (GCallback) theme_save_cb, data);
 
   w = appearance_capplet_get_widget (data, "theme_custom");
-  ctk_button_set_image (GTK_BUTTON (w),
-                        ctk_image_new_from_icon_name ("ctk-edit", GTK_ICON_SIZE_BUTTON));
+  ctk_button_set_image (CTK_BUTTON (w),
+                        ctk_image_new_from_icon_name ("ctk-edit", CTK_ICON_SIZE_BUTTON));
   g_signal_connect (w, "clicked", (GCallback) theme_custom_cb, data);
 
   del_button = appearance_capplet_get_widget (data, "theme_delete");
   g_signal_connect (del_button, "clicked", (GCallback) theme_delete_cb, data);
 
   w = appearance_capplet_get_widget (data, "theme_vbox");
-  ctk_drag_dest_set (w, GTK_DEST_DEFAULT_ALL,
+  ctk_drag_dest_set (w, CTK_DEST_DEFAULT_ALL,
 		     drop_types, G_N_ELEMENTS (drop_types),
 		     GDK_ACTION_COPY | GDK_ACTION_LINK | GDK_ACTION_MOVE);
   g_signal_connect (w, "drag-data-received", (GCallback) theme_drag_data_received_cb, data);
@@ -1101,7 +1101,7 @@ void themes_init(AppearanceData* data)
   w = appearance_capplet_get_widget (data, "more_themes_linkbutton");
   url = g_settings_get_string (data->settings, MORE_THEMES_URL_KEY);
   if (url != NULL && url[0] != '\0') {
-    ctk_link_button_set_uri (GTK_LINK_BUTTON (w), url);
+    ctk_link_button_set_uri (CTK_LINK_BUTTON (w), url);
     ctk_widget_show (w);
   } else {
     ctk_widget_hide (w);
@@ -1113,7 +1113,7 @@ void themes_init(AppearanceData* data)
   g_signal_connect (data->mouse_settings, "changed::" CURSOR_THEME_KEY, G_CALLBACK (theme_gsettings_changed), data);
   g_signal_connect (data->mouse_settings, "changed::" CURSOR_SIZE_KEY, G_CALLBACK (theme_gsettings_changed), data);
   g_signal_connect (data->wp_settings, "changed::" WP_FILE_KEY, G_CALLBACK (background_or_font_changed), data);
-  g_signal_connect (data->interface_settings, "changed::" GTK_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
+  g_signal_connect (data->interface_settings, "changed::" CTK_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
   g_signal_connect (data->interface_settings, "changed::" DOCUMENT_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
 
   if (data->caja_settings)

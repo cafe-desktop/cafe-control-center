@@ -41,12 +41,12 @@ typedef struct
 	gboolean icon_loaded;
 } ThemedIconPrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (ThemedIcon, themed_icon, GTK_TYPE_IMAGE)
+G_DEFINE_TYPE_WITH_PRIVATE (ThemedIcon, themed_icon, CTK_TYPE_IMAGE)
 
 static void themed_icon_class_init (ThemedIconClass * themed_icon_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (themed_icon_class);
-	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (themed_icon_class);
+	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (themed_icon_class);
 
 	g_obj_class->get_property = themed_icon_get_property;
 	g_obj_class->set_property = themed_icon_set_property;
@@ -61,7 +61,7 @@ static void themed_icon_class_init (ThemedIconClass * themed_icon_class)
 
 	g_object_class_install_property (g_obj_class, PROP_ICON_SIZE,
 		g_param_spec_enum ("icon-size", "icon-size", "the size of the icon",
-			GTK_TYPE_ICON_SIZE, GTK_ICON_SIZE_BUTTON,
+			CTK_TYPE_ICON_SIZE, CTK_ICON_SIZE_BUTTON,
 			G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 }
 
@@ -76,7 +76,7 @@ themed_icon_init (ThemedIcon * icon)
 CtkWidget *
 themed_icon_new (const gchar * id, CtkIconSize size)
 {
-	CtkWidget *icon = GTK_WIDGET (g_object_new (
+	CtkWidget *icon = CTK_WIDGET (g_object_new (
 		THEMED_ICON_TYPE, "icon-id", id, "icon-size", size, NULL));
 
 	return icon;
@@ -122,14 +122,14 @@ themed_icon_set_property (GObject * g_obj, guint prop_id, const GValue * value,
 	case PROP_ICON_ID:
 		icon->id = g_strdup (g_value_get_string (value));
 
-/*			ctk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
+/*			ctk_image_load_by_id (CTK_IMAGE (icon), icon->size, icon->id); */
 
 		break;
 
 	case PROP_ICON_SIZE:
 		icon->size = g_value_get_enum (value);
 
-/*			ctk_image_load_by_id (GTK_IMAGE (icon), icon->size, icon->id); */
+/*			ctk_image_load_by_id (CTK_IMAGE (icon), icon->size, icon->id); */
 
 		break;
 
@@ -145,9 +145,9 @@ themed_icon_show (CtkWidget * widget)
 	ThemedIconPrivate *priv = themed_icon_get_instance_private (icon);
 
 	if (!priv->icon_loaded)
-		priv->icon_loaded = load_image_by_id (GTK_IMAGE (icon), icon->size, icon->id);
+		priv->icon_loaded = load_image_by_id (CTK_IMAGE (icon), icon->size, icon->id);
 
-	(*GTK_WIDGET_CLASS (themed_icon_parent_class)->show) (widget);
+	(*CTK_WIDGET_CLASS (themed_icon_parent_class)->show) (widget);
 }
 
 static void
@@ -155,5 +155,5 @@ themed_icon_style_updated (CtkWidget * widget)
 {
 	ThemedIcon *icon = THEMED_ICON (widget);
 
-	load_image_by_id (GTK_IMAGE (icon), icon->size, icon->id);
+	load_image_by_id (CTK_IMAGE (icon), icon->size, icon->id);
 }

@@ -32,7 +32,7 @@ typedef struct
 	gboolean is_dragging;
 } TilePrivate;
 
-G_DEFINE_TYPE_WITH_PRIVATE (Tile, tile, GTK_TYPE_BUTTON)
+G_DEFINE_TYPE_WITH_PRIVATE (Tile, tile, CTK_TYPE_BUTTON)
 
 static void tile_finalize (GObject *);
 static void tile_dispose (GObject *);
@@ -84,8 +84,8 @@ static void
 tile_class_init (TileClass * this_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
-	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (this_class);
-	CtkButtonClass *button_class = GTK_BUTTON_CLASS (this_class);
+	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (this_class);
+	CtkButtonClass *button_class = CTK_BUTTON_CLASS (this_class);
 
 	g_obj_class->constructor = tile_constructor;
 	g_obj_class->get_property = tile_get_property;
@@ -115,7 +115,7 @@ tile_class_init (TileClass * this_class)
 
 	g_object_class_install_property (g_obj_class, PROP_TILE_CONTEXT_MENU,
 		g_param_spec_object ("context-menu", "context-menu",
-			"the context menu for the tile", GTK_TYPE_MENU, G_PARAM_READWRITE));
+			"the context menu for the tile", CTK_TYPE_MENU, G_PARAM_READWRITE));
 
 	tile_signals[TILE_ACTIVATED_SIGNAL] = g_signal_new ("tile-activated",
 		G_TYPE_FROM_CLASS (this_class),
@@ -204,7 +204,7 @@ tile_dispose (GObject * g_object)
 
 	/* free the CtkMenu object */
 	if (tile->context_menu != NULL) {
-		ctk_widget_destroy (GTK_WIDGET (tile->context_menu));
+		ctk_widget_destroy (CTK_WIDGET (tile->context_menu));
 		tile->context_menu = NULL;
 	}
 
@@ -261,7 +261,7 @@ tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamS
 		tile->context_menu = menu;
 
 		if (tile->context_menu)
-			ctk_menu_attach_to_widget (tile->context_menu, GTK_WIDGET (tile), NULL);
+			ctk_menu_attach_to_widget (tile->context_menu, CTK_WIDGET (tile), NULL);
 
 		break;
 
@@ -273,21 +273,21 @@ tile_set_property (GObject * g_obj, guint prop_id, const GValue * value, GParamS
 static void
 tile_setup (Tile * tile)
 {
-	ctk_button_set_relief (GTK_BUTTON (tile), GTK_RELIEF_NONE);
+	ctk_button_set_relief (CTK_BUTTON (tile), CTK_RELIEF_NONE);
 
 	if (tile->uri)
 	{
-		ctk_drag_source_set (GTK_WIDGET (tile), GDK_BUTTON1_MASK, NULL, 0,
+		ctk_drag_source_set (CTK_WIDGET (tile), GDK_BUTTON1_MASK, NULL, 0,
 			GDK_ACTION_COPY | GDK_ACTION_MOVE);
 
-		ctk_drag_source_add_uri_targets (GTK_WIDGET (tile));
+		ctk_drag_source_add_uri_targets (CTK_WIDGET (tile));
 	}
 }
 
 static void
 tile_enter (CtkButton * widget)
 {
-	ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_ENTERED, TRUE);
+	ctk_widget_set_state_flags (CTK_WIDGET (widget), TILE_STATE_ENTERED, TRUE);
 
 	TILE (widget)->entered = TRUE;
 }
@@ -295,10 +295,10 @@ tile_enter (CtkButton * widget)
 static void
 tile_leave (CtkButton * widget)
 {
-	if (ctk_widget_has_focus (GTK_WIDGET (widget)))
-		ctk_widget_set_state_flags (GTK_WIDGET (widget), TILE_STATE_FOCUSED, TRUE);
+	if (ctk_widget_has_focus (CTK_WIDGET (widget)))
+		ctk_widget_set_state_flags (CTK_WIDGET (widget), TILE_STATE_FOCUSED, TRUE);
 	else
-		ctk_widget_set_state_flags (GTK_WIDGET (widget), GTK_STATE_FLAG_NORMAL, TRUE);
+		ctk_widget_set_state_flags (CTK_WIDGET (widget), CTK_STATE_FLAG_NORMAL, TRUE);
 
 	TILE (widget)->entered = FALSE;
 }
@@ -332,7 +332,7 @@ tile_focus_out (CtkWidget * widget, GdkEventFocus * event)
 	if (TILE (widget)->entered)
 		ctk_widget_set_state_flags (widget, TILE_STATE_ENTERED, TRUE);
 	else
-		ctk_widget_set_state_flags (widget, GTK_STATE_FLAG_NORMAL, TRUE);
+		ctk_widget_set_state_flags (widget, CTK_STATE_FLAG_NORMAL, TRUE);
 
 	return FALSE;
 }
@@ -346,12 +346,12 @@ tile_draw (CtkWidget * widget, cairo_t * cr)
 	gboolean retval;
 
 	if ((has_focus = ctk_widget_has_focus (widget)))
-		ctk_widget_unset_state_flags (widget, GTK_STATE_FLAG_FOCUSED);
+		ctk_widget_unset_state_flags (widget, CTK_STATE_FLAG_FOCUSED);
 
-	retval = (*GTK_WIDGET_CLASS (tile_parent_class)->draw) (widget, cr);
+	retval = (*CTK_WIDGET_CLASS (tile_parent_class)->draw) (widget, cr);
 
 	if (has_focus)
-		ctk_widget_set_state_flags (widget, GTK_STATE_FLAG_FOCUSED, TRUE);
+		ctk_widget_set_state_flags (widget, CTK_STATE_FLAG_FOCUSED, TRUE);
 
 	return retval;
 }
@@ -385,14 +385,14 @@ tile_button_release (CtkWidget * widget, GdkEventButton * event)
 
 		g_signal_emit (tile, tile_signals[TILE_ACTIVATED_SIGNAL], 0, tile_event);
 
-		ctk_button_released (GTK_BUTTON (widget));
+		ctk_button_released (CTK_BUTTON (widget));
 		g_free (tile_event);
 
 		break;
 
 	case 3:
-		if (GTK_IS_MENU (tile->context_menu))
-		    ctk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
+		if (CTK_IS_MENU (tile->context_menu))
+		    ctk_menu_popup_at_widget (CTK_MENU (tile->context_menu),
 		                              widget,
 		                              GDK_GRAVITY_SOUTH_WEST,
 		                              GDK_GRAVITY_NORTH_WEST,
@@ -431,9 +431,9 @@ tile_popup_menu (CtkWidget * widget)
 {
 	Tile *tile = TILE (widget);
 
-	if (GTK_IS_MENU (tile->context_menu))
+	if (CTK_IS_MENU (tile->context_menu))
 	{
-		ctk_menu_popup_at_widget (GTK_MENU (tile->context_menu),
+		ctk_menu_popup_at_widget (CTK_MENU (tile->context_menu),
 		                          widget,
 		                          GDK_GRAVITY_SOUTH_WEST,
 		                          GDK_GRAVITY_NORTH_WEST,

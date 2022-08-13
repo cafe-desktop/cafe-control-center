@@ -1399,11 +1399,11 @@ msgstr "_Презаписване на всички"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
 "Тази тема ще изглежда по различен от оригиналния начин, защото необходимата "
-"ѝ тема на GTK+ — „%s“ не е инсталирана."
+"ѝ тема на CTK+ — „%s“ не е инсталирана."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

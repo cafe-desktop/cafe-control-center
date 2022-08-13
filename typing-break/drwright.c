@@ -318,7 +318,7 @@ start_blinking (DrWright *dr)
 		blink_timeout_cb (dr);
 	}
 
-	/*ctk_widget_show (GTK_WIDGET (dr->icon));*/
+	/*ctk_widget_show (CTK_WIDGET (dr->icon));*/
 #endif /* HAVE_APP_INDICATOR */
 }
 
@@ -331,7 +331,7 @@ stop_blinking (DrWright *dr)
 		dr->blink_timeout_id = 0;
 	}
 
-	/*ctk_widget_hide (GTK_WIDGET (dr->icon));*/
+	/*ctk_widget_hide (CTK_WIDGET (dr->icon));*/
 #endif /* HAVE_APP_INDICATOR */
 }
 
@@ -550,7 +550,7 @@ update_status (DrWright *dr)
 
 #ifdef HAVE_APP_INDICATOR
 	item = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop/TakeABreak");
-	ctk_menu_item_set_label (GTK_MENU_ITEM (item), str);
+	ctk_menu_item_set_label (CTK_MENU_ITEM (item), str);
 #else
 	ctk_status_icon_set_tooltip_text (dr->icon, str);
 #endif /* HAVE_APP_INDICATOR */
@@ -632,14 +632,14 @@ popup_preferences_cb (CtkAction *action, DrWright *dr)
 		CtkWidget *error_dialog;
 
 		error_dialog = ctk_message_dialog_new (NULL, 0,
-						       GTK_MESSAGE_ERROR,
-						       GTK_BUTTONS_CLOSE,
+						       CTK_MESSAGE_ERROR,
+						       CTK_BUTTONS_CLOSE,
 						       _("Unable to bring up the typing break properties dialog with the following error: %s"),
 						       error->message);
 		g_signal_connect (error_dialog,
 				  "response",
 				  G_CALLBACK (ctk_widget_destroy), NULL);
-		ctk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
+		ctk_window_set_resizable (CTK_WINDOW (error_dialog), FALSE);
 		ctk_widget_show (error_dialog);
 
 		g_error_free (error);
@@ -679,7 +679,7 @@ popup_menu_cb (CtkWidget *widget,
 
 	menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
 
-	ctk_menu_popup (GTK_MENU (menu),
+	ctk_menu_popup (CTK_MENU (menu),
 			NULL,
 			NULL,
 			ctk_status_icon_position_menu,
@@ -768,7 +768,7 @@ init_app_indicator (DrWright *dr)
 	}
 
 	indicator_menu = ctk_ui_manager_get_widget (dr->ui_manager, "/Pop");
-	app_indicator_set_menu (dr->indicator, GTK_MENU (indicator_menu));
+	app_indicator_set_menu (dr->indicator, CTK_MENU (indicator_menu));
 	app_indicator_set_attention_icon (dr->indicator, TYPING_MONITOR_ATTENTION_ICON);
 
 	update_status (dr);
@@ -813,20 +813,20 @@ create_secondary_break_windows (void)
 	if (screen != gdk_screen_get_default ()) {
 		/* Handled by DrwBreakWindow. */
 
-		window = ctk_window_new (GTK_WINDOW_POPUP);
+		window = ctk_window_new (CTK_WINDOW_POPUP);
 
 		windows = g_list_prepend (windows, window);
-		scale = ctk_widget_get_scale_factor (GTK_WIDGET (window));
+		scale = ctk_widget_get_scale_factor (CTK_WIDGET (window));
 
-		ctk_window_set_screen (GTK_WINDOW (window), screen);
+		ctk_window_set_screen (CTK_WINDOW (window), screen);
 
-		ctk_window_set_default_size (GTK_WINDOW (window),
+		ctk_window_set_default_size (CTK_WINDOW (window),
 					     WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale,
 					     HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale);
 
-		ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-		drw_setup_background (GTK_WIDGET (window));
-		ctk_window_stick (GTK_WINDOW (window));
+		ctk_widget_set_app_paintable (CTK_WIDGET (window), TRUE);
+		drw_setup_background (CTK_WIDGET (window));
+		ctk_window_stick (CTK_WINDOW (window));
 		ctk_widget_show (window);
 	}
 

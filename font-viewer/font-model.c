@@ -61,7 +61,7 @@ enum {
 
 static guint signals[NUM_SIGNALS] = { 0, };
 
-G_DEFINE_TYPE_WITH_PRIVATE (FontViewModel, font_view_model, GTK_TYPE_LIST_STORE);
+G_DEFINE_TYPE_WITH_PRIVATE (FontViewModel, font_view_model, CTK_TYPE_LIST_STORE);
 
 #define ATTRIBUTES_FOR_CREATING_THUMBNAIL \
     G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE"," \
@@ -87,7 +87,7 @@ iter_for_face_foreach (CtkTreeModel *model,
     gchar *font_name, *match_name;
     gboolean retval;
 
-    ctk_tree_model_get (GTK_TREE_MODEL (model), iter,
+    ctk_tree_model_get (CTK_TREE_MODEL (model), iter,
                         COLUMN_NAME, &font_name,
                         -1);
 
@@ -116,7 +116,7 @@ font_view_model_get_iter_for_face (FontViewModel *self,
     data->face = face;
     data->found = FALSE;
 
-    ctk_tree_model_foreach (GTK_TREE_MODEL (self),
+    ctk_tree_model_foreach (CTK_TREE_MODEL (self),
                             iter_for_face_foreach,
                             data);
 
@@ -159,7 +159,7 @@ one_thumbnail_done (gpointer user_data)
     ThumbInfoData *thumb_info = user_data;
 
     if (thumb_info->pixbuf != NULL)
-        ctk_list_store_set (GTK_LIST_STORE (thumb_info->self), &(thumb_info->iter),
+        ctk_list_store_set (CTK_LIST_STORE (thumb_info->self), &(thumb_info->iter),
                             COLUMN_ICON, thumb_info->pixbuf,
                             -1);
 
@@ -345,7 +345,7 @@ font_infos_loaded (GObject *source_object,
         ThumbInfoData *thumb_info;
 
         collation_key = g_utf8_collate_key (font_info->font_name, -1);
-        ctk_list_store_insert_with_values (GTK_LIST_STORE (self), &iter, -1,
+        ctk_list_store_insert_with_values (CTK_LIST_STORE (self), &iter, -1,
                                            COLUMN_NAME, font_info->font_name,
                                            COLUMN_PATH, font_info->font_path,
                                            COLUMN_FACE_INDEX, font_info->face_index,
@@ -434,7 +434,7 @@ ensure_font_list (FontViewModel *self)
         g_clear_object (&self->priv->cancellable);
     }
 
-    ctk_list_store_clear (GTK_LIST_STORE (self));
+    ctk_list_store_clear (CTK_LIST_STORE (self));
 
     pat = FcPatternCreate ();
     os = FcObjectSetBuild (FC_FILE, FC_INDEX, FC_FAMILY, FC_WEIGHT, FC_SLANT, NULL);
@@ -576,13 +576,13 @@ font_view_model_init (FontViewModel *self)
 
     g_mutex_init (&self->priv->font_list_mutex);
 
-    ctk_list_store_set_column_types (GTK_LIST_STORE (self),
+    ctk_list_store_set_column_types (CTK_LIST_STORE (self),
                                      NUM_COLUMNS, types);
 
-    ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (self),
+    ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (self),
                                           COLUMN_NAME,
-                                          GTK_SORT_ASCENDING);
-    ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (self),
+                                          CTK_SORT_ASCENDING);
+    ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (self),
                                      COLUMN_NAME,
                                      font_view_model_sort_func,
                                      NULL, NULL);

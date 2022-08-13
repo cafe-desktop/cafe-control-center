@@ -1392,10 +1392,10 @@ msgstr "എല്ലാം _മാറ്റിയെഴുതുക"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"ആവശ്യമുല്ള GTK+ ഥീം'%s' ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ലാത്തതിനാല്‍, ഈ പ്രമേയം "
+"ആവശ്യമുല്ള CTK+ ഥീം'%s' ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ലാത്തതിനാല്‍, ഈ പ്രമേയം "
 "നിങ്ങള്‍ ആഗ്രഹിച്ച രീതിയില്‍ ലഭ്യമാകില്ല."
 
 #: capplets/common/cafe-theme-info.c:1588

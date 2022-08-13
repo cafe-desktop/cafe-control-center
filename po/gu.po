@@ -1383,10 +1383,10 @@ msgstr "બધા પર ફરીથી લખો (_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"આ થીમ નિયત રીતે જોવાશે નહિં કારણ કે જરૂરી GTK+ થીમ '%s' સ્થાપિત થયેલ નથી."
+"આ થીમ નિયત રીતે જોવાશે નહિં કારણ કે જરૂરી CTK+ થીમ '%s' સ્થાપિત થયેલ નથી."
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

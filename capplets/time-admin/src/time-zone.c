@@ -250,8 +250,8 @@ GetTimeZoneMap(TimeAdmin *ta)
                       ta);
 
     completion = ctk_entry_completion_new ();
-    ctk_entry_set_completion (GTK_ENTRY (ta->TimezoneEntry), completion);
-    ctk_entry_completion_set_model (completion, GTK_TREE_MODEL (ta->CityListStore));
+    ctk_entry_set_completion (CTK_ENTRY (ta->TimezoneEntry), completion);
+    ctk_entry_completion_set_model (completion, CTK_TREE_MODEL (ta->CityListStore));
     ctk_entry_completion_set_text_column (completion, CITY_COL_CITY_HUMAN_READABLE);
 
     return map;
@@ -377,7 +377,7 @@ CreateZoneFrame(TimeAdmin *ta)
 
     TimeZoneFrame = ctk_frame_new (_("Time Zone"));
     ctk_widget_set_size_request(TimeZoneFrame,300,200);
-    ctk_frame_set_shadow_type(GTK_FRAME(TimeZoneFrame),GTK_SHADOW_NONE);
+    ctk_frame_set_shadow_type(CTK_FRAME(TimeZoneFrame),CTK_SHADOW_NONE);
 
     return TimeZoneFrame;
 }
@@ -389,12 +389,12 @@ CreateZoneScrolled(TimeAdmin *ta)
 
     Scrolled = ctk_scrolled_window_new (NULL, NULL);
 
-    ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (Scrolled),
-                                    GTK_POLICY_AUTOMATIC,
-                                    GTK_POLICY_AUTOMATIC);
+    ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (Scrolled),
+                                    CTK_POLICY_AUTOMATIC,
+                                    CTK_POLICY_AUTOMATIC);
 
-    ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (Scrolled),
-                                         GTK_SHADOW_IN);
+    ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (Scrolled),
+                                         CTK_SHADOW_IN);
 
     return Scrolled;
 }
@@ -405,16 +405,16 @@ CreateZoneEntry(TimeAdmin *ta)
     CtkWidget *hbox;
 
     ta->TimezoneEntry = ctk_search_entry_new ();
-    hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
-    ctk_widget_set_halign (hbox, GTK_ALIGN_CENTER);
-    ctk_box_pack_start (GTK_BOX (hbox), ta->TimezoneEntry, FALSE, FALSE, 0);
+    hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 10);
+    ctk_widget_set_halign (hbox, CTK_ALIGN_CENTER);
+    ctk_box_pack_start (CTK_BOX (hbox), ta->TimezoneEntry, FALSE, FALSE, 0);
 
     ta->SearchBar = ctk_search_bar_new ();
-    ctk_search_bar_connect_entry (GTK_SEARCH_BAR (ta->SearchBar),
-                                  GTK_ENTRY (ta->TimezoneEntry));
-    ctk_search_bar_set_show_close_button (GTK_SEARCH_BAR (ta->SearchBar),FALSE);
-    ctk_container_add (GTK_CONTAINER (ta->SearchBar), hbox);
-    ctk_search_bar_set_search_mode(GTK_SEARCH_BAR(ta->SearchBar),TRUE);
+    ctk_search_bar_connect_entry (CTK_SEARCH_BAR (ta->SearchBar),
+                                  CTK_ENTRY (ta->TimezoneEntry));
+    ctk_search_bar_set_show_close_button (CTK_SEARCH_BAR (ta->SearchBar),FALSE);
+    ctk_container_add (CTK_CONTAINER (ta->SearchBar), hbox);
+    ctk_search_bar_set_search_mode(CTK_SEARCH_BAR(ta->SearchBar),TRUE);
 }
 
 static gboolean
@@ -434,7 +434,7 @@ CityChanged(CtkEntryCompletion *completion,
     timezone_map_set_timezone (TIMEZONEMAP (self->map), zone);
 
     entry = ctk_entry_completion_get_entry (completion);
-    ctk_entry_set_text (GTK_ENTRY (entry), "");
+    ctk_entry_set_text (CTK_ENTRY (entry), "");
 
     return TRUE;
 }
@@ -447,15 +447,15 @@ ChoooseTimezoneDone (CtkWidget *widget,
 
     map = TIMEZONEMAP(ta->map);
     SetTimeZone(ta->proxy,map->location->zone);
-    ctk_entry_set_text (GTK_ENTRY (ta->TimeZoneEntry), _(map->location->zone));
-    ctk_widget_hide_on_delete(GTK_WIDGET(ta->dialog));
+    ctk_entry_set_text (CTK_ENTRY (ta->TimeZoneEntry), _(map->location->zone));
+    ctk_widget_hide_on_delete(CTK_WIDGET(ta->dialog));
 }
 
 static void
 ChoooseTimezoneClose(CtkWidget  *widget,
                      TimeAdmin  *ta)
 {
-    ctk_widget_hide_on_delete(GTK_WIDGET(ta->dialog));
+    ctk_widget_hide_on_delete(CTK_WIDGET(ta->dialog));
 }
 
 void SetupTimezoneDialog(TimeAdmin *ta)
@@ -464,26 +464,26 @@ void SetupTimezoneDialog(TimeAdmin *ta)
 
     ta->dialog = ctk_dialog_new_with_buttons (_("Time Zone Selection"),
                                               NULL,
-                                              GTK_DIALOG_DESTROY_WITH_PARENT,
+                                              CTK_DIALOG_DESTROY_WITH_PARENT,
                                               NULL,
                                               NULL);
-    ctk_window_set_default_size (GTK_WINDOW (ta->dialog), 730, 520);
+    ctk_window_set_default_size (CTK_WINDOW (ta->dialog), 730, 520);
 
     ta->TZclose = ctk_button_new_with_mnemonic (_("_Close"));
-    image = ctk_image_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON);
-    ctk_button_set_image (GTK_BUTTON (ta->TZclose), image);
-    ctk_button_set_use_underline (GTK_BUTTON (ta->TZclose), TRUE);
+    image = ctk_image_new_from_icon_name ("window-close", CTK_ICON_SIZE_BUTTON);
+    ctk_button_set_image (CTK_BUTTON (ta->TZclose), image);
+    ctk_button_set_use_underline (CTK_BUTTON (ta->TZclose), TRUE);
     ctk_style_context_add_class (ctk_widget_get_style_context (ta->TZclose), "text-button");
     ctk_widget_set_can_default (ta->TZclose, TRUE);
-    ctk_dialog_add_action_widget (GTK_DIALOG (ta->dialog), ta->TZclose, GTK_RESPONSE_CANCEL);
+    ctk_dialog_add_action_widget (CTK_DIALOG (ta->dialog), ta->TZclose, CTK_RESPONSE_CANCEL);
 
     ta->TZconfire = ctk_button_new_with_mnemonic (_("Con_firm"));
-    image = ctk_image_new_from_icon_name ("emblem-default", GTK_ICON_SIZE_BUTTON);
-    ctk_button_set_image (GTK_BUTTON (ta->TZconfire), image);
-    ctk_button_set_use_underline (GTK_BUTTON (ta->TZconfire), TRUE);
+    image = ctk_image_new_from_icon_name ("emblem-default", CTK_ICON_SIZE_BUTTON);
+    ctk_button_set_image (CTK_BUTTON (ta->TZconfire), image);
+    ctk_button_set_use_underline (CTK_BUTTON (ta->TZconfire), TRUE);
     ctk_style_context_add_class (ctk_widget_get_style_context (ta->TZconfire), "text-button");
     ctk_widget_set_can_default (ta->TZconfire, TRUE);
-    ctk_dialog_add_action_widget (GTK_DIALOG (ta->dialog), ta->TZconfire, GTK_RESPONSE_OK);
+    ctk_dialog_add_action_widget (CTK_DIALOG (ta->dialog), ta->TZconfire, CTK_RESPONSE_OK);
 
     g_signal_connect (ta->TZconfire,
                      "clicked",
@@ -495,28 +495,28 @@ void SetupTimezoneDialog(TimeAdmin *ta)
                       G_CALLBACK (ChoooseTimezoneClose),
                       ta);
 
-    Vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+    Vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
     ctk_style_context_add_class (ctk_widget_get_style_context (Vbox), "linked");
 
 
     TimeZoneFrame = CreateZoneFrame(ta);
     Scrolled = CreateZoneScrolled(ta);
-    ctk_container_add (GTK_CONTAINER (TimeZoneFrame), Scrolled);
+    ctk_container_add (CTK_CONTAINER (TimeZoneFrame), Scrolled);
     CreateCityList(ta);
     CreateZoneEntry(ta);
-    ctk_box_pack_start (GTK_BOX (Vbox), ta->SearchBar,FALSE,FALSE, 0);
+    ctk_box_pack_start (CTK_BOX (Vbox), ta->SearchBar,FALSE,FALSE, 0);
     ta->map = GetTimeZoneMap(ta);
     ctk_widget_show (ta->map);
-    ctk_container_add (GTK_CONTAINER (Scrolled),ta->map);
-    ctk_box_pack_start(GTK_BOX(Vbox),TimeZoneFrame,TRUE,TRUE,10);
+    ctk_container_add (CTK_CONTAINER (Scrolled),ta->map);
+    ctk_box_pack_start(CTK_BOX(Vbox),TimeZoneFrame,TRUE,TRUE,10);
     get_initial_timezone(ta);
 
-    g_signal_connect(ctk_entry_get_completion (GTK_ENTRY (ta->TimezoneEntry)),
+    g_signal_connect(ctk_entry_get_completion (CTK_ENTRY (ta->TimezoneEntry)),
                     "match-selected",
                      G_CALLBACK (CityChanged),
                      ta);
 
-    ctk_box_pack_start (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (ta->dialog))),
+    ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (ta->dialog))),
                         Vbox,
                         TRUE,
                         TRUE, 8);
@@ -683,7 +683,7 @@ void RunTimeZoneDialog  (CtkButton *button,
 {
     TimeAdmin *ta = (TimeAdmin *)data;
 
-    ctk_widget_show_all(GTK_WIDGET(ta->dialog));
+    ctk_widget_show_all(CTK_WIDGET(ta->dialog));
 }
 
 static void

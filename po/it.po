@@ -1407,10 +1407,10 @@ msgstr "Sovrascrivi _tutti"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
 msgstr ""
-"Questo tema non avrà l'aspetto originale perché il tema GTK+ richiesto «%s» "
+"Questo tema non avrà l'aspetto originale perché il tema CTK+ richiesto «%s» "
 "non è installato."
 
 #: capplets/common/cafe-theme-info.c:1588

@@ -151,16 +151,16 @@ setup_directory_structure (const gchar  *theme_name,
     gint response;
 
     dialog = (CtkDialog *) ctk_message_dialog_new (NULL,
-						   GTK_DIALOG_MODAL,
-						   GTK_MESSAGE_QUESTION,
-	 					   GTK_BUTTONS_CANCEL,
+						   CTK_DIALOG_MODAL,
+						   CTK_MESSAGE_QUESTION,
+	 					   CTK_BUTTONS_CANCEL,
 						   _("The theme already exists. Would you like to replace it?"));
-    button = ctk_dialog_add_button (dialog, _("_Overwrite"), GTK_RESPONSE_ACCEPT);
-    ctk_button_set_image (GTK_BUTTON (button),
-			  ctk_image_new_from_icon_name ("document-save", GTK_ICON_SIZE_BUTTON));
+    button = ctk_dialog_add_button (dialog, _("_Overwrite"), CTK_RESPONSE_ACCEPT);
+    ctk_button_set_image (CTK_BUTTON (button),
+			  ctk_image_new_from_icon_name ("document-save", CTK_ICON_SIZE_BUTTON));
     response = ctk_dialog_run (dialog);
-    ctk_widget_destroy (GTK_WIDGET (dialog));
-    retval = (response != GTK_RESPONSE_CANCEL);
+    ctk_widget_destroy (CTK_WIDGET (dialog));
+    retval = (response != CTK_RESPONSE_CANCEL);
   }
   g_free (dir);
 
@@ -289,7 +289,7 @@ save_dialog_response (CtkWidget      *save_dialog,
 		      gint            response_id,
 		      AppearanceData *data)
 {
-  if (response_id == GTK_RESPONSE_OK) {
+  if (response_id == CTK_RESPONSE_OK) {
     CtkWidget *entry;
     CtkWidget *text_view;
     CtkTextBuffer *buffer;
@@ -304,26 +304,26 @@ save_dialog_response (CtkWidget      *save_dialog,
     GError *error = NULL;
 
     entry = appearance_capplet_get_widget (data, "save_dialog_entry");
-    theme_name = escape_string_and_dup (ctk_entry_get_text (GTK_ENTRY (entry)));
+    theme_name = escape_string_and_dup (ctk_entry_get_text (CTK_ENTRY (entry)));
 
     text_view = appearance_capplet_get_widget (data, "save_dialog_textview");
-    buffer = ctk_text_view_get_buffer (GTK_TEXT_VIEW (text_view));
+    buffer = ctk_text_view_get_buffer (CTK_TEXT_VIEW (text_view));
     ctk_text_buffer_get_start_iter (buffer, &start_iter);
     ctk_text_buffer_get_end_iter (buffer, &end_iter);
     buffer_text = ctk_text_buffer_get_text (buffer, &start_iter, &end_iter, FALSE);
     theme_description = escape_string_and_dup (buffer_text);
     g_free (buffer_text);
     theme_info = (CafeThemeMetaInfo *) g_object_get_data (G_OBJECT (save_dialog), "meta-theme-info");
-    save_background = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (
+    save_background = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (
 		      appearance_capplet_get_widget (data, "save_background_checkbutton")));
-    save_notification = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (
+    save_notification = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (
 			appearance_capplet_get_widget (data, "save_notification_checkbutton")));
 
     if (save_theme_to_disk (theme_info, theme_name, theme_description, save_background, save_notification, &error)) {
       /* remove the custom theme */
       CtkTreeIter iter;
 
-      if (theme_find_in_model (GTK_TREE_MODEL (data->theme_store), "__custom__", &iter))
+      if (theme_find_in_model (CTK_TREE_MODEL (data->theme_store), "__custom__", &iter))
         ctk_list_store_remove (data->theme_store, &iter);
     }
 
@@ -342,7 +342,7 @@ entry_text_changed (CtkEditable *editable,
   const gchar *text;
   CtkWidget *button;
 
-  text = ctk_entry_get_text (GTK_ENTRY (editable));
+  text = ctk_entry_get_text (CTK_ENTRY (editable));
   button = appearance_capplet_get_widget (data, "save_dialog_save_button");
 
   ctk_widget_set_sensitive (button, text != NULL && text[0] != '\000');
@@ -370,14 +370,14 @@ theme_save_dialog_run (CafeThemeMetaInfo *theme_info,
     ctk_widget_set_size_request (text_view, 300, 100);
   }
 
-  ctk_entry_set_text (GTK_ENTRY (entry), "");
-  entry_text_changed (GTK_EDITABLE (entry), data);
+  ctk_entry_set_text (CTK_ENTRY (entry), "");
+  entry_text_changed (CTK_EDITABLE (entry), data);
   ctk_widget_grab_focus (entry);
 
-  text_buffer = ctk_text_view_get_buffer (GTK_TEXT_VIEW (text_view));
+  text_buffer = ctk_text_view_get_buffer (CTK_TEXT_VIEW (text_view));
   ctk_text_buffer_set_text (text_buffer, "", 0);
   g_object_set_data (G_OBJECT (data->theme_save_dialog), "meta-theme-info", theme_info);
-  ctk_window_set_transient_for (GTK_WINDOW (data->theme_save_dialog),
-                                GTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
+  ctk_window_set_transient_for (CTK_WINDOW (data->theme_save_dialog),
+                                CTK_WINDOW (appearance_capplet_get_widget (data, "appearance_window")));
   ctk_widget_show (data->theme_save_dialog);
 }

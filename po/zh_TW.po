@@ -1357,9 +1357,9 @@ msgstr "覆蓋全部(_A)"
 #: capplets/common/cafe-theme-info.c:1578
 #, c-format
 msgid ""
-"This theme will not look as intended because the required GTK+ theme '%s' is"
+"This theme will not look as intended because the required CTK+ theme '%s' is"
 " not installed."
-msgstr "這個布景主題無法正確顯示，因為要求的 GTK+ 布景主題「%s」尚未安裝。"
+msgstr "這個布景主題無法正確顯示，因為要求的 CTK+ 布景主題「%s」尚未安裝。"
 
 #: capplets/common/cafe-theme-info.c:1588
 #, c-format

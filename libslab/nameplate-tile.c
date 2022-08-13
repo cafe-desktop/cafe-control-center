@@ -48,7 +48,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (NameplateTile, nameplate_tile, TILE_TYPE)
 CtkWidget *nameplate_tile_new (const gchar * uri, CtkWidget * image, CtkWidget * header,
 	CtkWidget * subheader)
 {
-	return GTK_WIDGET (
+	return CTK_WIDGET (
 		g_object_new (NAMEPLATE_TILE_TYPE,
 		"tile-uri",            uri,
 		"nameplate-image",     image,
@@ -61,7 +61,7 @@ static void
 nameplate_tile_class_init (NameplateTileClass * this_class)
 {
 	GObjectClass *g_obj_class = G_OBJECT_CLASS (this_class);
-	CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (this_class);
+	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (this_class);
 
 	g_obj_class->constructor = nameplate_tile_constructor;
 	g_obj_class->get_property = nameplate_tile_get_property;
@@ -71,15 +71,15 @@ nameplate_tile_class_init (NameplateTileClass * this_class)
 
 	g_object_class_install_property (g_obj_class, PROP_NAMEPLATE_IMAGE,
 		g_param_spec_object ("nameplate-image", "nameplate-image", "nameplate image",
-			GTK_TYPE_WIDGET, G_PARAM_READWRITE));
+			CTK_TYPE_WIDGET, G_PARAM_READWRITE));
 
 	g_object_class_install_property (g_obj_class, PROP_NAMEPLATE_HEADER,
 		g_param_spec_object ("nameplate-header", "nameplate-header", "nameplate header",
-			GTK_TYPE_WIDGET, G_PARAM_READWRITE));
+			CTK_TYPE_WIDGET, G_PARAM_READWRITE));
 
 	g_object_class_install_property (g_obj_class, PROP_NAMEPLATE_SUBHEADER,
 		g_param_spec_object ("nameplate-subheader", "nameplate-subheader",
-			"nameplate subheader", GTK_TYPE_WIDGET, G_PARAM_READWRITE));
+			"nameplate subheader", CTK_TYPE_WIDGET, G_PARAM_READWRITE));
 }
 
 static void
@@ -144,52 +144,52 @@ nameplate_tile_set_property (GObject * g_object, guint prop_id, const GValue * v
 	switch (prop_id)
 	{
 	case PROP_NAMEPLATE_IMAGE:
-		if (GTK_IS_WIDGET (widget_obj))
+		if (CTK_IS_WIDGET (widget_obj))
 		{
-			if (GTK_IS_WIDGET (this->image))
+			if (CTK_IS_WIDGET (this->image))
 				ctk_widget_destroy (this->image);
 
-			this->image = GTK_WIDGET (widget_obj);
+			this->image = CTK_WIDGET (widget_obj);
 
 			ctk_container_add (priv->image_ctnr, this->image);
 
 			ctk_widget_show_all (this->image);
 		}
-		else if (GTK_IS_WIDGET (this->image))
+		else if (CTK_IS_WIDGET (this->image))
 			ctk_widget_destroy (this->image);
 
 		break;
 
 	case PROP_NAMEPLATE_HEADER:
-		if (GTK_IS_WIDGET (widget_obj))
+		if (CTK_IS_WIDGET (widget_obj))
 		{
-			if (GTK_IS_WIDGET (this->header))
+			if (CTK_IS_WIDGET (this->header))
 				ctk_widget_destroy (this->header);
 
-			this->header = GTK_WIDGET (widget_obj);
+			this->header = CTK_WIDGET (widget_obj);
 
 			ctk_container_add (priv->header_ctnr, this->header);
 
 			ctk_widget_show_all (this->header);
 		}
-		else if (GTK_IS_WIDGET (this->header))
+		else if (CTK_IS_WIDGET (this->header))
 			ctk_widget_destroy (this->header);
 
 		break;
 
 	case PROP_NAMEPLATE_SUBHEADER:
-		if (GTK_IS_WIDGET (widget_obj))
+		if (CTK_IS_WIDGET (widget_obj))
 		{
-			if (GTK_IS_WIDGET (this->subheader))
+			if (CTK_IS_WIDGET (this->subheader))
 				ctk_widget_destroy (this->subheader);
 
-			this->subheader = GTK_WIDGET (widget_obj);
+			this->subheader = CTK_WIDGET (widget_obj);
 
 			ctk_container_add (priv->subheader_ctnr, this->subheader);
 
 			ctk_widget_show_all (this->subheader);
 		}
-		else if (GTK_IS_WIDGET (this->subheader))
+		else if (CTK_IS_WIDGET (this->subheader))
 			ctk_widget_destroy (this->subheader);
 
 		break;
@@ -207,36 +207,36 @@ nameplate_tile_setup (NameplateTile *this)
 	CtkWidget *hbox;
 	CtkWidget *vbox;
 
-	priv->image_ctnr = GTK_CONTAINER (ctk_box_new (GTK_ORIENTATION_VERTICAL, 0));
-	ctk_widget_set_valign (GTK_WIDGET (priv->image_ctnr), GTK_ALIGN_CENTER);
+	priv->image_ctnr = CTK_CONTAINER (ctk_box_new (CTK_ORIENTATION_VERTICAL, 0));
+	ctk_widget_set_valign (CTK_WIDGET (priv->image_ctnr), CTK_ALIGN_CENTER);
 
-	priv->header_ctnr = GTK_CONTAINER (ctk_box_new (GTK_ORIENTATION_VERTICAL, 0));
+	priv->header_ctnr = CTK_CONTAINER (ctk_box_new (CTK_ORIENTATION_VERTICAL, 0));
 
-	priv->subheader_ctnr = GTK_CONTAINER (ctk_box_new (GTK_ORIENTATION_VERTICAL, 0));
-	ctk_widget_set_halign (GTK_WIDGET (priv->subheader_ctnr), GTK_ALIGN_START);
+	priv->subheader_ctnr = CTK_CONTAINER (ctk_box_new (CTK_ORIENTATION_VERTICAL, 0));
+	ctk_widget_set_halign (CTK_WIDGET (priv->subheader_ctnr), CTK_ALIGN_START);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	ctk_widget_set_halign (vbox, GTK_ALIGN_FILL);
-	ctk_widget_set_valign (vbox, GTK_ALIGN_CENTER);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+	ctk_widget_set_halign (vbox, CTK_ALIGN_FILL);
+	ctk_widget_set_valign (vbox, CTK_ALIGN_CENTER);
 
-	ctk_container_add (GTK_CONTAINER (this), hbox);
-	ctk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (priv->image_ctnr), FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+	ctk_container_add (CTK_CONTAINER (this), hbox);
+	ctk_box_pack_start (CTK_BOX (hbox), CTK_WIDGET (priv->image_ctnr), FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), vbox, TRUE, TRUE, 0);
 
-	ctk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (priv->header_ctnr), FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (priv->subheader_ctnr), FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), CTK_WIDGET (priv->header_ctnr), FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), CTK_WIDGET (priv->subheader_ctnr), FALSE, FALSE, 0);
 
-	if (GTK_IS_WIDGET (this->image))
+	if (CTK_IS_WIDGET (this->image))
 		ctk_container_add (priv->image_ctnr, this->image);
 
-	if (GTK_IS_WIDGET (this->header))
+	if (CTK_IS_WIDGET (this->header))
 		ctk_container_add (priv->header_ctnr, this->header);
 
-	if (GTK_IS_WIDGET (this->subheader))
+	if (CTK_IS_WIDGET (this->subheader))
 		ctk_container_add (priv->subheader_ctnr, this->subheader);
 
-	ctk_widget_set_focus_on_click (GTK_WIDGET (this), FALSE);
+	ctk_widget_set_focus_on_click (CTK_WIDGET (this), FALSE);
 }
 
 static void
@@ -246,22 +246,22 @@ nameplate_tile_drag_begin (CtkWidget * widget, GdkDragContext * context)
 	CtkImage *image;
 	const gchar *name;
 
-	(*GTK_WIDGET_CLASS (nameplate_tile_parent_class)->drag_begin) (widget, context);
+	(*CTK_WIDGET_CLASS (nameplate_tile_parent_class)->drag_begin) (widget, context);
 
-	if (!this->image || !GTK_IS_IMAGE (this->image))
+	if (!this->image || !CTK_IS_IMAGE (this->image))
 		return;
 
-	image = GTK_IMAGE (this->image);
+	image = CTK_IMAGE (this->image);
 
 	switch (ctk_image_get_storage_type (image))
 	{
-	case GTK_IMAGE_PIXBUF:
+	case CTK_IMAGE_PIXBUF:
 		if (ctk_image_get_pixbuf (image))
 			ctk_drag_set_icon_pixbuf (context, ctk_image_get_pixbuf (image), 0, 0);
 
 		break;
 
-	case GTK_IMAGE_ICON_NAME:
+	case CTK_IMAGE_ICON_NAME:
 		ctk_image_get_icon_name (image, &name, NULL);
 		if (name)
 			ctk_drag_set_icon_name (context, name, 0, 0);

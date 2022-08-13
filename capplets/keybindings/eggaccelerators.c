@@ -401,7 +401,7 @@ gchar* egg_virtual_accelerator_name (guint accelerator_key, guint keycode, EggVi
 	egg_keymap_resolve_virtual_modifiers(NULL, accelerator_mods, &gdkmods);
 
 	/* en la funcion ctk_accelerator_name, desde la modificacion del 16 de sep
-	 * del 2011 en GTK+, la tecla <Control> es tomada como <Primary> (?) */
+	 * del 2011 en CTK+, la tecla <Control> es tomada como <Primary> (?) */
 	ctk_name = ctk_accelerator_name(accelerator_key, gdkmods);
 
 	if (!accelerator_key)

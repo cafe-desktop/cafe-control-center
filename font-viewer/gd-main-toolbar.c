@@ -60,7 +60,7 @@ enum {
         PROP_SHOW_MODES,
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GdMainToolbar, gd_main_toolbar, GTK_TYPE_TOOLBAR)
+G_DEFINE_TYPE_WITH_PRIVATE (GdMainToolbar, gd_main_toolbar, CTK_TYPE_TOOLBAR)
 
 static void
 gd_main_toolbar_dispose (GObject *obj)
@@ -105,7 +105,7 @@ get_symbolic_button (const gchar *icon_name,
     {
     case CHILD_MENU:
       button = ctk_menu_button_new ();
-      ctk_widget_destroy (ctk_bin_get_child (GTK_BIN (button)));
+      ctk_widget_destroy (ctk_bin_get_child (CTK_BIN (button)));
       break;
     case CHILD_TOGGLE:
       button = ctk_toggle_button_new ();
@@ -119,9 +119,9 @@ get_symbolic_button (const gchar *icon_name,
   ctk_style_context_add_class (ctk_widget_get_style_context (button), "raised");
   ctk_style_context_add_class (ctk_widget_get_style_context (button), "image-button");
 
-  w = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
+  w = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_MENU);
   ctk_widget_show (w);
-  ctk_container_add (GTK_CONTAINER (button), w);
+  ctk_container_add (CTK_CONTAINER (button), w);
 
   return button;
 }
@@ -136,11 +136,11 @@ get_text_button (const gchar *label,
     {
     case CHILD_MENU:
       button = ctk_menu_button_new ();
-      ctk_widget_destroy (ctk_bin_get_child (GTK_BIN (button)));
+      ctk_widget_destroy (ctk_bin_get_child (CTK_BIN (button)));
 
       w = ctk_label_new (label);
       ctk_widget_show (w);
-      ctk_container_add (GTK_CONTAINER (button), w);
+      ctk_container_add (CTK_CONTAINER (button), w);
       break;
     case CHILD_TOGGLE:
       button = ctk_toggle_button_new_with_label (label);
@@ -166,11 +166,11 @@ get_vertical_size_group (GdMainToolbar *self)
 
   dummy = get_text_button ("Dummy", CHILD_NORMAL);
   container = ctk_tool_item_new ();
-  ctk_widget_set_no_show_all (GTK_WIDGET (container), TRUE);
-  ctk_container_add (GTK_CONTAINER (container), dummy);
-  ctk_toolbar_insert (GTK_TOOLBAR (self), container, -1);
+  ctk_widget_set_no_show_all (CTK_WIDGET (container), TRUE);
+  ctk_container_add (CTK_CONTAINER (container), dummy);
+  ctk_toolbar_insert (CTK_TOOLBAR (self), container, -1);
 
-  retval = ctk_size_group_new (GTK_SIZE_GROUP_VERTICAL);
+  retval = ctk_size_group_new (CTK_SIZE_GROUP_VERTICAL);
   ctk_size_group_add_widget (retval, dummy);
 
   return retval;
@@ -195,7 +195,7 @@ gd_main_toolbar_set_show_modes (GdMainToolbar *self,
       ctk_widget_set_no_show_all (self->priv->labels_grid, TRUE);
       ctk_widget_hide (self->priv->labels_grid);
 
-      ctk_widget_set_valign (self->priv->center_grid, GTK_ALIGN_FILL);
+      ctk_widget_set_valign (self->priv->center_grid, CTK_ALIGN_FILL);
       ctk_widget_set_no_show_all (self->priv->modes_box, FALSE);
       ctk_widget_show_all (self->priv->modes_box);
     }
@@ -204,7 +204,7 @@ gd_main_toolbar_set_show_modes (GdMainToolbar *self,
       ctk_widget_set_no_show_all (self->priv->modes_box, TRUE);
       ctk_widget_hide (self->priv->modes_box);
 
-      ctk_widget_set_valign (self->priv->center_grid, GTK_ALIGN_CENTER);
+      ctk_widget_set_valign (self->priv->center_grid, CTK_ALIGN_CENTER);
       ctk_widget_set_no_show_all (self->priv->labels_grid, FALSE);
       ctk_widget_show_all (self->priv->labels_grid);
     }
@@ -255,7 +255,7 @@ static void
 gd_main_toolbar_constructed (GObject *obj)
 {
   GdMainToolbar *self = GD_MAIN_TOOLBAR (obj);
-  CtkToolbar *tb = GTK_TOOLBAR (obj);
+  CtkToolbar *tb = CTK_TOOLBAR (obj);
   CtkWidget *grid;
 
   G_OBJECT_CLASS (gd_main_toolbar_parent_class)->constructed (obj);
@@ -264,65 +264,65 @@ gd_main_toolbar_constructed (GObject *obj)
 
   /* left section */
   self->priv->left_group = ctk_tool_item_new ();
-  ctk_widget_set_margin_end (GTK_WIDGET (self->priv->left_group), 12);
+  ctk_widget_set_margin_end (CTK_WIDGET (self->priv->left_group), 12);
   ctk_toolbar_insert (tb, self->priv->left_group, -1);
   ctk_size_group_add_widget (self->priv->vertical_size_group,
-                             GTK_WIDGET (self->priv->left_group));
+                             CTK_WIDGET (self->priv->left_group));
 
   /* left button group */
   self->priv->left_grid = ctk_grid_new ();
-  ctk_grid_set_column_spacing (GTK_GRID (self->priv->left_grid), 12);
-  ctk_container_add (GTK_CONTAINER (self->priv->left_group), self->priv->left_grid);
-  ctk_widget_set_halign (self->priv->left_grid, GTK_ALIGN_START);
+  ctk_grid_set_column_spacing (CTK_GRID (self->priv->left_grid), 12);
+  ctk_container_add (CTK_CONTAINER (self->priv->left_group), self->priv->left_grid);
+  ctk_widget_set_halign (self->priv->left_grid, CTK_ALIGN_START);
 
   /* center section */
   self->priv->center_group = ctk_tool_item_new ();
   ctk_tool_item_set_expand (self->priv->center_group, TRUE);
   ctk_toolbar_insert (tb, self->priv->center_group, -1);
   self->priv->center_grid = ctk_grid_new ();
-  ctk_widget_set_halign (self->priv->center_grid, GTK_ALIGN_CENTER);
-  ctk_widget_set_valign (self->priv->center_grid, GTK_ALIGN_CENTER);
-  ctk_container_add (GTK_CONTAINER (self->priv->center_group), self->priv->center_grid);
+  ctk_widget_set_halign (self->priv->center_grid, CTK_ALIGN_CENTER);
+  ctk_widget_set_valign (self->priv->center_grid, CTK_ALIGN_CENTER);
+  ctk_container_add (CTK_CONTAINER (self->priv->center_group), self->priv->center_grid);
   ctk_size_group_add_widget (self->priv->vertical_size_group,
-                             GTK_WIDGET (self->priv->center_group));
+                             CTK_WIDGET (self->priv->center_group));
 
   /* centered label group */
   self->priv->labels_grid = grid = ctk_grid_new ();
-  ctk_grid_set_column_spacing (GTK_GRID (grid), 12);
-  ctk_container_add (GTK_CONTAINER (self->priv->center_grid), grid);
+  ctk_grid_set_column_spacing (CTK_GRID (grid), 12);
+  ctk_container_add (CTK_CONTAINER (self->priv->center_grid), grid);
 
   self->priv->title_label = ctk_label_new (NULL);
-  ctk_label_set_ellipsize (GTK_LABEL (self->priv->title_label), PANGO_ELLIPSIZE_END);
-  ctk_container_add (GTK_CONTAINER (grid), self->priv->title_label);
+  ctk_label_set_ellipsize (CTK_LABEL (self->priv->title_label), PANGO_ELLIPSIZE_END);
+  ctk_container_add (CTK_CONTAINER (grid), self->priv->title_label);
 
   self->priv->detail_label = ctk_label_new (NULL);
-  ctk_label_set_ellipsize (GTK_LABEL (self->priv->detail_label), PANGO_ELLIPSIZE_END);
+  ctk_label_set_ellipsize (CTK_LABEL (self->priv->detail_label), PANGO_ELLIPSIZE_END);
   ctk_widget_set_no_show_all (self->priv->detail_label, TRUE);
   ctk_style_context_add_class (ctk_widget_get_style_context (self->priv->detail_label), "dim-label");
-  ctk_container_add (GTK_CONTAINER (grid), self->priv->detail_label);
+  ctk_container_add (CTK_CONTAINER (grid), self->priv->detail_label);
 
   /* centered mode group */
-  self->priv->modes_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  ctk_box_set_homogeneous (GTK_BOX (self->priv->modes_box), TRUE);
+  self->priv->modes_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+  ctk_box_set_homogeneous (CTK_BOX (self->priv->modes_box), TRUE);
   ctk_widget_set_no_show_all (self->priv->modes_box, TRUE);
   ctk_style_context_add_class (ctk_widget_get_style_context (self->priv->modes_box), "linked");
-  ctk_container_add (GTK_CONTAINER (self->priv->center_grid), self->priv->modes_box);
+  ctk_container_add (CTK_CONTAINER (self->priv->center_grid), self->priv->modes_box);
 
   /* right section */
   self->priv->right_group = ctk_tool_item_new ();
-  ctk_widget_set_margin_start (GTK_WIDGET (self->priv->right_group), 12);
+  ctk_widget_set_margin_start (CTK_WIDGET (self->priv->right_group), 12);
   ctk_toolbar_insert (tb, self->priv->right_group, -1);
   ctk_size_group_add_widget (self->priv->vertical_size_group,
-                             GTK_WIDGET (self->priv->right_group));
+                             CTK_WIDGET (self->priv->right_group));
 
   self->priv->right_grid = ctk_grid_new ();
-  ctk_grid_set_column_spacing (GTK_GRID (self->priv->right_grid), 12);
-  ctk_container_add (GTK_CONTAINER (self->priv->right_group), self->priv->right_grid);
-  ctk_widget_set_halign (self->priv->right_grid, GTK_ALIGN_END);
+  ctk_grid_set_column_spacing (CTK_GRID (self->priv->right_grid), 12);
+  ctk_container_add (CTK_CONTAINER (self->priv->right_group), self->priv->right_grid);
+  ctk_widget_set_halign (self->priv->right_grid, CTK_ALIGN_END);
 
-  self->priv->size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-  ctk_size_group_add_widget (self->priv->size_group, GTK_WIDGET (self->priv->left_group));
-  ctk_size_group_add_widget (self->priv->size_group, GTK_WIDGET (self->priv->right_group));
+  self->priv->size_group = ctk_size_group_new (CTK_SIZE_GROUP_HORIZONTAL);
+  ctk_size_group_add_widget (self->priv->size_group, CTK_WIDGET (self->priv->left_group));
+  ctk_size_group_add_widget (self->priv->size_group, CTK_WIDGET (self->priv->right_group));
 }
 
 static void
@@ -355,15 +355,15 @@ void
 gd_main_toolbar_clear (GdMainToolbar *self)
 {
   /* reset labels */
-  ctk_label_set_text (GTK_LABEL (self->priv->title_label), "");
-  ctk_label_set_text (GTK_LABEL (self->priv->detail_label), "");
+  ctk_label_set_text (CTK_LABEL (self->priv->title_label), "");
+  ctk_label_set_text (CTK_LABEL (self->priv->detail_label), "");
 
   /* clear all added buttons */
-  ctk_container_foreach (GTK_CONTAINER (self->priv->left_grid),
+  ctk_container_foreach (CTK_CONTAINER (self->priv->left_grid),
                          (CtkCallback) ctk_widget_destroy, self);
-  ctk_container_foreach (GTK_CONTAINER (self->priv->modes_box),
+  ctk_container_foreach (CTK_CONTAINER (self->priv->modes_box),
                          (CtkCallback) ctk_widget_destroy, self);
-  ctk_container_foreach (GTK_CONTAINER (self->priv->right_grid),
+  ctk_container_foreach (CTK_CONTAINER (self->priv->right_grid),
                          (CtkCallback) ctk_widget_destroy, self);
 }
 
@@ -386,23 +386,23 @@ gd_main_toolbar_set_labels (GdMainToolbar *self,
 
   if (real_primary == NULL)
     {
-      ctk_label_set_markup (GTK_LABEL (self->priv->title_label), "");
+      ctk_label_set_markup (CTK_LABEL (self->priv->title_label), "");
       ctk_widget_hide (self->priv->title_label);
     }
   else
     {
-      ctk_label_set_markup (GTK_LABEL (self->priv->title_label), real_primary);
+      ctk_label_set_markup (CTK_LABEL (self->priv->title_label), real_primary);
       ctk_widget_show (self->priv->title_label);
     }
 
   if (detail == NULL)
     {
-      ctk_label_set_text (GTK_LABEL (self->priv->detail_label), "");
+      ctk_label_set_text (CTK_LABEL (self->priv->detail_label), "");
       ctk_widget_hide (self->priv->detail_label);
     }
   else
     {
-      ctk_label_set_text (GTK_LABEL (self->priv->detail_label), detail);
+      ctk_label_set_text (CTK_LABEL (self->priv->detail_label), detail);
       ctk_widget_show (self->priv->detail_label);
     }
 
@@ -466,38 +466,38 @@ gd_main_toolbar_set_labels_menu (GdMainToolbar *self,
   if (menu != NULL)
     {
       g_object_ref (self->priv->labels_grid);
-      ctk_container_remove (GTK_CONTAINER (self->priv->center_grid),
+      ctk_container_remove (CTK_CONTAINER (self->priv->center_grid),
                             self->priv->labels_grid);
 
       self->priv->center_menu_child = grid = ctk_grid_new ();
-      ctk_grid_set_column_spacing (GTK_GRID (grid), 6);
-      ctk_container_add (GTK_CONTAINER (grid), self->priv->labels_grid);
+      ctk_grid_set_column_spacing (CTK_GRID (grid), 6);
+      ctk_container_add (CTK_CONTAINER (grid), self->priv->labels_grid);
       g_object_unref (self->priv->labels_grid);
 
-      w = ctk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
-      ctk_container_add (GTK_CONTAINER (grid), w);
+      w = ctk_image_new_from_icon_name ("pan-down-symbolic", CTK_ICON_SIZE_BUTTON);
+      ctk_container_add (CTK_CONTAINER (grid), w);
 
       self->priv->center_menu = button = ctk_menu_button_new ();
       ctk_style_context_add_class (ctk_widget_get_style_context (self->priv->center_menu),
                                    "selection-menu");
-      ctk_widget_destroy (ctk_bin_get_child (GTK_BIN (button)));
-      ctk_widget_set_halign (button, GTK_ALIGN_CENTER);
-      ctk_menu_button_set_menu_model (GTK_MENU_BUTTON (button), menu);
-      ctk_container_add (GTK_CONTAINER (self->priv->center_menu), grid);
+      ctk_widget_destroy (ctk_bin_get_child (CTK_BIN (button)));
+      ctk_widget_set_halign (button, CTK_ALIGN_CENTER);
+      ctk_menu_button_set_menu_model (CTK_MENU_BUTTON (button), menu);
+      ctk_container_add (CTK_CONTAINER (self->priv->center_menu), grid);
 
-      ctk_container_add (GTK_CONTAINER (self->priv->center_grid), button);
+      ctk_container_add (CTK_CONTAINER (self->priv->center_grid), button);
     }
   else
     {
       g_object_ref (self->priv->labels_grid);
-      ctk_container_remove (GTK_CONTAINER (self->priv->center_menu_child),
+      ctk_container_remove (CTK_CONTAINER (self->priv->center_menu_child),
                             self->priv->labels_grid);
       ctk_widget_destroy (self->priv->center_menu);
 
       self->priv->center_menu = NULL;
       self->priv->center_menu_child = NULL;
 
-      ctk_container_add (GTK_CONTAINER (self->priv->center_grid),
+      ctk_container_add (CTK_CONTAINER (self->priv->center_grid),
                          self->priv->labels_grid);
       g_object_unref (self->priv->labels_grid);
     }
@@ -520,19 +520,19 @@ gd_main_toolbar_add_mode (GdMainToolbar *self,
   GList *group;
 
   button = ctk_radio_button_new_with_label (NULL, label);
-  ctk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (button), FALSE);
+  ctk_toggle_button_set_mode (CTK_TOGGLE_BUTTON (button), FALSE);
   ctk_widget_set_size_request (button, 100, -1);
   ctk_style_context_add_class (ctk_widget_get_style_context (button), "raised");
   ctk_style_context_add_class (ctk_widget_get_style_context (button), "text-button");
 
-  group = ctk_container_get_children (GTK_CONTAINER (self->priv->modes_box));
+  group = ctk_container_get_children (CTK_CONTAINER (self->priv->modes_box));
   if (group != NULL)
     {
-      ctk_radio_button_join_group (GTK_RADIO_BUTTON (button), GTK_RADIO_BUTTON (group->data));
+      ctk_radio_button_join_group (CTK_RADIO_BUTTON (button), CTK_RADIO_BUTTON (group->data));
       g_list_free (group);
     }
 
-  ctk_container_add (GTK_CONTAINER (self->priv->modes_box), button);
+  ctk_container_add (CTK_CONTAINER (self->priv->modes_box), button);
   ctk_widget_show (button);
 
   return button;
@@ -605,8 +605,8 @@ gd_main_toolbar_add_widget (GdMainToolbar *self,
                             gboolean pack_start)
 {
   if (pack_start)
-    ctk_container_add (GTK_CONTAINER (self->priv->left_grid), widget);
+    ctk_container_add (CTK_CONTAINER (self->priv->left_grid), widget);
   else
-    ctk_container_add (GTK_CONTAINER (self->priv->right_grid), widget);
+    ctk_container_add (CTK_CONTAINER (self->priv->right_grid), widget);
 }
 

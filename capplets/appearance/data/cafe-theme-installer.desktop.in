@@ -8,7 +8,7 @@ Terminal=false
 Type=Application
 MimeType=application/x-cafe-theme-package;
 StartupNotify=true
-Categories=GTK;Settings;
+Categories=CTK;Settings;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=cafe-control-center;CAFE;install;desktop;themes;
 NoDisplay=true

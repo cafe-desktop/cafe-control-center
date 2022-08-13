@@ -179,27 +179,27 @@ set_changed(CtkComboBox* combo, CafeDACapplet* capplet, GList* list, gint type)
 static void
 close_cb(CtkWidget* window, gint response, CafeDACapplet* capplet)
 {
-	if (response == GTK_RESPONSE_HELP)
+	if (response == CTK_RESPONSE_HELP)
 	{
-		capplet_help(GTK_WINDOW(window), "prefs-preferredapps");
+		capplet_help(CTK_WINDOW(window), "prefs-preferredapps");
 	}
 	else
 	{
-		set_changed(GTK_COMBO_BOX(capplet->web_combo_box), capplet, capplet->web_browsers, DA_TYPE_WEB_BROWSER);
-		set_changed(GTK_COMBO_BOX(capplet->mail_combo_box), capplet, capplet->mail_readers, DA_TYPE_EMAIL);
-		set_changed(GTK_COMBO_BOX(capplet->file_combo_box), capplet, capplet->file_managers, DA_TYPE_FILE);
-		set_changed(GTK_COMBO_BOX(capplet->text_combo_box), capplet, capplet->text_editors, DA_TYPE_TEXT);
-		set_changed(GTK_COMBO_BOX(capplet->media_combo_box), capplet, capplet->media_players, DA_TYPE_MEDIA);
-		set_changed(GTK_COMBO_BOX(capplet->video_combo_box), capplet, capplet->video_players, DA_TYPE_VIDEO);
-		set_changed(GTK_COMBO_BOX(capplet->term_combo_box), capplet, capplet->terminals, DA_TYPE_TERMINAL);
-		set_changed(GTK_COMBO_BOX(capplet->visual_combo_box), capplet, capplet->visual_ats, DA_TYPE_VISUAL);
-		set_changed(GTK_COMBO_BOX(capplet->mobility_combo_box), capplet, capplet->mobility_ats, DA_TYPE_MOBILITY);
-		set_changed(GTK_COMBO_BOX(capplet->image_combo_box), capplet, capplet->image_viewers, DA_TYPE_IMAGE);
-		set_changed(GTK_COMBO_BOX(capplet->document_combo_box), capplet, capplet->document_viewers, DA_TYPE_DOCUMENT);
-		set_changed(GTK_COMBO_BOX(capplet->word_combo_box), capplet, capplet->word_editors, DA_TYPE_WORD);
-		set_changed(GTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet, capplet->spreadsheet_editors, DA_TYPE_SPREADSHEET);
-		set_changed(GTK_COMBO_BOX(capplet->calculator_combo_box), capplet, capplet->calculators, DA_TYPE_CALCULATOR);
-		set_changed(GTK_COMBO_BOX(capplet->messenger_combo_box), capplet, capplet->messengers, DA_TYPE_MESSENGER);
+		set_changed(CTK_COMBO_BOX(capplet->web_combo_box), capplet, capplet->web_browsers, DA_TYPE_WEB_BROWSER);
+		set_changed(CTK_COMBO_BOX(capplet->mail_combo_box), capplet, capplet->mail_readers, DA_TYPE_EMAIL);
+		set_changed(CTK_COMBO_BOX(capplet->file_combo_box), capplet, capplet->file_managers, DA_TYPE_FILE);
+		set_changed(CTK_COMBO_BOX(capplet->text_combo_box), capplet, capplet->text_editors, DA_TYPE_TEXT);
+		set_changed(CTK_COMBO_BOX(capplet->media_combo_box), capplet, capplet->media_players, DA_TYPE_MEDIA);
+		set_changed(CTK_COMBO_BOX(capplet->video_combo_box), capplet, capplet->video_players, DA_TYPE_VIDEO);
+		set_changed(CTK_COMBO_BOX(capplet->term_combo_box), capplet, capplet->terminals, DA_TYPE_TERMINAL);
+		set_changed(CTK_COMBO_BOX(capplet->visual_combo_box), capplet, capplet->visual_ats, DA_TYPE_VISUAL);
+		set_changed(CTK_COMBO_BOX(capplet->mobility_combo_box), capplet, capplet->mobility_ats, DA_TYPE_MOBILITY);
+		set_changed(CTK_COMBO_BOX(capplet->image_combo_box), capplet, capplet->image_viewers, DA_TYPE_IMAGE);
+		set_changed(CTK_COMBO_BOX(capplet->document_combo_box), capplet, capplet->document_viewers, DA_TYPE_DOCUMENT);
+		set_changed(CTK_COMBO_BOX(capplet->word_combo_box), capplet, capplet->word_editors, DA_TYPE_WORD);
+		set_changed(CTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet, capplet->spreadsheet_editors, DA_TYPE_SPREADSHEET);
+		set_changed(CTK_COMBO_BOX(capplet->calculator_combo_box), capplet, capplet->calculators, DA_TYPE_CALCULATOR);
+		set_changed(CTK_COMBO_BOX(capplet->messenger_combo_box), capplet, capplet->messengers, DA_TYPE_MESSENGER);
 
 		ctk_widget_destroy(window);
 		ctk_main_quit();
@@ -313,7 +313,7 @@ refresh_combo_box_icons(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_
 		return;
 
 	valid = ctk_tree_model_get_iter_first(model, &iter);
-	scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (combo_box));
+	scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (combo_box));
 
 	while (valid)
 	{
@@ -324,10 +324,10 @@ refresh_combo_box_icons(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_
 		surface = ctk_icon_theme_load_surface (theme, icon_name,
 		                                       22, scale_factor,
 		                                       NULL,
-		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
+		                                       CTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		ctk_list_store_set (GTK_LIST_STORE(model), &iter,
+		ctk_list_store_set (CTK_LIST_STORE(model), &iter,
 		                    SURFACE_COL, surface,
 		                    -1);
 
@@ -379,29 +379,29 @@ theme_changed_cb(CtkIconTheme* theme, CafeDACapplet* capplet)
 		surface = ctk_icon_theme_load_surface (theme, icons[i].icon,
 		                                       32, scale_factor,
 		                                       NULL,
-		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
+		                                       CTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		ctk_image_set_from_surface (GTK_IMAGE(icon), surface);
+		ctk_image_set_from_surface (CTK_IMAGE(icon), surface);
 
 		if (surface)
 			cairo_surface_destroy (surface);
 	}
 
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->web_combo_box), capplet->web_browsers);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->mail_combo_box), capplet->mail_readers);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->media_combo_box), capplet->media_players);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->video_combo_box), capplet->video_players);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->term_combo_box), capplet->terminals);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->visual_combo_box), capplet->visual_ats);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->mobility_combo_box), capplet->mobility_ats);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->file_combo_box), capplet->file_managers);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->text_combo_box), capplet->text_editors);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->document_combo_box), capplet->document_viewers);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->word_combo_box), capplet->word_editors);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet->spreadsheet_editors);
-	refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->calculator_combo_box), capplet->calculators);
-        refresh_combo_box_icons(theme, GTK_COMBO_BOX(capplet->messenger_combo_box), capplet->messengers);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->web_combo_box), capplet->web_browsers);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->mail_combo_box), capplet->mail_readers);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->media_combo_box), capplet->media_players);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->video_combo_box), capplet->video_players);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->term_combo_box), capplet->terminals);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->visual_combo_box), capplet->visual_ats);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->mobility_combo_box), capplet->mobility_ats);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->file_combo_box), capplet->file_managers);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->text_combo_box), capplet->text_editors);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->document_combo_box), capplet->document_viewers);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->word_combo_box), capplet->word_editors);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet->spreadsheet_editors);
+	refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->calculator_combo_box), capplet->calculators);
+        refresh_combo_box_icons(theme, CTK_COMBO_BOX(capplet->messenger_combo_box), capplet->messengers);
 }
 
 static void
@@ -520,7 +520,7 @@ fill_combo_box(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_list, gch
 		theme = ctk_icon_theme_get_default();
 	}
 
-	model = GTK_TREE_MODEL (ctk_list_store_new (4,
+	model = CTK_TREE_MODEL (ctk_list_store_new (4,
 	                                            CAIRO_GOBJECT_TYPE_SURFACE,
 	                                            G_TYPE_STRING,
 	                                            G_TYPE_STRING,
@@ -531,19 +531,19 @@ fill_combo_box(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_list, gch
 
 	/* Not all cells have an icon, this prevents the combo box to shrink */
 	ctk_cell_renderer_set_fixed_size(renderer, 22, 22);
-	ctk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, FALSE);
-	ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo_box), renderer,
+	ctk_cell_layout_pack_start(CTK_CELL_LAYOUT(combo_box), renderer, FALSE);
+	ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (combo_box), renderer,
 	                                "surface", SURFACE_COL,
 	                                NULL);
 
 	renderer = ctk_cell_renderer_text_new();
 
-	ctk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo_box), renderer, TRUE);
-	ctk_cell_layout_set_attributes(GTK_CELL_LAYOUT(combo_box), renderer,
+	ctk_cell_layout_pack_start(CTK_CELL_LAYOUT(combo_box), renderer, TRUE);
+	ctk_cell_layout_set_attributes(CTK_CELL_LAYOUT(combo_box), renderer,
 		"text", TEXT_COL,
 		NULL);
 
-	scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (combo_box));
+	scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (combo_box));
 
 	for (entry = app_list; entry != NULL; entry = g_list_next(entry))
 	{
@@ -566,11 +566,11 @@ fill_combo_box(CtkIconTheme* theme, CtkComboBox* combo_box, GList* app_list, gch
 		surface = ctk_icon_theme_load_surface (theme, icon_name,
 		                                       22, scale_factor,
 		                                       NULL,
-		                                       GTK_ICON_LOOKUP_FORCE_SIZE,
+		                                       CTK_ICON_LOOKUP_FORCE_SIZE,
 		                                       NULL);
 
-		ctk_list_store_append(GTK_LIST_STORE(model), &iter);
-		ctk_list_store_set (GTK_LIST_STORE (model), &iter,
+		ctk_list_store_append(CTK_LIST_STORE(model), &iter);
+		ctk_list_store_set (CTK_LIST_STORE (model), &iter,
 		                    SURFACE_COL, surface,
 		                    TEXT_COL, g_app_info_get_display_name(item),
 		                    ID_COL, g_app_info_get_id(item),
@@ -625,7 +625,7 @@ compare_apps (gconstpointer a, gconstpointer b)
 static void
 show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 {
-	#define get_widget(name) GTK_WIDGET(ctk_builder_get_object(builder, name))
+	#define get_widget(name) CTK_WIDGET(ctk_builder_get_object(builder, name))
 
 	CtkBuilder* builder;
 	guint builder_result;
@@ -636,11 +636,11 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 
 	if (builder_result == 0)
 	{
-		CtkWidget* dialog = ctk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("Could not load the main interface"));
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), _("Please make sure that the applet is properly installed"));
-		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+		CtkWidget* dialog = ctk_message_dialog_new (NULL, 0, CTK_MESSAGE_ERROR, CTK_BUTTONS_OK, _("Could not load the main interface"));
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog), _("Please make sure that the applet is properly installed"));
+		ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_OK);
 
-		ctk_dialog_run(GTK_DIALOG(dialog));
+		ctk_dialog_run(CTK_DIALOG(dialog));
 
 		ctk_widget_destroy(dialog);
 		exit(EXIT_FAILURE);
@@ -750,21 +750,21 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	}
 	capplet->messengers = g_list_sort (capplet->messengers, compare_apps);
 
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->web_combo_box), capplet->web_browsers, "x-scheme-handler/http");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->mail_combo_box), capplet->mail_readers, "x-scheme-handler/mailto");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->term_combo_box), capplet->terminals, "terminal");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->media_combo_box), capplet->media_players, "audio/x-vorbis+ogg");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->video_combo_box), capplet->video_players, "video/x-ogm+ogg");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->image_combo_box), capplet->image_viewers, "image/png");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->text_combo_box), capplet->text_editors, "text/plain");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->file_combo_box), capplet->file_managers, "inode/directory");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->visual_combo_box), capplet->visual_ats, "visual");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->mobility_combo_box), capplet->mobility_ats, "mobility");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->document_combo_box), capplet->document_viewers, "application/pdf");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->word_combo_box), capplet->word_editors, "application/vnd.oasis.opendocument.text");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet->spreadsheet_editors, "application/vnd.oasis.opendocument.spreadsheet");
-	fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->calculator_combo_box), capplet->calculators, "calculator");
-        fill_combo_box(capplet->icon_theme, GTK_COMBO_BOX(capplet->messenger_combo_box), capplet->messengers, "messenger");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->web_combo_box), capplet->web_browsers, "x-scheme-handler/http");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->mail_combo_box), capplet->mail_readers, "x-scheme-handler/mailto");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->term_combo_box), capplet->terminals, "terminal");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->media_combo_box), capplet->media_players, "audio/x-vorbis+ogg");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->video_combo_box), capplet->video_players, "video/x-ogm+ogg");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->image_combo_box), capplet->image_viewers, "image/png");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->text_combo_box), capplet->text_editors, "text/plain");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->file_combo_box), capplet->file_managers, "inode/directory");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->visual_combo_box), capplet->visual_ats, "visual");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->mobility_combo_box), capplet->mobility_ats, "mobility");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->document_combo_box), capplet->document_viewers, "application/pdf");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->word_combo_box), capplet->word_editors, "application/vnd.oasis.opendocument.text");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->spreadsheet_combo_box), capplet->spreadsheet_editors, "application/vnd.oasis.opendocument.spreadsheet");
+	fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->calculator_combo_box), capplet->calculators, "calculator");
+        fill_combo_box(capplet->icon_theme, CTK_COMBO_BOX(capplet->messenger_combo_box), capplet->messengers, "messenger");
 
 	g_signal_connect(capplet->web_combo_box, "changed", G_CALLBACK(web_combo_changed_cb), capplet);
 	g_signal_connect(capplet->mail_combo_box, "changed", G_CALLBACK(mail_combo_changed_cb), capplet);
@@ -785,13 +785,13 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 	g_settings_bind (capplet->mobility_settings, MOBILITY_STARTUP_KEY, capplet->mobility_startup_checkbutton, "active", G_SETTINGS_BIND_DEFAULT);
 	g_settings_bind (capplet->visual_startup_settings, VISUAL_STARTUP_KEY, capplet->visual_startup_checkbutton, "active", G_SETTINGS_BIND_DEFAULT);
 
-	ctk_window_set_icon_name(GTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
+	ctk_window_set_icon_name(CTK_WINDOW (capplet->window), "preferences-desktop-default-applications");
 
-        CtkNotebook* nb = GTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
-        ctk_widget_add_events (GTK_WIDGET (nb), GDK_SCROLL_MASK);
-        g_signal_connect (GTK_WIDGET (nb), "scroll-event",
+        CtkNotebook* nb = CTK_NOTEBOOK(get_widget("preferred_apps_notebook"));
+        ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+        g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
-                          GTK_WINDOW (capplet->window));
+                          CTK_WINDOW (capplet->window));
 
 	if (start_page != NULL)
 	{

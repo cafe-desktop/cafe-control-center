@@ -20,7 +20,7 @@
 #include "scrollarea.h"
 #include "foo-marshal.h"
 
-G_DEFINE_TYPE_WITH_CODE (FooScrollArea, foo_scroll_area, GTK_TYPE_CONTAINER, G_IMPLEMENT_INTERFACE (GTK_TYPE_SCROLLABLE, NULL));
+G_DEFINE_TYPE_WITH_CODE (FooScrollArea, foo_scroll_area, CTK_TYPE_CONTAINER, G_IMPLEMENT_INTERFACE (CTK_TYPE_SCROLLABLE, NULL));
 
 static CtkWidgetClass *parent_class;
 
@@ -145,7 +145,7 @@ foo_scroll_area_map (CtkWidget *widget)
 {
     FooScrollArea *area = FOO_SCROLL_AREA (widget);
 
-    GTK_WIDGET_CLASS (parent_class)->map (widget);
+    CTK_WIDGET_CLASS (parent_class)->map (widget);
 
     if (area->priv->input_window)
 	gdk_window_show (area->priv->input_window);
@@ -159,7 +159,7 @@ foo_scroll_area_unmap (CtkWidget *widget)
     if (area->priv->input_window)
 	gdk_window_hide (area->priv->input_window);
 
-    GTK_WIDGET_CLASS (parent_class)->unmap (widget);
+    CTK_WIDGET_CLASS (parent_class)->unmap (widget);
 }
 
 static void
@@ -233,7 +233,7 @@ static void
 foo_scroll_area_class_init (FooScrollAreaClass *class)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (class);
-    CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
+    CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
 
     object_class->finalize = foo_scroll_area_finalize;
     object_class->set_property = foo_scroll_area_set_property;
@@ -288,7 +288,7 @@ foo_scroll_area_class_init (FooScrollAreaClass *class)
 static CtkAdjustment *
 new_adjustment (void)
 {
-    return GTK_ADJUSTMENT (ctk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+    return CTK_ADJUSTMENT (ctk_adjustment_new (0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
 }
 
 static void
@@ -296,7 +296,7 @@ foo_scroll_area_init (FooScrollArea *scroll_area)
 {
     CtkWidget *widget;
 
-    widget = GTK_WIDGET (scroll_area);
+    widget = CTK_WIDGET (scroll_area);
 
     ctk_widget_set_has_window (widget, FALSE);
     ctk_widget_set_redraw_on_allocate (widget, FALSE);
@@ -380,7 +380,7 @@ get_viewport (FooScrollArea *scroll_area,
 	      GdkRectangle  *viewport)
 {
     CtkAllocation allocation;
-    CtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = CTK_WIDGET (scroll_area);
 
     ctk_widget_get_allocation (widget, &allocation);
 
@@ -407,7 +407,7 @@ clear_exposed_input_region (FooScrollArea *area,
     cairo_region_t *viewport;
     GdkRectangle allocation;
 
-    ctk_widget_get_allocation (GTK_WIDGET (area), &allocation);
+    ctk_widget_get_allocation (CTK_WIDGET (area), &allocation);
     allocation.x = 0;
     allocation.y = 0;
     allocation_to_canvas (area, &allocation.x, &allocation.y);
@@ -572,7 +572,7 @@ set_adjustment_values (FooScrollArea *scroll_area)
     CtkAdjustment *vadj = scroll_area->priv->vadj;
 
     /* Horizontal */
-    ctk_widget_get_allocation (GTK_WIDGET (scroll_area), &allocation);
+    ctk_widget_get_allocation (CTK_WIDGET (scroll_area), &allocation);
     g_object_freeze_notify (G_OBJECT (hadj));
     ctk_adjustment_set_page_size (hadj, allocation.width);
     ctk_adjustment_set_step_increment (hadj, 0.1 * allocation.width);
@@ -655,7 +655,7 @@ foo_scroll_area_unrealize (CtkWidget *widget)
 	area->priv->input_window = NULL;
     }
 
-    GTK_WIDGET_CLASS (parent_class)->unrealize (widget);
+    CTK_WIDGET_CLASS (parent_class)->unrealize (widget);
 }
 
 static cairo_surface_t *
@@ -787,7 +787,7 @@ process_event (FooScrollArea	       *scroll_area,
 	       int			x,
 	       int			y)
 {
-    CtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = CTK_WIDGET (scroll_area);
     int i;
 
     allocation_to_canvas (scroll_area, &x, &y);
@@ -985,7 +985,7 @@ foo_scroll_area_scroll (FooScrollArea *area,
     GdkRectangle move_area;
     cairo_region_t *invalid_region;
 
-    ctk_widget_get_allocation (GTK_WIDGET (area), &allocation);
+    ctk_widget_get_allocation (CTK_WIDGET (area), &allocation);
     allocation.x = 0;
     allocation.y = 0;
 
@@ -1019,7 +1019,7 @@ foo_scroll_area_scroll (FooScrollArea *area,
 
 	cairo_destroy (cr);
 
-	ctk_widget_queue_draw (GTK_WIDGET (area));
+	ctk_widget_queue_draw (CTK_WIDGET (area));
 
 	move_region = cairo_region_create_rectangle (&move_area);
 	cairo_region_translate (move_region, dx, dy);
@@ -1038,7 +1038,7 @@ static void
 foo_scrollbar_adjustment_changed (CtkAdjustment *adj,
 				  FooScrollArea *scroll_area)
 {
-    CtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = CTK_WIDGET (scroll_area);
     gint dx = 0;
     gint dy = 0;
     GdkRectangle old_viewport, new_viewport;
@@ -1086,7 +1086,7 @@ set_one_adjustment (FooScrollArea *scroll_area,
     if (!adjustment)
 	adjustment = new_adjustment ();
 
-    g_return_if_fail (GTK_IS_ADJUSTMENT (adjustment));
+    g_return_if_fail (CTK_IS_ADJUSTMENT (adjustment));
 
     if (*location)
     {
@@ -1143,7 +1143,7 @@ foo_scroll_area_set_min_size (FooScrollArea *scroll_area,
      *        - make sure input boxes are invalidated when
      *          needed
      */
-    ctk_widget_queue_resize (GTK_WIDGET (scroll_area));
+    ctk_widget_queue_resize (CTK_WIDGET (scroll_area));
 }
 
 static void
@@ -1213,7 +1213,7 @@ void
 foo_scroll_area_invalidate (FooScrollArea *scroll_area)
 {
     CtkAllocation allocation;
-    CtkWidget *widget = GTK_WIDGET (scroll_area);
+    CtkWidget *widget = CTK_WIDGET (scroll_area);
 
     ctk_widget_get_allocation (widget, &allocation);
     foo_scroll_area_invalidate_rect (scroll_area,
@@ -1227,7 +1227,7 @@ canvas_to_window (FooScrollArea *area,
 		  cairo_region_t *region)
 {
     CtkAllocation allocation;
-    CtkWidget *widget = GTK_WIDGET (area);
+    CtkWidget *widget = CTK_WIDGET (area);
 
     ctk_widget_get_allocation (widget, &allocation);
     cairo_region_translate (region,
@@ -1240,7 +1240,7 @@ window_to_canvas (FooScrollArea *area,
 		  cairo_region_t *region)
 {
     CtkAllocation allocation;
-    CtkWidget *widget = GTK_WIDGET (area);
+    CtkWidget *widget = CTK_WIDGET (area);
 
     ctk_widget_get_allocation (widget, &allocation);
     cairo_region_translate (region,
@@ -1256,7 +1256,7 @@ foo_scroll_area_invalidate_region (FooScrollArea *area,
 
     g_return_if_fail (FOO_IS_SCROLL_AREA (area));
 
-    widget = GTK_WIDGET (area);
+    widget = CTK_WIDGET (area);
 
     cairo_region_union (area->priv->update_region, region);
 

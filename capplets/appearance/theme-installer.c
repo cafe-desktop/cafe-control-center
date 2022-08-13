@@ -38,7 +38,7 @@ enum {
 	THEME_INVALID,
 	THEME_ICON,
 	THEME_CAFE,
-	THEME_GTK,
+	THEME_CTK,
 	THEME_ENGINE,
 	THEME_CROMA,
 	THEME_CURSOR,
@@ -127,7 +127,7 @@ file_theme_type (const gchar *dir)
 	g_free (filename);
 
 	if (exists)
-		return THEME_GTK;
+		return THEME_CTK;
 
 	filename = g_build_filename (dir, "metacity-1", "metacity-theme-2.xml", NULL);
 	exists = g_file_test (filename, G_FILE_TEST_IS_REGULAR);
@@ -180,13 +180,13 @@ missing_utility_message_dialog (CtkWindow *parent,
 				const gchar *utility)
 {
 	CtkWidget *dialog = ctk_message_dialog_new (parent,
-						    GTK_DIALOG_MODAL,
-						    GTK_MESSAGE_ERROR,
-						    GTK_BUTTONS_OK,
+						    CTK_DIALOG_MODAL,
+						    CTK_MESSAGE_ERROR,
+						    CTK_BUTTONS_OK,
 						    _("Cannot install theme"));
-	ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+	ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 						  _("The %s utility is not installed."), utility);
-	ctk_dialog_run (GTK_DIALOG (dialog));
+	ctk_dialog_run (CTK_DIALOG (dialog));
 	ctk_widget_destroy (dialog);
 }
 
@@ -236,13 +236,13 @@ process_local_theme_tgz_tbz (CtkWindow *parent,
 		CtkWidget *dialog;
 
 		dialog = ctk_message_dialog_new (parent,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_OK,
 						 _("Cannot install theme"));
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 							  _("There was a problem while extracting the theme."));
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 		ctk_widget_destroy (dialog);
 	}
 
@@ -276,15 +276,15 @@ invalid_theme_dialog (CtkWindow *parent,
 	const gchar *engine = _("\"%s\" does not appear to be a valid theme. It may be a theme engine which you need to compile.");
 
 	dialog = ctk_message_dialog_new (parent,
-					 GTK_DIALOG_MODAL,
-					 GTK_MESSAGE_ERROR,
-					 GTK_BUTTONS_OK,
+					 CTK_DIALOG_MODAL,
+					 CTK_MESSAGE_ERROR,
+					 CTK_BUTTONS_OK,
 					 "%s", primary);
 	if (maybe_theme_engine)
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), engine, filename);
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog), engine, filename);
 	else
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), secondary, filename);
-	ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog), secondary, filename);
+	ctk_dialog_run (CTK_DIALOG (dialog));
 	ctk_widget_destroy (dialog);
 }
 
@@ -313,7 +313,7 @@ cafe_theme_install_real (CtkWindow *parent,
 		break;
 	case THEME_CAFE:
 	case THEME_CROMA:
-	case THEME_GTK:
+	case THEME_CTK:
 		target_dir = g_build_path (G_DIR_SEPARATOR_S,
 					   g_get_home_dir (), ".themes",
 					   theme_name, NULL);
@@ -374,40 +374,40 @@ cafe_theme_install_real (CtkWindow *parent,
 
 		str = g_strdup_printf (_("The theme \"%s\" already exists."), theme_name);
 		dialog = ctk_message_dialog_new (parent,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_INFO,
-						 GTK_BUTTONS_NONE,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_INFO,
+						 CTK_BUTTONS_NONE,
 						 "%s",
 						 str);
 		g_free (str);
 
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 							  _("Do you want to install it again?"));
 
-		ctk_dialog_add_button (GTK_DIALOG (dialog),
+		ctk_dialog_add_button (CTK_DIALOG (dialog),
 					   _("Cancel"),
-					   GTK_RESPONSE_CLOSE);
+					   CTK_RESPONSE_CLOSE);
 
 		apply_button = ctk_button_new_with_label (_("Install"));
-		ctk_button_set_image (GTK_BUTTON (apply_button),
+		ctk_button_set_image (CTK_BUTTON (apply_button),
 					  ctk_image_new_from_icon_name ("ctk-apply",
-								GTK_ICON_SIZE_BUTTON));
-		ctk_dialog_add_action_widget (GTK_DIALOG (dialog), apply_button, GTK_RESPONSE_APPLY);
+								CTK_ICON_SIZE_BUTTON));
+		ctk_dialog_add_action_widget (CTK_DIALOG (dialog), apply_button, CTK_RESPONSE_APPLY);
 		ctk_widget_set_can_default (apply_button, TRUE);
 		ctk_widget_show (apply_button);
 
-		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_APPLY);
+		ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_APPLY);
 
-		if (ctk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_APPLY) {
+		if (ctk_dialog_run (CTK_DIALOG (dialog)) == CTK_RESPONSE_APPLY) {
 			ctk_widget_destroy (dialog);
 
 			if (!capplet_file_delete_recursive (theme_dest_dir, NULL)) {
 				CtkWidget *info_dialog = ctk_message_dialog_new (NULL,
-									   GTK_DIALOG_MODAL,
-									   GTK_MESSAGE_ERROR,
-									   GTK_BUTTONS_OK,
+									   CTK_DIALOG_MODAL,
+									   CTK_MESSAGE_ERROR,
+									   CTK_BUTTONS_OK,
 									   _("Theme cannot be deleted"));
-				ctk_dialog_run (GTK_DIALOG (info_dialog));
+				ctk_dialog_run (CTK_DIALOG (info_dialog));
 				ctk_widget_destroy (info_dialog);
 				success = FALSE;
 				goto end;
@@ -426,19 +426,19 @@ cafe_theme_install_real (CtkWindow *parent,
 
 		str = g_strdup_printf (_("Installation for theme \"%s\" failed."), theme_name);
 		dialog = ctk_message_dialog_new (parent,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_OK,
 						 "%s",
 						 str);
-		ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+		ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 							  "%s", error->message);
 
 		g_free (str);
 		g_error_free (error);
 		error = NULL;
 
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 		ctk_widget_destroy (dialog);
 		success = FALSE;
 	} else {
@@ -455,7 +455,7 @@ cafe_theme_install_real (CtkWindow *parent,
 
 		if (ask_user) {
 			/* Ask to apply theme (if we can) */
-			if (theme_type == THEME_GTK
+			if (theme_type == THEME_CTK
 			    || theme_type == THEME_CROMA
 			    || theme_type == THEME_ICON
 			    || theme_type == THEME_CURSOR
@@ -465,38 +465,38 @@ cafe_theme_install_real (CtkWindow *parent,
 
 				str = g_strdup_printf (_("The theme \"%s\" has been installed."), theme_name);
 				dialog = ctk_message_dialog_new_with_markup (parent,
-									     GTK_DIALOG_MODAL,
-									     GTK_MESSAGE_INFO,
-									     GTK_BUTTONS_NONE,
+									     CTK_DIALOG_MODAL,
+									     CTK_MESSAGE_INFO,
+									     CTK_BUTTONS_NONE,
 									     "<span weight=\"bold\" size=\"larger\">%s</span>",
 									     str);
 				g_free (str);
 
-				ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+				ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 									  _("Would you like to apply it now, or keep your current theme?"));
 
-				ctk_dialog_add_button (GTK_DIALOG (dialog),
+				ctk_dialog_add_button (CTK_DIALOG (dialog),
 						       _("Keep Current Theme"),
-						       GTK_RESPONSE_CLOSE);
+						       CTK_RESPONSE_CLOSE);
 
 				apply_button = ctk_button_new_with_label (_("Apply New Theme"));
-				ctk_button_set_image (GTK_BUTTON (apply_button),
+				ctk_button_set_image (CTK_BUTTON (apply_button),
 						      ctk_image_new_from_icon_name ("ctk-apply",
-										    GTK_ICON_SIZE_BUTTON));
-				ctk_dialog_add_action_widget (GTK_DIALOG (dialog), apply_button, GTK_RESPONSE_APPLY);
+										    CTK_ICON_SIZE_BUTTON));
+				ctk_dialog_add_action_widget (CTK_DIALOG (dialog), apply_button, CTK_RESPONSE_APPLY);
 				ctk_widget_set_can_default (apply_button, TRUE);
 				ctk_widget_show (apply_button);
 
-				ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_APPLY);
+				ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_APPLY);
 
-				if (ctk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_APPLY) {
+				if (ctk_dialog_run (CTK_DIALOG (dialog)) == CTK_RESPONSE_APPLY) {
 					/* apply theme here! */
 					GSettings *settings;
 
 					switch (theme_type) {
-					case THEME_GTK:
+					case THEME_CTK:
 						settings = g_settings_new (INTERFACE_SCHEMA);
-						g_settings_set_string (settings, GTK_THEME_KEY, theme_name);
+						g_settings_set_string (settings, CTK_THEME_KEY, theme_name);
 						g_object_unref (settings);
 						break;
 					case THEME_CROMA:
@@ -528,12 +528,12 @@ cafe_theme_install_real (CtkWindow *parent,
 				}
 			} else {
 				dialog = ctk_message_dialog_new (parent,
-								 GTK_DIALOG_MODAL,
-								 GTK_MESSAGE_INFO,
-								 GTK_BUTTONS_OK,
+								 CTK_DIALOG_MODAL,
+								 CTK_MESSAGE_INFO,
+								 CTK_BUTTONS_OK,
 								 _("CAFE Theme %s correctly installed"),
 								 theme_name);
-				ctk_dialog_run (GTK_DIALOG (dialog));
+				ctk_dialog_run (CTK_DIALOG (dialog));
 			}
 			ctk_widget_destroy (dialog);
 		}
@@ -594,11 +594,11 @@ process_local_theme (CtkWindow  *parent,
 
 		if ((g_mkdir (tmp_dir, 0700)) != 0) {
 			dialog = ctk_message_dialog_new (parent,
-							 GTK_DIALOG_MODAL,
-							 GTK_MESSAGE_ERROR,
-							 GTK_BUTTONS_OK,
+							 CTK_DIALOG_MODAL,
+							 CTK_MESSAGE_ERROR,
+							 CTK_BUTTONS_OK,
 							 _("Failed to create temporary directory"));
-			ctk_dialog_run (GTK_DIALOG (dialog));
+			ctk_dialog_run (CTK_DIALOG (dialog));
 			ctk_widget_destroy (dialog);
 			g_free (tmp_dir);
 			return;
@@ -656,11 +656,11 @@ process_local_theme (CtkWindow  *parent,
 
 		if (ok && n_themes > 1) {
 			dialog = ctk_message_dialog_new (parent,
-							 GTK_DIALOG_MODAL,
-							 GTK_MESSAGE_INFO,
-							 GTK_BUTTONS_OK,
+							 CTK_DIALOG_MODAL,
+							 CTK_MESSAGE_INFO,
+							 CTK_BUTTONS_OK,
 							 _("New themes have been successfully installed."));
-			ctk_dialog_run (GTK_DIALOG (dialog));
+			ctk_dialog_run (CTK_DIALOG (dialog));
 			ctk_widget_destroy (dialog);
 		}
 		g_io_scheduler_push_job ((GIOSchedulerJobFunc) cleanup_tmp_dir,
@@ -703,11 +703,11 @@ cafe_theme_install (GFile *file,
 
 	if (file == NULL) {
 		dialog = ctk_message_dialog_new (parent,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_OK,
 						 _("No theme file location specified to install"));
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 		ctk_widget_destroy (dialog);
 		return;
 	}
@@ -727,11 +727,11 @@ cafe_theme_install (GFile *file,
 
 	if (access (path, X_OK | W_OK) != 0) {
 		dialog = ctk_message_dialog_new (parent,
-						 GTK_DIALOG_MODAL,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
+						 CTK_DIALOG_MODAL,
+						 CTK_MESSAGE_ERROR,
+						 CTK_BUTTONS_OK,
 						 _("Insufficient permissions to install the theme in:\n%s"), path);
-		ctk_dialog_run (GTK_DIALOG (dialog));
+		ctk_dialog_run (CTK_DIALOG (dialog));
 		ctk_widget_destroy (dialog);
 		g_free (path);
 		return;
@@ -810,13 +810,13 @@ cafe_theme_installer_run (CtkWindow *parent)
 
 	dialog = ctk_file_chooser_dialog_new (_("Select Theme"),
 					      parent,
-					      GTK_FILE_CHOOSER_ACTION_OPEN,
+					      CTK_FILE_CHOOSER_ACTION_OPEN,
 					      "ctk-cancel",
-					      GTK_RESPONSE_REJECT,
+					      CTK_RESPONSE_REJECT,
 					      "ctk-open",
-					      GTK_RESPONSE_ACCEPT,
+					      CTK_RESPONSE_ACCEPT,
 					      NULL);
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_ACCEPT);
 
 	filter = ctk_file_filter_new ();
 	ctk_file_filter_set_name (filter, _("Theme Packages"));
@@ -824,22 +824,22 @@ cafe_theme_installer_run (CtkWindow *parent)
 	ctk_file_filter_add_mime_type (filter, "application/x-xz-compressed-tar");
 	ctk_file_filter_add_mime_type (filter, "application/x-compressed-tar");
 	ctk_file_filter_add_mime_type (filter, "application/x-cafe-theme-package");
-	ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
+	ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (dialog), filter);
 
 	filter = ctk_file_filter_new ();
 	ctk_file_filter_set_name (filter, _("All Files"));
 	ctk_file_filter_add_pattern(filter, "*");
-	ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
+	ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (dialog), filter);
 
 	if (strcmp (old_folder, ""))
-		ctk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), old_folder);
+		ctk_file_chooser_set_current_folder (CTK_FILE_CHOOSER (dialog), old_folder);
 
-	if (ctk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT) {
+	if (ctk_dialog_run (CTK_DIALOG (dialog)) == CTK_RESPONSE_ACCEPT) {
 		gchar *uri_selected, *folder;
 
-		uri_selected = ctk_file_chooser_get_uri (GTK_FILE_CHOOSER (dialog));
+		uri_selected = ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (dialog));
 
-		folder = ctk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (dialog));
+		folder = ctk_file_chooser_get_current_folder (CTK_FILE_CHOOSER (dialog));
 		g_strlcpy (old_folder, folder, 255);
 		g_free (folder);
 

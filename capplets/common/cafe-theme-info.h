@@ -44,8 +44,8 @@ typedef enum {
 
 typedef enum {
 	CAFE_THEME_CROMA = 1 << 0,
-	CAFE_THEME_GTK_2 = 1 << 1,
-	CAFE_THEME_GTK_2_KEYBINDING = 1 << 2
+	CAFE_THEME_CTK_2 = 1 << 1,
+	CAFE_THEME_CTK_2_KEYBINDING = 1 << 2
 } CafeThemeElement;
 
 typedef struct _CafeThemeCommonInfo CafeThemeCommonInfo;
@@ -134,15 +134,15 @@ typedef void (*ThemeChangedCallback) (CafeThemeCommonInfo* theme, CafeThemeChang
 #define CAFE_THEME_ERROR cafe_theme_info_error_quark()
 
 enum {
-	CAFE_THEME_ERROR_GTK_THEME_NOT_AVAILABLE = 1,
+	CAFE_THEME_ERROR_CTK_THEME_NOT_AVAILABLE = 1,
 	CAFE_THEME_ERROR_WM_THEME_NOT_AVAILABLE,
 	CAFE_THEME_ERROR_ICON_THEME_NOT_AVAILABLE,
-	CAFE_THEME_ERROR_GTK_ENGINE_NOT_AVAILABLE,
+	CAFE_THEME_ERROR_CTK_ENGINE_NOT_AVAILABLE,
 	CAFE_THEME_ERROR_UNKNOWN
 };
 
 
-/* GTK/Croma/keybinding Themes */
+/* CTK/Croma/keybinding Themes */
 CafeThemeInfo     *cafe_theme_info_new                   (void);
 void                cafe_theme_info_free                  (CafeThemeInfo     *theme_info);
 CafeThemeInfo     *cafe_theme_info_find                  (const gchar        *theme_name);

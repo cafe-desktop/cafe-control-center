@@ -223,7 +223,7 @@
 ### cafe-control-center 1.20.0
 
   * Scale font DPI for HiDPI displays
-  * require GTK+ 3.22 and GLib 2.50
+  * require CTK+ 3.22 and GLib 2.50
   * Add support for HiDPI displays (#325)
   * Translations update
 
@@ -325,7 +325,7 @@
     generating release announcements easier
   * Build: require libcafekbd, libcafe-desktop, croma, m-s-d >= 1.17
   * Build: require XCursor and XInput unconditionally
-  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-ctk
+  * Move to CTK+3 (require CTK+ >= 3.14), drop CTK+2 code and --with-ctk
     build option
   * Port from libunique to CtkApplication
   * Rework font-viewer: add font browsing mode, support for TTC fonts,
@@ -334,7 +334,7 @@
   * Mouse: add separate touchpad motion settings on touchpad tab
   * Mouse: change tab label from General to Mouse
   * Mouse: change natural scroll mnemonic from 'a' to 'n'
-  * Fix lots of GTK+ deprecations
+  * Fix lots of CTK+ deprecations
   * Some more fixes and cleanups
   * Translations update
 
@@ -342,11 +342,11 @@
 
   * Appearance: fix live updating of the various theme details
   * Appearance: fix vertical expand of content on window resize in
-    GTK+3 build
+    CTK+3 build
   * Keyboard: fix vertical expand of content on window resize in
-    GTK+3 build
+    CTK+3 build
   * Shell: force icon size in libslab to avoid huge icons
-  * GTK+3: fix build with croma 1.17
+  * CTK+3: fix build with croma 1.17
   * Fix a couple of memleaks
 
 ### cafe-control-center 1.16.0
@@ -355,14 +355,14 @@
   * Appearance: change default hinting style to slight and render
     antialiasing samples using that style
   * Appearance: render hinting samples using RGBA antialiasing
-  * Appearance: place theme name below theme preview in GTK+3 build to
-    match GTK+2 one
-  * Appearance: center theme name in GTK+3 build to match GTK+2 one
-  * Appearance: hide Colors tab in Customize Theme dialog in GTK+3 build
-    as changing theme colors won't work in GTK+3
-  * GTK+3: fix build with appindicator support enabled
-  * GTK+3: fix showing monitors in display properties with glib 2.49.6
-  * GTK+3: fix various deprecations
+  * Appearance: place theme name below theme preview in CTK+3 build to
+    match CTK+2 one
+  * Appearance: center theme name in CTK+3 build to match CTK+2 one
+  * Appearance: hide Colors tab in Customize Theme dialog in CTK+3 build
+    as changing theme colors won't work in CTK+3
+  * CTK+3: fix build with appindicator support enabled
+  * CTK+3: fix showing monitors in display properties with glib 2.49.6
+  * CTK+3: fix various deprecations
   * Some code cleanups
   * Translations update
 
@@ -371,7 +371,7 @@
   * About me: add some space between username and buttons
   * About me: fix UI freeze when changing the password
   * Translations update
-  * Make distcheck use currently selected GTK+ version
+  * Make distcheck use currently selected CTK+ version
 
 ### cafe-control-center 1.14.0
 
@@ -382,8 +382,8 @@
   * Touchpad settings: support edge and two-finger scrolling
     independently
   * Window properties: make all three window focus modes selectable
-  * GTK+3: fix theme previews in cafe-appearance-properties
-  * GTK+3: fix several deprecations
+  * CTK+3: fix theme previews in cafe-appearance-properties
+  * CTK+3: fix several deprecations
   * Some more fixes and cleanups
   * Translations update
   * Fix Changelog generation
@@ -407,7 +407,7 @@
   * Improved categorization
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Switch to org.gnome.SessionManager
-  * GTK+3: fix font rendering in Appearance and cafe-font-viewer
+  * CTK+3: fix font rendering in Appearance and cafe-font-viewer
   * Some more fixes and cleanups
 
 ### cafe-control-center 1.10.2
@@ -423,7 +423,7 @@
 
   * Appearance: add theme changing support for metacity >= 3.16
   * Help fixes
-  * GTK+3 fixes
+  * CTK+3 fixes
   * Translations update
 
 ### cafe-control-center 1.10.0

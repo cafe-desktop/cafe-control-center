@@ -83,7 +83,7 @@ typedef struct {
 	CtkDialog *overwrite_dialog;
 } FileTransferData;
 
-G_DEFINE_TYPE_WITH_PRIVATE (FileTransferDialog, file_transfer_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (FileTransferDialog, file_transfer_dialog, CTK_TYPE_DIALOG)
 
 static void
 file_transfer_dialog_update_num_files (FileTransferDialog *dlg)
@@ -95,7 +95,7 @@ file_transfer_dialog_update_num_files (FileTransferDialog *dlg)
 
 	str = g_strdup_printf (_("Copying file: %u of %u"),
 			      dlg->priv->nth, dlg->priv->total);
-	ctk_progress_bar_set_text (GTK_PROGRESS_BAR (dlg->priv->progress), str);
+	ctk_progress_bar_set_text (CTK_PROGRESS_BAR (dlg->priv->progress), str);
 	g_free (str);
 }
 
@@ -142,7 +142,7 @@ file_transfer_dialog_set_prop (GObject *object, guint prop_id, const GValue *val
 
 		str = g_strdup_printf (_("Copying '%s'"), escaped);
 		str2 = g_strdup_printf ("<big><b>%s</b></big>", str);
-		ctk_label_set_markup (GTK_LABEL (dlg->priv->status), str2);
+		ctk_label_set_markup (CTK_LABEL (dlg->priv->status), str2);
 
 		g_free (base);
 		g_free (escaped);
@@ -153,7 +153,7 @@ file_transfer_dialog_set_prop (GObject *object, guint prop_id, const GValue *val
 	case PROP_TO_URI:
 		break;
 	case PROP_FRACTION_COMPLETE:
-		ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (dlg->priv->progress), g_value_get_double (value));
+		ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (dlg->priv->progress), g_value_get_double (value));
 		break;
 	case PROP_NTH_URI:
 		n = g_value_get_uint (value);
@@ -175,11 +175,11 @@ file_transfer_dialog_set_prop (GObject *object, guint prop_id, const GValue *val
 		parent = g_value_get_pointer (value);
 		if (parent)
 		{
-			ctk_window_set_title (GTK_WINDOW (dlg), ctk_window_get_title (parent));
-			ctk_window_set_transient_for (GTK_WINDOW (dlg), parent);
+			ctk_window_set_title (CTK_WINDOW (dlg), ctk_window_get_title (parent));
+			ctk_window_set_transient_for (CTK_WINDOW (dlg), parent);
 		}
 		else
-			ctk_window_set_title (GTK_WINDOW (dlg),
+			ctk_window_set_title (CTK_WINDOW (dlg),
 					      _("Copying files"));
 		break;
 	default:
@@ -214,7 +214,7 @@ file_transfer_dialog_class_init (FileTransferDialogClass *klass)
 	object_class->get_property = file_transfer_dialog_get_prop;
 	object_class->set_property = file_transfer_dialog_set_prop;
 
-	GTK_DIALOG_CLASS (klass)->response = file_transfer_dialog_response;
+	CTK_DIALOG_CLASS (klass)->response = file_transfer_dialog_response;
 
 	g_object_class_install_property
 		(object_class, PROP_PARENT,
@@ -291,43 +291,43 @@ file_transfer_dialog_init (FileTransferDialog *dlg)
 	char      *markup;
 	CtkWidget *content_area;
 
-	content_area = ctk_dialog_get_content_area (GTK_DIALOG (dlg));
+	content_area = ctk_dialog_get_content_area (CTK_DIALOG (dlg));
 	dlg->priv = file_transfer_dialog_get_instance_private (dlg);
 	dlg->priv->cancellable = g_cancellable_new ();
 
-	ctk_container_set_border_width (GTK_CONTAINER (content_area), 4);
-	ctk_box_set_spacing (GTK_BOX (content_area), 4);
+	ctk_container_set_border_width (CTK_CONTAINER (content_area), 4);
+	ctk_box_set_spacing (CTK_BOX (content_area), 4);
 
-	ctk_widget_set_size_request (GTK_WIDGET (dlg), 350, -1);
+	ctk_widget_set_size_request (CTK_WIDGET (dlg), 350, -1);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_container_set_border_width (GTK_CONTAINER (vbox), 6);
-	ctk_box_pack_start (GTK_BOX (content_area), vbox, TRUE, TRUE, 0);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_container_set_border_width (CTK_CONTAINER (vbox), 6);
+	ctk_box_pack_start (CTK_BOX (content_area), vbox, TRUE, TRUE, 0);
 
 	dlg->priv->status = ctk_label_new (NULL);
 	markup = g_strconcat ("<big><b>", _("Copying files"), "</b></big>", NULL);
-	ctk_label_set_markup (GTK_LABEL (dlg->priv->status), markup);
+	ctk_label_set_markup (CTK_LABEL (dlg->priv->status), markup);
 	g_free (markup);
 
-	ctk_label_set_xalign (GTK_LABEL (dlg->priv->status), 0.0);
-	ctk_label_set_yalign (GTK_LABEL (dlg->priv->status), 0.0);
+	ctk_label_set_xalign (CTK_LABEL (dlg->priv->status), 0.0);
+	ctk_label_set_yalign (CTK_LABEL (dlg->priv->status), 0.0);
 
-	ctk_box_pack_start (GTK_BOX (vbox), dlg->priv->status, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), dlg->priv->status, FALSE, FALSE, 0);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
-	progress_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), progress_vbox, FALSE, FALSE, 0);
+	progress_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), progress_vbox, FALSE, FALSE, 0);
 
 	dlg->priv->progress = ctk_progress_bar_new ();
-	ctk_box_pack_start (GTK_BOX (progress_vbox),
+	ctk_box_pack_start (CTK_BOX (progress_vbox),
 			    dlg->priv->progress, FALSE, FALSE, 0);
 
-	ctk_dialog_add_button (GTK_DIALOG (dlg),
-			       "ctk-cancel", GTK_RESPONSE_CANCEL);
+	ctk_dialog_add_button (CTK_DIALOG (dlg),
+			       "ctk-cancel", CTK_RESPONSE_CANCEL);
 
-	ctk_container_set_border_width (GTK_CONTAINER (dlg), 6);
+	ctk_container_set_border_width (CTK_CONTAINER (dlg), 6);
 
 	ctk_widget_show_all (content_area);
 }
@@ -335,14 +335,14 @@ file_transfer_dialog_init (FileTransferDialog *dlg)
 CtkWidget*
 file_transfer_dialog_new (void)
 {
-	return GTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
+	return CTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
 					 NULL));
 }
 
 CtkWidget*
 file_transfer_dialog_new_with_parent (CtkWindow *parent)
 {
-	return GTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
+	return CTK_WIDGET (g_object_new (file_transfer_dialog_get_type (),
 					 "parent", parent, NULL));
 }
 
@@ -392,7 +392,7 @@ file_transfer_job_destroy (FileTransferJob *job)
 	g_slist_free (job->source_files);
 	g_slist_free (job->target_files);
 	if (job->overwrite_dialog != NULL)
-		ctk_widget_destroy (GTK_WIDGET (job->overwrite_dialog));
+		ctk_widget_destroy (CTK_WIDGET (job->overwrite_dialog));
 	g_free (job);
 }
 
@@ -426,20 +426,20 @@ file_transfer_dialog_overwrite (gpointer user_data)
 	} else {
 		CtkWidget *button;
 
-		dialog = GTK_DIALOG (ctk_message_dialog_new (GTK_WINDOW (data->dialog),
-							     GTK_DIALOG_MODAL, GTK_MESSAGE_QUESTION,
-							     GTK_BUTTONS_NONE,
+		dialog = CTK_DIALOG (ctk_message_dialog_new (CTK_WINDOW (data->dialog),
+							     CTK_DIALOG_MODAL, CTK_MESSAGE_QUESTION,
+							     CTK_BUTTONS_NONE,
 							     _("File '%s' already exists. Do you want to overwrite it?"),
 							     data->target));
 
-		ctk_dialog_add_button (dialog, _("_Skip"), GTK_RESPONSE_NO);
-		ctk_dialog_add_button (dialog, _("Overwrite _All"), GTK_RESPONSE_APPLY);
+		ctk_dialog_add_button (dialog, _("_Skip"), CTK_RESPONSE_NO);
+		ctk_dialog_add_button (dialog, _("Overwrite _All"), CTK_RESPONSE_APPLY);
 
 		button = ctk_button_new_with_label (_("_Overwrite"));
-		ctk_button_set_image (GTK_BUTTON (button),
+		ctk_button_set_image (CTK_BUTTON (button),
 				      ctk_image_new_from_icon_name ("ctk-apply",
-								    GTK_ICON_SIZE_BUTTON));
-		ctk_dialog_add_action_widget (dialog, button, GTK_RESPONSE_YES);
+								    CTK_ICON_SIZE_BUTTON));
+		ctk_dialog_add_action_widget (dialog, button, CTK_RESPONSE_YES);
 		ctk_widget_show (button);
 
 		data->overwrite_dialog = dialog;
@@ -447,7 +447,7 @@ file_transfer_dialog_overwrite (gpointer user_data)
 
 	data->response = ctk_dialog_run (dialog);
 
-	ctk_widget_hide (GTK_WIDGET (dialog));
+	ctk_widget_hide (CTK_WIDGET (dialog));
 	return FALSE;
 }
 
@@ -504,16 +504,16 @@ file_transfer_job_schedule (GIOSchedulerJob *io_job,
 			{
 				/* since the job is run in a thread, we cannot simply run
 				 * a dialog here and need to defer it to the mainloop */
-				data.response = GTK_RESPONSE_NONE;
+				data.response = CTK_RESPONSE_NONE;
 				g_io_scheduler_job_send_to_mainloop (io_job,
 								     file_transfer_dialog_overwrite,
 								     &data,
 								     NULL);
 
-				if (data.response == GTK_RESPONSE_YES) {
+				if (data.response == CTK_RESPONSE_YES) {
 					retry = TRUE;
 					copy_flags |= G_FILE_COPY_OVERWRITE;
-				} else if (data.response == GTK_RESPONSE_APPLY) {
+				} else if (data.response == CTK_RESPONSE_APPLY) {
 					retry = TRUE;
 					job->options |= FILE_TRANSFER_DIALOG_OVERWRITE;
 					copy_flags |= G_FILE_COPY_OVERWRITE;
