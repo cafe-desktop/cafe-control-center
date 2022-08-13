@@ -106,7 +106,7 @@ event_box_button_press_event (CtkWidget   *widget,
 	static guint32             double_click_timestamp = 0;
 	CtkWidget                 *image;
 
-	if (event->type != GDK_BUTTON_PRESS)
+	if (event->type != CDK_BUTTON_PRESS)
 		return FALSE;
 
 	image = g_object_get_data (G_OBJECT (widget), "image");
@@ -187,23 +187,23 @@ synaptics_check_capabilities (CtkBuilder *dialog)
 	unsigned char *data;
 
 	display = cdk_display_get_default ();
-	prop = XInternAtom (GDK_DISPLAY_XDISPLAY(display), "Synaptics Capabilities", True);
+	prop = XInternAtom (CDK_DISPLAY_XDISPLAY(display), "Synaptics Capabilities", True);
 	if (!prop)
 		return;
 
-	devicelist = XListInputDevices (GDK_DISPLAY_XDISPLAY(display), &numdevices);
+	devicelist = XListInputDevices (CDK_DISPLAY_XDISPLAY(display), &numdevices);
 	for (i = 0; i < numdevices; i++) {
 		if (devicelist[i].use != IsXExtensionPointer)
 			continue;
 
 		cdk_x11_display_error_trap_push (display);
-		XDevice *device = XOpenDevice (GDK_DISPLAY_XDISPLAY(display),
+		XDevice *device = XOpenDevice (CDK_DISPLAY_XDISPLAY(display),
 					       devicelist[i].id);
 		if (cdk_x11_display_error_trap_pop (display))
 			continue;
 
 		cdk_x11_display_error_trap_push (display);
-		if ((XGetDeviceProperty (GDK_DISPLAY_XDISPLAY(display), device, prop, 0, 2, False,
+		if ((XGetDeviceProperty (CDK_DISPLAY_XDISPLAY(display), device, prop, 0, 2, False,
 					 XA_INTEGER, &realtype, &realformat, &nitems,
 					 &bytes_after, &data) == Success) && (realtype != None)) {
 			/* Property data is booleans for has_left, has_middle,
@@ -218,7 +218,7 @@ synaptics_check_capabilities (CtkBuilder *dialog)
 
 		cdk_x11_display_error_trap_pop_ignored (display);
 
-		XCloseDevice (GDK_DISPLAY_XDISPLAY(display), device);
+		XCloseDevice (CDK_DISPLAY_XDISPLAY(display), device);
 	}
 	XFreeDeviceList (devicelist);
 }
@@ -464,7 +464,7 @@ main (int argc, char **argv)
 				  G_CALLBACK (dialog_response_cb), NULL);
 
                 CtkNotebook* nb = CTK_NOTEBOOK (WID ("prefs_widget"));
-                ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+                ctk_widget_add_events (CTK_WIDGET (nb), CDK_SCROLL_MASK);
                 g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                                   G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                                   CTK_WINDOW (dialog_win));

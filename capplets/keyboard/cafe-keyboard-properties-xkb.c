@@ -169,7 +169,7 @@ setup_xkb_tabs (CtkBuilder * dialog)
 	xkb_general_settings = g_settings_new (XKB_GENERAL_SCHEMA);
 	xkb_kbd_settings = g_settings_new (XKB_KBD_SCHEMA);
 
-	engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY(cdk_display_get_default()));
+	engine = xkl_engine_get_instance (CDK_DISPLAY_XDISPLAY(cdk_display_get_default()));
 	config_registry = xkl_config_registry_get_instance (engine);
 
 	cafekbd_desktop_config_init (&desktop_config, engine);

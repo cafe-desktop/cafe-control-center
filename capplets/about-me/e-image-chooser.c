@@ -193,7 +193,7 @@ e_image_chooser_init (EImageChooser *chooser)
 	ctk_box_set_homogeneous (CTK_BOX (chooser), FALSE);
 	ctk_box_pack_start (CTK_BOX (chooser), priv->image, TRUE, TRUE, 0);
 
-	ctk_drag_dest_set (priv->image, 0, image_drag_types, num_image_drag_types, GDK_ACTION_COPY);
+	ctk_drag_dest_set (priv->image, 0, image_drag_types, num_image_drag_types, CDK_ACTION_COPY);
 	g_signal_connect (priv->image,
 			  "drag_motion", G_CALLBACK (image_drag_motion_cb), chooser);
 	g_signal_connect (priv->image,
@@ -251,7 +251,7 @@ set_image_from_data (EImageChooser *chooser,
 		} else {
 			scaled = cdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
-							  GDK_INTERP_BILINEAR);
+							  CDK_INTERP_BILINEAR);
 
 			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), scaled);
 			g_object_unref (scaled);
@@ -288,10 +288,10 @@ image_drag_motion_cb (CtkWidget *widget,
 	for (p = cdk_drag_context_list_targets (context); p; p = p->next) {
 		char *possible_type;
 
-		possible_type = cdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
+		possible_type = cdk_atom_name (CDK_POINTER_TO_ATOM (p->data));
 		if (!strcmp (possible_type, URI_LIST_TYPE)) {
 			g_free (possible_type);
-			cdk_drag_status (context, GDK_ACTION_COPY, time);
+			cdk_drag_status (context, CDK_ACTION_COPY, time);
 			return TRUE;
 		}
 
@@ -321,11 +321,11 @@ image_drag_drop_cb (CtkWidget *widget,
 	for (p = cdk_drag_context_list_targets (context); p; p = p->next) {
 		char *possible_type;
 
-		possible_type = cdk_atom_name (GDK_POINTER_TO_ATOM (p->data));
+		possible_type = cdk_atom_name (CDK_POINTER_TO_ATOM (p->data));
 		if (!strcmp (possible_type, URI_LIST_TYPE)) {
 			g_free (possible_type);
 			ctk_drag_get_data (widget, context,
-					   GDK_POINTER_TO_ATOM (p->data),
+					   CDK_POINTER_TO_ATOM (p->data),
 					   time);
 			return TRUE;
 		}

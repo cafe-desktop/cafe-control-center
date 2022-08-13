@@ -481,7 +481,7 @@ main (int argc, char **argv)
 	widget = _ctk_builder_get_widget (builder, "network_dialog");
 
         CtkNotebook* nb = CTK_NOTEBOOK (_ctk_builder_get_widget (builder, "notebook1"));
-        ctk_widget_add_events (CTK_WIDGET (nb), GDK_SCROLL_MASK);
+        ctk_widget_add_events (CTK_WIDGET (nb), CDK_SCROLL_MASK);
         g_signal_connect (CTK_WIDGET (nb), "scroll-event",
                           G_CALLBACK (capplet_dialog_page_scroll_event_cb),
                           CTK_WINDOW (widget));

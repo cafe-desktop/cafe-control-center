@@ -195,7 +195,7 @@ main_keypress_callback (CtkWidget * widget, CdkEventKey * event, AppShellData * 
 {
 	GApplication *app;
 
-	if (event->keyval == GDK_KEY_Return)
+	if (event->keyval == CDK_KEY_Return)
 	{
 		SlabSection *section = SLAB_SECTION (app_data->filter_section);
 		NldSearchBar *search_bar;
@@ -211,9 +211,9 @@ main_keypress_callback (CtkWidget * widget, CdkEventKey * event, AppShellData * 
 	}
 
 	/* quit on ESC or Ctl-W or Ctl-Q */
-	if (event->keyval == GDK_KEY_Escape ||
-		((event->keyval == GDK_KEY_w || event->keyval == GDK_KEY_W)	&& (event->state & GDK_CONTROL_MASK)) ||
-		((event->keyval == GDK_KEY_q || event->keyval == GDK_KEY_Q) && (event->state & GDK_CONTROL_MASK)))
+	if (event->keyval == CDK_KEY_Escape ||
+		((event->keyval == CDK_KEY_w || event->keyval == CDK_KEY_W)	&& (event->state & CDK_CONTROL_MASK)) ||
+		((event->keyval == CDK_KEY_q || event->keyval == CDK_KEY_Q) && (event->state & CDK_CONTROL_MASK)))
 	{
 		if (app_data->exit_on_close)
 		{
@@ -567,7 +567,7 @@ handle_filter_changed_delayed (gpointer user_data)
 	/* cdk_window_freeze_updates(app_data->category_layout->window); */
 	ctk_widget_hide (app_data->category_layout);
 	app_data->busy_cursor =
-		cdk_cursor_new_for_display (ctk_widget_get_display (app_data->shell), GDK_WATCH);
+		cdk_cursor_new_for_display (ctk_widget_get_display (app_data->shell), CDK_WATCH);
 	cdk_window_set_cursor (ctk_widget_get_window (app_data->shell), app_data->busy_cursor);
 	g_object_unref (app_data->busy_cursor);
 

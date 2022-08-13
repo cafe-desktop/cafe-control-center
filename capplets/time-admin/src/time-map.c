@@ -171,7 +171,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     map->background = cdk_pixbuf_scale_simple (pixbuf,
                                                allocation->width,
                                                allocation->height,
-                                               GDK_INTERP_BILINEAR);
+                                               CDK_INTERP_BILINEAR);
 
     if (map->color_map)
         g_object_unref (map->color_map);
@@ -179,7 +179,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
     map->color_map = cdk_pixbuf_scale_simple (map->orig_color_map,
                                               allocation->width,
                                               allocation->height,
-                                              GDK_INTERP_BILINEAR);
+                                              CDK_INTERP_BILINEAR);
 
     map->visible_map_pixels = cdk_pixbuf_get_pixels (map->color_map);
     map->visible_map_rowstride = cdk_pixbuf_get_rowstride (map->color_map);
@@ -198,17 +198,17 @@ cc_timezone_map_realize (CtkWidget *widget)
 
     ctk_widget_set_realized (widget, TRUE);
 
-    attr.window_type = GDK_WINDOW_CHILD;
-    attr.wclass = GDK_INPUT_OUTPUT;
+    attr.window_type = CDK_WINDOW_CHILD;
+    attr.wclass = CDK_INPUT_OUTPUT;
     attr.width = allocation.width;
     attr.height = allocation.height;
     attr.x = allocation.x;
     attr.y = allocation.y;
     attr.event_mask = ctk_widget_get_events (widget)
-                                 | GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK;
+                                 | CDK_EXPOSURE_MASK | CDK_BUTTON_PRESS_MASK;
 
     window = cdk_window_new (ctk_widget_get_parent_window (widget), &attr,
-                             GDK_WA_X | GDK_WA_Y);
+                             CDK_WA_X | CDK_WA_Y);
 
     cdk_window_set_user_data (window, widget);
     ctk_widget_set_window (widget, window);
@@ -365,7 +365,7 @@ cc_timezone_map_draw (CtkWidget *widget,
         g_autoptr(CdkPixbuf) hilight = NULL;
 
         hilight = cdk_pixbuf_scale_simple (orig_hilight, alloc.width,
-                                           alloc.height, GDK_INTERP_BILINEAR);
+                                           alloc.height, CDK_INTERP_BILINEAR);
         cdk_cairo_set_source_pixbuf (cr, hilight, 0, 0);
 
         cairo_paint (cr);
@@ -404,7 +404,7 @@ update_cursor (CtkWidget *widget)
     {
         CdkDisplay *display;
         display = ctk_widget_get_display (widget);
-        cursor = cdk_cursor_new_for_display (display, GDK_HAND2);
+        cursor = cdk_cursor_new_for_display (display, CDK_HAND2);
     }
 
     window = ctk_widget_get_window (widget);

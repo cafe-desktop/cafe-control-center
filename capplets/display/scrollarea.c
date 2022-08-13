@@ -16,7 +16,7 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include <cdk/cdkprivate.h> /* For GDK_PARENT_RELATIVE_BG */
+#include <cdk/cdkprivate.h> /* For CDK_PARENT_RELATIVE_BG */
 #include "scrollarea.h"
 #include "foo-marshal.h"
 
@@ -269,8 +269,8 @@ foo_scroll_area_class_init (FooScrollAreaClass *class)
 		      NULL, NULL,
 		      foo_marshal_VOID__BOXED_BOXED,
 		      G_TYPE_NONE, 2,
-		      GDK_TYPE_RECTANGLE,
-		      GDK_TYPE_RECTANGLE);
+		      CDK_TYPE_RECTANGLE,
+		      CDK_TYPE_RECTANGLE);
 
     signals[PAINT] =
 	g_signal_new ("paint",
@@ -609,23 +609,23 @@ foo_scroll_area_realize (CtkWidget *widget)
     ctk_widget_get_allocation (widget, &widget_allocation);
     ctk_widget_set_realized (widget, TRUE);
 
-    attributes.window_type = GDK_WINDOW_CHILD;
+    attributes.window_type = CDK_WINDOW_CHILD;
     attributes.x = widget_allocation.x;
     attributes.y = widget_allocation.y;
     attributes.width = widget_allocation.width;
     attributes.height = widget_allocation.height;
-    attributes.wclass = GDK_INPUT_ONLY;
+    attributes.wclass = CDK_INPUT_ONLY;
     attributes.event_mask = ctk_widget_get_events (widget);
-    attributes.event_mask |= (GDK_BUTTON_PRESS_MASK |
-			      GDK_BUTTON_RELEASE_MASK |
-			      GDK_BUTTON1_MOTION_MASK |
-			      GDK_BUTTON2_MOTION_MASK |
-			      GDK_BUTTON3_MOTION_MASK |
-			      GDK_POINTER_MOTION_MASK |
-			      GDK_ENTER_NOTIFY_MASK |
-			      GDK_LEAVE_NOTIFY_MASK);
+    attributes.event_mask |= (CDK_BUTTON_PRESS_MASK |
+			      CDK_BUTTON_RELEASE_MASK |
+			      CDK_BUTTON1_MOTION_MASK |
+			      CDK_BUTTON2_MOTION_MASK |
+			      CDK_BUTTON3_MOTION_MASK |
+			      CDK_POINTER_MOTION_MASK |
+			      CDK_ENTER_NOTIFY_MASK |
+			      CDK_LEAVE_NOTIFY_MASK);
 
-    attributes_mask = GDK_WA_X | GDK_WA_Y;
+    attributes_mask = CDK_WA_X | CDK_WA_Y;
 
     window = ctk_widget_get_parent_window (widget);
     ctk_widget_set_window (widget, window);
@@ -856,11 +856,11 @@ process_cdk_event (FooScrollArea *scroll_area,
 {
     FooScrollAreaEventType input_type;
 
-    if (event->type == GDK_BUTTON_PRESS)
+    if (event->type == CDK_BUTTON_PRESS)
 	input_type = FOO_BUTTON_PRESS;
-    else if (event->type == GDK_BUTTON_RELEASE)
+    else if (event->type == CDK_BUTTON_RELEASE)
 	input_type = FOO_BUTTON_RELEASE;
-    else if (event->type == GDK_MOTION_NOTIFY)
+    else if (event->type == CDK_MOTION_NOTIFY)
 	input_type = FOO_MOTION;
     else
 	return;

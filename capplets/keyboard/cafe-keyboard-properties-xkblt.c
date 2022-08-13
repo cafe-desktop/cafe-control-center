@@ -172,7 +172,7 @@ xkb_layouts_dnd_data_get (CtkWidget * widget, CdkDragContext * dc,
 	 */
 	gint idx = find_selected_layout_idx (dialog);
 	ctk_selection_data_set (selection_data,
-				GDK_SELECTION_TYPE_INTEGER, 32,
+				CDK_SELECTION_TYPE_INTEGER, 32,
 				(guchar *) & idx, sizeof (idx));
 }
 
@@ -265,11 +265,11 @@ xkb_layouts_prepare_selected_tree (CtkBuilder * dialog)
 	max_selected_layouts = xkl_engine_get_max_num_groups (engine);
 
 	/* Setting up DnD */
-	ctk_drag_source_set (tree_view, GDK_BUTTON1_MASK,
-			     &self_drag_target, 1, GDK_ACTION_MOVE);
+	ctk_drag_source_set (tree_view, CDK_BUTTON1_MASK,
+			     &self_drag_target, 1, CDK_ACTION_MOVE);
 	ctk_drag_source_set_icon_name (tree_view, "input-keyboard");
 	ctk_drag_dest_set (tree_view, CTK_DEST_DEFAULT_ALL,
-			   &self_drag_target, 1, GDK_ACTION_MOVE);
+			   &self_drag_target, 1, CDK_ACTION_MOVE);
 
 	g_signal_connect (G_OBJECT (tree_view), "drag_data_get",
 			  G_CALLBACK (xkb_layouts_dnd_data_get), dialog);

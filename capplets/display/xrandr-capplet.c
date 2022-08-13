@@ -1454,7 +1454,7 @@ compare_snaps (gconstpointer v1, gconstpointer v2)
 }
 
 /* Sets a mouse cursor for a widget's window.  As a hack, you can pass
- * GDK_BLANK_CURSOR to mean "set the cursor to NULL" (i.e. reset the widget's
+ * CDK_BLANK_CURSOR to mean "set the cursor to NULL" (i.e. reset the widget's
  * window's cursor to its default).
  */
 static void
@@ -1463,7 +1463,7 @@ set_cursor (CtkWidget *widget, CdkCursorType type)
 	CdkCursor *cursor;
 	CdkWindow *window;
 
-	if (type == GDK_BLANK_CURSOR)
+	if (type == CDK_BLANK_CURSOR)
 	    cursor = NULL;
 	else
 	    cursor = cdk_cursor_new_for_display (ctk_widget_get_display (widget), type);
@@ -1503,7 +1503,7 @@ on_output_event (FooScrollArea *area,
      * exits the outputs' area.
      */
     if (!cafe_rr_config_get_clone (app->current_configuration) && get_n_connected (app) > 1)
-	set_cursor (CTK_WIDGET (area), GDK_FLEUR);
+	set_cursor (CTK_WIDGET (area), CDK_FLEUR);
 
     if (event->type == FOO_BUTTON_PRESS)
     {
@@ -1613,7 +1613,7 @@ on_canvas_event (FooScrollArea *area,
      * on_output_event() for where we set the cursor to the movement cursor if
      * it is over one of the outputs.
      */
-    set_cursor (CTK_WIDGET (area), GDK_BLANK_CURSOR);
+    set_cursor (CTK_WIDGET (area), CDK_BLANK_CURSOR);
 }
 
 static PangoLayout *
@@ -1939,7 +1939,7 @@ begin_version2_apply_configuration (App *app, CdkWindow *parent_window, guint32 
     XID parent_window_xid;
     GError *error = NULL;
 
-    parent_window_xid = GDK_WINDOW_XID (parent_window);
+    parent_window_xid = CDK_WINDOW_XID (parent_window);
 
     app->proxy = g_dbus_proxy_new_sync (app->connection,
                                         G_DBUS_PROXY_FLAGS_NONE,

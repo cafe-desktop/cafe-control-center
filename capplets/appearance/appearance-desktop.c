@@ -212,7 +212,7 @@ wp_add_images (AppearanceData *data,
 
   item = NULL;
   cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
-                                       GDK_WATCH);
+                                       CDK_WATCH);
   cdk_window_set_cursor (window, cursor);
   g_object_unref (cursor);
 
@@ -707,7 +707,7 @@ wp_drag_received (CtkWidget *widget,
       window = ctk_widget_get_window (w);
 
       cursor = cdk_cursor_new_for_display (cdk_display_get_default (),
-             GDK_WATCH);
+             CDK_WATCH);
       cdk_window_set_cursor (window, cursor);
       g_object_unref (cursor);
 
@@ -1062,12 +1062,12 @@ create_button_images (AppearanceData  *data)
   h = cdk_pixbuf_get_height (pb);
 
   for (i = 0; i < 3; i++) {
-    pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
+    pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, 2 * w, h);
     cdk_pixbuf_fill (pixbuf, 0);
     if (i > 0)
-      cdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, GDK_INTERP_NEAREST, 255);
+      cdk_pixbuf_composite (pb, pixbuf, 0, 0, w, h, 0, 0, 1, 1, CDK_INTERP_NEAREST, 255);
     if (i < 2)
-      cdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, GDK_INTERP_NEAREST, 255);
+      cdk_pixbuf_composite (pb2, pixbuf, w, 0, w, h, w, 0, 1, 1, CDK_INTERP_NEAREST, 255);
 
     buttons[i] = pixbuf;
   }
@@ -1130,7 +1130,7 @@ wp_button_press_cb (CtkWidget      *widget,
   CtkCellRenderer *cell;
   CdkEventButton *button_event = (CdkEventButton *) event;
 
-  if (event->type != GDK_BUTTON_PRESS)
+  if (event->type != CDK_BUTTON_PRESS)
     return FALSE;
 
   if (ctk_icon_view_get_item_at_pos (CTK_ICON_VIEW (widget),
@@ -1253,7 +1253,7 @@ desktop_init (AppearanceData *data,
                            G_CALLBACK (wp_color2_changed),
                            data);
 
-  data->wp_model = CTK_TREE_MODEL (ctk_list_store_new (2, GDK_TYPE_PIXBUF,
+  data->wp_model = CTK_TREE_MODEL (ctk_list_store_new (2, CDK_TYPE_PIXBUF,
                                                        G_TYPE_POINTER));
 
   data->wp_view = CTK_ICON_VIEW (appearance_capplet_get_widget (data, "wp_view"));
@@ -1298,12 +1298,12 @@ desktop_init (AppearanceData *data,
                                         1, CTK_SORT_ASCENDING);
 
   ctk_drag_dest_set (CTK_WIDGET (data->wp_view), CTK_DEST_DEFAULT_ALL, drop_types,
-                     G_N_ELEMENTS (drop_types), GDK_ACTION_COPY | GDK_ACTION_MOVE);
+                     G_N_ELEMENTS (drop_types), CDK_ACTION_COPY | CDK_ACTION_MOVE);
   g_signal_connect (data->wp_view, "drag_data_received",
                     (GCallback) wp_drag_received, data);
 
-  ctk_drag_source_set (CTK_WIDGET (data->wp_view), GDK_BUTTON1_MASK,
-                       drag_types, G_N_ELEMENTS (drag_types), GDK_ACTION_COPY);
+  ctk_drag_source_set (CTK_WIDGET (data->wp_view), CDK_BUTTON1_MASK,
+                       drag_types, G_N_ELEMENTS (drag_types), CDK_ACTION_COPY);
   g_signal_connect (data->wp_view, "drag-data-get",
 		    (GCallback) wp_drag_get_data, data);
 

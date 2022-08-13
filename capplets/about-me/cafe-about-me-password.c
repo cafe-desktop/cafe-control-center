@@ -679,7 +679,7 @@ passdlg_set_busy (PasswordDialog *pdialog, gboolean busy)
 	toplevel = WID ("change-password");
 	display = ctk_widget_get_display (toplevel);
 	if (busy) {
-		cursor = cdk_cursor_new_for_display (display, GDK_WATCH);
+		cursor = cdk_cursor_new_for_display (display, CDK_WATCH);
 	}
 
 	cdk_window_set_cursor (ctk_widget_get_window (toplevel), cursor);
@@ -1065,12 +1065,12 @@ passdlg_init (PasswordDialog *pdialog, CtkWindow *parent)
 	/* Initialize accelerators */
 	ctk_widget_add_accelerator (CTK_WIDGET (pdialog->current_password),
 								"activate", group,
-								GDK_KEY_Return, 0,
+								CDK_KEY_Return, 0,
 								0);
 
 	ctk_widget_add_accelerator (CTK_WIDGET (pdialog->new_password),
 								"activate", group,
-								GDK_KEY_Return, 0,
+								CDK_KEY_Return, 0,
 								0);
 
 	/* Activate authenticate-button when enter is pressed in current-password */

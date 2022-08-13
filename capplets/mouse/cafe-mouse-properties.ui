@@ -168,7 +168,7 @@ Author: Wolfgang Ulbrich
               <object class="CtkBox" id="general_vbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                 <property name="border_width">12</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
@@ -176,13 +176,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="orientation_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label27">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Mouse Orientation</property>
                         <attributes>
@@ -199,14 +199,14 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment1">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
                           <object class="CtkBox" id="vbox29">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
@@ -215,7 +215,7 @@ Author: Wolfgang Ulbrich
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="halign">start</property>
                                 <property name="use_underline">True</property>
                                 <property name="active">True</property>
@@ -233,7 +233,7 @@ Author: Wolfgang Ulbrich
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="halign">start</property>
                                 <property name="use_underline">True</property>
                                 <property name="active">True</property>
@@ -266,13 +266,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="locate_pointer_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">General</property>
                         <attributes>
@@ -289,7 +289,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment4">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -298,7 +298,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -323,7 +323,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="active">True</property>
@@ -349,7 +349,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="active">True</property>
@@ -374,13 +374,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="pointer_speed_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label29">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Pointer Speed</property>
                         <attributes>
@@ -397,7 +397,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -425,7 +425,7 @@ Author: Wolfgang Ulbrich
                               <object class="CtkBox" id="hbox1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -488,7 +488,7 @@ Author: Wolfgang Ulbrich
                               <object class="CtkBox" id="hbox3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -613,13 +613,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="dnd_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Drag and Drop</property>
                         <attributes>
@@ -636,14 +636,14 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
                           <object class="CtkBox" id="vbox7">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">12</property>
                             <child>
@@ -760,13 +760,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="double_click_timeout_vbox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label31">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Double-Click Timeout</property>
                         <attributes>
@@ -783,14 +783,14 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment7">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
                           <object class="CtkBox" id="vbox32">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="orientation">vertical</property>
                             <property name="spacing">12</property>
                             <child>
@@ -889,14 +889,14 @@ Author: Wolfgang Ulbrich
                               <object class="CtkBox" id="hbox22">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="spacing">12</property>
                                 <child>
                                   <object class="CtkLabel" id="label33">
                                     <property name="width_request">180</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
                                     <property name="label" translatable="yes">To test your double-click settings, try to double-click on the triangle and you must see the cafe desktop logo with both rings showing.</property>
                                     <property name="wrap">True</property>
@@ -914,13 +914,13 @@ Author: Wolfgang Ulbrich
                                   <object class="CtkEventBox" id="double_click_eventbox">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="visible_window">False</property>
                                     <child>
                                       <object class="CtkImage" id="double_click_image">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                         <property name="icon_name">image-missing</property>
                                       </object>
                                     </child>
@@ -971,7 +971,7 @@ Author: Wolfgang Ulbrich
               <object class="CtkBox" id="vbox3">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                 <property name="border_width">12</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
@@ -981,7 +981,7 @@ Author: Wolfgang Ulbrich
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="halign">start</property>
                     <property name="use_underline">True</property>
                     <property name="draw_indicator">True</property>
@@ -996,13 +996,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="vbox_touchpad_general">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="valign">start</property>
                         <property name="label" translatable="yes">General</property>
@@ -1020,7 +1020,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment10">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1029,7 +1029,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="active">True</property>
@@ -1047,7 +1047,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment11">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1056,7 +1056,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="active">True</property>
@@ -1074,7 +1074,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment12">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1174,13 +1174,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="vbox_touchpad_scrolling">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label34">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="valign">start</property>
                         <property name="label" translatable="yes">Scrolling</property>
@@ -1198,7 +1198,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment13">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1207,7 +1207,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1224,7 +1224,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment14">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1233,7 +1233,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1250,7 +1250,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment15">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1259,7 +1259,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1276,7 +1276,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment16">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1285,7 +1285,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1302,7 +1302,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment17">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1311,7 +1311,7 @@ Author: Wolfgang Ulbrich
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                            <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                             <property name="halign">start</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
@@ -1335,13 +1335,13 @@ Author: Wolfgang Ulbrich
                   <object class="CtkBox" id="vbox_touchpad_pointer_speed">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                    <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="CtkLabel" id="label40">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">Pointer Speed</property>
                         <attributes>
@@ -1358,7 +1358,7 @@ Author: Wolfgang Ulbrich
                       <object class="CtkAlignment" id="alignment18">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                        <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                         <property name="top_padding">6</property>
                         <property name="left_padding">12</property>
                         <child>
@@ -1386,7 +1386,7 @@ Author: Wolfgang Ulbrich
                               <object class="CtkBox" id="hbox30">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -1449,7 +1449,7 @@ Author: Wolfgang Ulbrich
                               <object class="CtkBox" id="hbox31">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                                <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                 <property name="hexpand">True</property>
                                 <property name="spacing">6</property>
                                 <child>

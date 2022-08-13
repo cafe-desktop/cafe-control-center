@@ -567,7 +567,7 @@ static void
 font_view_model_init (FontViewModel *self)
 {
     GType types[NUM_COLUMNS] =
-        { G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, GDK_TYPE_PIXBUF, G_TYPE_STRING };
+        { G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, CDK_TYPE_PIXBUF, G_TYPE_STRING };
 
     self->priv = font_view_model_get_instance_private (self);
 

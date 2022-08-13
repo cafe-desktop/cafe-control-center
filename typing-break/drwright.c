@@ -259,7 +259,7 @@ update_icon (DrWright *dr)
 			      0,
 			      1.0,
 			      1.0,
-			      GDK_INTERP_BILINEAR,
+			      CDK_INTERP_BILINEAR,
 			      255);
 
 	if (set_pixbuf) {
@@ -348,14 +348,14 @@ grab_keyboard_on_window (CdkWindow *window,
 
 	status = cdk_seat_grab (seat,
 	                        window,
-	                        GDK_SEAT_CAPABILITY_KEYBOARD,
+	                        CDK_SEAT_CAPABILITY_KEYBOARD,
 	                        TRUE,
 	                        NULL,
 	                        NULL,
 	                        NULL,
 	                        NULL);
 
-	if (status == GDK_GRAB_SUCCESS) {
+	if (status == CDK_GRAB_SUCCESS) {
 		return TRUE;
 	}
 

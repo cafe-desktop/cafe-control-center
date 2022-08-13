@@ -166,7 +166,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
                                    g_param_spec_flags ("accel_mask",
                                                        _("Accelerator modifiers"),
                                                        _("Accelerator modifiers"),
-                                                       GDK_TYPE_MODIFIER_TYPE,
+                                                       CDK_TYPE_MODIFIER_TYPE,
                                                        0,
                                                        G_PARAM_READABLE | G_PARAM_WRITABLE));
 
@@ -200,7 +200,7 @@ egg_cell_renderer_keys_class_init (EggCellRendererKeysClass *cell_keys_class)
                 G_TYPE_NONE, 4,
                 G_TYPE_STRING,
                 G_TYPE_UINT,
-                GDK_TYPE_MODIFIER_TYPE,
+                CDK_TYPE_MODIFIER_TYPE,
 		G_TYPE_UINT);
 
   g_signal_new ("accel_cleared",
@@ -400,15 +400,15 @@ static gboolean grab_key_callback(CtkWidget* widget, CdkEventKey* event, void* d
 	upper = event->keyval;
 	accel_keyval = cdk_keyval_to_lower(upper);
 
-	if (accel_keyval == GDK_KEY_ISO_Left_Tab)
+	if (accel_keyval == CDK_KEY_ISO_Left_Tab)
 	{
-		accel_keyval = GDK_KEY_Tab;
+		accel_keyval = CDK_KEY_Tab;
 	}
 
 	/* Put shift back if it changed the case of the key, not otherwise. */
-	if (upper != accel_keyval && (consumed_modifiers & GDK_SHIFT_MASK))
+	if (upper != accel_keyval && (consumed_modifiers & CDK_SHIFT_MASK))
 	{
-		consumed_modifiers &= ~(GDK_SHIFT_MASK);
+		consumed_modifiers &= ~(CDK_SHIFT_MASK);
 	}
 
 	egg_keymap_resolve_virtual_modifiers (cdk_keymap_get_for_display (cdk_display_get_default ()),
@@ -419,33 +419,33 @@ static gboolean grab_key_callback(CtkWidget* widget, CdkEventKey* event, void* d
 
 	/* http://bugzilla.gnome.org/show_bug.cgi?id=139605
 	 * mouse keys should effect keybindings */
-	ignored_modifiers |= GDK_BUTTON1_MASK |
-		GDK_BUTTON2_MASK |
-		GDK_BUTTON3_MASK |
-		GDK_BUTTON4_MASK |
-		GDK_BUTTON5_MASK;
+	ignored_modifiers |= CDK_BUTTON1_MASK |
+		CDK_BUTTON2_MASK |
+		CDK_BUTTON3_MASK |
+		CDK_BUTTON4_MASK |
+		CDK_BUTTON5_MASK;
 
 	/* filter consumed/ignored modifiers */
 	if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_CTK)
 	{
-		accel_mods = event->state & GDK_MODIFIER_MASK & ~(consumed_modifiers | ignored_modifiers);
+		accel_mods = event->state & CDK_MODIFIER_MASK & ~(consumed_modifiers | ignored_modifiers);
 	}
 	else if (keys->accel_mode == EGG_CELL_RENDERER_KEYS_MODE_X)
 	{
-		accel_mods = event->state & GDK_MODIFIER_MASK & ~(ignored_modifiers);
+		accel_mods = event->state & CDK_MODIFIER_MASK & ~(ignored_modifiers);
 	}
 	else
 	{
 		g_assert_not_reached();
 	}
 
-	if (accel_mods == 0 && accel_keyval == GDK_KEY_Escape)
+	if (accel_mods == 0 && accel_keyval == CDK_KEY_Escape)
 	{
 		goto out; /* cancel */
 	}
 
 	/* clear the accelerator on Backspace */
-	if (accel_mods == 0 && accel_keyval == GDK_KEY_BackSpace)
+	if (accel_mods == 0 && accel_keyval == CDK_KEY_BackSpace)
 	{
 		cleared = TRUE;
 		goto out;
@@ -622,12 +622,12 @@ egg_cell_renderer_keys_start_editing (CtkCellRenderer      *cell,
 
   if (cdk_seat_grab (seat,
                      ctk_widget_get_window (widget),
-                     GDK_SEAT_CAPABILITY_ALL,
+                     CDK_SEAT_CAPABILITY_ALL,
                      FALSE,
                      NULL,
                      event,
                      NULL,
-                     NULL) != GDK_GRAB_SUCCESS)
+                     NULL) != CDK_GRAB_SUCCESS)
     return NULL;
 
   keys->grab_widget = widget;
