@@ -64,7 +64,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 						      MIN (pheight, field_geom->height - cy),
 						      cx, cy,
 						      1.0, 1.0,
-						      CDK_INTERP_BILINEAR,
+						      GDK_INTERP_BILINEAR,
 						      alpha);
 			else if (need_composite && use_simple)
 				gdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
@@ -73,7 +73,7 @@ create_tile_pixbuf (GdkPixbuf    *dest_pixbuf,
 							    MIN (pheight, field_geom->height - cy),
 							    cx, cy,
 							    1.0, 1.0,
-							    CDK_INTERP_BILINEAR,
+							    GDK_INTERP_BILINEAR,
 							    alpha,
 							    65536, 65536, 65536,
 							    colorv, colorv);

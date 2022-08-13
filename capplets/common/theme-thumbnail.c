@@ -267,7 +267,7 @@ create_meta_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
                         icon_width, icon_height,
                         vbox_allocation.x + vbox_allocation.width - icon_width - 5,
                         vbox_allocation.y + vbox_allocation.height - icon_height - 5,
-                        1.0, 1.0, CDK_INTERP_BILINEAR, 255);
+                        1.0, 1.0, GDK_INTERP_BILINEAR, 255);
   region = meta_preview_get_clip_region (META_PREVIEW (preview),
       META_THUMBNAIL_SIZE, META_THUMBNAIL_SIZE);
   pixbuf_apply_mask_region (pixbuf, region);
@@ -343,7 +343,7 @@ create_ctk_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   retval = gdk_pixbuf_scale_simple (pixbuf,
                                     CTK_THUMBNAIL_SIZE,
                                     (int) CTK_THUMBNAIL_SIZE * (((double) height) / ((double) width)),
-                                    CDK_INTERP_BILINEAR);
+                                    GDK_INTERP_BILINEAR);
   g_object_unref (pixbuf);
   ctk_widget_destroy (window);
 
@@ -412,7 +412,7 @@ create_croma_theme_pixbuf (ThemeThumbnailData *theme_thumbnail_data)
   retval = gdk_pixbuf_scale_simple (pixbuf,
                                     CROMA_THUMBNAIL_WIDTH,
                                     CROMA_THUMBNAIL_HEIGHT,
-                                    CDK_INTERP_BILINEAR);
+                                    GDK_INTERP_BILINEAR);
   g_object_unref (pixbuf);
 
   ctk_widget_destroy (window);
