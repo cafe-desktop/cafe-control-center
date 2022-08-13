@@ -42,6 +42,7 @@ requires:
     - librest-0.7-0 #required for ctk
     - libtool
     - make
+    - policykit-1
     - python3-lxml
     - shared-mime-info
     - wget
