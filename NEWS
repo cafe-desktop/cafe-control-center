@@ -194,7 +194,7 @@
   * libslab: code clean up
   * wm-common: replace deprecated cdk_error_trap functions
   * libslab: replace deprecated ctk_menu_popup
-  * msd-input-helper: replace deprecated cdk_error_trap functions
+  * csd-input-helper: replace deprecated cdk_error_trap functions
   * mouse: replace deprecated cdk_error_trap functions
 
 ### cafe-control-center 1.21.0

@@ -39,7 +39,7 @@ EXTRA_DIST = 					\
 	cafe-window-settings-2.0.pc.in
 
 wms_flags = -export_dynamic -avoid-version -module
-wmsdir = $(WM_MODULE_DIR)
+wcsdir = $(WM_MODULE_DIR)
 
 wms_LTLIBRARIES =			\
 	libcroma.la
