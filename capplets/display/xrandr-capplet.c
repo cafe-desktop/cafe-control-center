@@ -2142,7 +2142,7 @@ set_primary (CtkWidget *widget, gpointer data)
     ctk_widget_set_sensitive (app->primary_button, !cafe_rr_output_info_get_primary(app->current_output));
 }
 
-#define MSD_XRANDR_SCHEMA                 "org.cafe.SettingsDaemon.plugins.xrandr"
+#define CSD_XRANDR_SCHEMA                 "org.cafe.SettingsDaemon.plugins.xrandr"
 #define SHOW_ICON_KEY                     "show-notification-icon"
 #define DEFAULT_CONFIGURATION_FILE_KEY    "default-configuration-file"
 
@@ -2396,7 +2396,7 @@ run_application (App *app)
 	return;
     }
 
-    app->settings = g_settings_new (MSD_XRANDR_SCHEMA);
+    app->settings = g_settings_new (CSD_XRANDR_SCHEMA);
 
     app->dialog = _ctk_builder_get_widget (builder, "dialog");
     g_signal_connect_after (app->dialog, "map-event",
