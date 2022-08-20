@@ -17,8 +17,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __MSD_INPUT_HELPER_H
-#define __MSD_INPUT_HELPER_H
+#ifndef __CSD_INPUT_HELPER_H
+#define __CSD_INPUT_HELPER_H
 
 G_BEGIN_DECLS
 
@@ -33,4 +33,4 @@ gboolean  touchpad_is_present     (void);
 
 G_END_DECLS
 
-#endif /* __MSD_INPUT_HELPER_H */
+#endif /* __CSD_INPUT_HELPER_H */
