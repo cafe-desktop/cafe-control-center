@@ -100,7 +100,7 @@ static void theme_thumbnail_update(GdkPixbuf* pixbuf, gchar* theme_name, Appeara
 		{
 			gchar* path;
 
-			/* try to share thumbs with caja, use themes:/// */
+			/* try to share thumbs with baul, use themes:/// */
 			path = g_strconcat("themes:///", theme_name, NULL);
 
 			cafe_desktop_thumbnail_factory_save_thumbnail(data->thumb_factory, pixbuf, path, mtime);
@@ -124,7 +124,7 @@ static GdkPixbuf* theme_get_thumbnail_from_cache(CafeThemeMetaInfo* info, Appear
 	if (mtime == -1)
 		return NULL;
 
-	/* try to share thumbs with caja, use themes:/// */
+	/* try to share thumbs with baul, use themes:/// */
 	path = g_strconcat ("themes:///", info->name, NULL);
 	thumb_filename = cafe_desktop_thumbnail_factory_lookup(data->thumb_factory, path, mtime);
 	g_free(path);
@@ -451,8 +451,8 @@ theme_message_area_response_cb (CtkWidget *w,
         data->revert_documents_font = NULL;
       }
 
-      if (data->caja_settings && data->revert_desktop_font != NULL) {
-        g_settings_set_string (data->caja_settings, DESKTOP_FONT_KEY, data->revert_desktop_font);
+      if (data->baul_settings && data->revert_desktop_font != NULL) {
+        g_settings_set_string (data->baul_settings, DESKTOP_FONT_KEY, data->revert_desktop_font);
         g_free (data->revert_desktop_font);
         data->revert_desktop_font = NULL;
       }
@@ -499,8 +499,8 @@ theme_message_area_response_cb (CtkWidget *w,
         g_settings_set_string (data->interface_settings, DOCUMENT_FONT_KEY, theme->documents_font);
       }
 
-      if (data->caja_settings && theme->desktop_font) {
-        tmpfont = g_settings_get_string (data->caja_settings, DESKTOP_FONT_KEY);
+      if (data->baul_settings && theme->desktop_font) {
+        tmpfont = g_settings_get_string (data->baul_settings, DESKTOP_FONT_KEY);
         if (tmpfont != NULL) {
           g_free (data->revert_desktop_font);
 
@@ -510,7 +510,7 @@ theme_message_area_response_cb (CtkWidget *w,
           } else
             data->revert_desktop_font = tmpfont;
         }
-        g_settings_set_string (data->caja_settings, DESKTOP_FONT_KEY, theme->desktop_font);
+        g_settings_set_string (data->baul_settings, DESKTOP_FONT_KEY, theme->desktop_font);
       }
 
       if (theme->windowtitle_font) {
@@ -601,8 +601,8 @@ theme_message_area_update (AppearanceData *data)
       g_free (font);
     }
 
-    if (data->caja_settings && !show_apply_font && theme->desktop_font) {
-      font = g_settings_get_string (data->caja_settings, DESKTOP_FONT_KEY);
+    if (data->baul_settings && !show_apply_font && theme->desktop_font) {
+      font = g_settings_get_string (data->baul_settings, DESKTOP_FONT_KEY);
       show_apply_font =
           (!font || strcmp (theme->application_font, font) != 0);
       g_free (font);
@@ -1116,8 +1116,8 @@ void themes_init(AppearanceData* data)
   g_signal_connect (data->interface_settings, "changed::" CTK_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
   g_signal_connect (data->interface_settings, "changed::" DOCUMENT_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
 
-  if (data->caja_settings)
-    g_signal_connect (data->caja_settings, "changed::" DESKTOP_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
+  if (data->baul_settings)
+    g_signal_connect (data->baul_settings, "changed::" DESKTOP_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
 
   g_signal_connect (data->croma_settings, "changed::" WINDOW_TITLE_FONT_KEY, G_CALLBACK (background_or_font_changed), data);
   g_signal_connect (data->interface_settings, "changed::" MONOSPACE_FONT_KEY, G_CALLBACK (background_or_font_changed), data);

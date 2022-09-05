@@ -72,13 +72,13 @@ Hardware Integration
  - gphoto/sane/cd burning??  Userland hw.
 
 Caja:
- - Move caja settings
+ - Move baul settings
  - Desktop should be a separate dialog
 
 Background:
- - Merge caja pane and bg capplet;
- - possibly even popup a caja window of bg's for DnD
- - Integrate better w/ caja
+ - Merge baul pane and bg capplet;
+ - possibly even popup a baul window of bg's for DnD
+ - Integrate better w/ baul
  - per Workspace?
 
 Workspace/Tasks

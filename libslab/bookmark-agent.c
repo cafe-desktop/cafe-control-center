@@ -1163,10 +1163,10 @@ create_dir_item (BookmarkAgent *this, const gchar *uri)
 	} else if (strcmp (uri, "network:") == 0) {
 		icon = "network-workgroup";
 		name = _("Network Servers");
-	} else if (g_str_has_prefix (uri, "x-caja-search")) {
+	} else if (g_str_has_prefix (uri, "x-baul-search")) {
 		icon = "system-search";
 
-		path = g_build_filename (g_get_user_data_dir (), "caja", "searches", & uri [21], NULL);
+		path = g_build_filename (g_get_user_data_dir (), "baul", "searches", & uri [21], NULL);
 
 		if (g_file_test (path, G_FILE_TEST_EXISTS)) {
 			gchar *buf = NULL;

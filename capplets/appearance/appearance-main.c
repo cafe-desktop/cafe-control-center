@@ -60,9 +60,9 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
       data->wp_settings = g_settings_new (WP_SCHEMA);
 
       if (cafe_gsettings_schema_exists (CAJA_SCHEMA))
-        data->caja_settings = g_settings_new (CAJA_SCHEMA);
+        data->baul_settings = g_settings_new (CAJA_SCHEMA);
       else
-        data->caja_settings = NULL;
+        data->baul_settings = NULL;
 
       data->interface_settings = g_settings_new (INTERFACE_SCHEMA);
       data->croma_settings = g_settings_new (CROMA_SCHEMA);
@@ -95,8 +95,8 @@ main_window_response (CtkWidget *widget,
     g_object_unref (data->settings);
     g_object_unref (data->wp_settings);
 
-    if (data->caja_settings)
-      g_object_unref (data->caja_settings);
+    if (data->baul_settings)
+      g_object_unref (data->baul_settings);
 
     g_object_unref (data->interface_settings);
     g_object_unref (data->croma_settings);

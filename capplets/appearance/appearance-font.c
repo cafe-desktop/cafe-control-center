@@ -751,8 +751,8 @@ void font_init(AppearanceData* data)
 
 	widget = appearance_capplet_get_widget (data, "desktop_font");
 
-	if (data->caja_settings)
-		g_settings_bind (data->caja_settings,
+	if (data->baul_settings)
+		g_settings_bind (data->baul_settings,
 				 DESKTOP_FONT_KEY,
 				 G_OBJECT (widget),
 				 "font-name",

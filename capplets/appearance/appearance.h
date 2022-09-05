@@ -54,7 +54,7 @@
 #define LOCKDOWN_SCHEMA              "org.cafe.lockdown"
 #define DISABLE_THEMES_SETTINGS_KEY  "disable-theme-settings"
 
-#define CAJA_SCHEMA                  "org.cafe.caja.desktop"
+#define CAJA_SCHEMA                  "org.cafe.baul.desktop"
 #define DESKTOP_FONT_KEY             "font"
 
 #define CROMA_SCHEMA                 "org.cafe.Croma.general"
@@ -78,7 +78,7 @@
 typedef struct {
 	GSettings* settings;
 	GSettings* wp_settings;
-	GSettings* caja_settings;
+	GSettings* baul_settings;
 	GSettings* interface_settings;
 	GSettings* croma_settings;
 	GSettings* mouse_settings;
