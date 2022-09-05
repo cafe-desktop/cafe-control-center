@@ -40,10 +40,10 @@
     <para>
       The last option, <guibutton>Open file manager window for newly
       mounted CD</guibutton> tells the system to open your file
-      manager (<application>Caja</application> by default) when the
+      manager (<application>Baul</application> by default) when the
       CD is mounted.  This is useful if you have a CD of images from
       your family reunion you wish to browse.  It will open up in
-      <application>Caja</application> which will let you view the
+      <application>Baul</application> which will let you view the
       thumbnails.
     </para>
   </sect2>

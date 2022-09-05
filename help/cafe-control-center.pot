@@ -544,7 +544,7 @@ msgstr ""
 #: C/config-cds.xml:43
 #: C/config-cds.xml:46
 #: C/config-default-apps.xml:81
-msgid "Caja"
+msgid "Baul"
 msgstr ""
 
 #. (itstool) path: sect2/para

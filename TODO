@@ -71,7 +71,7 @@ Hardware Integration
  - peripherals (RH only?)
  - gphoto/sane/cd burning??  Userland hw.
 
-Caja:
+Baul:
  - Move baul settings
  - Desktop should be a separate dialog
 
