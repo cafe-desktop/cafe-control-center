@@ -54,7 +54,7 @@
 #define LOCKDOWN_SCHEMA              "org.cafe.lockdown"
 #define DISABLE_THEMES_SETTINGS_KEY  "disable-theme-settings"
 
-#define CAJA_SCHEMA                  "org.cafe.baul.desktop"
+#define BAUL_SCHEMA                  "org.cafe.baul.desktop"
 #define DESKTOP_FONT_KEY             "font"
 
 #define CROMA_SCHEMA                 "org.cafe.Croma.general"

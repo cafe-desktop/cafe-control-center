@@ -59,8 +59,8 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
       data->settings = g_settings_new (APPEARANCE_SCHEMA);
       data->wp_settings = g_settings_new (WP_SCHEMA);
 
-      if (cafe_gsettings_schema_exists (CAJA_SCHEMA))
-        data->baul_settings = g_settings_new (CAJA_SCHEMA);
+      if (cafe_gsettings_schema_exists (BAUL_SCHEMA))
+        data->baul_settings = g_settings_new (BAUL_SCHEMA);
       else
         data->baul_settings = NULL;
 
