@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Croma Bartolucci <nap.84@live.it>, 2020
+# Marco Bartolucci <nap.84@live.it>, 2020
 # andrea pittaro <transifex@andreapittaro.it>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Salvatore Rotilio <salvatore.ubuntero@gmail.com>, 2020
@@ -17,7 +17,7 @@
 # Enrico B. <enricobe@hotmail.com>, 2020
 # ShadowK98 <amedeo.giuliani.98@gmail.com>, 2020
 # Ruben Scopacasa <ruben3642@gmail.com>, 2020
-# Croma Z. <minaz666@gmail.com>, 2020
+# Marco Z. <minaz666@gmail.com>, 2020
 # l3nn4rt, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
