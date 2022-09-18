@@ -552,7 +552,7 @@ get_layout_location (CtkLabel *label,
 	ypad = margin_top + margin_bottom;
 
 	ctk_widget_get_allocation (widget, &widget_allocation);
-	ctk_widget_get_requisition (widget, &widget_requisition);
+	ctk_widget_get_preferred_size (widget, &widget_requisition, NULL);
 	widget_allocation.x /= scale;
 	widget_allocation.y /= scale;
 	widget_requisition.width /= scale;
