@@ -52,6 +52,7 @@ struct _AppResizer
 	gboolean table_elements_homogeneous;
 	gint cur_num_cols;
 	gboolean setting_style;
+	guint column;
 	AppShellData *app_data;
 };
 
@@ -66,7 +67,7 @@ GType app_resizer_get_type (void);
 CtkWidget *app_resizer_new (CtkBox * child, gint initial_num_columns, gboolean homogeneous,
 	AppShellData * app_data);
 void app_resizer_set_table_cache (AppResizer * widget, GList * cache_list);
-void app_resizer_layout_table_default (AppResizer * widget, CtkTable * table, GList * element_list);
+void app_resizer_layout_table_default (AppResizer * widget, CtkGrid * table, GList * element_list);
 void app_resizer_set_vadjustment_value (CtkWidget * widget, gdouble value);
 
 #ifdef __cplusplus

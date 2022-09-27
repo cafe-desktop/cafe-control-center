@@ -724,9 +724,9 @@ create_application_category_sections (AppShellData * app_data)
 		g_free (markup);
 
 		hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
-		table = ctk_table_new (0, 0, TRUE);
-		ctk_table_set_col_spacings (CTK_TABLE (table), 5);
-		ctk_table_set_row_spacings (CTK_TABLE (table), 5);
+		table = ctk_grid_new ();
+		ctk_grid_set_column_spacing (CTK_GRID (table), 5);
+		ctk_grid_set_row_spacing (CTK_GRID (table), 5);
 		ctk_box_pack_start (CTK_BOX (hbox), table, FALSE, FALSE, 15);
 		slab_section_set_contents (SLAB_SECTION (data->section), hbox);
 	}
@@ -805,7 +805,7 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 	GList * launcher_list)
 {
 	CtkWidget *hbox;
-	CtkTable *table;
+	CtkGrid *table;
 	GList *children;
 
 	hbox = CTK_WIDGET (section->contents);
@@ -814,8 +814,8 @@ populate_application_category_section (AppShellData * app_data, SlabSection * se
 	table = children->data;
 	g_list_free (children);
 
-	/* Make sure our implementation has not changed and it's still a CtkTable */
-	g_assert (CTK_IS_TABLE (table));
+	/* Make sure our implementation has not changed and it's still a CtkGrid */
+	g_assert (CTK_IS_GRID (table));
 
 	app_data->cached_tables_list = g_list_append (app_data->cached_tables_list, table);
 

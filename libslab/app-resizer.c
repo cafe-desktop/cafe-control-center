@@ -62,33 +62,22 @@ remove_container_entries (CtkContainer * widget)
 }
 
 static void
-resize_table (CtkTable * table, gint columns, GList * launcher_list)
+resize_table (AppResizer *widget, CtkGrid * table, gint columns)
 {
-	float rows, remainder;
-
 	remove_container_entries (CTK_CONTAINER (table));
-
-	rows = ((float) g_list_length (launcher_list)) / (float) columns;
-	remainder = rows - ((int) rows);
-	if (remainder != 0.0)
-		rows += 1;
-
-	ctk_table_resize (table, (int) rows, columns);
+	widget->column = columns;
 }
 
 static void
-relayout_table (CtkTable * table, GList * element_list)
+relayout_table (AppResizer *widget, CtkGrid * table, GList * element_list)
 {
-	guint maxcols, maxrows;
-	ctk_table_get_size (CTK_TABLE (table), &maxrows, &maxcols);
 	gint row = 0, col = 0;
 	do
 	{
 		CtkWidget *element = CTK_WIDGET (element_list->data);
-		ctk_table_attach (table, element, col, col + 1, row, row + 1, CTK_EXPAND | CTK_FILL,
-			CTK_EXPAND | CTK_FILL, 0, 0);
+		ctk_grid_attach (table, element, col, row, 1, 1);
 		col++;
-		if (col == maxcols)
+		if (col == widget->column)
 		{
 			col = 0;
 			row++;
@@ -98,26 +87,26 @@ relayout_table (CtkTable * table, GList * element_list)
 }
 
 void
-app_resizer_layout_table_default (AppResizer * widget, CtkTable * table, GList * element_list)
+app_resizer_layout_table_default (AppResizer * widget, CtkGrid * table, GList * element_list)
 {
-	resize_table (table, widget->cur_num_cols, element_list);
-	relayout_table (table, element_list);
+	resize_table (widget, table, widget->cur_num_cols);
+	relayout_table (widget, table, element_list);
 }
 
 static void
 relayout_tables (AppResizer * widget, gint num_cols)
 {
-	CtkTable *table;
+	CtkGrid *table;
 	GList *table_list, *launcher_list;
 
 	for (table_list = widget->cached_tables_list; table_list != NULL;
 		table_list = g_list_next (table_list))
 	{
-		table = CTK_TABLE (table_list->data);
+		table = CTK_GRID (table_list->data);
 		launcher_list = ctk_container_get_children (CTK_CONTAINER (table));
 		launcher_list = g_list_reverse (launcher_list);	/* Fixme - ugly hack because table stores prepend */
-		resize_table (table, num_cols, launcher_list);
-		relayout_table (table, launcher_list);
+		resize_table (widget, table, num_cols);
+		relayout_table (widget, table, launcher_list);
 		g_list_free (launcher_list);
 	}
 }
@@ -131,7 +120,7 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 
 		if (resizer->cached_element_width == -1)
 		{
-			CtkTable *table = CTK_TABLE (resizer->cached_tables_list->data);
+			CtkGrid *table = CTK_GRID (resizer->cached_tables_list->data);
 			GList *children = ctk_container_get_children (CTK_CONTAINER (table));
 			CtkWidget *table_element = CTK_WIDGET (children->data);
 			gint natural_width;
@@ -139,7 +128,7 @@ calculate_num_cols (AppResizer * resizer, gint avail_width)
 
 			ctk_widget_get_preferred_width (table_element, NULL, &natural_width);
 			resizer->cached_element_width = natural_width;
-			resizer->cached_table_spacing = ctk_table_get_default_col_spacing (table);
+			resizer->cached_table_spacing = ctk_grid_get_column_spacing (table);
 		}
 
 		num_cols =
@@ -185,7 +174,6 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 
 	static gboolean first_time = TRUE;
 	gint new_num_cols;
-	gint useable_area;
 
 	if (first_time)
 	{
@@ -223,11 +211,8 @@ app_resizer_size_allocate (CtkWidget * widget, CtkAllocation * allocation)
 	CtkRequisition other_requisiton;
 	ctk_widget_get_preferred_size (CTK_WIDGET (resizer->cached_tables_list->data), &other_requisiton, NULL);
 
-	useable_area =
-		allocation->width - (child_requisition.width -
-		other_requisiton.width);
 	new_num_cols =
-		relayout_tables_if_needed (APP_RESIZER (resizer), useable_area,
+		relayout_tables_if_needed (APP_RESIZER (resizer), allocation->width,
 		resizer->cur_num_cols);
 	if (resizer->cur_num_cols != new_num_cols)
 	{
