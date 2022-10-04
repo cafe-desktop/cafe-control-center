@@ -898,7 +898,7 @@ Author: Wolfgang Ulbrich
                                     <property name="can_focus">False</property>
                                     <property name="events">CDK_POINTER_MOTION_MASK | CDK_POINTER_MOTION_HINT_MASK | CDK_BUTTON_PRESS_MASK | CDK_BUTTON_RELEASE_MASK</property>
                                     <property name="halign">start</property>
-                                    <property name="label" translatable="yes">To test your double-click settings, try to double-click on the triangle and you must see the cafe desktop logo with both rings showing.</property>
+                                    <property name="label" translatable="yes">To test your double-click settings, try to double-click on the circle and you must see the cafe desktop logo with the cup of coffee.</property>
                                     <property name="wrap">True</property>
                                     <attributes>
                                       <attribute name="style" value="italic"/>

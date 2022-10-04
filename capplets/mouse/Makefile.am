@@ -33,9 +33,9 @@ AM_CPPFLAGS = \
 CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(BUILT_SOURCES)
 EXTRA_DIST = \
 	$(ui_files) \
-	double-click-on.svg \
-	double-click-off.svg \
-	double-click-maybe.svg \
+	double-click-on.png \
+	double-click-off.png \
+	double-click-maybe.png \
 	$(Desktop_in_files) \
 	org.cafe.mcc.mouse.gresource.xml \
 	ui-a11y.suppr

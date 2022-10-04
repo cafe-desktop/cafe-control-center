@@ -18,8 +18,8 @@
 <gresources>
   <gresource prefix="/org/cafe/mcc/mouse">
     <file compressed="true">cafe-mouse-properties.ui</file>
-    <file compressed="true">double-click-off.svg</file>
-    <file compressed="true">double-click-on.svg</file>
-    <file compressed="true">double-click-maybe.svg</file>
+    <file compressed="true">double-click-off.png</file>
+    <file compressed="true">double-click-on.png</file>
+    <file compressed="true">double-click-maybe.png</file>
   </gresource>
 </gresources>
