@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Anh Phan <vietnamesel10n@gmail.com>, 2020
 # Meongu Ng. <meongu@gmail.com>, 2020
@@ -12,19 +12,19 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Brian P. Dung <brianp.dung@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Brian P. Dung <brianp.dung@gmail.com>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/cafe/teams/13566/vi/)\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -93,8 +93,8 @@ msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
 msgstr ""
-"Cho biết có nên đóng trình bao khi làm hành vi nâng cấp hoặc hủy cài đặt hay"
-" không."
+"Cho biết có nên đóng trình bao khi làm hành vi nâng cấp hoặc hủy cài đặt hay "
+"không."
 
 #: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
@@ -102,8 +102,8 @@ msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:43
@@ -112,8 +112,8 @@ msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
@@ -141,25 +141,25 @@ msgstr "Tên"
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Chọn ảnh"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Không ảnh"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Hình ảnh"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Mọi tập tin"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "Giới thiệu %s"
@@ -208,14 +208,7 @@ msgstr "Tắt Đăng nhập _Vân tay..."
 msgid "Set your personal information"
 msgstr "Lập thông tin cá nhân"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -286,8 +279,8 @@ msgid ""
 "To enable fingerprint login, you need to save one of your fingerprints, "
 "using the '%s' device."
 msgstr ""
-"Để hiệu lực chức năng đăng nhập theo vân tay, bạn cần phải lưu một của những"
-" vân tay của mình, dùng thiết bị « %s »."
+"Để hiệu lực chức năng đăng nhập theo vân tay, bạn cần phải lưu một của những "
+"vân tay của mình, dùng thiết bị « %s »."
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:598
 msgid "Swipe finger on reader"
@@ -361,15 +354,13 @@ msgstr "Tiến trình con đã thoát bất ngờ"
 #, c-format
 msgid "Could not shutdown backend_stdin IO channel: %s"
 msgstr ""
-"Không thể tắt kệnh nhập/xuất hậu phương thiết bị nhập chuẩn backend_stdin: "
-"%s"
+"Không thể tắt kệnh nhập/xuất hậu phương thiết bị nhập chuẩn backend_stdin: %s"
 
 #: capplets/about-me/cafe-about-me-password.c:309
 #, c-format
 msgid "Could not shutdown backend_stdout IO channel: %s"
 msgstr ""
-"Không thể tắt kệnh nhập/xuất hậu phương thiết bị xuất chuẩn backend_stdin: "
-"%s"
+"Không thể tắt kệnh nhập/xuất hậu phương thiết bị xuất chuẩn backend_stdin: %s"
 
 #: capplets/about-me/cafe-about-me-password.c:408
 msgid "Authenticated!"
@@ -470,11 +461,15 @@ msgstr ""
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"Để thay đổi mật khẩu, hãy nhập mật khẩu hiện thời vào trường bên dưới và nhấn vào <b>Xác thực</b>.\n"
-"Sau khi xác thực, nhập mật khẩu mới, gõ lại để thẩm tra, rồi nhấn vào <b>Đổi mật khẩu</b>."
+"Để thay đổi mật khẩu, hãy nhập mật khẩu hiện thời vào trường bên dưới và "
+"nhấn vào <b>Xác thực</b>.\n"
+"Sau khi xác thực, nhập mật khẩu mới, gõ lại để thẩm tra, rồi nhấn vào <b>Đổi "
+"mật khẩu</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -565,14 +560,7 @@ msgstr "Tới hộp thoại Đăng nhập có thể truy cập"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "Chọn tính năng khả năng truy cập cần dùng khi đăng nhập"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -617,8 +605,7 @@ msgid "filename"
 msgstr "tên-tập-tin"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "Hãy ghi rõ tên của trang cần hiển thị (sắc thái|nền|phông|giao diện)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -695,7 +682,7 @@ msgstr "Phông đã gợi ý cuối cùng có thể bị hoàn nguyên."
 msgid "The current theme suggests a font."
 msgstr "Sắc thái hiện thời đề nghị phông."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Tự chọn"
 
@@ -1072,17 +1059,7 @@ msgstr "Diện mạo"
 msgid "Customize the look of the desktop"
 msgstr "Tùy chỉnh màn hình nền"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1095,8 +1072,7 @@ msgstr "Trình cài đặt sắc thái"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Cài đặt sắc thái cho các phần khác nhau của giao diện"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1288,7 +1264,10 @@ msgstr "Không thể cài đặt cơ chế sắc thái"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 
 #: capplets/common/capplet-util.c:82
@@ -1372,16 +1351,15 @@ msgstr "_Bỏ qua"
 msgid "Overwrite _All"
 msgstr "_Ghi đè tất cả"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
-"Sắc thái này sẽ không hình như mong đợi vì chưa cài đặt sắc thái CTK+ « %s "
-"»."
+"Sắc thái này sẽ không hình như mong đợi vì chưa cài đặt sắc thái CTK+ « %s »."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1390,11 +1368,11 @@ msgstr ""
 "Sắc thái này sẽ không hình như mong đợi vì chưa cài đặt sắc thái bộ quản lý "
 "cửa sổ « %s »."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "Sắc thái này sẽ không hình như mong đợi vì chưa cài đặt sắc thái biểu tượng "
 "« %s »."
@@ -1408,14 +1386,7 @@ msgstr "Ứng dụng ưa thích"
 msgid "Select your default applications"
 msgstr "Chọn các ứng dụng mặc định của bạn"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1530,19 +1501,17 @@ msgstr ""
 msgid "Accessibility"
 msgstr "Khả năng truy cập"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Chuẩn"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Trái"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Phải"
@@ -1561,8 +1530,8 @@ msgstr ""
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 
 #: capplets/display/display-capplet.ui:90
@@ -1630,14 +1599,7 @@ msgstr ""
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1652,7 +1614,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1693,15 +1656,13 @@ msgstr ""
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr ""
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr ""
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1712,8 +1673,7 @@ msgstr ""
 msgid "%s must be a directory\n"
 msgstr ""
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1746,8 +1706,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Màn hình phản chiếu"
 
@@ -1859,7 +1819,7 @@ msgstr "Rãnh sau"
 msgid "Eject"
 msgstr "Đẩy ra"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Bàn làm việc"
 
@@ -1900,7 +1860,7 @@ msgid "Home folder"
 msgstr "Thư mục Nhà"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Tìm kiếm"
 
@@ -1957,7 +1917,8 @@ msgstr "Gặp lỗi lưu phím tắt mới"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
 "Không thể dùng phím tắt « %s » vì sẽ không thể gõ nó bằng phím này.\n"
@@ -1974,7 +1935,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "Nếu bạn gán lại phím tắt là \"%s\", \"%s\" sẽ bị tắt."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -2012,22 +1974,15 @@ msgstr "Phím tắt"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "Gán phím tắt cho lệnh"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2328,8 +2283,8 @@ msgstr "_Khoá màn hình để buộc thư giãn nhập liệu"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
 "Khoá màn hình sau một khoảng thời gian nhất định để tránh thương tổn do sử "
 "dụng bàn phím liên tục"
@@ -2445,14 +2400,7 @@ msgstr "Bàn phím"
 msgid "Set your keyboard preferences"
 msgstr "Lập các tùy thích cho bàn phím của bạn"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2557,8 +2505,8 @@ msgstr "_Thời hạn:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2622,14 +2570,7 @@ msgstr ""
 msgid "Set your mouse preferences"
 msgstr "Lập các tùy thích cho chuột"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2642,14 +2583,7 @@ msgstr "Ủy nhiệm mạng"
 msgid "Set your network proxy preferences"
 msgstr "Đặt tùy thích máy phục vụ ủy nhiệm mạng cho bạn."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2771,14 +2705,7 @@ msgstr "Cửa sổ"
 msgid "Set your window properties"
 msgstr "Đặt thuộc tính cửa sổ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -2980,7 +2907,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4720,14 +4647,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4771,22 +4691,9 @@ msgstr "Công cụ cấu hình CAFE"
 msgid "Configure CAFE settings"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4931,14 +4838,7 @@ msgstr ""
 msgid "CAFE Font Viewer"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5005,27 +4905,27 @@ msgstr "Gỡ khỏi Chương trình Khởi động"
 msgid "Add to Startup Programs"
 msgstr "Thêm vào Chương trình Khởi động"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Bảng tính mới"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Tài liệu mới"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Nhà"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Tài liệu"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Hệ thống tập tin"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Máy chủ"

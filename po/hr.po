@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Ivan Branimir Škorić <ivanskrc123@gmail.com>, 2020
 # Ivica  Kolić <ikoli@yahoo.com>, 2020
@@ -12,20 +12,21 @@
 # Elvis M. Lukšić <meluksic@yahoo.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # stemd <stemdd@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: stemd <stemdd@gmail.com>, 2020\n"
 "Language-Team: Croatian (https://www.transifex.com/cafe/teams/13566/hr/)\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hr\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
 msgid ""
@@ -46,8 +47,8 @@ msgid ""
 "that task."
 msgstr ""
 "Naziv zadatka koji ima biti prikazan u nadzornom središtu praćen "
-"razdjelnikom \";\" i onda naziv pridružene .desktop datoteke za pokretanje u"
-" svrhu tog zadatka."
+"razdjelnikom \";\" i onda naziv pridružene .desktop datoteke za pokretanje u "
+"svrhu tog zadatka."
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -107,8 +108,8 @@ msgstr "URL za više pozadina"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
 "URL adresa s koje se preuzimaju dodatne pozadine za radnu površinu. Ako se "
 "ostavi prazan niz, poveznica se neće pojaviti."
@@ -119,8 +120,8 @@ msgstr "URL za više tema"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
 "URL adresa s koje se preuzimaju dodatne teme za radnu površinu. Ako se "
 "ostavi prazan niz, poveznica se neće pojaviti."
@@ -150,25 +151,25 @@ msgstr "Ime"
 msgid "Description associated with a custom keybinding."
 msgstr "Opis pridružen prilagođenoj vezi tipaka."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Odaberi sliku"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Bez slike"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Slike"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Sve datoteke"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "O %s"
@@ -217,14 +218,7 @@ msgstr "Onemogući _prijavu otiskom prsta..."
 msgid "Set your personal information"
 msgstr "Postavi svoje osobne podatke"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -385,8 +379,8 @@ msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
 msgstr ""
-"Tvoja zaporka je promijenjena od tvoje prvotne ovjere! Molimo izvrši ponovno"
-" ovjeru."
+"Tvoja zaporka je promijenjena od tvoje prvotne ovjere! Molimo izvrši ponovno "
+"ovjeru."
 
 #: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
@@ -475,11 +469,15 @@ msgstr "Promijeni svoju zaporku"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"Za promjenu svoje zaporke, unesi svoju trenutnu zaporku u donje polje i klikni <b>Ovjeri</b>.\n"
-"Nakon ovjere, unesi novu zaporku, ponovi je za potvrdu i klikni <b>Promijeni zaporku</b>."
+"Za promjenu svoje zaporke, unesi svoju trenutnu zaporku u donje polje i "
+"klikni <b>Ovjeri</b>.\n"
+"Nakon ovjere, unesi novu zaporku, ponovi je za potvrdu i klikni <b>Promijeni "
+"zaporku</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -534,8 +532,8 @@ msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
 msgstr ""
-"Promjene za omogućenje pomoćnih tehnologija neće djelovati do tvoje sljedeće"
-" prijave"
+"Promjene za omogućenje pomoćnih tehnologija neće djelovati do tvoje sljedeće "
+"prijave"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -570,14 +568,7 @@ msgstr "Prebaci se na dijaloški okvir pristupačne prijave"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "Odaberi koje značajke pristupačnosti omogućiti prigodom tvoje prijave"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -622,8 +613,7 @@ msgid "filename"
 msgstr "datotečno ime"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "Navedi ime stranice za prikaz (tema|pozadina|pisma|sučelje)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -700,7 +690,7 @@ msgstr "Posljednji primijenjeni prijedlog pisma može biti vraćen."
 msgid "The current theme suggests a font."
 msgstr "Trenutna tema predlaže pismo."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Prilagođeno"
 
@@ -1077,17 +1067,7 @@ msgstr "Izgled"
 msgid "Customize the look of the desktop"
 msgstr "Prilagodi izgled radne površine"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1100,8 +1080,7 @@ msgstr "Ugradnik teme"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Ugrađuje pakete tema za razne dijelove radne površine"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1302,10 +1281,16 @@ msgstr "Nije moguće ugraditi pogonik teme"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "Nije moguće pokrenuti upravitelja postavki 'cafe-settings-daemon'.\n"
-"Bez pokrenutog CAFE-ovog upravitelja postavki neke prilagodbe možda neće djelovati. Ovo može ukazivati na poteškoću s DBus-om, ili je možda već u uporabi neki drugi (npr. KDE) upravitelj postavki, onemogućavajući CAFE-ovog upravitelja postavki."
+"Bez pokrenutog CAFE-ovog upravitelja postavki neke prilagodbe možda neće "
+"djelovati. Ovo može ukazivati na poteškoću s DBus-om, ili je možda već u "
+"uporabi neki drugi (npr. KDE) upravitelj postavki, onemogućavajući CAFE-ovog "
+"upravitelja postavki."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1388,16 +1373,16 @@ msgstr "_Preskoči"
 msgid "Overwrite _All"
 msgstr "Prepiši preko _svega"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
 "Ova tema neće izgledati kako je predviđeno jer potrebna Ctk+ tema '%s' nije "
 "ugrađena."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1406,11 +1391,11 @@ msgstr ""
 "Ova tema neće izgledati kako je predviđeno jer potrebna tema prozorskog "
 "upravitelja '%s' nije ugrađena."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "Ova tema neće izgledati kako je predviđeno jer potrebna tema sličica '%s' "
 "nije ugrađena."
@@ -1424,14 +1409,7 @@ msgstr "Prvenstvene aplikacije"
 msgid "Select your default applications"
 msgstr "Odaberi vlastite zadane aplikacije"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1541,19 +1519,17 @@ msgstr "Pokretljivost"
 msgid "Accessibility"
 msgstr "Pristupačnost"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Normalno"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Lijevo"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Desno"
@@ -1572,11 +1548,11 @@ msgstr "Primijeni širom sustava"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
-"Primjenjuje trenutnu prilagodbu na računalu za ostale korisnike CAFE-a. Vodi"
-" računa da to ne utječe na prijavne zaslone niti na ostala okružja radne "
+"Primjenjuje trenutnu prilagodbu na računalu za ostale korisnike CAFE-a. Vodi "
+"računa da to ne utječe na prijavne zaslone niti na ostala okružja radne "
 "površine."
 
 #: capplets/display/display-capplet.ui:90
@@ -1644,14 +1620,7 @@ msgstr "Zasloni"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Promijeni razlučivost i položaj monitora i projektora"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1666,7 +1635,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1678,7 +1648,8 @@ msgstr ""
 "na položaj širom sustava. Ishodni profil će se koristiti kada\n"
 "se priključak RANDR pokrene u cafe-settings-daemonu.\n"
 "\n"
-"IZVORIŠNA_DATOTEKA - puno ime putanje, obično: /home/username/.config/monitors.xml\n"
+"IZVORIŠNA_DATOTEKA - puno ime putanje, obično: /home/username/.config/"
+"monitors.xml\n"
 "IME_ODREDIŠTA - odnosno ime za ugrađenu datoteku. Ono će biti smješteno u\n"
 "svesustavski direktorij postavki za RANDR,\n"
 "tako da će ishod obično biti: %s/IME_ODREDIŠTA\n"
@@ -1717,15 +1688,13 @@ msgstr "Ovaj program može jedino biti pokrenut kroz pkexec(1)"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID mora biti postavljen na cjelobrojnu vrijednost"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "%s mora biti u tvom posjedu\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1738,8 +1707,7 @@ msgstr ""
 "%s mora biti direktorij\n"
 "\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1773,8 +1741,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Zrcalni zasloni"
 
@@ -1890,7 +1858,7 @@ msgstr "Slijedeći zapis"
 msgid "Eject"
 msgstr "Izbaci"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Radna površina"
 
@@ -1931,7 +1899,7 @@ msgid "Home folder"
 msgstr "Osobna mapa"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Traži"
 
@@ -1988,10 +1956,12 @@ msgstr "Pogreška u pohrani novoga prečaca"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"Prečac \"%s\" se ne može upotrijebiti jer će postati nemoguće pisati koristeći ovu tipku.\n"
+"Prečac \"%s\" se ne može upotrijebiti jer će postati nemoguće pisati "
+"koristeći ovu tipku.\n"
 "Molimo pokušaj s tipkom poput Ctrl, Alt ili Shift istovremeno."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -2005,8 +1975,10 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
-msgstr "Ako iznova pridružiš prečac na \"%s\", prečac \"%s\" će biti onemogućen."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgstr ""
+"Ako iznova pridružiš prečac na \"%s\", prečac \"%s\" će biti onemogućen."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
 msgid "_Reassign"
@@ -2043,22 +2015,15 @@ msgstr "Tipkovnički prečaci"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "Pridruži tipke prečaca naredbama"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2361,8 +2326,8 @@ msgstr "_Zaključaj zaslon za nametanje stanke u tipkanju"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
 "Zaključaj zaslon nakon određenog vremena kako bi se spriječila oštećenja "
 "prouzročena ponavljajućim korištenjem tipkovnice"
@@ -2478,14 +2443,7 @@ msgstr "Tipkovnica"
 msgid "Set your keyboard preferences"
 msgstr "Postavi vlastite prilagodbe tipkovnice"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2590,8 +2548,8 @@ msgstr "_Istek vremena:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2655,14 +2613,7 @@ msgstr "Dodirnik"
 msgid "Set your mouse preferences"
 msgstr "Postavi vlastite prilagodbe miša"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2675,14 +2626,7 @@ msgstr "Posrednički mrežni poslužitelj - proxy"
 msgid "Set your network proxy preferences"
 msgstr "Postavi vlastite prilagodbe posredničkog mrežnog poslužitelja"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2804,14 +2748,7 @@ msgstr "Prozori"
 msgid "Set your window properties"
 msgstr "Postavi vlastita svojstva prozora"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -3014,7 +2951,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4754,14 +4691,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4769,7 +4699,8 @@ msgstr ""
 #: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
-msgstr "Prozorski upravitelj \"%s\" nije zabilježio pomagalo za raspoređivanje\n"
+msgstr ""
+"Prozorski upravitelj \"%s\" nije zabilježio pomagalo za raspoređivanje\n"
 
 #: shell/control-center.c:58
 #, c-format
@@ -4805,22 +4736,9 @@ msgstr "Pomagalo za raspoređivanje CAFE-a"
 msgid "Configure CAFE settings"
 msgstr "Konfigurirajte CAFE postavke"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4905,7 +4823,8 @@ msgstr ""
 "  Bojan Sudarević https://launchpad.net/~sudarevic\n"
 "  Danijel Šnajder https://launchpad.net/~phantomlord\n"
 "  Krešo Kunjas https://launchpad.net/~deresh\n"
-"  Launchpad Translations Administrators https://launchpad.net/~rosetta-admins\n"
+"  Launchpad Translations Administrators https://launchpad.net/~rosetta-"
+"admins\n"
 "  Miroslav Sabljić https://launchpad.net/~civija\n"
 "  Valentin Vidic https://launchpad.net/~vvidic\n"
 "  alja https://launchpad.net/~alja\n"
@@ -4931,10 +4850,10 @@ msgid ""
 "right-clicking on your panel and choosing 'Add to panel', selecting "
 "'Notification area' and clicking 'Add'."
 msgstr ""
-"Nadzornik tipkanja koristi dojavno područje za prikaz obavijesti. Izgleda da"
-" nemaš dojavno područje na vlastitoj ploči. Možeš ga dodati desnim klikom na"
-" vlastitu ploču i odabirom 'Dodaj na ploču', odabirući 'Dojavno područje' uz"
-" klik 'Dodaj'."
+"Nadzornik tipkanja koristi dojavno područje za prikaz obavijesti. Izgleda da "
+"nemaš dojavno područje na vlastitoj ploči. Možeš ga dodati desnim klikom na "
+"vlastitu ploču i odabirom 'Dodaj na ploču', odabirući 'Dojavno područje' uz "
+"klik 'Dodaj'."
 
 #: font-viewer/font-view.c:205
 msgid "Style"
@@ -4992,14 +4911,7 @@ msgstr "Pogledajte fontove u svom sustavu"
 msgid "CAFE Font Viewer"
 msgstr "CAFE preglednik fontova"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5066,27 +4978,27 @@ msgstr "Ukloni iz početnih programa"
 msgid "Add to Startup Programs"
 msgstr "Dodaj u početne programe"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Nova proračunska tablica"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Novi dokument"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Osobna mapa"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Dokumenti"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Datotečni sustav"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Mrežni poslužitelji"

@@ -2,26 +2,27 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Wolfgang Ulbrich <cafe@raveit.de>, 2020\n"
-"Language-Team: Panjabi (Punjabi) (https://www.transifex.com/cafe/teams/13566/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (https://www.transifex.com/cafe/teams/13566/"
+"pa/)\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -40,8 +41,8 @@ msgid ""
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
 msgstr ""
-"ਕੰਟਰੋਲ-ਕੇਂਦਰ 'ਚ ਵੇਖਾਉਣ ਲਈ ਟਾਸਕ ਨਾਂ, ਜਿਸ ਦੇ ਬਾਅਦ \";\" ਹੋਵੇਗਾ, ਜਿਸ ਦੇ ਬਾਅਦ "
-"ਸਬੰਧਿਤ .desktop ਫਾਇਲ ਨਾਂ, ਜੋ ਕਿ ਕੰਮ ਨੂੰ ਸ਼ੁਰੂ ਕਰੇਗੀ।"
+"ਕੰਟਰੋਲ-ਕੇਂਦਰ 'ਚ ਵੇਖਾਉਣ ਲਈ ਟਾਸਕ ਨਾਂ, ਜਿਸ ਦੇ ਬਾਅਦ \";\" ਹੋਵੇਗਾ, ਜਿਸ ਦੇ ਬਾਅਦ ਸਬੰਧਿਤ ."
+"desktop ਫਾਇਲ ਨਾਂ, ਜੋ ਕਿ ਕੰਮ ਨੂੰ ਸ਼ੁਰੂ ਕਰੇਗੀ।"
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -50,8 +51,7 @@ msgstr "ਜਦੋਂ ਇੱਕ ਕੰਮ ਸਰਗਰਮ ਹੋਵੇ ਤਾਂ 
 #: org.cafe.control-center.gschema.xml.in:12
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
-msgstr ""
-"ਜੇ ਠੀਕ ਹੋਇਆ ਤਾਂ ਕੰਟਰੋਲ-ਕੇਂਦਰ ਬੰਦ ਹੋ ਜਾਵੇਗਾ, ਜਦੋਂ \"ਆਮ ਟਾਸਕ\" ਐਕਟੀਵੇਟਡ ਹੋ ਗਈ।"
+msgstr "ਜੇ ਠੀਕ ਹੋਇਆ ਤਾਂ ਕੰਟਰੋਲ-ਕੇਂਦਰ ਬੰਦ ਹੋ ਜਾਵੇਗਾ, ਜਦੋਂ \"ਆਮ ਟਾਸਕ\" ਐਕਟੀਵੇਟਡ ਹੋ ਗਈ।"
 
 #: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
@@ -77,9 +77,7 @@ msgstr "ਜੋੜਨ ਜਾਂ ਹਟਾਉਣ ਕਾਰਵਾਈ ਦੌਰਾ�
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed."
-msgstr ""
-"ਵੇਖਾਉਦਾ ਹੈ ਕਿ ਕੀ ਸ਼ਾਮਿਲ ਕਰਨ ਜਾਂ ਹਟਾਉਣ ਦੀ ਕਾਰਵਾਈ ਦੇ ਦੌਰਾਨ ਸ਼ੈੱਲ ਬੰਦ ਹੋਵੇ "
-"ਜਾਵੇ।"
+msgstr "ਵੇਖਾਉਦਾ ਹੈ ਕਿ ਕੀ ਸ਼ਾਮਿਲ ਕਰਨ ਜਾਂ ਹਟਾਉਣ ਦੀ ਕਾਰਵਾਈ ਦੇ ਦੌਰਾਨ ਸ਼ੈੱਲ ਬੰਦ ਹੋਵੇ ਜਾਵੇ।"
 
 #: org.cafe.control-center.gschema.xml.in:31
 msgid "Exit shell on upgrade or uninstall action performed"
@@ -89,8 +87,7 @@ msgstr "ਅੱਪਗਰੇਡ ਜਾਂ ਅਣ-ਇੰਸਟਾਲ ਕਰਨ ਦ�
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
-msgstr ""
-"ਵੇਖਾਉਦਾ ਹੈ ਕਿ ਕੀ ਅੱਪਗਰੇਡ ਜਾਂ ਅਣ-ਇੰਸਟਾਲ ਕਾਰਵਾਈ ਦੇ ਦੌਰਾਨ ਸ਼ੈੱਲ ਬੰਦ ਹੋ ਜਾਵੇ।"
+msgstr "ਵੇਖਾਉਦਾ ਹੈ ਕਿ ਕੀ ਅੱਪਗਰੇਡ ਜਾਂ ਅਣ-ਇੰਸਟਾਲ ਕਾਰਵਾਈ ਦੇ ਦੌਰਾਨ ਸ਼ੈੱਲ ਬੰਦ ਹੋ ਜਾਵੇ।"
 
 #: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
@@ -98,11 +95,11 @@ msgstr "ਹੋਰ ਬੈਕਗਰਾਊਂਡ URL"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
-"URL, ਜਿੱਥੋ ਡੈਸਕਟਾਪ ਬੈਕਗਰਾਊਂਡ ਮਿਲ ਸਕਦੀਆਂ ਹਨ। ਜੇ ਇੱਕ ਖਾਲੀ ਲਾਈਨ ਦਿੱਤੀ ਤਾਂ ਲਿੰਕ "
-"ਮੌਜੂਦ ਨਹੀਂ ਰਹੇਗਾ।"
+"URL, ਜਿੱਥੋ ਡੈਸਕਟਾਪ ਬੈਕਗਰਾਊਂਡ ਮਿਲ ਸਕਦੀਆਂ ਹਨ। ਜੇ ਇੱਕ ਖਾਲੀ ਲਾਈਨ ਦਿੱਤੀ ਤਾਂ ਲਿੰਕ ਮੌਜੂਦ ਨਹੀਂ "
+"ਰਹੇਗਾ।"
 
 #: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
@@ -110,11 +107,10 @@ msgstr "ਹੋਰ ਥੀਮ URL"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
-"URL, ਜਿੱਥੋ ਡੈਸਕਟਾਪ ਥੀਮ ਮਿਲ ਸਕਦੇ ਹਨ। ਜੇ ਇੱਕ ਖਾਲੀ ਲਾਈਨ ਦਿੱਤੀ ਤਾਂ ਲਿੰਕ ਮੌਜੂਦ "
-"ਨਹੀਂ ਰਹੇਗਾ।"
+"URL, ਜਿੱਥੋ ਡੈਸਕਟਾਪ ਥੀਮ ਮਿਲ ਸਕਦੇ ਹਨ। ਜੇ ਇੱਕ ਖਾਲੀ ਲਾਈਨ ਦਿੱਤੀ ਤਾਂ ਲਿੰਕ ਮੌਜੂਦ ਨਹੀਂ ਰਹੇਗਾ।"
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
@@ -141,25 +137,25 @@ msgstr "ਨਾਂ"
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "ਚਿੱਤਰ ਚੁਣੋ(_S)"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "ਚਿੱਤਰ"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "ਸਭ ਫਾਇਲਾਂ"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "%s ਬਾਰੇ"
@@ -208,14 +204,7 @@ msgstr "ਫਿੰਗਰ-ਪਰਿੰਟ ਲਾਗਇਨ ਬੰਦ ਕਰੋ(_F).
 msgid "Set your personal information"
 msgstr "ਆਪਣੀ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਦਿਓ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -223,8 +212,7 @@ msgstr ""
 #: capplets/about-me/cafe-about-me-fingerprint.c:100
 msgid ""
 "You are not allowed to access the device. Contact your system administrator."
-msgstr ""
-"ਤੁਹਾਨੂੰ ਜੰਤਰ ਵਰਤਣ ਦੀ ਇਜ਼ਾਜ਼ਤ ਨਹੀਂ ਹੈ। ਆਪਣੇ ਸਿਸਟਮ ਐਡਮਿਨਸਟੇਟਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+msgstr "ਤੁਹਾਨੂੰ ਜੰਤਰ ਵਰਤਣ ਦੀ ਇਜ਼ਾਜ਼ਤ ਨਹੀਂ ਹੈ। ਆਪਣੇ ਸਿਸਟਮ ਐਡਮਿਨਸਟੇਟਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:102
 msgid "The device is already in use."
@@ -247,8 +235,8 @@ msgid ""
 "Do you want to delete your registered fingerprints so fingerprint login is "
 "disabled?"
 msgstr ""
-"ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਰਜਿਸਟਰ ਕੀਤੇ ਫਿੰਗਰਪਰਿੰਟ ਹਟਾਉਣੇ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਕਿ ਫਿੰਗਰਪਰਿੰਟ "
-"ਲਾਗਇਨ ਨੂੰ ਆਯੋਗ ਕੀਤਾ ਜਾ ਸਕੇ?"
+"ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਰਜਿਸਟਰ ਕੀਤੇ ਫਿੰਗਰਪਰਿੰਟ ਹਟਾਉਣੇ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਕਿ ਫਿੰਗਰਪਰਿੰਟ ਲਾਗਇਨ ਨੂੰ ਆਯੋਗ ਕੀਤਾ "
+"ਜਾ ਸਕੇ?"
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:359
 #: capplets/about-me/cafe-about-me-fingerprint.ui:344
@@ -285,8 +273,8 @@ msgid ""
 "To enable fingerprint login, you need to save one of your fingerprints, "
 "using the '%s' device."
 msgstr ""
-"ਫਿੰਗਰਪਰਿੰਟ ਲਾਗਇਨ ਯੋਗ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਫਿੰਗਰਪਰਿੰਟ ਸੰਭਾਲਣ ਦੀ ਲੋੜ ਹੈ, '%s' "
-"ਜੰਤਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ।"
+"ਫਿੰਗਰਪਰਿੰਟ ਲਾਗਇਨ ਯੋਗ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਫਿੰਗਰਪਰਿੰਟ ਸੰਭਾਲਣ ਦੀ ਲੋੜ ਹੈ, '%s' ਜੰਤਰ ਦੀ ਵਰਤੋਂ "
+"ਕਰਕੇ।"
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:598
 msgid "Swipe finger on reader"
@@ -349,8 +337,8 @@ msgid ""
 "Your fingerprint was successfully saved. You should now be able to log in "
 "using your fingerprint reader."
 msgstr ""
-"ਤੁਹਾਡੇ ਫਿੰਗਰਪਰਿੰਟ ਸਫ਼ਲਤਾ ਨਾਲ ਸੰਭਾਲੇ ਗਏ ਹਨ। ਹੁਣ ਤੁਸੀਂ ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ ਦੀ "
-"ਵਰਤੋਂ ਕਰਕੇ ਲਾਗਇਨ ਕਰਨ ਦੇ ਯੋਗ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+"ਤੁਹਾਡੇ ਫਿੰਗਰਪਰਿੰਟ ਸਫ਼ਲਤਾ ਨਾਲ ਸੰਭਾਲੇ ਗਏ ਹਨ। ਹੁਣ ਤੁਸੀਂ ਫਿੰਗਰਪਰਿੰਟ ਰੀਡਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਲਾਗਇਨ "
+"ਕਰਨ ਦੇ ਯੋਗ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
 
 #: capplets/about-me/cafe-about-me-password.c:160
 msgid "Child exited unexpectedly"
@@ -376,8 +364,8 @@ msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
 msgstr ""
-"ਤੁਹਾਡਾ ਪਾਸਵਰਡ ਬਦਲ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਪਰਮਾਣਿਤ ਹੋ ਚੁੱਕੇ ਹੋ! "
-"ਮੁੜ-ਪਰਮਾਣਿਤ ਹੋਵੋ ਜੀ।"
+"ਤੁਹਾਡਾ ਪਾਸਵਰਡ ਬਦਲ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਕਿਉਂਕਿ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਪਰਮਾਣਿਤ ਹੋ ਚੁੱਕੇ ਹੋ! ਮੁੜ-ਪਰਮਾਣਿਤ "
+"ਹੋਵੋ ਜੀ।"
 
 #: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
@@ -465,11 +453,15 @@ msgstr "ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲੋ"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲਣ ਲਈ, ਹੇਠ ਦਿੱਤੇ ਖੇਤਰ ਵਿੱਚ ਆਪਣਾ ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦਿਓ ਅਤੇ <b>ਪਰਮਾਣਿਤ</b> ਨੂੰ ਦਬਾਓ।\n"
-"ਤੁਹਾਡੇ ਪਰਮਾਣਿਤ ਹੋਣ ਦੇ ਬਾਅਦ, ਆਪਣਾ ਨਵਾਂ ਪਾਸਵਰਡ ਦਿਓ, ਪੁਸ਼ਟੀ ਲਈ ਮੁੜ-ਦਬਾਓ ਅਤੇ <b>ਪਾਸਵਰਡ ਬਦਲੋ</b> ਦਬਾਓ।"
+"ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲਣ ਲਈ, ਹੇਠ ਦਿੱਤੇ ਖੇਤਰ ਵਿੱਚ ਆਪਣਾ ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਦਿਓ ਅਤੇ <b>ਪਰਮਾਣਿਤ</b> ਨੂੰ "
+"ਦਬਾਓ।\n"
+"ਤੁਹਾਡੇ ਪਰਮਾਣਿਤ ਹੋਣ ਦੇ ਬਾਅਦ, ਆਪਣਾ ਨਵਾਂ ਪਾਸਵਰਡ ਦਿਓ, ਪੁਸ਼ਟੀ ਲਈ ਮੁੜ-ਦਬਾਓ ਅਤੇ <b>ਪਾਸਵਰਡ "
+"ਬਦਲੋ</b> ਦਬਾਓ।"
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -523,9 +515,7 @@ msgstr "ਸਹਾਇਕ ਤਕਨਾਲੋਜੀ ਯੋਗ(_E)"
 msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
-msgstr ""
-"ਸਹਾਇਕ ਤਕਨਾਲੋਜੀ ਯੋਗ ਕਰਨ ਲਈ ਬਦਲਾਅ ਤੁਹਾਡੇ ਅਗਲੀ ਵਾਰ ਲਾਗਇਨ ਕਰਨ ਤੱਕ ਲਾਗੂ ਨਹੀਂ "
-"ਹੋਣਗੇ।"
+msgstr "ਸਹਾਇਕ ਤਕਨਾਲੋਜੀ ਯੋਗ ਕਰਨ ਲਈ ਬਦਲਾਅ ਤੁਹਾਡੇ ਅਗਲੀ ਵਾਰ ਲਾਗਇਨ ਕਰਨ ਤੱਕ ਲਾਗੂ ਨਹੀਂ ਹੋਣਗੇ।"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -560,14 +550,7 @@ msgstr "ਸੁਲੱਭਤਾ ਲਾਗਇਨ ਡਾਈਲਾਗ ਉੱਤੇ �
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "ਜਦੋਂ ਤੁਸੀਂ ਲਾਗ ਕਰੋ ਤਾਂ ਅਸੈੱਸਬਿਲਟੀ ਫੀਚਰ ਯੋਗ ਕਰਨਾ ਚੁਣੋ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -612,8 +595,7 @@ msgid "filename"
 msgstr "ਫਾਇਲਨਾਂ"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "ਵੇਖਣ ਲਈ ਸਫ਼ੇ ਦਾ ਨਾਂ ਦਿਓ (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -655,16 +637,14 @@ msgid ""
 "The current theme suggests a background and a font. Also, the last applied "
 "font suggestion can be reverted."
 msgstr ""
-"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਬੈਕਗਰਾਊਂਡ ਅਤੇ ਫੋਂਟ ਲਈ ਸੁਝਾਅ ਦਿਓ। ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ "
-"ਵਾਪਸ ਬਦਲੇ ਜਾਣਗੇ।"
+"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਬੈਕਗਰਾਊਂਡ ਅਤੇ ਫੋਂਟ ਲਈ ਸੁਝਾਅ ਦਿਓ। ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਵਾਪਸ ਬਦਲੇ ਜਾਣਗੇ।"
 
 #: capplets/appearance/appearance-themes.c:689
 msgid ""
 "The current theme suggests a background. Also, the last applied font "
 "suggestion can be reverted."
 msgstr ""
-"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਬੈਕਗਰਾਊਂਡ ਸੁਝਾਅ ਦਿੰਦੇ ਹਨ। ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਵਾਪਸ ਲੈਣ"
-" ਦਾ ਸੁਝਾਅ ਹੈ।"
+"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਬੈਕਗਰਾਊਂਡ ਸੁਝਾਅ ਦਿੰਦੇ ਹਨ। ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਵਾਪਸ ਲੈਣ ਦਾ ਸੁਝਾਅ ਹੈ।"
 
 #: capplets/appearance/appearance-themes.c:691
 msgid "The current theme suggests a background and a font."
@@ -675,8 +655,8 @@ msgid ""
 "The current theme suggests a font. Also, the last applied font suggestion "
 "can be reverted."
 msgstr ""
-"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਫੋਂਟ ਲਈ ਮੰਗ ਕਰਦਾ ਹੈ। ਇਸ ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਸੁਝਾਅ ਵੀ "
-"ਰੀਵਰਟ ਕੀਤੇ ਜਾਣਗੇ।"
+"ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਫੋਂਟ ਲਈ ਮੰਗ ਕਰਦਾ ਹੈ। ਇਸ ਨਾਲ ਹੀ ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਸੁਝਾਅ ਵੀ ਰੀਵਰਟ ਕੀਤੇ "
+"ਜਾਣਗੇ।"
 
 #: capplets/appearance/appearance-themes.c:695
 msgid "The current theme suggests a background."
@@ -690,7 +670,7 @@ msgstr "ਆਖਰੀ ਲਾਗੂ ਕੀਤੇ ਫੋਂਟ ਸੁਝਾਅ ਵ�
 msgid "The current theme suggests a font."
 msgstr "ਮੌਜੂਦਾ ਥੀਮ ਇੱਕ ਫੋਂਟ ਦਿੰਦਾ ਹੈ।"
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "ਕਸਟਮ"
 
@@ -1067,17 +1047,7 @@ msgstr "ਦਿਁਖ"
 msgid "Customize the look of the desktop"
 msgstr "ਡੈਸਕਟਾਪ ਲਈ ਪਸੰਦੀਦਾ ਦਿੱਖ"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1090,8 +1060,7 @@ msgstr "ਥੀਮ ਇੰਸਟਾਲਰ"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "ਡੈਸਕਟਾਪ ਦੇ ਵੱਖ-ਵੱਖ ਹਿੱਸਿਆਂ ਲਈ ਥੀਮ ਪੈਕੇਜ ਇੰਸਟਾਲ ਕਰਦਾ ਹੈ"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1183,8 +1152,8 @@ msgid ""
 "\"%s\" does not appear to be a valid theme. It may be a theme engine which "
 "you need to compile."
 msgstr ""
-"\"%s\" ਇੱਕ ਠੀਕ ਥੀਮ ਨਹੀਂ ਜਾਪਦਾ ਹੈ। ਇਹ ਇੱਕ ਥੀਮ ਇੰਜਣ ਹੋ ਸਕਦਾ ਹੈ, ਜਿਸ ਨੂੰ "
-"ਤੁਹਾਨੂੰ ਕੰਪਾਇਲ ਕਰਨਾ ਪਵੇਗਾ।"
+"\"%s\" ਇੱਕ ਠੀਕ ਥੀਮ ਨਹੀਂ ਜਾਪਦਾ ਹੈ। ਇਹ ਇੱਕ ਥੀਮ ਇੰਜਣ ਹੋ ਸਕਦਾ ਹੈ, ਜਿਸ ਨੂੰ ਤੁਹਾਨੂੰ ਕੰਪਾਇਲ ਕਰਨਾ "
+"ਪਵੇਗਾ।"
 
 #: capplets/appearance/theme-installer.c:375
 #, c-format
@@ -1216,8 +1185,7 @@ msgstr "ਥੀਮ \"%s\" ਇੰਸਟਾਲ ਹੋ ਗਿਆ ਹੈ।"
 
 #: capplets/appearance/theme-installer.c:476
 msgid "Would you like to apply it now, or keep your current theme?"
-msgstr ""
-"ਕੀ ਤੁਸੀਂ ਹੁਣੇ ਲਾਗੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਆਪਣਾ ਮੌਜੂਦ ਥੀਮ ਹੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+msgstr "ਕੀ ਤੁਸੀਂ ਹੁਣੇ ਲਾਗੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਆਪਣਾ ਮੌਜੂਦ ਥੀਮ ਹੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: capplets/appearance/theme-installer.c:479
 msgid "Keep Current Theme"
@@ -1285,10 +1253,15 @@ msgstr "ਥੀਮ ਇੰਜਣ ਇੰਸਟਾਲ ਨਹੀਂ ਕੀਤਾ ਜ�
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "ਸੈਟਿੰਗ ਮੈਨੇਜਰ 'cafe-settings-daemon' ਨੂੰ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਹੈ।\n"
-"ਗਨੋਮ ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਬਿਨਾਂ ਚਲਾਏ, ਕੁਝ ਪਸੰਦ ਕੰਮ ਨਹੀਂ ਕਰਨਗੀਆਂ। ਇਹ ਡੀਬੱਸ ਨਾਲ ਸੰਬੰਧ ਮੁਸ਼ਕਿਲ ਦਿਖਾਰਿਹਾ ਹੈ ਜਾਂ ਨਾ-ਗਨੋਮ (ਜਿਵੇਂ ਕਿ ਕੇਡੀਈ (KDE)) ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਦਾ ਮੈਨੇਜਰ ਪਹਿਲਾਂ ਹੀ ਸਰਗਰਮ ਹੈ ਅਤੇ ਗਨੋਮ ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਨਾਲ ਅਪਵਾਦ ਕਰ ਰਿਹਾ ਹੈ।"
+"ਗਨੋਮ ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਬਿਨਾਂ ਚਲਾਏ, ਕੁਝ ਪਸੰਦ ਕੰਮ ਨਹੀਂ ਕਰਨਗੀਆਂ। ਇਹ ਡੀਬੱਸ ਨਾਲ ਸੰਬੰਧ ਮੁਸ਼ਕਿਲ "
+"ਦਿਖਾਰਿਹਾ ਹੈ ਜਾਂ ਨਾ-ਗਨੋਮ (ਜਿਵੇਂ ਕਿ ਕੇਡੀਈ (KDE)) ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਦਾ ਮੈਨੇਜਰ ਪਹਿਲਾਂ ਹੀ ਸਰਗਰਮ ਹੈ "
+"ਅਤੇ ਗਨੋਮ ਸੈਟਿੰਗ ਮੈਨੇਜਰ ਨਾਲ ਅਪਵਾਦ ਕਰ ਰਿਹਾ ਹੈ।"
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1371,32 +1344,32 @@ msgstr "ਛੱਡੋ(_S)"
 msgid "Overwrite _All"
 msgstr "ਸਭ ਉੱਤੇ ਲਿਖੋ(_A)"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
-"ਇਹ ਥੀਮ ਜਿਸ ਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੋਵੇਗਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਲੋੜੀਦਾ CTK+ "
-"ਥੀਮ '%s' ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ।"
+"ਇਹ ਥੀਮ ਜਿਸ ਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੋਵੇਗਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਲੋੜੀਦਾ CTK+ ਥੀਮ '%s' "
+"ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ।"
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
 "theme '%s' is not installed."
 msgstr ""
-"ਇਹ ਥੀਮ ਜਿਸ ਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੋਵੇਗਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਵਿੰਡੋ ਮੈਨੇਜਰ"
-" ਥੀਮ '%s' ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ।"
+"ਇਹ ਥੀਮ ਜਿਸ ਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੋਵੇਗਾ ਨਹੀਂ, ਕਿਉਂਕਿ ਵਿੰਡੋ ਮੈਨੇਜਰ ਥੀਮ '%s' "
+"ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ।"
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
-"ਇਹ ਥੀਮ ਜਿਸਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੈ ਨਹੀਂ, ਕਿਉਂਕਿ ਲੋੜੀਦਾ ਆਈਕਾਨ ਥੀਮ "
-"'%s' ਇੰਸਟਾਲ ਨਹੀਂ ਹੋਵੇਗਾ।"
+"ਇਹ ਥੀਮ ਜਿਸਤਰ੍ਹਾਂ ਦਾ ਵੇਖਾਈ ਦਿੰਦਾ ਹੈ, ਉਂਝ ਦਾ ਹੈ ਨਹੀਂ, ਕਿਉਂਕਿ ਲੋੜੀਦਾ ਆਈਕਾਨ ਥੀਮ '%s' ਇੰਸਟਾਲ "
+"ਨਹੀਂ ਹੋਵੇਗਾ।"
 
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
 #: capplets/default-applications/cafe-default-applications-properties.ui:13
@@ -1407,14 +1380,7 @@ msgstr "ਪਸੰਦੀਦਾ ਕਾਰਜ"
 msgid "Select your default applications"
 msgstr "ਆਪਣੇ ਡਿਫਾਲਟ ਐਪਲੀਕੇਸ਼ਨ ਚੁਣੋ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1524,19 +1490,17 @@ msgstr "ਮੋਬਾਇਲਟੀ"
 msgid "Accessibility"
 msgstr "ਸੁਲੱਭਤਾ"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "ਆਮ"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "ਖੱਬਾ"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "ਸੱਜਾ"
@@ -1555,8 +1519,8 @@ msgstr ""
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 
 #: capplets/display/display-capplet.ui:90
@@ -1624,14 +1588,7 @@ msgstr ""
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1646,7 +1603,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1658,7 +1616,8 @@ msgstr ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1698,15 +1657,13 @@ msgstr "ਇਹ ਪਰੋਗਰਾਮ pkexec(1) ਰਾਹੀਂ ਹੀ ਚਲਾ�
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID ਪੂਰਨ ਅੰਕ ਸੈੱਟ ਕੀਤਾ ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "%s ਤੁਹਾਡੀ ਮਲਕੀਅਤ (ਓਨਰ) ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1717,8 +1674,7 @@ msgstr "%s ਕੋਈ ਡਾਇਰੈਕਟਰੀ ਭਾਗ ਨਹੀਂ ਹੋ�
 msgid "%s must be a directory\n"
 msgstr "%s ਡਾਇਰੈਕਟਰੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1751,8 +1707,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "ਦਰਪਨ ਸਕਰੀਨਾਂ"
 
@@ -1864,7 +1820,7 @@ msgstr "ਅਗਲਾ ਟਰੈਕ"
 msgid "Eject"
 msgstr "ਬਾਹਰ ਕੱਢੋ"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "ਡੈਸਕਟਾਪ"
 
@@ -1905,7 +1861,7 @@ msgid "Home folder"
 msgstr "ਘਰ ਫੋਲਡਰ"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "ਖੋਜ"
 
@@ -1962,10 +1918,12 @@ msgstr "ਨਵਾਂ ਸ਼ਾਰਟਕੱਟ ਸੰਭਾਲਣ ਦੌਰਾਨ
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"ਸ਼ਾਰਟਕੱਟ \"%s\" ਨੂੰ ਵਰਤਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ, ਕਿਉਂਕਿ ਇਹ ਸਵਿੱਚ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਲਿਖਣਾ ਮੁਸ਼ਕਿਲ ਹੋ ਜਾਵੇਗਾ।\n"
+"ਸ਼ਾਰਟਕੱਟ \"%s\" ਨੂੰ ਵਰਤਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ, ਕਿਉਂਕਿ ਇਹ ਸਵਿੱਚ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਲਿਖਣਾ ਮੁਸ਼ਕਿਲ ਹੋ "
+"ਜਾਵੇਗਾ।\n"
 "ਇੱਕ ਅਜੇਹੀ ਸਵਿੱਚ ਨਾਲ ਕੋਸ਼ਿਸ਼ ਕਰੋ, ਜਿਸ ਵਿੱਚ ਇੱਕ ਸਮੇਂ Control, Alt ਜਾਂ Shift ਇੱਕਠੇ ਹੋਣ।"
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -1979,7 +1937,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "ਜੇ ਤੁਸੀਂ ਸ਼ਾਰਟਕੱਟ \"%s\" ਲਈ ਦਿੱਤਾ ਤਾਂ \"%s\" ਸ਼ਾਰਟਕੱਟ ਆਯੋਗ ਹੋ ਜਾਵੇਗਾ।"
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -2017,22 +1976,15 @@ msgstr "ਕੀ-ਬੋਰਡ ਸ਼ਾਰਟਕੱਟ"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "ਕਮਾਡਾਂ ਨੂੰ ਸ਼ਾਰਟਕੱਟ ਮੁਹੱਈਆ ਕਰੋ:"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2333,11 +2285,9 @@ msgstr "ਟਾਈਪ ਬਰੇਕ ਲਾਗੂ ਕਰਨ ਲਈ ਸਕਰੀਨ 
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
-msgstr ""
-"ਕੀ-ਬੋਰਡ ਦੀਆਂ ਸਵਿੱਚਾਂ ਦੇ ਮੁੜ ਦੱਬਣ ਨਾਲ ਹੋਣ ਵਾਲੇ ਨੁਕਸਾਨ ਤੋਂ ਬਚਣ ਲਈ ਸਕਰੀਨ ਲਾਕ "
-"ਕਰੋ"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
+msgstr "ਕੀ-ਬੋਰਡ ਦੀਆਂ ਸਵਿੱਚਾਂ ਦੇ ਮੁੜ ਦੱਬਣ ਨਾਲ ਹੋਣ ਵਾਲੇ ਨੁਕਸਾਨ ਤੋਂ ਬਚਣ ਲਈ ਸਕਰੀਨ ਲਾਕ ਕਰੋ"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
@@ -2450,14 +2400,7 @@ msgstr "ਕੀ-ਬੋਰਡ"
 msgid "Set your keyboard preferences"
 msgstr "ਆਪਣੀ ਕੀ-ਬੋਰਡ ਪਸੰਦ ਦਿਓ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2562,8 +2505,8 @@ msgstr "ਟਾਇਮ-ਆਉਟ(_T):"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2627,14 +2570,7 @@ msgstr "ਟੱਚਪੈਡ"
 msgid "Set your mouse preferences"
 msgstr "ਆਪਣੇ ਮਾਊਸ ਦੀ ਪਸੰਦ ਦਿਓ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2647,14 +2583,7 @@ msgstr "ਨੈੱਟਵਰਕ ਪਰਾਕਸੀ"
 msgid "Set your network proxy preferences"
 msgstr "ਆਪਣੀ ਨੈੱਟਵਰਕ ਪਰਾਕਸੀ ਪਸੰਦ ਦਿਓ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2776,14 +2705,7 @@ msgstr "ਝਰੋਖੇ"
 msgid "Set your window properties"
 msgstr "ਆਪਣੀ ਵਿੰਡੋ ਵਿਸ਼ੇਸ਼ਤਾ ਦਿਓ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -2868,8 +2790,7 @@ msgstr "ਟਾਈਟਲਬਾਰ ਐਕਸ਼ਨ"
 
 #: capplets/windows/window-properties.ui:535
 msgid "To move a window, press-and-hold this key then grab the window:"
-msgstr ""
-"ਵਿੰਡੋ ਨੂੰ ਏਧਰ-ਓਧਰ ਕਰਨ ਲਈ, ਇਹ ਸਵਿੱਚ ਦਬਾਉ ਅਤੇ ਦਬਾਈ ਰੱਖੋ, ਤਦ ਵਿੰਡੋ ਨੂੰ ਫੜ ਲਵੋ:"
+msgstr "ਵਿੰਡੋ ਨੂੰ ਏਧਰ-ਓਧਰ ਕਰਨ ਲਈ, ਇਹ ਸਵਿੱਚ ਦਬਾਉ ਅਤੇ ਦਬਾਈ ਰੱਖੋ, ਤਦ ਵਿੰਡੋ ਨੂੰ ਫੜ ਲਵੋ:"
 
 #: capplets/windows/window-properties.ui:568
 msgid "Movement Key"
@@ -2986,7 +2907,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4726,14 +4647,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4777,22 +4691,9 @@ msgstr "ਗਨੋਮ ਸੰਰਚਨਾ ਟੂਲ"
 msgid "Configure CAFE settings"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4881,9 +4782,9 @@ msgid ""
 "right-clicking on your panel and choosing 'Add to panel', selecting "
 "'Notification area' and clicking 'Add'."
 msgstr ""
-"ਟਾਇਪਇੰਗ ਨਿਗਰਾਨ ਸੂਚਨਾ-ਖੇਤਰ ਵਿੱਚ ਜਾਣਕਾਰੀ ਵੇਖਾਉਣ ਦੇ ਕੰਮ ਆਉਦਾ ਹੈ। ਤੁਹਾਡੇ ਪੈਨਲ "
-"ਵਿੱਚ ਸੂਚਨਾ-ਖੇਤਰ ਹੈ ਹੀ ਨਹੀਂ। ਤੁਸੀ ਇਸ ਨੂੰ ਪੈਨਲ ਤੇ ਸੱਜਾ ਬਟਨ ਦਬਾਕੇ ਅਤੇ 'ਪੈਨਲ "
-"ਵਿੱਚ ਸ਼ਾਮਿਲ', 'ਸੂਚਨਾ-ਖੇਤਰ' ਚੁਣਨ ਨਾਲ ਇਸ ਨੂੰ ਲਿਆ ਸਕਦੇ ਹੋ।"
+"ਟਾਇਪਇੰਗ ਨਿਗਰਾਨ ਸੂਚਨਾ-ਖੇਤਰ ਵਿੱਚ ਜਾਣਕਾਰੀ ਵੇਖਾਉਣ ਦੇ ਕੰਮ ਆਉਦਾ ਹੈ। ਤੁਹਾਡੇ ਪੈਨਲ ਵਿੱਚ ਸੂਚਨਾ-ਖੇਤਰ "
+"ਹੈ ਹੀ ਨਹੀਂ। ਤੁਸੀ ਇਸ ਨੂੰ ਪੈਨਲ ਤੇ ਸੱਜਾ ਬਟਨ ਦਬਾਕੇ ਅਤੇ 'ਪੈਨਲ ਵਿੱਚ ਸ਼ਾਮਿਲ', 'ਸੂਚਨਾ-ਖੇਤਰ' ਚੁਣਨ ਨਾਲ "
+"ਇਸ ਨੂੰ ਲਿਆ ਸਕਦੇ ਹੋ।"
 
 #: font-viewer/font-view.c:205
 msgid "Style"
@@ -4941,14 +4842,7 @@ msgstr ""
 msgid "CAFE Font Viewer"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5015,27 +4909,27 @@ msgstr "ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮਾਂ 'ਚੋਂ ਹਟ�
 msgid "Add to Startup Programs"
 msgstr "ਸਟਾਰਟਅੱਪ ਪਰੋਗਰਾਮਾਂ 'ਚ ਸ਼ਾਮਲ"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "ਨਵੀਂ ਸਪਰੈੱਡਸ਼ੀਟ"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "ਨਵਾਂ ਡੌਕੂਮੈਂਟ"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "ਘਰ"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "ਡੌਕੂਮੈਂਟ"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "ਫਾਇਲ ਸਿਸਟਮ"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "ਨੈੱਟਵਰਕ ਸਰਵਰ"

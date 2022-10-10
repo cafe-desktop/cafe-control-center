@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Mattias Põldaru <mahfiaz@gmail.com>, 2020
 # Rivo Zängov <eraser@eraser.ee>, 2020
@@ -10,19 +10,19 @@
 # Ivar Smolin <okul@linux.ee>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Martin Wimpress <code@flexion.org>, 2020\n"
 "Language-Team: Estonian (https://www.transifex.com/cafe/teams/13566/et/)\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -64,8 +64,7 @@ msgstr "Kestprogrammist väljumine käivitamistoimingu korral"
 #: org.cafe.control-center.gschema.xml.in:17
 msgid "Indicates whether to close the shell when a start action is performed."
 msgstr ""
-"Määrab, kas pärast abitegevuse käivitamist kestprogramm sulgetakse või "
-"mitte."
+"Määrab, kas pärast abitegevuse käivitamist kestprogramm sulgetakse või mitte."
 
 #: org.cafe.control-center.gschema.xml.in:21
 msgid "Exit shell on help action performed"
@@ -108,11 +107,10 @@ msgstr "Lisataustade URL"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
-"Töölaua lisataustapiltide hankimise URL. Tühjaksjäetuna seda viita ei "
-"kuvata."
+"Töölaua lisataustapiltide hankimise URL. Tühjaksjäetuna seda viita ei kuvata."
 
 #: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
@@ -120,8 +118,8 @@ msgstr "Lisateemade URL"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
 "Töölaua lisateemade hankimise URL. Tühjaksjäetuna seda viita ei kuvata."
 
@@ -150,25 +148,25 @@ msgstr "Nimi"
 msgid "Description associated with a custom keybinding."
 msgstr "Kohandatud klahviseosele määratud nimi."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Pildi valimine"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Pilt puudub"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Pildid"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Kõik failid"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "Lähem teave \"%s\" kohta"
@@ -217,14 +215,7 @@ msgstr "_Sõrmejäljega sisselogimise keelamine..."
 msgid "Set your personal information"
 msgstr "Isiklike andmete määramine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -474,11 +465,15 @@ msgstr "Sinu parooli muutmine"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"Parooli muutmiseks sisesta oma praegune parool allpool olevale väljale ja klõpsa nuppu <b>Autendi</b>.\n"
-"Pärast autentimist sisesta oma uus parool, kontrolliks sisesta oma uus parool veel teinegi kord ja klõpsa <b>Muuda parooli</b>."
+"Parooli muutmiseks sisesta oma praegune parool allpool olevale väljale ja "
+"klõpsa nuppu <b>Autendi</b>.\n"
+"Pärast autentimist sisesta oma uus parool, kontrolliks sisesta oma uus "
+"parool veel teinegi kord ja klõpsa <b>Muuda parooli</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -532,8 +527,7 @@ msgstr "_Abistav tehnika on lubatud"
 msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
-msgstr ""
-"Abistavate tehnikate lubamine rakendub alles järgmisel sisselogimisel."
+msgstr "Abistavate tehnikate lubamine rakendub alles järgmisel sisselogimisel."
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -568,14 +562,7 @@ msgstr "Abistava tehnika toega sisselogimise dialoogi avamine"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "Sisselogimisel kasutatavate hõlbustuste valimine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -620,8 +607,7 @@ msgid "filename"
 msgstr "failinimi"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "Määra näidatava lehe nimi (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -698,7 +684,7 @@ msgstr "Viimati rakendatud fondisoovituse saab tagasi pöörata."
 msgid "The current theme suggests a font."
 msgstr "Käesolev teema vihjab kirjatüübile."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Kohandatud"
 
@@ -1075,17 +1061,7 @@ msgstr "Välimus"
 msgid "Customize the look of the desktop"
 msgstr "Töölaua välimuse kohandamine"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1098,8 +1074,7 @@ msgstr "Teemapaigaldaja"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Töölaua välimuse muutmise teemapakkide paigaldamine"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1300,10 +1275,16 @@ msgstr "Teemamootorit pole võimalik paigaldada"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "Sätete haldurit 'cafe-settings-daemon' pole võimalik käivitada.\n"
-"Kui CAFE sätete haldur ei tööta, siis võivad mõned eelistused mitte jõustuda. See võib olla DBus-ist põhjustatud probleem või olukord, kus mõni mitte-CAFE (näiteks KDE oma) sätete haldur on juba aktiivne ning on vastuolus CAFE sätete halduriga."
+"Kui CAFE sätete haldur ei tööta, siis võivad mõned eelistused mitte "
+"jõustuda. See võib olla DBus-ist põhjustatud probleem või olukord, kus mõni "
+"mitte-CAFE (näiteks KDE oma) sätete haldur on juba aktiivne ning on "
+"vastuolus CAFE sätete halduriga."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1386,16 +1367,16 @@ msgstr "_Jäta vahele"
 msgid "Overwrite _All"
 msgstr "_Kirjuta kõik üle"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
-"See teema ei näe välja selline nagu peaks, kuna vajalik CTK+ teema '%s' pole"
-" paigaldatud."
+"See teema ei näe välja selline nagu peaks, kuna vajalik CTK+ teema '%s' pole "
+"paigaldatud."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1404,11 +1385,11 @@ msgstr ""
 "See teema ei näe välja selline nagu peaks, kuna vajalik aknahalduri teema "
 "'%s' pole paigaldatud."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "See teema ei näe välja selline nagu peaks, kuna vajalik ikooniteema '%s' "
 "pole paigaldatud."
@@ -1422,14 +1403,7 @@ msgstr "Eelistatud rakendused"
 msgid "Select your default applications"
 msgstr "Vaikimisi kasutatavate rakenduste valimine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1539,19 +1513,17 @@ msgstr "Mobiilsed"
 msgid "Accessibility"
 msgstr "Hõlbustused"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Tavaline"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Vasak"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Parem"
@@ -1570,12 +1542,11 @@ msgstr "Rakenda kogu süsteemile"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "Käesolevate sätete rakendamine teistele selle arvuti kasutajatele. Need "
-"sätted ei rakendu aga sisselogimisekraanile ja teistele "
-"töölauakeskkondadele."
+"sätted ei rakendu aga sisselogimisekraanile ja teistele töölauakeskkondadele."
 
 #: capplets/display/display-capplet.ui:90
 msgid "_Apply"
@@ -1642,14 +1613,7 @@ msgstr "Kuvad"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Kuvarite ja projektorite eraldusvõime ning asukoha muutmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1664,7 +1628,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1676,7 +1641,8 @@ msgstr ""
 "süsteemsesse asukohta. Seda profiili kasutatakse olukorras, kus CAFE\n"
 "sätetedeemon (cafe-settings-daemon) käivitab RANDR-plugina.\n"
 "\n"
-"LÄHTEFAIL - täielik rada, harilikult /home/kasutajanimi/.config/monitors.xml\n"
+"LÄHTEFAIL - täielik rada, harilikult /home/kasutajanimi/.config/monitors."
+"xml\n"
 "\n"
 "SIHTNIMI - paigaldatud faili suhteline nimi. See fail pannakse\n"
 "           RANDR-sätete ülesüsteemilisse kataloogi, harilikult\n"
@@ -1716,15 +1682,13 @@ msgstr "See programm peab olema käivitatud pkexec(1) kaudu"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID väärtus peab olema täisarv"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "Fail %s peab kuuluma sulle\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1735,8 +1699,7 @@ msgstr "%s ei tohi sisaldada viiteid kataloogidele\n"
 msgid "%s must be a directory\n"
 msgstr "%s peab olema kataloog\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1771,8 +1734,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Ekraanid on peegeldatud"
 
@@ -1886,7 +1849,7 @@ msgstr "Järgmisele loole hüppamine"
 msgid "Eject"
 msgstr "Sahtli lahtilükkamine"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Töölaud"
 
@@ -1927,7 +1890,7 @@ msgid "Home folder"
 msgstr "Kodukataloog"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Otsing"
 
@@ -1984,10 +1947,12 @@ msgstr "Viga uue kiirklahvi salvestamisel"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"Kiirklahvi \"%s\" pole võimalik kasutada, kuna see teeb selle klahvi kasutamise tavaolukorras võimatuks.\n"
+"Kiirklahvi \"%s\" pole võimalik kasutada, kuna see teeb selle klahvi "
+"kasutamise tavaolukorras võimatuks.\n"
 "Palun proovi klahvi kombineerida klahvidega Control, Alt või Shift."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -2001,7 +1966,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 "Kui sa määrad selle kiirklahvi tegevusele \"%s\", siis tegevuse \"%s\" "
 "kiirklahv keelatakse."
@@ -2041,22 +2007,15 @@ msgstr "Kiirklahvid"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "Käskudele kiirklahvide seadmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2066,8 +2025,8 @@ msgstr ""
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
-"Sätete rakendamine ja programmi töö lõpetamine (ühilduvuse eesmärkidel, seda"
-" hallatakse nüüd deemoni poolt)"
+"Sätete rakendamine ja programmi töö lõpetamine (ühilduvuse eesmärkidel, seda "
+"hallatakse nüüd deemoni poolt)"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
@@ -2359,8 +2318,8 @@ msgstr "Tippimise vaheaja pealesundimiseks _lukustatakse ekraan"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
 "Ekraani lukustamine kindlate ajavahemike järel hoiab ära liigsest "
 "arvutikasutamisest tulenevaid tervisekahjustusi"
@@ -2476,14 +2435,7 @@ msgstr "Klaviatuur"
 msgid "Set your keyboard preferences"
 msgstr "Klaviatuurieelistuste seadmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2588,8 +2540,8 @@ msgstr "A_japiirang:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2653,14 +2605,7 @@ msgstr "Puutepadi"
 msgid "Set your mouse preferences"
 msgstr "Hiire-eelistuste seadmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2673,14 +2618,7 @@ msgstr "Võrgu proksi"
 msgid "Set your network proxy preferences"
 msgstr "Võrguproksi eelistuste seadmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2802,14 +2740,7 @@ msgstr "Aknad"
 msgid "Set your window properties"
 msgstr "Akende omaduste seadmine"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -3012,7 +2943,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4752,14 +4683,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4767,7 +4691,8 @@ msgstr ""
 #: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
-msgstr "Aknahalduri \"%s\" jaoks pole sätete määramise vahendit registreeritud\n"
+msgstr ""
+"Aknahalduri \"%s\" jaoks pole sätete määramise vahendit registreeritud\n"
 
 #: shell/control-center.c:58
 #, c-format
@@ -4803,22 +4728,9 @@ msgstr "CAFE seadistusprogramm"
 msgid "Configure CAFE settings"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4970,14 +4882,7 @@ msgstr ""
 msgid "CAFE Font Viewer"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5044,27 +4949,27 @@ msgstr "Eemalda käivitusprogrammide hulgast"
 msgid "Add to Startup Programs"
 msgstr "Lisa rakendus käivitusprogrammide hulka"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Uus arvutustabel"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Uus dokument"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Kodu"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Dokumendid"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Failisüsteem"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Võrguserverid"

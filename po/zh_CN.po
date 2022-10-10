@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # 775405984, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
@@ -23,19 +23,20 @@
 # zhineng404 <zhinengge@gmail.com>, 2020
 # liulitchi <xingzuo88@qq.com>, 2020
 # 玉堂白鹤 <yjwork@qq.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/cafe/teams/13566/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/cafe/teams/13566/"
+"zh_CN/)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -43,8 +44,8 @@ msgid ""
 "[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
 "Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
-"[ '更改主题;cafe-appearance-properties.desktop', '设置首选应用程序;cafe-default-"
-"applications-properties.desktop' ]"
+"[ '更改主题;cafe-appearance-properties.desktop', '设置首选应用程序;cafe-"
+"default-applications-properties.desktop' ]"
 
 #: org.cafe.control-center.gschema.xml.in:6
 msgid "Task names and associated .desktop files"
@@ -55,7 +56,9 @@ msgid ""
 "The task name to be displayed in the control-center followed by a \";\" "
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
-msgstr "在控制中心中显示的任务名称，紧跟着是一个“;”分隔符，然后是该任务启动的相应的 .desktop 文件的文件名。"
+msgstr ""
+"在控制中心中显示的任务名称，紧跟着是一个“;”分隔符，然后是该任务启动的相应的 ."
+"desktop 文件的文件名。"
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -108,8 +111,8 @@ msgstr "更多的背景网址"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr "获得更多桌面背景的网址。如果设定为空字符串，那么链接将不会出现。"
 
 #: org.cafe.control-center.gschema.xml.in:43
@@ -118,8 +121,8 @@ msgstr "更多的主题网址"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr "获得更多桌面主题的网址。如果设定为空字符串，那么链接将不会出现。"
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
@@ -147,25 +150,25 @@ msgstr "名称"
 msgid "Description associated with a custom keybinding."
 msgstr "关于自定义键绑定的描述。"
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "选择图像"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "无图像"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "图像"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "全部文件"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "关于 %s"
@@ -214,14 +217,7 @@ msgstr "禁用指纹登录(_F)..."
 msgid "Set your personal information"
 msgstr "设置您的个人信息"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr "user-info"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr "cafe 控制中心;CAFE;个人;信息;"
@@ -462,11 +458,14 @@ msgstr "更改您的密码"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
 "要更改您的密码，请在下面的框中输入您目前的密码，然后单击<b>身份验证</b>。\n"
-"在您通过身份验证之后，输入您的新密码，重新输入一次以便进行校验，然后单击<b>更改密码</b>。"
+"在您通过身份验证之后，输入您的新密码，重新输入一次以便进行校验，然后单击<b>更"
+"改密码</b>。"
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -555,14 +554,7 @@ msgstr "跳转到辅助登录对话框"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "选择您登录时想要启用的辅助特性"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr "cafe 控制中心;CAFE;可访问性;功能;"
@@ -607,8 +599,7 @@ msgid "filename"
 msgstr "文件名"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "指定要显示的页面名称 (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -679,7 +670,7 @@ msgstr "上次应用的推荐字体可被恢复。"
 msgid "The current theme suggests a font."
 msgstr "当前主题推荐了一种字体。"
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "自定义"
 
@@ -1056,17 +1047,7 @@ msgstr "外观"
 msgid "Customize the look of the desktop"
 msgstr "自定义桌面外观"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr "preferences-desktop-theme"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr "cafe控制中心;CAFE;外观;属性;桌面;自定义;look;"
@@ -1079,8 +1060,7 @@ msgstr "主题安装程序"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "为桌面的各部分安装主题包"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr "cafe 控制中心;CAFE;安装;桌面;主题;"
@@ -1278,10 +1258,15 @@ msgstr "无法安装主题引擎"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "无法启动设置管理器“cafe-settings-daemon”。\n"
-"如果不运行 CAFE 设置管理器，某些首选项不会生效。这可能表明 DBus 出现问题，或者某个非 CAFE (如 KDE) 设置管理器可能已经处于活动状态，并与 CAFE 设置管理器发生冲突。"
+"如果不运行 CAFE 设置管理器，某些首选项不会生效。这可能表明 DBus 出现问题，或"
+"者某个非 CAFE (如 KDE) 设置管理器可能已经处于活动状态，并与 CAFE 设置管理器发"
+"生冲突。"
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1364,25 +1349,25 @@ msgstr "跳过 (_S)"
 msgid "Overwrite _All"
 msgstr "全部覆盖(_A)"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr "此主题的外观将与设计时不同，因为所需的 CTK+ 主题“%s”未安装。"
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
 "theme '%s' is not installed."
 msgstr "此主题的外观将与设计时不同，因为所需的窗口管理器主题“%s”未安装。"
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr "此主题的外观将与设计时不同，因为所需的图标主题“%s”未安装。"
 
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
@@ -1394,14 +1379,7 @@ msgstr "首选应用程序"
 msgid "Select your default applications"
 msgstr "选择默认的应用程序"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr "preferences-desktop-default-applications"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr "cafe 控制中心;CAFE;默认;首选;应用;"
@@ -1511,19 +1489,17 @@ msgstr "移动性 "
 msgid "Accessibility"
 msgstr "辅助"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "正常"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "左"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "右"
@@ -1542,9 +1518,11 @@ msgstr "系统全局应用"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
-msgstr "将当前配置应用于该计算机上的其他 CAFE 用户。需注意该配置不影响登录界面或其他桌面环境。"
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
+msgstr ""
+"将当前配置应用于该计算机上的其他 CAFE 用户。需注意该配置不影响登录界面或其他"
+"桌面环境。"
 
 #: capplets/display/display-capplet.ui:90
 msgid "_Apply"
@@ -1611,14 +1589,7 @@ msgstr "显示器"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "更改显示器和投影仪的分辨率和位置"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr "preferences-desktop-display"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1633,7 +1604,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1685,15 +1657,13 @@ msgstr "此程序仅能通过 pkexec(1) 运行"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID 必须设为整数值"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "%s 必须归您所有\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1704,8 +1674,7 @@ msgstr "%s 不应有任何目录部分\n"
 msgid "%s must be a directory\n"
 msgstr "%s 必须为目录\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1738,8 +1707,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "镜像屏幕"
 
@@ -1851,7 +1820,7 @@ msgstr "下一音轨"
 msgid "Eject"
 msgstr "弹出"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "桌面"
 
@@ -1892,7 +1861,7 @@ msgid "Home folder"
 msgstr "主文件夹"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "查找"
 
@@ -1949,7 +1918,8 @@ msgstr "保存新快捷键出错"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
 "无法使用快捷键“%s”，因为使用此键将无法输入。\n"
@@ -1966,7 +1936,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "如果您将快捷键重新指派给“%s”，“%s”的快捷键将被禁用。"
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -2004,22 +1975,15 @@ msgstr "键盘快捷键"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr "要编辑快捷键，请双击相应的行，然后输入新按键组合，或按退格键清除。"
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "为命令指定快捷键"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr "preferences-desktop-keyboard-shortcuts"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr "cafe 控制中心;CAFE;分配;键盘;快捷方式;键绑定;"
@@ -2318,8 +2282,8 @@ msgstr "锁定屏幕来强制打字间断(_L)"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr "每隔一段时间锁定屏幕，以便重复性的键盘工作使手臂过度劳累"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
@@ -2433,14 +2397,7 @@ msgstr "键盘"
 msgid "Set your keyboard preferences"
 msgstr "设置键盘首选项"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr "input-keyboard"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr "cafe 控制中心;CAFE;键盘;首选项;"
@@ -2545,9 +2502,9 @@ msgstr "超时(_T)："
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
-msgstr "要测试您的双击设置，请尝试双击三角形图像，您应该会看见带有两个圆环的 CAFE 徽标。"
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
+msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
 #: capplets/mouse/cafe-settings-mouse.desktop.in:3
@@ -2610,14 +2567,7 @@ msgstr "触摸板"
 msgid "Set your mouse preferences"
 msgstr "设置鼠标首选项"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr "input-mouse"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr "cafe 控制中心;CAFE;鼠标;首选项;"
@@ -2630,14 +2580,7 @@ msgstr "网络代理"
 msgid "Set your network proxy preferences"
 msgstr "设置您的网络代理首选项"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr "network-server"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr "cafe 控制中心;CAFE;网络;http;socks;代理;"
@@ -2759,14 +2702,7 @@ msgstr "窗口"
 msgid "Set your window properties"
 msgstr "设定您的窗口属性"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr "preferences-system-windows"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr "cafe控制中心;CAFE;窗口;管理;属性;croma;首选项;"
@@ -2968,7 +2904,7 @@ msgstr "设置时区"
 msgid "Set Ntp sync"
 msgstr "设置 Ntp 同步"
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4708,14 +4644,7 @@ msgstr "时间和日期管理"
 msgid "Setting the time and date of the local system"
 msgstr "设置本地系统的时间和日期"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr "preferences-system-time"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr "cafe 控制中心;CAFE;时钟;日期;时间;首选项;"
@@ -4759,23 +4688,10 @@ msgstr "CAFE 配置工具"
 msgid "Configure CAFE settings"
 msgstr "调整 CAFE 设置"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr "CAFE;控制;中心;配置;工具;桌面;首选项;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
-msgstr "cafe-settings"
 
 #: typing-break/drw-break-window.c:179
 msgid "_Postpone Break"
@@ -4869,7 +4785,8 @@ msgid ""
 "right-clicking on your panel and choosing 'Add to panel', selecting "
 "'Notification area' and clicking 'Add'."
 msgstr ""
-"打字显示器使用通知区域显示信息。似乎您并没有在面板上放置通知区域。要添加通知区域，只需用鼠标右键点击面板，然后选择“添加到面板 -> 通知区域”。"
+"打字显示器使用通知区域显示信息。似乎您并没有在面板上放置通知区域。要添加通知"
+"区域，只需用鼠标右键点击面板，然后选择“添加到面板 -> 通知区域”。"
 
 #: font-viewer/font-view.c:205
 msgid "Style"
@@ -4927,14 +4844,7 @@ msgstr "在您的系统上查看字体"
 msgid "CAFE Font Viewer"
 msgstr "CAFE 字体查看器"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr "preferences-desktop-font"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr "cafe 控制中心;CAFE;字体;查看;预览;桌面;首选项;"
@@ -5001,27 +4911,76 @@ msgstr "从启动程序中删除"
 msgid "Add to Startup Programs"
 msgstr "添加到启动程序"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "新建电子表格"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "新建文档"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "主目录"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "文档"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "文件系统"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "网络服务器"
+
+#~ msgid "user-info"
+#~ msgstr "user-info"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "preferences-desktop-theme"
+#~ msgstr "preferences-desktop-theme"
+
+#~ msgid "preferences-desktop-default-applications"
+#~ msgstr "preferences-desktop-default-applications"
+
+#~ msgid "preferences-desktop-display"
+#~ msgstr "preferences-desktop-display"
+
+#~ msgid "preferences-desktop-keyboard-shortcuts"
+#~ msgstr "preferences-desktop-keyboard-shortcuts"
+
+#~ msgid "input-keyboard"
+#~ msgstr "input-keyboard"
+
+#~ msgid ""
+#~ "To test your double-click settings, try to double-click on the triangle "
+#~ "and you must see the cafe desktop logo with both rings showing."
+#~ msgstr ""
+#~ "要测试您的双击设置，请尝试双击三角形图像，您应该会看见带有两个圆环的 CAFE "
+#~ "徽标。"
+
+#~ msgid "input-mouse"
+#~ msgstr "input-mouse"
+
+#~ msgid "network-server"
+#~ msgstr "network-server"
+
+#~ msgid "preferences-system-windows"
+#~ msgstr "preferences-system-windows"
+
+#~ msgid "preferences-system-time"
+#~ msgstr "preferences-system-time"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "cafe-settings"
+#~ msgstr "cafe-settings"
+
+#~ msgid "preferences-desktop-font"
+#~ msgstr "preferences-desktop-font"

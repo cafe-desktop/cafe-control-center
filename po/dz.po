@@ -2,22 +2,22 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Dzongkha (https://www.transifex.com/cafe/teams/13566/dz/)\n"
+"Language: dz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: dz\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -36,9 +36,8 @@ msgid ""
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
 msgstr ""
-"ལས་ཀའི་མིང་འདི་ཚད་འཛིན་དབུས་ལུ་བཀྲམ་སྟོན་འབད་ནི་ "
-"དེ་ལས་\";\"དབྱེ་བྱེད་གྲོགས་རམ་གྱི་ ཡིག་སྣོད་ཀྱི་མིང་ "
-"།ལས་ཀ་དེ་གི་དོན་ལས་ཌེཀསི་ཊོབ་ཡིག་སྣོད་གསར་བཙུགས་འབད།"
+"ལས་ཀའི་མིང་འདི་ཚད་འཛིན་དབུས་ལུ་བཀྲམ་སྟོན་འབད་ནི་ དེ་ལས་\";\"དབྱེ་བྱེད་གྲོགས་རམ་གྱི་ ཡིག་སྣོད་ཀྱི་"
+"མིང་ །ལས་ཀ་དེ་གི་དོན་ལས་ཌེཀསི་ཊོབ་ཡིག་སྣོད་གསར་བཙུགས་འབད།"
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -48,8 +47,8 @@ msgstr "ལས་ཀ་ཤུགས་ལྡན་བཟོ་བའི་སྐ
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
 msgstr ""
-"གལ་སྲིད་བདེན་པ་ཅིན་  "
-"\"མཐུན་མོངས་ལས་ཀ་\"ཤུགས་བདེན་བཟོ་བའི་སྐབས་སུ་དབུས་ཀྱི་ཚད་འཛིན་ཁ་བསྡམས་འོང་། "
+"གལ་སྲིད་བདེན་པ་ཅིན་  \"མཐུན་མོངས་ལས་ཀ་\"ཤུགས་བདེན་བཟོ་བའི་སྐབས་སུ་དབུས་ཀྱི་ཚད་འཛིན་ཁ་བསྡམས་"
+"འོང་། "
 
 #: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
@@ -58,8 +57,8 @@ msgstr "ལཱ་འགན་འགྲུབ་ཡོད་པའི་བྱ་
 #: org.cafe.control-center.gschema.xml.in:17
 msgid "Indicates whether to close the shell when a start action is performed."
 msgstr ""
-"འགོ་བཙུགས་བྱ་བ་འདི་ ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ ཤལ་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་"
-" ་བརྡ་སྟོན་འབདཝ་ཨིན། "
+"འགོ་བཙུགས་བྱ་བ་འདི་ ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ ཤལ་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་ ་བརྡ་སྟོན་འབདཝ་"
+"ཨིན། "
 
 #: org.cafe.control-center.gschema.xml.in:21
 msgid "Exit shell on help action performed"
@@ -68,34 +67,31 @@ msgstr "ལ་འགན་འགྲུབ་ཡོད་པའི་བྱ་བ
 #: org.cafe.control-center.gschema.xml.in:22
 msgid "Indicates whether to close the shell when a help action is performed."
 msgstr ""
-"གྲོགས་རམ་བྱ་བ་འདི་ ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ "
-"ཤལ་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་་བརྡ་སྟོན་འབདཝ་ཨིན། "
+"གྲོགས་རམ་བྱ་བ་འདི་ ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ ཤལ་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་་བརྡ་སྟོན་འབདཝ་ཨིན། "
 
 #: org.cafe.control-center.gschema.xml.in:26
 msgid "Exit shell on add or remove action performed"
-msgstr ""
-"ལ་འགན་གྲུབ་ཡོད་པའི་ལ་གཡོག་རྩ་བསྐྲེད་གཏང་་ནི་ཡང་ན་ཁ་སྐོང་བརྐྱབས་ནི་ཕྱིར་ཐོན་ཤལ།"
+msgstr "ལ་འགན་གྲུབ་ཡོད་པའི་ལ་གཡོག་རྩ་བསྐྲེད་གཏང་་ནི་ཡང་ན་ཁ་སྐོང་བརྐྱབས་ནི་ཕྱིར་ཐོན་ཤལ།"
 
 #: org.cafe.control-center.gschema.xml.in:27
 msgid ""
 "Indicates whether to close the shell when an add or remove action is "
 "performed."
 msgstr ""
-"བསྡོམས་ནི་ཡང་ན་བསྐྲེད་གཏང་ ནི་བྱ་བ་འདི་ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ཤ "
-"ལ་འདི་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་བརྡ་སྟོན་འབདཝ་ཨིན། "
+"བསྡོམས་ནི་ཡང་ན་བསྐྲེད་གཏང་ ནི་བྱ་བ་འདི་ལཱ་འགན་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ཤ ལ་འདི་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་"
+"ན་བརྡ་སྟོན་འབདཝ་ཨིན། "
 
 #: org.cafe.control-center.gschema.xml.in:31
 msgid "Exit shell on upgrade or uninstall action performed"
-msgstr ""
-"ཡར་བསྐྱེད་ནི་ཡང་ན་ལཱ་འགན་འགྲུབ་ཡོད་པའི་གཞི་བཙུགས་མ་འབད་བའི་བྱ་བ་གུ་ཕྱིར་ཐོན་གྱི་ཤལ"
+msgstr "ཡར་བསྐྱེད་ནི་ཡང་ན་ལཱ་འགན་འགྲུབ་ཡོད་པའི་གཞི་བཙུགས་མ་འབད་བའི་བྱ་བ་གུ་ཕྱིར་ཐོན་གྱི་ཤལ"
 
 #: org.cafe.control-center.gschema.xml.in:32
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
 msgstr ""
-"ཡར་བསྐྱེད་ ཡང་ན་ གཞི་བཙུགས་མ་འབད་བའི་བྱ་བ་འདི་ལཱ་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ "
-"ཤལ་འདི་ཁ་བསྡམས་ནི་ཨིན་ན་མེན་ན་ བརྡ་སྟོན་འབདཝ་ཨིན། "
+"ཡར་བསྐྱེད་ ཡང་ན་ གཞི་བཙུགས་མ་འབད་བའི་བྱ་བ་འདི་ལཱ་འགྲུབ་ཡོད་པའི་སྐབས་ལུ་ ཤལ་འདི་ཁ་བསྡམས་ནི་ཨིན་ན་"
+"མེན་ན་ བརྡ་སྟོན་འབདཝ་ཨིན། "
 
 #: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
@@ -103,8 +99,8 @@ msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:43
@@ -113,8 +109,8 @@ msgstr ""
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
@@ -142,25 +138,25 @@ msgstr "མིང་།"
 msgid "Description associated with a custom keybinding."
 msgstr ""
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "གཟུགས་བརྙན་སེལ་འཐུ་འབད།"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "གཟུགས་བརྙན་མིན་འདུག"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "གཟུགས་བརྙན་ཚུ།"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "ཡིག་སྣོད་ཆ་མཉམ།"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "%sསྐོར་ལས།"
@@ -209,14 +205,7 @@ msgstr ""
 msgid "Set your personal information"
 msgstr "ཁྱོད་རའི་རང་དོན་བརྡ་དོན་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -370,8 +359,7 @@ msgid ""
 "Your password has been changed since you initially authenticated! Please re-"
 "authenticate."
 msgstr ""
-"ཁྱོད་ཀྱིས་འགོ་ཐོག་ལུ་ བདེན་བཤད་འབད་ཞིནམ་ལས་ ཁྱོད་ཀྱི་ཆོག་ཡིག་སོར་ནུག "
-"སླར་བདེན་བཤད་འབད་གནང་།"
+"ཁྱོད་ཀྱིས་འགོ་ཐོག་ལུ་ བདེན་བཤད་འབད་ཞིནམ་ལས་ ཁྱོད་ཀྱི་ཆོག་ཡིག་སོར་ནུག སླར་བདེན་བཤད་འབད་གནང་།"
 
 #: capplets/about-me/cafe-about-me-password.c:475
 msgid "That password was incorrect."
@@ -440,8 +428,8 @@ msgstr " <b>ཆོག་ཡིག་གསར་པའི་</b> ས་སྒོ
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr ""
-"<b>ཆོག་ཡིག་གསརཔ་ལོག་ཡིག་དཔར་རྐྱབས་</b> ཟེར་མི་ས་སྒོ་ནང་ ཁྱོད་རའི་ཆོག་ཡིག་ "
-"ལོག་སྟེ་རང་ཡིག་དཔར་རྐྱབས།"
+"<b>ཆོག་ཡིག་གསརཔ་ལོག་ཡིག་དཔར་རྐྱབས་</b> ཟེར་མི་ས་སྒོ་ནང་ ཁྱོད་རའི་ཆོག་ཡིག་ ལོག་སྟེ་རང་ཡིག་དཔར་"
+"རྐྱབས།"
 
 #: capplets/about-me/cafe-about-me-password.c:944
 msgid "The two passwords are not equal."
@@ -461,14 +449,14 @@ msgstr ""
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"ཁྱོད་རའི་ཆོག་ཡིག་སོར་ནི་ལུ་ འོག་གི་སྒོ་ནང་ད་ལྟོའི་ཆོག་ཡིག་ཞིནམ་ལས་ "
-"<b>བདེན་བཤད་</b> ལུ་ཨེབ་གཏང་འབད། བདེན་བཤད་འབད་ཞིནམ་ལས་ "
-"ཁྱོད་རའི་ཆོག་ཡིག་གསརཔ་བཙུགས། བདེན་སྦྱོར་གྱི་དོན་ལུ་ "
-"ཆོག་ཡིག་དེ་ལོག་སྟེ་རང་ཚར་ཅིག་ཡིག་དཔར་བརྐྱབས་ཞིནམ་ལས་ <b>ཆོག་ཡིག་སོར་</b> "
-"ལུ་ཨེབ་གཏང་འབད།"
+"ཁྱོད་རའི་ཆོག་ཡིག་སོར་ནི་ལུ་ འོག་གི་སྒོ་ནང་ད་ལྟོའི་ཆོག་ཡིག་ཞིནམ་ལས་ <b>བདེན་བཤད་</b> ལུ་ཨེབ་གཏང་"
+"འབད། བདེན་བཤད་འབད་ཞིནམ་ལས་ ཁྱོད་རའི་ཆོག་ཡིག་གསརཔ་བཙུགས། བདེན་སྦྱོར་གྱི་དོན་ལུ་ ཆོག་ཡིག་དེ་ལོག་སྟེ་"
+"རང་ཚར་ཅིག་ཡིག་དཔར་བརྐྱབས་ཞིནམ་ལས་ <b>ཆོག་ཡིག་སོར་</b> ལུ་ཨེབ་གཏང་འབད།"
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -523,8 +511,7 @@ msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
 msgstr ""
-"འཕྲུལ་རིག་ལྕོགས་ཅན་ཕན་འཐབ་བསྒྱུར་བཅོས་ཚུ་ལུ་ "
-"ཤུལ་མའི་ནང་བསྐྱོད་མ་འབད་ཚུན་ཚོད་ ནུས་པ་མི་འོང་།"
+"འཕྲུལ་རིག་ལྕོགས་ཅན་ཕན་འཐབ་བསྒྱུར་བཅོས་ཚུ་ལུ་ ཤུལ་མའི་ནང་བསྐྱོད་མ་འབད་ཚུན་ཚོད་ ནུས་པ་མི་འོང་།"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -559,14 +546,7 @@ msgstr "ནང་བསྐྱོད་ཌའི་ལོག་འཛུལ་ས
 msgid "Choose which accessibility features to enable when you log in"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -604,19 +584,16 @@ msgstr ""
 
 #: capplets/appearance/appearance-main.c:153
 msgid "Specify the filename of a theme to install"
-msgstr ""
-"གཞི་བཙུགས་འབད་ནིའི་དོན་ལུ་ བརྗོད་དོན་ཅིག་གི་ ཡིག་སྣོད་མིང་གསལ་བཀོད་འབད་"
+msgstr "གཞི་བཙུགས་འབད་ནིའི་དོན་ལུ་ བརྗོད་དོན་ཅིག་གི་ ཡིག་སྣོད་མིང་གསལ་བཀོད་འབད་"
 
 #: capplets/appearance/appearance-main.c:154
 msgid "filename"
 msgstr "ཡིག་སྣོད་མིང་"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr ""
-"ཤོག་ལེབ་ཀྱི་མིང་སྟོན་ནི་གི་དོན་ལས་གསལ་བཀོད་འབད "
-"(བརྗོད་དོན|རྒྱབ་བརྟེན|ཡིག་གཟུགས་ཚུ|ཨིན་ཊར་ཕེའིསི)"
+"ཤོག་ལེབ་ཀྱི་མིང་སྟོན་ནི་གི་དོན་ལས་གསལ་བཀོད་འབད (བརྗོད་དོན|རྒྱབ་བརྟེན|ཡིག་གཟུགས་ཚུ|ཨིན་ཊར་ཕེའིསི)"
 
 #: capplets/appearance/appearance-main.c:162
 #: capplets/default-applications/cafe-da-capplet.c:839
@@ -666,8 +643,7 @@ msgstr ""
 
 #: capplets/appearance/appearance-themes.c:691
 msgid "The current theme suggests a background and a font."
-msgstr ""
-"ད་ལྟོའི་བརྗོད་དོན་འདི་གིས་ རྒྱབ་གཞི་དང་ཡིག་གཟུགས་ཅིག་གི་ བསམ་འཆར་་བཀོདཔ་མས།"
+msgstr "ད་ལྟོའི་བརྗོད་དོན་འདི་གིས་ རྒྱབ་གཞི་དང་ཡིག་གཟུགས་ཅིག་གི་ བསམ་འཆར་་བཀོདཔ་མས།"
 
 #: capplets/appearance/appearance-themes.c:693
 msgid ""
@@ -687,7 +663,7 @@ msgstr ""
 msgid "The current theme suggests a font."
 msgstr "ད་ལྟོའི་ བརྗོད་དོན་འདི་གིས་ ཡིག་གཟུགས་ཅིག་གི་ བསམ་འཆར་བཀོདཔ་མས།"
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "སྲོལ་སྒྲིག"
 
@@ -701,8 +677,7 @@ msgstr "ཚད་འཛིན་ཚུ།"
 
 #: capplets/appearance/data/appearance.ui:226
 msgid "The current controls theme does not support color schemes."
-msgstr ""
-"ད་ལྟོའི་ཚད་འཛིན་བརྗོད་དོན་འདི་གིས་ ཚོས་གཞིའི་འཆར་ལས་ཚུ་རྒྱབ་སྐྱོར་མི་འབད།"
+msgstr "ད་ལྟོའི་ཚད་འཛིན་བརྗོད་དོན་འདི་གིས་ ཚོས་གཞིའི་འཆར་ལས་ཚུ་རྒྱབ་སྐྱོར་མི་འབད།"
 
 #: capplets/appearance/data/appearance.ui:281
 msgid "_Tooltips:"
@@ -1065,17 +1040,7 @@ msgstr "འབྱུང་སྣང་"
 msgid "Customize the look of the desktop"
 msgstr "ཌེཀསི་ཊོཔ་གི་མཐོང་སྣང་སྲོལ་སྒྲིག་འབད"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1086,12 +1051,9 @@ msgstr "བརྗོད་དོན་གཞི་བཙུགས་པ་"
 
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:4
 msgid "Installs themes packages for various parts of the desktop"
-msgstr ""
-"ཌེཀསི་ཊོཔ་གི་ ཡན་ལག་སོ་སོའི་དོན་ལུ་ བརྗོད་དོན་གྱི་ཐུམ་སྒྲིལ་ཚུ་ "
-"གཞི་བཙུགས་འབད་"
+msgstr "ཌེཀསི་ཊོཔ་གི་ ཡན་ལག་སོ་སོའི་དོན་ལུ་ བརྗོད་དོན་གྱི་ཐུམ་སྒྲིལ་ཚུ་ གཞི་བཙུགས་འབད་"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1169,8 +1131,7 @@ msgstr "བརྗོད་དོན་འདི་ཕྱིར་འདོན་
 
 #: capplets/appearance/theme-installer.c:274
 msgid "There was an error installing the selected file"
-msgstr ""
-"སེལ་འཐུ་འབད་ཡོད་པའི་ཡིག་སྣོད་ གཞི་བཙུགས་འབད་བའི་སྐབས་ འཛོལ་བ་ཅིག་འབྱུང་ནུག་ "
+msgstr "སེལ་འཐུ་འབད་ཡོད་པའི་ཡིག་སྣོད་ གཞི་བཙུགས་འབད་བའི་སྐབས་ འཛོལ་བ་ཅིག་འབྱུང་ནུག་ "
 
 #: capplets/appearance/theme-installer.c:275
 #, c-format
@@ -1183,8 +1144,8 @@ msgid ""
 "\"%s\" does not appear to be a valid theme. It may be a theme engine which "
 "you need to compile."
 msgstr ""
-"\"%s\" དེ་ནུས་ཅན་གྱི་བརྗོད་དོན་ཅིག་སྦེ་ མི་འབྱུང་མས། འདི་ཡང་ཅིན་ "
-"ཕྱོགས་སྒྲིག་འབད་དགོ་པའི་ བརྗོད་དོན་ མ་འཕྲུལ་ཅིག་ཨིནམ་འོང་། "
+"\"%s\" དེ་ནུས་ཅན་གྱི་བརྗོད་དོན་ཅིག་སྦེ་ མི་འབྱུང་མས། འདི་ཡང་ཅིན་ ཕྱོགས་སྒྲིག་འབད་དགོ་པའི་ བརྗོད་དོན་ "
+"མ་འཕྲུལ་ཅིག་ཨིནམ་འོང་། "
 
 #: capplets/appearance/theme-installer.c:375
 #, c-format
@@ -1216,9 +1177,7 @@ msgstr "བརྗོད་དོན་ \"%s\" འདི་ གཞི་བཙུ
 
 #: capplets/appearance/theme-installer.c:476
 msgid "Would you like to apply it now, or keep your current theme?"
-msgstr ""
-"ཁྱོད་ཀྱིས་ད་ལྟོ་འཇུག་སྤྱོད་འབད་ཨིན་ན་ "
-"ཡང་ན་ཁྱོད་རའི་ད་ལཏོའི་བརྗོད་དོན་བཞག་ནི་ཨིན་ན?"
+msgstr "ཁྱོད་ཀྱིས་ད་ལྟོ་འཇུག་སྤྱོད་འབད་ཨིན་ན་ ཡང་ན་ཁྱོད་རའི་ད་ལཏོའི་བརྗོད་དོན་བཞག་ནི་ཨིན་ན?"
 
 #: capplets/appearance/theme-installer.c:479
 msgid "Keep Current Theme"
@@ -1286,7 +1245,10 @@ msgstr ""
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 
 #: capplets/common/capplet-util.c:82
@@ -1370,25 +1332,25 @@ msgstr "གོམ་འགྱོ།(_S)"
 msgid "Overwrite _All"
 msgstr ""
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
 "theme '%s' is not installed."
 msgstr ""
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
@@ -1400,14 +1362,7 @@ msgstr "དགའ་གདམ་ཅན་གྱི་གློག་རིམ།
 msgid "Select your default applications"
 msgstr "ཁྱོད་རའི་སྔོན་སྒྲིག་གློག་རིམ་ སེལ་འཐུ་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1517,19 +1472,17 @@ msgstr ""
 msgid "Accessibility"
 msgstr "འཛུལ་སྤྱོད"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "སྤྱིར་བཏང་"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "གཡོན"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "གཡས"
@@ -1548,8 +1501,8 @@ msgstr ""
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 
 #: capplets/display/display-capplet.ui:90
@@ -1617,14 +1570,7 @@ msgstr ""
 msgid "Change resolution and position of monitors and projectors"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1639,7 +1585,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1680,15 +1627,13 @@ msgstr ""
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr ""
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr ""
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1699,8 +1644,7 @@ msgstr ""
 msgid "%s must be a directory\n"
 msgstr ""
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1733,8 +1677,8 @@ msgstr "ཨེཆ་ཛེཌི %d "
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr ""
 
@@ -1846,7 +1790,7 @@ msgstr ""
 msgid "Eject"
 msgstr "ཕྱིར་བཏོན།"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "ཌེཀསི་ཊོཔ།"
 
@@ -1887,7 +1831,7 @@ msgid "Home folder"
 msgstr "ཁྱིམ་གྱི་ལེ་སྣོད།"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "འཚོལ་ཞིབ།"
 
@@ -1944,7 +1888,8 @@ msgstr ""
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
 
@@ -1957,7 +1902,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -1995,22 +1941,15 @@ msgstr "ལྡེ་སྒྲོམ་གྱི་མགྱོགས་ཐབས
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "བརྡ་བཀོད་ཚུ་ལུ་ མགྱོགས་ཐབས་ལྡེ་མིག་ འགན་སྤྲོད་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2020,14 +1959,11 @@ msgstr ""
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
-"གཞི་སྒྲིག་ཙམ་འཇུག་སྤྱོད་འབད་དེ་སྤངས། (མཐུན་འགྱུར་རྐྱངམ་གཅིག་ "
-"ད་ལྟོ་ཌེ་མཱོན་གྱིས་ ལེགས་སྐྱོང་འཐབ་ནུག)"
+"གཞི་སྒྲིག་ཙམ་འཇུག་སྤྱོད་འབད་དེ་སྤངས། (མཐུན་འགྱུར་རྐྱངམ་གཅིག་ ད་ལྟོ་ཌེ་མཱོན་གྱིས་ ལེགས་སྐྱོང་འཐབ་ནུག)"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
-msgstr ""
-"ཤོག་ལེབ་དེ་ ཡིག་དཔར་བརྐྱབ་ནིའི་བར་མཚམས་གཞི་སྒྲིག་ཚུ་ སྟོནམ་དང་བཅསཔ་སྦེ་ "
-"འགོ་བཙུགས།"
+msgstr "ཤོག་ལེབ་དེ་ ཡིག་དཔར་བརྐྱབ་ནིའི་བར་མཚམས་གཞི་སྒྲིག་ཚུ་ སྟོནམ་དང་བཅསཔ་སྦེ་ འགོ་བཙུགས།"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:222
 msgid "Start the page with the accessibility settings showing"
@@ -2271,9 +2207,7 @@ msgstr ""
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1074
 msgid "Disa_ble sticky keys if two keys are pressed together"
-msgstr ""
-"ལྡེ་མིག་གཉིས་གཅིག་ཁར་ཨེབ་པ་ཅིན་ སྦྱར་རྩིས་ལྡེ་མིག་ཚུ་ ལྕོགས་མིན་བཟོཝ་ཨིན་ "
-"(_B)"
+msgstr "ལྡེ་མིག་གཉིས་གཅིག་ཁར་ཨེབ་པ་ཅིན་ སྦྱར་རྩིས་ལྡེ་མིག་ཚུ་ ལྕོགས་མིན་བཟོཝ་ཨིན་ (_B)"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1091
 msgid "_Latch modifiers when pressed twice"
@@ -2315,11 +2249,10 @@ msgstr ""
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
-"ལྡེ་སྒྲོམ་ལག་ལེན་ལུ་ ཡང་བསྐྱར་གྱི་གནོད་སྐྱོན་ བཀག་ཐབས་ལུ་ "
-"དུས་ཡུན་ཧ་ལམ་ཅིག་ལས་ གསལ་གཞི་ལྡེ་མིག་རྐྱབས།"
+"ལྡེ་སྒྲོམ་ལག་ལེན་ལུ་ ཡང་བསྐྱར་གྱི་གནོད་སྐྱོན་ བཀག་ཐབས་ལུ་ དུས་ཡུན་ཧ་ལམ་ཅིག་ལས་ གསལ་གཞི་ལྡེ་མིག་རྐྱབས།"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
@@ -2432,14 +2365,7 @@ msgstr "ལྡེ་སྒྲོམ།"
 msgid "Set your keyboard preferences"
 msgstr "ཁྱོད་རའི་ལྡེ་སྒྲོམ་གྱི་དགའ་གདམ་ཚུ་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2544,8 +2470,8 @@ msgstr "ངལ་མཚམས་:(_T)"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2609,14 +2535,7 @@ msgstr ""
 msgid "Set your mouse preferences"
 msgstr "ཁྱོད་རའི་མཱའུསི་གི་ དགའ་གདམ་ཚུ་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2629,14 +2548,7 @@ msgstr "ཡོངས་འབྲེལ་གྱི་ པོརོག་སི�
 msgid "Set your network proxy preferences"
 msgstr "ཁྱོད་རའི་ཡོངས་འབྲེལ་གྱི་ པོརོག་སི་དགའ་གདམ་ཚུ་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2758,14 +2670,7 @@ msgstr "སྒོ་སྒྲིག་ཚུ།"
 msgid "Set your window properties"
 msgstr "ཁྱོད་རའི་སྒོ་སྒྲིག་གི་རྒྱུ་དངོས་ཚུ་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -2788,8 +2693,7 @@ msgstr ""
 
 #: capplets/windows/window-properties.ui:294
 msgid "_Select windows when the mouse moves over them"
-msgstr ""
-"མཱའུསི་དེ་ སྒོ་སྒྲིག་ཚུ་གི་གུ་ལས་ཕར་འགྱོཝ་ད་ སྒོ་སྒྲིག་ཚུ་ སེལ་འཐུ་འབད།(_S)"
+msgstr "མཱའུསི་དེ་ སྒོ་སྒྲིག་ཚུ་གི་གུ་ལས་ཕར་འགྱོཝ་ད་ སྒོ་སྒྲིག་ཚུ་ སེལ་འཐུ་འབད།(_S)"
 
 #: capplets/windows/window-properties.ui:319
 msgid "U_nselect windows when the mouse leaves them"
@@ -2797,8 +2701,7 @@ msgstr ""
 
 #: capplets/windows/window-properties.ui:340
 msgid "_Raise selected windows after an interval"
-msgstr ""
-"སེལ་འཐུ་འབད་མི་ སྒོ་སྒྲིག་ཚུ་ བར་མཚམས་ཅིག་གི་ཤུལ་ལས་ ཆེར་བསྐྱེད་འབད།(_R)"
+msgstr "སེལ་འཐུ་འབད་མི་ སྒོ་སྒྲིག་ཚུ་ བར་མཚམས་ཅིག་གི་ཤུལ་ལས་ ཆེར་བསྐྱེད་འབད།(_R)"
 
 #: capplets/windows/window-properties.ui:365
 msgid "_Interval before raising:"
@@ -2852,9 +2755,7 @@ msgstr ""
 
 #: capplets/windows/window-properties.ui:535
 msgid "To move a window, press-and-hold this key then grab the window:"
-msgstr ""
-"སྒོ་སྒྲིག་ཅིག་ སྤོ་བཤུད་འབད་ནི་ལུ་ ལྡེ་མིག་འདི་ཨེབ་སྟེ་འཛིན་ཞིནམ་ལས་ "
-"སྒོ་སྒྲིག་དེ་བཟུང་།"
+msgstr "སྒོ་སྒྲིག་ཅིག་ སྤོ་བཤུད་འབད་ནི་ལུ་ ལྡེ་མིག་འདི་ཨེབ་སྟེ་འཛིན་ཞིནམ་ལས་ སྒོ་སྒྲིག་དེ་བཟུང་།"
 
 #: capplets/windows/window-properties.ui:568
 msgid "Movement Key"
@@ -2971,7 +2872,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4711,14 +4612,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4762,22 +4656,9 @@ msgstr "ཇི་ནོམ་རིམ་སྒྲིག་ལག་ཆས།"
 msgid "Configure CAFE settings"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4825,8 +4706,7 @@ msgid ""
 "Unable to bring up the typing break properties dialog with the following "
 "error: %s"
 msgstr ""
-"ཡིག་དཔར་བར་མཚམས་རྒྱུ་དངོས་ཀྱི་ ཌའི་ལོག་དེ་ འོག་གི་འཛོལ་བ་དང་གཅིག་ཁར་ "
-"འབག་འོང་མ་ཚུགས་: %s"
+"ཡིག་དཔར་བར་མཚམས་རྒྱུ་དངོས་ཀྱི་ ཌའི་ལོག་དེ་ འོག་གི་འཛོལ་བ་དང་གཅིག་ཁར་ འབག་འོང་མ་ཚུགས་: %s"
 
 #: typing-break/drwright.c:654
 msgid "Written by Richard Hult <richard@imendio.com>"
@@ -4843,9 +4723,8 @@ msgstr "གློག་རིག་བར་མཚམས་ཀྱི་ དྲ�
 #: typing-break/drwright.c:666 font-viewer/font-view.c:786
 msgid "translator-credits"
 msgstr ""
-"ཨའི་ཌི་ཨར་སི་གི་མ་དངུལ་རྒྱབ་སྐྱོར་ཐོག་ལས་ བརྡ་དོན་འཕྲུལ་རིག་ལས་ཁུངས་ནང་ "
-"སྐད་བསྒྱུར་འབད་ཡི། ཁ་གསལ་གྱི་དོན་ལུ་ འབྲེལ་བ་འཐབ་ས་: "
-"<pema_geyleg@druknet.bt>/<pgeyleg@dit.gov.bt>(_c)"
+"ཨའི་ཌི་ཨར་སི་གི་མ་དངུལ་རྒྱབ་སྐྱོར་ཐོག་ལས་ བརྡ་དོན་འཕྲུལ་རིག་ལས་ཁུངས་ནང་ སྐད་བསྒྱུར་འབད་ཡི། ཁ་གསལ་གྱི་"
+"དོན་ལུ་ འབྲེལ་བ་འཐབ་ས་: <pema_geyleg@druknet.bt>/<pgeyleg@dit.gov.bt>(_c)"
 
 #: typing-break/main.c:62
 msgid "Enable debugging code"
@@ -4866,13 +4745,10 @@ msgid ""
 "right-clicking on your panel and choosing 'Add to panel', selecting "
 "'Notification area' and clicking 'Add'."
 msgstr ""
-"ཡིག་དཔར་བརྐྱབ་ནིའི་གསལ་གཞི་དེ་གིས་ བརྡ་བསྐུལ་མངའ་ཁོངས་དེ་ "
-"བརྡ་དོན་བཀྲམ་སྟོན་གྱི་དོན་ལུ་ ལག་ལེན་འཐབ་ཨིན། ཁྱོད་ཀྱི་པེ་ནཱལ་གུ་ "
-"བརྡ་བསྐུལ་མངའ་ཁོངས་ མེདཔ་བཟུམ་ཅིག་འདུག ཁྱོད་ཀྱིས་ཁྱོད་རའི་པེ་ནཱལ་གུ་ "
-"གཡས་ཀྱི་ཨེབ་གཏང་འབད་དེ་ ‘པེ་ནཱལ་གུ་ཁ་སྐོང་རྐྱབས་’ "
-"ཟེར་མི་གདམ་ཁ་བརྐྱབས་པའི་སྒོ་ལས་ བརྡ་བསྐུལ་མངའ་ཁོངས་ སེལ་འཐུ་འབད་དེ་ "
-"ཁ་སྐོང་བརྐྱབ་ནི་ལུ་ ཨེབ་གཏང་འབད་བའི་ཐོག་ལས་ བརྡ་བསྐུལ་མངའ་ཁོངས་ "
-"ཁ་སྐོང་བརྐྱབ་ཚུགས།"
+"ཡིག་དཔར་བརྐྱབ་ནིའི་གསལ་གཞི་དེ་གིས་ བརྡ་བསྐུལ་མངའ་ཁོངས་དེ་ བརྡ་དོན་བཀྲམ་སྟོན་གྱི་དོན་ལུ་ ལག་ལེན་འཐབ་"
+"ཨིན། ཁྱོད་ཀྱི་པེ་ནཱལ་གུ་ བརྡ་བསྐུལ་མངའ་ཁོངས་ མེདཔ་བཟུམ་ཅིག་འདུག ཁྱོད་ཀྱིས་ཁྱོད་རའི་པེ་ནཱལ་གུ་ གཡས་ཀྱི་ཨེབ་"
+"གཏང་འབད་དེ་ ‘པེ་ནཱལ་གུ་ཁ་སྐོང་རྐྱབས་’ ཟེར་མི་གདམ་ཁ་བརྐྱབས་པའི་སྒོ་ལས་ བརྡ་བསྐུལ་མངའ་ཁོངས་ སེལ་འཐུ་"
+"འབད་དེ་ ཁ་སྐོང་བརྐྱབ་ནི་ལུ་ ཨེབ་གཏང་འབད་བའི་ཐོག་ལས་ བརྡ་བསྐུལ་མངའ་ཁོངས་ ཁ་སྐོང་བརྐྱབ་ཚུགས།"
 
 #: font-viewer/font-view.c:205
 msgid "Style"
@@ -4930,14 +4806,7 @@ msgstr ""
 msgid "CAFE Font Viewer"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5004,27 +4873,27 @@ msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལས་ �
 msgid "Add to Startup Programs"
 msgstr "འགོ་བཙུགས་ལས་རིམ་ཚུ་ལུ་ ཁ་སྐོང་རྐྱབས་"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "ཤོག་ཁྲམ་གསརཔ"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "ཡིག་ཆ་གསརཔ"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "ཁྱིམ"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "ཡིག་ཆ་ཚུ།"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "ཡིག་སྣོད་རིམ་ལུགས།"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "ཡོངས་འབྲེལ་གྱི་ སར་་བར"

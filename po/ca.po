@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Daniel <danicases@gmail.com>, 2020
 # Francesc Famadas, 2020
@@ -12,19 +12,19 @@
 # Martin Wimpress <code@flexion.org>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020\n"
 "Language-Team: Catalan (https://www.transifex.com/cafe/teams/13566/ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -45,8 +45,8 @@ msgid ""
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
 msgstr ""
-"El nom de la tasca que es mostrarà al centre de control procedit d'un punt i"
-" coma, que fa de separador, amb el nom del fitxer .desktop associat per "
+"El nom de la tasca que es mostrarà al centre de control procedit d'un punt i "
+"coma, que fa de separador, amb el nom del fitxer .desktop associat per "
 "executar la tasca."
 
 #: org.cafe.control-center.gschema.xml.in:11
@@ -108,11 +108,11 @@ msgstr "Més URL d'imatges de fons"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
-"L'URL des d'on obtenir més imatges de fons de l'escriptori. Si s'estableix a"
-" una cadena buida, l'enllaç no apareixerà."
+"L'URL des d'on obtenir més imatges de fons de l'escriptori. Si s'estableix a "
+"una cadena buida, l'enllaç no apareixerà."
 
 #: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
@@ -120,8 +120,8 @@ msgstr "Més URL de temes"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
 "L'URL des d'on obtenir més temes de l'escriptori. Si s'estableix a una "
 "cadena buida, l'enllaç no apareixerà."
@@ -152,25 +152,25 @@ msgstr "Nom"
 msgid "Description associated with a custom keybinding."
 msgstr "Descripció associada a una vinculació de tecles personalitzada."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Seleccioneu una imatge"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Cap imatge"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Imatges"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Tots els fitxers"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "Quant a %s"
@@ -219,14 +219,7 @@ msgstr "Inhabilita l'entrada amb l'_empremta dactilar..."
 msgid "Set your personal information"
 msgstr "Establiu la vostra informació personal"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr "user-info"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr "cafe-control-center;CAFE;personal;informació;"
@@ -235,8 +228,8 @@ msgstr "cafe-control-center;CAFE;personal;informació;"
 msgid ""
 "You are not allowed to access the device. Contact your system administrator."
 msgstr ""
-"No teniu permís per accedir al dispositiu. Contacteu amb l'administrador del"
-" sistema."
+"No teniu permís per accedir al dispositiu. Contacteu amb l'administrador del "
+"sistema."
 
 #: capplets/about-me/cafe-about-me-fingerprint.c:102
 msgid "The device is already in use."
@@ -459,8 +452,7 @@ msgstr "Teclegeu la vostra contrasenya al camp <b>Contrasenya nova</b>."
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr ""
-"Teclegeu la contrasenya al camp <b>Torneu a teclejar la contrasenya "
-"nova</b>."
+"Teclegeu la contrasenya al camp <b>Torneu a teclejar la contrasenya nova</b>."
 
 #: capplets/about-me/cafe-about-me-password.c:944
 msgid "The two passwords are not equal."
@@ -480,11 +472,16 @@ msgstr "Canvia la contrasenya"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"Per canviar la contrasenya, introduïu la vostra contrasenya actual al camp de sota i feu clic a <b>Autentifica</b>.\n"
-"Un cop us hàgiu autentificat, introduïu la vostra contrasenya nova, torneu-la a teclejar per tal de verificar-la, i feu clic a <b>Canvia la contrasenya</b>."
+"Per canviar la contrasenya, introduïu la vostra contrasenya actual al camp "
+"de sota i feu clic a <b>Autentifica</b>.\n"
+"Un cop us hàgiu autentificat, introduïu la vostra contrasenya nova, torneu-"
+"la a teclejar per tal de verificar-la, i feu clic a <b>Canvia la "
+"contrasenya</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -577,14 +574,7 @@ msgstr ""
 "Seleccioneu quines funcionalitats d'accessibilitat s'han d'habilitar quan "
 "inicieu la sessió"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr "cafe-control-center;CAFE;accessibilitat;funcionalitat;"
@@ -629,11 +619,9 @@ msgid "filename"
 msgstr "fitxer"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr ""
-"Especifiqueu el nom de la pàgina a mostrar "
-"(theme|background|fonts|interface)"
+"Especifiqueu el nom de la pàgina a mostrar (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
 #: capplets/default-applications/cafe-da-capplet.c:839
@@ -694,8 +682,8 @@ msgid ""
 "The current theme suggests a font. Also, the last applied font suggestion "
 "can be reverted."
 msgstr ""
-"Aquest tema suggereix una lletra. També es pot recuperar l'últim suggeriment"
-" de lletra aplicat."
+"Aquest tema suggereix una lletra. També es pot recuperar l'últim suggeriment "
+"de lletra aplicat."
 
 #: capplets/appearance/appearance-themes.c:695
 msgid "The current theme suggests a background."
@@ -709,7 +697,7 @@ msgstr "Es pot recuperar l'últim suggeriment de lletra aplicat."
 msgid "The current theme suggests a font."
 msgstr "Aquest tema suggereix una lletra."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Personalitzada"
 
@@ -801,8 +789,8 @@ msgstr "Punts per polzada (PPP):"
 #: capplets/appearance/data/appearance.ui:945
 msgid "This resets the font DPI to the auto-detected value from Xserver."
 msgstr ""
-"Això restablirà els PPP de la lletra al valor detectat automàticament des de"
-" Xserver."
+"Això restablirà els PPP de la lletra al valor detectat automàticament des de "
+"Xserver."
 
 #: capplets/appearance/data/appearance.ui:946
 msgid "Automatic detection:"
@@ -1088,22 +1076,12 @@ msgstr "Aparença"
 msgid "Customize the look of the desktop"
 msgstr "Personalitzeu l'aspecte de l'escriptori"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr "preferences-desktop-theme"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
-"cafe-control-"
-"center;CAFE;aparença;propietats;escriptori;personalització;aspecte;"
+"cafe-control-center;CAFE;aparença;propietats;escriptori;personalització;"
+"aspecte;"
 
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Theme Installer"
@@ -1113,8 +1091,7 @@ msgstr "Instal·lador de temes"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Instal·la paquets de temes per a diferents parts de l'escriptori"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr "cafe-control-center;CAFE;instal·lació;escriptori;temes;"
@@ -1316,10 +1293,16 @@ msgstr "No s'ha pogut instal·lar el motor de tema"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "No es pot executar el gestor d'ajusts «cafe-settings-daemon».\n"
-"Sense el gestor d'ajusts de CAFE executant-se, algunes preferències poden no tenir efecte. Això pot indicar un problema amb el DBus, o podria ser que un gestor d'ajusts no-CAFE (per exemple KDE) estigui actiu i en conflicte amb el gestor d'ajusts de CAFE."
+"Sense el gestor d'ajusts de CAFE executant-se, algunes preferències poden no "
+"tenir efecte. Això pot indicar un problema amb el DBus, o podria ser que un "
+"gestor d'ajusts no-CAFE (per exemple KDE) estigui actiu i en conflicte amb "
+"el gestor d'ajusts de CAFE."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1402,16 +1385,16 @@ msgstr "_Omet"
 msgid "Overwrite _All"
 msgstr "_Sobreescriu-ho tot"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
 "L'aparença d'aquest tema no serà la desitjada perquè no està instal·lat el "
 "tema CTK+ «%s»."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1420,11 +1403,11 @@ msgstr ""
 "L'aparença d'aquest tema no serà la desitjada perquè no està instal·lat el "
 "tema del gestor de finestres «%s»."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "L'aparença d'aquest tema no serà la desitjada perquè no està instal·lat el "
 "tema d'icones «%s»."
@@ -1438,14 +1421,7 @@ msgstr "Aplicacions preferides"
 msgid "Select your default applications"
 msgstr "Seleccioneu les aplicacions predeterminades"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr "preferences-desktop-default-applications"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr "cafe-control-center;CAFE;predeterminada;defecte;aplicacions;"
@@ -1556,19 +1532,17 @@ msgstr "Mobilitat"
 msgid "Accessibility"
 msgstr "Accessibilitat"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Normal"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Esquerra"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Dreta"
@@ -1587,8 +1561,8 @@ msgstr "Aplica-ho a tot el sistema"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "Aplica la configuració actual als altres usuaris de CAFE de l'ordinador. "
 "Tingueu en compte que això no afecta les pantalles d'inici de sessió ni "
@@ -1659,14 +1633,7 @@ msgstr "Pantalles"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Canvieu la resolució i la posició dels monitors i dels projectors"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr "preferences-desktop-display"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1682,7 +1649,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1691,10 +1659,12 @@ msgstr ""
 "Utilització: %s FITXER_ORIGEN NOM_DE_DESTÍ\n"
 "\n"
 "Aquest programa instal·la un perfil RANDR per a les configuracions \n"
-"de diversos monitors de tot el sistema. El perfil resultant s'utilitzarà quan el \n"
+"de diversos monitors de tot el sistema. El perfil resultant s'utilitzarà "
+"quan el \n"
 "connector RANDR s'executi en el gnome-settings-daemon.\n"
 "\n"
-"FITXER_FONT - un nom de camí complet, normalment /home/usuari/.config/monitors.xml\n"
+"FITXER_FONT - un nom de camí complet, normalment /home/usuari/.config/"
+"monitors.xml\n"
 "\n"
 "NOM_DE_DESTÍ - nom relatiu del fitxer instal·lat. Aquest es posarà al\n"
 "directori del sistema per a les configuracions RANDR, de manera que el\n"
@@ -1734,15 +1704,13 @@ msgstr "Aquest programa només es pot executar a través de pkexec(1)"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "S'ha d'establir un valor enter a PKEXEC_UID"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "Heu de ser el propietari de %s\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1753,8 +1721,7 @@ msgstr "%s no ha de contenir cap directori\n"
 msgid "%s must be a directory\n"
 msgstr "%s ha de ser un directori\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1789,8 +1756,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Pantalles duplicades"
 
@@ -1907,7 +1874,7 @@ msgstr "Següent pista"
 msgid "Eject"
 msgstr "Expulsa"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Escriptori"
 
@@ -1948,7 +1915,7 @@ msgid "Home folder"
 msgstr "Carpeta de l'usuari"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Cerca"
 
@@ -2005,10 +1972,12 @@ msgstr "S'ha produït un error en desar la drecera nova"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"No es pot utilitzar la drecera «%s» perquè no seria possible teclejar-la amb aquesta tecla.\n"
+"No es pot utilitzar la drecera «%s» perquè no seria possible teclejar-la amb "
+"aquesta tecla.\n"
 "Proveu amb una altra tecla com ara Control, Alt o Majúscules a la vegada."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -2022,7 +1991,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
 "Si torneu a assignar la drecera a «%s», s'inhabilitarà la drecera «%s»."
 
@@ -2061,8 +2031,8 @@ msgstr "Dreceres de teclat"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 "Per editar una drecera, feu doble clic a la fila corresponent i premeu una "
 "nova combinació de tecles, o premeu la tecla de retrocés per netejar-la."
@@ -2071,14 +2041,7 @@ msgstr ""
 msgid "Assign shortcut keys to commands"
 msgstr "Assigneu dreceres de teclat a ordres"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr "preferences-desktop-keyboard-shortcuts"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr "cafe-control-center;CAFE;assignació;teclat;dreceres;vinculacions;"
@@ -2088,8 +2051,8 @@ msgstr "cafe-control-center;CAFE;assignació;teclat;dreceres;vinculacions;"
 msgid ""
 "Just apply settings and quit (compatibility only; now handled by daemon)"
 msgstr ""
-"Aplica les configuracions i surt (solament compatibilitat; gestionat ara per"
-" un dimoni)"
+"Aplica les configuracions i surt (solament compatibilitat; gestionat ara per "
+"un dimoni)"
 
 #: capplets/keyboard/cafe-keyboard-properties.c:217
 msgid "Start the page with the typing break settings showing"
@@ -2384,8 +2347,8 @@ msgstr "B_loqueja la pantalla per forçar un descans de tecleig"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
 "Bloqueja la pantalla després d'un cert temps, per ajudar en la prevenció de "
 "lesions causades per l'ús repetitiu del teclat"
@@ -2501,14 +2464,7 @@ msgstr "Teclat"
 msgid "Set your keyboard preferences"
 msgstr "Establiu les preferències del vostre teclat"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr "input-keyboard"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr "cafe-control-center;CAFE;teclat;preferències;"
@@ -2613,12 +2569,9 @@ msgstr "_Temps d'espera:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
-"Per comprovar la configuració del doble clic, intenteu fer doble clic al "
-"triangle, hauríeu de veure el logotip de l'escriptori de CAFE amb dos "
-"anells."
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
 #: capplets/mouse/cafe-settings-mouse.desktop.in:3
@@ -2682,14 +2635,7 @@ msgstr "Ratolí tàctil"
 msgid "Set your mouse preferences"
 msgstr "Establiu les preferències del vostre ratolí"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr "input-mouse"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr "cafe-control-center;CAFE;ratolí;preferències;"
@@ -2702,14 +2648,7 @@ msgstr "Servidor intermediari de xarxa"
 msgid "Set your network proxy preferences"
 msgstr "Establiu les preferències del servidor intermediari de xarxa"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr "network-server"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr "cafe-control-center;CAFE;xarxa;http;soquets;servidor;intermediari;"
@@ -2831,14 +2770,7 @@ msgstr "Finestres"
 msgid "Set your window properties"
 msgstr "Establiu les propietats de les finestres"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr "preferences-system-windows"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -3043,7 +2975,7 @@ msgstr "Estableix la zona horària"
 msgid "Set Ntp sync"
 msgstr "Estableix la sincronització NTP"
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4785,14 +4717,7 @@ msgstr "Gestor de l'hora i la data"
 msgid "Setting the time and date of the local system"
 msgstr "Configuració de l’hora i la data del sistema"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr "preferences-system-time"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr "cafe-control-center;CAFE;rellotge;data;hora;preferències;"
@@ -4836,23 +4761,10 @@ msgstr "L'eina de configuració de CAFE"
 msgid "Configure CAFE settings"
 msgstr "Configureu els ajusts de CAFE"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr "CAFE;centre;control;configuració;eina;escriptori;preferències;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
-msgstr "cafe-settings"
 
 #: typing-break/drw-break-window.c:179
 msgid "_Postpone Break"
@@ -5003,19 +4915,12 @@ msgstr "Visualitzeu les lletres del vostre sistema"
 msgid "CAFE Font Viewer"
 msgstr "Visualitzador de lletres de CAFE"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr "preferences-desktop-font"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
-"cafe-control-"
-"center;CAFE;lletra;visualitzador;previsualització;escriptori;preferències;"
+"cafe-control-center;CAFE;lletra;visualitzador;previsualització;escriptori;"
+"preferències;"
 
 #: font-viewer/font-thumbnailer.c:191
 msgid "Text to thumbnail (default: Aa)"
@@ -5079,27 +4984,77 @@ msgstr "Suprimeix dels programes d'inici"
 msgid "Add to Startup Programs"
 msgstr "Afegeix als programes d'inici"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Full de càlcul nou"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Document nou"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Carpeta de l'usuari"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Documents"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Sistema de fitxers"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Servidors de xarxa"
+
+#~ msgid "user-info"
+#~ msgstr "user-info"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "preferences-desktop-theme"
+#~ msgstr "preferences-desktop-theme"
+
+#~ msgid "preferences-desktop-default-applications"
+#~ msgstr "preferences-desktop-default-applications"
+
+#~ msgid "preferences-desktop-display"
+#~ msgstr "preferences-desktop-display"
+
+#~ msgid "preferences-desktop-keyboard-shortcuts"
+#~ msgstr "preferences-desktop-keyboard-shortcuts"
+
+#~ msgid "input-keyboard"
+#~ msgstr "input-keyboard"
+
+#~ msgid ""
+#~ "To test your double-click settings, try to double-click on the triangle "
+#~ "and you must see the cafe desktop logo with both rings showing."
+#~ msgstr ""
+#~ "Per comprovar la configuració del doble clic, intenteu fer doble clic al "
+#~ "triangle, hauríeu de veure el logotip de l'escriptori de CAFE amb dos "
+#~ "anells."
+
+#~ msgid "input-mouse"
+#~ msgstr "input-mouse"
+
+#~ msgid "network-server"
+#~ msgstr "network-server"
+
+#~ msgid "preferences-system-windows"
+#~ msgstr "preferences-system-windows"
+
+#~ msgid "preferences-system-time"
+#~ msgstr "preferences-system-time"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "cafe-settings"
+#~ msgstr "cafe-settings"
+
+#~ msgid "preferences-desktop-font"
+#~ msgstr "preferences-desktop-font"

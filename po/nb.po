@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # b84df44fb72862b85bae7a669218c6c2, 2020
 # 87d96f43665dd9fb55eba4603e184cae, 2020
@@ -13,19 +13,20 @@
 # Kenneth Jenssen <kennethjenssen@yahoo.com>, 2020
 # Kim Malmo <berencamlost@msn.com>, 2020
 # Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2020\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/cafe/teams/13566/nb/)\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/cafe/teams/13566/"
+"nb/)\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -47,8 +48,8 @@ msgid ""
 "that task."
 msgstr ""
 "Oppgavenavnet som skal vises i kontrollsenteret (og må derfor oversettes) "
-"etterfulgt av en \";\"-deletegn, så filnavnet til en tilhørende .desktop-fil"
-" som skal starte for den oppgaven."
+"etterfulgt av en \";\"-deletegn, så filnavnet til en tilhørende .desktop-fil "
+"som skal starte for den oppgaven."
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -75,12 +76,12 @@ msgstr "Avslutt skall når en hjelpe-handling utføres"
 
 #: org.cafe.control-center.gschema.xml.in:22
 msgid "Indicates whether to close the shell when a help action is performed."
-msgstr ""
-"Indikerer hvorvidt skallet skal lukkes når en hjelpe-handling utføres."
+msgstr "Indikerer hvorvidt skallet skal lukkes når en hjelpe-handling utføres."
 
 #: org.cafe.control-center.gschema.xml.in:26
 msgid "Exit shell on add or remove action performed"
-msgstr "Avslutt skall når en \"legg til\"- eller en \"ta bort\"-handling utføres"
+msgstr ""
+"Avslutt skall når en \"legg til\"- eller en \"ta bort\"-handling utføres"
 
 #: org.cafe.control-center.gschema.xml.in:27
 msgid ""
@@ -109,8 +110,8 @@ msgstr "URL til flere bakgrunner"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
 "Nettadresse der ytterligere skrivebordsbakgrunner kan hentes. Hvis satt til "
 "en tom streng vil ikke lenken vises."
@@ -121,11 +122,11 @@ msgstr "URL til flere drakter"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
-"URL der ytterligere skrivebordsdrakter kan innhentes. Hvis denne settes tom,"
-" vil ikke lenken vises."
+"URL der ytterligere skrivebordsdrakter kan innhentes. Hvis denne settes tom, "
+"vil ikke lenken vises."
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
@@ -152,25 +153,25 @@ msgstr "Navn"
 msgid "Description associated with a custom keybinding."
 msgstr "Beskrivelse tilhørende tilpasset tastatursnarvei."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Velg bilde"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Ingen bilder"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Bilder"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Alle filer"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "Om %s"
@@ -219,14 +220,7 @@ msgstr "Slå av innlogging med _fingeravtrykk …"
 msgid "Set your personal information"
 msgstr "Oppgi din personlige informasjon"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr "user-info"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr "cafe-control-center;CAFE;personlig;informasjon;"
@@ -474,11 +468,15 @@ msgstr "Bytt ditt passord"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"For å endre passord må du oppgi ditt nåværende passord i feltet under og klikke på <b>Autentiser</b>.\n"
-"Etter at du er autentisert kan du skrive det nye passordet, gjenta det for verifisering og klikke <b>Endre passord</b>."
+"For å endre passord må du oppgi ditt nåværende passord i feltet under og "
+"klikke på <b>Autentiser</b>.\n"
+"Etter at du er autentisert kan du skrive det nye passordet, gjenta det for "
+"verifisering og klikke <b>Endre passord</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -571,14 +569,7 @@ msgstr ""
 "Velg hvilke funksjoner for tilgjengelighet som skal aktiveres når du logger "
 "inn"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr "cafe-control-center;CAFE;tilgjengelighet;hjelpefunksjoner;"
@@ -623,8 +614,7 @@ msgid "filename"
 msgstr "filnavn"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "Oppgi navn på fanen som skal vises (theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -699,7 +689,7 @@ msgstr "Sist valgte skriftforslag kan forkastes."
 msgid "The current theme suggests a font."
 msgstr "Aktiv drakt foreslår en skrift."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Tilpasset"
 
@@ -1077,17 +1067,7 @@ msgstr "Utseende"
 msgid "Customize the look of the desktop"
 msgstr "Tilpass utseende for skrivebordet"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr "preferences-desktop-theme"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1101,8 +1081,7 @@ msgstr "Installering av drakt"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Installerer draktpakker for forskjellige deler av skrivebordet"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr "cafe-control-center;CAFE;installer;skrivebordstema;tema;"
@@ -1303,10 +1282,17 @@ msgstr "Kan ikke installere draktmotor"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
-"Kan ikke starte programmet som håndterer innstillinger «cafe-settings-daemon».\n"
-"Uten dette programmet vil noen brukervalg ikke tas i bruk. Dette kan indikere et problem med D-Bus, eller et annet program for håndtering av innstillinger (f.eks. KDE) kan være aktivt og i konflikt med CAFE's program for håndtering av innstillinger."
+"Kan ikke starte programmet som håndterer innstillinger «cafe-settings-"
+"daemon».\n"
+"Uten dette programmet vil noen brukervalg ikke tas i bruk. Dette kan "
+"indikere et problem med D-Bus, eller et annet program for håndtering av "
+"innstillinger (f.eks. KDE) kan være aktivt og i konflikt med CAFE's program "
+"for håndtering av innstillinger."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1389,16 +1375,16 @@ msgstr "_Hopp over"
 msgid "Overwrite _All"
 msgstr "Overskriv _alle"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
 "Denne drakten vil ikke se ut som tiltenkt fordi CTK+-drakten «%s» ikke er "
 "installert."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1407,11 +1393,11 @@ msgstr ""
 "Denne drakten vil ikke se ut som tiltenkt fordi påkrevd drakt «%s» for "
 "vindushåndtereren ikke er installert."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "Denne drakten vil ikke vises som tiltenkt fordi ikondrakten «%s» ikke er "
 "installert."
@@ -1425,14 +1411,7 @@ msgstr "Forvalgte programmer"
 msgid "Select your default applications"
 msgstr "Sett dine forvalgte programmer"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr "preferences-desktop-default-applications"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr "cafe-control-center;CAFE;standardprogrammer;foretrukne;programmer;"
@@ -1542,19 +1521,17 @@ msgstr "Mobilitet"
 msgid "Accessibility"
 msgstr "Tilgjengelighet"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Normal"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Venstre"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Høyre"
@@ -1573,8 +1550,8 @@ msgstr "Bruk for hele systemet"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "Gjør bruk av gjeldende oppsett for andre CAFE-brukere på maskinen. Merk at "
 "dette ikke påvirker innloggingsskjermene eller andre skrivebordsmiljøer."
@@ -1644,14 +1621,7 @@ msgstr "Skjermer"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Endre oppløsning og posisjon for skjermer og projektorer."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr "preferences-desktop-display"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1666,7 +1636,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1674,7 +1645,8 @@ msgid ""
 msgstr ""
 "Bruk: %s KILDEFIL DESTINASJONSNAVN\n"
 "\n"
-"Dette programet installerer en RANDR-profil til flerskjermsoppsett, som gjelder\n"
+"Dette programet installerer en RANDR-profil til flerskjermsoppsett, som "
+"gjelder\n"
 "for hele systemet. Resulterende profil vil bli brukt når RANDR-modulen\n"
 "køres i cafe-settings-daemon.\n"
 "\n"
@@ -1718,15 +1690,13 @@ msgstr "Dette programmet må kun kjøres via pkexec(1)"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID må være satt til en heltallsverdi"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "du må eie %s\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1737,8 +1707,7 @@ msgstr "%s må ikke inneholde katalogdeler\n"
 msgid "%s must be a directory\n"
 msgstr "%s må være en katalog\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1773,8 +1742,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Speil skjermer"
 
@@ -1888,7 +1857,7 @@ msgstr "Neste spor"
 msgid "Eject"
 msgstr "Løs ut"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Skrivebord"
 
@@ -1929,7 +1898,7 @@ msgid "Home folder"
 msgstr "Hjemmemappe"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Søk"
 
@@ -1986,10 +1955,12 @@ msgstr "Feil ved lagring av ny snarvei"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"Snarveien «%s» kan ikke brukes fordi den vil være umulig å skrive med denne tasten.\n"
+"Snarveien «%s» kan ikke brukes fordi den vil være umulig å skrive med denne "
+"tasten.\n"
 "Prøv igjen med en tastekombinasjon som inneholder Ctrl, Alt eller Shift."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -2003,7 +1974,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "Hvis du omfordeler snarveien til «%s» vil snarvei «%s» bli slått av."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -2041,8 +2013,8 @@ msgstr "Tastatursnarveier"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 "Klikk på tilhørende rad og skriv inn en ny hurtigtast for å redigere en "
 "hurtigtast, eller trykk rettetasten for å tømme."
@@ -2051,14 +2023,7 @@ msgstr ""
 msgid "Assign shortcut keys to commands"
 msgstr "Tilegn snarveitaster til kommandoer"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr "preferences-desktop-keyboard-shortcuts"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr "cafe-control-center;CAFE;tilordne;tastatur;hurtigtaster;snarveier;"
@@ -2361,11 +2326,11 @@ msgstr "_Lås skjemen for tvungen skrivepause"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
-"Lås skjermen etter en viss periode for å hindre slitasje og skader etter for"
-" lang tastaturbruk"
+"Lås skjermen etter en viss periode for å hindre slitasje og skader etter for "
+"lang tastaturbruk"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
@@ -2478,14 +2443,7 @@ msgstr "Tastatur"
 msgid "Set your keyboard preferences"
 msgstr "Sett dine brukervalg for tastatur"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr "input-keyboard"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr "cafe-control-center;CAFE;tastatur;innstillinger;"
@@ -2591,11 +2549,9 @@ msgstr "_Tidsavbrudd:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
-"Dobbeltklikk på trekanten for å teste innstillingene for dobbeltklikk. Du "
-"skal kunne se CAFE-logoen med begge ringene."
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
 #: capplets/mouse/cafe-settings-mouse.desktop.in:3
@@ -2658,14 +2614,7 @@ msgstr "Pekeplate"
 msgid "Set your mouse preferences"
 msgstr "Sett dine brukervalg for mus"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr "input-mouse"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr "cafe-control-center;CAFE;mus;innstillinger;"
@@ -2678,14 +2627,7 @@ msgstr "Nettverksmellomtjener"
 msgid "Set your network proxy preferences"
 msgstr "Sett dine brukervalg for nettverksmellomtjener"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr "network-server"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr "cafe-control-center;CAFE;nettverk;http;socks;proxy;"
@@ -2807,14 +2749,7 @@ msgstr "Vinduer"
 msgid "Set your window properties"
 msgstr "Egenskaper for vinduer"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr "preferences-system-windows"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -3017,7 +2952,7 @@ msgstr "Angi tidssone"
 msgid "Set Ntp sync"
 msgstr "NTP-synkronisering:"
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4759,14 +4694,7 @@ msgstr "Behandling av tid og dato"
 msgid "Setting the time and date of the local system"
 msgstr "Still inn tid og dato for det lokale systemet"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr "preferences-system-time"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr "cafe-control-center;CAFE;klokke;dato;tid;innstillinger;"
@@ -4810,24 +4738,11 @@ msgstr "Konfigurasjonsverktøy for CAFE"
 msgid "Configure CAFE settings"
 msgstr "Sett opp CAFE-innstillinger"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr ""
 "CAFE;kontrollpanel;oppsett;verktøy;skrivebord;innstillinger;alternativer;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
-msgstr "cafe-settings"
 
 #: typing-break/drw-break-window.c:179
 msgid "_Postpone Break"
@@ -4982,14 +4897,7 @@ msgstr "Vis skrifter på ditt system"
 msgid "CAFE Font Viewer"
 msgstr "CAFE skriftviser"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr "preferences-desktop-font"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -5057,27 +4965,76 @@ msgstr "Fjern fra oppstartsprogrammer"
 msgid "Add to Startup Programs"
 msgstr "Legg til i oppstartsprogrammer"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Nytt regneark"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Nytt dokument"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Hjem"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Dokumenter"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Filsystem"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Nettverkstjenere"
+
+#~ msgid "user-info"
+#~ msgstr "user-info"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "preferences-desktop-theme"
+#~ msgstr "preferences-desktop-theme"
+
+#~ msgid "preferences-desktop-default-applications"
+#~ msgstr "preferences-desktop-default-applications"
+
+#~ msgid "preferences-desktop-display"
+#~ msgstr "preferences-desktop-display"
+
+#~ msgid "preferences-desktop-keyboard-shortcuts"
+#~ msgstr "preferences-desktop-keyboard-shortcuts"
+
+#~ msgid "input-keyboard"
+#~ msgstr "input-keyboard"
+
+#~ msgid ""
+#~ "To test your double-click settings, try to double-click on the triangle "
+#~ "and you must see the cafe desktop logo with both rings showing."
+#~ msgstr ""
+#~ "Dobbeltklikk på trekanten for å teste innstillingene for dobbeltklikk. Du "
+#~ "skal kunne se CAFE-logoen med begge ringene."
+
+#~ msgid "input-mouse"
+#~ msgstr "input-mouse"
+
+#~ msgid "network-server"
+#~ msgstr "network-server"
+
+#~ msgid "preferences-system-windows"
+#~ msgstr "preferences-system-windows"
+
+#~ msgid "preferences-system-time"
+#~ msgstr "preferences-system-time"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "cafe-settings"
+#~ msgstr "cafe-settings"
+
+#~ msgid "preferences-desktop-font"
+#~ msgstr "preferences-desktop-font"

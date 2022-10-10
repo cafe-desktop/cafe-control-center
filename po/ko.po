@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Alan Lee <bkrhlim@aol.com>, 2020
 # D.K Kim <pepct84@gmail.com>, 2020
@@ -13,19 +13,19 @@
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # Martin Wimpress <code@flexion.org>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Wolfgang Ulbrich <cafe@raveit.de>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -33,8 +33,8 @@ msgid ""
 "[ 'Change Theme;cafe-appearance-properties.desktop', 'Set Preferred "
 "Applications;cafe-default-applications-properties.desktop' ]"
 msgstr ""
-"[ '테마 바꾸기;cafe-appearance-properties.desktop', '기본 애플리케이션 설정;cafe-default-"
-"applications-properties.desktop' ]"
+"[ '테마 바꾸기;cafe-appearance-properties.desktop', '기본 애플리케이션 설정;"
+"cafe-default-applications-properties.desktop' ]"
 
 #: org.cafe.control-center.gschema.xml.in:6
 msgid "Task names and associated .desktop files"
@@ -46,8 +46,8 @@ msgid ""
 "separator then the filename of an associated .desktop file to launch for "
 "that task."
 msgstr ""
-"컨트롤 센터에 표시하는 작업 이름, \";\" 표시 다음에 관련 해당 작업을 실행하는 데 사용할 관련 .desktop 파일의 파일 이름이"
-" 나옵니다."
+"컨트롤 센터에 표시하는 작업 이름, \";\" 표시 다음에 관련 해당 작업을 실행하"
+"는 데 사용할 관련 .desktop 파일의 파일 이름이 나옵니다."
 
 #: org.cafe.control-center.gschema.xml.in:11
 msgid "Close the control-center when a task is activated"
@@ -92,7 +92,8 @@ msgstr "업그레이드 혹은 설치 해제 동작을 수행할 때 쉘을 끝�
 msgid ""
 "Indicates whether to close the shell when an upgrade or uninstall action is "
 "performed."
-msgstr "업그레이드 혹은 설치 해제 동작을 수행할 때 쉘을 닫을 지 여부를 나타냅니다."
+msgstr ""
+"업그레이드 혹은 설치 해제 동작을 수행할 때 쉘을 닫을 지 여부를 나타냅니다."
 
 #: org.cafe.control-center.gschema.xml.in:38
 msgid "More backgrounds URL"
@@ -100,9 +101,10 @@ msgstr "배경 다운로드 URL"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
-msgstr "데스크톱 배경을 받을 수 있는 URL. 빈 문자열이면 링크가 나타나지 않습니다."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
+msgstr ""
+"데스크톱 배경을 받을 수 있는 URL. 빈 문자열이면 링크가 나타나지 않습니다."
 
 #: org.cafe.control-center.gschema.xml.in:43
 msgid "More themes URL"
@@ -110,9 +112,10 @@ msgstr "테마 다운로드 URL"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
-msgstr "데스크톱 테마를 받을 수 있는 URL. 빈 문자열이면 링크가 나타나지 않습니다."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
+msgstr ""
+"데스크톱 테마를 받을 수 있는 URL. 빈 문자열이면 링크가 나타나지 않습니다."
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
@@ -139,25 +142,25 @@ msgstr "이름"
 msgid "Description associated with a custom keybinding."
 msgstr "사용자 정의 단축키 지정에 연결할 설명입니다."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "그림 선택"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "그림 없음"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "이미지"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "모든 파일"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "%s 정보"
@@ -206,14 +209,7 @@ msgstr "지문 로그인 사용하지 않기(_F)..."
 msgid "Set your personal information"
 msgstr "개인 정보를 설정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr ""
@@ -341,7 +337,9 @@ msgstr "지문 선택"
 msgid ""
 "Your fingerprint was successfully saved. You should now be able to log in "
 "using your fingerprint reader."
-msgstr "지문을 성공적으로 저장했습니다. 이제 지문 인식 장치를 이용해 로그인할 수 있습니다."
+msgstr ""
+"지문을 성공적으로 저장했습니다. 이제 지문 인식 장치를 이용해 로그인할 수 있습"
+"니다."
 
 #: capplets/about-me/cafe-about-me-password.c:160
 msgid "Child exited unexpectedly"
@@ -454,11 +452,14 @@ msgstr "암호 바꾸기"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
 "암호를 바꾸려면, 현재 암호를 아래 칸에 입력하고 <b>인증</b>을 누르십시오.\n"
-"인증한 후에, 새 암호를 입력하시고 확인을 위해 다시 입력한 다음 <b>암호 바꾸기</b>를 누르십시오."
+"인증한 후에, 새 암호를 입력하시고 확인을 위해 다시 입력한 다음 <b>암호 바꾸기"
+"</b>를 누르십시오."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -512,7 +513,8 @@ msgstr "보조 기술 사용하기(_E)"
 msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
-msgstr "보조 기술 사용 여부를 바꿔도 다음 번 로그인하기 전까지 아무 효과가 없습니다."
+msgstr ""
+"보조 기술 사용 여부를 바꿔도 다음 번 로그인하기 전까지 아무 효과가 없습니다."
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -547,14 +549,7 @@ msgstr "접근성 로그인 대화 창으로 이동"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "로그인할 때 어느 접근성 기능을 사용할 지 선택"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr ""
@@ -599,8 +594,7 @@ msgid "filename"
 msgstr "파일 이름"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr "보여줄 페이지 이름을 지정합니다(theme|background|fonts|interface)"
 
 #: capplets/appearance/appearance-main.c:162
@@ -641,13 +635,16 @@ msgstr "글꼴 되돌리기"
 msgid ""
 "The current theme suggests a background and a font. Also, the last applied "
 "font suggestion can be reverted."
-msgstr "이 테마는 배경과 글꼴이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니다."
+msgstr ""
+"이 테마는 배경과 글꼴이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니"
+"다."
 
 #: capplets/appearance/appearance-themes.c:689
 msgid ""
 "The current theme suggests a background. Also, the last applied font "
 "suggestion can be reverted."
-msgstr "이 테마는 배경이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니다."
+msgstr ""
+"이 테마는 배경이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니다."
 
 #: capplets/appearance/appearance-themes.c:691
 msgid "The current theme suggests a background and a font."
@@ -657,7 +654,8 @@ msgstr "이 테마는 배경과 글꼴이 있습니다."
 msgid ""
 "The current theme suggests a font. Also, the last applied font suggestion "
 "can be reverted."
-msgstr "이 테마는 글꼴이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니다."
+msgstr ""
+"이 테마는 글꼴이 있습니다. 또 마지막에 적용한 글꼴은 되돌릴 수 있습니다."
 
 #: capplets/appearance/appearance-themes.c:695
 msgid "The current theme suggests a background."
@@ -671,7 +669,7 @@ msgstr "마지막에 적용한 글꼴은 되돌릴 수 있습니다."
 msgid "The current theme suggests a font."
 msgstr "이 테마는 글꼴이 있습니다."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "개별 설정"
 
@@ -1048,17 +1046,7 @@ msgstr "모양"
 msgid "Customize the look of the desktop"
 msgstr "데스크톱의 모양을 설정합니다"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr ""
@@ -1071,8 +1059,7 @@ msgstr "테마 설치"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "바탕 화면의 여러 곳에 쓰일 테마를 설치합니다"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr ""
@@ -1170,7 +1157,9 @@ msgstr "\"%s\" 파일은 올바른 테마가 아닌 것으로 보입니다."
 msgid ""
 "\"%s\" does not appear to be a valid theme. It may be a theme engine which "
 "you need to compile."
-msgstr "\"%s\" 파일은 올바른 테마가 아닌 것으로 보입니다. 컴파일해야 하는 테마 엔진일 수 있습니다."
+msgstr ""
+"\"%s\" 파일은 올바른 테마가 아닌 것으로 보입니다. 컴파일해야 하는 테마 엔진"
+"일 수 있습니다."
 
 #: capplets/appearance/theme-installer.c:375
 #, c-format
@@ -1270,10 +1259,15 @@ msgstr "테마 엔진을 설치할 수 없습니다"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "설정 관리자 'cafe-settings-daemon'을 실행할 수 없습니다.\n"
-"마테 설정 관리자를 실행하지 않고는, 몇몇 기본 설정 사항이 적용되지 않습니다. 이는 DBus의 문제이거나, 마테 데스크톱용이 아닌(예를 들어, KDE) 설정 관리자가 이미 실행중이어서 마테 설정 관리자와 충돌하기 때문일지도 모릅니다."
+"마테 설정 관리자를 실행하지 않고는, 몇몇 기본 설정 사항이 적용되지 않습니다. "
+"이는 DBus의 문제이거나, 마테 데스크톱용이 아닌(예를 들어, KDE) 설정 관리자가 "
+"이미 실행중이어서 마테 설정 관리자와 충돌하기 때문일지도 모릅니다."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1356,26 +1350,32 @@ msgstr "건너뛰기(_S)"
 msgid "Overwrite _All"
 msgstr "모두 덮어 쓰기(_A)"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
-msgstr "필요한 '%s' CTK+ 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습니다."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
+msgstr ""
+"필요한 '%s' CTK+ 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습"
+"니다."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
 "theme '%s' is not installed."
-msgstr "필요한 '%s' 창 관리자 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습니다."
+msgstr ""
+"필요한 '%s' 창 관리자 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이"
+"지 않습니다."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
-msgstr "필요한 '%s' 아이콘 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않습니다."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
+msgstr ""
+"필요한 '%s' 아이콘 테마를 설치하지 않았으므로 이 테마는 의도한 대로 보이지 않"
+"습니다."
 
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
 #: capplets/default-applications/cafe-default-applications-properties.ui:13
@@ -1386,14 +1386,7 @@ msgstr "기본 프로그램"
 msgid "Select your default applications"
 msgstr "기본 프로그램을 선택하십시오"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr ""
@@ -1503,19 +1496,17 @@ msgstr "이동 기술"
 msgid "Accessibility"
 msgstr "접근성"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "보통"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "왼쪽"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "오른쪽"
@@ -1534,11 +1525,11 @@ msgstr "시스템 전체에 적용하기"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
-"컴퓨터에서 마테를 이용하는 다른 사용자들을 위해서 현재 설정을 적용합니다. 이 설정은 로그인 창이나 데스크톱 환경에는 영향을 주지 "
-"않습니다."
+"컴퓨터에서 마테를 이용하는 다른 사용자들을 위해서 현재 설정을 적용합니다. 이 "
+"설정은 로그인 창이나 데스크톱 환경에는 영향을 주지 않습니다."
 
 #: capplets/display/display-capplet.ui:90
 msgid "_Apply"
@@ -1605,14 +1596,7 @@ msgstr "디스플레이"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "모니터와 프로젝터의 해상도와 위치를 바꿉니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1627,7 +1611,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1679,15 +1664,13 @@ msgstr "이 프로그램은 pkexec(1)을 통해 실행해야 합니다"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID는 정수 값으로 설정해야 합니다"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "%s은(는) 자기 소유 파일이어야 합니다\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1698,8 +1681,7 @@ msgstr "%s은(는) 디렉터리 내용이 없어야 합니다\n"
 msgid "%s must be a directory\n"
 msgstr "%s은(는) 디렉터리여야 합니다\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1717,7 +1699,8 @@ msgstr "전체 시스템에 다중 모니터 설정 설치"
 #: capplets/display/org.cafe.randr.policy.in:18
 msgid ""
 "Authentication is required to install multi-monitor settings for all users"
-msgstr "모든 사용자에게 적용할 다중 모니터 설정을 하려면 관리자 인증이 필요합니다"
+msgstr ""
+"모든 사용자에게 적용할 다중 모니터 설정을 하려면 관리자 인증이 필요합니다"
 
 #: capplets/display/xrandr-capplet.c:309
 msgid "Upside Down"
@@ -1732,8 +1715,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "동일한 화면"
 
@@ -1751,7 +1734,8 @@ msgstr "%d x %d"
 msgid ""
 "Select a monitor to change its properties; drag it to rearrange its "
 "placement."
-msgstr "속성을 바꾸려는 모니터를 선택하십시오. 위치를 바꾸려면 끌어 놓으십시오."
+msgstr ""
+"속성을 바꾸려는 모니터를 선택하십시오. 위치를 바꾸려면 끌어 놓으십시오."
 
 #: capplets/display/xrandr-capplet.c:2081
 msgid "Could not save the monitor configuration"
@@ -1845,7 +1829,7 @@ msgstr "다음 트랙"
 msgid "Eject"
 msgstr "꺼내기"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "바탕화면"
 
@@ -1886,7 +1870,7 @@ msgid "Home folder"
 msgstr "홈 폴더"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "검색"
 
@@ -1943,10 +1927,12 @@ msgstr "새 단축키를 저장하는 동안 오류가 생겼습니다"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"\"%s\" 바로 가기 \\b키를 사용할 수 없습니다. 이 키만으로는 입력할 수 없습니다.\n"
+"\"%s\" 바로 가기 \\b키를 사용할 수 없습니다. 이 키만으로는 입력할 수 없습니"
+"다.\n"
 "Control이나 Alt, Shift키와 동시에 사용해 보십시오."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
@@ -1960,7 +1946,8 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "바로 가기 키를 \"%s\"에 다시 설정하면, \"%s\" 바로 가기는 없어집니다."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
@@ -1998,22 +1985,17 @@ msgstr "키보드 단축키"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
-msgstr "단축키를 편집하시려면, 해당 항목을 클릭하고 새 단축키를 누르시고요, 지우시려면 백스페이스를 누르시면 됩니다."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
+msgstr ""
+"단축키를 편집하시려면, 해당 항목을 클릭하고 새 단축키를 누르시고요, 지우시려"
+"면 백스페이스를 누르시면 됩니다."
 
 #: capplets/keybindings/cafe-keybinding.desktop.in:4
 msgid "Assign shortcut keys to commands"
 msgstr "명령어에 단축키를 지정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2312,9 +2294,10 @@ msgstr "화면을 잠궈 강제로 휴식 시간을 갖기(_L)"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
-msgstr "일정 기간동안 화면을 잠궈 실수로 키보드를 반복해서 누르는 걸 방지합니다"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
+msgstr ""
+"일정 기간동안 화면을 잠궈 실수로 키보드를 반복해서 누르는 걸 방지합니다"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1904
 msgid "_Work interval lasts:"
@@ -2427,14 +2410,7 @@ msgstr "키보드"
 msgid "Set your keyboard preferences"
 msgstr "키보드를 설정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr ""
@@ -2539,8 +2515,8 @@ msgstr "제한 시간(_T):"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
@@ -2570,7 +2546,8 @@ msgstr "세 손가락 클릭 에뮬레이션:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:1155
 msgid "Warning: multi-finger emulation may disable software buttons"
-msgstr "알림: 멀티 핑거 에뮬레이션이 소프트웨어 버튼을 비활성화시킬 수 있습니다"
+msgstr ""
+"알림: 멀티 핑거 에뮬레이션이 소프트웨어 버튼을 비활성화시킬 수 있습니다"
 
 #: capplets/mouse/cafe-mouse-properties.ui:1186
 msgid "Scrolling"
@@ -2604,14 +2581,7 @@ msgstr "터치패드"
 msgid "Set your mouse preferences"
 msgstr "마우스 기본 설정을 설정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr ""
@@ -2624,14 +2594,7 @@ msgstr "네트워크 프록시"
 msgid "Set your network proxy preferences"
 msgstr "네트워크 프록시를 설정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr ""
@@ -2753,14 +2716,7 @@ msgstr "창"
 msgid "Set your window properties"
 msgstr "창 속성을 설정합니다"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr ""
@@ -2962,7 +2918,7 @@ msgstr ""
 msgid "Set Ntp sync"
 msgstr ""
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
@@ -4702,14 +4658,7 @@ msgstr ""
 msgid "Setting the time and date of the local system"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr ""
@@ -4753,22 +4702,9 @@ msgstr "마테 설정 도구"
 msgid "Configure CAFE settings"
 msgstr "마테 설정 구성"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
 msgstr ""
 
 #: typing-break/drw-break-window.c:179
@@ -4837,7 +4773,8 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/"
+">"
 
 #: typing-break/main.c:62
 msgid "Enable debugging code"
@@ -4858,8 +4795,9 @@ msgid ""
 "right-clicking on your panel and choosing 'Add to panel', selecting "
 "'Notification area' and clicking 'Add'."
 msgstr ""
-"입력 정보에서는 알림 영역에서 정보를 보여줍니다. 하지만 패널에 알림 영역이 없습니다. 패널에 오른쪽 클릭을 해서 '패널에 추가'를 "
-"선택한 다음 '알림 영역'을 선택하고 '추가'를 누르면 알림 영역을 추가할 수 있습니다."
+"입력 정보에서는 알림 영역에서 정보를 보여줍니다. 하지만 패널에 알림 영역이 없"
+"습니다. 패널에 오른쪽 클릭을 해서 '패널에 추가'를 선택한 다음 '알림 영역'을 "
+"선택하고 '추가'를 누르면 알림 영역을 추가할 수 있습니다."
 
 #: font-viewer/font-view.c:205
 msgid "Style"
@@ -4917,14 +4855,7 @@ msgstr "시스템에서 글꼴 보기"
 msgid "CAFE Font Viewer"
 msgstr "마테 글꼴 보기"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr ""
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
@@ -4991,27 +4922,27 @@ msgstr "시작 프로그램에서 제거"
 msgid "Add to Startup Programs"
 msgstr "시작 프로그램에 추가"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "새 스프레드시트"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "새 문서"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "홈 폴더"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "문서"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "파일 시스템"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "네트워크 서버"

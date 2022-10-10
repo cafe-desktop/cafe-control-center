@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-control-center package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
@@ -20,19 +20,19 @@
 # La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2020
 # Kukuh Syafaat <syafaatkukuh@gmail.com>, 2020
 # Andika Triwidada <andika@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-control-center 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/cafe/teams/13566/id/)\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: org.cafe.control-center.gschema.xml.in:5
@@ -63,7 +63,8 @@ msgstr "Tutup pusat kendali ketika sebuah tugas diaktifkan"
 #: org.cafe.control-center.gschema.xml.in:12
 msgid ""
 "if true, the control-center will close when a \"Common Task\" is activated."
-msgstr "Jikabenar, control-center akan menutup ketika \"Task Umum\" diaktifkan."
+msgstr ""
+"Jikabenar, control-center akan menutup ketika \"Task Umum\" diaktifkan."
 
 #: org.cafe.control-center.gschema.xml.in:16
 msgid "Exit shell on start action performed"
@@ -114,8 +115,8 @@ msgstr "URL latar belakang lain"
 
 #: org.cafe.control-center.gschema.xml.in:39
 msgid ""
-"URL for where to get more desktop backgrounds. If set to an empty string the"
-" link will not appear."
+"URL for where to get more desktop backgrounds. If set to an empty string the "
+"link will not appear."
 msgstr ""
 "URL untuk memperoleh lebih banyak latar belakang desktop. Bila dikosongkan, "
 "taut tidak akan muncul."
@@ -126,11 +127,11 @@ msgstr "URL tema lain"
 
 #: org.cafe.control-center.gschema.xml.in:44
 msgid ""
-"URL for where to get more desktop themes. If set to an empty string the link"
-" will not appear."
+"URL for where to get more desktop themes. If set to an empty string the link "
+"will not appear."
 msgstr ""
-"URL untuk memperoleh lebih banyak tema desktop. Bila dikosongkan, taut tidak"
-" akan muncul."
+"URL untuk memperoleh lebih banyak tema desktop. Bila dikosongkan, taut tidak "
+"akan muncul."
 
 #: org.cafe.control-center.keybinding.gschema.xml.in:5
 msgid "Keybinding"
@@ -157,25 +158,25 @@ msgstr "Nama"
 msgid "Description associated with a custom keybinding."
 msgstr "Deskripsi yang diasosiasikan dengan keybinding ubahan."
 
-#: capplets/about-me/cafe-about-me.c:293
+#: capplets/about-me/cafe-about-me.c:294
 msgid "Select Image"
 msgstr "Pilih Gambar"
 
-#: capplets/about-me/cafe-about-me.c:295
+#: capplets/about-me/cafe-about-me.c:296
 msgid "No Image"
 msgstr "Tanpa Gambar"
 
-#: capplets/about-me/cafe-about-me.c:323
+#: capplets/about-me/cafe-about-me.c:324
 #: capplets/appearance/appearance-desktop.c:646
 msgid "Images"
 msgstr "Citra"
 
-#: capplets/about-me/cafe-about-me.c:327
+#: capplets/about-me/cafe-about-me.c:328
 #: capplets/appearance/theme-installer.c:830
 msgid "All Files"
 msgstr "Semua Berkas"
 
-#: capplets/about-me/cafe-about-me.c:500
+#: capplets/about-me/cafe-about-me.c:501
 #, c-format
 msgid "About %s"
 msgstr "Tentang %s"
@@ -224,14 +225,7 @@ msgstr "Matikan Login _Sidik Jari..."
 msgid "Set your personal information"
 msgstr "Masukkan informasi pribadi Anda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/about-me/cafe-about-me.desktop.in:7
-msgid "user-info"
-msgstr "user-info"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/about-me/cafe-about-me.desktop.in:13
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr "cafe-control-center;CAFE;pribadi;informasi;"
@@ -481,11 +475,15 @@ msgstr "Ubah kata sandi Anda"
 
 #: capplets/about-me/cafe-about-me-password.ui:142
 msgid ""
-"To change your password, enter your current password in the field below and click <b>Authenticate</b>.\n"
-"After you have authenticated, enter your new password, retype it for verification and click <b>Change password</b>."
+"To change your password, enter your current password in the field below and "
+"click <b>Authenticate</b>.\n"
+"After you have authenticated, enter your new password, retype it for "
+"verification and click <b>Change password</b>."
 msgstr ""
-"Untuk mengganti kata sandi Anda, masukkan kata sandi sekarang di bawah dan klik <b>Otentikasi<b>.\n"
-"Setelah Anda terotentikasi, masukkan kata sandi baru, ketik lagi untuk memastikan dan klik <b>Ganti kata sandi</b>."
+"Untuk mengganti kata sandi Anda, masukkan kata sandi sekarang di bawah dan "
+"klik <b>Otentikasi<b>.\n"
+"Setelah Anda terotentikasi, masukkan kata sandi baru, ketik lagi untuk "
+"memastikan dan klik <b>Ganti kata sandi</b>."
 
 #: capplets/about-me/cafe-about-me-password.ui:171
 msgid "Current _password:"
@@ -540,8 +538,8 @@ msgid ""
 "Changes to enable assistive technologies will not take effect until your "
 "next log in."
 msgstr ""
-"Perubahan untuk mengaktifkan teknologi bantu tidak akan berefek sampai masuk"
-" berikutnya."
+"Perubahan untuk mengaktifkan teknologi bantu tidak akan berefek sampai masuk "
+"berikutnya."
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:284
 #: capplets/time-admin/src/time-admin.ui:185
@@ -576,14 +574,7 @@ msgstr "Pindah ke dialog Masuk Mudah"
 msgid "Choose which accessibility features to enable when you log in"
 msgstr "Pilih fitur kemudahan akses yang Anda inginkan untuk aktif saat login"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:7
-msgid "preferences-desktop-accessibility"
-msgstr "preferences-desktop-accessibility"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr "cafe-control-center;CAFE;aksesibilitas;fitur;"
@@ -628,8 +619,7 @@ msgid "filename"
 msgstr "nama berkas"
 
 #: capplets/appearance/appearance-main.c:161
-msgid ""
-"Specify the name of the page to show (theme|background|fonts|interface)"
+msgid "Specify the name of the page to show (theme|background|fonts|interface)"
 msgstr ""
 "Nyatakan nama halaman untuk ditampilkan (tema|gambar-latar|huruf|tampilan)"
 
@@ -707,7 +697,7 @@ msgstr "Font terakhir yang diterapkan dapat dikembalikan ke asal."
 msgid "The current theme suggests a font."
 msgstr "Tema saat ini menganjurkan sebuah fonta."
 
-#: capplets/appearance/appearance-themes.c:1015
+#: capplets/appearance/appearance-themes.c:1014
 msgid "Custom"
 msgstr "Kustom"
 
@@ -1084,17 +1074,7 @@ msgstr "Penampilan"
 msgid "Customize the look of the desktop"
 msgstr "Kostumisasi tampilan desktop"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:7
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:7
-msgid "preferences-desktop-theme"
-msgstr "preferences-desktop-theme"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr "cafe-control-center;CAFE;penampilan;properti;desktop;sesuaikan;"
@@ -1107,8 +1087,7 @@ msgstr "Pemasang Tema"
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Pasang paket tema untuk berbagai bagian desktop"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/appearance/data/cafe-theme-installer.desktop.in:14
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr "cafe-control-center;CAFE;install;pasang;desktop;tema;"
@@ -1309,10 +1288,16 @@ msgstr "Tidak dapat memasang mesin tema"
 #: capplets/common/activate-settings-daemon.c:16
 msgid ""
 "Unable to start the settings manager 'cafe-settings-daemon'.\n"
-"Without the CAFE settings manager running, some preferences may not take effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) settings manager may already be active and conflicting with the CAFE settings manager."
+"Without the CAFE settings manager running, some preferences may not take "
+"effect. This could indicate a problem with DBus, or a non-CAFE (e.g. KDE) "
+"settings manager may already be active and conflicting with the CAFE "
+"settings manager."
 msgstr ""
 "Program pengatur 'cafe-settings-daemon' tidak dapat dijalankan.\n"
-"Tanpa program ini, beberapa layanan pengaturan sistem tidak dapat dilakukan. Biasanya ini karena adanya masalah dengan DBus atau sudah ada manajer pengaturan non-CAFE (misalnya dari KDE) yang sedang jalan dan menjadi konflik dengan manajer pengaturan CAFE."
+"Tanpa program ini, beberapa layanan pengaturan sistem tidak dapat dilakukan. "
+"Biasanya ini karena adanya masalah dengan DBus atau sudah ada manajer "
+"pengaturan non-CAFE (misalnya dari KDE) yang sedang jalan dan menjadi "
+"konflik dengan manajer pengaturan CAFE."
 
 #: capplets/common/capplet-util.c:82
 #, c-format
@@ -1395,16 +1380,16 @@ msgstr "Lewati"
 msgid "Overwrite _All"
 msgstr "Timp_a Semua"
 
-#: capplets/common/cafe-theme-info.c:1578
+#: capplets/common/cafe-theme-info.c:1580
 #, c-format
 msgid ""
-"This theme will not look as intended because the required CTK+ theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required CTK+ theme '%s' is "
+"not installed."
 msgstr ""
 "Tema ini tidak akan tampak seperti yang diinginkan karena tema CTK+ '%s' "
 "yang diperlukan tidak terpasang."
 
-#: capplets/common/cafe-theme-info.c:1588
+#: capplets/common/cafe-theme-info.c:1590
 #, c-format
 msgid ""
 "This theme will not look as intended because the required window manager "
@@ -1413,11 +1398,11 @@ msgstr ""
 "Tema ini tidak akan tampak seperti yang diinginkan karena tema manajer "
 "jendela '%s' yang diperlukan tidak terpasang."
 
-#: capplets/common/cafe-theme-info.c:1596
+#: capplets/common/cafe-theme-info.c:1598
 #, c-format
 msgid ""
-"This theme will not look as intended because the required icon theme '%s' is"
-" not installed."
+"This theme will not look as intended because the required icon theme '%s' is "
+"not installed."
 msgstr ""
 "Tema ini tidak akan tampak seperti yang diinginkan karena tema ikon '%s' "
 "yang diperlukan tidak terpasang."
@@ -1431,14 +1416,7 @@ msgstr "Aplikasi Pilihan"
 msgid "Select your default applications"
 msgstr "Silakan pilih aplikasi baku"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:7
-msgid "preferences-desktop-default-applications"
-msgstr "preferences-desktop-default-applications"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr "cafe-control-center;CAFE;default;baku;aplikasi;"
@@ -1454,8 +1432,7 @@ msgstr "Pastikan applet ini telah terpasang dengan benar"
 #: capplets/default-applications/cafe-da-capplet.c:838
 msgid "Specify the name of the page to show (internet|multimedia|system|a11y)"
 msgstr ""
-"Tentukan nama halaman yang akan ditampilkan "
-"(internet|multimedia|system|a11y)"
+"Tentukan nama halaman yang akan ditampilkan (internet|multimedia|system|a11y)"
 
 #: capplets/default-applications/cafe-da-capplet.c:844
 msgid "- CAFE Default Applications"
@@ -1550,19 +1527,17 @@ msgstr "Mobilitas"
 msgid "Accessibility"
 msgstr "Kemudahan"
 
-#: capplets/display/display-capplet.ui:22
-#: capplets/display/xrandr-capplet.c:306 capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
+#: capplets/display/xrandr-capplet.c:345
 msgid "Normal"
 msgstr "Normal"
 
-#: capplets/display/display-capplet.ui:25
-#: capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Kiri"
 
-#: capplets/display/display-capplet.ui:28
-#: capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Kanan"
@@ -1581,8 +1556,8 @@ msgstr "Berlakukan pada semua siste"
 
 #: capplets/display/display-capplet.ui:79
 msgid ""
-"Applies the current configuration for other CAFE users on the computer. Note"
-" that this doesn't affect login screens or other desktop environments."
+"Applies the current configuration for other CAFE users on the computer. Note "
+"that this doesn't affect login screens or other desktop environments."
 msgstr ""
 "Gunakan konfigurasi saat ini untuk semua pengguna CAFE pada komputer. "
 "Perhatikan bahwa hal ini tidak mempengaruhi layar login atau lingkungan "
@@ -1653,14 +1628,7 @@ msgstr "Tampilan"
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Ubah resolusi dan posisi monitor dan proyektor"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/display/cafe-display-properties.desktop.in:7
-msgid "preferences-desktop-display"
-msgstr "preferences-desktop-display"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/display/cafe-display-properties.desktop.in:13
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
@@ -1675,7 +1643,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors.xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
+"xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1687,7 +1656,8 @@ msgstr ""
 "ke suatu lokasi sistem-lebar. Profil hasil akan dipakai ketika plug-in\n"
 "RANDR dijalankan di cafe-settings-daemon.\n"
 "\n"
-"BERKAS_SUMBER - suatu nama path lengkap, biasanya /home/namapengguna/.config/monitors.xml\n"
+"BERKAS_SUMBER - suatu nama path lengkap, biasanya /home/namapengguna/.config/"
+"monitors.xml\n"
 "\n"
 "NAMA_TUJUAN - nama relatif bagi berkas yang dipasang. Ini akan diletakkan\n"
 "              ke suatu direktori sistem lebar bagi konfigurasi RANDR, \n"
@@ -1727,15 +1697,13 @@ msgstr "Program ini hanya boleh dijalankan melalui pkexec(1)"
 msgid "PKEXEC_UID must be set to an integer value"
 msgstr "PKEXEC_UID mesti ditata ke suatu nilai bulat"
 
-#. Translators: we are complaining that a file must be really owned by the
-#. user who called this program
+#. Translators: we are complaining that a file must be really owned by the user who called this program
 #: capplets/display/cafe-display-properties-install-systemwide.c:215
 #, c-format
 msgid "%s must be owned by you\n"
 msgstr "%s mesti milik Anda\n"
 
-#. Translators: here we are saying that a plain filename must look like
-#. "filename", not like "some_dir/filename"
+#. Translators: here we are saying that a plain filename must look like "filename", not like "some_dir/filename"
 #: capplets/display/cafe-display-properties-install-systemwide.c:223
 #, c-format
 msgid "%s must not have any directory components\n"
@@ -1746,8 +1714,7 @@ msgstr "%s tak boleh memiliki sebarang komponen direktori\n"
 msgid "%s must be a directory\n"
 msgstr "%s mesti merupakan direktori\n"
 
-#. Translators: the first %s/%s is a directory/filename; the last %s is an
-#. error message
+#. Translators: the first %s/%s is a directory/filename; the last %s is an error message
 #: capplets/display/cafe-display-properties-install-systemwide.c:242
 #, c-format
 msgid "Could not open %s/%s: %s\n"
@@ -1781,8 +1748,8 @@ msgstr "%d Hz"
 #. * screen is the same as your external monitor.  Here, "Mirror" is being
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
-#: capplets/display/xrandr-capplet.c:484
-#: capplets/display/xrandr-capplet.c:1632
+#.
+#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
 msgid "Mirror Screens"
 msgstr "Layar Kembar"
 
@@ -1801,8 +1768,8 @@ msgid ""
 "Select a monitor to change its properties; drag it to rearrange its "
 "placement."
 msgstr ""
-"Pilih suatu monitor untuk mengubah propertinya; seret dia untuk menata ulang"
-" penempatannya."
+"Pilih suatu monitor untuk mengubah propertinya; seret dia untuk menata ulang "
+"penempatannya."
 
 #: capplets/display/xrandr-capplet.c:2081
 msgid "Could not save the monitor configuration"
@@ -1897,7 +1864,7 @@ msgstr "Trek selanjutnya"
 msgid "Eject"
 msgstr "Keluarkan Media"
 
-#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1153
+#: capplets/keybindings/01-desktop-key.xml.in:2 libslab/bookmark-agent.c:1157
 msgid "Desktop"
 msgstr "Desktop"
 
@@ -1938,7 +1905,7 @@ msgid "Home folder"
 msgstr "Folder rumah"
 
 #: capplets/keybindings/01-desktop-key.xml.in:22 font-viewer/font-view.c:843
-#: libslab/bookmark-agent.c:1192
+#: libslab/bookmark-agent.c:1196
 msgid "Search"
 msgstr "Pencarian"
 
@@ -1995,11 +1962,14 @@ msgstr "Kesalahan saat menyimpan tombol pintas baru"
 #: capplets/keybindings/cafe-keybinding-properties.c:1282
 #, c-format
 msgid ""
-"The shortcut \"%s\" cannot be used because it will become impossible to type using this key.\n"
+"The shortcut \"%s\" cannot be used because it will become impossible to type "
+"using this key.\n"
 "Please try with a key such as Control, Alt or Shift at the same time."
 msgstr ""
-"Tombol pintas itu \"%s\" tidak dapat digunakan karena tidak mungkin mengetik menggunakan tombol ini.\n"
-"Silakan coba dengan rangkaian tombol seperti Control, Alt atau Shift secara bersamaan."
+"Tombol pintas itu \"%s\" tidak dapat digunakan karena tidak mungkin mengetik "
+"menggunakan tombol ini.\n"
+"Silakan coba dengan rangkaian tombol seperti Control, Alt atau Shift secara "
+"bersamaan."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1314
 #, c-format
@@ -2012,10 +1982,11 @@ msgstr ""
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1321
 #, c-format
-msgid "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
+msgid ""
+"If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr ""
-"Jika Anda memfungsikan ulang cara pintas untuk \"%s\", cara \"%s\"  ini akan"
-" dinonaktifkan."
+"Jika Anda memfungsikan ulang cara pintas untuk \"%s\", cara \"%s\"  ini akan "
+"dinonaktifkan."
 
 #: capplets/keybindings/cafe-keybinding-properties.c:1326
 msgid "_Reassign"
@@ -2052,8 +2023,8 @@ msgstr "Tombol Pintas"
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:339
 msgid ""
-"To edit a shortcut key, double-click on the corresponding row and type a new"
-" key combination, or press backspace to clear."
+"To edit a shortcut key, double-click on the corresponding row and type a new "
+"key combination, or press backspace to clear."
 msgstr ""
 "Untuk menyunting suatu tombol pintas, klik ganda pada kolom yang sesuai dan "
 "ketikkan kombinasi tombol baru, atau tekan backspace untuk menghapus."
@@ -2062,14 +2033,7 @@ msgstr ""
 msgid "Assign shortcut keys to commands"
 msgstr "Pasang tombol singkat untuk perintah tertentu"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keybindings/cafe-keybinding.desktop.in:7
-msgid "preferences-desktop-keyboard-shortcuts"
-msgstr "preferences-desktop-keyboard-shortcuts"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keybindings/cafe-keybinding.desktop.in:13
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr ""
@@ -2176,8 +2140,7 @@ msgstr "Tombol Pengulangan"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:201
 msgid "Key presses _repeat when key is held down"
-msgstr ""
-"Tombol akan diulangi saat tombol te_rsebut ditekan dalam beberapa saat"
+msgstr "Tombol akan diulangi saat tombol te_rsebut ditekan dalam beberapa saat"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:231
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1203
@@ -2376,8 +2339,8 @@ msgstr "_Kunci layar untuk menjalankan jeda pengetikan"
 
 #: capplets/keyboard/cafe-keyboard-properties-dialog.ui:1855
 msgid ""
-"Lock screen after a certain duration to help prevent repetitive keyboard use"
-" injuries"
+"Lock screen after a certain duration to help prevent repetitive keyboard use "
+"injuries"
 msgstr ""
 "Kunci layar setelah durasi tertentu untuk mencegah cedera lengan akibat "
 "terlalu banyak mengetik"
@@ -2493,14 +2456,7 @@ msgstr "Papan Ketik"
 msgid "Set your keyboard preferences"
 msgstr "Atur preferensi papan tik Anda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/keyboard/cafe-keyboard.desktop.in:7
-msgid "input-keyboard"
-msgstr "input-keyboard"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/keyboard/cafe-keyboard.desktop.in:13
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr "cafe-control-center;CAFE;papan ketik;preferensi;"
@@ -2605,11 +2561,9 @@ msgstr "Waktu _timeout:"
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
-"Untuk menguji pengaturan klik ganda Anda, cobalah mengklik ganda pada segi "
-"tiga dan Anda mesti melihat logo desktop cafe dengan kedua cincin tampak."
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
 #: capplets/mouse/cafe-settings-mouse.desktop.in:3
@@ -2672,14 +2626,7 @@ msgstr "Touchpad"
 msgid "Set your mouse preferences"
 msgstr "Atur preferensi tetikus Anda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:7
-msgid "input-mouse"
-msgstr "input-mouse"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/mouse/cafe-settings-mouse.desktop.in:13
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr "cafe-control-center;CAFE;tetikus;preferensi;"
@@ -2692,14 +2639,7 @@ msgstr "Proksi Jaringan"
 msgid "Set your network proxy preferences"
 msgstr "Atur preferensi proksi jaringan Anda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/network/cafe-network-properties.desktop.in:7
-msgid "network-server"
-msgstr "network-server"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/network/cafe-network-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr "cafe-control-center;CAFE;jaringan;http;socks;proksi;"
@@ -2821,14 +2761,7 @@ msgstr "Jendela"
 msgid "Set your window properties"
 msgstr "Atur properti jendela Anda"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/windows/cafe-window-properties.desktop.in:7
-msgid "preferences-system-windows"
-msgstr "preferences-system-windows"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/windows/cafe-window-properties.desktop.in:13
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr "cafe-control-center;CAFE;jendela;manajer;properti;croma;preferensi;"
@@ -3032,13 +2965,13 @@ msgstr "Atur zona waktu"
 msgid "Set Ntp sync"
 msgstr "Atur penyelarasan NTP"
 
-#: capplets/time-admin/src/time-share.c:47
+#: capplets/time-admin/src/time-share.c:49
 msgid ""
 "Network time synchronization has been set up. Manual time/date setting is "
 "disabled."
 msgstr ""
-"Penyelarasan waktu jaringan telah disiapkan. Pengaturan waktu/tanggal manual"
-" dinonaktifkan."
+"Penyelarasan waktu jaringan telah disiapkan. Pengaturan waktu/tanggal manual "
+"dinonaktifkan."
 
 #: capplets/time-admin/src/time-zone.c:277
 #, c-format
@@ -4774,14 +4707,7 @@ msgstr "Manajer Waktu dan Tanggal"
 msgid "Setting the time and date of the local system"
 msgstr "Menata waktu dan tanggal sistem lokal"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:9
-msgid "preferences-system-time"
-msgstr "preferences-system-time"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: capplets/time-admin/data/cafe-time-admin.desktop.in:13
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr "cafe-control-center;CAFE;jam;tanggal;waktu;preferensi;"
@@ -4789,7 +4715,8 @@ msgstr "cafe-control-center;CAFE;jam;tanggal;waktu;preferensi;"
 #: libwindow-settings/cafe-wm-manager.c:317
 #, c-format
 msgid "Window manager \"%s\" has not registered a configuration tool\n"
-msgstr "Pengatur jendela \"%s\" tidak memiliki program konfigurasi yang terdaftar\n"
+msgstr ""
+"Pengatur jendela \"%s\" tidak memiliki program konfigurasi yang terdaftar\n"
 
 #: shell/control-center.c:58
 #, c-format
@@ -4825,23 +4752,10 @@ msgstr "Perkakas konfigurasi CAFE"
 msgid "Configure CAFE settings"
 msgstr "Konfigurasikan pengaturan CAFE"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.desktop.in:7
-msgid "preferences-desktop"
-msgstr "preferences-desktop"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: shell/cafecc.desktop.in:14
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr "CAFE;kendali;pusat;konfigurasi;alat;perkakas;desktop;preferensi;"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: shell/cafecc.directory.desktop.in:5
-msgid "cafe-settings"
-msgstr "cafe-settings"
 
 #: typing-break/drw-break-window.c:179
 msgid "_Postpone Break"
@@ -4888,8 +4802,8 @@ msgid ""
 "Unable to bring up the typing break properties dialog with the following "
 "error: %s"
 msgstr ""
-"Dialog pengaturan istirahat pengetikan tidak dapat ditampilkan. Pesan error:"
-" %s"
+"Dialog pengaturan istirahat pengetikan tidak dapat ditampilkan. Pesan error: "
+"%s"
 
 #: typing-break/drwright.c:654
 msgid "Written by Richard Hult <richard@imendio.com>"
@@ -4994,19 +4908,12 @@ msgstr "Tilik fonta pada sistem Anda"
 msgid "CAFE Font Viewer"
 msgstr "Penampil Fonta CAFE"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: font-viewer/cafe-font-viewer.desktop.in:6
-msgid "preferences-desktop-font"
-msgstr "preferences-desktop-font"
-
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: font-viewer/cafe-font-viewer.desktop.in:14
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
-"cafe-control-"
-"center;CAFE;fonta;penampil;penilik;pratinjau;pratampil;pratilik;desktop;preferensi;"
+"cafe-control-center;CAFE;fonta;penampil;penilik;pratinjau;pratampil;pratilik;"
+"desktop;preferensi;"
 
 #: font-viewer/font-thumbnailer.c:191
 msgid "Text to thumbnail (default: Aa)"
@@ -5070,27 +4977,77 @@ msgstr "Hapus dari Program Awal Mula"
 msgid "Add to Startup Programs"
 msgstr "Tambah ke Program Awal Mula"
 
-#: libslab/bookmark-agent.c:1082
+#: libslab/bookmark-agent.c:1086
 msgid "New Spreadsheet"
 msgstr "Spreadsheet Baru"
 
-#: libslab/bookmark-agent.c:1086
+#: libslab/bookmark-agent.c:1090
 msgid "New Document"
 msgstr "Dokumen Baru"
 
-#: libslab/bookmark-agent.c:1140
+#: libslab/bookmark-agent.c:1144
 msgctxt "Home folder"
 msgid "Home"
 msgstr "Beranda"
 
-#: libslab/bookmark-agent.c:1147
+#: libslab/bookmark-agent.c:1151
 msgid "Documents"
 msgstr "Dokumen"
 
-#: libslab/bookmark-agent.c:1158
+#: libslab/bookmark-agent.c:1162
 msgid "File System"
 msgstr "Sistem Berkas"
 
-#: libslab/bookmark-agent.c:1161
+#: libslab/bookmark-agent.c:1165
 msgid "Network Servers"
 msgstr "Server Jaringan"
+
+#~ msgid "user-info"
+#~ msgstr "user-info"
+
+#~ msgid "preferences-desktop-accessibility"
+#~ msgstr "preferences-desktop-accessibility"
+
+#~ msgid "preferences-desktop-theme"
+#~ msgstr "preferences-desktop-theme"
+
+#~ msgid "preferences-desktop-default-applications"
+#~ msgstr "preferences-desktop-default-applications"
+
+#~ msgid "preferences-desktop-display"
+#~ msgstr "preferences-desktop-display"
+
+#~ msgid "preferences-desktop-keyboard-shortcuts"
+#~ msgstr "preferences-desktop-keyboard-shortcuts"
+
+#~ msgid "input-keyboard"
+#~ msgstr "input-keyboard"
+
+#~ msgid ""
+#~ "To test your double-click settings, try to double-click on the triangle "
+#~ "and you must see the cafe desktop logo with both rings showing."
+#~ msgstr ""
+#~ "Untuk menguji pengaturan klik ganda Anda, cobalah mengklik ganda pada "
+#~ "segi tiga dan Anda mesti melihat logo desktop cafe dengan kedua cincin "
+#~ "tampak."
+
+#~ msgid "input-mouse"
+#~ msgstr "input-mouse"
+
+#~ msgid "network-server"
+#~ msgstr "network-server"
+
+#~ msgid "preferences-system-windows"
+#~ msgstr "preferences-system-windows"
+
+#~ msgid "preferences-system-time"
+#~ msgstr "preferences-system-time"
+
+#~ msgid "preferences-desktop"
+#~ msgstr "preferences-desktop"
+
+#~ msgid "cafe-settings"
+#~ msgstr "cafe-settings"
+
+#~ msgid "preferences-desktop-font"
+#~ msgstr "preferences-desktop-font"
