@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-control-center 1.24.0\n"
+"Project-Id-Version: cafe-control-center 1.24.1\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-08-15 14:25+0200\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2443,8 +2443,8 @@ msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:901
 msgid ""
-"To test your double-click settings, try to double-click on the triangle and "
-"you must see the cafe desktop logo with both rings showing."
+"To test your double-click settings, try to double-click on the circle and "
+"you must see the cafe desktop logo with the cup of coffee."
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
