@@ -1,4 +1,4 @@
-# 
+#
 # Translators:
 # Dario Di Nucci <linkin88mail@gmail.com>, 2020
 # Wolfgang Ulbrich <cafe@raveit.de>, 2020
@@ -10,18 +10,18 @@
 # Marco Bartolucci <nap.84@live.it>, 2020
 # Marco Z. <minaz666@gmail.com>, 2020
 # Alessandro Volturno <alelvb@inwind.it>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-01-12 13:03+0100\n"
+"POT-Creation-Date: 2022-10-10 11:10+0200\n"
 "PO-Revision-Date: 2020-02-15 13:21+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -32,9 +32,9 @@ msgstr " "
 #. (itstool) path: abstract/para
 #: C/index.docbook:20
 msgid ""
-"The CAFE Control Center provides a central place for the user to setup their"
-" CAFE experience. It can let you configure anything from the behavior of "
-"your window borders to the default font type."
+"The CAFE Control Center provides a central place for the user to setup their "
+"CAFE experience. It can let you configure anything from the behavior of your "
+"window borders to the default font type."
 msgstr ""
 "Il Centro di Controllo CAFE fornisce all'utente una centrale da cui "
 "impostare la propria esperienza CAFE. Permette di configurare qualsiasi "
@@ -94,118 +94,6 @@ msgstr ""
 msgid "<revnumber>2.14</revnumber> <date>March 2006</date>"
 msgstr "<revnumber>2.14</revnumber> <date>Marzo 2006</date>"
 
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:2
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
-msgstr ""
-"Questo documento può essere copiato, distribuito e/o modificato solo in "
-"conformità con i termini della GNU Free Documentation License (GFDL) "
-"Versione 1.1 o delle versioni successive pubblicate dalla Free Software "
-"Foundation senza sezioni invariabili, frontespizi e testi di copertina. Una "
-"copia della GFDL è disponibile a questo <ulink type=\"help\" "
-"url=\"help:fdl\">collegamento</ulink> o nel file COPYING-DOCS distribuito "
-"con questo manuale."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:12 C/legal.xml:12
-msgid ""
-"This manual is part of a collection of CAFE manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in"
-" section 6 of the license."
-msgstr ""
-"Questo manuale fa parte di una raccolta di manuali CAFE distribuita in "
-"conformità con la GFDL. Per poter distribuire questo manuale separatamente, "
-"è necessario inserirvi una copia della licenza, come descritto nella sezione"
-" 6 della licenza."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:19 C/legal.xml:19
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any CAFE "
-"documentation, and the members of the CAFE Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"Molti dei nomi usati dalle aziende per distinguere i propri prodotti e "
-"servizi sono rivendicati come marchi registrati. Quando questi nomi "
-"compaiono nella documentazione di CAFE, e i partecipanti al CAFE "
-"Documentation Project sono consapevoli del loro utilizzo, essi vengono "
-"scritti in lettere maiuscole o con l'iniziale maiuscola."
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:35 C/legal.xml:35
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"IL DOCUMENTO VIENE FORNITO SENZA GARANZIE DI ALCUN TIPO, ESPLICITE O "
-"IMPLICITE, INCLUSE, MA SENZA LIMITAZIONE, LE GARANZIE ATTESTANTI CHE IL "
-"DOCUMENTO O LE SUE VERSIONI MODIFICATE SIANO PRIVI DI DIFETTI, "
-"COMMERCIALIZZABILI, IDONEI A UN DETERMINATO SCOPO O CHE NON VIOLINO DIRITTI "
-"DI TERZI. SI DECLINA QUALUNQUE RESPONSABILITÀ RIGUARDO AI RISCHI INERENTI LA"
-" QUALITÀ, L'ACCURATEZZA E LE PRESTAZIONI DEL DOCUMENTO O DI UNA SUA VERSIONE"
-" MODIFICATA. QUALORA UN DOCUMENTO O UNA SUA VERSIONE MODIFICATA DOVESSERO "
-"PRESENTARE QUALUNQUE TIPO DI DIFETTO, IL COSTO DI EVENTUALI INTERVENTI DI "
-"ASSISTENZA, RIPARAZIONE O CORREZIONE SARÀ A CARICO DELL'UTENTE (NON DEL "
-"REDATTORE INIZIALE, DELL'AUTORE O DI ALTRI COLLABORATORI). QUESTA "
-"LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE ESSENZIALE DELLA LICENZA. L'USO"
-" DEL DOCUMENTO O DELLE SUE VERSIONI MODIFICATE È CONSENTITO SOLO ENTRO I "
-"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA; E"
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:55 C/legal.xml:55
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
-" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
-" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
-" POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"IN NESSUNA CIRCOSTANZA E PER NESSUNA RAGIONE LEGALE, INCLUSI I PRINCIPI DI "
-"COLPA (INCLUSA LA NEGLIGENZA), ACCORDO CONTRATTUALE O ALTRO, SARÀ POSSIBILE "
-"CONSIDERARE L'AUTORE, IL REDATTORE INIZIALE, GLI ALTRI COLLABORATORI, "
-"QUALUNQUE DISTRIBUTORE DEL DOCUMENTO O DI UNA SUA VERSIONE MODIFICATA O "
-"QUALUNQUE FORNITORE DELLE PERSONE CITATE, RESPONSABILE NEI CONFRONTI DI "
-"QUALUNQUE PERSONA PER DANNI DIRETTI, INDIRETTI, SPECIALI, INCIDENTALI O "
-"CONSEGUENTI DI QUALUNQUE NATURA, INCLUSI, MA SENZA LIMITAZIONE, I DANNI PER "
-"PERDITA DI AVVIAMENTO, INTERRUZIONE DEL LAVORO, GUASTO O MALFUNZIONAMENTO "
-"DEL COMPUTER O QUALUNQUE ALTRO DANNO O PERDITA DERIVANTE O CORRELATA ALL'USO"
-" DEL DOCUMENTO O DI UNA SUA VERSIONE MODIFICATA, ANCHE QUALORA LE PERSONE "
-"CITATE FOSSERO STATE INFORCAFE DELLA POSSIBILITÀ DI TALI DANNI."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:28 C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"IL DOCUMENTO E LE VERSIONI MODIFICATE DEL DOCUMENTO VENGONO RILASCIATE "
-"SECONDO I TERMINI DELLA GNU FREE DOCUMENTATION LICENSE TENENDO PRESENTE CHE:"
-" <_:orderedlist-1/>"
-
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:70
 msgid "This manual describes version 1.10.1 of the CAFE Control Center."
@@ -220,10 +108,10 @@ msgstr "Commenti"
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:76
 msgid ""
-"To report a bug or make a suggestion regarding the <application>CAFE Control"
-" Center</application> application or this manual, follow the directions in "
-"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE Feedback"
-" Page</ulink>."
+"To report a bug or make a suggestion regarding the <application>CAFE Control "
+"Center</application> application or this manual, follow the directions in "
+"the <ulink url=\"help:cafe-user-guide/feedback\" type=\"help\">CAFE Feedback "
+"Page</ulink>."
 msgstr ""
 "Per segnalare un bug o dare suggerimenti sull'applicazione "
 "<application>Centro di Controllo di CAFE</application> o su questo manuale, "
@@ -250,8 +138,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:88
 msgid ""
-"For help on using preference tools, see the <ulink type=\"help\" url=\"help"
-":cafe-user-guide/prefs\">User Guide</ulink>."
+"For help on using preference tools, see the <ulink type=\"help\" url=\"help:"
+"cafe-user-guide/prefs\">User Guide</ulink>."
 msgstr ""
 "Per aiuti su come utilizzare gli strumenti per impostare le preferenze, "
 "consultare la <ulink type=\"help\" url=\"help:cafe-user-guide/prefs\">Guida "
@@ -268,8 +156,8 @@ msgid ""
 "You can start <application>CAFE Control Center</application> in the "
 "following ways:"
 msgstr ""
-"È possibile avviare il <application>Centro di Controllo di "
-"CAFE</application> nei seguenti modi:"
+"È possibile avviare il <application>Centro di Controllo di CAFE</"
+"application> nei seguenti modi:"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:98
@@ -281,8 +169,8 @@ msgstr "menu <guimenu>Sistema</guimenu>"
 msgid ""
 "Choose <menuchoice><guimenu>Control Center</guimenu></menuchoice> menu item."
 msgstr ""
-"Selezionare l'oggetto menu <menuchoice><guimenu>Centro di "
-"Controllo</guimenu></menuchoice>"
+"Selezionare l'oggetto menu <menuchoice><guimenu>Centro di Controllo</"
+"guimenu></menuchoice>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:106
@@ -312,9 +200,9 @@ msgstr ""
 #. (itstool) path: tip/para
 #: C/index.docbook:122
 msgid ""
-"From the left pane, you can quickly access to a preference tool by selecting"
-" its group first, or type any keyword in the filter box. You can also access"
-" to common tasks, such as <guilabel>Change Theme</guilabel>, and "
+"From the left pane, you can quickly access to a preference tool by selecting "
+"its group first, or type any keyword in the filter box. You can also access "
+"to common tasks, such as <guilabel>Change Theme</guilabel>, and "
 "<guilabel>Set Preferred Applications</guilabel>."
 msgstr ""
 "Dal pannello laterale è possibile accedere agli strumenti di preferenze "
@@ -326,8 +214,7 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/index.docbook:125
 msgid "To open a preference tool, just click on it."
-msgstr ""
-"Per aprire uno strumento di preferenze, semplicemente cliccarvi sopra."
+msgstr "Per aprire uno strumento di preferenze, semplicemente cliccarvi sopra."
 
 #. (itstool) path: tip/para
 #: C/index.docbook:128
@@ -365,8 +252,8 @@ msgstr "Proprietà dello Sfondo"
 #: C/config-background.xml:3
 msgid ""
 "The background is the picture, pattern, or color shown on your desktop. A "
-"lot of people use this as decoration on their computer. The "
-"<_:application-1/> program configures your background settings."
+"lot of people use this as decoration on their computer. The <_:application-1/"
+"> program configures your background settings."
 msgstr ""
 "Lo sfondo è l'immagine, il motivo o il colore mostrato sul vostro desktop. "
 "Molte persone lo utilizzano come decorazione per il loro computer. Il "
@@ -379,8 +266,7 @@ msgstr "Cambiare Sfondo della Scrivania"
 
 #. (itstool) path: listitem/para
 #: C/config-background.xml:14
-msgid ""
-"Right clicking on the background and left-clicking on <_:guibutton-1/>."
+msgid "Right clicking on the background and left-clicking on <_:guibutton-1/>."
 msgstr "Fare clic destro sullo sfondo e click sinistro su <_:guibutton-1/>."
 
 #. (itstool) path: para/application
@@ -399,8 +285,8 @@ msgstr "Aprire <_:application-1/> e fare doppio click su <_:guibutton-2/>."
 msgid ""
 "Accessing the <_:application-1/> can be done two ways: <_:itemizedlist-2/>"
 msgstr ""
-"Accedere a <_:application-1/> può essere fatto in due modi: "
-"<_:itemizedlist-2/>"
+"Accedere a <_:application-1/> può essere fatto in due modi: <_:"
+"itemizedlist-2/>"
 
 #. (itstool) path: sect2/title
 #: C/config-background.xml:28
@@ -471,15 +357,14 @@ msgstr "Nessuna Immagine"
 msgid ""
 "Doesn't use a graphic as the background, but uses colors which are covered "
 "below."
-msgstr ""
-"Non utilizza immagini come sfondo, ma colori. Come spiegato più sotto."
+msgstr "Non utilizza immagini come sfondo, ma colori. Come spiegato più sotto."
 
 #. (itstool) path: sect2/para
 #: C/config-background.xml:29
 msgid ""
 "The top of the window shows you a small version of the selected background. "
-"Below are boxes which let you select what mode your background uses: "
-"<_:variablelist-1/>"
+"Below are boxes which let you select what mode your background uses: <_:"
+"variablelist-1/>"
 msgstr ""
 "La parte superiore della finestra mostra una piccola versione dell'immagine "
 "selezionata come sfondo. Sotto ci sono le caselle per impostare la modalità "
@@ -489,8 +374,8 @@ msgstr ""
 #: C/config-background.xml:82
 msgid ""
 "Below the said buttons are options to configure the colors. These only "
-"matter if you selected <_:guibutton-1/> or your image doesn't fill the whole"
-" screen."
+"matter if you selected <_:guibutton-1/> or your image doesn't fill the whole "
+"screen."
 msgstr ""
 "Al di sotto delle suddette parti ci sono i pulsanti per configurare i "
 "colori. Questi sono visibili se avete selezionato <_:guibutton-1/> o se la "
@@ -507,16 +392,16 @@ msgstr "Colore"
 msgid ""
 "If your image doesn't take up the entire screen, you have the option of how "
 "to color the outside of it. You can either choose a vertical gradient, "
-"horizontal gradient, or a standard solid color. If you choose a solid color,"
-" you select the color at right by clicking on <_:guibutton-1/>. If you pick "
-"a gradient, you will have two options. Select the colors you wish to do and "
+"horizontal gradient, or a standard solid color. If you choose a solid color, "
+"you select the color at right by clicking on <_:guibutton-1/>. If you pick a "
+"gradient, you will have two options. Select the colors you wish to do and "
 "your options will be made automatically."
 msgstr ""
 "Se la vostra immagine non occupa tutto lo schermo, avete la possibilità di "
 "impostare come colorare la parte più esterna. Potete selezionare tra "
 "gradiente verticale, gradiente orizzontale e colore unico. Se si seleziona "
-"il colore unico, si può scegliere il colore a destra cliccando su "
-"<_:guibutton-1/>. Se si seleziona un gradiente, si avranno due opzioni. "
+"il colore unico, si può scegliere il colore a destra cliccando su <_:"
+"guibutton-1/>. Se si seleziona un gradiente, si avranno due opzioni. "
 "Selezionate i colori che desiderate e le vostre opzioni saranno impostate "
 "automaticamente."
 
@@ -547,11 +432,11 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-background.xml:111
 msgid ""
-"Select the mode which you wish to use. Changes are applied automatically, so"
-" you can change quickly if you aren't pleased with the results."
+"Select the mode which you wish to use. Changes are applied automatically, so "
+"you can change quickly if you aren't pleased with the results."
 msgstr ""
-"Selezionare la modalità che si vuole utilizzare. Le modifiche sono applicate"
-" automaticamente, quindi è possibile cambiarle rapidamente qualora non si "
+"Selezionare la modalità che si vuole utilizzare. Le modifiche sono applicate "
+"automaticamente, quindi è possibile cambiarle rapidamente qualora non si "
 "fosse soddisfatti del risultato."
 
 #. (itstool) path: listitem/para
@@ -576,11 +461,11 @@ msgstr "Cliccare <_:guibutton-1/> quando si ha terminato la configurazione."
 #. (itstool) path: sect2/para
 #: C/config-background.xml:100
 msgid ""
-"To configure a backgrond, choose one of the following steps: "
-"<_:orderedlist-1/>"
+"To configure a backgrond, choose one of the following steps: <_:"
+"orderedlist-1/>"
 msgstr ""
-"Per configurare uno sfondo, seguire uno dei seguenti passaggi: "
-"<_:orderedlist-1/>"
+"Per configurare uno sfondo, seguire uno dei seguenti passaggi: <_:"
+"orderedlist-1/>"
 
 #. (itstool) path: sect1/title
 #: C/config-behavior.xml:2
@@ -604,8 +489,8 @@ msgstr "Comportamento"
 #: C/config-behavior.xml:3
 msgid ""
 "<_:application-1/> allows for the user to configure many settings of their "
-"desktop. Anything from the background image to where buttons are located can"
-" be set. The <_:guilabel-2/> window is responsible for a lot of the finer "
+"desktop. Anything from the background image to where buttons are located can "
+"be set. The <_:guilabel-2/> window is responsible for a lot of the finer "
 "settings."
 msgstr ""
 "<_:application-1/> Consente agli utenti di configurare molte impostazioni "
@@ -616,12 +501,12 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/config-behavior.xml:10
 msgid ""
-"If you open up the <_:guilabel-1/> window, you'll find a few options at your"
-" disposal to make your <_:application-2/> experience better."
+"If you open up the <_:guilabel-1/> window, you'll find a few options at your "
+"disposal to make your <_:application-2/> experience better."
 msgstr ""
 "Se si apre la finestra <_:guilabel-1/>, troverete a vostra disposizione "
-"delle opzioni che renderanno migliore la vostra esperienza "
-"<_:application-2/>."
+"delle opzioni che renderanno migliore la vostra esperienza <_:application-2/"
+">."
 
 #. (itstool) path: sect2/title
 #: C/config-behavior.xml:16
@@ -665,9 +550,9 @@ msgid ""
 "The Only Icons option makes the toolbars show only icons. This isn't the "
 "most descriptive, but helps save space."
 msgstr ""
-"L'opzione Solo Icone imposta di visualizzare solo le icone nelle barre degli"
-" strumenti. Non è l'opzione che descrive meglio ciò che ogni strumento fa, "
-"ma permette di risparmiare spazio."
+"L'opzione Solo Icone imposta di visualizzare solo le icone nelle barre degli "
+"strumenti. Non è l'opzione che descrive meglio ciò che ogni strumento fa, ma "
+"permette di risparmiare spazio."
 
 #. (itstool) path: sect2/para
 #: C/config-behavior.xml:33
@@ -731,21 +616,20 @@ msgid "CD Properties"
 msgstr "Proprietà dei CD"
 
 #. (itstool) path: para/guilabel
-#: C/config-cds.xml:6 C/config-screensaver.xml:162
-#: C/config-screensaver.xml:166
+#: C/config-cds.xml:6 C/config-screensaver.xml:162 C/config-screensaver.xml:166
 msgid "Advanced"
 msgstr "Avanzate"
 
 #. (itstool) path: sect1/para
 #: C/config-cds.xml:3
 msgid ""
-"Cafe can play your CDs on your computer. You can setup you CD preferences in"
-" the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the "
-"<_:application-3/>."
+"Cafe can play your CDs on your computer. You can setup you CD preferences in "
+"the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the <_:"
+"application-3/>."
 msgstr ""
 "Cafe può riprodurre i vostri CD. Potete impostare le preferenze dei CD nel "
-"capplet <_:guibutton-1/> della sezione <_:guilabel-2/> del "
-"<_:application-3/>."
+"capplet <_:guibutton-1/> della sezione <_:guilabel-2/> del <_:application-3/"
+">."
 
 #. (itstool) path: sect1/para
 #: C/config-cds.xml:9
@@ -799,17 +683,16 @@ msgid ""
 "recognize the CD-ROM and you can interact with it. If it us unmounted, then "
 "the system does not know of its existence and can do almost nothing with it."
 msgstr ""
-"I sistemi Linux e Unix il termine montare per identificare il riconoscimento"
-" di un dispositivo. Se \"montate il vostro CD-ROM\", questo significa che il"
-" sistema può riconoscere il CD-ROM e potere interagire con esso. Se viene "
+"I sistemi Linux e Unix il termine montare per identificare il riconoscimento "
+"di un dispositivo. Se \"montate il vostro CD-ROM\", questo significa che il "
+"sistema può riconoscere il CD-ROM e potere interagire con esso. Se viene "
 "smontato il CD-ROM, il sistema non sarà al corrente della sua esistenza e "
 "non potrà fare quasi nulla con esso."
 
 #. (itstool) path: para/guibutton
 #: C/config-cds.xml:36
 msgid "Automatically start auto-run program on newly mounted CD"
-msgstr ""
-"Avviare automaticamente programmi auto-eseguibili su CD appena montati"
+msgstr "Avviare automaticamente programmi auto-eseguibili su CD appena montati"
 
 #. (itstool) path: sect2/para
 #: C/config-cds.xml:35
@@ -834,14 +717,14 @@ msgstr "Baul"
 #. (itstool) path: sect2/para
 #: C/config-cds.xml:40
 msgid ""
-"The last option, <_:guibutton-1/> tells the system to open your file manager"
-" (<_:application-2/> by default) when the CD is mounted. This is useful if "
-"you have a CD of images from your family reunion you wish to browse. It will"
-" open up in <_:application-3/> which will let you view the thumbnails."
+"The last option, <_:guibutton-1/> tells the system to open your file manager "
+"(<_:application-2/> by default) when the CD is mounted. This is useful if "
+"you have a CD of images from your family reunion you wish to browse. It will "
+"open up in <_:application-3/> which will let you view the thumbnails."
 msgstr ""
 "L'ultima opzione, <_:guibutton-1/> dice al sistema di aprire il vostro "
-"gestore dei file (<_:application-2/> per impostazione predefinita) quando il"
-" CD viene montato. Ciò è utile se si ha un CD di immagini che si vogliono "
+"gestore dei file (<_:application-2/> per impostazione predefinita) quando il "
+"CD viene montato. Ciò è utile se si ha un CD di immagini che si vogliono "
 "visualizzare. il CD si aprirà in <_:application-3/> che vi permetterà di "
 "vederne le miniature."
 
@@ -888,8 +771,8 @@ msgid ""
 "Your default text editor is used when a plain text file needs to be opened "
 "for either viewing or editing."
 msgstr ""
-"Viene utilizzato il vostro editor di testo quando occorre aprire o modifcare"
-"  un documento di testo semplice."
+"Viene utilizzato il vostro editor di testo quando occorre aprire o "
+"modifcare  un documento di testo semplice."
 
 #. (itstool) path: para/application
 #: C/config-default-apps.xml:19
@@ -916,11 +799,11 @@ msgid ""
 "down list. Once you've selected your text editor, click <_:guibutton-3/> to "
 "save your settings."
 msgstr ""
-"Per impostazione predefinita, come editor di testi viene impiegato "
-"<_:application-1/>. Tuttavia man mano che si installano altri editor, nel "
-"menu a tendina <_:guilabel-2/> verranno visualizzate più scelte. Quando "
-"avete selezionato il vostro editor di testi prefrito, cliccate "
-"<_:guibutton-3/> per salvare le impostazioni."
+"Per impostazione predefinita, come editor di testi viene impiegato <_:"
+"application-1/>. Tuttavia man mano che si installano altri editor, nel menu "
+"a tendina <_:guilabel-2/> verranno visualizzate più scelte. Quando avete "
+"selezionato il vostro editor di testi prefrito, cliccate <_:guibutton-3/> "
+"per salvare le impostazioni."
 
 #. (itstool) path: para/guibutton
 #: C/config-default-apps.xml:27
@@ -949,8 +832,8 @@ msgid ""
 "part of a file."
 msgstr ""
 "Potete inserire anche un editor personalizzato nel caso in cui il vostro "
-"editor non venisse mostrato nell'elenco. Selezionate il pulsante "
-"<_:guibutton-1/> e inserite il nome dell'editor desiderato. Se lo volete,  "
+"editor non venisse mostrato nell'elenco. Selezionate il pulsante <_:"
+"guibutton-1/> e inserite il nome dell'editor desiderato. Se lo volete,  "
 "selezionando il pulsante <_:guibutton-2/> potete aprire l'editor in una "
 "finestra del terminale. <_:guibutton-3/> consente a CAFE di passare un "
 "numero di riga all'editor in modo da poter saltare ad una porzione del file"
@@ -985,14 +868,13 @@ msgid ""
 "By default, <_:application-1/> is used to view HTML files. However, as more "
 "browsers are installed, more choices will become available to use. Choose "
 "your browser by selecting the right item in the <_:guilabel-2/> section. "
-"Once you have made your change, click <_:guibutton-3/> to apply your "
-"changes."
+"Once you have made your change, click <_:guibutton-3/> to apply your changes."
 msgstr ""
-"Di default, <_:application-1/> viene utilizzato per visualizzare i documenti"
-" HTML. Tuttavia, man mano che se ne installano altri, diventano disponibili "
-"più possibilità di scelta. Selezionare il vostro browser nella sezione "
-"<_:guilabel-2/>. Una volta fatto il cambiamento, cliccare <_:guibutton-3/> "
-"per applicare le modifiche."
+"Di default, <_:application-1/> viene utilizzato per visualizzare i documenti "
+"HTML. Tuttavia, man mano che se ne installano altri, diventano disponibili "
+"più possibilità di scelta. Selezionare il vostro browser nella sezione <_:"
+"guilabel-2/>. Una volta fatto il cambiamento, cliccare <_:guibutton-3/> per "
+"applicare le modifiche."
 
 #. (itstool) path: para/guibutton
 #: C/config-default-apps.xml:53
@@ -1018,11 +900,11 @@ msgstr "Capire il Controllo Remoto di Netscape"
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:51
 msgid ""
-"You can also specify a custom web browser to use by selecting the "
-"<_:guibutton-1/> radio button. Enter the command to execute your browser in "
-"the <_:guilabel-2/> entry area. By clicking <_:guibutton-3/>, the "
-"application will start in a terminal. To do remote commands in "
-"<_:application-4/> select the <_:guibutton-5/> button."
+"You can also specify a custom web browser to use by selecting the <_:"
+"guibutton-1/> radio button. Enter the command to execute your browser in the "
+"<_:guilabel-2/> entry area. By clicking <_:guibutton-3/>, the application "
+"will start in a terminal. To do remote commands in <_:application-4/> select "
+"the <_:guibutton-5/> button."
 msgstr ""
 "È possibile usare anche un browser web personalizzato selezionando il "
 "pulsante <_:guibutton-1/>. Inserire il comando  per eseguire il vostro "
@@ -1066,14 +948,13 @@ msgstr "Browser di Aiuto CAFE (\"GHB\") "
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:71
 msgid ""
-"By default, two help browsers are located in the <_:guilabel-1/> section: "
-"<_:itemizedlist-2/> You can change the default viewer by selecting an item "
-"in the drop-down menu and click <_:guibutton-3/>."
+"By default, two help browsers are located in the <_:guilabel-1/> section: <_:"
+"itemizedlist-2/> You can change the default viewer by selecting an item in "
+"the drop-down menu and click <_:guibutton-3/>."
 msgstr ""
-"Di default, sono disponibili due visori di documenti nella sezione "
-"<_:guilabel-1/>: <_:itemizedlist-2/> Si può cambiare l'impostazione "
-"predefinita selezionando un oggetto nel menu a tendina e cliccando "
-"<_:guibutton-3/>."
+"Di default, sono disponibili due visori di documenti nella sezione <_:"
+"guilabel-1/>: <_:itemizedlist-2/> Si può cambiare l'impostazione predefinita "
+"selezionando un oggetto nel menu a tendina e cliccando <_:guibutton-3/>."
 
 #. (itstool) path: para/guibutton
 #: C/config-default-apps.xml:91
@@ -1096,11 +977,10 @@ msgid ""
 msgstr ""
 "C'è tuttavia la possibilità che si voglia utilizzare un visualizzatore di "
 "aiuti non incluso nell'elenco. Cliccare il pulsante radio<_:guibutton-1/> e "
-"inserire il comando per eseguire il visualizzatore nel campo "
-"<_:guilabel-2/>. Facendo click su <_:guibutton-3/>, l'applicazione verrà "
-"eseguita in un terminale. <_:guibutton-4/> dovrebbe essere normalmente "
-"attiva, specificando che esso possa essere utilizzato anche come browser "
-"web."
+"inserire il comando per eseguire il visualizzatore nel campo <_:guilabel-2/"
+">. Facendo click su <_:guibutton-3/>, l'applicazione verrà eseguita in un "
+"terminale. <_:guibutton-4/> dovrebbe essere normalmente attiva, specificando "
+"che esso possa essere utilizzato anche come browser web."
 
 #. (itstool) path: sect2/title
 #: C/config-default-apps.xml:101
@@ -1117,8 +997,8 @@ msgstr "Terminale Cafe"
 msgid ""
 "Your terminal window will sometimes be brought up to execute commands. For "
 "example, if you select to have an application be brought up in the console, "
-"the terminal defaults will be called. Numerous defaults for terminals exist;"
-" the default being <_:application-1/>. Select a terminal from the list and "
+"the terminal defaults will be called. Numerous defaults for terminals exist; "
+"the default being <_:application-1/>. Select a terminal from the list and "
 "click <_:guibutton-2/>."
 msgstr ""
 "La finestra del terminale talvolta servirà per eseguire dei comandi. Ad "
@@ -1142,16 +1022,15 @@ msgstr "Exec Flag"
 msgid ""
 "Sometimes, you may want to use a terminal which isn't listed in the "
 "prelisted items. Click <_:guibutton-1/> and enter the command to run your "
-"terminal in the <_:guilabel-2/> section. The <_:guilabel-3/> option says how"
-" to embed a program in the terminal. Click <_:guibutton-4/> to apply your "
+"terminal in the <_:guilabel-2/> section. The <_:guilabel-3/> option says how "
+"to embed a program in the terminal. Click <_:guibutton-4/> to apply your "
 "preferences."
 msgstr ""
 "Potreste voler utilizzare un terminale che non è presente nell'elenco degli "
 "oggetti preselezionati. Fare click su <_:guibutton-1/> ed inserire il "
 "comando per seguire il vostro terminale nella sezione <_:guilabel-2/>. "
 "L'opzione <_:guilabel-3/> specifica come collegare un programma al "
-"terminale. Fate click su <_:guibutton-4/> per applicare le vostre "
-"preferenze."
+"terminale. Fate click su <_:guibutton-4/> per applicare le vostre preferenze."
 
 #. (itstool) path: sect1/title
 #: C/config-file-type.xml:2
@@ -1185,8 +1064,8 @@ msgstr "Suggerimenti di Avvio"
 #: C/config-hints.xml:10
 msgid ""
 "In <_:application-1/>, the startup hints can be configured. This "
-"configuration takes place in the <_:application-2/> capplet of "
-"<_:application-3/>."
+"configuration takes place in the <_:application-2/> capplet of <_:"
+"application-3/>."
 msgstr ""
 "In <_:application-1/>, è possibile configurare i suggerimenti di avvio. La "
 "configurazione avviene nel capplet <_:application-2/> di <_:application-3/>."
@@ -1229,8 +1108,8 @@ msgid ""
 "tips."
 msgstr ""
 "<_:application-1/> è un programmino che mosra citazioni casuali. I "
-"suggerimenti di avvio possono mostrare citazioni <_:application-2/> al posto"
-" dei suggerimenti."
+"suggerimenti di avvio possono mostrare citazioni <_:application-2/> al posto "
+"dei suggerimenti."
 
 #. (itstool) path: varlistentry/term
 #: C/config-hints.xml:44
@@ -1275,8 +1154,8 @@ msgid ""
 "disable, click the <_:guibutton-1/> button. <_:variablelist-2/>"
 msgstr ""
 "L'utente potrebbe desiderare di non mostrare la finestra dei suggerimenti. "
-"Per abilitarli o disabilitarli, fare click su pulsante <_:guibutton-1/>. "
-"<_:variablelist-2/>"
+"Per abilitarli o disabilitarli, fare click su pulsante <_:guibutton-1/>. <_:"
+"variablelist-2/>"
 
 #. (itstool) path: sect1/title
 #: C/config-html.xml:2
@@ -1298,13 +1177,13 @@ msgstr "Evolution"
 #. (itstool) path: sect2/para
 #: C/config-html.xml:5
 msgid ""
-"The HTML Viewer capplet allows you to configure preferences for the "
-"<_:application-1/> HTML rendering engine. <_:application-2/> is used in "
-"<_:application-3/>, the <_:application-4/>, and other Cafe applications."
+"The HTML Viewer capplet allows you to configure preferences for the <_:"
+"application-1/> HTML rendering engine. <_:application-2/> is used in <_:"
+"application-3/>, the <_:application-4/>, and other Cafe applications."
 msgstr ""
 "il capplet Visualizzatore HTML consente di configurare le preferenze per il "
-"motore di visualizzazione HTML <_:application-1/>. Viene usato "
-"<_:application-2/> in <_:application-3/>, in <_:application-4/> e altre "
+"motore di visualizzazione HTML <_:application-1/>. Viene usato <_:"
+"application-2/> in <_:application-3/>, in <_:application-4/> e altre "
 "applicazioni Cafe."
 
 #. (itstool) path: sect2/title
@@ -1330,8 +1209,8 @@ msgid ""
 "often used when column width needs to be uniform between lines, such as a "
 "chart."
 msgstr ""
-"Un tipo di carattere in cui la dimensione del carattere cambia a seconda del"
-" tipo di lettera. Per esempio, il carattere i ha una dimensione inferiore "
+"Un tipo di carattere in cui la dimensione del carattere cambia a seconda del "
+"tipo di lettera. Per esempio, il carattere i ha una dimensione inferiore "
 "alla w. I caratteri a larghezza fissa vengono impiegati quando l'ampiezza "
 "delle colonne deve essere uniforme tra le linee, come ad esempio nelle "
 "tabelle."
@@ -1347,16 +1226,16 @@ msgid ""
 "A font that the size of characters is uniform across all characters. For "
 "example, the i character has the same width as w."
 msgstr ""
-"Un tipo di carattere in cui la dimensione delle lettere è uniforme per tutte"
-" le lettere. Ad esempio, il carattere i occupa la stessa ampiezza della w."
+"Un tipo di carattere in cui la dimensione delle lettere è uniforme per tutte "
+"le lettere. Ad esempio, il carattere i occupa la stessa ampiezza della w."
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:22
 msgid ""
 "Configures the fonts to use on your computer monitor <_:variablelist-1/>"
 msgstr ""
-"Configura il tipo di carattere da utilizzare sul vostro monitor "
-"<_:variablelist-1/>"
+"Configura il tipo di carattere da utilizzare sul vostro monitor <_:"
+"variablelist-1/>"
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:53
@@ -1366,11 +1245,11 @@ msgstr "Per la stampa"
 #. (itstool) path: listitem/para
 #: C/config-html.xml:55
 msgid ""
-"Configures the fonts to use when you print something on your printer from "
-"<_:application-1/>. <_:variablelist-2/>"
+"Configures the fonts to use when you print something on your printer from <_:"
+"application-1/>. <_:variablelist-2/>"
 msgstr ""
-"Configura il tipo di carattere da utilizzare quando si stampa qualcosa sulla"
-" vostra stampante da<_:application-1/>. <_:variablelist-2/>"
+"Configura il tipo di carattere da utilizzare quando si stampa qualcosa sulla "
+"vostra stampante da<_:application-1/>. <_:variablelist-2/>"
 
 #. (itstool) path: para/application
 #: C/config-html.xml:88
@@ -1381,9 +1260,9 @@ msgstr "gfontsel"
 #: C/config-html.xml:15
 msgid ""
 "<_:application-1/> can be setup to use different fonts and font sizes for "
-"different types of text. <_:variablelist-2/> To change the fonts used, click"
-" on the font name to open up <_:application-3/>. In here, you can select "
-"your typeface, your ISO set, font size, and other font properties."
+"different types of text. <_:variablelist-2/> To change the fonts used, click "
+"on the font name to open up <_:application-3/>. In here, you can select your "
+"typeface, your ISO set, font size, and other font properties."
 msgstr ""
 "<_:application-1/> può essere impostato per utilizzare tipi di caratteri e "
 "loro dimensione per diversi tipi di testo. <_:variablelist-2/> Per "
@@ -1400,9 +1279,9 @@ msgstr "Scorciatoie da Tastiera"
 #. (itstool) path: sect2/para
 #: C/config-html.xml:94
 msgid ""
-"<_:application-1/> can use different keybindings. Keybindings allow the user"
-" to use keystrokes to do commands that otherwise the mouse would be required"
-" to do. This can often times speed up the user's commands fast enough to "
+"<_:application-1/> can use different keybindings. Keybindings allow the user "
+"to use keystrokes to do commands that otherwise the mouse would be required "
+"to do. This can often times speed up the user's commands fast enough to "
 "impress others."
 msgstr ""
 "<_:application-1/> può utilizzare diverse combinazioni di tasti. Queste "
@@ -1433,19 +1312,19 @@ msgstr "Windows"
 #. (itstool) path: sect2/para
 #: C/config-html.xml:101
 msgid ""
-"<_:application-1/> includes three different predefined settings: "
-"<_:itemizedlist-2/> Each of these comes with keybindings that are similar to"
-" those found in their respective environments. A user coming from Microsoft "
-"<_:application-3/> may find themselves most comfortable in the MS like mode."
-" To select a preset mode, just select it from the pulldown menu, and click "
-"<_:guibutton-4/>."
+"<_:application-1/> includes three different predefined settings: <_:"
+"itemizedlist-2/> Each of these comes with keybindings that are similar to "
+"those found in their respective environments. A user coming from Microsoft "
+"<_:application-3/> may find themselves most comfortable in the MS like mode. "
+"To select a preset mode, just select it from the pulldown menu, and click <_:"
+"guibutton-4/>."
 msgstr ""
-"<_:application-1/> include tre diverse impostazioni "
-"predefinite:<_:itemizedlist-2/> Ciascuna di esse è legata a cobinazioni di "
-"tasti simili a quelle impiegate nei rispettivi ambienti. Un utente che "
-"proviene da Microsoft <_:application-3/> può trovarsi a suo agio nella "
-"modalità tipo MS. Per selezionare una modalità predefinita, selezionarla dal"
-" menu ad elenco e fare clic su <_:guibutton-4/>."
+"<_:application-1/> include tre diverse impostazioni predefinite:<_:"
+"itemizedlist-2/> Ciascuna di esse è legata a cobinazioni di tasti simili a "
+"quelle impiegate nei rispettivi ambienti. Un utente che proviene da "
+"Microsoft <_:application-3/> può trovarsi a suo agio nella modalità tipo MS. "
+"Per selezionare una modalità predefinita, selezionarla dal menu ad elenco e "
+"fare clic su <_:guibutton-4/>."
 
 #. (itstool) path: sect2/para
 #: C/config-html.xml:128
@@ -1468,9 +1347,8 @@ msgstr "Varie"
 #. (itstool) path: sect2/para
 #: C/config-html.xml:135
 msgid ""
-"There are a couple other changes which you can edit to make "
-"<_:application-1/> work the way you want it to. These are located in the "
-"<_:guilabel-2/> tab."
+"There are a couple other changes which you can edit to make <_:application-1/"
+"> work the way you want it to. These are located in the <_:guilabel-2/> tab."
 msgstr ""
 "Ci sono ancora un paio di altre opzioni che possono essere configurate per "
 "far funzionare <_:application-1/> nel modo desiderato. Queste si trovano "
@@ -1488,8 +1366,7 @@ msgid ""
 "image instead of as an anicafed image by unchecking the box."
 msgstr ""
 "Alcune immagini possono essere anicafe. Potete lasciare la visualizzazione "
-"delle immagini come statica invece che animata deselezionando questa "
-"opzione."
+"delle immagini come statica invece che animata deselezionando questa opzione."
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:155
@@ -1513,8 +1390,8 @@ msgstr "Abilita controllo ortografico"
 #. (itstool) path: listitem/para
 #: C/config-html.xml:167
 msgid ""
-"While typing in <_:application-1/>, you may spell a word incorrectly. If you"
-" have this box checked, an incorrectly spelled word will be underlined to "
+"While typing in <_:application-1/>, you may spell a word incorrectly. If you "
+"have this box checked, an incorrectly spelled word will be underlined to "
 "symbolize that it's incorrect."
 msgstr ""
 "Quando si digita del testo in <_:application-1/>, è possibile che lo si "
@@ -1542,8 +1419,8 @@ msgstr "Imposta la lingua con cui effettuare il controllo."
 #. (itstool) path: sect2/para
 #: C/config-html.xml:140
 msgid ""
-"In the <_:guilabel-1/> section, you have the following preferences: "
-"<_:variablelist-2/>"
+"In the <_:guilabel-1/> section, you have the following preferences: <_:"
+"variablelist-2/>"
 msgstr ""
 "Nella sezione <_:guilabel-1/>, si hanno a disposizione e seguenti "
 "impostazioni: <_:variablelist-2/>"
@@ -1562,8 +1439,8 @@ msgid ""
 "numerous keyboard options which can be set to make your experience more "
 "comfortable."
 msgstr ""
-"Tutti usano la tastiera per i loro compiti quotidiani. Molta gente pensa che"
-" non ci sia nulla da configurare in una tastiera. È il contrario. Ci sono "
+"Tutti usano la tastiera per i loro compiti quotidiani. Molta gente pensa che "
+"non ci sia nulla da configurare in una tastiera. È il contrario. Ci sono "
 "svariate opzioni di una tastiera che possono essere impostate per rendere "
 "più comoda la vostra esperienza."
 
@@ -1618,8 +1495,8 @@ msgid ""
 "the repeat is displayed on the screen. You can choose: <_:itemizedlist-1/>"
 msgstr ""
 "Normalmente esiste un ritardo tra il momento in cui si preme il tasto sulla "
-"tastiera e quello in cui viene visualizzata la ripetizione sullo schermo. Si"
-" può scegliere tra: <_:itemizedlist-1/>"
+"tastiera e quello in cui viene visualizzata la ripetizione sullo schermo. Si "
+"può scegliere tra: <_:itemizedlist-1/>"
 
 #. (itstool) path: varlistentry/term
 #: C/config-kbd.xml:58
@@ -1644,8 +1521,8 @@ msgstr "Molto Veloce"
 #. (itstool) path: listitem/para
 #: C/config-kbd.xml:60
 msgid ""
-"While a keystroke is being repeated, you can control how fast the repeat is."
-" The available speeds are: <_:itemizedlist-1/>"
+"While a keystroke is being repeated, you can control how fast the repeat is. "
+"The available speeds are: <_:itemizedlist-1/>"
 msgstr ""
 "Mentre un tasto viene ripetuto, è possibile controllare quanto velocemente "
 "avviene la ripetizione. Le velocità disponibili sono :<_:itemizedlist-1/>"
@@ -1711,8 +1588,8 @@ msgid ""
 "You can set your keyboard up so when you hit a key, it will make a sound. "
 "Click this button to enable it."
 msgstr ""
-"Potete impostare la vostra tastiera in modo che quando si preme un tasto, si"
-" emetterà un suono. Fare click su questo pulsante per attivarlo."
+"Potete impostare la vostra tastiera in modo che quando si preme un tasto, si "
+"emetterà un suono. Fare click su questo pulsante per attivarlo."
 
 #. (itstool) path: varlistentry/term
 #: C/config-kbd.xml:129
@@ -1777,13 +1654,13 @@ msgstr "Fatto"
 msgid ""
 "You can have the system play a customized sound instead of the default "
 "system beep. Select this radio button and press the <_:guibutton-1/> button "
-"to select the file you want. Press the <_:guibutton-2/> button to apply your"
-" changes."
+"to select the file you want. Press the <_:guibutton-2/> button to apply your "
+"changes."
 msgstr ""
 "Si può far riprodurre un suono personalizzato invece del beep di sistema "
-"predefinito. Selezionare questa casella e premere il pulsante "
-"<_:guibutton-1/> per selezionare il file desiderato. Premere il pulsante "
-"<_:guibutton-2/> per applicare le modifiche."
+"predefinito. Selezionare questa casella e premere il pulsante <_:guibutton-1/"
+"> per selezionare il file desiderato. Premere il pulsante <_:guibutton-2/> "
+"per applicare le modifiche."
 
 #. (itstool) path: sect2/para
 #: C/config-kbd.xml:114
@@ -1792,8 +1669,8 @@ msgid ""
 "can be configured in the <_:guilabel-1/> tab. <_:variablelist-2/>"
 msgstr ""
 "La tastiera a volte emette dei suoni per attirare l'attenzione dell'utente. "
-"I suoni possono essere configurati dalla scheda<_:guilabel-1/>. "
-"<_:variablelist-2/>"
+"I suoni possono essere configurati dalla scheda<_:guilabel-1/>. <_:"
+"variablelist-2/>"
 
 #. (itstool) path: sect1/title
 #: C/config-keybindings.xml:2
@@ -1809,9 +1686,9 @@ msgid ""
 "efficient, that your friends are impressed while watching you work."
 msgstr ""
 "Le associazioni dei tasti consentono di utilizzare la tastiera per rendere "
-"la navigazione dell'ambiente desktop più semplice e veloce. Utilizzando tali"
-" associazioni potreste rendere il vostro utilizzo del desktop così veloce da"
-" impressionare gli amici che vi osservano mentre siete al lavoro."
+"la navigazione dell'ambiente desktop più semplice e veloce. Utilizzando tali "
+"associazioni potreste rendere il vostro utilizzo del desktop così veloce da "
+"impressionare gli amici che vi osservano mentre siete al lavoro."
 
 #. (itstool) path: para/application
 #: C/config-keybindings.xml:12 C/config-keybindings.xml:28
@@ -1824,8 +1701,8 @@ msgid ""
 "The most common and well-known keybindings are the Save and Quit "
 "keybindings: Ctrl + S and Ctrl + Q in <_:application-1/> respectively."
 msgstr ""
-"Le associazioni più conosciute sono Salva e Esci: rispettivamente Ctrl + S e"
-" Ctrl + Q in <_:application-1/>."
+"Le associazioni più conosciute sono Salva e Esci: rispettivamente Ctrl + S e "
+"Ctrl + Q in <_:application-1/>."
 
 #. (itstool) path: sect1/para
 #: C/config-keybindings.xml:15
@@ -1865,8 +1742,7 @@ msgstr ""
 #: C/config-keybindings.xml:31
 msgid ""
 "emacs is a popular text editor for Linux and Unix based systems. emacs uses "
-"different keybindings than that of default. For example, save is Control X "
-"S."
+"different keybindings than that of default. For example, save is Control X S."
 msgstr ""
 "emacs è un editor di testo molto diffuso per gli ambienti basati su Unix e "
 "Linux. Emacs utilizza associazioni di tasti differenti da quellei Default. "
@@ -1885,11 +1761,11 @@ msgstr "Centro di Controllo CAFE"
 #. (itstool) path: sect2/para
 #: C/config-mouse.xml:7
 msgid ""
-"The mouse capplet in the <_:application-1/> helps to configure properties of"
-" the mouse. These are:"
+"The mouse capplet in the <_:application-1/> helps to configure properties of "
+"the mouse. These are:"
 msgstr ""
-"Il capplet mouse nel <_:application-1/> aiuta a configurare le proprietà del"
-" mouse. Queste sono:"
+"Il capplet mouse nel <_:application-1/> aiuta a configurare le proprietà del "
+"mouse. Queste sono:"
 
 #. (itstool) path: para/guilabel
 #. (itstool) path: title/guilabel
@@ -1926,8 +1802,7 @@ msgstr "La Scheda <_:guilabel-1/>"
 
 #. (itstool) path: sect2/para
 #: C/config-mouse.xml:28
-msgid ""
-"The <_:guilabel-1/> tab offers the commonly used settings of the mouse."
+msgid "The <_:guilabel-1/> tab offers the commonly used settings of the mouse."
 msgstr ""
 "La scheda <_:guilabel-1/> fornisce le impostazioni del mouse più comuni."
 
@@ -1950,9 +1825,9 @@ msgstr ""
 #: C/config-mouse.xml:37
 msgid ""
 "If he is right handed, the mouse typically sits on the right hand side of "
-"the desk. The primary button (action button) is on the left of the mouse, so"
-" that he can press it with his index finger, while the secondary button "
-"(menu button) is on the right."
+"the desk. The primary button (action button) is on the left of the mouse, so "
+"that he can press it with his index finger, while the secondary button (menu "
+"button) is on the right."
 msgstr ""
 "Se l'utente è destrimano, il mouse solitamente si trova sul lato destro "
 "della scrivania. Il pulsante principale (il pulsante di azione) è sulla "
@@ -1963,8 +1838,8 @@ msgstr ""
 #: C/config-mouse.xml:42
 msgid ""
 "However, if he is left-handed, the mouse sits on the left hand side of the "
-"desk. Consequently, in order to allow him to operate the primary button with"
-" his index finger of his left hand, the primary and the secondary button of "
+"desk. Consequently, in order to allow him to operate the primary button with "
+"his index finger of his left hand, the primary and the secondary button of "
 "the mouse have to be swapped."
 msgstr ""
 "Se invece l'utente è mancino, il mouse si trova sul lato sinistro della "
@@ -1985,13 +1860,13 @@ msgstr "Per mano sinistra"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:47
 msgid ""
-"That is the purpose of the <_:guilabel-1/> setting: select the "
-"<_:guibutton-2/> button if you are right handed, or the <_:guibutton-3/> "
-"button if you are left handed. When using the setting appropriate to him, "
-"the user has the primary button under his index finger."
+"That is the purpose of the <_:guilabel-1/> setting: select the <_:"
+"guibutton-2/> button if you are right handed, or the <_:guibutton-3/> button "
+"if you are left handed. When using the setting appropriate to him, the user "
+"has the primary button under his index finger."
 msgstr ""
-"Questo è lo scopo dell'impostazione <_:guilabel-1/>: selezionare il pulsante"
-" <_:guibutton-2/> se siete destrimani, o il pilsante <_:guibutton-3/> se "
+"Questo è lo scopo dell'impostazione <_:guilabel-1/>: selezionare il pulsante "
+"<_:guibutton-2/> se siete destrimani, o il pilsante <_:guibutton-3/> se "
 "siete mancini. Se si utilizzano le impostazioni adeguate, l'utente avrà il "
 "pulsante primario sotto il dito indice."
 
@@ -2008,12 +1883,11 @@ msgstr "Mostra la posizione del puntatore quando si preme il tasto Control "
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:57
 msgid ""
-"Sometimes, the user loses where the pointer is. If he selects the "
-"<_:guibutton-1/>, he can make the pointer reappear by pressing the control "
-"key."
+"Sometimes, the user loses where the pointer is. If he selects the <_:"
+"guibutton-1/>, he can make the pointer reappear by pressing the control key."
 msgstr ""
-"Talvolta, l'utente perde di vista il puntatore. Se si seleziona "
-"<_:guibutton-1/>, è possibile farlo riapparire premendo il tasto Control."
+"Talvolta, l'utente perde di vista il puntatore. Se si seleziona <_:"
+"guibutton-1/>, è possibile farlo riapparire premendo il tasto Control."
 
 #. (itstool) path: sect3/title
 #: C/config-mouse.xml:64
@@ -2040,8 +1914,8 @@ msgid ""
 msgstr ""
 "Ogni utente ha la sua preferenza sulla relazione tra il movimento del mouse "
 "e il movimento del puntatore: in modo da poter configurare il mouse ai suoi "
-"gusti, l'utente può utilizzare  le impostazioni <_:guilabel-1/> e "
-"<_:guilabel-2/>:"
+"gusti, l'utente può utilizzare  le impostazioni <_:guilabel-1/> e <_:"
+"guilabel-2/>:"
 
 #. (itstool) path: listitem/para
 #: C/config-mouse.xml:73
@@ -2067,8 +1941,8 @@ msgid ""
 "all the time with no acceleration adjustment; in this case, there is a "
 "perfect mouse distance to pixel distance ratio."
 msgstr ""
-"Ad esempio, selezionando la sensibilità al minimo, il mouse si muoverà senza"
-" valore di accelerazione; in questo caso viene mantenuto il rapporto tra "
+"Ad esempio, selezionando la sensibilità al minimo, il mouse si muoverà senza "
+"valore di accelerazione; in questo caso viene mantenuto il rapporto tra "
 "distanza del mouse e numero di pixel sullo schermo."
 
 #. (itstool) path: sect3/title
@@ -2079,8 +1953,8 @@ msgstr "Trascinamento"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:91
 msgid ""
-"Drag and drop is clicking an object, and dragging it to another place on the"
-" screen, causing an event to occur."
+"Drag and drop is clicking an object, and dragging it to another place on the "
+"screen, causing an event to occur."
 msgstr ""
 "Il drag and drop è fare click su un oggetto e il suo successivo "
 "trascinamento verso un'altra porzione di schermo, causando l'esecuzione di "
@@ -2100,8 +1974,8 @@ msgid ""
 msgstr ""
 "Occorre spostare l'oggetto per una certa distanza prima che il sistema "
 "riconosca questo movimento come un'operazione di trascinamento. Per "
-"configurare quanto distante occorre spostare l'oggetto, muovere il regolo "
-"<_:guilabel-1/> verso destra o sinistra."
+"configurare quanto distante occorre spostare l'oggetto, muovere il regolo <_:"
+"guilabel-1/> verso destra o sinistra."
 
 #. (itstool) path: sect3/title
 #: C/config-mouse.xml:101
@@ -2127,17 +2001,17 @@ msgstr "Intervallo"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:107
 msgid ""
-"With the <_:guilabel-1/> slider, the user can set the maximum delay that can"
-" elapse between the two clicks for them to be still considered as a double-"
-"click. If the delay between the two clicks is greater than the maximum delay"
-" that has been set, the two clicks are considered as two single clicks "
+"With the <_:guilabel-1/> slider, the user can set the maximum delay that can "
+"elapse between the two clicks for them to be still considered as a double-"
+"click. If the delay between the two clicks is greater than the maximum delay "
+"that has been set, the two clicks are considered as two single clicks "
 "instead of a double click."
 msgstr ""
 "Con il regolo <_:guilabel-1/>, l'utente può impostare il tempo massimo che "
 "intercorre tra due click per farli riconoscere come doppio click. Se il "
 "ritardo tra i due click è superiore all'intervallo che è stato impostato, i "
-"due click saranno riconosciuti come due click singoli invece che come doppio"
-" click."
+"due click saranno riconosciuti come due click singoli invece che come doppio "
+"click."
 
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:113
@@ -2145,14 +2019,14 @@ msgid ""
 "Consequently: the shorter the timeout, the less time can elapse between the "
 "two clicks of a double-click."
 msgstr ""
-"Quindi minore è l'intervallo impostato, meno tempo può trascorrere tra i due"
-" click di un doppio click."
+"Quindi minore è l'intervallo impostato, meno tempo può trascorrere tra i due "
+"click di un doppio click."
 
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:116
 msgid ""
-"The user can test the timeout that he has set by clicking on the light bulb,"
-" that will light on, if a double-click is detected."
+"The user can test the timeout that he has set by clicking on the light bulb, "
+"that will light on, if a double-click is detected."
 msgstr ""
 "L'utente può testare l'intervallo impostato facendo click sulla lampadina "
 "che si accenderà se viene rilevato il doppio click."
@@ -2184,16 +2058,16 @@ msgstr "Click Secondario Simulato"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:132
 msgid ""
-"There are users that can use only one mouse button. By activating the "
-"<_:guilabel-1/>, these users have a direct way to perform secondary clicks "
-"with their unique mouse button. In fact, the secondary click occurs "
-"automatically when the user keeps the primary button pressed for a "
-"determined delay without moving the mouse."
+"There are users that can use only one mouse button. By activating the <_:"
+"guilabel-1/>, these users have a direct way to perform secondary clicks with "
+"their unique mouse button. In fact, the secondary click occurs automatically "
+"when the user keeps the primary button pressed for a determined delay "
+"without moving the mouse."
 msgstr ""
-"Alcuni utenti possono utilizzare solo un pulsante per il mouse. Attivando la"
-" <_:guilabel-1/>, questi utenti hanno a disposizione un modo diretto per "
-"eseguire un click secondario con il loro unico pulsante. In pratica il click"
-" secondario viene eseguito automaticamente quando l'utente tiene premuto il "
+"Alcuni utenti possono utilizzare solo un pulsante per il mouse. Attivando la "
+"<_:guilabel-1/>, questi utenti hanno a disposizione un modo diretto per "
+"eseguire un click secondario con il loro unico pulsante. In pratica il click "
+"secondario viene eseguito automaticamente quando l'utente tiene premuto il "
 "pulsante primario per un determinato lasso di tempo senza muovere il mouse. "
 
 #. (itstool) path: para/guilabel
@@ -2222,8 +2096,8 @@ msgstr "Click Automatico"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:148
 msgid ""
-"There are users that cannot use any hardware button. By activating the "
-"<_:guilabel-1/>, they can have the mouse perform the various clicks without "
+"There are users that cannot use any hardware button. By activating the <_:"
+"guilabel-1/>, they can have the mouse perform the various clicks without "
 "pressing any mousebutton. The click types that can be performed are: single "
 "click, double-click, drag click and secondary click."
 msgstr ""
@@ -2242,8 +2116,8 @@ msgstr "Inizia il movimento quando il puntatore cessa il movimento"
 msgid ""
 "To make the mouse perform the clicks without a mousebutton being pressed, "
 "the user has to put a mark in the box named <_:guilabel-1/>. How the click "
-"is completed and how the click type is chosen depends on what dwell mode the"
-" user is using. The two available modes are:"
+"is completed and how the click type is chosen depends on what dwell mode the "
+"user is using. The two available modes are:"
 msgstr ""
 "Per far si che il mouse esegua il click senza che si prema alcun pulsante, "
 "l'utente deve spuntare la casella <_:guilabel-1/>.  Come viene compleato il "
@@ -2267,8 +2141,8 @@ msgstr ""
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:172
 msgid ""
-"With the <_:guilabel-1/> slider, the user can configure how long the pointer"
-" has to be motionless for the click to be initiated."
+"With the <_:guilabel-1/> slider, the user can configure how long the pointer "
+"has to be motionless for the click to be initiated."
 msgstr ""
 "Con il regolo <_:guilabel-1/>, l'utente può configurare quanto a lungo il "
 "mouse deve restare immobile prima che inizi il click"
@@ -2281,10 +2155,10 @@ msgstr "Soglia di Movimento"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:176
 msgid ""
-"For people that have trouble to keep the mouse motionless, there is the "
-"<_:guilabel-1/> slider. When the slider is set towards low, even little "
-"mouse movements are considered; however, by setting a higher threshold, the "
-"mouse has to traverse a bigger distance before it is considered as moving."
+"For people that have trouble to keep the mouse motionless, there is the <_:"
+"guilabel-1/> slider. When the slider is set towards low, even little mouse "
+"movements are considered; however, by setting a higher threshold, the mouse "
+"has to traverse a bigger distance before it is considered as moving."
 msgstr ""
 "Per coloro che hanno difficoltà a mantenere fermo il mouse , è dedicato il "
 "regolo <_:guilabel-1/>. Quando il regolo è impostato vesso il basso, "
@@ -2318,8 +2192,8 @@ msgstr "Seleziona il tipo di click prima"
 msgid ""
 "This mode is active when the user selects <_:guilabel-1/>. In fact, after "
 "the mouse has been motionless for the above predefined delay, the system "
-"will automatically perform the click type that is selected in the Click Type"
-" Window."
+"will automatically perform the click type that is selected in the Click Type "
+"Window."
 msgstr ""
 "Questo modo è attivo quando l'utente seleziona <_:guilabel-1/>. In pratica, "
 "quando il mouse è rimasto fermo per il tempo specificato, il sistema "
@@ -2357,8 +2231,8 @@ msgstr "applet del pannello Click Automatco"
 #: C/config-mouse.xml:201
 msgid ""
 "To make the Click Type Window appear on the screen, the user has to put a "
-"mark into the checkbox named <_:guilabel-1/>. Some users might prefer to use"
-" the <_:guilabel-2/> instead of the Click Type Window. The advantage of the "
+"mark into the checkbox named <_:guilabel-1/>. Some users might prefer to use "
+"the <_:guilabel-2/> instead of the Click Type Window. The advantage of the "
 "panel applet is that it does not cover any open window on the desktop."
 msgstr ""
 "Per far comparire la finestra Tipo di Click sullo schermo, l'utente deve "
@@ -2406,13 +2280,13 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-mouse.xml:227
 msgid ""
-"If the mouse stays motionless until the pointer returns to its normal shape,"
-" the user can move the mouse without a click being performed. The next dwell"
-" click can be performed when the mouse stops moving again."
+"If the mouse stays motionless until the pointer returns to its normal shape, "
+"the user can move the mouse without a click being performed. The next dwell "
+"click can be performed when the mouse stops moving again."
 msgstr ""
 "Se il mouse rimane immobile fino a quando il puntatore non torna alla forma "
-"normale, l'utente può muovere il mouse senza che venga eseguito alcun click."
-" Il successivo click automatico può essere eseguito quando il mouse torna a "
+"normale, l'utente può muovere il mouse senza che venga eseguito alcun click. "
+"Il successivo click automatico può essere eseguito quando il mouse torna a "
 "fermarsi di nuovo."
 
 #. (itstool) path: para/guimenu
@@ -2427,8 +2301,8 @@ msgid ""
 "direction by using the 4 <_:guimenu-1/> available under this mode."
 msgstr ""
 "L'utente ha inoltre la possibilità di abbinare il tipo di click con la "
-"direzione del movimento utilizzando i 4 <_:guimenu-1/> disponibili in questa"
-" modalità "
+"direzione del movimento utilizzando i 4 <_:guimenu-1/> disponibili in questa "
+"modalità "
 
 #. (itstool) path: sect1/title
 #: C/config-screensaver.xml:2
@@ -2441,13 +2315,13 @@ msgid ""
 "Screensavers are nearly old as computers. Initially, they were meant keep "
 "images from being 'burned' onto the monitor screen. This would ruin the "
 "monitor. Today, technology has advanced enough that images no longer get "
-"burnt on your monitor. However, people enjoy using screensavers because they"
-" look cool and entertain visitors."
+"burnt on your monitor. However, people enjoy using screensavers because they "
+"look cool and entertain visitors."
 msgstr ""
 "I salvaschermo sono vecchi più o meno quanto i computer. Inizialmente, "
 "furono concepiti per evitare che le immagini \"bruciassero\" i pixel del "
-"monitor. Ciò avrebbe rovinato il monitor. Oggi, la tecnologia ha fatto passi"
-" in avanti tali che questo non accade più. Tuttavia i salvaschermo si "
+"monitor. Ciò avrebbe rovinato il monitor. Oggi, la tecnologia ha fatto passi "
+"in avanti tali che questo non accade più. Tuttavia i salvaschermo si "
 "utilizzano ancora perché sono belli da vedere e intrattengono i visitatori."
 
 #. (itstool) path: para/application
@@ -2468,15 +2342,15 @@ msgstr "Capplet Impostazioni"
 #. (itstool) path: sect1/para
 #: C/config-screensaver.xml:11
 msgid ""
-"<_:application-1/> uses either the <_:application-2/> or the "
-"<_:application-3/> programs to display screensavers. By default, "
-"<_:application-4/> comes with dozens of screensavers. These can all be "
+"<_:application-1/> uses either the <_:application-2/> or the <_:"
+"application-3/> programs to display screensavers. By default, <_:"
+"application-4/> comes with dozens of screensavers. These can all be "
 "configured in the <_:application-5/> in <_:application-6/>."
 msgstr ""
-"Il <_:application-1/> per mostrare il salvaschermo utilizza i programmi "
-"<_:application-2/> o <_:application-3/>. Di default, <_:application-4/> "
-"viene fornito con dozzine di salvaschermi. Questi possono essere configurati"
-" in <_:application-5/> di <_:application-6/>."
+"Il <_:application-1/> per mostrare il salvaschermo utilizza i programmi <_:"
+"application-2/> o <_:application-3/>. Di default, <_:application-4/> viene "
+"fornito con dozzine di salvaschermi. Questi possono essere configurati in <_:"
+"application-5/> di <_:application-6/>."
 
 #. (itstool) path: para/application
 #: C/config-screensaver.xml:23
@@ -2506,8 +2380,7 @@ msgstr "Anteprima del Salvaschermo"
 #. (itstool) path: listitem/para
 #: C/config-screensaver.xml:39
 msgid ""
-"The right half of the capplet is both a preview of your selected "
-"screensaver."
+"The right half of the capplet is both a preview of your selected screensaver."
 msgstr ""
 "La metà destra del capplet è anche una anteprima del salvaschermo "
 "selezionato."
@@ -2515,11 +2388,11 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-screensaver.xml:22
 msgid ""
-"The <_:application-1/> interface is broken into two main sections: "
-"<_:variablelist-2/>"
+"The <_:application-1/> interface is broken into two main sections: <_:"
+"variablelist-2/>"
 msgstr ""
-"L'interfaccia <_:application-1/> è divisa in due sezioni principali "
-":<_:variablelist-2/>"
+"L'interfaccia <_:application-1/> è divisa in due sezioni principali :<_:"
+"variablelist-2/>"
 
 #. (itstool) path: sect3/title
 #: C/config-screensaver.xml:48
@@ -2547,8 +2420,8 @@ msgid ""
 "Your monitor will display only a black image instead of an animation. This "
 "is good for helping to conserve power."
 msgstr ""
-"Il vostro monitor mostrerà un'immagine nera invece di una animazione. Questo"
-" è utile per risparmiare energia."
+"Il vostro monitor mostrerà un'immagine nera invece di una animazione. Questo "
+"è utile per risparmiare energia."
 
 #. (itstool) path: varlistentry/term
 #: C/config-screensaver.xml:77
@@ -2579,11 +2452,11 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-screensaver.xml:54
 msgid ""
-"You can choose different modes to display your screensaver: "
-"<_:variablelist-1/>"
+"You can choose different modes to display your screensaver: <_:"
+"variablelist-1/>"
 msgstr ""
-"Si può scegliere diversi modi per mostrare il vostro salvaschermo: "
-"<_:variablelist-1/>"
+"Si può scegliere diversi modi per mostrare il vostro salvaschermo: <_:"
+"variablelist-1/>"
 
 #. (itstool) path: listitem/para
 #: C/config-screensaver.xml:102
@@ -2636,8 +2509,8 @@ msgstr ""
 msgid ""
 "Set the time preferences. The available options are: <_:variablelist-1/>"
 msgstr ""
-"Imposta le preferenze di temporizzazione. Le opzioni disponibili sono: "
-"<_:variablelist-1/>"
+"Imposta le preferenze di temporizzazione. Le opzioni disponibili sono: <_:"
+"variablelist-1/>"
 
 #. (itstool) path: sect3/para
 #: C/config-screensaver.xml:49
@@ -2662,11 +2535,11 @@ msgstr "Impostazioni"
 #. (itstool) path: sect3/para
 #: C/config-screensaver.xml:143
 msgid ""
-"Below the preview window are two buttons: <_:guibutton-1/> and "
-"<_:guibutton-2/>."
+"Below the preview window are two buttons: <_:guibutton-1/> and <_:"
+"guibutton-2/>."
 msgstr ""
-"Sotto la finestra di anteprima ci sono due pulsanti: <_:guibutton-1/> e "
-"<_:guibutton-2/>."
+"Sotto la finestra di anteprima ci sono due pulsanti: <_:guibutton-1/> e <_:"
+"guibutton-2/>."
 
 #. (itstool) path: sect3/para
 #: C/config-screensaver.xml:147
@@ -2683,8 +2556,7 @@ msgstr ""
 #: C/config-screensaver.xml:152
 msgid ""
 "<_:guibutton-1/> lets you configure each individual screensaver. The "
-"contents of the <_:guibutton-2/> button is beyond the scope of this "
-"document."
+"contents of the <_:guibutton-2/> button is beyond the scope of this document."
 msgstr ""
 "<_:guibutton-1/> permette di configurare ogni singolo salvaschermo. I "
 "contenuti del pulsante <_:guibutton-2/> vanno oltre lo scopo di questo "
@@ -2715,8 +2587,8 @@ msgid ""
 "manipulations on your desktop as your screensaver."
 msgstr ""
 "Il salvaschermo può prendere temporaneamente la vostra scrivania  ed "
-"eseguire manipolazioni di immagine temporanee su di esso ed utilizzarle come"
-" salvaschermo."
+"eseguire manipolazioni di immagine temporanee su di esso ed utilizzarle come "
+"salvaschermo."
 
 #. (itstool) path: varlistentry/term
 #: C/config-screensaver.xml:179
@@ -2756,8 +2628,7 @@ msgstr "Mappe di Colore"
 msgid ""
 "The <_:guilabel-1/> tab is broken into four sections: <_:variablelist-2/>"
 msgstr ""
-"La scheda <_:guilabel-1/> è suddivisa in quattro sezioni: "
-"<_:variablelist-2/>"
+"La scheda <_:guilabel-1/> è suddivisa in quattro sezioni: <_:variablelist-2/>"
 
 #. (itstool) path: sect3/title
 #: C/config-screensaver.xml:207
@@ -2776,14 +2647,14 @@ msgstr ""
 #. (itstool) path: sect3/para
 #: C/config-screensaver.xml:208
 msgid ""
-"Your screensaver has the ability take your desktop and temporarily run image"
-" manipulations on your desktop as your screensaver. Several options exist "
-"for you to setup your image manipulation. Select the method of image "
+"Your screensaver has the ability take your desktop and temporarily run image "
+"manipulations on your desktop as your screensaver. Several options exist for "
+"you to setup your image manipulation. Select the method of image "
 "manipulation you wish to use. <_:note-1/>"
 msgstr ""
 "Il salvaschermo ha la possibilità di prendere la vostra scrivania ed "
-"eseguire temporaneamente delle manipolazioni di immagine su di essa e quindi"
-" utilizzarla come salvaschermo. Esistono diverse opzioni per impostare la "
+"eseguire temporaneamente delle manipolazioni di immagine su di essa e quindi "
+"utilizzarla come salvaschermo. Esistono diverse opzioni per impostare la "
 "manipolazione dell'immagine. Selezionare il metodo di manipolazione "
 "dell'imagine che si desidera utilizzare. <_:note-1/>"
 
@@ -2798,8 +2669,8 @@ msgid ""
 "Power management can help conserve power by setting modes of your monitor. "
 "Select the timings for the modes to be set in this section."
 msgstr ""
-"La gestione energetica può aiutare a risparmiare energia impostando modalità"
-" diverse per il vostro monitor. Selezionare le impostazioni di tempo per i "
+"La gestione energetica può aiutare a risparmiare energia impostando modalità "
+"diverse per il vostro monitor. Selezionare le impostazioni di tempo per i "
 "modi da imopostare in questa sezione."
 
 #. (itstool) path: sect3/title
@@ -2850,21 +2721,21 @@ msgid "Ctk+ Theme Selector"
 msgstr "Selettore di Tema Ctk+"
 
 #. (itstool) path: para/application
-#: C/config-themes.xml:5 C/config-themes.xml:5
+#: C/config-themes.xml:5
 msgid "Ctk+"
 msgstr "Ctk+"
 
 #. (itstool) path: sect1/para
 #: C/config-themes.xml:3
 msgid ""
-"The <_:application-1/> environment is run by <_:application-2/>. "
-"<_:application-3/> allows most elements in your desktop to be themed to the "
+"The <_:application-1/> environment is run by <_:application-2/>. <_:"
+"application-3/> allows most elements in your desktop to be themed to the "
 "look you want. The <_:application-4/> lets you select the theme to use."
 msgstr ""
-"L'ambiente <_:application-1/> è eseguito da <_:application-2/>. "
-"<_:application-3/> Permette di applicare temi a molti elementi del desktop "
-"per avere l'aspetto desiderato. <_:application-4/> permette di selezionare "
-"il tema da utilizzare."
+"L'ambiente <_:application-1/> è eseguito da <_:application-2/>. <_:"
+"application-3/> Permette di applicare temi a molti elementi del desktop per "
+"avere l'aspetto desiderato. <_:application-4/> permette di selezionare il "
+"tema da utilizzare."
 
 #. (itstool) path: sect2/title
 #: C/config-themes.xml:11
@@ -2877,8 +2748,8 @@ msgid ""
 "The top of the <_:application-1/> has a list of installed themes. Simply "
 "click on a theme and your changes will be made."
 msgstr ""
-"La porzione superiore di <_:application-1/> ha una lista di temi installati."
-" Fare click sul tema e le modifiche saranno apportate immediatamente."
+"La porzione superiore di <_:application-1/> ha una lista di temi installati. "
+"Fare click sul tema e le modifiche saranno apportate immediatamente."
 
 #. (itstool) path: sect2/para
 #: C/config-themes.xml:17
@@ -2930,13 +2801,124 @@ msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
 "with this manual."
 msgstr ""
 "È concesso il permesso di copiare, distribuire e/o modificare questo "
 "documento in base ai termini della GNU Free Documentation License (GFDL), "
 "Versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software "
-"Foundation senza sezioni invarianti, senza testi di copertina e nessun testo"
-" di retro copertina. Potete trovare una copia del GFDL qui <_:ulink-1/> o "
-"nel file COPYING-DOCS distribuito con questo manuale."
+"Foundation senza sezioni invarianti, senza testi di copertina e nessun testo "
+"di retro copertina. Potete trovare una copia del GFDL qui <_:ulink-1/> o nel "
+"file COPYING-DOCS distribuito con questo manuale."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
+msgid ""
+"This manual is part of a collection of CAFE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Questo manuale fa parte di una raccolta di manuali CAFE distribuita in "
+"conformità con la GFDL. Per poter distribuire questo manuale separatamente, "
+"è necessario inserirvi una copia della licenza, come descritto nella sezione "
+"6 della licenza."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Molti dei nomi usati dalle aziende per distinguere i propri prodotti e "
+"servizi sono rivendicati come marchi registrati. Quando questi nomi "
+"compaiono nella documentazione di CAFE, e i partecipanti al CAFE "
+"Documentation Project sono consapevoli del loro utilizzo, essi vengono "
+"scritti in lettere maiuscole o con l'iniziale maiuscola."
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"IL DOCUMENTO VIENE FORNITO SENZA GARANZIE DI ALCUN TIPO, ESPLICITE O "
+"IMPLICITE, INCLUSE, MA SENZA LIMITAZIONE, LE GARANZIE ATTESTANTI CHE IL "
+"DOCUMENTO O LE SUE VERSIONI MODIFICATE SIANO PRIVI DI DIFETTI, "
+"COMMERCIALIZZABILI, IDONEI A UN DETERMINATO SCOPO O CHE NON VIOLINO DIRITTI "
+"DI TERZI. SI DECLINA QUALUNQUE RESPONSABILITÀ RIGUARDO AI RISCHI INERENTI LA "
+"QUALITÀ, L'ACCURATEZZA E LE PRESTAZIONI DEL DOCUMENTO O DI UNA SUA VERSIONE "
+"MODIFICATA. QUALORA UN DOCUMENTO O UNA SUA VERSIONE MODIFICATA DOVESSERO "
+"PRESENTARE QUALUNQUE TIPO DI DIFETTO, IL COSTO DI EVENTUALI INTERVENTI DI "
+"ASSISTENZA, RIPARAZIONE O CORREZIONE SARÀ A CARICO DELL'UTENTE (NON DEL "
+"REDATTORE INIZIALE, DELL'AUTORE O DI ALTRI COLLABORATORI). QUESTA "
+"LIMITAZIONE DELLA GARANZIA COSTITUISCE PARTE ESSENZIALE DELLA LICENZA. L'USO "
+"DEL DOCUMENTO O DELLE SUE VERSIONI MODIFICATE È CONSENTITO SOLO ENTRO I "
+"TERMINI DI QUESTA LIMITAZIONE DELLA GARANZIA; E"
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"IN NESSUNA CIRCOSTANZA E PER NESSUNA RAGIONE LEGALE, INCLUSI I PRINCIPI DI "
+"COLPA (INCLUSA LA NEGLIGENZA), ACCORDO CONTRATTUALE O ALTRO, SARÀ POSSIBILE "
+"CONSIDERARE L'AUTORE, IL REDATTORE INIZIALE, GLI ALTRI COLLABORATORI, "
+"QUALUNQUE DISTRIBUTORE DEL DOCUMENTO O DI UNA SUA VERSIONE MODIFICATA O "
+"QUALUNQUE FORNITORE DELLE PERSONE CITATE, RESPONSABILE NEI CONFRONTI DI "
+"QUALUNQUE PERSONA PER DANNI DIRETTI, INDIRETTI, SPECIALI, INCIDENTALI O "
+"CONSEGUENTI DI QUALUNQUE NATURA, INCLUSI, MA SENZA LIMITAZIONE, I DANNI PER "
+"PERDITA DI AVVIAMENTO, INTERRUZIONE DEL LAVORO, GUASTO O MALFUNZIONAMENTO "
+"DEL COMPUTER O QUALUNQUE ALTRO DANNO O PERDITA DERIVANTE O CORRELATA ALL'USO "
+"DEL DOCUMENTO O DI UNA SUA VERSIONE MODIFICATA, ANCHE QUALORA LE PERSONE "
+"CITATE FOSSERO STATE INFORCAFE DELLA POSSIBILITÀ DI TALI DANNI."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"IL DOCUMENTO E LE VERSIONI MODIFICATE DEL DOCUMENTO VENGONO RILASCIATE "
+"SECONDO I TERMINI DELLA GNU FREE DOCUMENTATION LICENSE TENENDO PRESENTE CHE: "
+"<_:orderedlist-1/>"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" url=\"help:"
+#~ "fdl\">link</ulink> or in the file COPYING-DOCS distributed with this "
+#~ "manual."
+#~ msgstr ""
+#~ "Questo documento può essere copiato, distribuito e/o modificato solo in "
+#~ "conformità con i termini della GNU Free Documentation License (GFDL) "
+#~ "Versione 1.1 o delle versioni successive pubblicate dalla Free Software "
+#~ "Foundation senza sezioni invariabili, frontespizi e testi di copertina. "
+#~ "Una copia della GFDL è disponibile a questo <ulink type=\"help\" "
+#~ "url=\"help:fdl\">collegamento</ulink> o nel file COPYING-DOCS distribuito "
+#~ "con questo manuale."
