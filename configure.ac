@@ -1,4 +1,4 @@
-AC_INIT([cafe-control-center], [1.24.1], [http://www.cafe-desktop.org/])
+AC_INIT([cafe-control-center], [1.25.0], [http://www.cafe-desktop.org/])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([shell])
