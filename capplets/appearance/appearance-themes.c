@@ -207,7 +207,7 @@ theme_load_from_gsettings (AppearanceData *data)
 
   theme->ctk_theme_name = g_settings_get_string (data->interface_settings, CTK_THEME_KEY);
   if (theme->ctk_theme_name == NULL)
-    theme->ctk_theme_name = g_strdup ("Menta");
+    theme->ctk_theme_name = g_strdup ("ClassicOk");
 
   scheme = g_settings_get_string (data->interface_settings, COLOR_SCHEME_KEY);
   if (scheme == NULL || !strcmp (scheme, "")) {
@@ -218,11 +218,11 @@ theme_load_from_gsettings (AppearanceData *data)
 
   theme->croma_theme_name = g_settings_get_string (data->croma_settings, CROMA_THEME_KEY);
   if (theme->croma_theme_name == NULL)
-    theme->croma_theme_name = g_strdup ("Menta");
+    theme->croma_theme_name = g_strdup ("ClassicOk");
 
   theme->icon_theme_name = g_settings_get_string (data->interface_settings, ICON_THEME_KEY);
   if (theme->icon_theme_name == NULL)
-    theme->icon_theme_name = g_strdup ("menta");
+    theme->icon_theme_name = g_strdup ("cafe");
 
   if (cafe_gsettings_schema_exists (NOTIFICATION_SCHEMA)) {
     GSettings *notification_settings;
