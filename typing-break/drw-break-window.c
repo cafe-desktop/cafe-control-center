@@ -267,7 +267,7 @@ drw_break_window_init (DrwBreakWindow *window)
 						(GSourceFunc) clock_timeout_cb,
 						window);
 #ifdef HAVE_KANBERRA_CTK
-	ka_context_play (ka_gtk_context_get (), 0, KA_PROP_EVENT_ID, "desktop-screen-lock", NULL);
+	ka_context_play (ka_ctk_context_get (), 0, KA_PROP_EVENT_ID, "desktop-screen-lock", NULL);
 #endif
 }
 
@@ -381,7 +381,7 @@ clock_timeout_cb (DrwBreakWindow *window)
 		priv->clock_timeout_id = 0;
 
 #ifdef HAVE_KANBERRA_CTK
-		ka_context_play (ka_gtk_context_get (), 0, KA_PROP_EVENT_ID, "alarm-clock-elapsed", NULL);
+		ka_context_play (ka_ctk_context_get (), 0, KA_PROP_EVENT_ID, "alarm-clock-elapsed", NULL);
 #endif
 		g_signal_emit (window, signals[DONE], 0, NULL);
 
