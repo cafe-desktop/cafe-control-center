@@ -561,7 +561,7 @@ msgstr "Sari la fereastra Accesibilitate maus"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:367
 msgid "Accessible Lo_gin"
-msgstr "Autentifica_re accesibilă"
+msgstr "Autentifika_re accesibilă"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:375
 msgid "Jump to the Accessible Login dialog"
