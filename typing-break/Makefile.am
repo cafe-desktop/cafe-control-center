@@ -27,9 +27,9 @@ cafe_typing_monitor_CFLAGS = \
 
 cafe_typing_monitor_LDADD = @TYPING_LIBS@ @CAFE_DESKTOP_LIBS@ @SCREENSAVER_LIBS@
 
-if HAVE_LIBCANBERRA_CTK
-  cafe_typing_monitor_CFLAGS += -DHAVE_CANBERRA_CTK @LIBCANBERRA_CTK_CFLAGS@ 
-  cafe_typing_monitor_LDADD += @LIBCANBERRA_CTK_LIBS@
+if HAVE_LIBKANBERRA_CTK
+  cafe_typing_monitor_CFLAGS += -DHAVE_KANBERRA_CTK @LIBKANBERRA_CTK_CFLAGS@ 
+  cafe_typing_monitor_LDADD += @LIBKANBERRA_CTK_LIBS@
 endif
 
 if HAVE_APP_INDICATOR

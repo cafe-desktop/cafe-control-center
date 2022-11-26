@@ -29,7 +29,7 @@
 #include <cdk/cdkkeysyms.h>
 #include <gio/gio.h>
 
-#ifdef HAVE_CANBERRA_CTK
+#ifdef HAVE_KANBERRA_CTK
 #include <kanberra-gtk.h>
 #endif
 
@@ -266,7 +266,7 @@ drw_break_window_init (DrwBreakWindow *window)
 	priv->clock_timeout_id = g_timeout_add (1000,
 						(GSourceFunc) clock_timeout_cb,
 						window);
-#ifdef HAVE_CANBERRA_CTK
+#ifdef HAVE_KANBERRA_CTK
 	ca_context_play (ca_gtk_context_get (), 0, CA_PROP_EVENT_ID, "desktop-screen-lock", NULL);
 #endif
 }
@@ -380,7 +380,7 @@ clock_timeout_cb (DrwBreakWindow *window)
 		 */
 		priv->clock_timeout_id = 0;
 
-#ifdef HAVE_CANBERRA_CTK
+#ifdef HAVE_KANBERRA_CTK
 		ca_context_play (ca_gtk_context_get (), 0, CA_PROP_EVENT_ID, "alarm-clock-elapsed", NULL);
 #endif
 		g_signal_emit (window, signals[DONE], 0, NULL);
