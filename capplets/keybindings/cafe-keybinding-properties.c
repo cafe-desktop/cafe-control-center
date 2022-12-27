@@ -1005,7 +1005,6 @@ append_keys_to_tree_from_gsettings (CtkBuilder *builder, const gchar *gsettings_
   if (entries->len > 0)
     {
       KeyListEntry *keys;
-      int i;
 
       /* Empty KeyListEntry to end the array */
       key.gsettings_path = NULL;
