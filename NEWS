@@ -1,3 +1,12 @@
+### cafe-control-center 1.25.1
+
+  * port from libcanberra to libkanberra
+  * font-thumbnailer: initialize variable retval
+  * cafe-keybinding-properties: avoid shadow variable
+  * xrandr-capplet: remove unused struct member
+  * appearance-themes: reduce the scope of some variables
+  * cafe-keybinding-properties: Fix -Wsign-compare warning
+
 ### cafe-control-center 1.25.0
 
   * initial commit: mate-control-center 1.24.1 fork
