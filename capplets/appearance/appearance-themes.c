@@ -564,7 +564,6 @@ theme_message_area_update (AppearanceData *data)
   gboolean show_revert_font = FALSE;
   gboolean show_error;
   const gchar *message;
-  gchar *font;
   GError *error = NULL;
 
   theme = theme_get_selected (CTK_ICON_VIEW (appearance_capplet_get_widget (data, "theme_list")), data);
@@ -578,6 +577,8 @@ theme_message_area_update (AppearanceData *data)
   show_error = !cafe_theme_meta_info_validate (theme, &error);
 
   if (!show_error) {
+    gchar *font;
+
     if (theme->background_image != NULL) {
       gchar *background;
 
@@ -746,7 +747,6 @@ theme_selection_changed_cb (CtkWidget *icon_view, AppearanceData *data)
 {
   GList *selection;
   CafeThemeMetaInfo *theme = NULL;
-  gboolean is_custom = FALSE;
 
   selection = ctk_icon_view_get_selected_items (CTK_ICON_VIEW (icon_view));
 
@@ -754,6 +754,7 @@ theme_selection_changed_cb (CtkWidget *icon_view, AppearanceData *data)
     CtkTreeModel *model;
     CtkTreeIter iter;
     gchar *name;
+    gboolean is_custom;
 
     model = ctk_icon_view_get_model (CTK_ICON_VIEW (icon_view));
     ctk_tree_model_get_iter (model, &iter, selection->data);
