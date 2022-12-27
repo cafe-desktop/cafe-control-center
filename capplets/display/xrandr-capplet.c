@@ -53,7 +53,6 @@ struct App
     CtkWidget      *current_monitor_label;
     CtkWidget      *monitor_on_radio;
     CtkWidget      *monitor_off_radio;
-    CtkListStore   *resolution_store;
     CtkWidget	   *resolution_combo;
     CtkWidget	   *refresh_combo;
     CtkWidget	   *rotation_combo;
