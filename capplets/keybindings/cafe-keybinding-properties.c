@@ -976,7 +976,7 @@ append_keys_to_tree_from_gsettings (CtkBuilder *builder, const gchar *gsettings_
   gchar **custom_list;
   GArray *entries;
   KeyListEntry key;
-  gint i;
+  guint i;
 
   /* load custom shortcuts from GSettings */
   entries = g_array_new (FALSE, TRUE, sizeof (KeyListEntry));
