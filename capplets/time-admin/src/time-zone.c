@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2019 CAFE Developers
+ * Copyright (C) 2022 Pablo Barciela
+ * Copyright (C) 2019-2020 MATE Developers
  * Copyright (C) 2018, 2019 zhuyaliang https://github.com/zhuyaliang/
  * Copyright (C) 2010-2018 The GNOME Project
  * Copyright (C) 2010 Intel, Inc

@@ -12,7 +12,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2019 CAFE Developers
+ * Copyright (C) 2022 Pablo Barciela
+ * Copyright (C) 2019-2020 MATE Developers
  *
  * These are the timezone names from /usr/share/zoneinfo/zone.tab.
 
