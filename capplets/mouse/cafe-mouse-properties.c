@@ -33,7 +33,7 @@
 
 #include "capplet-util.h"
 #include "activate-settings-daemon.h"
-#include "csd-input-helper.h"
+#include "csd_input-helper.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>

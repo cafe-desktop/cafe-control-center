@@ -11,8 +11,8 @@ nodist_cafe_mouse_properties_SOURCES = \
 	$(BUILT_SOURCES)
 cafe_mouse_properties_SOURCES =	\
 	cafe-mouse-properties.c	\
-	csd-input-helper.c	\
-	csd-input-helper.h
+	csd_input-helper.c	\
+	csd_input-helper.h
 
 include $(top_srcdir)/gla11y.mk
 

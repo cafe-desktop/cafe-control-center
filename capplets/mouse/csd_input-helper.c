@@ -26,7 +26,7 @@
 #include <sys/types.h>
 #include <X11/Xatom.h>
 
-#include "csd-input-helper.h"
+#include "csd_input-helper.h"
 
 gboolean
 supports_xinput_devices (void)
