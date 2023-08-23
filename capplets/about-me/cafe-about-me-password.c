@@ -813,13 +813,14 @@ static gboolean
 passdlg_spawn_passwd (PasswordDialog *pdialog)
 {
 	GError	*error = NULL;
-	gchar	*details;
 
 	/* If backend is running, stop it */
 	stop_passwd (pdialog);
 
 	/* Spawn backend */
 	if (!spawn_passwd (pdialog, &error)) {
+		gchar	*details;
+
 		CtkWidget *parent = CTK_WIDGET (ctk_builder_get_object (pdialog->ui, "change-password"));
 
 		/* translators: Unable to launch <program>: <error message> */
