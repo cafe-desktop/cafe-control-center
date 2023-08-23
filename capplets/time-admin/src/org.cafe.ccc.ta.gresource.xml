@@ -16,7 +16,7 @@
     along with CAFE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/cafe/mcc/ta">
+  <gresource prefix="/org/cafe/ccc/ta">
     <file compressed="true">time-admin.ui</file>
   </gresource>
 </gresources>

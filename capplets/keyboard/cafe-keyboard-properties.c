@@ -59,7 +59,7 @@ create_dialog (void)
 	GError *error = NULL;
 
 	dialog = ctk_builder_new ();
-	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/keyboard/cafe-keyboard-properties-dialog.ui", &error) == 0) {
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/ccc/keyboard/cafe-keyboard-properties-dialog.ui", &error) == 0) {
 		g_warning ("Could not load UI: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);

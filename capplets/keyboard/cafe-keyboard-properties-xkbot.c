@@ -449,7 +449,7 @@ xkb_options_popup_dialog (CtkBuilder * dialog)
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,
-	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-options-dialog.ui",
+	                               "/org/cafe/ccc/keyboard/cafe-keyboard-properties-options-dialog.ui",
 	                               NULL);
 
 	chooser = CWID ("xkb_options_dialog");

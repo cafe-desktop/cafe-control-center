@@ -35,7 +35,7 @@ SUFFIXES = .xml.in .xml
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = cafe-keybindings.pc
 
-cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c: org.cafe.mcc.keybindings.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.keybindings.gresource.xml)
+cafe-keybinding-properties-resources.h cafe-keybinding-properties-resources.c: org.cafe.ccc.keybindings.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.ccc.keybindings.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name keybindings $<
 
 AM_CPPFLAGS = \
@@ -52,7 +52,7 @@ EXTRA_DIST = $(xml_in_files) \
 	cafe-keybindings.pc.in \
 	$(ui_files) \
 	$(Desktop_in_files) \
-	org.cafe.mcc.keybindings.gresource.xml \
+	org.cafe.ccc.keybindings.gresource.xml \
 	ui-a11y.suppr
 
 -include $(top_srcdir)/git.mk

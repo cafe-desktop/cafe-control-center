@@ -47,7 +47,7 @@ create_builder (void)
 
     builder = ctk_builder_new ();
 
-    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/accessibility/at/at-enable-dialog.ui", &error)) {
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/ccc/accessibility/at/at-enable-dialog.ui", &error)) {
         GObject *object;
         GDesktopAppInfo *app_info = NULL;
 

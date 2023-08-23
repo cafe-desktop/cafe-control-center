@@ -16,7 +16,7 @@
     along with CAFE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/cafe/mcc/am">
+  <gresource prefix="/org/cafe/ccc/am">
     <file compressed="true">cafe-about-me-dialog.ui</file>
     <file compressed="true">cafe-about-me-fingerprint.ui</file>
     <file compressed="true">cafe-about-me-password.ui</file>

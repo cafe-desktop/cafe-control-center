@@ -105,7 +105,7 @@ create_builder (void)
   CtkBuilder *builder = ctk_builder_new();
   GError *error = NULL;
 
-  if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
+  if (ctk_builder_add_from_resource (builder, "/org/cafe/ccc/keybindings/cafe-keybinding-properties.ui", &error) == 0) {
     g_warning ("Could not load UI: %s", error->message);
     g_error_free (error);
     g_object_unref (builder);

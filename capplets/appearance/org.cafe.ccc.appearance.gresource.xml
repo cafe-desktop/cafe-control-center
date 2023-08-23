@@ -16,7 +16,7 @@
     along with CAFE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/cafe/mcc/appearance">
+  <gresource prefix="/org/cafe/ccc/appearance">
     <file compressed="true">data/appearance.ui</file>
   </gresource>
 </gresources>

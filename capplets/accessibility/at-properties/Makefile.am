@@ -38,11 +38,11 @@ EXTRA_DIST = \
 	$(ui_files) \
 	$(pixmap_DATA) \
 	$(Desktop_in_files) \
-	org.cafe.mcc.accessibility.at.gresource.xml \
+	org.cafe.ccc.accessibility.at.gresource.xml \
 	ui-a11y.suppr
 
 # Generate resources
-cafe-at-properties-resources.h cafe-at-properties-resources.c: org.cafe.mcc.accessibility.at.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.accessibility.at.gresource.xml)
+cafe-at-properties-resources.h cafe-at-properties-resources.c: org.cafe.ccc.accessibility.at.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.ccc.accessibility.at.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name accessibility $<
 
 -include $(top_srcdir)/git.mk

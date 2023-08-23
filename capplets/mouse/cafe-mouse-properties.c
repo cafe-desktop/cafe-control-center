@@ -85,7 +85,7 @@ test_maybe_timeout (struct test_data_t *data)
 {
 	double_click_state = DOUBLE_CLICK_TEST_OFF;
 
-	ctk_image_set_from_resource (CTK_IMAGE (data->image), "/org/cafe/mcc/mouse/double-click-off.png");
+	ctk_image_set_from_resource (CTK_IMAGE (data->image), "/org/cafe/ccc/mouse/double-click-off.png");
 
 	*data->timeout_id = 0;
 
@@ -146,13 +146,13 @@ event_box_button_press_event (CtkWidget   *widget,
 
 	switch (double_click_state) {
 	case DOUBLE_CLICK_TEST_ON:
-		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-on.png");
+		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/ccc/mouse/double-click-on.png");
 		break;
 	case DOUBLE_CLICK_TEST_MAYBE:
-		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-maybe.png");
+		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/ccc/mouse/double-click-maybe.png");
 		break;
 	case DOUBLE_CLICK_TEST_OFF:
-		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/mcc/mouse/double-click-off.png");
+		ctk_image_set_from_resource (CTK_IMAGE (image), "/org/cafe/ccc/mouse/double-click-off.png");
 		break;
 	}
 
@@ -293,7 +293,7 @@ setup_dialog (CtkBuilder *dialog)
 		ctk_range_get_adjustment (CTK_RANGE (WID ("delay_scale"))), "value",
 		G_SETTINGS_BIND_DEFAULT);
 
-	ctk_image_set_from_resource (CTK_IMAGE (WID ("double_click_image")), "/org/cafe/mcc/mouse/double-click-off.png");
+	ctk_image_set_from_resource (CTK_IMAGE (WID ("double_click_image")), "/org/cafe/ccc/mouse/double-click-off.png");
 	g_object_set_data (G_OBJECT (WID ("double_click_eventbox")), "image", WID ("double_click_image"));
 	g_signal_connect (WID ("double_click_eventbox"), "button_press_event",
 			  G_CALLBACK (event_box_button_press_event), NULL);
@@ -386,7 +386,7 @@ create_dialog (void)
 	GError       *error = NULL;
 
 	dialog = ctk_builder_new ();
-	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/mouse/cafe-mouse-properties.ui", &error) == 0) {
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/ccc/mouse/cafe-mouse-properties.ui", &error) == 0) {
 		g_warning ("Error loading UI file: %s", error->message);
 		g_error_free (error);
 		g_object_unref (dialog);

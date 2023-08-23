@@ -118,7 +118,7 @@ static void InitMainWindow(TimeAdmin *ta)
     GError     *error = NULL;
     CtkBuilder *builder;
 
-    builder = ctk_builder_new_from_resource ("/org/cafe/mcc/ta/time-admin.ui");
+    builder = ctk_builder_new_from_resource ("/org/cafe/ccc/ta/time-admin.ui");
     ctk_builder_add_callback_symbols (builder,
                                       "on_window_quit",       G_CALLBACK (on_window_quit),
                                       "on_button1_clicked",   G_CALLBACK (RunTimeZoneDialog),

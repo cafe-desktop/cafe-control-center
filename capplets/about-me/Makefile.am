@@ -21,7 +21,7 @@ marshal.h: fprintd-marshal.list
 	@GLIB_GENMARSHAL@ --prefix=fprintd_marshal $< --header > $@
 marshal.c: fprintd-marshal.list
 	@GLIB_GENMARSHAL@ --prefix=fprintd_marshal $< --body --prototypes > $@
-cafe-about-me-resources.h cafe-about-me-resources.c: org.cafe.mcc.am.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.am.gresource.xml)
+cafe-about-me-resources.h cafe-about-me-resources.c: org.cafe.ccc.am.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.ccc.am.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name about_me $<
 
 bin_PROGRAMS = cafe-about-me
@@ -58,7 +58,7 @@ EXTRA_DIST = \
 	$(ui_files) \
 	fprintd-marshal.list \
 	$(Desktop_in_files) \
-	org.cafe.mcc.am.gresource.xml \
+	org.cafe.ccc.am.gresource.xml \
 	ui-a11y.suppr
 
 -include $(top_srcdir)/git.mk

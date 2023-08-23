@@ -16,7 +16,7 @@
     along with CAFE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/cafe/mcc/keyboard">
+  <gresource prefix="/org/cafe/ccc/keyboard">
     <file compressed="true">cafe-keyboard-properties-a11y-notifications.ui</file>
     <file compressed="true">cafe-keyboard-properties-dialog.ui</file>
     <file compressed="true">cafe-keyboard-properties-layout-chooser.ui</file>

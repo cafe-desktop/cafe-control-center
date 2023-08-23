@@ -16,7 +16,7 @@
     along with CAFE Control Center.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/cafe/mcc/mouse">
+  <gresource prefix="/org/cafe/ccc/mouse">
     <file compressed="true">cafe-mouse-properties.ui</file>
     <file compressed="true">double-click-off.png</file>
     <file compressed="true">double-click-on.png</file>

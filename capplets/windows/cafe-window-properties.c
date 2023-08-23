@@ -337,7 +337,7 @@ main (int argc, char **argv)
     croma_settings = g_settings_new (CROMA_SCHEMA);
 
     builder = ctk_builder_new ();
-    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/windows/window-properties.ui", &error) == 0) {
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/ccc/windows/window-properties.ui", &error) == 0) {
         g_warning ("Could not load UI: %s", error->message);
         g_error_free (error);
         g_object_unref (croma_settings);

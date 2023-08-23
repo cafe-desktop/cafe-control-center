@@ -439,7 +439,7 @@ about_me_setup_dialog (void)
 	me->image = NULL;
 
 	dialog = ctk_builder_new ();
-	if (ctk_builder_add_from_resource (dialog, "/org/cafe/mcc/am/cafe-about-me-dialog.ui", &error) == 0)
+	if (ctk_builder_add_from_resource (dialog, "/org/cafe/ccc/am/cafe-about-me-dialog.ui", &error) == 0)
         {
                 g_warning ("Could not parse UI definition: %s", error->message);
                 g_error_free (error);

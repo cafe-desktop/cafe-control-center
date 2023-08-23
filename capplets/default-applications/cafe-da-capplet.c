@@ -632,7 +632,7 @@ show_dialog(CafeDACapplet* capplet, const gchar* start_page)
 
 	capplet->builder = builder = ctk_builder_new ();
 
-	builder_result = ctk_builder_add_from_resource (builder, "/org/cafe/mcc/da/cafe-default-applications-properties.ui", NULL);
+	builder_result = ctk_builder_add_from_resource (builder, "/org/cafe/ccc/da/cafe-default-applications-properties.ui", NULL);
 
 	if (builder_result == 0)
 	{

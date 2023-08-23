@@ -136,7 +136,7 @@ notifications_button_clicked_cb (CtkWidget *button, CtkBuilder *dialog)
 
 	notifications_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (notifications_dialog,
-	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-a11y-notifications.ui",
+	                               "/org/cafe/ccc/keyboard/cafe-keyboard-properties-a11y-notifications.ui",
 	                               NULL);
 
 	stickykeys_enable_toggled_cb (WID ("stickykeys_enable"), dialog);

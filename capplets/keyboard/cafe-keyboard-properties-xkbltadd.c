@@ -475,7 +475,7 @@ xkb_layout_choose (CtkBuilder * dialog)
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,
-				       "/org/cafe/mcc/keyboard/cafe-keyboard-properties-layout-chooser.ui",
+				       "/org/cafe/ccc/keyboard/cafe-keyboard-properties-layout-chooser.ui",
 				       NULL);
 	CtkWidget *chooser = CWID ("xkb_layout_chooser");
 	CtkWidget *lang_chooser = CWID ("xkb_languages_available");

@@ -2377,7 +2377,7 @@ run_application (App *app)
 
     builder = ctk_builder_new ();
 
-    if (ctk_builder_add_from_resource (builder, "/org/cafe/mcc/display/display-capplet.ui", &error) == 0)
+    if (ctk_builder_add_from_resource (builder, "/org/cafe/ccc/display/display-capplet.ui", &error) == 0)
     {
 	g_warning ("Could not parse UI definition: %s", error->message);
 	g_error_free (error);

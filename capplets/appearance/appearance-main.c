@@ -45,7 +45,7 @@ init_appearance_data (int *argc, char ***argv, GOptionContext *context)
 
   /* set up the data */
   ui = ctk_builder_new ();
-  ctk_builder_add_from_resource (ui, "/org/cafe/mcc/appearance/data/appearance.ui", &err);
+  ctk_builder_add_from_resource (ui, "/org/cafe/ccc/appearance/data/appearance.ui", &err);
 
   if (err)
     {

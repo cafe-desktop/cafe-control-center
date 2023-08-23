@@ -34,7 +34,7 @@ AM_CPPFLAGS = \
 	$(DEFAULT_APPLICATIONS_CAPPLET_CFLAGS) \
 	-DAPPLICATIONSDIR=\""$(datadir)/applications"\"
 
-cafe-default-applications-properties-resources.h cafe-default-applications-properties-resources.c: org.cafe.mcc.da.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.mcc.da.gresource.xml)
+cafe-default-applications-properties-resources.h cafe-default-applications-properties-resources.c: org.cafe.ccc.da.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/org.cafe.ccc.da.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir) --generate --c-name default_applications $<
 
 CLEANFILES = $(CAFECC_CAPPLETS_CLEANFILES) $(desktop_DATA) $(autostart_DATA) $(BUILT_SOURCES)
@@ -42,6 +42,6 @@ EXTRA_DIST = \
 	cafe-default-applications.pc.in \
 	cafe-default-applications-properties.ui \
 	$(Desktop_in_files) \
-	org.cafe.mcc.da.gresource.xml
+	org.cafe.ccc.da.gresource.xml
 
 -include $(top_srcdir)/git.mk

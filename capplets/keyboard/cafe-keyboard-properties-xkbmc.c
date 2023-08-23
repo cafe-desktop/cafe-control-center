@@ -316,7 +316,7 @@ choose_model (CtkBuilder * dialog)
 
 	chooser_dialog = ctk_builder_new ();
 	ctk_builder_add_from_resource (chooser_dialog,
-	                               "/org/cafe/mcc/keyboard/cafe-keyboard-properties-model-chooser.ui",
+	                               "/org/cafe/ccc/keyboard/cafe-keyboard-properties-model-chooser.ui",
 	                               NULL);
 	chooser = CWID ("xkb_model_chooser");
 	ctk_window_set_transient_for (CTK_WINDOW (chooser),

@@ -274,7 +274,7 @@ cb_http_details_button_clicked (CtkWidget *button,
 	}
 
 	builder = ctk_builder_new ();
-	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
+	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/ccc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load details dialog: %s", error->message);
 		g_error_free (error);
@@ -462,7 +462,7 @@ main (int argc, char **argv)
 	capplet_init (NULL, &argc, &argv);
 
 	builder = ctk_builder_new ();
-	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/mcc/network/cafe-network-properties.ui",
+	if (ctk_builder_add_objects_from_resource (builder, "/org/cafe/ccc/network/cafe-network-properties.ui",
 					           builder_widgets, &error) == 0) {
 		g_warning ("Could not load main dialog: %s",
 			   error->message);
