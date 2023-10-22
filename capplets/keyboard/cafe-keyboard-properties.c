@@ -260,6 +260,9 @@ main (int argc, char **argv)
 	capplet_set_icon (WID ("keyboard_dialog"),
 			  "input-keyboard");
 	ctk_widget_show (WID ("keyboard_dialog"));
+
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	ctk_main ();
 
 	finalize_a11y_tabs ();
