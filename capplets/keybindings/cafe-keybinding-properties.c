@@ -1992,6 +1992,8 @@ main (int argc, char *argv[])
 
   setup_dialog (builder, croma_settings);
 
+  g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
   ctk_main ();
 
   g_object_unref (croma_settings);
