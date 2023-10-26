@@ -490,6 +490,8 @@ main (int argc, char **argv)
 		capplet_set_icon (dialog_win, "input-mouse");
 		ctk_widget_show (dialog_win);
 
+		g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 		ctk_main ();
 
 		g_object_unref (dialog);
