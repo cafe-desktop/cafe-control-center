@@ -194,6 +194,8 @@ main (int argc, char **argv)
   context = ctk_widget_get_style_context (CTK_WIDGET (w));
   ctk_style_context_add_class (context, "appearance-window");
 
+  g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
   capplet_set_icon (w, "preferences-desktop-theme");
   ctk_widget_show_all (w);
 
