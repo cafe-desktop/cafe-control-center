@@ -301,6 +301,9 @@ int main(int argc, char **argv)
 
     UpdatePermission(&ta);
     ctk_widget_show_all(ta.MainWindow);
+
+    g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
     ctk_main();
 
     return TRUE;
