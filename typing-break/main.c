@@ -116,6 +116,8 @@ main (int argc, char *argv[])
 
 	drwright_new ();
 
+	g_object_set (ctk_settings_get_default (), "ctk-menu-images", TRUE, NULL);
+
 	ctk_main ();
 
 	return 0;
