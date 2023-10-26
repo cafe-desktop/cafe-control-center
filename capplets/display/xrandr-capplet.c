@@ -2536,6 +2536,8 @@ main (int argc, char **argv)
 
     app = g_new0 (App, 1);
 
+    g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
     run_application (app);
 
     g_free (app);
