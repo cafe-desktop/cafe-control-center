@@ -541,6 +541,7 @@ main (int argc, char **argv)
 	rc = about_me_setup_dialog ();
 
 	if (rc != -1) {
+		g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
 		ctk_main ();
 	}
 
