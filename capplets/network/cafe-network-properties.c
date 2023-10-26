@@ -488,6 +488,9 @@ main (int argc, char **argv)
 
 	capplet_set_icon (widget, "network-server");
 	ctk_widget_show_all (widget);
+
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	ctk_main ();
 
 	g_object_unref (builder);
