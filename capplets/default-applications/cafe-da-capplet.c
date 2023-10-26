@@ -858,6 +858,8 @@ main(int argc, char** argv)
 	show_dialog(capplet, start_page);
 	g_free(start_page);
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	ctk_main();
 
 	g_object_unref (capplet->terminal_settings);
