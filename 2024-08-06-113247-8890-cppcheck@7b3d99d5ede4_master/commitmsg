@@ -1,0 +1,8 @@
+xrandr-capplet: Fix error -Wincompatible-pointer-types
+
+based in mate-control-center commit:
+https://github.com/mate-desktop/mate-control-center/commit/f164a479add73845f3bc826c2cf04d097db4278e
+
+Fixes the error:
+xrandr-capplet.c: In function 'run_application':
+/usr/include/glib-2.0/gobject/gtype.h:2660:6: error: passing argument 1 of 'ctk_show_uri_on_window' from incompatible pointer type [-Wincompatible-pointer-types]
