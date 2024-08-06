@@ -2499,7 +2499,7 @@ restart:
 	break;
 
     case CTK_RESPONSE_HELP:
-        ctk_show_uri_on_window (CTK_DIALOG (app->dialog),
+        ctk_show_uri_on_window (CTK_WINDOW (app->dialog),
                                 "help:cafe-user-guide/goscustdesk-70",
                                 ctk_get_current_event_time (),
                                 &error);
