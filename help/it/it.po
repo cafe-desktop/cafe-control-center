@@ -1356,16 +1356,16 @@ msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:145
-msgid "Show anicafed images"
-msgstr "Mostra immagini anicafe"
+msgid "Show animated images"
+msgstr "Mostra immagini animate"
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:147
 msgid ""
-"Some images can be anicafed. You can have the image show up as a static "
-"image instead of as an anicafed image by unchecking the box."
+"Some images can be animated. You can have the image show up as a static "
+"image instead of as an animated image by unchecking the box."
 msgstr ""
-"Alcune immagini possono essere anicafe. Potete lasciare la visualizzazione "
+"Alcune immagini possono essere animate. Potete lasciare la visualizzazione "
 "delle immagini come statica invece che animata deselezionando questa opzione."
 
 #. (itstool) path: varlistentry/term

@@ -1159,14 +1159,14 @@ msgstr ""
 
 #. (itstool) path: varlistentry/term
 #: C/config-html.xml:145
-msgid "Show anicafed images"
+msgid "Show animated images"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/config-html.xml:147
 msgid ""
-"Some images can be anicafed. You can have the image show up as a static "
-"image instead of as an anicafed image by unchecking the box."
+"Some images can be animated. You can have the image show up as a static "
+"image instead of as an animated image by unchecking the box."
 msgstr ""
 
 #. (itstool) path: varlistentry/term
