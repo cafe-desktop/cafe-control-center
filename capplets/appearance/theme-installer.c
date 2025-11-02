@@ -88,12 +88,12 @@ file_theme_type (const gchar *dir)
 		g_free (filename);
 
 		pattern = g_pattern_spec_new ("*[Icon Theme]*");
-		match = g_pattern_match_string (pattern, file_contents);
+		match = g_pattern_spec_match_string (pattern, file_contents);
 		g_pattern_spec_free (pattern);
 
 		if (match) {
 			pattern = g_pattern_spec_new ("*Directories=*");
-			match = g_pattern_match_string (pattern, file_contents);
+			match = g_pattern_spec_match_string (pattern, file_contents);
 			g_pattern_spec_free (pattern);
 			g_free (file_contents);
 
@@ -112,7 +112,7 @@ file_theme_type (const gchar *dir)
 		}
 
 		pattern = g_pattern_spec_new ("*[X-GNOME-Metatheme]*");
-		match = g_pattern_match_string (pattern, file_contents);
+		match = g_pattern_spec_match_string (pattern, file_contents);
 		g_pattern_spec_free (pattern);
 		g_free (file_contents);
 
