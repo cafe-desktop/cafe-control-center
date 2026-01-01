@@ -11,9 +11,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-control-center 1.23.2\n"
+"Project-Id-Version: cafe-control-center 2.0.0\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
-"POT-Creation-Date: 2022-10-10 11:10+0200\n"
+"POT-Creation-Date: 2026-01-01 17:17+0100\n"
 "PO-Revision-Date: 2020-02-15 13:20+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
 "Language-Team: Serbian (https://www.transifex.com/cafe/teams/13566/sr/)\n"
@@ -170,7 +170,7 @@ msgid "About %s"
 msgstr "О програму „%s“"
 
 #: capplets/about-me/cafe-about-me-dialog.ui:39
-#: capplets/about-me/cafe-about-me.desktop.in:3
+#: capplets/about-me/cafe-about-me.desktop.in:2
 msgid "About Me"
 msgstr "О мени"
 
@@ -181,7 +181,7 @@ msgstr "О мени"
 #: capplets/mouse/cafe-mouse-properties.ui:140
 #: capplets/windows/window-properties.ui:84
 #: capplets/time-admin/src/time-admin.ui:386
-#: capplets/time-admin/src/time-zone.c:472
+#: capplets/time-admin/src/time-zone.c:473
 msgid "_Close"
 msgstr "_Затвори"
 
@@ -209,12 +209,12 @@ msgstr "Укључи пријављивање _отиском прста..."
 msgid "Disable _Fingerprint Login..."
 msgstr "Искључи пријављивање _отиском прста..."
 
-#: capplets/about-me/cafe-about-me.desktop.in:4
+#: capplets/about-me/cafe-about-me.desktop.in:3
 msgid "Set your personal information"
 msgstr "Поставите ваше личне податке"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/about-me/cafe-about-me.desktop.in:13
+#: capplets/about-me/cafe-about-me.desktop.in:12
 msgid "cafe-control-center;CAFE;personal;information;"
 msgstr "мејтов-управљачки-центар;Мејт;лично;инфо;"
 
@@ -415,38 +415,38 @@ msgstr "Стара и нова лозинка су исте."
 msgid "The new password has already been used recently."
 msgstr "Нова лозинка је коришћена у скорије време."
 
-#: capplets/about-me/cafe-about-me-password.c:826
+#: capplets/about-me/cafe-about-me-password.c:827
 #, c-format
 msgid "Unable to launch %s: %s"
 msgstr "Не могу да покренем „%s“: %s"
 
-#: capplets/about-me/cafe-about-me-password.c:830
+#: capplets/about-me/cafe-about-me-password.c:831
 msgid "Unable to launch backend"
 msgstr "Не могу да покренем позадинца"
 
-#: capplets/about-me/cafe-about-me-password.c:831
+#: capplets/about-me/cafe-about-me-password.c:832
 msgid "A system error has occurred"
 msgstr "Дошло је до системске грешке"
 
-#: capplets/about-me/cafe-about-me-password.c:851
+#: capplets/about-me/cafe-about-me-password.c:852
 msgid "Checking password..."
 msgstr "Мењам лозинку..."
 
-#: capplets/about-me/cafe-about-me-password.c:935
+#: capplets/about-me/cafe-about-me-password.c:936
 msgid "Click <b>Change password</b> to change your password."
 msgstr "Притисните на дугме <b>Промени лозинку</b> да измените лозинку."
 
-#: capplets/about-me/cafe-about-me-password.c:938
+#: capplets/about-me/cafe-about-me-password.c:939
 msgid "Please type your password in the <b>New password</b> field."
 msgstr "Укуцајте вашу лозинку у поље <b>Нова лозинка</b>."
 
-#: capplets/about-me/cafe-about-me-password.c:941
+#: capplets/about-me/cafe-about-me-password.c:942
 #: capplets/about-me/cafe-about-me-password.ui:348
 msgid ""
 "Please type your password again in the <b>Retype new password</b> field."
 msgstr "Поново укуцајте лозинку у поље <b>Потврда нове лозинке</b>."
 
-#: capplets/about-me/cafe-about-me-password.c:944
+#: capplets/about-me/cafe-about-me-password.c:945
 msgid "The two passwords are not equal."
 msgstr "Лозинке нису исте."
 
@@ -506,7 +506,7 @@ msgid "Close and _Log Out"
 msgstr "Затвори и _одјави се"
 
 #: capplets/accessibility/at-properties/at-enable-dialog.ui:165
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:3
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:2
 msgid "Assistive Technologies"
 msgstr "Технологије за испомоћ"
 
@@ -559,13 +559,13 @@ msgstr "Приступачна при_јава"
 msgid "Jump to the Accessible Login dialog"
 msgstr "Идите на прозорче за приступачну пријаву"
 
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:4
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:3
 msgid "Choose which accessibility features to enable when you log in"
 msgstr ""
 "Изаберите које ће технологије за испомоћ бити укључене када се пријавите"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:13
+#: capplets/accessibility/at-properties/cafe-at-properties.desktop.in:12
 msgid "cafe-control-center;CAFE;accessibility;features;"
 msgstr "мејтов-управљачки-центар;Мејт;приступачност;особине;"
 
@@ -629,25 +629,25 @@ msgid "Default Pointer"
 msgstr "Основни показивач"
 
 #: capplets/appearance/appearance-style.c:233
-#: capplets/appearance/appearance-themes.c:658
+#: capplets/appearance/appearance-themes.c:659
 #: capplets/appearance/theme-installer.c:391 font-viewer/font-view.c:298
 #: font-viewer/font-view.c:569
 msgid "Install"
 msgstr "Инсталирај"
 
-#: capplets/appearance/appearance-themes.c:646
+#: capplets/appearance/appearance-themes.c:647
 msgid "Apply Background"
 msgstr "Примени позадину"
 
-#: capplets/appearance/appearance-themes.c:650
+#: capplets/appearance/appearance-themes.c:651
 msgid "Apply Font"
 msgstr "Примени словни лик"
 
-#: capplets/appearance/appearance-themes.c:654
+#: capplets/appearance/appearance-themes.c:655
 msgid "Revert Font"
 msgstr "Врати словни лик"
 
-#: capplets/appearance/appearance-themes.c:687
+#: capplets/appearance/appearance-themes.c:688
 msgid ""
 "The current theme suggests a background and a font. Also, the last applied "
 "font suggestion can be reverted."
@@ -655,7 +655,7 @@ msgstr ""
 "Текућа тема предлаже своју позадину и словни лик. Такође, можете вратити и "
 "последњи коришћени словни лик."
 
-#: capplets/appearance/appearance-themes.c:689
+#: capplets/appearance/appearance-themes.c:690
 msgid ""
 "The current theme suggests a background. Also, the last applied font "
 "suggestion can be reverted."
@@ -663,11 +663,11 @@ msgstr ""
 "Текућа тема предлаже позадину. Такође, можете вратити и подледњи коришћени "
 "словни лик."
 
-#: capplets/appearance/appearance-themes.c:691
+#: capplets/appearance/appearance-themes.c:692
 msgid "The current theme suggests a background and a font."
 msgstr "Текућа тема предлаже позадину и словни лик."
 
-#: capplets/appearance/appearance-themes.c:693
+#: capplets/appearance/appearance-themes.c:694
 msgid ""
 "The current theme suggests a font. Also, the last applied font suggestion "
 "can be reverted."
@@ -675,19 +675,19 @@ msgstr ""
 "Текућа тема предлаже словни лик. Такође, можете вратити и последњи коришћени "
 "словни лик."
 
-#: capplets/appearance/appearance-themes.c:695
+#: capplets/appearance/appearance-themes.c:696
 msgid "The current theme suggests a background."
 msgstr "Текућа тема предлаже позадину."
 
-#: capplets/appearance/appearance-themes.c:697
+#: capplets/appearance/appearance-themes.c:698
 msgid "The last applied font suggestion can be reverted."
 msgstr "Можете вратити последњи коришћени словни лик."
 
-#: capplets/appearance/appearance-themes.c:699
+#: capplets/appearance/appearance-themes.c:700
 msgid "The current theme suggests a font."
 msgstr "Текућа тема предлаже словни лик."
 
-#: capplets/appearance/appearance-themes.c:1014
+#: capplets/appearance/appearance-themes.c:1015
 msgid "Custom"
 msgstr "Произвољна"
 
@@ -1058,29 +1058,29 @@ msgstr "Уреди"
 msgid "Interface"
 msgstr "Сучеље"
 
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:3
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:2
 msgid "Appearance"
 msgstr "Изглед"
 
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:4
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:3
 msgid "Customize the look of the desktop"
 msgstr "Прилагодите изглед радне површи"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/cafe-appearance-properties.desktop.in:13
+#: capplets/appearance/data/cafe-appearance-properties.desktop.in:12
 msgid "cafe-control-center;CAFE;appearance;properties;desktop;customize;look;"
 msgstr "мејтов-управљачки-центар;Мејт;изглед;својства;радна површ;прилагоди;"
 
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:3
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:2
 msgid "Theme Installer"
 msgstr "Постављање теме"
 
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:4
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:3
 msgid "Installs themes packages for various parts of the desktop"
 msgstr "Инсталира пакет теме који покрива разне делове радне површи"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/appearance/data/cafe-theme-installer.desktop.in:14
+#: capplets/appearance/data/cafe-theme-installer.desktop.in:13
 msgid "cafe-control-center;CAFE;install;desktop;themes;"
 msgstr "мејтов-управљачки-центар;Мејт;инсталирај;радна површ;тема;"
 
@@ -1400,17 +1400,17 @@ msgstr ""
 "Ова тема неће изгледати како треба јер није инсталирана потребна тема "
 "иконица „%s“."
 
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:2
 #: capplets/default-applications/cafe-default-applications-properties.ui:13
 msgid "Preferred Applications"
 msgstr "Омиљени програми"
 
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:4
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:3
 msgid "Select your default applications"
 msgstr "Изаберите ваше основне програме"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/default-applications/cafe-default-applications-properties.desktop.in:13
+#: capplets/default-applications/cafe-default-applications-properties.desktop.in:12
 msgid "cafe-control-center;CAFE;default;preferred;applications;"
 msgstr "мејтов-управљачки-центар;Мејт;подразумевано;омиљено;програми;"
 
@@ -1520,17 +1520,17 @@ msgstr "Покретљивост"
 msgid "Accessibility"
 msgstr "Приступачност"
 
-#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:306
-#: capplets/display/xrandr-capplet.c:345
+#: capplets/display/display-capplet.ui:22 capplets/display/xrandr-capplet.c:305
+#: capplets/display/xrandr-capplet.c:344
 msgid "Normal"
 msgstr "Обична"
 
-#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:307
+#: capplets/display/display-capplet.ui:25 capplets/display/xrandr-capplet.c:306
 #: capplets/windows/window-properties.ui:222
 msgid "Left"
 msgstr "Лево"
 
-#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:308
+#: capplets/display/display-capplet.ui:28 capplets/display/xrandr-capplet.c:307
 #: capplets/windows/window-properties.ui:221
 msgid "Right"
 msgstr "Десно"
@@ -1608,20 +1608,20 @@ msgid "R_otation:"
 msgstr "_Окренутост:"
 
 #: capplets/display/display-capplet.ui:436
-#: capplets/display/xrandr-capplet.c:495
+#: capplets/display/xrandr-capplet.c:494
 msgid "Monitor"
 msgstr "Екран"
 
-#: capplets/display/cafe-display-properties.desktop.in:3
+#: capplets/display/cafe-display-properties.desktop.in:2
 msgid "Displays"
 msgstr "Екрани"
 
-#: capplets/display/cafe-display-properties.desktop.in:4
+#: capplets/display/cafe-display-properties.desktop.in:3
 msgid "Change resolution and position of monitors and projectors"
 msgstr "Измените резолуцију и положај монитора и пројектора"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/display/cafe-display-properties.desktop.in:13
+#: capplets/display/cafe-display-properties.desktop.in:12
 msgid ""
 "cafe-control-center;CAFE;resolution;position;monitors;display;properties;"
 msgstr ""
@@ -1636,8 +1636,8 @@ msgid ""
 "a systemwide location.  The resulting profile will get used when\n"
 "the RANDR plug-in gets run in cafe-settings-daemon.\n"
 "\n"
-"SOURCE_FILE - a full pathname, typically /home/username/.config/monitors."
-"xml\n"
+"SOURCE_FILE - a full pathname, typically /home/username/.config/"
+"monitors.xml\n"
 "\n"
 "DEST_NAME - relative name for the installed file.  This will get put in\n"
 "            the systemwide directory for RANDR configurations,\n"
@@ -1729,11 +1729,11 @@ msgstr ""
 "Потребно је потврђивање идентитета за инсталирање подешавања више екрана за "
 "све кориснике"
 
-#: capplets/display/xrandr-capplet.c:309
+#: capplets/display/xrandr-capplet.c:308
 msgid "Upside Down"
 msgstr "Изврнуто"
 
-#: capplets/display/xrandr-capplet.c:351
+#: capplets/display/xrandr-capplet.c:350
 #, c-format
 msgid "%d Hz"
 msgstr "%d Hz"
@@ -1743,21 +1743,21 @@ msgstr "%d Hz"
 #. * used as an adjective, not as a verb.  For example, the Spanish
 #. * translation could be "Pantallas en Espejo", *not* "Espejar Pantallas".
 #.
-#: capplets/display/xrandr-capplet.c:484 capplets/display/xrandr-capplet.c:1632
+#: capplets/display/xrandr-capplet.c:483 capplets/display/xrandr-capplet.c:1631
 msgid "Mirror Screens"
 msgstr "Пресликај екране"
 
-#: capplets/display/xrandr-capplet.c:486
+#: capplets/display/xrandr-capplet.c:485
 #, c-format
 msgid "Monitor: %s"
 msgstr "Екран: %s"
 
-#: capplets/display/xrandr-capplet.c:556
+#: capplets/display/xrandr-capplet.c:555
 #, c-format
 msgid "%d x %d"
 msgstr "%d x %d"
 
-#: capplets/display/xrandr-capplet.c:1488
+#: capplets/display/xrandr-capplet.c:1487
 msgid ""
 "Select a monitor to change its properties; drag it to rearrange its "
 "placement."
@@ -1765,35 +1765,35 @@ msgstr ""
 "Изаберите екран да измените његова својства; превуците га да му промените "
 "место."
 
-#: capplets/display/xrandr-capplet.c:2081
+#: capplets/display/xrandr-capplet.c:2080
 msgid "Could not save the monitor configuration"
 msgstr "Не могу да сачувам подешавања за екран"
 
-#: capplets/display/xrandr-capplet.c:2102
+#: capplets/display/xrandr-capplet.c:2101
 msgid "Could not get session bus while applying display configuration"
 msgstr "Не могу да добавим сабирницу сесије док примењујем подешавања екрана"
 
-#: capplets/display/xrandr-capplet.c:2121
+#: capplets/display/xrandr-capplet.c:2120
 msgid "Could not detect displays"
 msgstr "Не могу да нађем екране"
 
-#: capplets/display/xrandr-capplet.c:2303
+#: capplets/display/xrandr-capplet.c:2302
 msgid "The monitor configuration has been saved"
 msgstr "Подешавање екрана је сачувано"
 
-#: capplets/display/xrandr-capplet.c:2305
+#: capplets/display/xrandr-capplet.c:2304
 msgid "This configuration will be used the next time someone logs in."
 msgstr "Ово подешавање ће бити коришћено следећи пут када се неко пријави."
 
-#: capplets/display/xrandr-capplet.c:2314
+#: capplets/display/xrandr-capplet.c:2313
 msgid "Could not set the default configuration for monitors"
 msgstr "Не могу да поставим основно подешавање за екране"
 
-#: capplets/display/xrandr-capplet.c:2393
+#: capplets/display/xrandr-capplet.c:2392
 msgid "Could not get screen information"
 msgstr "Не могу да добавим податке о екрану"
 
-#: capplets/display/xrandr-capplet.c:2509
+#: capplets/display/xrandr-capplet.c:2508
 msgid "Could not open help content"
 msgstr "Не могу да отворим документ помоћи"
 
@@ -1943,16 +1943,16 @@ msgstr "Онемогућено"
 msgid "<Unknown Action>"
 msgstr "<Непозната радња>"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1018
-#: capplets/keybindings/cafe-keybinding-properties.c:1626
+#: capplets/keybindings/cafe-keybinding-properties.c:1017
+#: capplets/keybindings/cafe-keybinding-properties.c:1625
 msgid "Custom Shortcuts"
 msgstr "Произвољне пречице"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1206
+#: capplets/keybindings/cafe-keybinding-properties.c:1205
 msgid "Error saving the new shortcut"
 msgstr "Грешка чувања нове пречице"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1282
+#: capplets/keybindings/cafe-keybinding-properties.c:1281
 #, c-format
 msgid ""
 "The shortcut \"%s\" cannot be used because it will become impossible to type "
@@ -1963,7 +1963,7 @@ msgstr ""
 "овај тастер.\n"
 "Пробајте да придодате тастер као што је „Ктрл, Алт или Помак“."
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1314
+#: capplets/keybindings/cafe-keybinding-properties.c:1313
 #, c-format
 msgid ""
 "The shortcut \"%s\" is already used for\n"
@@ -1972,25 +1972,25 @@ msgstr ""
 "Пречица „%s“ се већ користи за\n"
 "„%s“"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1321
+#: capplets/keybindings/cafe-keybinding-properties.c:1320
 #, c-format
 msgid ""
 "If you reassign the shortcut to \"%s\", the \"%s\" shortcut will be disabled."
 msgstr "Уколико пречицу доделите за „%s“, пречица „%s“ ће бити искључена."
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1326
+#: capplets/keybindings/cafe-keybinding-properties.c:1325
 msgid "_Reassign"
 msgstr "_Поново додели"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1581
+#: capplets/keybindings/cafe-keybinding-properties.c:1580
 msgid "Too many custom shortcuts"
 msgstr "Превише произвољних пречица"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1895
+#: capplets/keybindings/cafe-keybinding-properties.c:1894
 msgid "Action"
 msgstr "Радња"
 
-#: capplets/keybindings/cafe-keybinding-properties.c:1917
+#: capplets/keybindings/cafe-keybinding-properties.c:1916
 msgid "Shortcut"
 msgstr "Пречица"
 
@@ -2007,7 +2007,7 @@ msgid "_Browse applications..."
 msgstr "_Разгледај програме..."
 
 #: capplets/keybindings/cafe-keybinding-properties.ui:194
-#: capplets/keybindings/cafe-keybinding.desktop.in:3
+#: capplets/keybindings/cafe-keybinding.desktop.in:2
 msgid "Keyboard Shortcuts"
 msgstr "Пречице тастатуре"
 
@@ -2019,12 +2019,12 @@ msgstr ""
 "Да уредите пречицу, два пута кликните на одговарајући ред и укуцајте нову "
 "пречицу, или притисните „Брисање“ да обришете."
 
-#: capplets/keybindings/cafe-keybinding.desktop.in:4
+#: capplets/keybindings/cafe-keybinding.desktop.in:3
 msgid "Assign shortcut keys to commands"
 msgstr "Доделите тастере пречица честим наредбама"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keybindings/cafe-keybinding.desktop.in:13
+#: capplets/keybindings/cafe-keybinding.desktop.in:12
 msgid "cafe-control-center;CAFE;assign;keyboard;shortcuts;keybindings;"
 msgstr "мејтов-управљачки-центар;Мејт;додели;тастатура;пречице;везе;"
 
@@ -2434,16 +2434,16 @@ msgstr "Модели"
 msgid "Default"
 msgstr "Основно"
 
-#: capplets/keyboard/cafe-keyboard.desktop.in:3
+#: capplets/keyboard/cafe-keyboard.desktop.in:2
 msgid "Keyboard"
 msgstr "Тастатура"
 
-#: capplets/keyboard/cafe-keyboard.desktop.in:4
+#: capplets/keyboard/cafe-keyboard.desktop.in:3
 msgid "Set your keyboard preferences"
 msgstr "Подесите поставке тастатуре"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/keyboard/cafe-keyboard.desktop.in:13
+#: capplets/keyboard/cafe-keyboard.desktop.in:12
 msgid "cafe-control-center;CAFE;keyboard;preferences;"
 msgstr "мејтов-управљачки-центар;Мејт;тастатура;поставке;"
 
@@ -2552,7 +2552,7 @@ msgid ""
 msgstr ""
 
 #: capplets/mouse/cafe-mouse-properties.ui:963
-#: capplets/mouse/cafe-settings-mouse.desktop.in:3
+#: capplets/mouse/cafe-settings-mouse.desktop.in:2
 msgid "Mouse"
 msgstr "Миш"
 
@@ -2608,25 +2608,25 @@ msgstr "Укључи _природно премицање"
 msgid "Touchpad"
 msgstr "Додирна табла"
 
-#: capplets/mouse/cafe-settings-mouse.desktop.in:4
+#: capplets/mouse/cafe-settings-mouse.desktop.in:3
 msgid "Set your mouse preferences"
 msgstr "Подесите поставке миша"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/mouse/cafe-settings-mouse.desktop.in:13
+#: capplets/mouse/cafe-settings-mouse.desktop.in:12
 msgid "cafe-control-center;CAFE;mouse;preferences;"
 msgstr "мејтов-управљачки-центар;Мејт;миш;поставке;"
 
-#: capplets/network/cafe-network-properties.desktop.in:3
+#: capplets/network/cafe-network-properties.desktop.in:2
 msgid "Network Proxy"
 msgstr "Мрежни посредник"
 
-#: capplets/network/cafe-network-properties.desktop.in:4
+#: capplets/network/cafe-network-properties.desktop.in:3
 msgid "Set your network proxy preferences"
 msgstr "Подесите поставке мрежног посредника"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/network/cafe-network-properties.desktop.in:13
+#: capplets/network/cafe-network-properties.desktop.in:12
 msgid "cafe-control-center;CAFE;network;http;socks;proxy;"
 msgstr "мејтов-управљачки-центар;Мејт;мрежа;http;посредник;"
 
@@ -2739,16 +2739,16 @@ msgstr "_Супер (или „Виндоуз знак“)"
 msgid "_Meta"
 msgstr "_Мета"
 
-#: capplets/windows/cafe-window-properties.desktop.in:3
+#: capplets/windows/cafe-window-properties.desktop.in:2
 msgid "Windows"
 msgstr "Прозори"
 
-#: capplets/windows/cafe-window-properties.desktop.in:4
+#: capplets/windows/cafe-window-properties.desktop.in:3
 msgid "Set your window properties"
 msgstr "Подесите својства прозора"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/windows/cafe-window-properties.desktop.in:13
+#: capplets/windows/cafe-window-properties.desktop.in:12
 msgid "cafe-control-center;CAFE;window;manager;properties;croma;preferences;"
 msgstr "мејтов-управљачки-центар;Мејт;прозор;управник;својства;марко;поставке;"
 
@@ -2958,1742 +2958,1742 @@ msgstr ""
 "Усклађивање мрежног времена је подешено. Ручно подешавање времена и датума "
 "је искључено."
 
-#: capplets/time-admin/src/time-zone.c:277
+#: capplets/time-admin/src/time-zone.c:278
 #, c-format
 msgctxt "timezone loc"
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: capplets/time-admin/src/time-zone.c:304
+#: capplets/time-admin/src/time-zone.c:305
 msgid "UTC%:::z"
 msgstr "КУВ%:::z"
 
-#: capplets/time-admin/src/time-zone.c:309
+#: capplets/time-admin/src/time-zone.c:310
 msgid "%R"
 msgstr "%R"
 
-#: capplets/time-admin/src/time-zone.c:378
+#: capplets/time-admin/src/time-zone.c:379
 msgid "Time Zone"
 msgstr "Временска зона"
 
-#: capplets/time-admin/src/time-zone.c:465
+#: capplets/time-admin/src/time-zone.c:466
 msgid "Time Zone Selection"
 msgstr "Избор временске зоне"
 
-#: capplets/time-admin/src/time-zone.c:480
+#: capplets/time-admin/src/time-zone.c:481
 msgid "Con_firm"
 msgstr "_Потврди"
 
-#: capplets/time-admin/src/time-zones.h:27
+#: capplets/time-admin/src/time-zones.h:28
 msgid "Africa/Abidjan"
 msgstr "Африка/Абиџан"
 
-#: capplets/time-admin/src/time-zones.h:28
+#: capplets/time-admin/src/time-zones.h:29
 msgid "Africa/Accra"
 msgstr "Африка/Акра"
 
-#: capplets/time-admin/src/time-zones.h:29
+#: capplets/time-admin/src/time-zones.h:30
 msgid "Africa/Addis_Ababa"
 msgstr "Африка/Адис_Абеба"
 
-#: capplets/time-admin/src/time-zones.h:30
+#: capplets/time-admin/src/time-zones.h:31
 msgid "Africa/Algiers"
 msgstr "Африка/Алжир"
 
-#: capplets/time-admin/src/time-zones.h:31
+#: capplets/time-admin/src/time-zones.h:32
 msgid "Africa/Asmara"
 msgstr "Африка/Асмара"
 
-#: capplets/time-admin/src/time-zones.h:32
+#: capplets/time-admin/src/time-zones.h:33
 msgid "Africa/Bamako"
 msgstr "Африка/Бамако"
 
-#: capplets/time-admin/src/time-zones.h:33
+#: capplets/time-admin/src/time-zones.h:34
 msgid "Africa/Bangui"
 msgstr "Африка/Бангуј"
 
-#: capplets/time-admin/src/time-zones.h:34
+#: capplets/time-admin/src/time-zones.h:35
 msgid "Africa/Banjul"
 msgstr "Африка/Банџул"
 
-#: capplets/time-admin/src/time-zones.h:35
+#: capplets/time-admin/src/time-zones.h:36
 msgid "Africa/Bissau"
 msgstr "Африка/Бисау"
 
-#: capplets/time-admin/src/time-zones.h:36
+#: capplets/time-admin/src/time-zones.h:37
 msgid "Africa/Blantyre"
 msgstr "Африка/Блентајр"
 
-#: capplets/time-admin/src/time-zones.h:37
+#: capplets/time-admin/src/time-zones.h:38
 msgid "Africa/Brazzaville"
 msgstr "Африка/Бразавил"
 
-#: capplets/time-admin/src/time-zones.h:38
+#: capplets/time-admin/src/time-zones.h:39
 msgid "Africa/Bujumbura"
 msgstr "Африка/Буџумбура"
 
-#: capplets/time-admin/src/time-zones.h:39
+#: capplets/time-admin/src/time-zones.h:40
 msgid "Africa/Cairo"
 msgstr "Африка/Каиро"
 
-#: capplets/time-admin/src/time-zones.h:40
+#: capplets/time-admin/src/time-zones.h:41
 msgid "Africa/Casablanca"
 msgstr "Африка/Казабланка"
 
-#: capplets/time-admin/src/time-zones.h:41
+#: capplets/time-admin/src/time-zones.h:42
 msgid "Africa/Ceuta"
 msgstr "Африка/Сеута"
 
-#: capplets/time-admin/src/time-zones.h:42
+#: capplets/time-admin/src/time-zones.h:43
 msgid "Africa/Conakry"
 msgstr "Африка/Конакри"
 
-#: capplets/time-admin/src/time-zones.h:43
+#: capplets/time-admin/src/time-zones.h:44
 msgid "Africa/Dakar"
 msgstr "Африка/Дакар"
 
-#: capplets/time-admin/src/time-zones.h:44
+#: capplets/time-admin/src/time-zones.h:45
 msgid "Africa/Dar_es_Salaam"
 msgstr "Африка/Дар_ес_Салам"
 
-#: capplets/time-admin/src/time-zones.h:45
+#: capplets/time-admin/src/time-zones.h:46
 msgid "Africa/Djibouti"
 msgstr "Африка/Џибути"
 
-#: capplets/time-admin/src/time-zones.h:46
+#: capplets/time-admin/src/time-zones.h:47
 msgid "Africa/Douala"
 msgstr "Африка/Дуала"
 
-#: capplets/time-admin/src/time-zones.h:47
+#: capplets/time-admin/src/time-zones.h:48
 msgid "Africa/El_Aaiun"
 msgstr "Африка/Ел_Ајун"
 
-#: capplets/time-admin/src/time-zones.h:48
+#: capplets/time-admin/src/time-zones.h:49
 msgid "Africa/Freetown"
 msgstr "Африка/Фритаун"
 
-#: capplets/time-admin/src/time-zones.h:49
+#: capplets/time-admin/src/time-zones.h:50
 msgid "Africa/Gaborone"
 msgstr "Африка/Габорон"
 
-#: capplets/time-admin/src/time-zones.h:50
+#: capplets/time-admin/src/time-zones.h:51
 msgid "Africa/Harare"
 msgstr "Африка/Хараре"
 
-#: capplets/time-admin/src/time-zones.h:51
+#: capplets/time-admin/src/time-zones.h:52
 msgid "Africa/Johannesburg"
 msgstr "Африка/Јоханесбург"
 
-#: capplets/time-admin/src/time-zones.h:52
+#: capplets/time-admin/src/time-zones.h:53
 msgid "Africa/Juba"
 msgstr "Африка/Џуба"
 
-#: capplets/time-admin/src/time-zones.h:53
+#: capplets/time-admin/src/time-zones.h:54
 msgid "Africa/Kampala"
 msgstr "Африка/Кампала"
 
-#: capplets/time-admin/src/time-zones.h:54
+#: capplets/time-admin/src/time-zones.h:55
 msgid "Africa/Khartoum"
 msgstr "Африка/Картум"
 
-#: capplets/time-admin/src/time-zones.h:55
+#: capplets/time-admin/src/time-zones.h:56
 msgid "Africa/Kigali"
 msgstr "Африка/Кигали"
 
-#: capplets/time-admin/src/time-zones.h:56
+#: capplets/time-admin/src/time-zones.h:57
 msgid "Africa/Kinshasa"
 msgstr "Африка/Киншаса"
 
-#: capplets/time-admin/src/time-zones.h:57
+#: capplets/time-admin/src/time-zones.h:58
 msgid "Africa/Lagos"
 msgstr "Африка/Лагос"
 
-#: capplets/time-admin/src/time-zones.h:58
+#: capplets/time-admin/src/time-zones.h:59
 msgid "Africa/Libreville"
 msgstr "Африка/Либервил"
 
-#: capplets/time-admin/src/time-zones.h:59
+#: capplets/time-admin/src/time-zones.h:60
 msgid "Africa/Lome"
 msgstr "Африка/Ломе"
 
-#: capplets/time-admin/src/time-zones.h:60
+#: capplets/time-admin/src/time-zones.h:61
 msgid "Africa/Luanda"
 msgstr "Африка/Луанда"
 
-#: capplets/time-admin/src/time-zones.h:61
+#: capplets/time-admin/src/time-zones.h:62
 msgid "Africa/Lubumbashi"
 msgstr "Африка/Лубумбаши"
 
-#: capplets/time-admin/src/time-zones.h:62
+#: capplets/time-admin/src/time-zones.h:63
 msgid "Africa/Lusaka"
 msgstr "Африка/Лусака"
 
-#: capplets/time-admin/src/time-zones.h:63
+#: capplets/time-admin/src/time-zones.h:64
 msgid "Africa/Malabo"
 msgstr "Африка/Малабо"
 
-#: capplets/time-admin/src/time-zones.h:64
+#: capplets/time-admin/src/time-zones.h:65
 msgid "Africa/Maputo"
 msgstr "Африка/Мапуто"
 
-#: capplets/time-admin/src/time-zones.h:65
+#: capplets/time-admin/src/time-zones.h:66
 msgid "Africa/Maseru"
 msgstr "Африка/Масеру"
 
-#: capplets/time-admin/src/time-zones.h:66
+#: capplets/time-admin/src/time-zones.h:67
 msgid "Africa/Mbabane"
 msgstr "Африка/Мбабане"
 
-#: capplets/time-admin/src/time-zones.h:67
+#: capplets/time-admin/src/time-zones.h:68
 msgid "Africa/Mogadishu"
 msgstr "Африка/Могадиш"
 
-#: capplets/time-admin/src/time-zones.h:68
+#: capplets/time-admin/src/time-zones.h:69
 msgid "Africa/Monrovia"
 msgstr "Африка/Монровија"
 
-#: capplets/time-admin/src/time-zones.h:69
+#: capplets/time-admin/src/time-zones.h:70
 msgid "Africa/Nairobi"
 msgstr "Африка/Најроби"
 
-#: capplets/time-admin/src/time-zones.h:70
+#: capplets/time-admin/src/time-zones.h:71
 msgid "Africa/Ndjamena"
 msgstr "Африка/Нџамена"
 
-#: capplets/time-admin/src/time-zones.h:71
+#: capplets/time-admin/src/time-zones.h:72
 msgid "Africa/Niamey"
 msgstr "Африка/Ниамеј"
 
-#: capplets/time-admin/src/time-zones.h:72
+#: capplets/time-admin/src/time-zones.h:73
 msgid "Africa/Nouakchott"
 msgstr "Африка/Нуакчот"
 
-#: capplets/time-admin/src/time-zones.h:73
+#: capplets/time-admin/src/time-zones.h:74
 msgid "Africa/Ouagadougou"
 msgstr "Африка/Уагадугу"
 
-#: capplets/time-admin/src/time-zones.h:74
+#: capplets/time-admin/src/time-zones.h:75
 msgid "Africa/Porto-Novo"
 msgstr "Африка/Порто-Ново"
 
-#: capplets/time-admin/src/time-zones.h:75
+#: capplets/time-admin/src/time-zones.h:76
 msgid "Africa/Sao_Tome"
 msgstr "Африка/Сао_Томе"
 
-#: capplets/time-admin/src/time-zones.h:76
+#: capplets/time-admin/src/time-zones.h:77
 msgid "Africa/Tripoli"
 msgstr "Африка/Триполи"
 
-#: capplets/time-admin/src/time-zones.h:77
+#: capplets/time-admin/src/time-zones.h:78
 msgid "Africa/Tunis"
 msgstr "Африка/Тунис"
 
-#: capplets/time-admin/src/time-zones.h:78
+#: capplets/time-admin/src/time-zones.h:79
 msgid "Africa/Windhoek"
 msgstr "Африка/Виндхук"
 
-#: capplets/time-admin/src/time-zones.h:79
+#: capplets/time-admin/src/time-zones.h:80
 msgid "America/Adak"
 msgstr "Америка/Адак"
 
-#: capplets/time-admin/src/time-zones.h:80
+#: capplets/time-admin/src/time-zones.h:81
 msgid "America/Anchorage"
 msgstr "Америка/Енкориџ"
 
-#: capplets/time-admin/src/time-zones.h:81
+#: capplets/time-admin/src/time-zones.h:82
 msgid "America/Anguilla"
 msgstr "Америка/Ангвила"
 
-#: capplets/time-admin/src/time-zones.h:82
+#: capplets/time-admin/src/time-zones.h:83
 msgid "America/Antigua"
 msgstr "Америка/Антигва"
 
-#: capplets/time-admin/src/time-zones.h:83
+#: capplets/time-admin/src/time-zones.h:84
 msgid "America/Araguaina"
 msgstr "Америка/Арагвијана"
 
-#: capplets/time-admin/src/time-zones.h:84
+#: capplets/time-admin/src/time-zones.h:85
 msgid "America/Argentina/Buenos_Aires"
 msgstr "Америка/Аргентина/Буенос_Ајрес"
 
-#: capplets/time-admin/src/time-zones.h:85
+#: capplets/time-admin/src/time-zones.h:86
 msgid "America/Argentina/Catamarca"
 msgstr "Америка/Аргентина/Катамарка"
 
-#: capplets/time-admin/src/time-zones.h:86
+#: capplets/time-admin/src/time-zones.h:87
 msgid "America/Argentina/Cordoba"
 msgstr "Америка/Аргентина/Кордоба"
 
-#: capplets/time-admin/src/time-zones.h:87
+#: capplets/time-admin/src/time-zones.h:88
 msgid "America/Argentina/Jujuy"
 msgstr "Америка/Аргентина/Хухуи"
 
-#: capplets/time-admin/src/time-zones.h:88
+#: capplets/time-admin/src/time-zones.h:89
 msgid "America/Argentina/La_Rioja"
 msgstr "Америка/Аргентина/Ла_Риоха"
 
-#: capplets/time-admin/src/time-zones.h:89
+#: capplets/time-admin/src/time-zones.h:90
 msgid "America/Argentina/Mendoza"
 msgstr "Америка/Аргентина/Мендоза"
 
-#: capplets/time-admin/src/time-zones.h:90
+#: capplets/time-admin/src/time-zones.h:91
 msgid "America/Argentina/Rio_Gallegos"
 msgstr "Америка/Аргентина/Рио_Гаљегос"
 
-#: capplets/time-admin/src/time-zones.h:91
+#: capplets/time-admin/src/time-zones.h:92
 msgid "America/Argentina/Salta"
 msgstr "Америка/Аргентина/Салта"
 
-#: capplets/time-admin/src/time-zones.h:92
+#: capplets/time-admin/src/time-zones.h:93
 msgid "America/Argentina/San_Juan"
 msgstr "Америка/Аргентина/Сан_Хуан"
 
-#: capplets/time-admin/src/time-zones.h:93
+#: capplets/time-admin/src/time-zones.h:94
 msgid "America/Argentina/San_Luis"
 msgstr "Америка/Аргентина/Сан_Луис"
 
-#: capplets/time-admin/src/time-zones.h:94
+#: capplets/time-admin/src/time-zones.h:95
 msgid "America/Argentina/Tucuman"
 msgstr "Америка/Аргентина/Тукуман"
 
-#: capplets/time-admin/src/time-zones.h:95
+#: capplets/time-admin/src/time-zones.h:96
 msgid "America/Argentina/Ushuaia"
 msgstr "Америка/Аргентина/Ушуаја"
 
-#: capplets/time-admin/src/time-zones.h:96
+#: capplets/time-admin/src/time-zones.h:97
 msgid "America/Aruba"
 msgstr "Америка/Аруба"
 
-#: capplets/time-admin/src/time-zones.h:97
+#: capplets/time-admin/src/time-zones.h:98
 msgid "America/Asuncion"
 msgstr "Америка/Асунсион"
 
-#: capplets/time-admin/src/time-zones.h:98
+#: capplets/time-admin/src/time-zones.h:99
 msgid "America/Atikokan"
 msgstr "Америка/Атикокан"
 
-#: capplets/time-admin/src/time-zones.h:99
+#: capplets/time-admin/src/time-zones.h:100
 msgid "America/Bahia"
 msgstr "Америка/Баија"
 
-#: capplets/time-admin/src/time-zones.h:100
+#: capplets/time-admin/src/time-zones.h:101
 msgid "America/Bahia_Banderas"
 msgstr "Америка/Баија_бандерас"
 
-#: capplets/time-admin/src/time-zones.h:101
+#: capplets/time-admin/src/time-zones.h:102
 msgid "America/Barbados"
 msgstr "Америка/Барбадос"
 
-#: capplets/time-admin/src/time-zones.h:102
+#: capplets/time-admin/src/time-zones.h:103
 msgid "America/Belem"
 msgstr "Америка/Белем"
 
-#: capplets/time-admin/src/time-zones.h:103
+#: capplets/time-admin/src/time-zones.h:104
 msgid "America/Belize"
 msgstr "Америка/Белизе"
 
-#: capplets/time-admin/src/time-zones.h:104
+#: capplets/time-admin/src/time-zones.h:105
 msgid "America/Blanc-Sablon"
 msgstr "Америка/Блан-Саблон"
 
-#: capplets/time-admin/src/time-zones.h:105
+#: capplets/time-admin/src/time-zones.h:106
 msgid "America/Boa_Vista"
 msgstr "Америка/Боа_Виста"
 
-#: capplets/time-admin/src/time-zones.h:106
+#: capplets/time-admin/src/time-zones.h:107
 msgid "America/Bogota"
 msgstr "Америка/Богота"
 
-#: capplets/time-admin/src/time-zones.h:107
+#: capplets/time-admin/src/time-zones.h:108
 msgid "America/Boise"
 msgstr "Америка/Боизе"
 
-#: capplets/time-admin/src/time-zones.h:108
+#: capplets/time-admin/src/time-zones.h:109
 msgid "America/Cambridge_Bay"
 msgstr "Америка/Кембриџ_Беј"
 
-#: capplets/time-admin/src/time-zones.h:109
+#: capplets/time-admin/src/time-zones.h:110
 msgid "America/Campo_Grande"
 msgstr "Америка/Кампо_Гранде"
 
-#: capplets/time-admin/src/time-zones.h:110
+#: capplets/time-admin/src/time-zones.h:111
 msgid "America/Cancun"
 msgstr "Америка/Канкун"
 
-#: capplets/time-admin/src/time-zones.h:111
+#: capplets/time-admin/src/time-zones.h:112
 msgid "America/Caracas"
 msgstr "Америка/Каракас"
 
-#: capplets/time-admin/src/time-zones.h:112
+#: capplets/time-admin/src/time-zones.h:113
 msgid "America/Cayenne"
 msgstr "Америка/Кајен"
 
-#: capplets/time-admin/src/time-zones.h:113
+#: capplets/time-admin/src/time-zones.h:114
 msgid "America/Cayman"
 msgstr "Америка/Кајман"
 
-#: capplets/time-admin/src/time-zones.h:114
+#: capplets/time-admin/src/time-zones.h:115
 msgid "America/Chicago"
 msgstr "Америка/Чикаго"
 
-#: capplets/time-admin/src/time-zones.h:115
+#: capplets/time-admin/src/time-zones.h:116
 msgid "America/Chihuahua"
 msgstr "Америка/Чивава"
 
-#: capplets/time-admin/src/time-zones.h:116
+#: capplets/time-admin/src/time-zones.h:117
 msgid "America/Costa_Rica"
 msgstr "Америка/Костарика"
 
-#: capplets/time-admin/src/time-zones.h:117
+#: capplets/time-admin/src/time-zones.h:118
 msgid "America/Creston"
 msgstr "Африка/Крестон"
 
-#: capplets/time-admin/src/time-zones.h:118
+#: capplets/time-admin/src/time-zones.h:119
 msgid "America/Cuiaba"
 msgstr "Америка/Кујаба"
 
-#: capplets/time-admin/src/time-zones.h:119
+#: capplets/time-admin/src/time-zones.h:120
 msgid "America/Curacao"
 msgstr "Америка/Куракао"
 
-#: capplets/time-admin/src/time-zones.h:120
+#: capplets/time-admin/src/time-zones.h:121
 msgid "America/Danmarkshavn"
 msgstr "Америка/Денмарксхавен"
 
-#: capplets/time-admin/src/time-zones.h:121
+#: capplets/time-admin/src/time-zones.h:122
 msgid "America/Dawson"
 msgstr "Америка/Досон"
 
-#: capplets/time-admin/src/time-zones.h:122
+#: capplets/time-admin/src/time-zones.h:123
 msgid "America/Dawson_Creek"
 msgstr "Америка/Досон_Крик"
 
-#: capplets/time-admin/src/time-zones.h:123
+#: capplets/time-admin/src/time-zones.h:124
 msgid "America/Denver"
 msgstr "Америка/Денвер"
 
-#: capplets/time-admin/src/time-zones.h:124
+#: capplets/time-admin/src/time-zones.h:125
 msgid "America/Detroit"
 msgstr "Америка/Детроит"
 
-#: capplets/time-admin/src/time-zones.h:125
+#: capplets/time-admin/src/time-zones.h:126
 msgid "America/Dominica"
 msgstr "Америка/Доминика"
 
-#: capplets/time-admin/src/time-zones.h:126
+#: capplets/time-admin/src/time-zones.h:127
 msgid "America/Edmonton"
 msgstr "Америка/Едмонтон"
 
-#: capplets/time-admin/src/time-zones.h:127
+#: capplets/time-admin/src/time-zones.h:128
 msgid "America/Eirunepe"
 msgstr "Америка/Ејрунепе"
 
-#: capplets/time-admin/src/time-zones.h:128
+#: capplets/time-admin/src/time-zones.h:129
 msgid "America/El_Salvador"
 msgstr "Америка/Ел_Салвадор"
 
-#: capplets/time-admin/src/time-zones.h:129
+#: capplets/time-admin/src/time-zones.h:130
 msgid "America/Fortaleza"
 msgstr "Америка/Форталеза"
 
-#: capplets/time-admin/src/time-zones.h:130
+#: capplets/time-admin/src/time-zones.h:131
 msgid "America/Fort_Nelson"
 msgstr "Америка/Форт_Нелсон"
 
-#: capplets/time-admin/src/time-zones.h:131
+#: capplets/time-admin/src/time-zones.h:132
 msgid "America/Glace_Bay"
 msgstr "Америка/Глејс_Беј"
 
-#: capplets/time-admin/src/time-zones.h:132
+#: capplets/time-admin/src/time-zones.h:133
 msgid "America/Godthab"
 msgstr "Америка/Годтаб"
 
-#: capplets/time-admin/src/time-zones.h:133
+#: capplets/time-admin/src/time-zones.h:134
 msgid "America/Goose_Bay"
 msgstr "Америка/Гус_Беј"
 
-#: capplets/time-admin/src/time-zones.h:134
+#: capplets/time-admin/src/time-zones.h:135
 msgid "America/Grand_Turk"
 msgstr "Америка/Гранд_Турк"
 
-#: capplets/time-admin/src/time-zones.h:135
+#: capplets/time-admin/src/time-zones.h:136
 msgid "America/Grenada"
 msgstr "Америка/Гренада"
 
-#: capplets/time-admin/src/time-zones.h:136
+#: capplets/time-admin/src/time-zones.h:137
 msgid "America/Guadeloupe"
 msgstr "Америка/Гваделуп"
 
-#: capplets/time-admin/src/time-zones.h:137
+#: capplets/time-admin/src/time-zones.h:138
 msgid "America/Guatemala"
 msgstr "Америка/Гватемала"
 
-#: capplets/time-admin/src/time-zones.h:138
+#: capplets/time-admin/src/time-zones.h:139
 msgid "America/Guayaquil"
 msgstr "Америка/Гвајаквил"
 
-#: capplets/time-admin/src/time-zones.h:139
+#: capplets/time-admin/src/time-zones.h:140
 msgid "America/Guyana"
 msgstr "Америка/Гијана"
 
-#: capplets/time-admin/src/time-zones.h:140
+#: capplets/time-admin/src/time-zones.h:141
 msgid "America/Halifax"
 msgstr "Америка/Халифакс"
 
-#: capplets/time-admin/src/time-zones.h:141
+#: capplets/time-admin/src/time-zones.h:142
 msgid "America/Havana"
 msgstr "Америка/Хавана"
 
-#: capplets/time-admin/src/time-zones.h:142
+#: capplets/time-admin/src/time-zones.h:143
 msgid "America/Hermosillo"
 msgstr "Америка/Ермосиљо"
 
-#: capplets/time-admin/src/time-zones.h:143
+#: capplets/time-admin/src/time-zones.h:144
 msgid "America/Indiana/Indianapolis"
 msgstr "Америка/Индијана/Индијанаполис"
 
-#: capplets/time-admin/src/time-zones.h:144
+#: capplets/time-admin/src/time-zones.h:145
 msgid "America/Indiana/Knox"
 msgstr "Америка/Индијана/Нокс"
 
-#: capplets/time-admin/src/time-zones.h:145
+#: capplets/time-admin/src/time-zones.h:146
 msgid "America/Indiana/Marengo"
 msgstr "Америка/Индијана/Маренго"
 
-#: capplets/time-admin/src/time-zones.h:146
+#: capplets/time-admin/src/time-zones.h:147
 msgid "America/Indiana/Petersburg"
 msgstr "Америка/Индијана/Питерсбург"
 
-#: capplets/time-admin/src/time-zones.h:147
+#: capplets/time-admin/src/time-zones.h:148
 msgid "America/Indiana/Tell_City"
 msgstr "Америка/Индијана/Тел_Сити"
 
-#: capplets/time-admin/src/time-zones.h:148
+#: capplets/time-admin/src/time-zones.h:149
 msgid "America/Indiana/Vevay"
 msgstr "Америка/Индијана/Вевај"
 
-#: capplets/time-admin/src/time-zones.h:149
+#: capplets/time-admin/src/time-zones.h:150
 msgid "America/Indiana/Vincennes"
 msgstr "Америка/Индијана/Винсенс"
 
-#: capplets/time-admin/src/time-zones.h:150
+#: capplets/time-admin/src/time-zones.h:151
 msgid "America/Indiana/Winamac"
 msgstr "Америка/Индијана/Винамак"
 
-#: capplets/time-admin/src/time-zones.h:151
+#: capplets/time-admin/src/time-zones.h:152
 msgid "America/Inuvik"
 msgstr "Америка/Инувик"
 
-#: capplets/time-admin/src/time-zones.h:152
+#: capplets/time-admin/src/time-zones.h:153
 msgid "America/Iqaluit"
 msgstr "Америка/Икалујт"
 
-#: capplets/time-admin/src/time-zones.h:153
+#: capplets/time-admin/src/time-zones.h:154
 msgid "America/Jamaica"
 msgstr "Америка/Јамајка"
 
-#: capplets/time-admin/src/time-zones.h:154
+#: capplets/time-admin/src/time-zones.h:155
 msgid "America/Juneau"
 msgstr "Америка/Жуно"
 
-#: capplets/time-admin/src/time-zones.h:155
+#: capplets/time-admin/src/time-zones.h:156
 msgid "America/Kentucky/Louisville"
 msgstr "Америка/Кентаки/Луивил"
 
-#: capplets/time-admin/src/time-zones.h:156
+#: capplets/time-admin/src/time-zones.h:157
 msgid "America/Kentucky/Monticello"
 msgstr "Америка/Кентаки/Монтичело"
 
-#: capplets/time-admin/src/time-zones.h:157
+#: capplets/time-admin/src/time-zones.h:158
 msgid "America/Kralendijk"
 msgstr "Америка/Кралендајк"
 
-#: capplets/time-admin/src/time-zones.h:158
+#: capplets/time-admin/src/time-zones.h:159
 msgid "America/La_Paz"
 msgstr "Америка/Ла_Паз"
 
-#: capplets/time-admin/src/time-zones.h:159
+#: capplets/time-admin/src/time-zones.h:160
 msgid "America/Lima"
 msgstr "Америка/Лима"
 
-#: capplets/time-admin/src/time-zones.h:160
+#: capplets/time-admin/src/time-zones.h:161
 msgid "America/Los_Angeles"
 msgstr "Америка/Лос_Анђелес"
 
-#: capplets/time-admin/src/time-zones.h:161
+#: capplets/time-admin/src/time-zones.h:162
 msgid "America/Lower_Princes"
 msgstr "Америка/Доњи_Принсес"
 
-#: capplets/time-admin/src/time-zones.h:162
+#: capplets/time-admin/src/time-zones.h:163
 msgid "America/Maceio"
 msgstr "Америка/Масејо"
 
-#: capplets/time-admin/src/time-zones.h:163
+#: capplets/time-admin/src/time-zones.h:164
 msgid "America/Managua"
 msgstr "Америка/Манагва"
 
-#: capplets/time-admin/src/time-zones.h:164
+#: capplets/time-admin/src/time-zones.h:165
 msgid "America/Manaus"
 msgstr "Америка/Манаус"
 
-#: capplets/time-admin/src/time-zones.h:165
+#: capplets/time-admin/src/time-zones.h:166
 msgid "America/Marigot"
 msgstr "Америка/Мариго"
 
-#: capplets/time-admin/src/time-zones.h:166
+#: capplets/time-admin/src/time-zones.h:167
 msgid "America/Martinique"
 msgstr "Америка/Мартиник"
 
-#: capplets/time-admin/src/time-zones.h:167
+#: capplets/time-admin/src/time-zones.h:168
 msgid "America/Matamoros"
 msgstr "Америка/Матаморос"
 
-#: capplets/time-admin/src/time-zones.h:168
+#: capplets/time-admin/src/time-zones.h:169
 msgid "America/Mazatlan"
 msgstr "Америка/Мазатлан"
 
-#: capplets/time-admin/src/time-zones.h:169
+#: capplets/time-admin/src/time-zones.h:170
 msgid "America/Menominee"
 msgstr "Америка/Меномини"
 
-#: capplets/time-admin/src/time-zones.h:170
+#: capplets/time-admin/src/time-zones.h:171
 msgid "America/Merida"
 msgstr "Америка/Мерида"
 
-#: capplets/time-admin/src/time-zones.h:171
+#: capplets/time-admin/src/time-zones.h:172
 msgid "America/Metlakatla"
 msgstr "Америка/Метлакатла"
 
-#: capplets/time-admin/src/time-zones.h:172
+#: capplets/time-admin/src/time-zones.h:173
 msgid "America/Mexico_City"
 msgstr "Америка/Мексико_Сити"
 
-#: capplets/time-admin/src/time-zones.h:173
+#: capplets/time-admin/src/time-zones.h:174
 msgid "America/Miquelon"
 msgstr "Америка/Микелон"
 
-#: capplets/time-admin/src/time-zones.h:174
+#: capplets/time-admin/src/time-zones.h:175
 msgid "America/Moncton"
 msgstr "Америка/Монктон"
 
-#: capplets/time-admin/src/time-zones.h:175
+#: capplets/time-admin/src/time-zones.h:176
 msgid "America/Monterrey"
 msgstr "Америка/Монтереј"
 
-#: capplets/time-admin/src/time-zones.h:176
+#: capplets/time-admin/src/time-zones.h:177
 msgid "America/Montevideo"
 msgstr "Америка/Монтевидео"
 
-#: capplets/time-admin/src/time-zones.h:177
+#: capplets/time-admin/src/time-zones.h:178
 msgid "America/Montserrat"
 msgstr "Америка/Монтсерат"
 
-#: capplets/time-admin/src/time-zones.h:178
+#: capplets/time-admin/src/time-zones.h:179
 msgid "America/Nassau"
 msgstr "Америка/Насау"
 
-#: capplets/time-admin/src/time-zones.h:179
+#: capplets/time-admin/src/time-zones.h:180
 msgid "America/New_York"
 msgstr "Америка/Њујорк"
 
-#: capplets/time-admin/src/time-zones.h:180
+#: capplets/time-admin/src/time-zones.h:181
 msgid "America/Nipigon"
 msgstr "Америка/Нипигон"
 
-#: capplets/time-admin/src/time-zones.h:181
+#: capplets/time-admin/src/time-zones.h:182
 msgid "America/Nome"
 msgstr "Америка/Ном"
 
-#: capplets/time-admin/src/time-zones.h:182
+#: capplets/time-admin/src/time-zones.h:183
 msgid "America/Noronha"
 msgstr "Америка/Нороња"
 
-#: capplets/time-admin/src/time-zones.h:183
+#: capplets/time-admin/src/time-zones.h:184
 msgid "America/North_Dakota/Beulah"
 msgstr "Америка/Северна_Дакота/Бјула"
 
-#: capplets/time-admin/src/time-zones.h:184
+#: capplets/time-admin/src/time-zones.h:185
 msgid "America/North_Dakota/Center"
 msgstr "Америка/Северна_Дакота/Центар"
 
-#: capplets/time-admin/src/time-zones.h:185
+#: capplets/time-admin/src/time-zones.h:186
 msgid "America/North_Dakota/New_Salem"
 msgstr "Америка/Северна_Дакота/Њу_Салем"
 
-#: capplets/time-admin/src/time-zones.h:186
+#: capplets/time-admin/src/time-zones.h:187
 msgid "America/Ojinaga"
 msgstr "Америка/Охинага"
 
-#: capplets/time-admin/src/time-zones.h:187
+#: capplets/time-admin/src/time-zones.h:188
 msgid "America/Panama"
 msgstr "Америка/Панама"
 
-#: capplets/time-admin/src/time-zones.h:188
+#: capplets/time-admin/src/time-zones.h:189
 msgid "America/Pangnirtung"
 msgstr "Америка/Пангниртунг"
 
-#: capplets/time-admin/src/time-zones.h:189
+#: capplets/time-admin/src/time-zones.h:190
 msgid "America/Paramaribo"
 msgstr "Америка/Парамарибо"
 
-#: capplets/time-admin/src/time-zones.h:190
+#: capplets/time-admin/src/time-zones.h:191
 msgid "America/Phoenix"
 msgstr "Америка/Феникс"
 
-#: capplets/time-admin/src/time-zones.h:191
+#: capplets/time-admin/src/time-zones.h:192
 msgid "America/Port-au-Prince"
 msgstr "Америка/Порт-о-Принс"
 
-#: capplets/time-admin/src/time-zones.h:192
+#: capplets/time-admin/src/time-zones.h:193
 msgid "America/Port_of_Spain"
 msgstr "Америка/Порт_оф_Спејн"
 
-#: capplets/time-admin/src/time-zones.h:193
+#: capplets/time-admin/src/time-zones.h:194
 msgid "America/Porto_Velho"
 msgstr "Америка/Порто_Вело"
 
-#: capplets/time-admin/src/time-zones.h:194
+#: capplets/time-admin/src/time-zones.h:195
 msgid "America/Puerto_Rico"
 msgstr "Америка/Порторико"
 
-#: capplets/time-admin/src/time-zones.h:195
+#: capplets/time-admin/src/time-zones.h:196
 msgid "America/Punta_Arenas"
 msgstr "Америка/Пунта_Аренас"
 
-#: capplets/time-admin/src/time-zones.h:196
+#: capplets/time-admin/src/time-zones.h:197
 msgid "America/Rainy_River"
 msgstr "Америка/Рејни_Ривер"
 
-#: capplets/time-admin/src/time-zones.h:197
+#: capplets/time-admin/src/time-zones.h:198
 msgid "America/Rankin_Inlet"
 msgstr "Америка/Ранкинов_рукавац"
 
-#: capplets/time-admin/src/time-zones.h:198
+#: capplets/time-admin/src/time-zones.h:199
 msgid "America/Recife"
 msgstr "Америка/Ресифи"
 
-#: capplets/time-admin/src/time-zones.h:199
+#: capplets/time-admin/src/time-zones.h:200
 msgid "America/Regina"
 msgstr "Америка/Регина"
 
-#: capplets/time-admin/src/time-zones.h:200
+#: capplets/time-admin/src/time-zones.h:201
 msgid "America/Resolute"
 msgstr "Америка/Резолут"
 
-#: capplets/time-admin/src/time-zones.h:201
+#: capplets/time-admin/src/time-zones.h:202
 msgid "America/Rio_Branco"
 msgstr "Америка/Рио_Бранко"
 
-#: capplets/time-admin/src/time-zones.h:202
+#: capplets/time-admin/src/time-zones.h:203
 msgid "America/Santarem"
 msgstr "Америка/Сантарем"
 
-#: capplets/time-admin/src/time-zones.h:203
+#: capplets/time-admin/src/time-zones.h:204
 msgid "America/Santiago"
 msgstr "Америка/Сантјаго"
 
-#: capplets/time-admin/src/time-zones.h:204
+#: capplets/time-admin/src/time-zones.h:205
 msgid "America/Santo_Domingo"
 msgstr "Америка/Санто_Доминго"
 
-#: capplets/time-admin/src/time-zones.h:205
+#: capplets/time-admin/src/time-zones.h:206
 msgid "America/Sao_Paulo"
 msgstr "Америка/Сао_Паоло"
 
-#: capplets/time-admin/src/time-zones.h:206
+#: capplets/time-admin/src/time-zones.h:207
 msgid "America/Scoresbysund"
 msgstr "Америка/Скорзбисунд"
 
-#: capplets/time-admin/src/time-zones.h:207
+#: capplets/time-admin/src/time-zones.h:208
 msgid "America/Sitka"
 msgstr "Америка/Ситка"
 
-#: capplets/time-admin/src/time-zones.h:208
+#: capplets/time-admin/src/time-zones.h:209
 msgid "America/St_Barthelemy"
 msgstr "Америка/Св_Бартоломеј"
 
-#: capplets/time-admin/src/time-zones.h:209
+#: capplets/time-admin/src/time-zones.h:210
 msgid "America/St_Johns"
 msgstr "Америка/Сент_Џон"
 
-#: capplets/time-admin/src/time-zones.h:210
+#: capplets/time-admin/src/time-zones.h:211
 msgid "America/St_Kitts"
 msgstr "Америка/Св_Китс"
 
-#: capplets/time-admin/src/time-zones.h:211
+#: capplets/time-admin/src/time-zones.h:212
 msgid "America/St_Lucia"
 msgstr "Америка/Св_Луција"
 
-#: capplets/time-admin/src/time-zones.h:212
+#: capplets/time-admin/src/time-zones.h:213
 msgid "America/St_Thomas"
 msgstr "Америка/Сент_Томас"
 
-#: capplets/time-admin/src/time-zones.h:213
+#: capplets/time-admin/src/time-zones.h:214
 msgid "America/St_Vincent"
 msgstr "Америка/Св_Винсент"
 
-#: capplets/time-admin/src/time-zones.h:214
+#: capplets/time-admin/src/time-zones.h:215
 msgid "America/Swift_Current"
 msgstr "Америка/Свифт_Карент"
 
-#: capplets/time-admin/src/time-zones.h:215
+#: capplets/time-admin/src/time-zones.h:216
 msgid "America/Tegucigalpa"
 msgstr "Америка/Тегусигалпа"
 
-#: capplets/time-admin/src/time-zones.h:216
+#: capplets/time-admin/src/time-zones.h:217
 msgid "America/Thule"
 msgstr "Америка/Туле"
 
-#: capplets/time-admin/src/time-zones.h:217
+#: capplets/time-admin/src/time-zones.h:218
 msgid "America/Thunder_Bay"
 msgstr "Америка/Тандер_Беј"
 
-#: capplets/time-admin/src/time-zones.h:218
+#: capplets/time-admin/src/time-zones.h:219
 msgid "America/Tijuana"
 msgstr "Америка/Тихуана"
 
-#: capplets/time-admin/src/time-zones.h:219
+#: capplets/time-admin/src/time-zones.h:220
 msgid "America/Toronto"
 msgstr "Америка/Торонто"
 
-#: capplets/time-admin/src/time-zones.h:220
+#: capplets/time-admin/src/time-zones.h:221
 msgid "America/Tortola"
 msgstr "Америка/Тортола"
 
-#: capplets/time-admin/src/time-zones.h:221
+#: capplets/time-admin/src/time-zones.h:222
 msgid "America/Vancouver"
 msgstr "Америка/Ванкувер"
 
-#: capplets/time-admin/src/time-zones.h:222
+#: capplets/time-admin/src/time-zones.h:223
 msgid "America/Whitehorse"
 msgstr "Америка/Вајтхорс"
 
-#: capplets/time-admin/src/time-zones.h:223
+#: capplets/time-admin/src/time-zones.h:224
 msgid "America/Winnipeg"
 msgstr "Америка/Винипег"
 
-#: capplets/time-admin/src/time-zones.h:224
+#: capplets/time-admin/src/time-zones.h:225
 msgid "America/Yakutat"
 msgstr "Америка/Јакутат"
 
-#: capplets/time-admin/src/time-zones.h:225
+#: capplets/time-admin/src/time-zones.h:226
 msgid "America/Yellowknife"
 msgstr "Америка/Јелоунајф"
 
-#: capplets/time-admin/src/time-zones.h:226
+#: capplets/time-admin/src/time-zones.h:227
 msgid "Antarctica/Casey"
 msgstr "Антарктик/Кејси"
 
-#: capplets/time-admin/src/time-zones.h:227
+#: capplets/time-admin/src/time-zones.h:228
 msgid "Antarctica/Davis"
 msgstr "Антарктик/Дејвис"
 
-#: capplets/time-admin/src/time-zones.h:228
+#: capplets/time-admin/src/time-zones.h:229
 msgid "Antarctica/DumontDUrville"
 msgstr "Антарктик/ДимонДИрвил"
 
-#: capplets/time-admin/src/time-zones.h:229
+#: capplets/time-admin/src/time-zones.h:230
 msgid "Antarctica/Macquarie"
 msgstr "Антарктик/Макуори"
 
-#: capplets/time-admin/src/time-zones.h:230
+#: capplets/time-admin/src/time-zones.h:231
 msgid "Antarctica/Mawson"
 msgstr "Антарктик/Мосон"
 
-#: capplets/time-admin/src/time-zones.h:231
+#: capplets/time-admin/src/time-zones.h:232
 msgid "Antarctica/McMurdo"
 msgstr "Антарктик/МекМурдо"
 
-#: capplets/time-admin/src/time-zones.h:232
+#: capplets/time-admin/src/time-zones.h:233
 msgid "Antarctica/Palmer"
 msgstr "Антарктик/Палмер"
 
-#: capplets/time-admin/src/time-zones.h:233
+#: capplets/time-admin/src/time-zones.h:234
 msgid "Antarctica/Rothera"
 msgstr "Антарктик/Ротера"
 
-#: capplets/time-admin/src/time-zones.h:234
+#: capplets/time-admin/src/time-zones.h:235
 msgid "Antarctica/Syowa"
 msgstr "Антарктик/Сјова"
 
-#: capplets/time-admin/src/time-zones.h:235
+#: capplets/time-admin/src/time-zones.h:236
 msgid "Antarctica/Troll"
 msgstr "Антарктик/Трол"
 
-#: capplets/time-admin/src/time-zones.h:236
+#: capplets/time-admin/src/time-zones.h:237
 msgid "Antarctica/Vostok"
 msgstr "Антарктик/Восток"
 
-#: capplets/time-admin/src/time-zones.h:237
+#: capplets/time-admin/src/time-zones.h:238
 msgid "Arctic/Longyearbyen"
 msgstr "Арктик/Лонгјирбјен"
 
-#: capplets/time-admin/src/time-zones.h:238
+#: capplets/time-admin/src/time-zones.h:239
 msgid "Asia/Aden"
 msgstr "Азија/Аден"
 
-#: capplets/time-admin/src/time-zones.h:239
+#: capplets/time-admin/src/time-zones.h:240
 msgid "Asia/Almaty"
 msgstr "Азија/Алмати"
 
-#: capplets/time-admin/src/time-zones.h:240
+#: capplets/time-admin/src/time-zones.h:241
 msgid "Asia/Amman"
 msgstr "Азија/Аман"
 
-#: capplets/time-admin/src/time-zones.h:241
+#: capplets/time-admin/src/time-zones.h:242
 msgid "Asia/Anadyr"
 msgstr "Азија/Анадир"
 
-#: capplets/time-admin/src/time-zones.h:242
+#: capplets/time-admin/src/time-zones.h:243
 msgid "Asia/Aqtau"
 msgstr "Азија/Актау"
 
-#: capplets/time-admin/src/time-zones.h:243
+#: capplets/time-admin/src/time-zones.h:244
 msgid "Asia/Aqtobe"
 msgstr "Азија/Актобе"
 
-#: capplets/time-admin/src/time-zones.h:244
+#: capplets/time-admin/src/time-zones.h:245
 msgid "Asia/Ashgabat"
 msgstr "Азија/Ашгабат"
 
-#: capplets/time-admin/src/time-zones.h:245
+#: capplets/time-admin/src/time-zones.h:246
 msgid "Asia/Atyrau"
 msgstr "Азија/Атиро"
 
-#: capplets/time-admin/src/time-zones.h:246
+#: capplets/time-admin/src/time-zones.h:247
 msgid "Asia/Baghdad"
 msgstr "Азија/Багдад"
 
-#: capplets/time-admin/src/time-zones.h:247
+#: capplets/time-admin/src/time-zones.h:248
 msgid "Asia/Bahrain"
 msgstr "Азија/Бахреин"
 
-#: capplets/time-admin/src/time-zones.h:248
+#: capplets/time-admin/src/time-zones.h:249
 msgid "Asia/Baku"
 msgstr "Азија/Баку"
 
-#: capplets/time-admin/src/time-zones.h:249
+#: capplets/time-admin/src/time-zones.h:250
 msgid "Asia/Bangkok"
 msgstr "Азија/Банкок"
 
-#: capplets/time-admin/src/time-zones.h:250
+#: capplets/time-admin/src/time-zones.h:251
 msgid "Asia/Barnaul"
 msgstr "Азија/Барнол"
 
-#: capplets/time-admin/src/time-zones.h:251
+#: capplets/time-admin/src/time-zones.h:252
 msgid "Asia/Beirut"
 msgstr "Азија/Бејрут"
 
-#: capplets/time-admin/src/time-zones.h:252
+#: capplets/time-admin/src/time-zones.h:253
 msgid "Asia/Bishkek"
 msgstr "Азија/Бишкек"
 
-#: capplets/time-admin/src/time-zones.h:253
+#: capplets/time-admin/src/time-zones.h:254
 msgid "Asia/Brunei"
 msgstr "Азија/Брунеји"
 
-#: capplets/time-admin/src/time-zones.h:254
+#: capplets/time-admin/src/time-zones.h:255
 msgid "Asia/Chita"
 msgstr "Азија/Чита"
 
-#: capplets/time-admin/src/time-zones.h:255
+#: capplets/time-admin/src/time-zones.h:256
 msgid "Asia/Choibalsan"
 msgstr "Азија/Чојбалсан"
 
-#: capplets/time-admin/src/time-zones.h:256
+#: capplets/time-admin/src/time-zones.h:257
 msgid "Asia/Colombo"
 msgstr "Азија/Коломбо"
 
-#: capplets/time-admin/src/time-zones.h:257
+#: capplets/time-admin/src/time-zones.h:258
 msgid "Asia/Damascus"
 msgstr "Азија/Дамаск"
 
-#: capplets/time-admin/src/time-zones.h:258
+#: capplets/time-admin/src/time-zones.h:259
 msgid "Asia/Dhaka"
 msgstr "Азија/Дака"
 
-#: capplets/time-admin/src/time-zones.h:259
+#: capplets/time-admin/src/time-zones.h:260
 msgid "Asia/Dili"
 msgstr "Азија/Дили"
 
-#: capplets/time-admin/src/time-zones.h:260
+#: capplets/time-admin/src/time-zones.h:261
 msgid "Asia/Dubai"
 msgstr "Азија/Дубаји"
 
-#: capplets/time-admin/src/time-zones.h:261
+#: capplets/time-admin/src/time-zones.h:262
 msgid "Asia/Dushanbe"
 msgstr "Азија/Душанбе"
 
-#: capplets/time-admin/src/time-zones.h:262
+#: capplets/time-admin/src/time-zones.h:263
 msgid "Asia/Famagusta"
 msgstr "Азија/Фамагуста"
 
-#: capplets/time-admin/src/time-zones.h:263
+#: capplets/time-admin/src/time-zones.h:264
 msgid "Asia/Gaza"
 msgstr "Азија/Газа"
 
-#: capplets/time-admin/src/time-zones.h:264
+#: capplets/time-admin/src/time-zones.h:265
 msgid "Asia/Hebron"
 msgstr "Азија/Хеброн"
 
-#: capplets/time-admin/src/time-zones.h:265
+#: capplets/time-admin/src/time-zones.h:266
 msgid "Asia/Ho_Chi_Minh"
 msgstr "Азија/Хо_Ши_Мин"
 
-#: capplets/time-admin/src/time-zones.h:266
+#: capplets/time-admin/src/time-zones.h:267
 msgid "Asia/Hong_Kong"
 msgstr "Азија/Хонг_Конг"
 
-#: capplets/time-admin/src/time-zones.h:267
+#: capplets/time-admin/src/time-zones.h:268
 msgid "Asia/Hovd"
 msgstr "Азија/Ховд"
 
-#: capplets/time-admin/src/time-zones.h:268
+#: capplets/time-admin/src/time-zones.h:269
 msgid "Asia/Irkutsk"
 msgstr "Азија/Иркутск"
 
-#: capplets/time-admin/src/time-zones.h:269
+#: capplets/time-admin/src/time-zones.h:270
 msgid "Asia/Jakarta"
 msgstr "Азија/Џакарта"
 
-#: capplets/time-admin/src/time-zones.h:270
+#: capplets/time-admin/src/time-zones.h:271
 msgid "Asia/Jayapura"
 msgstr "Азија/Џајапура"
 
-#: capplets/time-admin/src/time-zones.h:271
+#: capplets/time-admin/src/time-zones.h:272
 msgid "Asia/Jerusalem"
 msgstr "Азија/Јерусалим"
 
-#: capplets/time-admin/src/time-zones.h:272
+#: capplets/time-admin/src/time-zones.h:273
 msgid "Asia/Kabul"
 msgstr "Азија/Кабул"
 
-#: capplets/time-admin/src/time-zones.h:273
+#: capplets/time-admin/src/time-zones.h:274
 msgid "Asia/Kamchatka"
 msgstr "Азија/Камчатка"
 
-#: capplets/time-admin/src/time-zones.h:274
+#: capplets/time-admin/src/time-zones.h:275
 msgid "Asia/Karachi"
 msgstr "Азија/Карачи"
 
-#: capplets/time-admin/src/time-zones.h:275
+#: capplets/time-admin/src/time-zones.h:276
 msgid "Asia/Kathmandu"
 msgstr "Азија/Катманду"
 
-#: capplets/time-admin/src/time-zones.h:276
+#: capplets/time-admin/src/time-zones.h:277
 msgid "Asia/Khandyga"
 msgstr "Азија/Кандига"
 
-#: capplets/time-admin/src/time-zones.h:277
+#: capplets/time-admin/src/time-zones.h:278
 msgid "Asia/Kolkata"
 msgstr "Азија/Калкута"
 
-#: capplets/time-admin/src/time-zones.h:278
+#: capplets/time-admin/src/time-zones.h:279
 msgid "Asia/Krasnoyarsk"
 msgstr "Азија/Краснојарск"
 
-#: capplets/time-admin/src/time-zones.h:279
+#: capplets/time-admin/src/time-zones.h:280
 msgid "Asia/Kuala_Lumpur"
 msgstr "Азија/Куала_Лумпур"
 
-#: capplets/time-admin/src/time-zones.h:280
+#: capplets/time-admin/src/time-zones.h:281
 msgid "Asia/Kuching"
 msgstr "Азија/Кучинг"
 
-#: capplets/time-admin/src/time-zones.h:281
+#: capplets/time-admin/src/time-zones.h:282
 msgid "Asia/Kuwait"
 msgstr "Азија/Кувајт"
 
-#: capplets/time-admin/src/time-zones.h:282
+#: capplets/time-admin/src/time-zones.h:283
 msgid "Asia/Macau"
 msgstr "Азија/Макао"
 
-#: capplets/time-admin/src/time-zones.h:283
+#: capplets/time-admin/src/time-zones.h:284
 msgid "Asia/Magadan"
 msgstr "Азија/Магадан"
 
-#: capplets/time-admin/src/time-zones.h:284
+#: capplets/time-admin/src/time-zones.h:285
 msgid "Asia/Makassar"
 msgstr "Азија/Макасар"
 
-#: capplets/time-admin/src/time-zones.h:285
+#: capplets/time-admin/src/time-zones.h:286
 msgid "Asia/Manila"
 msgstr "Азија/Манила"
 
-#: capplets/time-admin/src/time-zones.h:286
+#: capplets/time-admin/src/time-zones.h:287
 msgid "Asia/Muscat"
 msgstr "Азија/Мускат"
 
-#: capplets/time-admin/src/time-zones.h:287
+#: capplets/time-admin/src/time-zones.h:288
 msgid "Asia/Nicosia"
 msgstr "Азија/Никозија"
 
-#: capplets/time-admin/src/time-zones.h:288
+#: capplets/time-admin/src/time-zones.h:289
 msgid "Asia/Novokuznetsk"
 msgstr "Азија/Новокузњецк"
 
-#: capplets/time-admin/src/time-zones.h:289
+#: capplets/time-admin/src/time-zones.h:290
 msgid "Asia/Novosibirsk"
 msgstr "Азија/Новосибирск"
 
-#: capplets/time-admin/src/time-zones.h:290
+#: capplets/time-admin/src/time-zones.h:291
 msgid "Asia/Omsk"
 msgstr "Азија/Омск"
 
-#: capplets/time-admin/src/time-zones.h:291
+#: capplets/time-admin/src/time-zones.h:292
 msgid "Asia/Oral"
 msgstr "Азија/Орал"
 
-#: capplets/time-admin/src/time-zones.h:292
+#: capplets/time-admin/src/time-zones.h:293
 msgid "Asia/Phnom_Penh"
 msgstr "Азија/Пном_Пен"
 
-#: capplets/time-admin/src/time-zones.h:293
+#: capplets/time-admin/src/time-zones.h:294
 msgid "Asia/Pontianak"
 msgstr "Азија/Понтијанак"
 
-#: capplets/time-admin/src/time-zones.h:294
+#: capplets/time-admin/src/time-zones.h:295
 msgid "Asia/Pyongyang"
 msgstr "Азија/Пјонгјанг"
 
-#: capplets/time-admin/src/time-zones.h:295
+#: capplets/time-admin/src/time-zones.h:296
 msgid "Asia/Qatar"
 msgstr "Азија/Катар"
 
-#: capplets/time-admin/src/time-zones.h:296
+#: capplets/time-admin/src/time-zones.h:297
 msgid "Asia/Qostanay"
 msgstr "Азија/Костанеј"
 
-#: capplets/time-admin/src/time-zones.h:297
+#: capplets/time-admin/src/time-zones.h:298
 msgid "Asia/Qyzylorda"
 msgstr "Азија/Кизилорда"
 
-#: capplets/time-admin/src/time-zones.h:298
+#: capplets/time-admin/src/time-zones.h:299
 msgid "Asia/Riyadh"
 msgstr "Азија/Ријад"
 
-#: capplets/time-admin/src/time-zones.h:299
+#: capplets/time-admin/src/time-zones.h:300
 msgid "Asia/Sakhalin"
 msgstr "Азија/Сахалин"
 
-#: capplets/time-admin/src/time-zones.h:300
+#: capplets/time-admin/src/time-zones.h:301
 msgid "Asia/Samarkand"
 msgstr "Азија/Самарканд"
 
-#: capplets/time-admin/src/time-zones.h:301
+#: capplets/time-admin/src/time-zones.h:302
 msgid "Asia/Seoul"
 msgstr "Азија/Сеул"
 
-#: capplets/time-admin/src/time-zones.h:302
+#: capplets/time-admin/src/time-zones.h:303
 msgid "Asia/Shanghai"
 msgstr "Азија/Шангај"
 
-#: capplets/time-admin/src/time-zones.h:303
+#: capplets/time-admin/src/time-zones.h:304
 msgid "Asia/Singapore"
 msgstr "Азија/Сингапур"
 
-#: capplets/time-admin/src/time-zones.h:304
+#: capplets/time-admin/src/time-zones.h:305
 msgid "Asia/Srednekolymsk"
 msgstr "Азија/Среднеколимск"
 
-#: capplets/time-admin/src/time-zones.h:305
+#: capplets/time-admin/src/time-zones.h:306
 msgid "Asia/Taipei"
 msgstr "Азија/Тајпеј"
 
-#: capplets/time-admin/src/time-zones.h:306
+#: capplets/time-admin/src/time-zones.h:307
 msgid "Asia/Tashkent"
 msgstr "Азија/Ташкент"
 
-#: capplets/time-admin/src/time-zones.h:307
+#: capplets/time-admin/src/time-zones.h:308
 msgid "Asia/Tbilisi"
 msgstr "Азија/Тбилиси"
 
-#: capplets/time-admin/src/time-zones.h:308
+#: capplets/time-admin/src/time-zones.h:309
 msgid "Asia/Tehran"
 msgstr "Азија/Техеран"
 
-#: capplets/time-admin/src/time-zones.h:309
+#: capplets/time-admin/src/time-zones.h:310
 msgid "Asia/Thimphu"
 msgstr "Азија/Тимпу"
 
-#: capplets/time-admin/src/time-zones.h:310
+#: capplets/time-admin/src/time-zones.h:311
 msgid "Asia/Tokyo"
 msgstr "Азија/Токио"
 
-#: capplets/time-admin/src/time-zones.h:311
+#: capplets/time-admin/src/time-zones.h:312
 msgid "Asia/Tomsk"
 msgstr "Азија/Томск"
 
-#: capplets/time-admin/src/time-zones.h:312
+#: capplets/time-admin/src/time-zones.h:313
 msgid "Asia/Ulaanbaatar"
 msgstr "Азија/Уланбатар"
 
-#: capplets/time-admin/src/time-zones.h:313
+#: capplets/time-admin/src/time-zones.h:314
 msgid "Asia/Urumqi"
 msgstr "Азија/Урумчи"
 
-#: capplets/time-admin/src/time-zones.h:314
+#: capplets/time-admin/src/time-zones.h:315
 msgid "Asia/Ust-Nera"
 msgstr "Азија/Уст-Нера"
 
-#: capplets/time-admin/src/time-zones.h:315
+#: capplets/time-admin/src/time-zones.h:316
 msgid "Asia/Vientiane"
 msgstr "Азија/Вијентијан"
 
-#: capplets/time-admin/src/time-zones.h:316
+#: capplets/time-admin/src/time-zones.h:317
 msgid "Asia/Vladivostok"
 msgstr "Азија/Владивосток"
 
-#: capplets/time-admin/src/time-zones.h:317
+#: capplets/time-admin/src/time-zones.h:318
 msgid "Asia/Yakutsk"
 msgstr "Азија/Јакутск"
 
-#: capplets/time-admin/src/time-zones.h:318
+#: capplets/time-admin/src/time-zones.h:319
 msgid "Asia/Yangon"
 msgstr "Азија/Јангон"
 
-#: capplets/time-admin/src/time-zones.h:319
+#: capplets/time-admin/src/time-zones.h:320
 msgid "Asia/Yekaterinburg"
 msgstr "Азија/Јекатеринбург"
 
-#: capplets/time-admin/src/time-zones.h:320
+#: capplets/time-admin/src/time-zones.h:321
 msgid "Asia/Yerevan"
 msgstr "Азија/Јереван"
 
-#: capplets/time-admin/src/time-zones.h:321
+#: capplets/time-admin/src/time-zones.h:322
 msgid "Atlantic/Azores"
 msgstr "Атлантик/Азори"
 
-#: capplets/time-admin/src/time-zones.h:322
+#: capplets/time-admin/src/time-zones.h:323
 msgid "Atlantic/Bermuda"
 msgstr "Атлантик/Бермуде"
 
-#: capplets/time-admin/src/time-zones.h:323
+#: capplets/time-admin/src/time-zones.h:324
 msgid "Atlantic/Canary"
 msgstr "Атлантик/Канарска_острва"
 
-#: capplets/time-admin/src/time-zones.h:324
+#: capplets/time-admin/src/time-zones.h:325
 msgid "Atlantic/Cape_Verde"
 msgstr "Атлантик/Кејп_Верде"
 
-#: capplets/time-admin/src/time-zones.h:325
+#: capplets/time-admin/src/time-zones.h:326
 msgid "Atlantic/Faroe"
 msgstr "Атлантик/Фарска_острва"
 
-#: capplets/time-admin/src/time-zones.h:326
+#: capplets/time-admin/src/time-zones.h:327
 msgid "Atlantic/Madeira"
 msgstr "Атлантик/Мадеира"
 
-#: capplets/time-admin/src/time-zones.h:327
+#: capplets/time-admin/src/time-zones.h:328
 msgid "Atlantic/Reykjavik"
 msgstr "Атлантик/Рејкјавик"
 
-#: capplets/time-admin/src/time-zones.h:328
+#: capplets/time-admin/src/time-zones.h:329
 msgid "Atlantic/South_Georgia"
 msgstr "Атлантик/Јужна_Џорџија"
 
-#: capplets/time-admin/src/time-zones.h:329
+#: capplets/time-admin/src/time-zones.h:330
 msgid "Atlantic/Stanley"
 msgstr "Атлантик/Стенли"
 
-#: capplets/time-admin/src/time-zones.h:330
+#: capplets/time-admin/src/time-zones.h:331
 msgid "Atlantic/St_Helena"
 msgstr "Атлантик/Св_Хелена"
 
-#: capplets/time-admin/src/time-zones.h:331
+#: capplets/time-admin/src/time-zones.h:332
 msgid "Australia/Adelaide"
 msgstr "Аустралија/Аделејд"
 
-#: capplets/time-admin/src/time-zones.h:332
+#: capplets/time-admin/src/time-zones.h:333
 msgid "Australia/Brisbane"
 msgstr "Аустралија/Бризбејн"
 
-#: capplets/time-admin/src/time-zones.h:333
+#: capplets/time-admin/src/time-zones.h:334
 msgid "Australia/Broken_Hill"
 msgstr "Аустралија/Брокен_Хил"
 
-#: capplets/time-admin/src/time-zones.h:334
+#: capplets/time-admin/src/time-zones.h:335
 msgid "Australia/Currie"
 msgstr "Аустралија/Кјури"
 
-#: capplets/time-admin/src/time-zones.h:335
+#: capplets/time-admin/src/time-zones.h:336
 msgid "Australia/Darwin"
 msgstr "Аустралија/Дарвин"
 
-#: capplets/time-admin/src/time-zones.h:336
+#: capplets/time-admin/src/time-zones.h:337
 msgid "Australia/Eucla"
 msgstr "Аустралија/Јукла"
 
-#: capplets/time-admin/src/time-zones.h:337
+#: capplets/time-admin/src/time-zones.h:338
 msgid "Australia/Hobart"
 msgstr "Аустралија/Хобарт"
 
-#: capplets/time-admin/src/time-zones.h:338
+#: capplets/time-admin/src/time-zones.h:339
 msgid "Australia/Lindeman"
 msgstr "Аустралија/Линдеман"
 
-#: capplets/time-admin/src/time-zones.h:339
+#: capplets/time-admin/src/time-zones.h:340
 msgid "Australia/Lord_Howe"
 msgstr "Аустралија/Лорд_Хоу"
 
-#: capplets/time-admin/src/time-zones.h:340
+#: capplets/time-admin/src/time-zones.h:341
 msgid "Australia/Melbourne"
 msgstr "Аустралија/Мелбурн"
 
-#: capplets/time-admin/src/time-zones.h:341
+#: capplets/time-admin/src/time-zones.h:342
 msgid "Australia/Perth"
 msgstr "Аустралија/Перт"
 
-#: capplets/time-admin/src/time-zones.h:342
+#: capplets/time-admin/src/time-zones.h:343
 msgid "Australia/Sydney"
 msgstr "Аустралија/Сиднеј"
 
-#: capplets/time-admin/src/time-zones.h:343
+#: capplets/time-admin/src/time-zones.h:344
 msgid "Europe/Amsterdam"
 msgstr "Европа/Амстердам"
 
-#: capplets/time-admin/src/time-zones.h:344
+#: capplets/time-admin/src/time-zones.h:345
 msgid "Europe/Andorra"
 msgstr "Европа/Андора"
 
-#: capplets/time-admin/src/time-zones.h:345
+#: capplets/time-admin/src/time-zones.h:346
 msgid "Europe/Astrakhan"
 msgstr "Европа/Астрахан"
 
-#: capplets/time-admin/src/time-zones.h:346
+#: capplets/time-admin/src/time-zones.h:347
 msgid "Europe/Athens"
 msgstr "Европа/Атина"
 
-#: capplets/time-admin/src/time-zones.h:347
+#: capplets/time-admin/src/time-zones.h:348
 msgid "Europe/Belgrade"
 msgstr "Европа/Београд"
 
-#: capplets/time-admin/src/time-zones.h:348
+#: capplets/time-admin/src/time-zones.h:349
 msgid "Europe/Berlin"
 msgstr "Европа/Берлин"
 
-#: capplets/time-admin/src/time-zones.h:349
+#: capplets/time-admin/src/time-zones.h:350
 msgid "Europe/Bratislava"
 msgstr "Европа/Братислава"
 
-#: capplets/time-admin/src/time-zones.h:350
+#: capplets/time-admin/src/time-zones.h:351
 msgid "Europe/Brussels"
 msgstr "Европа/Брисел"
 
-#: capplets/time-admin/src/time-zones.h:351
+#: capplets/time-admin/src/time-zones.h:352
 msgid "Europe/Bucharest"
 msgstr "Европа/Букурешт"
 
-#: capplets/time-admin/src/time-zones.h:352
+#: capplets/time-admin/src/time-zones.h:353
 msgid "Europe/Budapest"
 msgstr "Европа/Будимпешта"
 
-#: capplets/time-admin/src/time-zones.h:353
+#: capplets/time-admin/src/time-zones.h:354
 msgid "Europe/Busingen"
 msgstr "Европа/Базинџен"
 
-#: capplets/time-admin/src/time-zones.h:354
+#: capplets/time-admin/src/time-zones.h:355
 msgid "Europe/Chisinau"
 msgstr "Европа/Кишињев"
 
-#: capplets/time-admin/src/time-zones.h:355
+#: capplets/time-admin/src/time-zones.h:356
 msgid "Europe/Copenhagen"
 msgstr "Европа/Копенхаген"
 
-#: capplets/time-admin/src/time-zones.h:356
+#: capplets/time-admin/src/time-zones.h:357
 msgid "Europe/Dublin"
 msgstr "Европа/Даблин"
 
-#: capplets/time-admin/src/time-zones.h:357
+#: capplets/time-admin/src/time-zones.h:358
 msgid "Europe/Gibraltar"
 msgstr "Европа/Гибралтар"
 
-#: capplets/time-admin/src/time-zones.h:358
+#: capplets/time-admin/src/time-zones.h:359
 msgid "Europe/Guernsey"
 msgstr "Европа/Гернзи"
 
-#: capplets/time-admin/src/time-zones.h:359
+#: capplets/time-admin/src/time-zones.h:360
 msgid "Europe/Helsinki"
 msgstr "Европа/Хелсинки"
 
-#: capplets/time-admin/src/time-zones.h:360
+#: capplets/time-admin/src/time-zones.h:361
 msgid "Europe/Isle_of_Man"
 msgstr "Европа/Острво Ман"
 
-#: capplets/time-admin/src/time-zones.h:361
+#: capplets/time-admin/src/time-zones.h:362
 msgid "Europe/Istanbul"
 msgstr "Европа/Цариград"
 
-#: capplets/time-admin/src/time-zones.h:362
+#: capplets/time-admin/src/time-zones.h:363
 msgid "Europe/Jersey"
 msgstr "Европа/Џерзи"
 
-#: capplets/time-admin/src/time-zones.h:363
+#: capplets/time-admin/src/time-zones.h:364
 msgid "Europe/Kaliningrad"
 msgstr "Европа/Калињинград"
 
-#: capplets/time-admin/src/time-zones.h:364
+#: capplets/time-admin/src/time-zones.h:365
 msgid "Europe/Kiev"
 msgstr "Европа/Кијев"
 
-#: capplets/time-admin/src/time-zones.h:365
+#: capplets/time-admin/src/time-zones.h:366
 msgid "Europe/Kirov"
 msgstr "Европа/Киров"
 
-#: capplets/time-admin/src/time-zones.h:366
+#: capplets/time-admin/src/time-zones.h:367
 msgid "Europe/Lisbon"
 msgstr "Европа/Лисабон"
 
-#: capplets/time-admin/src/time-zones.h:367
+#: capplets/time-admin/src/time-zones.h:368
 msgid "Europe/Ljubljana"
 msgstr "Европа/Љубљана"
 
-#: capplets/time-admin/src/time-zones.h:368
+#: capplets/time-admin/src/time-zones.h:369
 msgid "Europe/London"
 msgstr "Европа/Лондон"
 
-#: capplets/time-admin/src/time-zones.h:369
+#: capplets/time-admin/src/time-zones.h:370
 msgid "Europe/Luxembourg"
 msgstr "Европа/Луксембург"
 
-#: capplets/time-admin/src/time-zones.h:370
+#: capplets/time-admin/src/time-zones.h:371
 msgid "Europe/Madrid"
 msgstr "Европа/Мадрид"
 
-#: capplets/time-admin/src/time-zones.h:371
+#: capplets/time-admin/src/time-zones.h:372
 msgid "Europe/Malta"
 msgstr "Европа/Малта"
 
-#: capplets/time-admin/src/time-zones.h:372
+#: capplets/time-admin/src/time-zones.h:373
 msgid "Europe/Mariehamn"
 msgstr "Европа/Маријехамн"
 
-#: capplets/time-admin/src/time-zones.h:373
+#: capplets/time-admin/src/time-zones.h:374
 msgid "Europe/Minsk"
 msgstr "Европа/Минск"
 
-#: capplets/time-admin/src/time-zones.h:374
+#: capplets/time-admin/src/time-zones.h:375
 msgid "Europe/Monaco"
 msgstr "Европа/Монако"
 
-#: capplets/time-admin/src/time-zones.h:375
+#: capplets/time-admin/src/time-zones.h:376
 msgid "Europe/Moscow"
 msgstr "Европа/Москва"
 
-#: capplets/time-admin/src/time-zones.h:376
+#: capplets/time-admin/src/time-zones.h:377
 msgid "Europe/Oslo"
 msgstr "Европа/Осло"
 
-#: capplets/time-admin/src/time-zones.h:377
+#: capplets/time-admin/src/time-zones.h:378
 msgid "Europe/Paris"
 msgstr "Европа/Париз"
 
-#: capplets/time-admin/src/time-zones.h:378
+#: capplets/time-admin/src/time-zones.h:379
 msgid "Europe/Podgorica"
 msgstr "Европа/Подгорица"
 
-#: capplets/time-admin/src/time-zones.h:379
+#: capplets/time-admin/src/time-zones.h:380
 msgid "Europe/Prague"
 msgstr "Европа/Праг"
 
-#: capplets/time-admin/src/time-zones.h:380
+#: capplets/time-admin/src/time-zones.h:381
 msgid "Europe/Riga"
 msgstr "Европа/Рига"
 
-#: capplets/time-admin/src/time-zones.h:381
+#: capplets/time-admin/src/time-zones.h:382
 msgid "Europe/Rome"
 msgstr "Европа/Рим"
 
-#: capplets/time-admin/src/time-zones.h:382
+#: capplets/time-admin/src/time-zones.h:383
 msgid "Europe/Samara"
 msgstr "Европа/Самара"
 
-#: capplets/time-admin/src/time-zones.h:383
+#: capplets/time-admin/src/time-zones.h:384
 msgid "Europe/San_Marino"
 msgstr "Европа/Сан_Марино"
 
-#: capplets/time-admin/src/time-zones.h:384
+#: capplets/time-admin/src/time-zones.h:385
 msgid "Europe/Sarajevo"
 msgstr "Европа/Сарајево"
 
-#: capplets/time-admin/src/time-zones.h:385
+#: capplets/time-admin/src/time-zones.h:386
 msgid "Europe/Saratov"
 msgstr "Европа/Саратов"
 
-#: capplets/time-admin/src/time-zones.h:386
+#: capplets/time-admin/src/time-zones.h:387
 msgid "Europe/Simferopol"
 msgstr "Европа/Симферопољ"
 
-#: capplets/time-admin/src/time-zones.h:387
+#: capplets/time-admin/src/time-zones.h:388
 msgid "Europe/Skopje"
 msgstr "Европа/Скопље"
 
-#: capplets/time-admin/src/time-zones.h:388
+#: capplets/time-admin/src/time-zones.h:389
 msgid "Europe/Sofia"
 msgstr "Европа/Софија"
 
-#: capplets/time-admin/src/time-zones.h:389
+#: capplets/time-admin/src/time-zones.h:390
 msgid "Europe/Stockholm"
 msgstr "Европа/Стокхолм"
 
-#: capplets/time-admin/src/time-zones.h:390
+#: capplets/time-admin/src/time-zones.h:391
 msgid "Europe/Tallinn"
 msgstr "Европа/Талин"
 
-#: capplets/time-admin/src/time-zones.h:391
+#: capplets/time-admin/src/time-zones.h:392
 msgid "Europe/Tirane"
 msgstr "Европа/Тирана"
 
-#: capplets/time-admin/src/time-zones.h:392
+#: capplets/time-admin/src/time-zones.h:393
 msgid "Europe/Ulyanovsk"
 msgstr "Европа/Уљановск"
 
-#: capplets/time-admin/src/time-zones.h:393
+#: capplets/time-admin/src/time-zones.h:394
 msgid "Europe/Uzhgorod"
 msgstr "Европа/Ужгород"
 
-#: capplets/time-admin/src/time-zones.h:394
+#: capplets/time-admin/src/time-zones.h:395
 msgid "Europe/Vaduz"
 msgstr "Европа/Вадуз"
 
-#: capplets/time-admin/src/time-zones.h:395
+#: capplets/time-admin/src/time-zones.h:396
 msgid "Europe/Vatican"
 msgstr "Европа/Ватикан"
 
-#: capplets/time-admin/src/time-zones.h:396
+#: capplets/time-admin/src/time-zones.h:397
 msgid "Europe/Vienna"
 msgstr "Европа/Беч"
 
-#: capplets/time-admin/src/time-zones.h:397
+#: capplets/time-admin/src/time-zones.h:398
 msgid "Europe/Vilnius"
 msgstr "Европа/Вилнијус"
 
-#: capplets/time-admin/src/time-zones.h:398
+#: capplets/time-admin/src/time-zones.h:399
 msgid "Europe/Volgograd"
 msgstr "Европа/Волгоград"
 
-#: capplets/time-admin/src/time-zones.h:399
+#: capplets/time-admin/src/time-zones.h:400
 msgid "Europe/Warsaw"
 msgstr "Европа/Варшава"
 
-#: capplets/time-admin/src/time-zones.h:400
+#: capplets/time-admin/src/time-zones.h:401
 msgid "Europe/Zagreb"
 msgstr "Европа/Загреб"
 
-#: capplets/time-admin/src/time-zones.h:401
+#: capplets/time-admin/src/time-zones.h:402
 msgid "Europe/Zaporozhye"
 msgstr "Европа/Запорожје"
 
-#: capplets/time-admin/src/time-zones.h:402
+#: capplets/time-admin/src/time-zones.h:403
 msgid "Europe/Zurich"
 msgstr "Европа/Цирих"
 
-#: capplets/time-admin/src/time-zones.h:403
+#: capplets/time-admin/src/time-zones.h:404
 msgid "Indian/Antananarivo"
 msgstr "Индијски_океан/Антананариво"
 
-#: capplets/time-admin/src/time-zones.h:404
+#: capplets/time-admin/src/time-zones.h:405
 msgid "Indian/Chagos"
 msgstr "Индијски_океан/Чагос"
 
-#: capplets/time-admin/src/time-zones.h:405
+#: capplets/time-admin/src/time-zones.h:406
 msgid "Indian/Christmas"
 msgstr "Индијски_океан/Божићна_острва"
 
-#: capplets/time-admin/src/time-zones.h:406
+#: capplets/time-admin/src/time-zones.h:407
 msgid "Indian/Cocos"
 msgstr "Индијски_океан/Кокос"
 
-#: capplets/time-admin/src/time-zones.h:407
+#: capplets/time-admin/src/time-zones.h:408
 msgid "Indian/Comoro"
 msgstr "Индијски_океан/Коморо"
 
-#: capplets/time-admin/src/time-zones.h:408
+#: capplets/time-admin/src/time-zones.h:409
 msgid "Indian/Kerguelen"
 msgstr "Индијски_океан/Кергулен"
 
-#: capplets/time-admin/src/time-zones.h:409
+#: capplets/time-admin/src/time-zones.h:410
 msgid "Indian/Mahe"
 msgstr "Индијски_океан/Махе"
 
-#: capplets/time-admin/src/time-zones.h:410
+#: capplets/time-admin/src/time-zones.h:411
 msgid "Indian/Maldives"
 msgstr "Индијски_океан/Малдиви"
 
-#: capplets/time-admin/src/time-zones.h:411
+#: capplets/time-admin/src/time-zones.h:412
 msgid "Indian/Mauritius"
 msgstr "Индијски_океан/Маурицијус"
 
-#: capplets/time-admin/src/time-zones.h:412
+#: capplets/time-admin/src/time-zones.h:413
 msgid "Indian/Mayotte"
 msgstr "Индијски_океан/Мајот"
 
-#: capplets/time-admin/src/time-zones.h:413
+#: capplets/time-admin/src/time-zones.h:414
 msgid "Indian/Reunion"
 msgstr "Индијски_океан/Реунион"
 
-#: capplets/time-admin/src/time-zones.h:414
+#: capplets/time-admin/src/time-zones.h:415
 msgid "Pacific/Apia"
 msgstr "Пацифик/Апиа"
 
-#: capplets/time-admin/src/time-zones.h:415
+#: capplets/time-admin/src/time-zones.h:416
 msgid "Pacific/Auckland"
 msgstr "Пацифик/Окленд"
 
-#: capplets/time-admin/src/time-zones.h:416
+#: capplets/time-admin/src/time-zones.h:417
 msgid "Pacific/Bougainville"
 msgstr "Пацифик/Бугенвиј"
 
-#: capplets/time-admin/src/time-zones.h:417
+#: capplets/time-admin/src/time-zones.h:418
 msgid "Pacific/Chatham"
 msgstr "Пацифик/Чатам"
 
-#: capplets/time-admin/src/time-zones.h:418
+#: capplets/time-admin/src/time-zones.h:419
 msgid "Pacific/Chuuk"
 msgstr "Пацифик/Чуук"
 
-#: capplets/time-admin/src/time-zones.h:419
+#: capplets/time-admin/src/time-zones.h:420
 msgid "Pacific/Easter"
 msgstr "Пацифик/Ускршње_острво"
 
-#: capplets/time-admin/src/time-zones.h:420
+#: capplets/time-admin/src/time-zones.h:421
 msgid "Pacific/Efate"
 msgstr "Пацифик/Ефате"
 
-#: capplets/time-admin/src/time-zones.h:421
+#: capplets/time-admin/src/time-zones.h:422
 msgid "Pacific/Enderbury"
 msgstr "Пацифик/Ендербури"
 
-#: capplets/time-admin/src/time-zones.h:422
+#: capplets/time-admin/src/time-zones.h:423
 msgid "Pacific/Fakaofo"
 msgstr "Пацифик/Факаофо"
 
-#: capplets/time-admin/src/time-zones.h:423
+#: capplets/time-admin/src/time-zones.h:424
 msgid "Pacific/Fiji"
 msgstr "Пацифик/Фиџи"
 
-#: capplets/time-admin/src/time-zones.h:424
+#: capplets/time-admin/src/time-zones.h:425
 msgid "Pacific/Funafuti"
 msgstr "Пацифик/Фунафути"
 
-#: capplets/time-admin/src/time-zones.h:425
+#: capplets/time-admin/src/time-zones.h:426
 msgid "Pacific/Galapagos"
 msgstr "Пацифик/Галапагос"
 
-#: capplets/time-admin/src/time-zones.h:426
+#: capplets/time-admin/src/time-zones.h:427
 msgid "Pacific/Gambier"
 msgstr "Пацифик/Гамбије"
 
-#: capplets/time-admin/src/time-zones.h:427
+#: capplets/time-admin/src/time-zones.h:428
 msgid "Pacific/Guadalcanal"
 msgstr "Пацифик/Гвадалканал"
 
-#: capplets/time-admin/src/time-zones.h:428
+#: capplets/time-admin/src/time-zones.h:429
 msgid "Pacific/Guam"
 msgstr "Пацифик/Гуам"
 
-#: capplets/time-admin/src/time-zones.h:429
+#: capplets/time-admin/src/time-zones.h:430
 msgid "Pacific/Honolulu"
 msgstr "Пацифик/Хонолулу"
 
-#: capplets/time-admin/src/time-zones.h:430
+#: capplets/time-admin/src/time-zones.h:431
 msgid "Pacific/Kiritimati"
 msgstr "Пацифик/Киритимати"
 
-#: capplets/time-admin/src/time-zones.h:431
+#: capplets/time-admin/src/time-zones.h:432
 msgid "Pacific/Kosrae"
 msgstr "Пацифик/Косре"
 
-#: capplets/time-admin/src/time-zones.h:432
+#: capplets/time-admin/src/time-zones.h:433
 msgid "Pacific/Kwajalein"
 msgstr "Пацифик/Кваџалин"
 
-#: capplets/time-admin/src/time-zones.h:433
+#: capplets/time-admin/src/time-zones.h:434
 msgid "Pacific/Majuro"
 msgstr "Пацифик/Маџуро"
 
-#: capplets/time-admin/src/time-zones.h:434
+#: capplets/time-admin/src/time-zones.h:435
 msgid "Pacific/Marquesas"
 msgstr "Пацифик/Маркиз"
 
-#: capplets/time-admin/src/time-zones.h:435
+#: capplets/time-admin/src/time-zones.h:436
 msgid "Pacific/Midway"
 msgstr "Пацифик/Мидвеј"
 
-#: capplets/time-admin/src/time-zones.h:436
+#: capplets/time-admin/src/time-zones.h:437
 msgid "Pacific/Nauru"
 msgstr "Пацифик/Науру"
 
-#: capplets/time-admin/src/time-zones.h:437
+#: capplets/time-admin/src/time-zones.h:438
 msgid "Pacific/Niue"
 msgstr "Пацифик/Ниуе"
 
-#: capplets/time-admin/src/time-zones.h:438
+#: capplets/time-admin/src/time-zones.h:439
 msgid "Pacific/Norfolk"
 msgstr "Пацифик/Норфолк"
 
-#: capplets/time-admin/src/time-zones.h:439
+#: capplets/time-admin/src/time-zones.h:440
 msgid "Pacific/Noumea"
 msgstr "Пацифик/Ноумеа"
 
-#: capplets/time-admin/src/time-zones.h:440
+#: capplets/time-admin/src/time-zones.h:441
 msgid "Pacific/Pago_Pago"
 msgstr "Пацифик/Паго_Паго"
 
-#: capplets/time-admin/src/time-zones.h:441
+#: capplets/time-admin/src/time-zones.h:442
 msgid "Pacific/Palau"
 msgstr "Пацифик/Палау"
 
-#: capplets/time-admin/src/time-zones.h:442
+#: capplets/time-admin/src/time-zones.h:443
 msgid "Pacific/Pitcairn"
 msgstr "Пацифик/Питкаирн"
 
-#: capplets/time-admin/src/time-zones.h:443
+#: capplets/time-admin/src/time-zones.h:444
 msgid "Pacific/Pohnpei"
 msgstr "Пацифик/Понпеј"
 
-#: capplets/time-admin/src/time-zones.h:444
+#: capplets/time-admin/src/time-zones.h:445
 msgid "Pacific/Port_Moresby"
 msgstr "Пацифик/Порт_Морезби"
 
-#: capplets/time-admin/src/time-zones.h:445
+#: capplets/time-admin/src/time-zones.h:446
 msgid "Pacific/Rarotonga"
 msgstr "Пацифик/Раротонга"
 
-#: capplets/time-admin/src/time-zones.h:446
+#: capplets/time-admin/src/time-zones.h:447
 msgid "Pacific/Saipan"
 msgstr "Пацифик/Саипан"
 
-#: capplets/time-admin/src/time-zones.h:447
+#: capplets/time-admin/src/time-zones.h:448
 msgid "Pacific/Tahiti"
 msgstr "Пацифик/Тахити"
 
-#: capplets/time-admin/src/time-zones.h:448
+#: capplets/time-admin/src/time-zones.h:449
 msgid "Pacific/Tarawa"
 msgstr "Пацифик/Тарава"
 
-#: capplets/time-admin/src/time-zones.h:449
+#: capplets/time-admin/src/time-zones.h:450
 msgid "Pacific/Tongatapu"
 msgstr "Пацифик/Тонгатапу"
 
-#: capplets/time-admin/src/time-zones.h:450
+#: capplets/time-admin/src/time-zones.h:451
 msgid "Pacific/Wake"
 msgstr "Пацифик/Вејк"
 
-#: capplets/time-admin/src/time-zones.h:451
+#: capplets/time-admin/src/time-zones.h:452
 msgid "Pacific/Wallis"
 msgstr "Пацифик/Валис"
 
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:3
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:2
 msgid "Time And Date Manager"
 msgstr "Управник времена и датума"
 
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:4
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:3
 msgid "Setting the time and date of the local system"
 msgstr "Подешавање времена и датума локалног система"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: capplets/time-admin/data/cafe-time-admin.desktop.in:13
+#: capplets/time-admin/data/cafe-time-admin.desktop.in:12
 msgid "cafe-control-center;CAFE;clock;date;time;preferences;"
 msgstr "мејтов-управљачки-центар;Мејт;сат;датум;време;поставке;"
 
@@ -4719,8 +4719,8 @@ msgstr "Групе"
 msgid "Common Tasks"
 msgstr "Уобичајни послови"
 
-#: shell/control-center.c:145 shell/cafecc.desktop.in:3
-#: shell/cafecc.directory.desktop.in:3
+#: shell/control-center.c:145 shell/cafecc.desktop.in:2
+#: shell/cafecc.directory.desktop.in:2
 msgid "Control Center"
 msgstr "Управљачки центар"
 
@@ -4728,16 +4728,16 @@ msgstr "Управљачки центар"
 msgid "Hide on start (useful to preload the shell)"
 msgstr "Сакриј по пријави (корисно за преучитавање љуске)"
 
-#: shell/cafecc.desktop.in:4
+#: shell/cafecc.desktop.in:3
 msgid "The CAFE configuration tool"
 msgstr "Мејтов алат за подешавања"
 
-#: shell/cafecc.desktop.in:5
+#: shell/cafecc.desktop.in:4
 msgid "Configure CAFE settings"
 msgstr "Уредите Мејтова подешавања"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: shell/cafecc.desktop.in:14
+#: shell/cafecc.desktop.in:13
 msgid "CAFE;control;center;configuration;tool;desktop;preferences;"
 msgstr "Мејт;управљање;центар;подешавање;алат;радна површ;поставке;"
 
@@ -4878,20 +4878,20 @@ msgstr "Сви фонтови"
 msgid "Font Viewer"
 msgstr "Прегледач словног лика"
 
-#: font-viewer/font-view.c:784 font-viewer/cafe-font-viewer.desktop.in:4
+#: font-viewer/font-view.c:784 font-viewer/cafe-font-viewer.desktop.in:3
 msgid "View fonts on your system"
 msgstr "Прегледајте фонтове на вашем систему"
 
-#: font-viewer/cafe-font-viewer.desktop.in:3
+#: font-viewer/cafe-font-viewer.desktop.in:2
 msgid "CAFE Font Viewer"
 msgstr "Мејтов прегледач фонтова"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: font-viewer/cafe-font-viewer.desktop.in:14
+#: font-viewer/cafe-font-viewer.desktop.in:13
 msgid "cafe-control-center;CAFE;font;viewer;preview;desktop;preferences;"
 msgstr ""
-"мејтов-управљачки-центар;Мејт;фонт;прегледач;претпреглед;радна површ;"
-"поставке;"
+"мејтов-управљачки-центар;Мејт;фонт;прегледач;претпреглед;радна "
+"површ;поставке;"
 
 #: font-viewer/font-thumbnailer.c:191
 msgid "Text to thumbnail (default: Aa)"
