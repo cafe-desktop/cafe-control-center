@@ -1,3 +1,16 @@
+### cafe-control-center 2.0.0
+
+  * ci: some improvements
+  * time-admin: update copyright
+  * rename csd- > csd_
+  * rename mcc -> ccc
+  * cafe-about-me-password: reduce the scope of variable
+  * show icons in buttons and menus
+  * xrandr-capplet: Fix error -Wincompatible-pointer-types
+  * theme-installer: avoid deprecated 'g_pattern_match_string'
+  * update translations
+
+
 ### cafe-control-center 1.25.1
 
   * port from libcanberra to libkanberra
@@ -6,6 +19,7 @@
   * xrandr-capplet: remove unused struct member
   * appearance-themes: reduce the scope of some variables
   * cafe-keybinding-properties: Fix -Wsign-compare warning
+
 
 ### cafe-control-center 1.25.0
 
