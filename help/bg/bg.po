@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-10-10 11:10+0200\n"
+"POT-Creation-Date: 2026-01-01 17:17+0100\n"
 "PO-Revision-Date: 2020-02-15 13:21+0000\n"
 "Last-Translator: Wolfgang Ulbrich <cafe@raveit.de>, 2020\n"
 "Language-Team: Bulgarian (https://www.transifex.com/cafe/teams/13566/bg/)\n"
@@ -90,6 +90,75 @@ msgstr ""
 msgid "<revnumber>2.14</revnumber> <date>March 2006</date>"
 msgstr ""
 
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"help:fdl\">link</ulink> or in "
+"the file COPYING-DOCS distributed with this manual."
+msgstr ""
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
+msgid ""
+"This manual is part of a collection of CAFE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:70
 msgid "This manual describes version 1.10.1 of the CAFE Control Center."
@@ -126,8 +195,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:88
 msgid ""
-"For help on using preference tools, see the <ulink type=\"help\" url=\"help:"
-"cafe-user-guide/prefs\">User Guide</ulink>."
+"For help on using preference tools, see the <ulink type=\"help\" "
+"url=\"help:cafe-user-guide/prefs\">User Guide</ulink>."
 msgstr ""
 
 #. (itstool) path: sect2/title
@@ -320,8 +389,8 @@ msgstr ""
 #: C/config-background.xml:29
 msgid ""
 "The top of the window shows you a small version of the selected background. "
-"Below are boxes which let you select what mode your background uses: <_:"
-"variablelist-1/>"
+"Below are boxes which let you select what mode your background uses: "
+"<_:variablelist-1/>"
 msgstr ""
 
 #. (itstool) path: sect2/para
@@ -398,8 +467,8 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-background.xml:100
 msgid ""
-"To configure a backgrond, choose one of the following steps: <_:"
-"orderedlist-1/>"
+"To configure a backgrond, choose one of the following steps: "
+"<_:orderedlist-1/>"
 msgstr ""
 
 #. (itstool) path: sect1/title
@@ -532,8 +601,8 @@ msgstr "Допълнителни"
 #: C/config-cds.xml:3
 msgid ""
 "Cafe can play your CDs on your computer. You can setup you CD preferences in "
-"the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the <_:"
-"application-3/>."
+"the <_:guibutton-1/> capplet in the <_:guilabel-2/> section of the "
+"<_:application-3/>."
 msgstr ""
 
 #. (itstool) path: sect1/para
@@ -760,11 +829,11 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:51
 msgid ""
-"You can also specify a custom web browser to use by selecting the <_:"
-"guibutton-1/> radio button. Enter the command to execute your browser in the "
-"<_:guilabel-2/> entry area. By clicking <_:guibutton-3/>, the application "
-"will start in a terminal. To do remote commands in <_:application-4/> select "
-"the <_:guibutton-5/> button."
+"You can also specify a custom web browser to use by selecting the "
+"<_:guibutton-1/> radio button. Enter the command to execute your browser in "
+"the <_:guilabel-2/> entry area. By clicking <_:guibutton-3/>, the "
+"application will start in a terminal. To do remote commands in "
+"<_:application-4/> select the <_:guibutton-5/> button."
 msgstr ""
 
 #. (itstool) path: sect2/title
@@ -799,9 +868,9 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-default-apps.xml:71
 msgid ""
-"By default, two help browsers are located in the <_:guilabel-1/> section: <_:"
-"itemizedlist-2/> You can change the default viewer by selecting an item in "
-"the drop-down menu and click <_:guibutton-3/>."
+"By default, two help browsers are located in the <_:guilabel-1/> section: "
+"<_:itemizedlist-2/> You can change the default viewer by selecting an item "
+"in the drop-down menu and click <_:guibutton-3/>."
 msgstr ""
 
 #. (itstool) path: para/guibutton
@@ -892,8 +961,8 @@ msgstr ""
 #: C/config-hints.xml:10
 msgid ""
 "In <_:application-1/>, the startup hints can be configured. This "
-"configuration takes place in the <_:application-2/> capplet of <_:"
-"application-3/>."
+"configuration takes place in the <_:application-2/> capplet of "
+"<_:application-3/>."
 msgstr ""
 
 #. (itstool) path: sect2/title
@@ -991,9 +1060,9 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-html.xml:5
 msgid ""
-"The HTML Viewer capplet allows you to configure preferences for the <_:"
-"application-1/> HTML rendering engine. <_:application-2/> is used in <_:"
-"application-3/>, the <_:application-4/>, and other Cafe applications."
+"The HTML Viewer capplet allows you to configure preferences for the "
+"<_:application-1/> HTML rendering engine. <_:application-2/> is used in "
+"<_:application-3/>, the <_:application-4/>, and other Cafe applications."
 msgstr ""
 
 #. (itstool) path: sect2/title
@@ -1046,8 +1115,8 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-html.xml:55
 msgid ""
-"Configures the fonts to use when you print something on your printer from <_:"
-"application-1/>. <_:variablelist-2/>"
+"Configures the fonts to use when you print something on your printer from "
+"<_:application-1/>. <_:variablelist-2/>"
 msgstr ""
 
 #. (itstool) path: para/application
@@ -1101,12 +1170,12 @@ msgstr "Прозорци"
 #. (itstool) path: sect2/para
 #: C/config-html.xml:101
 msgid ""
-"<_:application-1/> includes three different predefined settings: <_:"
-"itemizedlist-2/> Each of these comes with keybindings that are similar to "
+"<_:application-1/> includes three different predefined settings: "
+"<_:itemizedlist-2/> Each of these comes with keybindings that are similar to "
 "those found in their respective environments. A user coming from Microsoft "
 "<_:application-3/> may find themselves most comfortable in the MS like mode. "
-"To select a preset mode, just select it from the pulldown menu, and click <_:"
-"guibutton-4/>."
+"To select a preset mode, just select it from the pulldown menu, and click "
+"<_:guibutton-4/>."
 msgstr ""
 
 #. (itstool) path: sect2/para
@@ -1187,8 +1256,8 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-html.xml:140
 msgid ""
-"In the <_:guilabel-1/> section, you have the following preferences: <_:"
-"variablelist-2/>"
+"In the <_:guilabel-1/> section, you have the following preferences: "
+"<_:variablelist-2/>"
 msgstr ""
 
 #. (itstool) path: sect1/title
@@ -1558,10 +1627,10 @@ msgstr ""
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:47
 msgid ""
-"That is the purpose of the <_:guilabel-1/> setting: select the <_:"
-"guibutton-2/> button if you are right handed, or the <_:guibutton-3/> button "
-"if you are left handed. When using the setting appropriate to him, the user "
-"has the primary button under his index finger."
+"That is the purpose of the <_:guilabel-1/> setting: select the "
+"<_:guibutton-2/> button if you are right handed, or the <_:guibutton-3/> "
+"button if you are left handed. When using the setting appropriate to him, "
+"the user has the primary button under his index finger."
 msgstr ""
 
 #. (itstool) path: sect3/title
@@ -1577,8 +1646,9 @@ msgstr ""
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:57
 msgid ""
-"Sometimes, the user loses where the pointer is. If he selects the <_:"
-"guibutton-1/>, he can make the pointer reappear by pressing the control key."
+"Sometimes, the user loses where the pointer is. If he selects the "
+"<_:guibutton-1/>, he can make the pointer reappear by pressing the control "
+"key."
 msgstr ""
 
 #. (itstool) path: sect3/title
@@ -1717,11 +1787,11 @@ msgstr "Симулирано повторно натискане"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:132
 msgid ""
-"There are users that can use only one mouse button. By activating the <_:"
-"guilabel-1/>, these users have a direct way to perform secondary clicks with "
-"their unique mouse button. In fact, the secondary click occurs automatically "
-"when the user keeps the primary button pressed for a determined delay "
-"without moving the mouse."
+"There are users that can use only one mouse button. By activating the "
+"<_:guilabel-1/>, these users have a direct way to perform secondary clicks "
+"with their unique mouse button. In fact, the secondary click occurs "
+"automatically when the user keeps the primary button pressed for a "
+"determined delay without moving the mouse."
 msgstr ""
 
 #. (itstool) path: para/guilabel
@@ -1746,8 +1816,8 @@ msgstr "Натискане без бутон"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:148
 msgid ""
-"There are users that cannot use any hardware button. By activating the <_:"
-"guilabel-1/>, they can have the mouse perform the various clicks without "
+"There are users that cannot use any hardware button. By activating the "
+"<_:guilabel-1/>, they can have the mouse perform the various clicks without "
 "pressing any mousebutton. The click types that can be performed are: single "
 "click, double-click, drag click and secondary click."
 msgstr ""
@@ -1793,10 +1863,10 @@ msgstr "Праг на движение"
 #. (itstool) path: sect3/para
 #: C/config-mouse.xml:176
 msgid ""
-"For people that have trouble to keep the mouse motionless, there is the <_:"
-"guilabel-1/> slider. When the slider is set towards low, even little mouse "
-"movements are considered; however, by setting a higher threshold, the mouse "
-"has to traverse a bigger distance before it is considered as moving."
+"For people that have trouble to keep the mouse motionless, there is the "
+"<_:guilabel-1/> slider. When the slider is set towards low, even little "
+"mouse movements are considered; however, by setting a higher threshold, the "
+"mouse has to traverse a bigger distance before it is considered as moving."
 msgstr ""
 
 #. (itstool) path: sect3/para
@@ -1939,9 +2009,9 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/config-screensaver.xml:11
 msgid ""
-"<_:application-1/> uses either the <_:application-2/> or the <_:"
-"application-3/> programs to display screensavers. By default, <_:"
-"application-4/> comes with dozens of screensavers. These can all be "
+"<_:application-1/> uses either the <_:application-2/> or the "
+"<_:application-3/> programs to display screensavers. By default, "
+"<_:application-4/> comes with dozens of screensavers. These can all be "
 "configured in the <_:application-5/> in <_:application-6/>."
 msgstr ""
 
@@ -1976,8 +2046,8 @@ msgstr ""
 #. (itstool) path: sect2/para
 #: C/config-screensaver.xml:22
 msgid ""
-"The <_:application-1/> interface is broken into two main sections: <_:"
-"variablelist-2/>"
+"The <_:application-1/> interface is broken into two main sections: "
+"<_:variablelist-2/>"
 msgstr ""
 
 #. (itstool) path: sect3/title
@@ -2033,8 +2103,8 @@ msgstr ""
 #. (itstool) path: listitem/para
 #: C/config-screensaver.xml:54
 msgid ""
-"You can choose different modes to display your screensaver: <_:"
-"variablelist-1/>"
+"You can choose different modes to display your screensaver: "
+"<_:variablelist-1/>"
 msgstr ""
 
 #. (itstool) path: listitem/para
@@ -2104,8 +2174,8 @@ msgstr ""
 #. (itstool) path: sect3/para
 #: C/config-screensaver.xml:143
 msgid ""
-"Below the preview window are two buttons: <_:guibutton-1/> and <_:"
-"guibutton-2/>."
+"Below the preview window are two buttons: <_:guibutton-1/> and "
+"<_:guibutton-2/>."
 msgstr ""
 
 #. (itstool) path: sect3/para
@@ -2260,8 +2330,8 @@ msgstr ""
 #. (itstool) path: sect1/para
 #: C/config-themes.xml:3
 msgid ""
-"The <_:application-1/> environment is run by <_:application-2/>. <_:"
-"application-3/> allows most elements in your desktop to be themed to the "
+"The <_:application-1/> environment is run by <_:application-2/>. "
+"<_:application-3/> allows most elements in your desktop to be themed to the "
 "look you want. The <_:application-4/> lets you select the theme to use."
 msgstr ""
 
@@ -2328,62 +2398,4 @@ msgid ""
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
 "of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
 "with this manual."
-msgstr ""
-
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:12
-msgid ""
-"This manual is part of a collection of CAFE manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
-msgstr ""
-
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:19
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any CAFE "
-"documentation, and the members of the CAFE Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-
-#. (itstool) path: listitem/para
-#: C/legal.xml:35
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-
-#. (itstool) path: listitem/para
-#: C/legal.xml:55
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-
-#. (itstool) path: legalnotice/para
-#: C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
 msgstr ""
