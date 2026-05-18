@@ -1024,9 +1024,9 @@ add_common_theme_dir_monitor (GFile                      *theme_dir_uri,
   monitor_data->common_theme_dir_handle = monitor;
 
 
-  /* ctk-2 theme subdir */
-  subdir = g_file_get_child (theme_dir_uri, "ctk-2.0");
-  uri = g_file_get_child (subdir, "ctkrc");
+  /* ctk-3 theme subdir */
+  subdir = g_file_get_child (theme_dir_uri, "ctk-3.0");
+  uri = g_file_get_child (subdir, "ctk.css");
   if (g_file_query_exists (uri, NULL)) {
     update_ctk2_index (uri, monitor_data->priority);
   }
