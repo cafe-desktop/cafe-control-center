@@ -216,18 +216,18 @@ add_slideshow_frame (CdkPixbuf *pixbuf)
   w = cdk_pixbuf_get_width (pixbuf);
   h = cdk_pixbuf_get_height (pixbuf);
 
-  sheet = cdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+  sheet = cdk_pixbuf_new (CDK_COLORSPACE_RGB, FALSE, 8, w, h);
   cdk_pixbuf_fill (sheet, 0x00000000);
   sheet2 = cdk_pixbuf_new_subpixbuf (sheet, 1, 1, w - 2, h - 2);
   cdk_pixbuf_fill (sheet2, 0xffffffff);
   g_object_unref (sheet2);
 
-  tmp = cdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
+  tmp = cdk_pixbuf_new (CDK_COLORSPACE_RGB, TRUE, 8, w + 6, h + 6);
 
   cdk_pixbuf_fill (tmp, 0x00000000);
-  cdk_pixbuf_composite (sheet, tmp, 6, 6, w, h, 6.0, 6.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
-  cdk_pixbuf_composite (sheet, tmp, 3, 3, w, h, 3.0, 3.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
-  cdk_pixbuf_composite (pixbuf, tmp, 0, 0, w, h, 0.0, 0.0, 1.0, 1.0, GDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_composite (sheet, tmp, 6, 6, w, h, 6.0, 6.0, 1.0, 1.0, CDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_composite (sheet, tmp, 3, 3, w, h, 3.0, 3.0, 1.0, 1.0, CDK_INTERP_NEAREST, 255);
+  cdk_pixbuf_composite (pixbuf, tmp, 0, 0, w, h, 0.0, 0.0, 1.0, 1.0, CDK_INTERP_NEAREST, 255);
 
   g_object_unref (sheet);
 

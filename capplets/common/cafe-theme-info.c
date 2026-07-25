@@ -523,7 +523,7 @@ cdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
   }
 
   pixbuf = cdk_pixbuf_new_from_data ((const guchar *) buf,
-                        GDK_COLORSPACE_RGB, TRUE, 8,
+                        CDK_COLORSPACE_RGB, TRUE, 8,
                         cursor->width, cursor->height,
                         cursor->width * 4,
                         (CdkPixbufDestroyNotify) g_free,
