@@ -1,3 +1,8 @@
+### cafe-control-center 2.1.0
+
+  * port from GdkPixbuf to CdkPixbuf
+
+
 ### cafe-control-center 2.0.0
 
   * ci: some improvements
