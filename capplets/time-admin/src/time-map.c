@@ -159,7 +159,7 @@ cc_timezone_map_size_allocate (CtkWidget     *widget,
                                CtkAllocation *allocation)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
-    GdkPixbuf *pixbuf;
+    CdkPixbuf *pixbuf;
 
     if (map->background)
         g_object_unref (map->background);
@@ -327,7 +327,7 @@ cc_timezone_map_draw (CtkWidget *widget,
                       cairo_t   *cr)
 {
     TimezoneMap *map = TIMEZONEMAP (widget);
-    g_autoptr(GdkPixbuf) orig_hilight = NULL;
+    g_autoptr(CdkPixbuf) orig_hilight = NULL;
     CtkAllocation alloc;
     g_autofree gchar *file = NULL;
     g_autoptr(GError) err = NULL;
@@ -363,7 +363,7 @@ cc_timezone_map_draw (CtkWidget *widget,
     }
     else
     {
-        g_autoptr(GdkPixbuf) hilight = NULL;
+        g_autoptr(CdkPixbuf) hilight = NULL;
 
         hilight = cdk_pixbuf_scale_simple (orig_hilight, alloc.width,
                                            alloc.height, GDK_INTERP_BILINEAR);
