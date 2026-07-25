@@ -286,7 +286,7 @@ ensure_thumbnails_job (GTask *task,
                 goto next;
             }
 
-            thumb_info->pixbuf = gdk_pixbuf_new_from_stream_at_scale (G_INPUT_STREAM (is),
+            thumb_info->pixbuf = cdk_pixbuf_new_from_stream_at_scale (G_INPUT_STREAM (is),
                                                                       128, 128, TRUE,
                                                                       NULL, &error);
 
