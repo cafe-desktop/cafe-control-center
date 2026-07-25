@@ -5,14 +5,14 @@
 #include <ctk/ctk.h>
 #include "cafe-theme-info.h"
 
-typedef void (* ThemeThumbnailFunc)          (GdkPixbuf          *pixbuf,
+typedef void (* ThemeThumbnailFunc)          (CdkPixbuf          *pixbuf,
                                               gchar              *theme_name,
                                               gpointer            data);
 
-GdkPixbuf *generate_meta_theme_thumbnail     (CafeThemeMetaInfo *theme_info);
-GdkPixbuf *generate_ctk_theme_thumbnail      (CafeThemeInfo     *theme_info);
-GdkPixbuf *generate_croma_theme_thumbnail (CafeThemeInfo     *theme_info);
-GdkPixbuf *generate_icon_theme_thumbnail     (CafeThemeIconInfo *theme_info);
+CdkPixbuf *generate_meta_theme_thumbnail     (CafeThemeMetaInfo *theme_info);
+CdkPixbuf *generate_ctk_theme_thumbnail      (CafeThemeInfo     *theme_info);
+CdkPixbuf *generate_croma_theme_thumbnail (CafeThemeInfo     *theme_info);
+CdkPixbuf *generate_icon_theme_thumbnail     (CafeThemeIconInfo *theme_info);
 
 void generate_meta_theme_thumbnail_async     (CafeThemeMetaInfo *theme_info,
                                               ThemeThumbnailFunc  func,
