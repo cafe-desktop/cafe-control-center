@@ -41,7 +41,7 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 	use_simple = (dest_pixbuf == NULL);
 
 	if (dest_pixbuf == NULL)
-		dest_pixbuf = cdk_pixbuf_new (GDK_COLORSPACE_RGB,
+		dest_pixbuf = cdk_pixbuf_new (CDK_COLORSPACE_RGB,
 					      FALSE, 8,
 					      field_geom->width, field_geom->height);
 
@@ -64,7 +64,7 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 						      MIN (pheight, field_geom->height - cy),
 						      cx, cy,
 						      1.0, 1.0,
-						      GDK_INTERP_BILINEAR,
+						      CDK_INTERP_BILINEAR,
 						      alpha);
 			else if (need_composite && use_simple)
 				cdk_pixbuf_composite_color (src_pixbuf, dest_pixbuf,
@@ -73,7 +73,7 @@ create_tile_pixbuf (CdkPixbuf    *dest_pixbuf,
 							    MIN (pheight, field_geom->height - cy),
 							    cx, cy,
 							    1.0, 1.0,
-							    GDK_INTERP_BILINEAR,
+							    CDK_INTERP_BILINEAR,
 							    alpha,
 							    65536, 65536, 65536,
 							    colorv, colorv);
@@ -163,7 +163,7 @@ set_pixmap_background (CtkWidget *window)
 			      0,
 			      scale,
 			      scale,
-			      GDK_INTERP_NEAREST,
+			      CDK_INTERP_NEAREST,
 			      225);
 
 	g_object_unref (tile_pixbuf);
