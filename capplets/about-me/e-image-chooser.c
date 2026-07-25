@@ -230,16 +230,16 @@ set_image_from_data (EImageChooser *chooser,
 		     char *data, int length)
 {
 	gboolean rv = FALSE;
-	GdkPixbufLoader *loader = gdk_pixbuf_loader_new ();
+	GdkPixbufLoader *loader = cdk_pixbuf_loader_new ();
 	GdkPixbuf *pixbuf;
 	EImageChooserPrivate *priv;
 
 	priv = e_image_chooser_get_instance_private (chooser);
 
-	gdk_pixbuf_loader_write (loader, (guchar *) data, length, NULL);
-	gdk_pixbuf_loader_close (loader, NULL);
+	cdk_pixbuf_loader_write (loader, (guchar *) data, length, NULL);
+	cdk_pixbuf_loader_close (loader, NULL);
 
-	pixbuf = gdk_pixbuf_loader_get_pixbuf (loader);
+	pixbuf = cdk_pixbuf_loader_get_pixbuf (loader);
 	if (pixbuf)
 		g_object_ref (pixbuf);
 	g_object_unref (loader);
@@ -249,7 +249,7 @@ set_image_from_data (EImageChooser *chooser,
 		if (priv->scaleable) {
 			ctk_image_set_from_pixbuf (CTK_IMAGE (priv->image), pixbuf);
 		} else {
-			scaled = gdk_pixbuf_scale_simple (pixbuf,
+			scaled = cdk_pixbuf_scale_simple (pixbuf,
 							  priv->width, priv->height,
 							  GDK_INTERP_BILINEAR);
 

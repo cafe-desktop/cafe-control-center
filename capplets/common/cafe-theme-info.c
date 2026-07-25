@@ -499,7 +499,7 @@ add_default_cursor_theme ()
 }
 
 static GdkPixbuf *
-gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
+cdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 {
   GdkPixbuf *pixbuf;
 #define BUF_SIZE sizeof(guint32) * cursor->width * cursor->height
@@ -522,7 +522,7 @@ gdk_pixbuf_from_xcursor_image (XcursorImage *cursor)
 #endif
   }
 
-  pixbuf = gdk_pixbuf_new_from_data ((const guchar *) buf,
+  pixbuf = cdk_pixbuf_new_from_data ((const guchar *) buf,
                         GDK_COLORSPACE_RGB, TRUE, 8,
                         cursor->width, cursor->height,
                         cursor->width * 4,
@@ -566,7 +566,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
           g_array_append_val (sizes, filter_sizes[i]);
 
           if (thumbnail == NULL && i >= 1)
-            thumbnail = gdk_pixbuf_from_xcursor_image (cursor);
+            thumbnail = cdk_pixbuf_from_xcursor_image (cursor);
         }
 
         XcursorImageDestroy (cursor);
@@ -584,7 +584,7 @@ read_cursor_theme (GFile *cursor_theme_uri)
         cursor = XcursorLibraryLoadImage ("left_ptr", name,
                                           g_array_index (sizes, gint, 0));
         if (cursor) {
-          thumbnail = gdk_pixbuf_from_xcursor_image (cursor);
+          thumbnail = cdk_pixbuf_from_xcursor_image (cursor);
           XcursorImageDestroy (cursor);
         }
       }
