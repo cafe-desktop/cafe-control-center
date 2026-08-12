@@ -1,0 +1,55 @@
+Format: 1.8
+Date: Sat, 25 Jul 2026 12:34:41 +0200
+Source: cafe-control-center
+Binary: cafe-control-center cafe-control-center-common cafe-control-center-dbgsym libcafe-slab-dev libcafe-slab0 libcafe-slab0-dbgsym libcafe-window-settings-dev libcafe-window-settings1 libcafe-window-settings1-dbgsym
+Architecture: all amd64
+Version: 2.1.0-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Pablo Barciela <scow@riseup.net>
+Changed-By: Pablo Barciela <scow@riseup.net>
+Description:
+ cafe-control-center - utilities to configure the CAFE desktop
+ cafe-control-center-common - utilities to configure the CAFE desktop (common files)
+ libcafe-slab-dev - beautification app library (development headers)
+ libcafe-slab0 - beautification app library
+ libcafe-window-settings-dev - utilities to configure the CAFE desktop (window settings headers)
+ libcafe-window-settings1 - utilities to configure the CAFE desktop (window settings library)
+Changes:
+ cafe-control-center (2.1.0-1) unstable; urgency=medium
+ .
+   * remove obsolete libcafe-slab0.lintian-overrides
+   * New upstream release
+Checksums-Sha1:
+ 82ab7e4f9422217865ea4b7a71acae5905d9ac78 2065316 cafe-control-center-common_2.1.0-1_all.deb
+ 58003aa1fcd8122d137d174ca7d8031e75e63b1f 708244 cafe-control-center-dbgsym_2.1.0-1_amd64.deb
+ 0ad1ee84ae58129b08660428d7518891eac5fcd2 20678 cafe-control-center_2.1.0-1_amd64.buildinfo
+ 6d7ad33fe739b4970ffb4ffdf477fdd88750e12f 343932 cafe-control-center_2.1.0-1_amd64.deb
+ 07df3c59e88d565a4e6ecc04f4d82a3c7a6d1fbb 13416 libcafe-slab-dev_2.1.0-1_amd64.deb
+ 3dae755a24d7dfc200ba8208d7f2d4584be3d70f 121764 libcafe-slab0-dbgsym_2.1.0-1_amd64.deb
+ bc97912f69987fb985e0700c77cddda797fb11f7 38504 libcafe-slab0_2.1.0-1_amd64.deb
+ bb95d0e879b36e2c785682bd27247edbf60d3c92 9396 libcafe-window-settings-dev_2.1.0-1_amd64.deb
+ 5c1aef49570448bac90bab8bb370343bdd58a922 27460 libcafe-window-settings1-dbgsym_2.1.0-1_amd64.deb
+ db6aec37e68a965452f150f352e1e253cb556f99 15328 libcafe-window-settings1_2.1.0-1_amd64.deb
+Checksums-Sha256:
+ e185ccfe7fa5403c871e27bb59ec6251f28cd14716d83b5ced72583b7bf86c89 2065316 cafe-control-center-common_2.1.0-1_all.deb
+ 1550e4bdce246dbfa50687c37c0a3ddbc54e3df96030caaa9e3c2dd5890bd026 708244 cafe-control-center-dbgsym_2.1.0-1_amd64.deb
+ 04082b98b6ebeb7c1cc7b59264be0746bcee04466fdfaedb45b3f2ee8a61341c 20678 cafe-control-center_2.1.0-1_amd64.buildinfo
+ 0cad9fc8b017e880f5d6e69dbace301a5565fb5e2f5256dfed96b5f6f6d39238 343932 cafe-control-center_2.1.0-1_amd64.deb
+ d3232cdef3fbbf21aa6d22247eaac7c7d29824168545be2933c0e7974d46503f 13416 libcafe-slab-dev_2.1.0-1_amd64.deb
+ a4eebbc9bf44f998b0d51fffaf1d94c326a3414b0af9ebe8322697c83260ce60 121764 libcafe-slab0-dbgsym_2.1.0-1_amd64.deb
+ 91b2a99c60a05d1974add80bd5680ee7c1d10f47d7539e0c18a2c163e8fbe630 38504 libcafe-slab0_2.1.0-1_amd64.deb
+ 7bc0e8d4da8c68b59cfc140264ec25bdcb1e2b760ee5e1a1266ef1c4bc631ec4 9396 libcafe-window-settings-dev_2.1.0-1_amd64.deb
+ 0004caf0656473642145dc6bc98974736bfa04005c9cdc97d92a70ceb91d2297 27460 libcafe-window-settings1-dbgsym_2.1.0-1_amd64.deb
+ 46c01e77af3e1464affafcf084c88c8c6aef1d917188f927d14de66ed6becfa3 15328 libcafe-window-settings1_2.1.0-1_amd64.deb
+Files:
+ ddd53f7bb12fac4c1fb349e6fdff158e 2065316 x11 optional cafe-control-center-common_2.1.0-1_all.deb
+ 5e9834e46c2c161dae54627eeb17cc90 708244 debug optional cafe-control-center-dbgsym_2.1.0-1_amd64.deb
+ e0437747b87736da60a0022bd90a96c2 20678 x11 optional cafe-control-center_2.1.0-1_amd64.buildinfo
+ 035c6e03b6f3b77224f4068f5a291584 343932 x11 optional cafe-control-center_2.1.0-1_amd64.deb
+ 7a3053dcfaea27115f576491d4659774 13416 libdevel optional libcafe-slab-dev_2.1.0-1_amd64.deb
+ 3c92255cfb343e4b8d6a484e8b006239 121764 debug optional libcafe-slab0-dbgsym_2.1.0-1_amd64.deb
+ ce4b872a9232087f8765af761c105bb7 38504 libs optional libcafe-slab0_2.1.0-1_amd64.deb
+ 75bb34129b90ea223e311d3eefd89777 9396 libdevel optional libcafe-window-settings-dev_2.1.0-1_amd64.deb
+ 5505a5b396229a5c13b474df65fea4aa 27460 debug optional libcafe-window-settings1-dbgsym_2.1.0-1_amd64.deb
+ 76e47c8b290e0de9beb42f7cee5c4506 15328 libs optional libcafe-window-settings1_2.1.0-1_amd64.deb

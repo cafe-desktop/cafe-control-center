@@ -1,0 +1,4 @@
+cafe-theme-info: Fix check for ctk themes installation
+
+Fixes the warning in cafe-appearance-properties:
+This theme will not look as intended because the required CTK+ theme is not installed.
