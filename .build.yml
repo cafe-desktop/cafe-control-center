@@ -3,75 +3,12 @@
 ##########################################################
 requires:
   debian:
-    # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-cafe-team/cafe-control-center
-    - aptitude
-    - autoconf-archive
-    - autopoint
-    - clang
-    - clang-tools
-    - cppcheck
-    - curl
-    - desktop-file-utils
-    - expect #required for unbuffer
-    - git
-    - gla11y
-    - gobject-introspection
-    - gtk-doc-tools
-    - intltool
-    - libdbus-1-dev
-    - libdbus-glib-1-dev
-    - libdconf-dev
-    - libgirepository1.0-dev
-    - libglib2.0-dev
-    - libgtop2-dev
-    - libpango1.0-dev
-    - librsvg2-bin
-    - librsvg2-dev
-    - libstartup-notification0-dev
-    - libx11-dev
-    - libxcursor-dev
-    - libxi-dev
-    - libxklavier-dev
-    - libxml2-dev
-    - libxrandr-dev
-    - libxss-dev
-    - libxt-dev
-    - libpolkit-gobject-1-dev
-    - libtool
-    - make
-    - python3-lxml
-    - shared-mime-info
-    - wget
-    - xsltproc
-    - yelp-tools
-    - zenity
-
-    # Required for libkanberra
-    - gnome-pkg-tools
-    - libltdl-dev
-    - libasound2-dev
-    - libvorbis-dev
-    - libtdb-dev
-    - libpulse-dev
-    - libgstreamer1.0-dev
 
 before_scripts:
-  - ./html-cppcheck
-  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0'
-  - ./install-from-git https://github.com/cafe-desktop/libkanberra master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
-  - ./install-from-git https://github.com/cafe-desktop/croma master
-  - ./install-from-git https://github.com/cafe-desktop/libcafekbd master
-  - ./install-from-git https://github.com/cafe-desktop/libcafemixer master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-menus master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-settings-daemon master '--prefix=/usr --enable-pulse'
+  - ./debrepo-install
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild '--enable-compile-warnings=maximum'
-  - ./after-build
+  - ./build-debs
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/cafe-icon-theme/raw/master/cafe/16x16/categories/preferences-desktop.png; fi
