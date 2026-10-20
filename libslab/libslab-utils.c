@@ -96,11 +96,7 @@ libslab_get_current_screen (void)
 guint32
 libslab_get_current_time_millis ()
 {
-	GTimeVal t_curr;
-
-	g_get_current_time (& t_curr);
-
-	return 1000L * t_curr.tv_sec + t_curr.tv_usec / 1000L;
+	return (guint32) (g_get_real_time () / 1000);
 }
 
 gint
