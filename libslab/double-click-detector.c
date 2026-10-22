@@ -52,10 +52,10 @@ double_click_detector_new ()
 }
 
 gboolean
-double_click_detector_is_double_click (DoubleClickDetector *this, guint32 event_time,
+double_click_detector_is_double_click (DoubleClickDetector *this, gint64 event_time,
                                        gboolean auto_update)
 {
-	gint32 delta;
+	gint64 delta;
 
 	if (event_time <= 0)
 		event_time = libslab_get_current_time_millis ();
@@ -76,7 +76,7 @@ double_click_detector_is_double_click (DoubleClickDetector *this, guint32 event_
 }
 
 void
-double_click_detector_update_click_time (DoubleClickDetector *this, guint32 event_time)
+double_click_detector_update_click_time (DoubleClickDetector *this, gint64 event_time)
 {
 	if (event_time <= 0)
 		event_time = libslab_get_current_time_millis ();

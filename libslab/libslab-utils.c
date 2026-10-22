@@ -93,10 +93,10 @@ libslab_get_current_screen (void)
 	return screen;
 }
 
-guint32
+gint64
 libslab_get_current_time_millis ()
 {
-	return (guint32) (g_get_real_time () / 1000);
+	return g_get_real_time () / 1000;
 }
 
 gint
